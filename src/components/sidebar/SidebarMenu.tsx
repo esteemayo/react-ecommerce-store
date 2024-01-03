@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 
 import Heading from './Heading';
 import SidebarMenuItem from './SidebarMenuItem';
 
-import { SidebarMenuProps } from '@/types';
+import { SidebarMenuProps } from '../../types';
 
 const SidebarMenu = ({ items }: SidebarMenuProps) => {
   return (

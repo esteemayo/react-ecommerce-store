@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { SidebarSearch } from '@/types';
+import { SidebarSearch } from '../../types';
 
 const Search = ({ query, onChange, onSubmit }: SidebarSearch) => {
   return (

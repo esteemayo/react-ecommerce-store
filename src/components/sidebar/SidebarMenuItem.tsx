@@ -10,7 +10,7 @@ const SidebarMenuItem = ({ url, icon, label }: SidebarMenuItemProps) => {
 
   return (
     <ListItem>
-      <StyledLink href={url} passHref onClick={onClose}>
+      <StyledLink to={url} onClick={onClose}>
         <FontAwesomeIcon icon={icon} />
         &nbsp;
         {label}
