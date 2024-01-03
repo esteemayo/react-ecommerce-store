@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 import { useCallback } from 'react';
 
-import { SizeSelectProps } from '@/types';
+import { SizeSelectProps } from '../../types';
 
 interface IProps {
   modal?: boolean;

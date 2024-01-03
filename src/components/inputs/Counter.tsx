@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { CounterProps } from '@/types';
+import { CounterProps } from '../../types';
 
 interface IProps {
   modal?: boolean;

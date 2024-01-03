@@ -1,10 +1,8 @@
-'use client';
-
 import { FormGroup } from '../form/FormGroup';
 import FormError from '../form/FormError';
 import { Label, Option, StyledSelect } from '../form/Select';
 
-import { CountrySelectProps } from '@/types';
+import { CountrySelectProps } from '../../types';
 
 const CountrySelect = ({
   data,

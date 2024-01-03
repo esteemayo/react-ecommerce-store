@@ -1,9 +1,7 @@
-'use client';
-
-import styled from 'styled-components';
 import { useCallback } from 'react';
+import styled from 'styled-components';
 
-import { ColorSelectProps } from '@/types';
+import { ColorSelectProps } from '../../types';
 
 interface IProps {
   modal?: boolean;
