@@ -1,15 +1,15 @@
 'use client';
 
 import styled from 'styled-components';
-import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
-import { SubmenuMenuItemProps } from '@/types';
+import { SubmenuMenuItemProps } from '../../types';
 
 const MenuItem = ({ url, icon, label }: SubmenuMenuItemProps) => {
   return (
     <ListItem>
-      <StyledLink href={url} passHref>
+      <StyledLink to={url}>
         <FontAwesomeIcon icon={icon} />
         &nbsp;
         {label}
