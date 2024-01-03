@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMemo } from 'react';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import { CardButtonProps } from '@/types';
+import { CardButtonProps } from '../../types';
 import { CommonButton } from '../buttons/CommonButton';
 
 const CardButton = ({ inCart, onClick }: CardButtonProps) => {

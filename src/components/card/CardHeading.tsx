@@ -1,14 +1,12 @@
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
-import { CardHeadingProps } from '@/types';
+import { CardHeadingProps } from '../../types';
 
 const CardHeading = ({ url, name }: CardHeadingProps) => {
   return (
     <Heading>
-      <Link href={url} passHref>
-        {name}
-      </Link>
+      <Link to={url}>{name}</Link>
     </Heading>
   );
 };

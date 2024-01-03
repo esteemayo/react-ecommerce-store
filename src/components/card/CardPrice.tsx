@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { CardPriceProps } from '@/types';
-import { formatCurrency } from '@/utils/formatCurrency';
+import { CardPriceProps } from '../../types';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 const CardPrice = ({ inStock, initialPrice, priceLabel }: CardPriceProps) => {
   return (

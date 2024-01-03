@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import FavoriteButton from '../buttons/FavoriteButton';
 import WishlistButton from '../buttons/WishlistButton';
 
-import { CardButtonsProps } from '@/types';
+import { CardButtonsProps } from '../../types';
 
 const CardButtons = ({ product, productId, wished }: CardButtonsProps) => {
   return (

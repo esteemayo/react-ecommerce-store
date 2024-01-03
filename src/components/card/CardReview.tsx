@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import StarRating from '../StarRating';
-import { CardReviewProps } from '@/types';
+import { CardReviewProps } from '../../types';
 
 const CardReview = ({
   reviewLabel,

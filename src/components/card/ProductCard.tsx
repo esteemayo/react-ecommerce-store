@@ -6,8 +6,8 @@ import { useCallback, useMemo } from 'react';
 import CardInfo from './CardInfo';
 import CardImage from './CardImage';
 
-import { ProductCardProps } from '@/types';
-import { useCartStore } from '@/hooks/useCartStore';
+import { ProductCardProps } from '../../types';
+import { useCartStore } from '../../hooks/useCartStore';
 
 const ProductCard = ({ product, onOpen, onSelect }: ProductCardProps) => {
   const cart = useCartStore((state) => state.cart);

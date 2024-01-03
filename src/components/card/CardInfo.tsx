@@ -6,7 +6,7 @@ import CardButton from './CardButton';
 import CardButtons from './CardButtons';
 import CardReview from './CardReview';
 
-import { CardInfoProps } from '@/types';
+import { CardInfoProps } from '../../types';
 
 const CardInfo = ({
   url,
