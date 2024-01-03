@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { useMemo } from 'react';
 import Marquee from 'react-fast-marquee';
 
-import { useSubmenu } from '@/hooks/useSubmenu';
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { useSubmenu } from '../hooks/useSubmenu';
+import { useDarkMode } from '../hooks/useDarkMode';
 
-import { announcements } from '@/data';
+import { announcements } from '../data';
 
 const Announcement = () => {
   const mode = useDarkMode((state) => state.mode);
