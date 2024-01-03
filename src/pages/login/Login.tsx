@@ -124,7 +124,7 @@ const Login = () => {
             }
           />
           <FormButton label='Log in' />
-          <Forgot url='/forgo' label='Forgot your password?' />
+          <Forgot url='/forgot' label='Forgot your password?' />
         </Form>
       </StyledBox>
       <AuthInfo
