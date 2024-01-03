@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { ProductValueProps } from '@/types';
 import { CommonImage } from '../CommonImage';
+import { ProductValueProps } from '../../types';
 
 interface IMode {
   mode: string;
