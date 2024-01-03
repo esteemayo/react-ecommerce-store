@@ -6,7 +6,7 @@ import { useEffect, useState, useMemo, useRef } from 'react';
 import Heading from './Heading';
 import MenuItem from './MenuItem';
 
-import { useSubmenu } from '@/hooks/useSubmenu';
+import { useSubmenu } from '../../hooks/useSubmenu';
 
 interface IContainer {
   type: string;
