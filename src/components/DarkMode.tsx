@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { useDarkMode } from '../hooks/useDarkMode';
 
 const Darkmode = () => {
   const mode = useDarkMode((state) => state.mode);
@@ -16,7 +16,7 @@ const Darkmode = () => {
       </Wrapper>
     </Container>
   );
-}
+};
 
 const Container = styled.div`
   position: fixed;
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 4rem;
   height: 4rem;
-  background-color:  ${({ theme }) => theme.bgIconMode};
+  background-color: ${({ theme }) => theme.bgIconMode};
   border-radius: 50%;
   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
