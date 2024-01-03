@@ -2,12 +2,12 @@
 
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 
 import { CommonImage } from '../CommonImage';
-import { getCategoryCount } from '@/services/productService';
+import { getCategoryCount } from '../../services/productService';
 
 const Category = () => {
   const [data, setData] = useState([]);

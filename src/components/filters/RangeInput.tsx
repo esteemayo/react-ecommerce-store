@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Label } from './Label';
 import { Filter } from './Filter';
 
-import { RangeInputProps } from '@/types';
-import { formatCurrency } from '@/utils/formatCurrency';
+import { RangeInputProps } from '../../types';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 const RangeInput = ({ name, label, price, ...rest }: RangeInputProps) => {
   return (
