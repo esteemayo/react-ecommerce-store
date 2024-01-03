@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { SocialIconProps } from '../../types';';
+import { SocialIconProps } from '../../types';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
 interface IMode {

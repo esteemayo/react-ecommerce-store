@@ -1,9 +1,9 @@
 'use client';
 
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
-import { FooterLinkProps } from '@/types';
+import { FooterLinkProps } from '../../types';
 
 const FooterLink = ({ data }: FooterLinkProps) => {
   return (
@@ -12,9 +12,7 @@ const FooterLink = ({ data }: FooterLinkProps) => {
         const { id, url, text } = item;
         return (
           <LinkItem key={id}>
-            <Link href={url} passHref>
-              {text}
-            </Link>
+            <Link to={url}>{text}</Link>
           </LinkItem>
         );
       })}
