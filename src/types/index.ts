@@ -358,7 +358,7 @@ export interface CountrySelectProps {
   label: string;
   value: string | number | readonly string[];
   error: string;
-  onChange(e: any): void;
+  onChange(event: React.ChangeEvent<HTMLSelectElement> | undefined): void;
 }
 
 export type WishlistProps = {
