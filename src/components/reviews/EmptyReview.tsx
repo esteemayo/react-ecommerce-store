@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 
 import StarRating from '../StarRating';
 import ReviewButton from './ReviewButton';
 
-import { EmptyReviewProps } from '@/types';
+import { EmptyReviewProps } from '../../types';
 
 const EmptyReview = ({
   rating,
