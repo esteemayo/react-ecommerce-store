@@ -1,9 +1,9 @@
 'use client';
 
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
-import { FooterMenuItemProps } from '@/types';
+import { FooterMenuItemProps } from '../../types';
 
 const MenuItem = ({ data }: FooterMenuItemProps) => {
   return (
