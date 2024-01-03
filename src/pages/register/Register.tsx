@@ -37,7 +37,7 @@ const Register = () => {
 
   const [perc, setPerc] = useState(0);
   const [data, setData] = useState(initialState);
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File>();
   const [errors, setErrors] = useState<IErrors>({});
 
   const handleChange = useCallback(
@@ -55,6 +55,12 @@ const Register = () => {
     },
     []
   );
+
+  const handleFile = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    const item = (target.files as FileList)[0];
+    setFile(item);
+  }, []);
 
   const validateForm = useCallback(() => {
     const errors: IErrors = {};
@@ -150,9 +156,7 @@ const Register = () => {
                 id='file'
                 accept='image/*'
                 label='Attach a photo'
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setFile(e.target.files[0])
-                }
+                onChange={handleFile}
               />
             </>
           )}
