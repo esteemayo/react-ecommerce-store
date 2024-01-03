@@ -45,7 +45,7 @@ import {
   Sublink,
   TopReview,
   WishlistItems,
-} from '@/types';
+} from '../types';
 
 export const announcements: Announcements = [
   {
