@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import { FooterHeadingProps } from '@/types';
+import { FooterHeadingProps } from '../../types';
 
 interface IHeader {
   small?: boolean;

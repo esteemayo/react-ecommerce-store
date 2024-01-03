@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Heading from './Heading';
 import MenuItem from './MenuItem';
 
-import { FooterMenuItemsProps } from '@/types';
+import { FooterMenuItemsProps } from '../../types';
 
 const MenuItems = ({ data }: FooterMenuItemsProps) => {
   return (

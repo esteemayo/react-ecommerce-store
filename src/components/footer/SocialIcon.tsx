@@ -1,10 +1,10 @@
 'use client';
 
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
-import { SocialIconProps } from '@/types';
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { SocialIconProps } from '../../types';';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 interface IMode {
   mode: string;
@@ -19,7 +19,7 @@ const SocialIcon = ({ data }: SocialIconProps) => {
       {data.map((item) => {
         const { id, url, icon: Icon, color } = item;
         return (
-          <Link key={id} href={url} passHref>
+          <Link key={id} to={url}>
             <IconWrapper mode={mode.toString()} color={color}>
               <Icon />
             </IconWrapper>

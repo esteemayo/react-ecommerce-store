@@ -3,7 +3,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SearchHistory from './SearchHistory';
-import { useSearch } from '@/hooks/useSearch';
+import { useSearch } from '../hooks/useSearch';
 
 const Search = () => {
   const { histories, searchQuery, handleChange, handleDelete, handleSearch } =
