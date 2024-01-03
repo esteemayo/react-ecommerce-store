@@ -314,7 +314,7 @@ export type SelectInput = {
 }[];
 
 export type Submenu = {
-  page: string;
+  page: string | null;
   coordinates: {
     center: number;
     bottom: number;
