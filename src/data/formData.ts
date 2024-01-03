@@ -1,4 +1,9 @@
-import { PasswordInput, RegisterInput, SelectInput, UserDataInput } from '@/types';
+import {
+  PasswordInput,
+  RegisterInput,
+  SelectInput,
+  UserDataInput,
+} from '../types';
 
 export const registerInputs: RegisterInput = [
   {
