@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 
-export const CommonImage = styled(Image)`
+export const CommonImage = styled.img`
   display: block;
   object-fit: cover;
 `;
