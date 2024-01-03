@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { SidebarMenuItemProps } from '@/types';
-import { useSidebar } from '@/hooks/useSidebar';
+import { SidebarMenuItemProps } from '../../types';
+import { useSidebar } from '../../hooks/useSidebar';
 
 const SidebarMenuItem = ({ url, icon, label }: SidebarMenuItemProps) => {
   const onClose = useSidebar((state) => state.onClose);
