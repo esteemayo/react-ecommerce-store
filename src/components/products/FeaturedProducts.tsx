@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
-import Header from '../Header';
 import ProductCard from '../card/ProductCard';
+import Header from '../Header';
 import CartModal from '../modals/CartModal';
 
 import { StoreProduct, WishlistValues } from '../../types';
@@ -18,26 +19,23 @@ const FeaturedProducts = () => {
 
   const [isSelectedProduct, setIsSelectedProduct] =
     useState<WishlistValues>(null);
-  const [featuredProducts, setFeaturedProducts] = useState<StoreProduct>([]);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await getFeaturedProducts();
-        console.log(data.products);
-        setFeaturedProducts(data.products);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, []);
+  const { data } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const res = await getFeaturedProducts();
+      return res.data;
+    },
+  });
+
+  console.log(data);
 
   return (
     <Container>
       <StyledWrapper>
         <Header title='Featured products' />
         <ProductsContainer>
-          {featuredProducts.map((product) => {
+          {data.products.map((product) => {
             return (
               <ProductCard
                 key={product.id}

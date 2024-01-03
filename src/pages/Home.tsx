@@ -14,7 +14,7 @@ const Home = () => {
     <Container onMouseOver={closeSubmenu}>
       <CarouselSlider />
       {/* <Categories /> */}
-      {/* <FeaturedProducts /> */}
+      <FeaturedProducts />
       <TopReviews />
     </Container>
   );
