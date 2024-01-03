@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { ProductButtonProps } from '@/types';
+import { ProductButtonProps } from '../../types';
 
 interface IBtn {
   small?: boolean;

@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 

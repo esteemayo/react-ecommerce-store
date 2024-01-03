@@ -1,12 +1,10 @@
-'use client';
-
 import styled from 'styled-components';
 import { useMemo } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
-import { DateOptions, OrderCardProps } from '@/types';
-import { formatCurrency } from '@/utils/formatCurrency';
+import { DateOptions, OrderCardProps } from '../../types';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 interface IContainer {
   status: number;

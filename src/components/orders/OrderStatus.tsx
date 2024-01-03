@@ -1,9 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
-import Image from 'next/image';
 
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 interface OrderStatusProps {
   statusClass(index: number): string;
@@ -92,6 +89,8 @@ const StatusWrapper = styled.div<IMode>`
     object-fit: cover;
   }
 `;
+
+const Image = styled.img``;
 
 const Status = styled.span`
   color: ${({ theme }) => theme.text};

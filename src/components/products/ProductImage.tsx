@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { ProductImageProps } from '@/types';
 import { CommonImage } from '../CommonImage';
+import { ProductImageProps } from '../../types';
 
 const ProductImage = ({ image, index, onOpen }: ProductImageProps) => {
   return (

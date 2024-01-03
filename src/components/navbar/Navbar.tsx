@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useCallback, useState } from 'react';

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { useSubmenu } from '@/hooks/useSubmenu';
 import { StyledWrapper } from '../StyledWrapper';
+import { useSubmenu } from '../../hooks/useSubmenu';
 
 const ProductBox = ({ children }: { children: React.ReactNode }) => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);

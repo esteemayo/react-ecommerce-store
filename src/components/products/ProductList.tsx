@@ -1,14 +1,12 @@
-'use client';
-
-import styled from 'styled-components';
 import { useState } from 'react';
+import styled from 'styled-components';
 
 import ProductCard from '../card/ProductCard';
 import CartModal from '../modals/CartModal';
 import EmptyProduct from './EmptyProduct';
 
-import { useCartModal } from '@/hooks/useCartModal';
-import { ProductListProps, WishlistValues } from '@/types';
+import { useCartModal } from '../../hooks/useCartModal';
+import { ProductListProps, WishlistValues } from '../../types';
 
 const ProductList = ({
   products,

@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
@@ -7,9 +5,9 @@ import Header from '../Header';
 import ProductCard from '../card/ProductCard';
 import CartModal from '../modals/CartModal';
 
-import { StoreProduct, WishlistValues } from '@/types';
-import { useCartModal } from '@/hooks/useCartModal';
-import { getFeaturedProducts } from '@/services/productService';
+import { StoreProduct, WishlistValues } from '../../types';
+import { useCartModal } from '../../hooks/useCartModal';
+import { getFeaturedProducts } from '../../services/productService';
 
 import { StyledWrapper } from '../StyledWrapper';
 

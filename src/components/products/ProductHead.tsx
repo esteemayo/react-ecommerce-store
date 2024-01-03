@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { useMemo } from 'react';
 
-import { ProductHeadProps } from '@/types';
-import { formatCurrency } from '@/utils/formatCurrency';
+import { ProductHeadProps } from '../../types';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 import StarRating from '../StarRating';
 

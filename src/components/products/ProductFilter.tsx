@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 
 import Heading from '../filters/Heading';
@@ -7,8 +5,8 @@ import Option from '../filters/Option';
 import RangeInput from '../filters/RangeInput';
 import Select from '../filters/Select';
 
-import { getUnique } from '@/utils';
-import { ProductFilterProps } from '@/types';
+import { getUnique } from '../../utils';
+import { ProductFilterProps } from '../../types';
 
 const ProductFilter = ({
   products,

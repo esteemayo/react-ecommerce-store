@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { ProductInfoProps } from '@/types';
+import { ProductInfoProps } from '../../types';
 
 const ProductInfo = ({ title, content }: ProductInfoProps) => {
   return (

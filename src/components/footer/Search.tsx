@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { useSearch } from '@/hooks/useSearch';
+import { useSearch } from '../../hooks/useSearch';
 
 const Search = () => {
   const { searchQuery, handleChange, handleSearch } = useSearch();

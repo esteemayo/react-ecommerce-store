@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { ToggleButtonProps } from '@/types';
+import { ToggleButtonProps } from '../../types';
 
 const ToggleButton = ({ icon: Icon, onClick }: ToggleButtonProps) => {
   return (

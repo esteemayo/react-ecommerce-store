@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { useCart } from '@/hooks/useCart';
-import BreadCrumbs from '@/app/products/[id]/BreadCrumbs';
+import { useCart } from '../../hooks/useCart';
+// import BreadCrumbs from '';
 
 import ColorSelect from '../inputs/ColorSelect';
 import Counter from '../inputs/Counter';
@@ -15,11 +13,11 @@ import ProductInfo from './ProductInfo';
 import ProductImages from './ProductImages';
 import ProductValue from './ProductValue';
 
-import { productValue } from '@/data';
-import { ProductProps } from '@/types';
+import { productValue } from '../../data';
+import { ProductProps } from '../../types';
 
 import Alert from '../Alert';
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 const Product = ({ product, inCart, actionLabel }: ProductProps) => {
   const mode = useDarkMode((state) => state.mode);
@@ -45,7 +43,7 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
           <ProductImages images={product.images} />
         </Left>
         <Right>
-          <BreadCrumbs category={product.category} />
+          {/* <BreadCrumbs category={product.category} /> */}
           <ProductWrapper>
             <ProductHead
               name={product.name}

@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 
 import Form from '../form/Form';
@@ -8,8 +6,8 @@ import FormButton from '../form/FormButton';
 import Input from '../carts/Input';
 import TextArea from '../carts/TextArea';
 
-import { OrderDetailsProps } from '@/types';
-import { formatCurrency } from '@/utils/formatCurrency';
+import { OrderDetailsProps } from '../../types';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 const OrderDetails = ({
   name,
