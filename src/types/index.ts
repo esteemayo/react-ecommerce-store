@@ -772,7 +772,7 @@ export interface FilterSelect
   value?: string | number | readonly string[];
   page?: string;
   label: string;
-  options: any[];
+  options: React.ReactNode[];
 }
 
 export interface SelectPriceProps extends HTMLAttributes<HTMLSelectElement> {
