@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMemo } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
-import { useSearch } from '@/hooks/useSearch';
-import { useSidebar } from '@/hooks/useSidebar';
+import { useSearch } from '../../hooks/useSearch';
+import { useSidebar } from '../../hooks/useSidebar';
 
 import Heading from './Heading';
 import SidebarMenu from './SidebarMenu';
 import Search from './Search';
 
-import { sublinks } from '@/data';
+import { sublinks } from '../../data';
 
 interface IContainer {
   type: string;
