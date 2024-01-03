@@ -1,8 +1,19 @@
 import { ToastContainer } from 'react-toastify';
+
+import { useDarkMode } from '../hooks/useDarkMode';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 const ToastProvider = () => {
-  return <ToastContainer />;
-}
+  const mode = useDarkMode((state) => state.mode);
+
+  return (
+    <ToastContainer
+      theme={mode ? 'dark' : 'light'}
+      position='bottom-right'
+      autoClose={3000}
+    />
+  );
+};
 
 export default ToastProvider;
