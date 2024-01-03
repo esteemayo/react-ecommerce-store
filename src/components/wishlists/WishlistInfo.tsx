@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
-import Link from 'next/link';
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
-import { WishlistInfoProps } from '@/types';
 import { CommonImage } from '../CommonImage';
+import { WishlistInfoProps } from '../../types';
 
 const WishlistInfo = ({
   id,
@@ -30,7 +28,7 @@ const WishlistInfo = ({
       </ImageContainer>
       <Overview>
         <ProductName>
-          <StyledLink href={url}>{name}</StyledLink>
+          <StyledLink to={url}>{name}</StyledLink>
         </ProductName>
         <Description>{excerpts(desc, 120)}</Description>
       </Overview>

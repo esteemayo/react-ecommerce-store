@@ -1,13 +1,11 @@
-'use client';
-
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useMemo } from 'react';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import { formatCurrency } from '@/utils/formatCurrency';
-import { useCartStore } from '@/hooks/useCartStore';
-import { WishlistValues, WislistPriceProps } from '@/types';
+import { formatCurrency } from '../../utils/formatCurrency';
+import { useCartStore } from '../../hooks/useCartStore';
+import { WishlistValues, WislistPriceProps } from '../../types';
 
 import { CommonButton } from '../buttons/CommonButton';
 

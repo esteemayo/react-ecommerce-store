@@ -1,13 +1,11 @@
-'use client';
-
 import styled from 'styled-components';
 
 import WishlistInfo from './WishlistInfo';
 import CloseButton from './CloseButton';
 import WishlistPrice from './WishlistPrice';
 
-import { excerpts } from '@/utils';
-import { WishlistCardProps } from '@/types';
+import { excerpts } from '../../utils';
+import { WishlistCardProps } from '../../types';
 
 import DeleteModal from '../modals/DeleteModal';
 

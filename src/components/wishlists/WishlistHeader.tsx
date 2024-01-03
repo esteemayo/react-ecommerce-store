@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 
 import DateTime from '../DateTime';
-import { DateOptions } from '@/types';
+import { DateOptions } from '../../types';
 
 interface WishlistHeaderProps {
   wishlistLabel: 'wishlists' | 'wishlist';

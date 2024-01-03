@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 import CloseIcon from '@mui/icons-material/Close';
 
-import { CloseButtonProps } from '@/types';
+import { CloseButtonProps } from '../../types';
 
 const CloseButton = ({ id, onOpen }: CloseButtonProps) => {
   return (
