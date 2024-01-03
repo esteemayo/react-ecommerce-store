@@ -1,7 +1,5 @@
-'use client';
-
-import styled from 'styled-components';
 import { useCallback } from 'react';
+import styled from 'styled-components';
 
 interface DeleteAccountProps {
   onCancel(): void;

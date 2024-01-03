@@ -1,5 +1,3 @@
-'use client';
-
 import Button from './Button';
 import CancelButton from './CancelButton';
 import Input from './Input';
@@ -8,8 +6,8 @@ import AccountEmail from './AccountEmail';
 import { Container } from './Container';
 import { ButtonContainer } from './ButtonContainer';
 
-import { useForm } from '@/hooks/useForm';
-import { userDataInputs } from '@/data/formData';
+import { useForm } from '../../hooks/useForm';
+import { userDataInputs } from '../../data/formData';
 
 import Form from '../form/Form';
 

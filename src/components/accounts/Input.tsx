@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import FormError from '../form/FormError';
 import { FormGroup } from '../form/FormGroup';
 
-import { AccountInputProps } from '@/types';
+import { AccountInputProps } from '../../types';
 
 const Input = ({ id, name, label, error, ...rest }: AccountInputProps) => {
   return (

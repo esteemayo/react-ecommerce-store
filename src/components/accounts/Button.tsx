@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { AccountButtonProps } from '@/types';
+import { AccountButtonProps } from '../../types';
 import { CommonButton } from '../buttons/CommonButton';
 
 const Button = ({ text, disabled }: AccountButtonProps) => {

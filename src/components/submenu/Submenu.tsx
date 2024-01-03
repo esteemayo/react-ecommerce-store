@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { useEffect, useState, useMemo, useRef } from 'react';
 

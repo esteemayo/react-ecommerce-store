@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { CancelButtonProps } from '@/types';
+import { CancelButtonProps } from '../../types';
 
 const CancelButton = ({ text, onClick }: CancelButtonProps) => {
   return (
