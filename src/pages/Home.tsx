@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 import CarouselSlider from '../components/sliders/CarouselSlider';
-import Categories from '../components/categories/Categories';
-import FeaturedProducts from '../components/products/FeaturedProducts';
 import TopReviews from '../components/reviews/TopReviews';
+import FeaturedProducts from '../components/products/FeaturedProducts';
+import Categories from '../components/categories/Categories';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 
