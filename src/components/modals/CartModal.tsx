@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
@@ -11,11 +9,11 @@ import SizeSelect from '../inputs/SizeSelect';
 import ProductHead from '../products/ProductHead';
 import ProductButton from '../products/ProductButton';
 
-import { useCart } from '@/hooks/useCart';
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { useCart } from '../../hooks/useCart';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
-import { CartModalProps } from '@/types';
-import { useCartStore } from '@/hooks/useCartStore';
+import { CartModalProps } from '../../types';
+import { useCartStore } from '../../hooks/useCartStore';
 
 import Alert from '../Alert';
 import { CommonImage } from '../CommonImage';

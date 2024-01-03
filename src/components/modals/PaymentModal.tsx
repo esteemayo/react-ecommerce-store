@@ -1,17 +1,15 @@
-'use client';
-
 import styled from 'styled-components';
 import { useEffect, useMemo, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
-import { useCartStore } from '@/hooks/useCartStore';
-import { useForm } from '@/hooks/useForm';
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { useCartStore } from '../../hooks/useCartStore';
+import { useForm } from '../../hooks/useForm';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 import Overlay from './Overlay';
 import OrderDetails from '../orders/OrderDetails';
 
-import { PaymentModalProps } from '@/types';
+import { PaymentModalProps } from '../../types';
 
 interface FormData {
   name: string;

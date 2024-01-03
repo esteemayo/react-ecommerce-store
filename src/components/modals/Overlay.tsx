@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { OverlayProps } from '@/types';
+import { OverlayProps } from '../../types';
 
 interface IProps {
   type: string;

@@ -1,13 +1,11 @@
-'use client';
-
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CloseIcon from '@mui/icons-material/Close';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { ProductImageModalProps } from '@/types';
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { ProductImageModalProps } from '../../types';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 import { CommonImage } from '../CommonImage';
 

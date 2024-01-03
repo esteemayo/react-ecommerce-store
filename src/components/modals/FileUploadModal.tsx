@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
