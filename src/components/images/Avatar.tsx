@@ -1,7 +1,4 @@
-'use client';
-
 import styled from 'styled-components';
-import Image from 'next/image';
 
 interface AvatarProps {
   src: string;
@@ -15,28 +12,28 @@ const Avatar = ({ src }: AvatarProps) => {
   );
 };
 
-const Container = styled.div`
-  img {
-    width: 5rem;
-    height: 5rem;
-    display: inline-block;
-    object-fit: cover;
-    border-radius: 50%;
+const Container = styled.div``;
 
-    @media only screen and (max-width: 31.25em) {
-      width: 4.5rem;
-      height: 4.5rem;
-    }
+const Image = styled.img`
+  width: 5rem;
+  height: 5rem;
+  display: inline-block;
+  object-fit: cover;
+  border-radius: 50%;
 
-    @media only screen and (max-width: 25em) {
-      width: 3.5rem;
-      height: 3.5rem;
-    }
+  @media only screen and (max-width: 31.25em) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
 
-    @media only screen and (max-width: 18.75em) {
-      width: 3rem;
-      height: 3rem;
-    }
+  @media only screen and (max-width: 25em) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  @media only screen and (max-width: 18.75em) {
+    width: 3rem;
+    height: 3rem;
   }
 `;
 
