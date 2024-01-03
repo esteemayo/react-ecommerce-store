@@ -4,7 +4,10 @@ interface StarRatingProps {
   value: number;
   name?: string;
   readOnly?: boolean;
-  onChange?(e: React.ChangeEvent<HTMLInputElement>, newValue: number): void;
+  onChange?(
+    event: React.SyntheticEvent<Element, Event>,
+    value: number | null
+  ): void | undefined;
 }
 
 const StarRating = ({ value, onChange, ...rest }: StarRatingProps) => {

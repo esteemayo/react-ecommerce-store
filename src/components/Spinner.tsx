@@ -1,5 +1,3 @@
-'use client';
-
 import styled, { keyframes } from 'styled-components';
 
 interface SpinnerProps {
@@ -7,7 +5,7 @@ interface SpinnerProps {
 }
 
 interface IContainer {
-  size?: string;
+  size: string;
 }
 
 const Spinner = ({ size = 'sm' }: SpinnerProps) => {

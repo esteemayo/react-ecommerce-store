@@ -1,8 +1,6 @@
-'use client';
-
+import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
-import { useCallback, useEffect, useState } from 'react';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +30,7 @@ const ScrollToTop = () => {
       )}
     </Container>
   );
-}
+};
 
 const Container = styled.div`
   position: fixed;

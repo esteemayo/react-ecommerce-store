@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
-import Link from 'next/link';
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
-import { RecommendationItemProps } from '@/types';
-import { formatCurrency } from '@/utils/formatCurrency';
+import { RecommendationItemProps } from '../types';
+import { formatCurrency } from '../utils/formatCurrency';
 
 import { CommonImage } from './CommonImage';
 
@@ -21,7 +19,7 @@ const RecommendationItem = ({
 
   return (
     <Container>
-      <StyledLink href={url}>
+      <StyledLink to={url}>
         <StyledImage src={images?.[0]} width={400} height={500} alt={name} />
         <Wrapper>
           <Title>{name}</Title>

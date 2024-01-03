@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { RecommendationProps } from '@/types';
+import { RecommendationProps } from '../types';
 import RecommendationItem from './RecommendationItem';
 
 const Recommendation = ({ data, productId }: RecommendationProps) => {

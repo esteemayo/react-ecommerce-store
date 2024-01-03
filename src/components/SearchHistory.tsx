@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { faClock, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import { SearchHistoryProps } from '@/types';
+import { SearchHistoryProps } from '../types';
 
 const SearchHistory = ({ id, query, onDelete }: SearchHistoryProps) => {
   return (
@@ -14,9 +12,7 @@ const SearchHistory = ({ id, query, onDelete }: SearchHistoryProps) => {
         <FontAwesomeIcon icon={faClock} />
       </IconWRapper>
       <History>
-        <StyledLink href='#' passHref>
-          {query}
-        </StyledLink>
+        <StyledLink to='#'>{query}</StyledLink>
       </History>
       <Remove onClick={() => onDelete(id)}>
         <FontAwesomeIcon icon={faTimes} />
