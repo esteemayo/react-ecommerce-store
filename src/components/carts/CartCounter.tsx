@@ -1,10 +1,8 @@
-'use client';
-
 import styled from 'styled-components';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { CartCounterProps } from '@/types';
+import { CartCounterProps } from '../../types';
 
 const CartCounter = ({ value, onIncrement, onDecrement }: CartCounterProps) => {
   return (

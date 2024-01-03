@@ -6,8 +6,8 @@ import { useCallback } from 'react';
 import CartInfo from './CartInfo';
 import CartCounter from './CartCounter';
 
-import { CartItemProps } from '@/types';
-import { useCartStore } from '@/hooks/useCartStore';
+import { CartItemProps } from '../../types';
+import { useCartStore } from '../../hooks/useCartStore';
 
 const CartItem = ({
   id,

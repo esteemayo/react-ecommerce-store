@@ -3,9 +3,9 @@
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
 
-import { useCartStore } from '@/hooks/useCartStore';
-import { CartTotalProps } from '@/types';
-import { formatCurrency } from '@/utils/formatCurrency';
+import { useCartStore } from '../../hooks/useCartStore';
+import { CartTotalProps } from '../../types';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 interface IBtn {
   btnType?: string;

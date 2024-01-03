@@ -4,7 +4,7 @@ import FormError from '../form/FormError';
 import { FormGroup } from '../form/FormGroup';
 
 import { Label } from './Input';
-import { TextAreaProps } from '@/types';
+import { TextAreaProps } from '../../types';
 
 const TextArea = ({ name, label, error, ...rest }: TextAreaProps) => {
   return (

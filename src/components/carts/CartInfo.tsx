@@ -2,8 +2,8 @@
 
 import styled from 'styled-components';
 
-import { CartInfoProps } from '@/types';
-import { formatCurrency } from '@/utils/formatCurrency';
+import { CartInfoProps } from '../../types';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 import { CommonImage } from '../CommonImage';
 

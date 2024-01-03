@@ -1,7 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 import { CommonImage } from '../CommonImage';
 
@@ -9,7 +9,7 @@ const EmptyCart = () => {
   return (
     <Container>
       <StyledImage src='/img/empty-cart.png' width={400} height={400} alt='' />
-      <StyledLink href='/products'>
+      <StyledLink to='/products'>
         <Button type='button'>Back to shopping</Button>
       </StyledLink>
     </Container>

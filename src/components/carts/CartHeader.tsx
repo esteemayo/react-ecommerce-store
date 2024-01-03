@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { useCartStore } from '@/hooks/useCartStore';
+import { useCartStore } from '../../hooks/useCartStore';
 
 const CartHeader = () => {
   const qty = useCartStore((state) => state.qty);
