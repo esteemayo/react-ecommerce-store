@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 
 import FormError from './FormError';
 import { FormGroup } from './FormGroup';
 
-import { TextAreaProps } from '@/types';
+import { TextAreaProps } from '../../types';
 
 const TextArea = ({ name, label, error, ...rest }: TextAreaProps) => {
   return (

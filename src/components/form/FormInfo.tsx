@@ -1,7 +1,5 @@
-'use client';
-
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Link from 'next/link';
 
 interface AuthInfoProps {
   url: string;
@@ -13,10 +11,7 @@ const FormInfo = ({ url, text, label }: AuthInfoProps) => {
   return (
     <Container>
       <Text>
-        {text}{' '}
-        <Link href={url} passHref>
-          {label}
-        </Link>
+        {text} <Link to={url}>{label}</Link>
       </Text>
     </Container>
   );

@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { useSubmenu } from '@/hooks/useSubmenu';
+import { useSubmenu } from '../../hooks/useSubmenu';
 
 const FormBox = ({ children }: { children: React.ReactNode }) => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);

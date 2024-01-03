@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { FormHeadingProps } from '@/types';
+import { FormHeadingProps } from '../../types';
 
 interface IProps {
   small: boolean;

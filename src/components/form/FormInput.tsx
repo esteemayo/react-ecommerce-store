@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 
 import FormError from './FormError';
 import { FormGroup } from './FormGroup';
 
-import { FormInputProps } from '@/types';
+import { FormInputProps } from '../../types';
 
 interface ILabel {
   login?: boolean;

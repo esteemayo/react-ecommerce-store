@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { FormButtonProps } from '@/types';
+import { FormButtonProps } from '../../types';
 import { CommonButton } from '../buttons/CommonButton';
 
 const FormButton = ({ label, disabled, ...rest }: FormButtonProps) => {

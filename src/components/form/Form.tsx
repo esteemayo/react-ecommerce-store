@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import { FormProps } from '@/types';
+import { FormProps } from '../../types';
 
 interface IForm {
   type?: string;

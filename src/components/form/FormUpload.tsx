@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { FormUploadProps } from '@/types';
+import { FormUploadProps } from '../../types';
 
 const FormUpload = ({ id, label, ...rest }: FormUploadProps) => {
   return (

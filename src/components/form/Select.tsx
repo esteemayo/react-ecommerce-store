@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 
 import FormError from './FormError';
 import { FormGroup } from './FormGroup';
 
-import { SelectProps } from '@/types';
+import { SelectProps } from '../../types';
 
 const Select = ({
   data,

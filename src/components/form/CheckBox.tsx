@@ -1,10 +1,8 @@
-'use client';
-
 import styled from 'styled-components';
 import { useMemo } from 'react';
 
-import { CheckBoxProps } from '@/types';
-import { useDarkMode } from '@/hooks/useDarkMode';
+import { CheckBoxProps } from '../../types';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 const CheckBox = ({ name, label, ...rest }: CheckBoxProps) => {
   const mode = useDarkMode((state) => state.mode);
