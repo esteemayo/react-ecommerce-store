@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { ActiveButtonProps } from '@/types';
+import { ActiveButtonProps } from '../../types';
 
 interface IBtn {
   active: boolean;

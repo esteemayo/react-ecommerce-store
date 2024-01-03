@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
 import {
@@ -11,7 +9,7 @@ import ActiveButton from './ActiveButton';
 import SliderItem from './SliderItem';
 import SliderButton from './SliderButton';
 
-import { sliderItems } from '@/data';
+import { sliderItems } from '../../data';
 
 const CarouselSlider = () => {
   const [slideNumber, setSlideNumber] = useState(0);

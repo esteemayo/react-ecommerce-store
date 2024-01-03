@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { SliderButtonProps } from '@/types';
+import { SliderButtonProps } from '../../types';
 
 interface IBtn {
   direction: string;

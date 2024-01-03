@@ -1,10 +1,8 @@
-'use client';
-
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
-import { SliderItemProps } from '@/types';
 import { CommonImage } from '../CommonImage';
+import { SliderItemProps } from '../../types';
 
 interface IType {
   type: string;
@@ -21,7 +19,7 @@ const SliderItem = ({
   return (
     <Article type={position}>
       <Container>
-        <StyledImage src={img} fill priority alt={`Slide ${index}`} />
+        <StyledImage src={img} alt={`Slide ${index}`} />
       </Container>
       <Wrapper>
         <Title>{title}</Title>
