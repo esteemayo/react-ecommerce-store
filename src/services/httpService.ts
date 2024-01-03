@@ -4,10 +4,10 @@ import { toast } from 'react-toastify';
 import logger from './logService';
 
 const devEnv = process.env.NODE_ENV !== 'production';
-const { REACT_APP_PROD_URL, REACT_APP_DEV_URL } = process.env;
+const { REACT_APP_PROD_API_URL, REACT_APP_DEV_API_URL } = process.env;
 
 const API = axios.create({
-  baseURL: devEnv ? REACT_APP_DEV_URL : REACT_APP_PROD_URL,
+  baseURL: devEnv ? REACT_APP_DEV_API_URL : REACT_APP_PROD_API_URL,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
