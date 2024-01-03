@@ -1,14 +1,14 @@
 'use client';
 
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 import { CommonImage } from '../CommonImage';
 
 const Logo = () => {
   return (
     <Container>
-      <StyledLink href='/' passHref>
+      <StyledLink to='/'>
         <StyledImage
           src='/img/logo.png'
           width={100}
