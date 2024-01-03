@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { useMemo } from 'react';
 import Marquee from 'react-fast-marquee';

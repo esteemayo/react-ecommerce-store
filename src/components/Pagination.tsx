@@ -1,8 +1,6 @@
-'use client';
-
 import styled from 'styled-components';
 
-import { PaginationProps } from '@/types';
+import { PaginationProps } from '../types';
 
 const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
   const renderPagination = () => {

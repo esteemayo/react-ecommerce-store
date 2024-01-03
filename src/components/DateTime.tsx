@@ -1,9 +1,7 @@
-'use client';
-
-import styled from 'styled-components';
 import { useMemo } from 'react';
+import styled from 'styled-components';
 
-import { DateTimeProps } from '@/types';
+import { DateTimeProps } from '../types';
 
 interface ITime {
   type?: string;

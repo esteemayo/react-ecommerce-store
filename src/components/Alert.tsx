@@ -1,9 +1,7 @@
-'use client';
-
-import styled from 'styled-components';
 import { useEffect } from 'react';
+import styled from 'styled-components';
 
-import { AlertProps } from '@/types';
+import { AlertProps } from '../types';
 
 interface IMessage {
   center?: boolean;
