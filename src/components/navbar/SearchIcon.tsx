@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { SearchIconProps } from '@/types';
+import { SearchIconProps } from '../../types';
 
 const SearchIcon = ({ onOpen }: SearchIconProps) => {
   return (

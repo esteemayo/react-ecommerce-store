@@ -2,10 +2,10 @@
 
 import styled from 'styled-components';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-import { LoginButtonProps } from '@/types';
+import { LoginButtonProps } from '../../types';
 
 const LoginButton = ({
   isHover,
@@ -14,7 +14,7 @@ const LoginButton = ({
 }: LoginButtonProps) => {
   return (
     <Container>
-      <Link href='/login' passHref>
+      <Link to='/login'>
         <Button
           type='button'
           onMouseOver={onMouseOver}

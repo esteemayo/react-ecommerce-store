@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import { MenuItemProps } from '@/types';
+import { MenuItemProps } from '../../types';
 
 const MenuItem = ({ label, onMouse }: MenuItemProps) => {
   return (
