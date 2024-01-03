@@ -12,13 +12,13 @@ import MenuItem from './MenuItem';
 import ToggleButton from './ToggleButton';
 import SearchIcon from './SearchIcon';
 
-import { useSubmenu } from '@/hooks/useSubmenu';
-import useSearchModal from '@/hooks/useSearchModal';
-import { useSidebar } from '@/hooks/useSidebar';
-import { useCartStore } from '@/hooks/useCartStore';
+import { useSubmenu } from '../../hooks/useSubmenu';
+import useSearchModal from '../../hooks/useSearchModal';
+import { useSidebar } from '../../hooks/useSidebar';
+import { useCartStore } from '../../hooks/useCartStore';
 
-import { navLinks } from '@/data';
-import { Submenu } from '@/types';
+import { navLinks } from '../../data';
+import { Submenu } from '../../types';
 
 const Navbar = () => {
   const cart = useCartStore((state) => state.cart);
