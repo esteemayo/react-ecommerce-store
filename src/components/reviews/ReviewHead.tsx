@@ -1,12 +1,10 @@
-'use client';
-
 import styled from 'styled-components';
 
 import ReviewButton from './ReviewButton';
 import StarRating from '../StarRating';
 import ReviewFilter from './ReviewFilter';
 
-import { ReviewHeadProps } from '@/types';
+import { ReviewHeadProps } from '../../types';
 
 const ReviewHead = ({
   sort,

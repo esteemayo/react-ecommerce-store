@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 const ReviewLink = () => {
   return (
-    <StyledLink href='/products' passHref>
+    <StyledLink to='/products'>
       <Button>Shop now</Button>
     </StyledLink>
   );

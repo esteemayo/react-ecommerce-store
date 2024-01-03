@@ -1,12 +1,10 @@
-'use client';
-
 import styled from 'styled-components';
 
 import RatingInfo from './RatingInfo';
 import ReviewInfo from './ReviewInfo';
 import ReviewLink from './ReviewLink';
 
-import { ReviewContentProps } from '@/types';
+import { ReviewContentProps } from '../../types';
 
 const ReviewContent = ({ rating, review, reviewer }: ReviewContentProps) => {
   return (

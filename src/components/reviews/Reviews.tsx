@@ -1,13 +1,11 @@
-'use client';
-
 import styled from 'styled-components';
 import { useCallback, useState } from 'react';
 
 import ReviewHead from './ReviewHead';
 import ReviewCards from './ReviewCards';
 
-import { ReviewsProps } from '@/types';
-import useReviewModal from '@/hooks/useReviewModal';
+import { ReviewsProps } from '../../types';
+import useReviewModal from '../../hooks/useReviewModal';
 
 import ReviewModal from '../modals/ReviewModal';
 

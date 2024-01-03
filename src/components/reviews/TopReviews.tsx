@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -8,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Header from '../Header';
 import ReviewItem from './ReviewItem';
 
-import { topReviews } from '@/data';
+import { topReviews } from '../../data';
 import { StyledWrapper } from '../StyledWrapper';
 
 interface IBtn {

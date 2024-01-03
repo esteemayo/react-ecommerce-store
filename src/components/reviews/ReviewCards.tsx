@@ -1,11 +1,9 @@
-'use client';
-
 import styled from 'styled-components';
 
 import ReviewCard from './ReviewCard';
 import EmptyReview from './EmptyReview';
 
-import { ReviewCardsProps } from '@/types';
+import { ReviewCardsProps } from '../../types';
 
 const ReviewCards = ({ rating, reviews, onOpen }: ReviewCardsProps) => {
   if (reviews.length === 0) {

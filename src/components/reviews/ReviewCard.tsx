@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 
 import Avatar from '../images/Avatar';
@@ -9,7 +7,7 @@ import ShareButton from './ShareButton';
 import DateTime from '../DateTime';
 import StarRating from '../StarRating';
 
-import { DateOptions, ReviewCardProps } from '@/types';
+import { DateOptions, ReviewCardProps } from '../../types';
 
 const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
   const options: DateOptions = {

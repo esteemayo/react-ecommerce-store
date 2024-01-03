@@ -1,9 +1,7 @@
-'use client';
-
 import styled from 'styled-components';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
-import { ReviewFilterProps } from '@/types';
+import { ReviewFilterProps } from '../../types';
 
 interface IWrapper {
   sort: string;

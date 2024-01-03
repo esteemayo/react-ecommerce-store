@@ -1,12 +1,10 @@
-'use client';
-
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import Link from 'next/link';
 
 import Form from '../form/Form';
 import StarRating from '../StarRating';
 
-import { ReviewFormProps } from '@/types';
+import { ReviewFormProps } from '../../types';
 
 const ReviewForm = ({
   rating,
@@ -39,10 +37,7 @@ const ReviewForm = ({
       <Agreement>
         <Input id='terms' checked={terms} onChange={onChangeTerms} />
         <Label htmlFor='terms'>
-          I accept the{' '}
-          <StyledLink href='#' passHref>
-            terms and conditions
-          </StyledLink>
+          I accept the <StyledLink to='#'>terms and conditions</StyledLink>
         </Label>
       </Agreement>
       <Information>

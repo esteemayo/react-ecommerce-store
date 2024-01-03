@@ -1,12 +1,10 @@
-'use client';
-
-import styled from 'styled-components';
 import { useMemo } from 'react';
+import styled from 'styled-components';
 
 import ReviewImage from './ReviewImage';
 import ReviewContent from './ReviewContent';
 
-import { ReviewItemProps } from '@/types';
+import { ReviewItemProps } from '../../types';
 
 const ReviewItem = ({ user, rating, review }: ReviewItemProps) => {
   const reviewer = useMemo(() => {
