@@ -2,15 +2,15 @@
 
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
-import { CartQuantityProps } from '@/types';
+import { CartQuantityProps } from '../../types';
 
 const CartQuantity = ({ amount }: CartQuantityProps) => {
   return (
     <Container>
-      <Link href='/cart' passHref>
+      <Link to='/cart'>
         <FontAwesomeIcon icon={faBagShopping} />
         <CartTotal>{amount}</CartTotal>
       </Link>
