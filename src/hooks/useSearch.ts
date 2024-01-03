@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 
-import { getFromStorage, searchKey, setToStorage } from '@/utils';
+import { getFromStorage, searchKey, setToStorage } from '../utils';
 
 interface IHistories {
   id: number;

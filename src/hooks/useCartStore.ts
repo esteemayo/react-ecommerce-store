@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { produce } from 'immer';
 
-import { CartStore } from '@/types';
+import { CartStore } from '../types';
 
 export const useCartStore = create<CartStore>()(
   persist(

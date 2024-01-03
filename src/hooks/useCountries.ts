@@ -9,4 +9,4 @@ export const useCountries = () => {
   const getAll = () => formatCountries;
 
   return { getAll };
-}
+};
