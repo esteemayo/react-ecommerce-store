@@ -7,6 +7,7 @@ import Forgot from './pages/Forgot';
 import SingleProduct from './pages/product/Product';
 import Products from './pages/Products';
 import ResetPassword from './pages/ResetPassword';
+import ProductCategory from './pages/ProductCategory';
 
 import SharedLayout from './components/SharedLayout';
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: 'products',
         element: <Products />,
+      },
+      {
+        path: 'products/category/:slug',
+        element: <ProductCategory />,
       },
       {
         path: '/products/:id',
