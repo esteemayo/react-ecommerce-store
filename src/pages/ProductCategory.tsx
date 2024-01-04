@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useQuery } from '@tanstack/react-query';
 import { useLocation } from 'react-router-dom';
 
 import ProductList from '../components/products/ProductList';
@@ -24,6 +25,14 @@ const ProductCategory = () => {
   const [filters, setFilters] = useState({});
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
 
+  const { data } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const { data } = await await getProductCategory(category);
+      return data.products;
+    },
+  });
+
   const handleFilter = useCallback(
     ({
       target: input,
@@ -35,15 +44,8 @@ const ProductCategory = () => {
   );
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await getProductCategory(category);
-        setProducts(data.products);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, [category]);
+    setProducts(data);
+  }, [data]);
 
   useEffect(() => {
     category &&
@@ -59,8 +61,7 @@ const ProductCategory = () => {
   useEffect(() => {
     if (sort === 'newest') {
       setSortedProducts((prev) =>
-        // @ts-ignore
-        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+        [...prev].sort((a, b) => +a.createdAt - +b.createdAt)
       );
     }
 
