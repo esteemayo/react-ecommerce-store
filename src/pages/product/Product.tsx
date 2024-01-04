@@ -11,7 +11,6 @@ import EmptyState from '../../components/EmptyState';
 import Recommendation from '../../components/Recommendation';
 import Reviews from '../../components/reviews/Reviews';
 
-import { ProductType } from '../../types';
 import { getProduct, getProductByTags } from '../../services/productService';
 
 interface IContainer {
@@ -24,18 +23,17 @@ const SingleProduct = () => {
   const cart = useCartStore((state) => state.cart);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
-  const { data } = useQuery({
+  const [reviews, setReviews] = useState([]);
+  const [sort, setSort] = useState(null);
+  const [recommendations, setRecommendation] = useState([]);
+
+  const { data: product } = useQuery({
     queryKey: ['product'],
     queryFn: async () => {
       const res = await getProduct(productId);
       return res.data;
     },
   });
-
-  const [product, setProduct] = useState<ProductType>(data);
-  const [sort, setSort] = useState(null);
-  const [reviews, setReviews] = useState([]);
-  const [recommendations, setRecommendation] = useState([]);
 
   const inCart = useMemo(() => {
     const cartItem = cart.find((item) => item.id === productId);
@@ -66,17 +64,6 @@ const SingleProduct = () => {
       setReviews((prev) => [...prev].sort((a, b) => a.rating - b.rating));
     }
   }, [sort]);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       const { data } = await getProduct(productId);
-  //       setProduct(data);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   })();
-  // }, [productId]);
 
   useEffect(() => {
     (async () => {
