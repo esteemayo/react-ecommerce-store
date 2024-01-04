@@ -707,11 +707,11 @@ export interface EmptyReviewProps {
 }
 
 export interface ReviewFilterProps {
-  sort: string;
-  value: string;
+  sort: string | null;
+  value?: string;
   isOpen: boolean;
   onClick(): void;
-  onSort(sort: string | null): void;
+  onSort: React.Dispatch<SetStateAction<null>>;
 }
 
 export interface DeleteModalProps {

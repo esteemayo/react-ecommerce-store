@@ -20,13 +20,13 @@ const ReviewHead = ({
     <Container>
       <Ratings>
         <TotalRatings>
-          {reviews.length === 0 ? 0 : reviews.length.toFixed(1)}
+          {reviews?.length === 0 ? 0 : reviews?.length.toFixed(1)}
         </TotalRatings>
         <StarRating readOnly value={rating} name='read-only' />
         <TotalReviews>{reviews.length} reviews</TotalReviews>
       </Ratings>
       <Wrapper>
-        {reviews.length > 0 && (
+        {reviews?.length > 0 && (
           <ReviewButtonWrapper>
             <ReviewButton actionLabel='Leave a review' onAction={onOpen} />
           </ReviewButtonWrapper>
