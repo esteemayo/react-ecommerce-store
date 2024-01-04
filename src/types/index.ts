@@ -649,7 +649,7 @@ export interface ReviewsProps {
   rating: number;
   sortLabel?: 'newest' | 'highest rating' | 'lowest rating';
   sort: string | null;
-  onSort: React.Dispatch<SetStateAction<null>>;
+  onSort: React.Dispatch<SetStateAction<string>>;
 }
 
 export interface ReviewHeadProps {
@@ -659,7 +659,7 @@ export interface ReviewHeadProps {
   reviews: ReviewItem;
   isOpen: boolean;
   onOpen(): void;
-  onSort: React.Dispatch<SetStateAction<null>>;
+  onSort: React.Dispatch<SetStateAction<string>>;
   onToggle(): void;
 }
 
@@ -711,7 +711,7 @@ export interface ReviewFilterProps {
   value?: string;
   isOpen: boolean;
   onClick(): void;
-  onSort: React.Dispatch<SetStateAction<null>>;
+  onSort: React.Dispatch<SetStateAction<string>>;
 }
 
 export interface DeleteModalProps {

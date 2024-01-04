@@ -25,7 +25,7 @@ const SingleProduct = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   const [reviews, setReviews] = useState<ReviewItem>([]);
-  const [sort, setSort] = useState(null);
+  const [sort, setSort] = useState('');
   const [recommendations, setRecommendation] = useState([]);
 
   const { data: product } = useQuery({
