@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { useEffect, useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-import { useSubmenu } from '../../hooks/useSubmenu';
-import { useCartStore } from '../../hooks/useCartStore';
-
 import Product from '../../components/products/Product';
 import EmptyState from '../../components/EmptyState';
 import Recommendation from '../../components/Recommendation';
 import Reviews from '../../components/reviews/Reviews';
+
+import { useSubmenu } from '../../hooks/useSubmenu';
+import { useCartStore } from '../../hooks/useCartStore';
 
 import { ReviewItem } from '../../types';
 import { getProduct, getProductByTags } from '../../services/productService';
