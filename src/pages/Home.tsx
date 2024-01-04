@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <Container onMouseOver={closeSubmenu}>
       <CarouselSlider />
-      {/* <Categories /> */}
+      <Categories />
       <FeaturedProducts />
       <TopReviews />
     </Container>

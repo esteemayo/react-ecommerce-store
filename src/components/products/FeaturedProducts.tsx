@@ -32,7 +32,7 @@ const FeaturedProducts = () => {
       <StyledWrapper>
         <Header title='Featured products' />
         <ProductsContainer>
-          {data.products.map((product: Product) => {
+          {data?.products?.map((product: Product) => {
             return (
               <ProductCard
                 key={product.id}

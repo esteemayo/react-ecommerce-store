@@ -1,16 +1,20 @@
-'use client';
-
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 import { CommonImage } from '../CommonImage';
 import { getCategoryCount } from '../../services/productService';
 
 const Category = () => {
-  const [data, setData] = useState([]);
+  const { data } = useQuery({
+    queryKey: ['categories'],
+    queryFn: async () => {
+      const res = await getCategoryCount();
+      return res.data;
+    },
+  });
 
   const images = [
     '/img/category-1.jpg',
@@ -19,18 +23,6 @@ const Category = () => {
     '/img/category-4.jpg',
     '/img/category-5.jpg',
   ];
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await getCategoryCount();
-        setData(data);
-        console.log(data);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, []);
 
   return (
     <Container>
@@ -43,7 +35,7 @@ const Category = () => {
                 <MainHeading>{data[index]?.category}</MainHeading>
                 <SubHeading>{data[index]?.count}</SubHeading>
               </HeadingWrapper>
-              <StyledLink href={`/products/category/${data[index]?.category}`}>
+              <StyledLink to={`/products/category/${data[index]?.category}`}>
                 <Button>
                   Shop now &nbsp;
                   <FontAwesomeIcon icon={faArrowRight} />
