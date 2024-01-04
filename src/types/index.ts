@@ -654,12 +654,12 @@ export interface ReviewsProps {
 
 export interface ReviewHeadProps {
   sort: string | null;
-  sortLabel: string;
+  sortLabel?: string;
   rating: number;
   reviews: ReviewItem;
   isOpen: boolean;
   onOpen(): void;
-  onSort(sort: string | null): void;
+  onSort: React.Dispatch<SetStateAction<null>>;
   onToggle(): void;
 }
 

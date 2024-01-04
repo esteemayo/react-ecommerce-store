@@ -35,12 +35,12 @@ const Reviews = ({
     const reviewsEl = document.querySelector('.reviews');
     const filterEl = document.querySelector('.filter-container');
 
-    reviewsEl.addEventListener('click', handleClose);
-    filterEl.addEventListener('click', handleOpen);
+    reviewsEl?.addEventListener('click', handleClose);
+    filterEl?.addEventListener('click', handleOpen);
 
     return () => {
-      reviewsEl.removeEventListener('click', handleClose);
-      filterEl.removeEventListener('click', handleOpen);
+      reviewsEl?.removeEventListener('click', handleClose);
+      filterEl?.removeEventListener('click', handleOpen);
     };
   }, [handleClose, handleOpen]);
 
