@@ -687,13 +687,13 @@ export interface ReviewModalProps {
 }
 
 export interface ReviewFormProps {
-  rating: number;
+  rating: number | null;
   review: string;
   terms: boolean;
   onChangeRating(
-    e: React.ChangeEvent<HTMLInputElement>,
-    newValue: number
-  ): void;
+    event: React.SyntheticEvent<Element, Event>,
+    value: number | null
+  ): void | undefined;
   onChangeReview(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   onChangeTerms(e: React.ChangeEvent<HTMLInputElement>): void;
   onSubmit(e: React.FormEvent<HTMLFormElement>): void;

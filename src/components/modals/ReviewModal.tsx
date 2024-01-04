@@ -19,14 +19,17 @@ interface IWrapper {
 const ReviewModal = ({ isOpen, onClose }: ReviewModalProps) => {
   const mode = useDarkMode((state) => state.mode);
 
-  const [rating, setRating] = useState(null);
+  const [rating, setRating] = useState<number | null>(null);
   const [review, setReview] = useState('');
   const [terms, setTerms] = useState(false);
   const [showModal, setShowModal] = useState(isOpen);
 
   const handleChangeRating = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>, newValue: number) => {
-      setRating(newValue);
+    (
+      e: React.SyntheticEvent<Element, Event>,
+      value: number | null
+    ): void | undefined => {
+      setRating(value);
     },
     []
   );
