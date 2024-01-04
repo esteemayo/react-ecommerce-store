@@ -6,7 +6,7 @@ import EmptyReview from './EmptyReview';
 import { ReviewCardsProps } from '../../types';
 
 const ReviewCards = ({ rating, reviews, onOpen }: ReviewCardsProps) => {
-  if (reviews.length === 0) {
+  if (reviews?.length === 0) {
     return (
       <Container>
         <EmptyReview rating={rating} onClick={onOpen} />
@@ -17,7 +17,7 @@ const ReviewCards = ({ rating, reviews, onOpen }: ReviewCardsProps) => {
   return (
     <Container>
       <Wrapper>
-        {reviews.slice(0, 3).map((item) => {
+        {reviews?.slice(0, 3).map((item) => {
           return <ReviewCard key={item.id} {...item} />;
         })}
       </Wrapper>
