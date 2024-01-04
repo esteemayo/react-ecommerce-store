@@ -15,13 +15,7 @@ const ProductValue = ({ items, mode }: ProductValueProps) => {
           const { id, desc, img } = item;
           return (
             <ImageWrapper key={id}>
-              <StyledImage
-                src={img}
-                width={24}
-                height={24}
-                alt=''
-                mode={mode}
-              />
+              <Image src={img} width={24} height={24} alt='' mode={mode} />
               <span>{desc}</span>
             </ImageWrapper>
           );
@@ -57,7 +51,7 @@ const ImageWrapper = styled.div`
   gap: 0.8rem;
 `;
 
-const StyledImage = styled(CommonImage)<IMode>`
+const Image = styled(CommonImage)<IMode>`
   width: 2.4rem;
   height: auto;
   background-color: ${({ mode }) => mode === 'true' && '#1b1a1a'};
