@@ -1,0 +1,148 @@
+import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import { useEffect, useMemo, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+
+import { useSubmenu } from '../../hooks/useSubmenu';
+import { useCartStore } from '../../hooks/useCartStore';
+
+import Product from '../../components/products/Product';
+import EmptyState from '../../components/EmptyState';
+import Recommendation from '../../components/Recommendation';
+import Reviews from '../../components/reviews/Reviews';
+
+import { ProductType } from '../../types';
+import { getProduct, getProductByTags } from '../../services/productService';
+
+interface IContainer {
+  type?: string;
+}
+
+const SingleProduct = () => {
+  const { id: productId } = useParams();
+
+  const cart = useCartStore((state) => state.cart);
+  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+
+  const { data } = useQuery({
+    queryKey: ['product'],
+    queryFn: async () => {
+      const res = await getProduct(productId);
+      return res.data;
+    },
+  });
+
+  const [product, setProduct] = useState<ProductType>(data);
+  const [sort, setSort] = useState(null);
+  const [reviews, setReviews] = useState([]);
+  const [recommendations, setRecommendation] = useState([]);
+
+  const inCart = useMemo(() => {
+    const cartItem = cart.find((item) => item.id === productId);
+    return !!cartItem;
+  }, [cart, productId]);
+
+  const actionLabel = useMemo(() => {
+    return `${inCart ? 'Added' : 'Add'} to cart`;
+  }, [inCart]);
+
+  const getSort = useMemo(() => {
+    if (sort === 'newest') return 'newest';
+    if (sort === 'highest') return 'highest rating';
+    if (sort === 'lowest') return 'lowest rating';
+  }, [sort]);
+
+  useEffect(() => {
+    if (sort === 'newest') {
+      // @ts-ignore
+      setReviews((prev) => [...prev].sort((a, b) => a.createdAt - b.createdAt));
+    }
+
+    if (sort === 'highest') {
+      setReviews((prev) => [...prev].sort((a, b) => b.rating - a.rating));
+    }
+
+    if (sort === 'lowest') {
+      setReviews((prev) => [...prev].sort((a, b) => a.rating - b.rating));
+    }
+  }, [sort]);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const { data } = await getProduct(productId);
+  //       setProduct(data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   })();
+  // }, [productId]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getProductByTags(product?.tags);
+        setRecommendation(data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [product]);
+
+  useEffect(() => {
+    setReviews(product?.reviews);
+  }, [product]);
+
+  if (!product) {
+    return (
+      <Container type='error' onMouseOver={closeSubmenu}>
+        <Wrapper>
+          <EmptyState />
+        </Wrapper>
+      </Container>
+    );
+  }
+
+  return (
+    <Container onMouseOver={closeSubmenu}>
+      <Wrapper>
+        <Product product={product} inCart={inCart} actionLabel={actionLabel} />
+        <Line />
+        <Recommendation data={recommendations} productId={productId} />
+        <Reviews
+          reviews={reviews}
+          rating={product.ratingsAverage}
+          sortLabel={getSort}
+          sort={sort}
+          onSort={setSort}
+        />
+      </Wrapper>
+    </Container>
+  );
+};
+
+const Container = styled.main<IContainer>`
+  width: 100vw;
+  min-height: 100vh;
+  background-color: ${({ theme }) => theme.bg};
+  padding-top: ${({ type }) => type !== 'error' && '8rem'};
+  padding-bottom: ${({ type }) => type !== 'error' && '4rem'};
+
+  @media only screen and (max-width: 37.5em) {
+    padding-top: ${({ type }) => type !== 'error' && '4rem'};
+  }
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
+`;
+
+const Line = styled.hr`
+  width: 93%;
+  height: 1px;
+  border: none;
+  margin: 0 auto;
+  background-color: ${({ theme }) => theme.cartModalBorder};
+`;
+
+export default SingleProduct;

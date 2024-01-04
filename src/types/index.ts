@@ -198,7 +198,7 @@ export type StoreProduct = {
   discount: number;
 }[];
 
-export interface Product {
+export interface ProductType {
   id: string;
   name: string;
   desc: string;
@@ -214,6 +214,7 @@ export interface Product {
   tags: string[];
   ratingsQuantity: number;
   ratingsAverage: number;
+  reviews: object[];
   createdAt: string;
   updatedAt: string;
   slug: string;
@@ -633,7 +634,7 @@ export interface ProductInfoProps {
 
 export interface RecommendationProps {
   data: Recommendation;
-  productId: string;
+  productId?: string;
 }
 
 export interface RecommendationItemProps {
@@ -646,9 +647,9 @@ export interface RecommendationItemProps {
 export interface ReviewsProps {
   reviews: ReviewItem;
   rating: number;
-  sortLabel: 'newest' | 'highest rating' | 'lowest rating';
+  sortLabel?: 'newest' | 'highest rating' | 'lowest rating';
   sort: string | null;
-  onSort(sort: string | null): void;
+  onSort: React.Dispatch<SetStateAction<null>>;
 }
 
 export interface ReviewHeadProps {
