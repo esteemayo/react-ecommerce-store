@@ -365,6 +365,9 @@ export interface SubmenuStore {
     page: string;
     links: Link;
   };
+}
+
+export interface SubmenuActionType {
   openSubmenu(value: Submenu): void;
   closeSubmenu(): void;
 }
