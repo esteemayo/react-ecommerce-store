@@ -11,6 +11,7 @@ import EmptyState from '../../components/EmptyState';
 import Recommendation from '../../components/Recommendation';
 import Reviews from '../../components/reviews/Reviews';
 
+import { ReviewItem } from '../../types';
 import { getProduct, getProductByTags } from '../../services/productService';
 
 interface IContainer {
@@ -23,7 +24,7 @@ const SingleProduct = () => {
   const cart = useCartStore((state) => state.cart);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState<ReviewItem>([]);
   const [sort, setSort] = useState(null);
   const [recommendations, setRecommendation] = useState([]);
 
@@ -52,8 +53,9 @@ const SingleProduct = () => {
 
   useEffect(() => {
     if (sort === 'newest') {
-      // @ts-ignore
-      setReviews((prev) => [...prev].sort((a, b) => a.createdAt - b.createdAt));
+      setReviews((prev) =>
+        [...prev].sort((a, b) => +a.createdAt - +b.createdAt)
+      );
     }
 
     if (sort === 'highest') {
