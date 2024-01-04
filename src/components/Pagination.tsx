@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { PaginationProps } from '../types';
 
@@ -11,20 +12,28 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
         <>
           <Button type='button'>&nbsp;</Button>
           <CurrentPage>9</CurrentPage>
-          <Button type='button'>Next</Button>
+          <StyledLink to={`/products?page=${page + 1}`}>
+            <Button type='button'>Next</Button>
+          </StyledLink>
         </>
       );
     } else if (page !== numberOfPages) {
       return (
         <>
-          <Button type='button'>Prev</Button>
+          <StyledLink to={`/products?page=${page - 1}`}>
+            <Button type='button'>Prev</Button>
+          </StyledLink>
           <CurrentPage>9</CurrentPage>
-          <Button type='button'>Next</Button>
+          <StyledLink to={`/products?page=${page + 1}`}>
+            <Button type='button'>Next</Button>
+          </StyledLink>
         </>
       );
     } else {
       <>
-        <Button type='button'>Prev</Button>
+        <StyledLink to={`/products?page=${page - 1}`}>
+          <Button type='button'>Prev</Button>
+        </StyledLink>
         <CurrentPage>9</CurrentPage>
         <Button type='button'>&nbsp;</Button>
       </>;
@@ -91,13 +100,18 @@ const CurrentPage = styled.span`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.text};
+`;
+
 const Button = styled.button`
   border: none;
   display: inline-block;
   text-transform: capitalize;
   font-size: 1.5rem;
   background-color: transparent;
-  color: ${({ theme }) => theme.text};
+  color: inherit;
   outline-color: #ccc;
   outline-offset: 3px;
   cursor: pointer;
