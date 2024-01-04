@@ -443,7 +443,7 @@ export interface ProductCardProps {
 }
 
 interface CardProduct {
-  id: number;
+  id: string;
   name: string;
   desc: string;
   price: number;
