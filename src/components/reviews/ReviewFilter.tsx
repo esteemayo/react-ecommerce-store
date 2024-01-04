@@ -4,7 +4,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { ReviewFilterProps } from '../../types';
 
 interface IWrapper {
-  sort?: string;
+  sort: string | null;
 }
 
 interface IList {
@@ -138,7 +138,7 @@ const FilterList = styled.li`
   }
 `;
 
-const setWidth = (sort?: string) => {
+const setWidth = (sort: string | null) => {
   if (sort === 'highest' || sort === 'lowest') return '20rem';
   return '13rem';
 };
