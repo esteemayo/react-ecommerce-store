@@ -6,11 +6,11 @@ import ProductCard from '../card/ProductCard';
 import Header from '../Header';
 import CartModal from '../modals/CartModal';
 
-import { StoreProduct, WishlistValues } from '../../types';
-import { useCartModal } from '../../hooks/useCartModal';
-import { getFeaturedProducts } from '../../services/productService';
-
+import { Product, WishlistValues } from '../../types';
 import { StyledWrapper } from '../StyledWrapper';
+import { useCartModal } from '../../hooks/useCartModal';
+
+import { getFeaturedProducts } from '../../services/productService';
 
 const FeaturedProducts = () => {
   const isOpen = useCartModal((state) => state.isOpen);
@@ -35,7 +35,7 @@ const FeaturedProducts = () => {
       <StyledWrapper>
         <Header title='Featured products' />
         <ProductsContainer>
-          {data.products.map((product) => {
+          {data.products.map((product: Product) => {
             return (
               <ProductCard
                 key={product.id}
