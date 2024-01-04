@@ -98,13 +98,13 @@ const SingleProduct = () => {
         <Product product={product} inCart={inCart} actionLabel={actionLabel} />
         <Line />
         <Recommendation data={recommendations} productId={productId} />
-        {/* <Reviews
+        <Reviews
           reviews={reviews}
           rating={product.ratingsAverage}
           sortLabel={getSort}
           sort={sort}
           onSort={setSort}
-        /> */}
+        />
       </Wrapper>
     </Container>
   );
