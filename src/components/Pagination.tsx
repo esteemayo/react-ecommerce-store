@@ -9,6 +9,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
     if (page === 1) {
       return (
         <>
+          <Button type='button'>&nbsp;</Button>
           <CurrentPage>9</CurrentPage>
           <Button type='button'>Next</Button>
         </>
@@ -25,6 +26,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
       <>
         <Button type='button'>Prev</Button>
         <CurrentPage>9</CurrentPage>
+        <Button type='button'>&nbsp;</Button>
       </>;
     }
   };

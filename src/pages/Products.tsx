@@ -12,7 +12,7 @@ const Products = () => {
   const [category, setCategory] = useState('all');
   const [size, setSize] = useState('all');
   const [color, setColor] = useState('all');
-  const [minPrice, setMinPrice] = useState(0);
+  const [minPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
   const [price, setPrice] = useState(0);
   const [products, setProducts] = useState<ProductValues[]>([]);
