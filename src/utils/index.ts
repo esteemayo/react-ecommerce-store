@@ -6,7 +6,7 @@ export const searchKey = 'histories';
 
 export const excerpts = (str: string, count: number) => {
   if (str.length > count) {
-    str = str.substr(0, count) + ' ...';
+    str = str.substring(0, count) + ' ...';
   }
   return str;
 };
