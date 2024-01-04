@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { useCart } from '../../hooks/useCart';
-// import BreadCrumbs from '';
+import BreadCrumbs from '../../pages/product/BreadCrumbs';
 
 import ColorSelect from '../inputs/ColorSelect';
 import Counter from '../inputs/Counter';
@@ -43,7 +43,7 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
           <ProductImages images={product.images} />
         </Left>
         <Right>
-          {/* <BreadCrumbs category={product.category} /> */}
+          <BreadCrumbs category={product.category} />
           <ProductWrapper>
             <ProductHead
               name={product.name}
