@@ -17,8 +17,7 @@ const FeaturedProducts = () => {
   const onClose = useCartModal((state) => state.onClose);
   const onOpen = useCartModal((state) => state.onOpen);
 
-  const [isSelectedProduct, setIsSelectedProduct] =
-    useState<WishlistValues>(null);
+  const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
 
   const { data } = useQuery({
     queryKey: ['products'],
@@ -27,8 +26,6 @@ const FeaturedProducts = () => {
       return res.data;
     },
   });
-
-  console.log(data);
 
   return (
     <Container>

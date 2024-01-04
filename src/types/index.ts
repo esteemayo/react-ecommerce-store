@@ -510,7 +510,7 @@ export interface WishlistButtonProps {
 }
 
 export interface CartModalProps {
-  product: ProductValues;
+  product?: ProductValues;
   isOpen: boolean;
   onClose(): void;
   onSelect(value: WishlistValues): void;
