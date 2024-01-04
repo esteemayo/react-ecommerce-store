@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Register from './pages/register/Register';
 import Forgot from './pages/Forgot';
 import SingleProduct from './pages/product/Product';
+import Products from './pages/Products';
 import ResetPassword from './pages/ResetPassword';
 
 import SharedLayout from './components/SharedLayout';
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <Home />,
+      },
+      {
+        path: 'products',
+        element: <Products />,
       },
       {
         path: '/products/:id',
