@@ -4,7 +4,8 @@ const apiEndpoint = '/products';
 
 const productUrl = (productId?: string) => `${apiEndpoint}/${productId}`;
 
-export const getProducts = () => http.get(apiEndpoint);
+export const getProducts = (page?: number) =>
+  http.get(`${apiEndpoint}?page=${page}`);
 
 export const getCategoryCount = () =>
   http.get(`${apiEndpoint}/count-by-category`);

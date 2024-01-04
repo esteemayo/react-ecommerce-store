@@ -25,7 +25,7 @@ const Products = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await getProducts();
+        const { data } = await getProducts(page);
         console.log(data);
         const maxPrice = Math.max(
           ...data.products.map((item: ProductValues) => item.price)
@@ -43,7 +43,7 @@ const Products = () => {
         console.log(err);
       }
     })();
-  }, []);
+  }, [page]);
 
   useEffect(() => {
     let tempProducts = [...products];
