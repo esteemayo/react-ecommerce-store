@@ -349,7 +349,7 @@ export type OpenSubmenu = {
     center?: number;
     bottom?: number;
   };
-  page: {
+  page?: {
     page: string;
     links: Link;
   };
@@ -361,7 +361,7 @@ export interface SubmenuStore {
     center?: number;
     bottom?: number;
   };
-  page: {
+  page?: {
     page: string;
     links: Link;
   };
