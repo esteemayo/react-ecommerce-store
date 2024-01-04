@@ -21,8 +21,8 @@ const ReviewModal = ({ isOpen, onClose }: ReviewModalProps) => {
 
   const [rating, setRating] = useState<number | null>(null);
   const [review, setReview] = useState('');
-  const [terms, setTerms] = useState(false);
   const [showModal, setShowModal] = useState(isOpen);
+  const [terms, setTerms] = useState(false);
 
   const handleChangeRating = useCallback(
     (
