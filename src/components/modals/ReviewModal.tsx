@@ -26,7 +26,7 @@ const ReviewModal = ({ isOpen, onClose }: ReviewModalProps) => {
 
   const handleChangeRating = useCallback(
     (
-      e: React.SyntheticEvent<Element, Event>,
+      _e: React.SyntheticEvent<Element, Event>,
       value: number | null
     ): void | undefined => {
       setRating(value);
