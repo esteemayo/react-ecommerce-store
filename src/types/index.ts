@@ -198,6 +198,28 @@ export type StoreProduct = {
   discount: number;
 }[];
 
+export interface Product {
+  id: string;
+  name: string;
+  desc: string;
+  price: number;
+  priceDiscount: number;
+  numberInStock: number;
+  inStock: boolean;
+  images: string[];
+  featured: boolean;
+  color: string[];
+  size: string[];
+  category: string;
+  tags: string[];
+  ratingsQuantity: number;
+  ratingsAverage: number;
+  createdAt: string;
+  updatedAt: string;
+  slug: string;
+  discount: number;
+}
+
 export type TopReview = {
   id: number;
   rating: number;
