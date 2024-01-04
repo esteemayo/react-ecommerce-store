@@ -1,5 +1,3 @@
-'use client';
-
 import styled from 'styled-components';
 
 import Header from '../Header';
@@ -14,7 +12,7 @@ const Categories = () => {
       </Wrapper>
     </Container>
   );
-}
+};
 
 const Container = styled.section`
   width: 100vw;
