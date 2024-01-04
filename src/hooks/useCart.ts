@@ -7,16 +7,16 @@ export const useCart = (product: ProductValues) => {
   const addProduct = useCartStore((state) => state.addProduct);
   const removeWishlist = useCartStore((state) => state.removeWishlist);
 
-  const [color, setColor] = useState<string | null>(null);
+  const [color, setColor] = useState<string | string[]>('');
   const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState<string | null>(null);
-  const [isSelected, setIsSelected] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [size, setSize] = useState<string | string[]>('');
+  const [isSelected, setIsSelected] = useState<string | null>(null);
   const [alert, setAlert] = useState(false);
 
   const handleReset = useCallback(() => {
-    setSize(null);
-    setColor(null);
+    setSize('');
+    setColor('');
     setQuantity(1);
     setIsSelected(null);
     setSelectedSize(null);

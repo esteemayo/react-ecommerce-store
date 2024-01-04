@@ -17,7 +17,7 @@ const SizeSelect = ({
   secondaryAction,
 }: SizeSelectProps) => {
   const handleSelect = useCallback(
-    (size: string | number) => {
+    (size: string) => {
       onAction(size);
       secondaryAction(size);
     },
@@ -34,7 +34,7 @@ const SizeSelect = ({
               key={index}
               type='button'
               bcg={selected === item}
-              onClick={() => handleSelect(item as string | number)}
+              onClick={() => handleSelect(item as string)}
               modal={modal}
             >
               {item}

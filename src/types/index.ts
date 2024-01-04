@@ -589,7 +589,7 @@ export interface ColorSelectProps {
   modal?: boolean;
   selected?: string | null;
   onAction(value: string): void;
-  secondaryAction(selected: string): void;
+  secondaryAction: React.Dispatch<SetStateAction<string | null>>;
 }
 
 export interface SizeSelectProps {
@@ -598,7 +598,7 @@ export interface SizeSelectProps {
   modal?: boolean;
   selected?: string | null;
   onAction(value: string): void;
-  secondaryAction(selected: string): void;
+  secondaryAction: React.Dispatch<SetStateAction<string | null>>;
 }
 
 export interface CounterProps {
