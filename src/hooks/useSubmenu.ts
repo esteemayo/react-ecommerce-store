@@ -3,9 +3,9 @@ import { devtools } from 'zustand/middleware';
 import { produce } from 'immer';
 
 import { sublinks } from '../data';
-import { OpenSubmenu, SubmenuStore } from '../types';
+import { OpenSubmenu, SubmenuActionType, SubmenuStore } from '../types';
 
-export const useSubmenu = create<SubmenuStore>()(
+export const useSubmenu = create<SubmenuStore & SubmenuActionType>()(
   devtools((set) => ({
     isOpen: false,
     location: {},
