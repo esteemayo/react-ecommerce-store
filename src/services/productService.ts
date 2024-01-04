@@ -13,7 +13,7 @@ export const getCategoryCount = () =>
 export const getFeaturedProducts = () =>
   http.get(`${apiEndpoint}?featured=true`);
 
-export const getProductCategory = (category: string) =>
+export const getProductCategory = (category: string | undefined) =>
   http.get(`${apiEndpoint}?category=${category}`);
 
 export const getProduct = (productId?: string) =>
