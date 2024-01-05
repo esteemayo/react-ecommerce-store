@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { useEffect, useMemo, useState } from 'react';
+import styled from 'styled-components';
 import CloseIcon from '@mui/icons-material/Close';
 
 import { useCartStore } from '../../hooks/useCartStore';
