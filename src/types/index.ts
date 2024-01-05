@@ -1,12 +1,6 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { IconType } from 'react-icons/lib';
-import {
-  HTMLAttributes,
-  InputHTMLAttributes,
-  SelectHTMLAttributes,
-  SetStateAction,
-  TextareaHTMLAttributes,
-} from 'react';
+import { HTMLAttributes, SetStateAction } from 'react';
 
 export type Announcements = {
   id: number;
@@ -879,7 +873,8 @@ export interface CloseButtonProps {
   onOpen(id: string): void;
 }
 
-export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface FormInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   type?: string;
   label: string;
@@ -890,7 +885,7 @@ export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export interface TextAreaProps
-  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
   label: string;
   value: string | number | readonly string[];
