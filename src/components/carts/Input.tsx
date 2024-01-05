@@ -7,6 +7,7 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
   value: string | number | readonly string[];
+  placeholder?: string;
   type?: string;
   error?: string;
 }
