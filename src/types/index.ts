@@ -1,6 +1,6 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { IconType } from 'react-icons/lib';
-import { HTMLAttributes, SetStateAction } from 'react';
+import { HTMLAttributes } from 'react';
 
 export type Announcements = {
   id: number;
@@ -865,7 +865,7 @@ export interface WishlistInfoProps {
 export interface WislistPriceProps {
   price: number;
   wishlist: WishlistValues;
-  onAction(wishlist: SetStateAction<{}>): void;
+  onAction(wishlist: React.SetStateAction<object>): void;
 }
 
 export interface CloseButtonProps {
