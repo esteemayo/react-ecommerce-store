@@ -1,6 +1,6 @@
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { IconType } from 'react-icons/lib';
 import { HTMLAttributes, SetStateAction } from 'react';
+import { IconType } from 'react-icons/lib';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 export type Announcements = {
   id: number;
