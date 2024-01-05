@@ -15,7 +15,7 @@ export const getUnique = <T extends object[], U extends string>(
   items: T,
   value: U
 ) => {
-  const newItems = items.map((item) => item[value]).flat();
+  const newItems = items?.map((item) => item[value]).flat();
   return [...new Set(newItems)];
 };
 
