@@ -50,7 +50,7 @@ const ProductCategory = () => {
   useEffect(() => {
     category &&
       setSortedProducts(
-        products.filter((item) =>
+        products?.filter((item) =>
           Object.entries(filters).every(([key, value]) =>
             item[key].includes(value)
           )
