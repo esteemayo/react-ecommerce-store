@@ -1,8 +1,6 @@
-'use client';
-
 import { useEffect } from 'react';
 
-import { useCartStore } from '@/hooks/useCartStore';
+import { useCartStore } from '../hooks/useCartStore';
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const cart = useCartStore((state) => state.cart);
