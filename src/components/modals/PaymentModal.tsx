@@ -92,6 +92,10 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
     setShowModal(isOpen);
   }, [isOpen]);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
     <Overlay type={activeModal} mode={modeValue} onClick={handleClick}>
       <Wrapper>
