@@ -13,10 +13,9 @@ const ProductList = ({
   title = 'No results found!',
 }: ProductListProps) => {
   const { isOpen, onOpen, onClose } = useCartModal();
-  const [isSelectedProduct, setIsSelectedProduct] =
-    useState<WishlistValues>(null);
+  const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
 
-  if (products.length < 1) {
+  if (products?.length < 1) {
     return (
       <Container>
         <EmptyProduct src='/img/no-result.png' title={title} />
@@ -27,7 +26,7 @@ const ProductList = ({
   return (
     <Container>
       <ProductsContainer>
-        {products.map((product) => {
+        {products?.map((product) => {
           return (
             <ProductCard
               key={product.id}
