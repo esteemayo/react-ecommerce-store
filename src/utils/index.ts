@@ -11,16 +11,17 @@ export const excerpts = (str: string, count: number) => {
   return str;
 };
 
-export const getUnique = (items: any, value: string) => {
-  const newItems = items
-    .map((item: { [x: string]: any }) => item[value])
-    .flat();
+export const getUnique = <T extends object[], U extends string>(
+  items: T,
+  value: U
+) => {
+  const newItems = items.map((item) => item[value]).flat();
   return [...new Set(newItems)];
 };
 
 export const getFromStorage = (key: string) => {
   if (typeof window !== 'undefined') {
-    return JSON.parse(window.localStorage.getItem(key));
+    return JSON.parse(localStorage.getItem(key));
   }
 };
 
