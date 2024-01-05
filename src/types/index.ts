@@ -1,6 +1,6 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { IconType } from 'react-icons/lib';
-import { HTMLAttributes, SetStateAction } from 'react';
+import { HTMLAttributes, SetStateAction, TextareaHTMLAttributes } from 'react';
 
 export type Announcements = {
   id: number;
@@ -883,13 +883,14 @@ export interface FormInputProps extends HTMLAttributes<HTMLInputElement> {
   login?: boolean;
 }
 
-export interface TextAreaProps extends HTMLAttributes<HTMLTextAreaElement> {
+export interface TextAreaProps
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
   label: string;
   value: string | number | readonly string[];
   placeholder?: string;
   error?: string;
-  onChange(e: React.ChangeEvent<HTMLTextAreaElement> | any): void;
+  onChange(e: React.ChangeEvent<HTMLTextAreaElement> | undefined): void;
 }
 
 export interface SelectProps extends HTMLAttributes<HTMLSelectElement> {
