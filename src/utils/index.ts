@@ -21,11 +21,11 @@ export const getUnique = <T extends object[], U extends string>(
 
 export const getFromStorage = (key: string) => {
   if (typeof window !== 'undefined') {
-    return JSON.parse(localStorage.getItem(key));
+    return JSON.parse(window.localStorage.getItem(key));
   }
 };
 
-export const setToStorage = (key: string, value: any) => {
+export const setToStorage = <T>(key: string, value: T) => {
   if (typeof window !== 'undefined') {
     return window.localStorage.setItem(key, JSON.stringify(value));
   }
