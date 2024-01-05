@@ -1,6 +1,6 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { IconType } from 'react-icons/lib';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, SetStateAction } from 'react';
 
 export type Announcements = {
   id: number;
@@ -793,7 +793,7 @@ export interface ProductListProps {
 }
 
 export interface FilterSelect
-  extends HTMLAttributes<HTMLSelectElement | HTMLInputElement> {
+  extends React.HTMLAttributes<HTMLSelectElement | HTMLInputElement> {
   name: string;
   value?: string | number | readonly string[];
   page?: string;
@@ -801,14 +801,16 @@ export interface FilterSelect
   options: React.ReactNode[];
 }
 
-export interface SelectPriceProps extends HTMLAttributes<HTMLSelectElement> {
+export interface SelectPriceProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   name: string;
   value: string | number | readonly string[];
   label: string;
   options: PriceOption;
 }
 
-export interface RangeInputProps extends HTMLAttributes<HTMLInputElement> {
+export interface RangeInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
   value: string | number | readonly string[];
