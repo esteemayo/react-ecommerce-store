@@ -3,6 +3,7 @@ import { IconType } from 'react-icons/lib';
 import {
   HTMLAttributes,
   InputHTMLAttributes,
+  SelectHTMLAttributes,
   SetStateAction,
   TextareaHTMLAttributes,
 } from 'react';
@@ -898,7 +899,8 @@ export interface TextAreaProps
   onChange(e: React.ChangeEvent<HTMLTextAreaElement> | undefined): void;
 }
 
-export interface SelectProps extends HTMLAttributes<HTMLSelectElement> {
+export interface SelectProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   data: SelectInput;
   name: string;
   label: string;
