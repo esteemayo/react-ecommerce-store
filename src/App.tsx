@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
 import WishLists from './pages/Wishlists';
+import Orders from './pages/Orders';
 import Success from './pages/Success';
 
 import Register from './pages/register/Register';
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/success',
         element: <Success />,
+      },
+      {
+        path: '/orders',
+        element: <Orders />,
       },
       {
         path: 'login',
