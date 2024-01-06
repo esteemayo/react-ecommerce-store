@@ -8,9 +8,9 @@ import WishlistHeader from '../components/wishlists/WishlistHeader';
 import { useCartModal } from '../hooks/useCartModal';
 import { useSubmenu } from '../hooks/useSubmenu';
 import useWishlistModal from '../hooks/useWishlistModal';
+import { useCartStore } from '../hooks/useCartStore';
 
 import { WishlistValues } from '../types';
-import { useCartStore } from '../hooks/useCartStore';
 
 const WishLists = () => {
   const cartModal = useCartModal();
