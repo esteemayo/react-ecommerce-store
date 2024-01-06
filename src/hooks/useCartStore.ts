@@ -16,7 +16,7 @@ const INITIAL_STATE = {
 
 export const useCartStore = create<CartStore & CartActionType>()(
   persist(
-    devtools((set) => ({
+    devtools((set, get) => ({
       cart: INITIAL_STATE.cart,
       wishlists: INITIAL_STATE.wishlists,
       wished: INITIAL_STATE.wished,
@@ -40,10 +40,13 @@ export const useCartStore = create<CartStore & CartActionType>()(
         set(
           produce((state) => {
             if (state.wished.includes(payload.id)) {
-              state.wishlists = state.wishlists.filter(
+              const wishlistInState = get().wishlists;
+              const wishedInState = get().wished;
+
+              state.wishlists = wishlistInState.filter(
                 (item: { id: string }) => item.id !== payload.id
               );
-              state.wished = state.wished.filter(
+              state.wished = wishedInState.filter(
                 (item: string) => item !== payload.id
               );
 
@@ -62,7 +65,9 @@ export const useCartStore = create<CartStore & CartActionType>()(
       addWishlist: (payload) =>
         set(
           produce((state) => {
-            const inCart = state.cart.find(
+            const cartInState = get().cart;
+
+            const inCart = cartInState.find(
               (item: { id: string }) => item.id === payload.id
             );
 
