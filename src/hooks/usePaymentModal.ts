@@ -8,7 +8,7 @@ interface PaymentModalStore {
   onClose(): void;
 }
 
-const usePaymentModal = create<PaymentModalStore>()(
+export const usePaymentModal = create<PaymentModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const usePaymentModal = create<PaymentModalStore>()(
       ),
   }))
 );
-
-export default usePaymentModal;

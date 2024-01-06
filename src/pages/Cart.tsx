@@ -7,7 +7,7 @@ import CartItem from '../components/carts/CartItem';
 import CartHeader from '../components/carts/CartHeader';
 import CartTotal from '../components/carts/CartTotal';
 
-import usePaymentModal from '../hooks/usePaymentModal';
+import { usePaymentModal } from '../hooks/usePaymentModal';
 import { useSubmenu } from '../hooks/useSubmenu';
 import { useCartStore } from '../hooks/useCartStore';
 
