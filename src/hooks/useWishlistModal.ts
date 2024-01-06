@@ -8,7 +8,7 @@ interface WishlistModalStore {
   onClose(): void;
 }
 
-const useWishlistModal = create<WishlistModalStore>()(
+export const useWishlistModal = create<WishlistModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const useWishlistModal = create<WishlistModalStore>()(
       ),
   }))
 );
-
-export default useWishlistModal;
