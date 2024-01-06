@@ -86,10 +86,13 @@ export const useCartStore = create<CartStore & CartActionType>()(
       removeWishlist: (payload) =>
         set(
           produce((state) => {
-            state.wishlists = state.wishlists.filter(
+            const wishlistInState = get().wishlists;
+            const wishedInState = get().wished;
+
+            state.wishlists = wishlistInState.filter(
               (item: { id: string }) => item.id !== payload
             );
-            state.wished = state.wished.filter(
+            state.wished = wishedInState.filter(
               (item: string) => item !== payload
             );
           }),
