@@ -8,7 +8,7 @@ interface PasswordModalStore {
   onClose(): void;
 }
 
-const usePasswordModal = create<PasswordModalStore>()(
+export const usePasswordModal = create<PasswordModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const usePasswordModal = create<PasswordModalStore>()(
       ),
   }))
 );
-
-export default usePasswordModal;

@@ -1,6 +1,6 @@
 import UpdatePassword from '../accounts/UpdatePassword';
 import Modal from './Modal';
-import usePasswordModal from '../../hooks/usePasswordModal';
+import { usePasswordModal } from '../../hooks/usePasswordModal';
 
 const PasswordModal = () => {
   const { isOpen, onClose } = usePasswordModal();
