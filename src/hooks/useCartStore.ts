@@ -93,6 +93,7 @@ export const useCartStore = create<CartStore & CartActionType>()(
             state.wishlists = wishlistInState.filter(
               (item: { id: string }) => item.id !== payload
             );
+
             state.wished = wishedInState.filter(
               (item: string) => item !== payload
             );
