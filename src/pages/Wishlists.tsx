@@ -56,7 +56,7 @@ const WishLists = () => {
     setProducts(wishlists);
   }, [wishlists]);
 
-  let bodyContent: JSX.Element;
+  let bodyContent: JSX.Element | undefined = undefined;
 
   if (products.length < 1) {
     bodyContent = <Text>Your wishlist is currently empty!</Text>;
