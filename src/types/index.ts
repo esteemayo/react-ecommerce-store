@@ -578,8 +578,8 @@ export interface ProductHeadProps {
   modal?: boolean;
   discount: number;
   priceDiscount: number;
-  ratingsAverage?: number;
-  ratingsQuantity?: number;
+  ratingsAverage: number | null;
+  ratingsQuantity: number | null;
 }
 
 export interface ColorSelectProps {
