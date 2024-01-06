@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
 interface OrderStatusProps {
-  statusClass(index: number): string;
+  statusClass(index: number): 'done' | 'inProgress' | 'undone' | undefined;
 }
 
 interface IMode {
