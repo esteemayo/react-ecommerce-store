@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <SharedLayout />,
     children: [
       {
-        path: '',
+        path: '/',
         element: <Home />,
       },
       {
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         element: <ProductCategory />,
       },
       {
-        path: '/products/:id',
+        path: 'products/:id',
         element: <SingleProduct />,
       },
       {
@@ -44,23 +44,23 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: '/cart',
+        path: 'cart',
         element: <Cart />,
       },
       {
-        path: '/wishlists',
+        path: 'wishlists',
         element: <WishLists />,
       },
       {
-        path: '/success',
+        path: 'success',
         element: <Success />,
       },
       {
-        path: '/orders',
+        path: 'orders',
         element: <Orders />,
       },
       {
-        path: '/orders/:id',
+        path: 'orders/:id',
         element: <Order />,
       },
       {
