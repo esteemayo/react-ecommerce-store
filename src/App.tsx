@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
 import WishLists from './pages/Wishlists';
+import Success from './pages/Success';
 
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: '/wishlists',
         element: <WishLists />,
+      },
+      {
+        path: '/success',
+        element: <Success />,
       },
       {
         path: 'login',
