@@ -75,7 +75,7 @@ export const useCartStore = create<CartStore & CartActionType>()(
             state.wished.push(payload.id);
 
             if (inCart) {
-              state.cart = state.cart.filter(
+              state.cart = cartInState.filter(
                 (item: { id: string }) => item.id !== payload.id
               );
             }
