@@ -573,13 +573,13 @@ export interface ProductImageModalProps {
 }
 
 export interface ProductHeadProps {
-  name: string;
-  price: number;
+  name?: string;
+  price?: number;
   modal?: boolean;
-  discount: number;
-  priceDiscount: number;
-  ratingsAverage: number | null;
-  ratingsQuantity: number | null;
+  discount?: number;
+  priceDiscount?: number;
+  ratingsAverage?: number | null;
+  ratingsQuantity?: number | null;
 }
 
 export interface ColorSelectProps {

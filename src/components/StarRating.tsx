@@ -1,7 +1,7 @@
 import Rating from '@mui/material/Rating';
 
 interface StarRatingProps {
-  value: number | null;
+  value: number | null | undefined;
   name?: string;
   readOnly?: boolean;
   onChange?(

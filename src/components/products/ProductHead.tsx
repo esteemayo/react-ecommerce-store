@@ -21,7 +21,7 @@ const ProductHead = ({
   ratingsQuantity,
 }: ProductHeadProps) => {
   const initialPrice = useMemo(() => {
-    return price + discount;
+    return price! + discount!;
   }, [discount, price]);
 
   return (
@@ -31,7 +31,7 @@ const ProductHead = ({
         <Price modal={modal}>{formatCurrency(initialPrice)}</Price>
         <Discount modal={modal}>-{priceDiscount}%</Discount>
       </PriceContainer>
-      <TotalPrice modal={modal}>{formatCurrency(price)}</TotalPrice>
+      <TotalPrice modal={modal}>{formatCurrency(price!)}</TotalPrice>
       {!modal && (
         <>
           <Message>
