@@ -70,6 +70,11 @@ const CartModal = ({ product, isOpen, onClose, onSelect }: CartModalProps) => {
     [handleCloseModal]
   );
 
+  const onClickHandler = useCallback(() => {
+    handleClick();
+    handleCloseModal();
+  }, [handleClick, handleCloseModal]);
+
   const activeModal = useMemo(() => {
     return showModal?.toString();
   }, [showModal]);
@@ -146,7 +151,7 @@ const CartModal = ({ product, isOpen, onClose, onSelect }: CartModalProps) => {
               small
               actionLabel={actionLabel}
               inCart={inCart}
-              onAction={handleClick}
+              onAction={onClickHandler}
             />
             {alert && (
               <Alert
