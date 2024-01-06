@@ -92,7 +92,7 @@ export type WishedValue = {
 export interface CartStore {
   cart: CartValues[];
   wishlists: WishlistValues[];
-  wished: number[];
+  wished: string[];
   qty: number;
   tax: number;
   total: number;
