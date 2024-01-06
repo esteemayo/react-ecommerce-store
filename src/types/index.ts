@@ -769,7 +769,7 @@ export interface OrderDetailsProps {
     name?: string;
     address?: string;
   };
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: React.ChangeEvent<HTMLInputElement>;
   onSubmit(e: React.FormEvent<HTMLFormElement>): void;
 }
 
