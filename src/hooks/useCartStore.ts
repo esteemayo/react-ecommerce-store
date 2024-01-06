@@ -27,11 +27,11 @@ export const useCartStore = create<CartStore & CartActionType>()(
       reset: () =>
         set(
           produce((state) => {
-            state.cart = [];
-            state.qty = 0;
-            state.tax = 0;
-            state.total = 0;
-            state.subtotal = 0;
+            state.cart = INITIAL_STATE.cart;
+            state.qty = INITIAL_STATE.qty;
+            state.tax = INITIAL_STATE.tax;
+            state.total = INITIAL_STATE.total;
+            state.subtotal = INITIAL_STATE.subtotal;
           }),
           false,
           'reset'
