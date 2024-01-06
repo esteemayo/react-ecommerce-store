@@ -26,7 +26,13 @@ interface IWrapper {
   active: string;
 }
 
-const CartModal = ({ product, isOpen, onClose, onSelect }: CartModalProps) => {
+const CartModal = ({
+  type,
+  product,
+  isOpen,
+  onClose,
+  onSelect,
+}: CartModalProps) => {
   const mode = useDarkMode((state) => state.mode);
   const cart = useCartStore((state) => state.cart);
 

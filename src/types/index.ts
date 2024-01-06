@@ -519,6 +519,7 @@ export interface WishlistButtonProps {
 export interface CartModalProps {
   product?: ProductValues;
   isOpen: boolean;
+  type?: string;
   onClose(): void;
   onSelect: React.Dispatch<SetStateAction<WishlistValues | null>>;
 }
