@@ -28,7 +28,7 @@ const ProductCategory = () => {
   const { data } = useQuery({
     queryKey: ['products'],
     queryFn: async () => {
-      const { data } = await await getProductCategory(category);
+      const { data } = await getProductCategory(category);
       return data.products;
     },
   });
