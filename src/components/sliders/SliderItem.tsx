@@ -24,7 +24,7 @@ const SliderItem = ({
       <Wrapper>
         <Title>{title}</Title>
         <Description>{desc}</Description>
-        <Link href={url} passHref>
+        <Link to={url}>
           <Button type='button'>Shop now</Button>
         </Link>
       </Wrapper>
