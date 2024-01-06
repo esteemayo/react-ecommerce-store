@@ -43,7 +43,7 @@ export type ProductValues = {
 export type CartValues = {
   id: string;
   category: string;
-  color: string;
+  color: string | string[];
   desc: string;
   discount: number;
   featured: boolean;
@@ -56,7 +56,7 @@ export type CartValues = {
   quantity: number;
   ratingsAverage: number;
   ratingsQuantity: number;
-  size: string;
+  size: string | string[];
   slug: string;
   tags: string[];
   createdAt: string;
