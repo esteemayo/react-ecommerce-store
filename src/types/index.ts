@@ -893,7 +893,7 @@ export interface TextAreaProps
   value: string | number | readonly string[];
   placeholder?: string;
   error?: string;
-  onChange(e: React.ChangeEvent<HTMLTextAreaElement> | undefined): void;
+  onChange(e: React.ChangeEvent<HTMLTextAreaElement>): void;
 }
 
 export interface SelectProps
