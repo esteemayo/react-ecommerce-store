@@ -8,7 +8,7 @@ interface ReviewModalStore {
   onClose(): void;
 }
 
-const useReviewModal = create<ReviewModalStore>()(
+export const useReviewModal = create<ReviewModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const useReviewModal = create<ReviewModalStore>()(
       ),
   }))
 );
-
-export default useReviewModal;

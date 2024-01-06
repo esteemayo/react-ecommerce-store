@@ -5,7 +5,7 @@ import ReviewHead from './ReviewHead';
 import ReviewCards from './ReviewCards';
 
 import { ReviewsProps } from '../../types';
-import useReviewModal from '../../hooks/useReviewModal';
+import { useReviewModal } from '../../hooks/useReviewModal';
 
 import ReviewModal from '../modals/ReviewModal';
 
