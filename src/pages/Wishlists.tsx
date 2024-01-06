@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import WishlistCard from '../components/wishlists/WishlistCard';
 import CartModal from '../components/modals/CartModal';
 import WishlistHeader from '../components/wishlists/WishlistHeader';
 
@@ -10,7 +11,6 @@ import useWishlistModal from '../hooks/useWishlistModal';
 
 import { WishlistValues } from '../types';
 import { useCartStore } from '../hooks/useCartStore';
-import WishlistCard from '../components/wishlists/WishlistCard';
 
 const WishLists = () => {
   const cartModal = useCartModal();
