@@ -6,11 +6,11 @@ import ProductCard from '../card/ProductCard';
 import Header from '../Header';
 import CartModal from '../modals/CartModal';
 
-import { ProductType, WishlistValues } from '../../types';
-import { StyledWrapper } from '../StyledWrapper';
 import { useCartModal } from '../../hooks/useCartModal';
-
 import { getFeaturedProducts } from '../../services/productService';
+
+import { StyledWrapper } from '../StyledWrapper';
+import { ProductType, WishlistValues } from '../../types';
 
 const FeaturedProducts = () => {
   const isOpen = useCartModal((state) => state.isOpen);
