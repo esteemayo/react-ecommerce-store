@@ -18,12 +18,18 @@ const FileUploadModal = () => {
 
   const [perc, setPerc] = useState(0);
   const [showModal, setShowModal] = useState(isOpen);
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File>();
+
+  const handleFile = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    const selectedFile = (target.files as FileList)[0];
+    setFile(selectedFile);
+  }, []);
 
   const handleClose = useCallback(() => {
     setShowModal(false);
     onClose();
-    file && setFile(null);
+    file && setFile(undefined);
   }, [file, onClose]);
 
   const closeModalHandler = useCallback(
@@ -75,7 +81,7 @@ const FileUploadModal = () => {
                     type='file'
                     id='file'
                     accept='image/*'
-                    onChange={(e) => setFile(e.target.files[0])}
+                    onChange={handleFile}
                   />
                   <Label htmlFor='file'>Attach a photo</Label>
                 </>
