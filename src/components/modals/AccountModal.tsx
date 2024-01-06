@@ -1,6 +1,6 @@
 import DeleteAccount from '../accounts/DeleteAccount';
 import Modal from './Modal';
-import useAccountModal from '../../hooks/useAccountModal';
+import { useAccountModal } from '../../hooks/useAccountModal';
 
 const AccountModal = () => {
   const { isOpen, onClose } = useAccountModal();

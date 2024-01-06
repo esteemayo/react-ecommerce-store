@@ -8,7 +8,7 @@ interface AccountModalStore {
   onClose(): void;
 }
 
-const useAccountModal = create<AccountModalStore>()(
+export const useAccountModal = create<AccountModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const useAccountModal = create<AccountModalStore>()(
       ),
   }))
 );
-
-export default useAccountModal;
