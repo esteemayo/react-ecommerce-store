@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { produce } from 'immer';
 
-import { CartStore } from '../types';
+import { CartActionType, CartStore } from '../types';
 
 const INITIAL_STATE = {
   cart: [],
@@ -14,7 +14,7 @@ const INITIAL_STATE = {
   subtotal: 0,
 };
 
-export const useCartStore = create<CartStore>()(
+export const useCartStore = create<CartStore & CartActionType>()(
   persist(
     devtools((set) => ({
       cart: INITIAL_STATE.cart,
