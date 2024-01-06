@@ -906,7 +906,7 @@ export interface SelectProps
   name: string;
   label: string;
   value: string | number | readonly string[];
-  error: string;
+  error?: string;
   defaultText: string;
 }
 
