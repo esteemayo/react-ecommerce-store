@@ -8,6 +8,7 @@ import WishLists from './pages/Wishlists';
 import Orders from './pages/Orders';
 import Success from './pages/Success';
 import Order from './pages/Order';
+import Search from './pages/Search';
 
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/products/:id',
         element: <SingleProduct />,
+      },
+      {
+        path: 'search',
+        element: <Search />,
       },
       {
         path: '/cart',
