@@ -36,9 +36,7 @@ const ProductHead = ({
         <>
           <Message>
             4 interest-free payments of $49.75. &nbsp;
-            <StyledLink href='#' passHref>
-              Learn more
-            </StyledLink>
+            <StyledLink to='#'>Learn more</StyledLink>
           </Message>
           <Rating>
             <StarRating readOnly value={ratingsAverage} name='read-only' />
