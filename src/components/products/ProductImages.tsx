@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import ProductImage from './ProductImage';
 import ProductImageModal from '../modals/ProductImageModal';
 
-import useImageModal from '../../hooks/useImageModal';
+import { useImageModal } from '../../hooks/useImageModal';
 
 interface ProductImagesProps {
   images: string[];

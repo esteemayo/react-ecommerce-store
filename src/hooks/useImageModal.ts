@@ -8,7 +8,7 @@ interface ImageModalStore {
   onClose(): void;
 }
 
-const useImageModal = create<ImageModalStore>()(
+export const useImageModal = create<ImageModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const useImageModal = create<ImageModalStore>()(
       ),
   }))
 );
-
-export default useImageModal;
