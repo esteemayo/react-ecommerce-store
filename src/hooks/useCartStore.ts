@@ -39,13 +39,14 @@ export const useCartStore = create<CartStore & CartActionType>()(
       addProduct: (payload) =>
         set(
           produce((state) => {
-            if (state.wished.includes(payload.id)) {
-              const wishlistInState = get().wishlists;
-              const wishedInState = get().wished;
+            const wishlistInState = get().wishlists;
+            const wishedInState = get().wished;
 
+            if (wishedInState.includes(payload.id)) {
               state.wishlists = wishlistInState.filter(
                 (item: { id: string }) => item.id !== payload.id
               );
+
               state.wished = wishedInState.filter(
                 (item: string) => item !== payload.id
               );
