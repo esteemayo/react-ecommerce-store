@@ -97,6 +97,9 @@ export interface CartStore {
   tax: number;
   total: number;
   subtotal: number;
+}
+
+export interface CartActionType {
   reset(): void;
   addProduct(payload: CartValues): void;
   addWishlist(payload: WishlistValues): void;
