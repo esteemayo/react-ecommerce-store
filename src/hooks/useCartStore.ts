@@ -4,16 +4,26 @@ import { produce } from 'immer';
 
 import { CartStore } from '../types';
 
+const INITIAL_STATE = {
+  cart: [],
+  wishlists: [],
+  wished: [],
+  qty: 0,
+  tax: 0,
+  total: 0,
+  subtotal: 0,
+};
+
 export const useCartStore = create<CartStore>()(
   persist(
     devtools((set) => ({
-      cart: [],
-      wishlists: [],
-      wished: [],
-      qty: 0,
-      tax: 0,
-      total: 0,
-      subtotal: 0,
+      cart: INITIAL_STATE.cart,
+      wishlists: INITIAL_STATE.wishlists,
+      wished: INITIAL_STATE.wished,
+      qty: INITIAL_STATE.qty,
+      tax: INITIAL_STATE.tax,
+      total: INITIAL_STATE.total,
+      subtotal: INITIAL_STATE.subtotal,
       reset: () =>
         set(
           produce((state) => {
