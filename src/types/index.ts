@@ -517,7 +517,7 @@ export interface CartModalProps {
   product?: ProductValues;
   isOpen: boolean;
   onClose(): void;
-  onSelect(value: WishlistValues): void;
+  onSelect: React.Dispatch<SetStateAction<WishlistValues | null>>;
 }
 
 export interface ReviewItemProps {
