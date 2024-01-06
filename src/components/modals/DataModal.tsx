@@ -1,6 +1,6 @@
 import UpdateData from '../accounts/UpdateData';
 import Modal from './Modal';
-import useEmailModal from '../../hooks/useEmailModal';
+import { useEmailModal } from '../../hooks/useEmailModal';
 
 const DataModal = () => {
   const { isOpen, onClose } = useEmailModal();

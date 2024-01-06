@@ -8,7 +8,7 @@ interface EmailModalStore {
   onClose(): void;
 }
 
-const useEmailModal = create<EmailModalStore>()(
+export const useEmailModal = create<EmailModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const useEmailModal = create<EmailModalStore>()(
       ),
   }))
 );
-
-export default useEmailModal;
