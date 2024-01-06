@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import FormError from '../form/FormError';
 import { FormGroup } from '../form/FormGroup';
 
-interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
   value: string | number | readonly string[];
   placeholder?: string;
   type?: string;
   error?: string;
+  onChange(e: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 const Input = ({ name, label, type = 'text', error, ...rest }: InputProps) => {
