@@ -159,7 +159,9 @@ export const useCartStore = create<CartStore & CartActionType>()(
       calcTotals: () =>
         set(
           produce((state) => {
-            let { total, qty, subtotal, tax } = state.cart.reduce(
+            const cartInState = get().cart;
+
+            let { total, qty, subtotal, tax } = cartInState.reduce(
               (
                 cartTotal: {
                   subtotal: number;
