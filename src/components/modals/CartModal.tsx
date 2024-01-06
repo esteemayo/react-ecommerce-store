@@ -78,8 +78,11 @@ const CartModal = ({
 
   const onClickHandler = useCallback(() => {
     handleClick();
-    handleCloseModal();
-  }, [handleClick, handleCloseModal]);
+
+    if (type === 'wishlists') {
+      handleCloseModal();
+    }
+  }, [handleClick, handleCloseModal, type]);
 
   const activeModal = useMemo(() => {
     return showModal?.toString();
