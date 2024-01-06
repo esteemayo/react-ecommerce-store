@@ -5,14 +5,20 @@ import { produce } from 'immer';
 import { sublinks } from '../data';
 import { OpenSubmenu, SubmenuActionType, SubmenuStore } from '../types';
 
+const INITIAL_STATE = {
+  isOpen: false,
+  location: {},
+  page: {
+    page: '',
+    links: [],
+  },
+};
+
 export const useSubmenu = create<SubmenuStore & SubmenuActionType>()(
   devtools((set) => ({
-    isOpen: false,
-    location: {},
-    page: {
-      page: '',
-      links: [],
-    },
+    isOpen: INITIAL_STATE.isOpen,
+    location: INITIAL_STATE.location,
+    page: INITIAL_STATE.page,
     openSubmenu: (payload) =>
       set(
         produce((state: OpenSubmenu) => {
