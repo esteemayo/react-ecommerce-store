@@ -110,7 +110,9 @@ export const useCartStore = create<CartStore & CartActionType>()(
       remove: (payload) =>
         set(
           produce((state) => {
-            state.cart = state.cart.filter(
+            const cartInState = get().cart;
+
+            state.cart = cartInState.filter(
               (cartItem: { id: string }) => cartItem.id !== payload
             );
           }),
