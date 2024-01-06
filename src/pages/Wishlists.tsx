@@ -20,9 +20,12 @@ const WishLists = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   const [products, setProducts] = useState<WishlistValues[]>([]);
-  const [isSelectedId, setIsSelectedId] = useState<string | null>(null);
-  const [isSelectedProduct, setIsSelectedProduct] =
-    useState<WishlistValues | null>(null);
+  const [isSelectedId, setIsSelectedId] = useState<string | undefined>(
+    undefined
+  );
+  const [isSelectedProduct, setIsSelectedProduct] = useState<
+    WishlistValues | undefined
+  >(undefined);
 
   const handleClick = useCallback(
     (wishlist: WishlistValues) => {

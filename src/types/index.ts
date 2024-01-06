@@ -521,7 +521,7 @@ export interface CartModalProps {
   isOpen: boolean;
   type?: string;
   onClose(): void;
-  onSelect: React.Dispatch<SetStateAction<WishlistValues | null>>;
+  onSelect: React.Dispatch<SetStateAction<WishlistValues | undefined>>;
 }
 
 export interface ReviewItemProps {
@@ -852,7 +852,7 @@ export interface DateTimeProps {
 export interface WishlistCardProps {
   isOpen: boolean;
   onOpen(id: string): void;
-  selected: string | null;
+  selected: string | undefined;
   wishlists: WishlistValues[];
   wishlistLabel: 'wishlists' | 'wishlist';
   onAction(wishlist: WishlistValues): void;
