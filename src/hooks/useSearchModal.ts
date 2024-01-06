@@ -8,7 +8,7 @@ interface SearchModalStore {
   onClose(): void;
 }
 
-const useSearchModal = create<SearchModalStore>()(
+export const useSearchModal = create<SearchModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const useSearchModal = create<SearchModalStore>()(
       ),
   }))
 );
-
-export default useSearchModal;

@@ -11,7 +11,7 @@ import ToggleButton from './ToggleButton';
 import SearchIcon from './SearchIcon';
 
 import { useSubmenu } from '../../hooks/useSubmenu';
-import useSearchModal from '../../hooks/useSearchModal';
+import { useSearchModal } from '../../hooks/useSearchModal';
 import { useSidebar } from '../../hooks/useSidebar';
 import { useCartStore } from '../../hooks/useCartStore';
 

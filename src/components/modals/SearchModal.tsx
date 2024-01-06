@@ -1,7 +1,7 @@
 import Modal from './Modal';
 import Search from '../Search';
 
-import useSearchModal from '../../hooks/useSearchModal';
+import { useSearchModal } from '../../hooks/useSearchModal';
 
 const SearchModal = () => {
   const { isOpen, onClose } = useSearchModal((state) => ({ ...state }));
