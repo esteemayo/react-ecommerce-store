@@ -122,7 +122,9 @@ export const useCartStore = create<CartStore & CartActionType>()(
       toggleQuantity: (payload) =>
         set(
           produce((state) => {
-            state.cart = state.cart
+            const cartInState = get().cart;
+
+            state.cart = cartInState
               .map((cartItem: { id: string; quantity: number }) => {
                 if (cartItem.id === payload.id) {
                   if (payload.type === 'inc') {
@@ -138,7 +140,10 @@ export const useCartStore = create<CartStore & CartActionType>()(
                   if (payload.type === 'dec') {
                     return {
                       ...cartItem,
-                      quantity: cartItem.quantity - 1,
+                      quantity:
+                        cartItem.quantity > 1
+                          ? cartItem.quantity - 1
+                          : cartItem.quantity,
                     };
                   }
                 }
