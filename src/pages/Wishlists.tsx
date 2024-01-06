@@ -84,6 +84,7 @@ const WishLists = () => {
     <Container onMouseOver={closeSubmenu}>
       <Wrapper>{bodyContent}</Wrapper>
       <CartModal
+        type='wishlists'
         product={isSelectedProduct}
         isOpen={cartModal.isOpen}
         onClose={cartModal.onClose}
