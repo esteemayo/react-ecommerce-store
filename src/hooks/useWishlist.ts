@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react';
 import { useCartStore } from './useCartStore';
 import { WishlistProps, WishlistValues } from '../types';
 
-const useWishlist: WishlistProps = (
+export const useWishlist: WishlistProps = (
   actionId: number,
   product: WishlistValues,
   wished: number[]
@@ -35,5 +35,3 @@ const useWishlist: WishlistProps = (
     handleToggle,
   };
 };
-
-export default useWishlist;

@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { IconButton } from './IconButton';
 import HeartIcon from '../icons/HeartIcon';
 
-import useWishlist from '../../hooks/useWishlist';
+import { useWishlist } from '../../hooks/useWishlist';
 import { WishlistButtonProps } from '../../types';
 
 const WishlistButton = ({ actionId, product, wished }: WishlistButtonProps) => {
