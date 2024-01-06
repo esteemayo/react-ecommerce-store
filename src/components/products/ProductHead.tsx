@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
 import { ProductHeadProps } from '../../types';
 import { formatCurrency } from '../../utils/formatCurrency';
