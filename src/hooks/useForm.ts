@@ -19,7 +19,9 @@ export const useForm = <T extends object, U extends object>(
   const handleChange = useCallback(
     ({
       target: input,
-    }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    }: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >) => {
       const { name, value } = input;
       setData((prev) => ({ ...prev, [name]: value }));
     },
