@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
-import useFileModal from '../../hooks/useFileModal';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { useFileModal } from '../../hooks/useFileModal';
 
 import UploadProgress from '../form/UploadProgress';
 

@@ -8,7 +8,7 @@ interface FileModalStore {
   onClose(): void;
 }
 
-const useFileModal = create<FileModalStore>()(
+export const useFileModal = create<FileModalStore>()(
   devtools((set) => ({
     isOpen: false,
     onOpen: () =>
@@ -29,5 +29,3 @@ const useFileModal = create<FileModalStore>()(
       ),
   }))
 );
-
-export default useFileModal;
