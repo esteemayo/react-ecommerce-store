@@ -24,9 +24,9 @@ const SliderItem = ({
       <Wrapper>
         <Title>{title}</Title>
         <Description>{desc}</Description>
-        <Link to={url}>
+        <StyledLink to={url}>
           <Button type='button'>Shop now</Button>
-        </Link>
+        </StyledLink>
       </Wrapper>
     </Article>
   );
@@ -83,20 +83,6 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 37.5em) {
     top: 40%;
     left: 67%;
-  }
-
-  a {
-    &:link,
-    &:visited {
-      text-decoration: none;
-      color: inherit;
-      outline: none;
-    }
-
-    &:active,
-    &:hover {
-      color: currentColor;
-    }
   }
 `;
 
@@ -169,6 +155,17 @@ const Description = styled.p`
   @media only screen and (max-width: 18.75em) {
     width: 68% !important;
     font-size: 1.3rem;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+
+  &:active,
+  &:hover {
+    color: currentColor;
   }
 `;
 
