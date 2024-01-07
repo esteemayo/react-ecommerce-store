@@ -31,7 +31,7 @@ export const setToStorage = <T extends string, U>(key: T, value: U) => {
   }
 };
 
-export const removeFromStorage = (key: string) => {
+export const removeFromStorage = <T extends string>(key: T) => {
   if (typeof window !== 'undefined') {
     return window.localStorage.removeItem(key);
   }
