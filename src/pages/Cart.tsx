@@ -27,7 +27,7 @@ const Cart = () => {
     setIsOpen(false);
   }, []);
 
-  let bodyContent: JSX.Element;
+  let bodyContent: JSX.Element | undefined;
 
   if (cart.length < 1) {
     bodyContent = <EmptyCart />;
