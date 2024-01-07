@@ -8,6 +8,7 @@ import Option from '../components/filters/Option';
 import SelectPrice from '../components/filters/SelectPrice';
 import Select from '../components/filters/Select';
 import ProductBox from '../components/products/ProductBox';
+import Loader from '../components/Loader';
 import Heading from '../components/filters/Heading';
 
 import { priceOptions } from '../data';
@@ -25,7 +26,7 @@ const ProductCategory = () => {
   const [filters, setFilters] = useState({});
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
 
-  const { data } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: ['products'],
     queryFn: async () => {
       const { data } = await getProductCategory(category);
@@ -83,6 +84,10 @@ const ProductCategory = () => {
   sizes = sizes.map((size, index) => {
     return <Option key={index} value={size} />;
   });
+
+  if (isLoading) {
+    return <Loader size='md' />;
+  }
 
   return (
     <ProductBox>
