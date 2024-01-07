@@ -6,14 +6,19 @@ import ReviewButton from './ReviewButton';
 import { EmptyReviewProps } from '../../types';
 
 const EmptyReview = ({
-  rating,
+  ratingsAverage,
+  ratingsQuantity,
   title = 'Currently, there are no reviews for this product.',
   label = 'Leave a review',
   onClick,
 }: EmptyReviewProps) => {
   return (
     <Container>
-      <StarRating readOnly value={rating} name='read-only' />
+      {ratingsQuantity === 0 ? (
+        <StarRating readOnly value={ratingsQuantity} name='read-only' />
+      ) : (
+        <StarRating readOnly value={ratingsAverage} name='read-only' />
+      )}
       <Message>{title}</Message>
       <ReviewButton actionLabel={label} onAction={onClick} />
     </Container>

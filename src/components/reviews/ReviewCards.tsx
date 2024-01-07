@@ -14,7 +14,11 @@ const ReviewCards = ({
   if (reviews?.length === 0) {
     return (
       <Container>
-        <EmptyReview rating={rating} onClick={onOpen} />
+        <EmptyReview
+          ratingsAverage={ratingsAverage}
+          ratingsQuantity={ratingsQuantity}
+          onClick={onOpen}
+        />
       </Container>
     );
   }
