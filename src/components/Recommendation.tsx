@@ -8,12 +8,13 @@ const Recommendation = ({ data, productId }: RecommendationProps) => {
     <Container>
       <Heading>You might also like</Heading>
       <Wrapper>
-        {data
-          ?.filter((item) => item.id !== productId)
-          ?.slice(0, 3)
-          ?.map((item) => {
-            return <RecommendationItem key={item.id} {...item} />;
-          })}
+        {data.length > 0 &&
+          data
+            .filter((item) => item.id !== productId)
+            .slice(0, 3)
+            .map((item) => {
+              return <RecommendationItem key={item.id} {...item} />;
+            })}
       </Wrapper>
     </Container>
   );
