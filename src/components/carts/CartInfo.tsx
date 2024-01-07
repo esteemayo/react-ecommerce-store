@@ -6,7 +6,7 @@ import { formatCurrency } from '../../utils/formatCurrency';
 import { CommonImage } from '../CommonImage';
 
 interface IColor {
-  color: string;
+  color: string | string[];
 }
 
 const CartInfo = ({
@@ -183,7 +183,7 @@ const RemoveButton = styled.button`
   cursor: pointer;
 `;
 
-const setBackground = (color: string) => {
+const setBackground = (color: string | string[]) => {
   if (color === 'white') return '#f9f9f9';
   return color;
 };
