@@ -4,8 +4,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import Product from '../../components/products/Product';
-import EmptyState from '../../components/EmptyState';
+import Loader from '../../components/Loader';
 import Recommendation from '../../components/Recommendation';
+import EmptyState from '../../components/EmptyState';
 import Reviews from '../../components/reviews/Reviews';
 
 import { useSubmenu } from '../../hooks/useSubmenu';
@@ -28,7 +29,7 @@ const SingleProduct = () => {
   const [sort, setSort] = useState('');
   const [recommendations, setRecommendation] = useState<RecommendationType>([]);
 
-  const { data: product } = useQuery({
+  const { isLoading, data: product } = useQuery({
     queryKey: ['product'],
     queryFn: async () => {
       const res = await getProduct(productId);
@@ -81,6 +82,10 @@ const SingleProduct = () => {
   useEffect(() => {
     setReviews(product?.reviews);
   }, [product]);
+
+  if (isLoading) {
+    return <Loader size='md' />;
+  }
 
   if (!product) {
     return (
