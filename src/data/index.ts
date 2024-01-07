@@ -37,7 +37,7 @@ import {
   OrderItem,
   PriceOption,
   ProductValue,
-  Recommendation,
+  RecommendationType,
   ReviewItem,
   SliderItem,
   Social,
@@ -1196,7 +1196,7 @@ export const orders: OrderItem = [
   },
 ];
 
-export const recommendations: Recommendation = [
+export const recommendations: RecommendationType = [
   {
     id: '1',
     images: ['/img/user-9.jpg'],
