@@ -660,7 +660,8 @@ export interface ReviewsProps {
 export interface ReviewHeadProps {
   sort: string | null;
   sortLabel?: string;
-  rating: number;
+  ratingsAverage: number;
+  ratingsQuantity: number;
   reviews: ReviewItem;
   isOpen: boolean;
   onOpen(): void;

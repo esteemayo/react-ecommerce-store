@@ -9,7 +9,8 @@ import { ReviewHeadProps } from '../../types';
 const ReviewHead = ({
   sort,
   sortLabel,
-  rating,
+  ratingsAverage,
+  ratingsQuantity,
   reviews,
   isOpen,
   onOpen,
@@ -22,7 +23,11 @@ const ReviewHead = ({
         <TotalRatings>
           {reviews?.length === 0 ? 0 : reviews?.length?.toFixed(1)}
         </TotalRatings>
-        <StarRating readOnly value={rating} name='read-only' />
+        {ratingsQuantity === 0 ? (
+          <StarRating readOnly value={ratingsQuantity} name='read-only' />
+        ) : (
+          <StarRating readOnly value={ratingsAverage} name='read-only' />
+        )}
         <TotalReviews>{reviews?.length} reviews</TotalReviews>
       </Ratings>
       <Wrapper>

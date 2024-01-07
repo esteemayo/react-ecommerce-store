@@ -11,7 +11,8 @@ import ReviewModal from '../modals/ReviewModal';
 
 const Reviews = ({
   reviews,
-  rating,
+  ratingsAverage,
+  ratingsQuantity,
   sortLabel,
   sort,
   onSort,
@@ -51,7 +52,8 @@ const Reviews = ({
         <ReviewHead
           sort={sort}
           sortLabel={sortLabel}
-          rating={rating}
+          ratingsAverage={ratingsAverage}
+          ratingsQuantity={ratingsQuantity}
           reviews={reviews}
           isOpen={isFilterOpen}
           onOpen={onOpen}
