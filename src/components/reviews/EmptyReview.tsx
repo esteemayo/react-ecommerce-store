@@ -6,10 +6,10 @@ import ReviewButton from './ReviewButton';
 import { EmptyReviewProps } from '../../types';
 
 const EmptyReview = ({
-  ratingsAverage,
-  ratingsQuantity,
   title = 'Currently, there are no reviews for this product.',
   label = 'Leave a review',
+  ratingsAverage,
+  ratingsQuantity,
   onClick,
 }: EmptyReviewProps) => {
   return (

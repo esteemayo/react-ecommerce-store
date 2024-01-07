@@ -707,10 +707,10 @@ export interface ReviewFormProps {
 }
 
 export interface EmptyReviewProps {
-  ratingsAverage: number;
-  ratingsQuantity: number;
   title?: string;
   label?: string;
+  ratingsAverage: number;
+  ratingsQuantity: number;
   onClick(): void;
 }
 
