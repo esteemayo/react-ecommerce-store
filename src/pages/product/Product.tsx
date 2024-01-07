@@ -11,7 +11,7 @@ import Reviews from '../../components/reviews/Reviews';
 import { useSubmenu } from '../../hooks/useSubmenu';
 import { useCartStore } from '../../hooks/useCartStore';
 
-import { ReviewItem } from '../../types';
+import { RecommendationType, ReviewItem } from '../../types';
 import { getProduct, getProductByTags } from '../../services/productService';
 
 interface IContainer {
@@ -26,7 +26,7 @@ const SingleProduct = () => {
 
   const [reviews, setReviews] = useState<ReviewItem>([]);
   const [sort, setSort] = useState('');
-  const [recommendations, setRecommendation] = useState([]);
+  const [recommendations, setRecommendation] = useState<RecommendationType>([]);
 
   const { data: product } = useQuery({
     queryKey: ['product'],
