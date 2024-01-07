@@ -105,7 +105,8 @@ const SingleProduct = () => {
         <Recommendation data={recommendations} productId={productId} />
         <Reviews
           reviews={reviews}
-          rating={product.ratingsAverage}
+          ratingsAverage={product.ratingsAverage}
+          ratingsQuantity={product.ratingsQuantity}
           sortLabel={getSort}
           sort={sort}
           onSort={setSort}

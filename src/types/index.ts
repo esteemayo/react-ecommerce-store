@@ -650,7 +650,8 @@ export interface RecommendationItemProps {
 
 export interface ReviewsProps {
   reviews: ReviewItem;
-  rating: number;
+  ratingsAverage: number;
+  ratingsQuantity: number;
   sortLabel?: 'newest' | 'highest rating' | 'lowest rating';
   sort: string | null;
   onSort: React.Dispatch<SetStateAction<string>>;
