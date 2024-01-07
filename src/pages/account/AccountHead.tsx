@@ -7,10 +7,10 @@ interface AccountHeadProps {
 }
 
 const AccountHead = ({ onOpen, onAction }: AccountHeadProps) => {
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    inputRef.current.focus();
+    inputRef.current?.focus();
   }, []);
 
   return (
