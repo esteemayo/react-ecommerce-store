@@ -4,11 +4,11 @@ import { useQuery } from '@tanstack/react-query';
 import { useLocation } from 'react-router-dom';
 
 import ProductList from '../components/products/ProductList';
-import Option from '../components/filters/Option';
-import SelectPrice from '../components/filters/SelectPrice';
-import Select from '../components/filters/Select';
-import ProductBox from '../components/products/ProductBox';
 import Loader from '../components/Loader';
+import SelectPrice from '../components/filters/SelectPrice';
+import Option from '../components/filters/Option';
+import ProductBox from '../components/products/ProductBox';
+import Select from '../components/filters/Select';
 import Heading from '../components/filters/Heading';
 
 import { priceOptions } from '../data';
