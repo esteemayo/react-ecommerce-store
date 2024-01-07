@@ -729,8 +729,8 @@ export interface DeleteModalProps {
 export interface CartItemProps {
   id: string;
   name: string;
-  size: string;
-  color: string;
+  size: string | string[];
+  color: string | string[];
   images: string[];
   price: number;
   quantity: number;
@@ -738,11 +738,11 @@ export interface CartItemProps {
 
 export interface CartInfoProps {
   id: string;
-  color: string;
+  color: string | string[];
   name: string;
   image: string;
   price: number;
-  size: string;
+  size: string | string[];
   onAction(id: string): void;
 }
 
