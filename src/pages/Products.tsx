@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import Loader from '../components/Loader';
+import ProductList from '../components/products/ProductList';
 import Pagination from '../components/Pagination';
 import ProductFilter from '../components/products/ProductFilter';
 import ProductBox from '../components/products/ProductBox';
-import ProductList from '../components/products/ProductList';
 
 import { ProductValues } from '../types';
 import { getProducts } from '../services/productService';
@@ -16,6 +17,7 @@ const Products = () => {
   const [maxPrice, setMaxPrice] = useState(0);
   const [price, setPrice] = useState(0);
   const [products, setProducts] = useState<ProductValues[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
 
   const [counts, setCounts] = useState(20);
@@ -24,6 +26,8 @@ const Products = () => {
 
   useEffect(() => {
     (async () => {
+      setIsLoading(true);
+
       try {
         const { data } = await getProducts(page);
         console.log(data);
@@ -41,6 +45,8 @@ const Products = () => {
         setNumberOfPages(data.numberOfPages);
       } catch (err) {
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
     })();
   }, [page]);
@@ -64,6 +70,10 @@ const Products = () => {
 
     setSortedProducts(tempProducts);
   }, [category, color, price, products, size]);
+
+  if (isLoading) {
+    return <Loader size='md' />;
+  }
 
   return (
     <ProductBox>
