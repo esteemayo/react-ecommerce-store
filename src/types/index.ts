@@ -291,7 +291,7 @@ export type OrderItem = {
   updatedAt: string;
 }[];
 
-export type Recommendation = {
+export type RecommendationType = {
   id: string;
   name: string;
   price: number;
@@ -637,7 +637,7 @@ export interface ProductInfoProps {
 }
 
 export interface RecommendationProps {
-  data: Recommendation;
+  data: RecommendationType;
   productId?: string;
 }
 
