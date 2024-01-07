@@ -8,6 +8,7 @@ import WishLists from '../pages/Wishlists';
 import Orders from '../pages/Orders';
 import Success from '../pages/Success';
 import Order from '../pages/Order';
+import NotFound from '../pages/NotFound';
 import Search from '../pages/Search';
 
 import Register from '../pages/register/Register';
@@ -88,6 +89,10 @@ export const router = createBrowserRouter([
       {
         path: 'account',
         element: <Account />,
+      },
+      {
+        path: '*',
+        element: <NotFound />,
       },
     ],
   },
