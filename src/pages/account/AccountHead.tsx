@@ -47,7 +47,7 @@ const AccountHead = ({ onOpen, onAction }: AccountHeadProps) => {
         <Label htmlFor='accPassword'>Password</Label>
         <Input
           type='password'
-          id='accassword'
+          id='accPassword'
           name='password'
           placeholder='********'
         />
@@ -74,7 +74,7 @@ const Wrapper = styled.div`
 
 const Label = styled.label`
   display: inline-block;
-  width: 10rem;
+  width: 10.5rem;
   text-transform: capitalize;
   font-weight: 600;
   font-size: 1.4rem;
