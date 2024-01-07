@@ -670,7 +670,8 @@ export interface ReviewHeadProps {
 }
 
 export interface ReviewCardsProps {
-  rating: number;
+  ratingsAverage: number;
+  ratingsQuantity: number;
   reviews: ReviewItem;
   onOpen(): void;
 }

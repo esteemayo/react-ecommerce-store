@@ -60,7 +60,12 @@ const Reviews = ({
           onSort={onSort}
           onToggle={handleToggleFilter}
         />
-        <ReviewCards rating={rating} reviews={reviews} onOpen={onOpen} />
+        <ReviewCards
+          ratingsAverage={ratingsAverage}
+          ratingsQuantity={ratingsQuantity}
+          reviews={reviews}
+          onOpen={onOpen}
+        />
       </Wrapper>
       <ReviewModal isOpen={isOpen} onClose={onClose} />
     </Container>
