@@ -15,6 +15,7 @@ import Login from '../pages/login/Login';
 import SingleProduct from '../pages/product/Product';
 import ResetPassword from '../pages/ResetPassword';
 import ProductCategory from '../pages/ProductCategory';
+import Account from '../pages/account/Account';
 import NewProduct from '../pages/admin/NewProduct';
 
 import SharedLayout from '../components/SharedLayout';
@@ -83,6 +84,10 @@ export const router = createBrowserRouter([
       {
         path: 'reset/:token',
         element: <ResetPassword />,
+      },
+      {
+        path: 'account',
+        element: <Account />,
       },
     ],
   },
