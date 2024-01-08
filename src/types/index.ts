@@ -19,10 +19,10 @@ export interface AuthActionType {
   reset(): void;
   loginUserPending(): void;
   loginUserSuccess(payload: object): void;
-  loginUserFailure(payload: object): void;
+  loginUserFailure(payload: string): void;
   registerUserPending(): void;
   registerUserSuccess(payload: object): void;
-  registerUserFailure(payload: object): void;
+  registerUserFailure(payload: string): void;
   logoutUser(): void;
 }
 
