@@ -7,6 +7,14 @@ export type Announcements = {
   title: string;
 }[];
 
+export interface AuthStore {
+  user: object;
+  isLoading: boolean;
+  isError: boolean;
+  isSuccess: boolean;
+  message: string;
+}
+
 export type CartItem = {
   id: string;
   name: string;
