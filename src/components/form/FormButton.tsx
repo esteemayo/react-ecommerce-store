@@ -16,11 +16,14 @@ const FormButton = ({ label, loading, disabled, ...rest }: FormButtonProps) => {
 const Button = styled(CommonButton)`
   margin-top: 2rem;
   border: none;
-  display: inline-block;
   font-weight: 500;
   font-size: 1.4rem;
   width: 100%;
   padding: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     font-size: 1.398rem;
