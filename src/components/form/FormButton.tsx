@@ -5,7 +5,7 @@ import { CommonButton } from '../buttons/CommonButton';
 
 import Spinner from '../Spinner';
 
-const FormButton = ({ loading, label, disabled, ...rest }: FormButtonProps) => {
+const FormButton = ({ label, loading, disabled, ...rest }: FormButtonProps) => {
   return (
     <Button {...rest} disabled={disabled} type='submit'>
       {loading ? <Spinner /> : label}
