@@ -947,6 +947,7 @@ export interface FormUploadProps extends HTMLAttributes<HTMLInputElement> {
 
 export interface FormButtonProps extends HTMLAttributes<HTMLButtonElement> {
   label: string;
+  loading?: boolean;
   disabled?: boolean;
 }
 
