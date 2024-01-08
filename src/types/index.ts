@@ -15,6 +15,13 @@ export interface AuthStore {
   message: string;
 }
 
+export interface AuthActionType {
+  reset(): void;
+  loginUser(payload: object): void;
+  registerUser(payload: object): void;
+  logoutUser(): void;
+}
+
 export type CartItem = {
   id: string;
   name: string;
