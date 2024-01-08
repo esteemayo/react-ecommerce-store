@@ -30,13 +30,13 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isSuccess = INITIAL_STATE.isSuccess;
           })
         ),
-      loginUser: (payload) =>
+      loginUserSuccess: (payload) =>
         set(
           produce((state) => {
             state.user = payload;
           })
         ),
-      registerUser: (payload) =>
+      registerUserSuccess: (payload) =>
         set(
           produce((state) => {
             state.user = payload;

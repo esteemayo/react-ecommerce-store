@@ -17,8 +17,8 @@ export interface AuthStore {
 
 export interface AuthActionType {
   reset(): void;
-  loginUser(payload: object): void;
-  registerUser(payload: object): void;
+  loginUserSuccess(payload: object): void;
+  registerUserSuccess(payload: object): void;
   logoutUser(): void;
 }
 
