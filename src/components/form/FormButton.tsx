@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { FormButtonProps } from '../../types';
 import { CommonButton } from '../buttons/CommonButton';
 
-const FormButton = ({ label, disabled, ...rest }: FormButtonProps) => {
+import Spinner from '../Spinner';
+
+const FormButton = ({ loading, label, disabled, ...rest }: FormButtonProps) => {
   return (
     <Button {...rest} disabled={disabled} type='submit'>
-      {label}
+      {loading ? <Spinner /> : label}
     </Button>
   );
 };
