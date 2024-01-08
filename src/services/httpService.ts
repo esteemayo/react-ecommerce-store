@@ -16,17 +16,6 @@ const API = axios.create({
   },
 });
 
-API.interceptors.request.use(
-  (req) => {
-    req.headers.common['Authorization'] = `Bearer ${getJwt()}`;
-    return req;
-  },
-  (error) => {
-    logger.log(error);
-    return Promise.reject(error);
-  }
-);
-
 API.interceptors.response.use(null, (error) => {
   const expectedError =
     error.response &&
@@ -41,6 +30,8 @@ API.interceptors.response.use(null, (error) => {
 
   return Promise.reject(error);
 });
+
+API.defaults.headers.common['Authorization'] = getJwt();
 
 const http = {
   get: API.get,
