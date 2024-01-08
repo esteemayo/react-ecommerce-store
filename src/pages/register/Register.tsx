@@ -12,7 +12,10 @@ import Form from '../../components/form/Form';
 import CountrySelect from '../../components/inputs/CountrySelect';
 
 import { registerInputs } from '../../data/formData';
+import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
+
+import { registerUser } from '../../services/authService';
 
 interface IErrors {
   name?: string;
@@ -34,6 +37,13 @@ const initialState = {
 
 const Register = () => {
   const { getAll } = useCountries();
+  const {
+    isLoading,
+    isSuccess,
+    registerUserFailure,
+    registerUserPending,
+    registerUserSuccess,
+  } = useAuth();
 
   const [perc, setPerc] = useState(0);
   const [data, setData] = useState(initialState);
@@ -106,17 +116,37 @@ const Register = () => {
   }, []);
 
   const handleSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
+    async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
       const errors = validateForm();
       if (Object.keys(errors).length > 0) return setErrors(errors);
       setErrors({});
 
-      console.log({ ...data, file });
+      registerUserPending();
+
+      try {
+        const credentials = {
+          ...data,
+        };
+
+        const res = await registerUser(credentials);
+        console.log(res);
+        registerUserSuccess(res.data.details);
+      } catch (err) {
+        registerUserFailure(err?.response?.data?.message);
+      }
+
       handleClear();
     },
-    [data, file, handleClear, validateForm]
+    [
+      data,
+      handleClear,
+      registerUserFailure,
+      registerUserPending,
+      registerUserSuccess,
+      validateForm,
+    ]
   );
 
   return (

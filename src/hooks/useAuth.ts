@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { produce } from 'immer';
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 
 import { AuthActionType, AuthStore } from '../types';
 import {
@@ -24,15 +24,15 @@ const INITIAL_STATE = {
   message: '',
 };
 
-if (token) {
-  const decodedToken = jwtDecode(token);
-  const expiryDate = new Date().getTime();
+// if (token) {
+//   const decodedToken = jwtDecode(token);
+//   const expiryDate = new Date().getTime();
 
-  if (decodedToken.exp * 1000 < expiryDate) {
-    removeFromStorage(tokenKey);
-    INITIAL_STATE.user = null;
-  }
-}
+//   if (decodedToken.exp * 1000 < expiryDate) {
+//     removeFromStorage(tokenKey);
+//     INITIAL_STATE.user = null;
+//   }
+// }
 
 export const useAuth = create<AuthStore & AuthActionType>()(
   persist(
