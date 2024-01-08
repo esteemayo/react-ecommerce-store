@@ -44,13 +44,13 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isSuccess = true;
           })
         ),
-      loginUserFailure: (payload: { payload: { message: string } }) =>
+      loginUserFailure: (payload) =>
         set(
           produce((state) => {
             state.isError = true;
             state.isSuccess = false;
             state.user = null;
-            state.message = payload.message;
+            state.message = payload;
           })
         ),
       registerUserPending: () =>
@@ -67,13 +67,13 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isSuccess = true;
           })
         ),
-      registerUserFailure: (payload: { payload: { message: string } }) =>
+      registerUserFailure: (payload) =>
         set(
           produce((state) => {
             state.isError = true;
             state.isSuccess = false;
             state.user = null;
-            state.message = payload.message;
+            state.message = payload;
           })
         ),
       logoutUser: () =>
