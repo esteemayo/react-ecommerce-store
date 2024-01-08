@@ -12,9 +12,7 @@ const MenuItem = ({ data }: FooterMenuItemProps) => {
         const { id, url, text } = link;
         return (
           <ListItem key={id}>
-            <Link href={url} passHref>
-              {text}
-            </Link>
+            <Link to={url}>{text}</Link>
           </ListItem>
         );
       })}
