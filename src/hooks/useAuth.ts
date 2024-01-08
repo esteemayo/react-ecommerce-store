@@ -3,16 +3,36 @@ import { devtools, persist } from 'zustand/middleware';
 import { produce } from 'immer';
 import jwtDecode from 'jwt-decode';
 
-import { setToStorage, tokenKey } from '../utils';
 import { AuthActionType, AuthStore } from '../types';
+import {
+  getFromStorage,
+  removeFromStorage,
+  setToStorage,
+  tokenKey,
+} from '../utils';
+
+import { getJwt } from '../services/authService';
+
+const token = getJwt();
+const user = getFromStorage(tokenKey);
 
 const INITIAL_STATE = {
-  user: null,
+  user: user ?? null,
   isLoading: false,
   isError: false,
   isSuccess: false,
   message: '',
 };
+
+if (token) {
+  const decodedToken = jwtDecode(token);
+  const expiryDate = new Date().getTime();
+
+  if (decodedToken.exp * 1000 < expiryDate) {
+    removeFromStorage(tokenKey);
+    INITIAL_STATE.user = null;
+  }
+}
 
 export const useAuth = create<AuthStore & AuthActionType>()(
   persist(
