@@ -11,9 +11,9 @@ import {
   tokenKey,
 } from '../utils';
 
-import { getJwt } from '../services/authService';
+// import { getJwt } from '../services/authService';
 
-const token = getJwt();
+// const token = getJwt();
 const user = getFromStorage(tokenKey);
 
 const INITIAL_STATE = {

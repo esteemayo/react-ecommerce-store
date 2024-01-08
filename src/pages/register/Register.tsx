@@ -1,4 +1,5 @@
-import { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCallback, useEffect, useState } from 'react';
 
 import AuthInfo from '../../components/form/AuthInfo';
 import FormButton from '../../components/form/FormButton';
@@ -36,13 +37,17 @@ const initialState = {
 };
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const { getAll } = useCountries();
   const {
+    user,
     isLoading,
     isSuccess,
     registerUserFailure,
     registerUserPending,
     registerUserSuccess,
+    reset,
   } = useAuth();
 
   const [perc, setPerc] = useState(0);
@@ -133,14 +138,15 @@ const Register = () => {
         const res = await registerUser(credentials);
         console.log(res);
         registerUserSuccess(res.data.details);
-      } catch (err) {
-        registerUserFailure(err?.response?.data?.message);
+        console.log({ ...data, file });
+        handleClear();
+      } catch (err: unknown) {
+        registerUserFailure(err.response.data.message);
       }
-
-      handleClear();
     },
     [
       data,
+      file,
       handleClear,
       registerUserFailure,
       registerUserPending,
@@ -148,6 +154,14 @@ const Register = () => {
       validateForm,
     ]
   );
+
+  useEffect(() => {
+    isSuccess && user && navigate('/login');
+  }, [isSuccess, navigate, user]);
+
+  useEffect(() => {
+    return () => reset();
+  }, [reset]);
 
   return (
     <FormBox>
@@ -190,7 +204,11 @@ const Register = () => {
               />
             </>
           )}
-          <FormButton label='Register' disabled={perc > 0 && perc < 100} />
+          <FormButton
+            label='Register'
+            loading={isLoading}
+            disabled={(perc > 0 && perc < 100) || isLoading}
+          />
         </Form>
       </StyledBox>
       <AuthInfo url='/login' text='Already have an account?' label='Sign in' />
