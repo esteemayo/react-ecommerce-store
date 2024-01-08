@@ -13,10 +13,43 @@ const INITIAL_STATE = {
   message: '',
 };
 
-export const useAuth = create<AuthStore & AuthActionType>()((set) => ({
-  user: INITIAL_STATE.user,
-  isLoading: INITIAL_STATE.isLoading,
-  isError: INITIAL_STATE.isError,
-  isSuccess: INITIAL_STATE.isSuccess,
-  message: INITIAL_STATE.message,
-}));
+export const useAuth = create<AuthStore & AuthActionType>()(
+  persist(
+    devtools((set) => ({
+      user: INITIAL_STATE.user,
+      isLoading: INITIAL_STATE.isLoading,
+      isError: INITIAL_STATE.isError,
+      isSuccess: INITIAL_STATE.isSuccess,
+      message: INITIAL_STATE.message,
+      reset: () =>
+        set(
+          produce((state) => {
+            state.user = INITIAL_STATE.user;
+            state.isLoading = INITIAL_STATE.isLoading;
+            state.isError = INITIAL_STATE.isError;
+            state.isSuccess = INITIAL_STATE.isSuccess;
+          })
+        ),
+      loginUser: (payload) =>
+        set(
+          produce((state) => {
+            state.user = payload;
+          })
+        ),
+      registerUser: (payload) =>
+        set(
+          produce((state) => {
+            state.user = payload;
+          })
+        ),
+      logoutUser: () =>
+        set(
+          produce((state) => {
+            state.isSuccess = false;
+            state.user = null;
+          })
+        ),
+    })),
+    { name: 'cart' }
+  )
+);
