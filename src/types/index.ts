@@ -8,7 +8,7 @@ export type Announcements = {
 }[];
 
 export interface AuthStore {
-  user: object;
+  user: object | null;
   isLoading: boolean;
   isError: boolean;
   isSuccess: boolean;
