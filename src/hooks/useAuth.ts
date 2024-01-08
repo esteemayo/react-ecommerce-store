@@ -3,6 +3,7 @@ import { devtools, persist } from 'zustand/middleware';
 import { produce } from 'immer';
 import jwtDecode from 'jwt-decode';
 
+import { setToStorage, tokenKey } from '../utils';
 import { AuthActionType, AuthStore } from '../types';
 
 const INITIAL_STATE = {
@@ -40,6 +41,7 @@ export const useAuth = create<AuthStore & AuthActionType>()(
         set(
           produce((state) => {
             state.user = payload;
+            setToStorage(tokenKey, payload);
             state.isLoading = false;
             state.isSuccess = true;
           })
@@ -63,6 +65,7 @@ export const useAuth = create<AuthStore & AuthActionType>()(
         set(
           produce((state) => {
             state.user = payload;
+            setToStorage(tokenKey, payload);
             state.isLoading = false;
             state.isSuccess = true;
           })
