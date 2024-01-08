@@ -35,7 +35,7 @@ const OrderCard = ({ id, total, status, createdAt }: OrderCardProps) => {
           </OrderIconWrapper>
         </OrderDateIconContainer>
         <OrderTotal>Total: {formatCurrency(total)}</OrderTotal>
-        <Link href={`/orders/${encodeURIComponent(id)}`} passHref>
+        <Link to={`/orders/${encodeURIComponent(id)}`}>
           <Button type='button'>Order details</Button>
         </Link>
       </Order>
