@@ -91,17 +91,17 @@ export const sublinks: Sublink = [
     page: 'products',
     links: [
       {
-        url: '/',
+        url: '/products',
         icon: faLayerGroup,
         label: 'featured',
       },
       {
-        url: '/',
+        url: '/products',
         icon: faShirt,
         label: 'clothing',
       },
       {
-        url: '/',
+        url: '/products',
         icon: faBagShopping,
         label: 'accessories',
       },
