@@ -30,16 +30,50 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isSuccess = INITIAL_STATE.isSuccess;
           })
         ),
+      loginUserPending: () =>
+        set(
+          produce((state) => {
+            state.isLoading = true;
+          })
+        ),
       loginUserSuccess: (payload) =>
         set(
           produce((state) => {
             state.user = payload;
+            state.isLoading = false;
+            state.isSuccess = true;
+          })
+        ),
+      loginUserFailure: (payload: { payload: { message: string } }) =>
+        set(
+          produce((state) => {
+            state.isError = true;
+            state.isSuccess = false;
+            state.user = null;
+            state.message = payload.message;
+          })
+        ),
+      registerUserPending: () =>
+        set(
+          produce((state) => {
+            state.isLoading = true;
           })
         ),
       registerUserSuccess: (payload) =>
         set(
           produce((state) => {
             state.user = payload;
+            state.isLoading = false;
+            state.isSuccess = true;
+          })
+        ),
+      registerUserFailure: (payload: { payload: { message: string } }) =>
+        set(
+          produce((state) => {
+            state.isError = true;
+            state.isSuccess = false;
+            state.user = null;
+            state.message = payload.message;
           })
         ),
       logoutUser: () =>
