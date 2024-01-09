@@ -23,10 +23,12 @@ export const useCart = (product: ProductValues) => {
   }, []);
 
   const handleClick = useCallback(() => {
-    addProduct({ ...product, size, color, quantity });
-    removeWishlist(product.id);
-    setAlert(true);
-    handleReset();
+    if ((quantity && color) || size) {
+      addProduct({ ...product, size, color, quantity });
+      removeWishlist(product.id);
+      setAlert(true);
+      handleReset();
+    }
   }, [addProduct, color, product, removeWishlist, quantity, size, handleReset]);
 
   return {
