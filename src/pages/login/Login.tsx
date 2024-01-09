@@ -11,6 +11,7 @@ import Heading from '../../components/form/Heading';
 import FormInput from '../../components/form/FormInput';
 import Form from '../../components/form/Form';
 import CheckBox from '../../components/form/CheckBox';
+import Loader from '../../components/Loader';
 
 import Forgot from './Forgot';
 import SocialLogin from './SocialLogin';
@@ -133,6 +134,10 @@ const Login = () => {
     return () => reset();
   }, [reset]);
 
+  if (isLoading) {
+    return <Loader size='md' />;
+  }
+
   return (
     <FormBox>
       <StyledBox>
@@ -167,7 +172,7 @@ const Login = () => {
               setRememberMe(e.currentTarget.checked)
             }
           />
-          <FormButton label='Log in' loading={isLoading} disabled={isLoading} />
+          <FormButton label='Log in' disabled={isLoading} />
           <Forgot url='/forgot' label='Forgot your password?' />
         </Form>
       </StyledBox>
