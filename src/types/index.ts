@@ -1013,12 +1013,14 @@ export interface AccountUploadProps {
   onOpen(): void;
 }
 
-export interface AccountInputProps extends HTMLAttributes<HTMLInputElement> {
+export interface AccountInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
   name: string;
   type: string;
   label: string;
-  value: string | number | readonly string[];
+  value?: string | number | readonly string[];
+  placeholder: string;
   error?: string;
 }
 
