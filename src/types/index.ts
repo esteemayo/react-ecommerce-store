@@ -26,6 +26,21 @@ export interface AuthActionType {
   logoutUser(): void;
 }
 
+interface CurrentUserType {
+  active: boolean;
+  country: string;
+  createdAt: string;
+  email: string;
+  fromGoogle: boolean;
+  image?: string;
+  name: string;
+  token: string;
+  updatedAt: string;
+  username: string;
+  __v: number;
+  _id: string;
+}
+
 export type CartItem = {
   id: string;
   name: string;
@@ -980,30 +995,15 @@ interface PasswordModal {
 }
 
 export interface AccountInfoProps {
-  user: object | null;
+  user: CurrentUserType;
   accountModal: AccountModal;
   emailModal: EmailModal;
   fileModal: FileModal;
   passwordModal: PasswordModal;
 }
 
-interface CurrentUserType {
-  active: boolean;
-  country: string;
-  createdAt: string;
-  email: string;
-  fromGoogle: boolean;
-  image?: string;
-  name: string;
-  token: string;
-  updatedAt: string;
-  username: string;
-  __v: number;
-  _id: string;
-}
-
 export interface AccountUploadProps {
-  currentUser: CurrentUserType | null;
+  currentUser: CurrentUserType;
   onOpen(): void;
 }
 
