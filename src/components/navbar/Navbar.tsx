@@ -25,7 +25,7 @@ const Navbar = () => {
   const searchModal = useSearchModal();
   const qty = useCartStore((state) => state.qty);
 
-  const user = useAuth((state) => state.user);
+  const currentUser = useAuth((state) => state.user);
   const logoutUser = useAuth((state) => state.logoutUser);
 
   const openSubmenu = useSubmenu((state) => state.openSubmenu);
@@ -100,19 +100,19 @@ const Navbar = () => {
             const { id, text } = item;
             return <MenuItem key={id} label={text} onMouse={displaySubmenu} />;
           })}
-          {!!user && <LogoutButton onClick={handleLogout} />}
+          {!!currentUser && <LogoutButton onClick={handleLogout} />}
         </ListContainer>
         <ButtonContainer>
           <DarkModeToggle />
           <SearchIcon onOpen={searchModal.onOpen} />
-          {!user && (
+          {!currentUser && (
             <LoginButton
               isHover={isHover}
               onMouseOver={handleMouseOver}
               onMouseLeave={handleMouseLeave}
             />
           )}
-          {!!user && cart.length > 0 && <CartQuantity amount={qty} />}
+          {!!currentUser && cart.length > 0 && <CartQuantity amount={qty} />}
         </ButtonContainer>
       </Wrapper>
     </Container>
