@@ -980,7 +980,7 @@ interface PasswordModal {
 }
 
 export interface AccountInfoProps {
-  user: boolean;
+  user: object | null;
   accountModal: AccountModal;
   emailModal: EmailModal;
   fileModal: FileModal;
