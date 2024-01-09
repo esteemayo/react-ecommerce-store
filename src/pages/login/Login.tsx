@@ -1,5 +1,7 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import AuthInfo from '../../components/form/AuthInfo';
 import FormButton from '../../components/form/FormButton';
@@ -13,6 +15,7 @@ import CheckBox from '../../components/form/CheckBox';
 import Forgot from './Forgot';
 import SocialLogin from './SocialLogin';
 
+import { useAuth } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 
 import {
@@ -21,6 +24,7 @@ import {
   setToStorage,
   userKey,
 } from '../../utils';
+import { loginUser } from '../../services/authService';
 
 interface FormData {
   username: string;
@@ -43,6 +47,20 @@ const initialError: IErrors = {
 };
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const {
+    isError,
+    isLoading,
+    isSuccess,
+    loginUserFailure,
+    loginUserPending,
+    loginUserSuccess,
+    message,
+    reset,
+    user,
+  } = useAuth();
+
   const [rememberMe, setRememberMe] = useState(false);
 
   const validateForm = (data: FormData) => {
@@ -62,8 +80,19 @@ const Login = () => {
     return tempErrors;
   };
 
-  const onSubmitHandler = () => {
-    console.log({ ...data, rememberMe });
+  const onSubmitHandler = async () => {
+    loginUserPending();
+
+    try {
+      const credentials = {
+        ...data,
+      };
+
+      const res = await loginUser(credentials);
+      loginUserSuccess(res.data.details);
+    } catch (err: unknown) {
+      loginUserFailure(err.response.data.message);
+    }
 
     setToStorage(rememberKey, rememberMe);
     setToStorage(userKey, rememberMe ? data : '');
@@ -88,6 +117,18 @@ const Login = () => {
     setData(userData);
     setRememberMe(rememberMe);
   }, [setData]);
+
+  useEffect(() => {
+    isSuccess && user && navigate('/');
+  }, [isSuccess, navigate, user]);
+
+  useEffect(() => {
+    isError && toast.error(message);
+  }, [isError, message]);
+
+  useEffect(() => {
+    return () => reset();
+  }, [reset]);
 
   return (
     <FormBox>
@@ -123,7 +164,7 @@ const Login = () => {
               setRememberMe(e.currentTarget.checked)
             }
           />
-          <FormButton label='Log in' />
+          <FormButton label='Log in' loading={isLoading} disabled={isLoading} />
           <Forgot url='/forgot' label='Forgot your password?' />
         </Form>
       </StyledBox>
