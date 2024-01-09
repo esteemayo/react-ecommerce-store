@@ -525,7 +525,7 @@ export interface CardButtonProps {
 
 export interface CardButtonsProps {
   product: CardProduct;
-  productId: number;
+  productId: string;
   wished: number[];
 }
 
