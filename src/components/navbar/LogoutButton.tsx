@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const LogoutButton = () => {
-  return <Button>Logout</Button>;
+  return <Button type='button'>Logout</Button>;
 };
 
 const Button = styled.button`
@@ -14,6 +14,7 @@ const Button = styled.button`
   background-color: transparent;
   color: ${({ theme }) => theme.textNav};
   outline-color: var(--clr-primary-green);
+  cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
