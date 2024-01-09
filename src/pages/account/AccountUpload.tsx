@@ -6,7 +6,7 @@ import { CommonImage } from '../../components/CommonImage';
 
 interface AccountUploadProps {
   onOpen(): void;
-  currentUser: boolean;
+  currentUser: object | null;
 }
 
 const AccountUpload = ({ onOpen, currentUser }: AccountUploadProps) => {
