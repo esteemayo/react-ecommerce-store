@@ -2,12 +2,8 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
+import { AccountUploadProps } from '../../types';
 import { CommonImage } from '../../components/CommonImage';
-
-interface AccountUploadProps {
-  onOpen(): void;
-  currentUser: object | null;
-}
 
 const AccountUpload = ({ currentUser, onOpen }: AccountUploadProps) => {
   return (
