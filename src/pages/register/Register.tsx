@@ -159,7 +159,10 @@ const Register = () => {
   );
 
   useEffect(() => {
-    isSuccess && user && navigate('/login');
+    if (isSuccess && user) {
+      toast.success('Account successfully created!!!');
+      navigate('/login');
+    }
   }, [isSuccess, navigate, user]);
 
   useEffect(() => {
