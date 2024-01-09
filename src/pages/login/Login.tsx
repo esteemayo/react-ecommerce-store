@@ -119,7 +119,10 @@ const Login = () => {
   }, [setData]);
 
   useEffect(() => {
-    isSuccess && user && navigate('/');
+    if (isSuccess && user) {
+      toast.success('Access granted!!!');
+      navigate('/');
+    }
   }, [isSuccess, navigate, user]);
 
   useEffect(() => {
