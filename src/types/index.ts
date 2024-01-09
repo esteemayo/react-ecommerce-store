@@ -497,7 +497,7 @@ export interface CardInfoProps {
   priceLabel: number;
   reviewLabel: string;
   inCart: boolean;
-  wished: number[];
+  wished: string[];
   onOpen(): void;
 }
 
