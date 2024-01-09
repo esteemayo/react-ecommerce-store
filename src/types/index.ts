@@ -7,8 +7,23 @@ export type Announcements = {
   title: string;
 }[];
 
+interface CurrentUserType {
+  active: boolean;
+  country: string;
+  createdAt: string;
+  email: string;
+  fromGoogle: boolean;
+  image?: string;
+  name: string;
+  token: string;
+  updatedAt: string;
+  username: string;
+  __v: number;
+  _id: string;
+}
+
 export interface AuthStore {
-  user: object | null;
+  user: CurrentUserType;
   isLoading: boolean;
   isError: boolean;
   isSuccess: boolean;
@@ -24,21 +39,6 @@ export interface AuthActionType {
   registerUserFulfilled(payload: object): void;
   registerUserRejected(payload: string): void;
   logoutUser(): void;
-}
-
-interface CurrentUserType {
-  active: boolean;
-  country: string;
-  createdAt: string;
-  email: string;
-  fromGoogle: boolean;
-  image?: string;
-  name: string;
-  token: string;
-  updatedAt: string;
-  username: string;
-  __v: number;
-  _id: string;
 }
 
 export type CartItem = {
