@@ -987,6 +987,25 @@ export interface AccountInfoProps {
   passwordModal: PasswordModal;
 }
 
+interface CurrentUserType {
+  active: boolean;
+  country: string;
+  createdAt: string;
+  email: string;
+  fromGoogle: boolean;
+  name: string;
+  token: string;
+  updatedAt: string;
+  username: string;
+  __v: number;
+  _id: string;
+}
+
+export interface AccountUploadProps {
+  currentUser: CurrentUserType | null;
+  onOpen(): void;
+}
+
 export interface AccountInputProps extends HTMLAttributes<HTMLInputElement> {
   id: string;
   name: string;
