@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 import { usePasswordModal } from '../../hooks/usePasswordModal';
-import { useFileModal } from '../../hooks/useFileModal';
+import { useAuth } from '../../hooks/useAuth';
 import { useAccountModal } from '../../hooks/useAccountModal';
 import { useSubmenu } from '../../hooks/useSubmenu';
 import { useEmailModal } from '../../hooks/useEmailModal';
+import { useFileModal } from '../../hooks/useFileModal';
 
 import Heading from './Heading';
 import AccountInfo from './AccountInfo';
@@ -14,9 +15,8 @@ const Account = () => {
   const emailModal = useEmailModal();
   const passwordModal = usePasswordModal();
   const fileModal = useFileModal();
+  const currentUser = useAuth((state) => state.user);
   const accountModal = useAccountModal();
-
-  const user = false;
 
   return (
     <Container onMouseOver={closeSubmenu}>
@@ -24,7 +24,7 @@ const Account = () => {
         <Wrapper>
           <Heading />
           <AccountInfo
-            user={user}
+            user={currentUser}
             accountModal={accountModal}
             emailModal={emailModal}
             fileModal={fileModal}
