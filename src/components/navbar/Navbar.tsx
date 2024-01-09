@@ -24,6 +24,7 @@ const Navbar = () => {
   const cart = useCartStore((state) => state.cart);
   const searchModal = useSearchModal();
   const qty = useCartStore((state) => state.qty);
+
   const user = useAuth((state) => state.user);
   const logoutUser = useAuth((state) => state.logoutUser);
 
