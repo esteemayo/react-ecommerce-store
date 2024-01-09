@@ -90,12 +90,12 @@ const Login = () => {
 
       const res = await loginUser(credentials);
       loginUserSuccess(res.data.details);
+
+      setToStorage(rememberKey, rememberMe);
+      setToStorage(userKey, rememberMe ? data : '');
     } catch (err: unknown) {
       loginUserRejected(err.response.data.message);
     }
-
-    setToStorage(rememberKey, rememberMe);
-    setToStorage(userKey, rememberMe ? data : '');
   };
 
   const { errors, data, setData, handleChange, handleSubmit } = useForm(
