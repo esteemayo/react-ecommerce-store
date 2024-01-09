@@ -10,11 +10,7 @@ import { useForm } from '../../hooks/useForm';
 import { userDataInputs } from '../../data/formData';
 
 import Form from '../form/Form';
-
-interface UpdateDataProps {
-  email: string;
-  onCancel(): void;
-}
+import { UpdateDataProps } from '../../types';
 
 interface FormData {
   email: string;

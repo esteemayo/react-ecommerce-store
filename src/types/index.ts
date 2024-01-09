@@ -1003,7 +1003,7 @@ export interface AccountInfoProps {
 }
 
 export interface AccountHeadProps {
-  currentUser: CurrentUserType
+  currentUser: CurrentUserType;
   onOpen(): void;
   onAction(): void;
 }
@@ -1030,6 +1030,11 @@ export interface AccountButtonProps extends HTMLAttributes<HTMLButtonElement> {
 export interface CancelButtonProps extends HTMLAttributes<HTMLButtonElement> {
   text: string;
   onClick(): void;
+}
+
+export interface UpdateDataProps {
+  email: string;
+  onCancel(): void;
 }
 
 export interface ModalProps {
