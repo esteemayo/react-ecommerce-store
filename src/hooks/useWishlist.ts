@@ -6,7 +6,7 @@ import { WishlistProps, WishlistValues } from '../types';
 export const useWishlist: WishlistProps = (
   actionId: string,
   product: WishlistValues,
-  wished: number[]
+  wished: string[]
 ) => {
   const addWishlist = useCartStore((state) => state.addWishlist);
   const removeWishlist = useCartStore((state) => state.removeWishlist);
