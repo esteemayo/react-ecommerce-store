@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
 import { useCallback, useState } from 'react';
 
 import Logo from './Logo';
@@ -10,10 +10,11 @@ import MenuItem from './MenuItem';
 import ToggleButton from './ToggleButton';
 import SearchIcon from './SearchIcon';
 
-import { useSubmenu } from '../../hooks/useSubmenu';
+import { useAuth } from '../../hooks/useAuth';
 import { useSearchModal } from '../../hooks/useSearchModal';
 import { useSidebar } from '../../hooks/useSidebar';
 import { useCartStore } from '../../hooks/useCartStore';
+import { useSubmenu } from '../../hooks/useSubmenu';
 
 import { navLinks } from '../../data';
 import { Submenu } from '../../types';
@@ -22,14 +23,13 @@ const Navbar = () => {
   const cart = useCartStore((state) => state.cart);
   const searchModal = useSearchModal();
   const qty = useCartStore((state) => state.qty);
+  const user = useAuth((state) => state.user);
 
   const openSubmenu = useSubmenu((state) => state.openSubmenu);
   const onOpen = useSidebar((state) => state.onOpen);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   const [isHover, setIsHover] = useState(false);
-
-  const user = true;
 
   const handleMouseOver = useCallback(() => {
     setIsHover(true);
@@ -100,7 +100,7 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
             />
           )}
-          {user && cart.length > 0 && <CartQuantity amount={qty} />}
+          {!!user && cart.length > 0 && <CartQuantity amount={qty} />}
         </ButtonContainer>
       </Wrapper>
     </Container>
