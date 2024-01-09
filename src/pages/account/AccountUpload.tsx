@@ -9,12 +9,17 @@ interface AccountUploadProps {
   currentUser: object | null;
 }
 
-const AccountUpload = ({ onOpen, currentUser }: AccountUploadProps) => {
+const AccountUpload = ({ currentUser, onOpen }: AccountUploadProps) => {
   return (
     <Container>
       <Wrapper>
-        {currentUser ? (
-          <StyledImage src='/img/user-9.jpg' width={100} height={100} alt='' />
+        {currentUser.image ? (
+          <StyledImage
+            src={currentUser.image}
+            width={100}
+            height={100}
+            alt=''
+          />
         ) : (
           <FontAwesomeIcon icon={faUser} />
         )}
