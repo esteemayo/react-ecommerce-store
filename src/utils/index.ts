@@ -21,7 +21,7 @@ export const getUnique = <T extends object[], U extends string>(
   return [...new Set(newItems)];
 };
 
-export const getFromStorage = <T extends string>(key: T) => {
+export const getFromStorage = (key: string) => {
   if (typeof window !== 'undefined') {
     return JSON.parse(window.localStorage.getItem(key)!);
   }
@@ -33,7 +33,7 @@ export const setToStorage = <T extends string, U>(key: T, value: U) => {
   }
 };
 
-export const removeFromStorage = <T extends string>(key: T) => {
+export const removeFromStorage = (key: string) => {
   if (typeof window !== 'undefined') {
     return window.localStorage.removeItem(key);
   }
