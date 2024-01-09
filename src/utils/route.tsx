@@ -19,6 +19,9 @@ import ProductCategory from '../pages/ProductCategory';
 import Account from '../pages/account/Account';
 import NewProduct from '../pages/admin/NewProduct';
 
+import AuthRoute from './AuthRoute';
+import ProtectedRoute from './ProtectedRoute';
+
 import SharedLayout from '../components/SharedLayout';
 
 export const router = createBrowserRouter([
@@ -52,7 +55,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'cart',
-        element: <Cart />,
+        element: (
+          <AuthRoute>
+            <Cart />
+          </AuthRoute>
+        ),
       },
       {
         path: 'wishlists',
@@ -72,23 +79,43 @@ export const router = createBrowserRouter([
       },
       {
         path: 'login',
-        element: <Login />,
+        element: (
+          <ProtectedRoute>
+            <Login />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'register',
-        element: <Register />,
+        element: (
+          <ProtectedRoute>
+            <Register />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'forgot',
-        element: <Forgot />,
+        element: (
+          <ProtectedRoute>
+            <Forgot />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'reset/:token',
-        element: <ResetPassword />,
+        element: (
+          <ProtectedRoute>
+            <ResetPassword />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'account',
-        element: <Account />,
+        element: (
+          <AuthRoute>
+            <Account />
+          </AuthRoute>
+        ),
       },
       {
         path: '*',
