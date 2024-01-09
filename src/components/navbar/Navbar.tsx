@@ -25,6 +25,7 @@ const Navbar = () => {
   const searchModal = useSearchModal();
   const qty = useCartStore((state) => state.qty);
   const user = useAuth((state) => state.user);
+  const logoutUser = useAuth((state) => state.logoutUser);
 
   const openSubmenu = useSubmenu((state) => state.openSubmenu);
   const onOpen = useSidebar((state) => state.onOpen);
@@ -78,6 +79,14 @@ const Navbar = () => {
     [closeSubmenu]
   );
 
+  const handleLogout = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+      logoutUser();
+    },
+    [logoutUser]
+  );
+
   return (
     <Container onMouseOver={handleSubmenu}>
       <Wrapper>
@@ -90,7 +99,7 @@ const Navbar = () => {
             const { id, text } = item;
             return <MenuItem key={id} label={text} onMouse={displaySubmenu} />;
           })}
-          {!!user && <LogoutButton />}
+          {!!user && <LogoutButton onClick={handleLogout} />}
         </ListContainer>
         <ButtonContainer>
           <DarkModeToggle />

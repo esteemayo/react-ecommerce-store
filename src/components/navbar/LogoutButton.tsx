@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface LogoutButtonProps {
-  onClick(): void;
+  onClick(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 const LogoutButton = ({ onClick }: LogoutButtonProps) => {
