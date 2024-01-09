@@ -12,6 +12,7 @@ import FormInput from '../../components/form/FormInput';
 import FormUpload from '../../components/form/FormUpload';
 import Form from '../../components/form/Form';
 import CountrySelect from '../../components/inputs/CountrySelect';
+import Loader from '../../components/Loader';
 
 import { registerInputs } from '../../data/formData';
 import { useAuth } from '../../hooks/useAuth';
@@ -173,6 +174,10 @@ const Register = () => {
     return () => reset();
   }, [reset]);
 
+  if (isLoading) {
+    return <Loader size='md' />;
+  }
+
   return (
     <FormBox>
       <StyledBox>
@@ -216,7 +221,6 @@ const Register = () => {
           )}
           <FormButton
             label='Register'
-            loading={isLoading}
             disabled={(perc > 0 && perc < 100) || isLoading}
           />
         </Form>
