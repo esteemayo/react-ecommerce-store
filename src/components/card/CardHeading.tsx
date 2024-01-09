@@ -6,7 +6,7 @@ import { CardHeadingProps } from '../../types';
 const CardHeading = ({ url, name }: CardHeadingProps) => {
   return (
     <Heading>
-      <Link to={url}>{name}</Link>
+      <StyledLink to={url}>{name}</StyledLink>
     </Heading>
   );
 };
@@ -26,25 +26,21 @@ const Heading = styled.h3`
   @media only screen and (max-width: 35em) {
     font-size: 1.63rem;
   }
+`;
 
-  a {
-    &:link,
-    &:visited {
-      display: inline-block;
-      text-decoration: none;
-      text-decoration-color: #e2e9e7;
-      color: inherit;
-      outline-color: #eee;
-      outline-offset: 3px;
-      transition: all 0.3s ease;
-    }
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  text-decoration-color: #e2e9e7;
+  color: inherit;
+  outline-color: #eee;
+  outline-offset: 3px;
+  transition: all 0.3s ease;
 
-    &:hover,
-    &:active {
-      text-decoration: underline;
-      text-decoration-color: #e2e9e7;
-      text-underline-offset: 3px;
-    }
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    text-decoration-color: #e2e9e7;
+    text-underline-offset: 3px;
   }
 `;
 
