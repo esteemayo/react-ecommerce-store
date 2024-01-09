@@ -118,7 +118,6 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       logoutUser: () =>
         set(
           produce((state) => {
-            state.isSuccess = false;
             removeFromStorage(tokenKey);
             state.user = null;
           }),
