@@ -12,6 +12,7 @@ import { userDataInputs } from '../../data/formData';
 import Form from '../form/Form';
 
 interface UpdateDataProps {
+  email: string;
   onCancel(): void;
 }
 
@@ -35,7 +36,7 @@ const initialError: IErrors = {
   password: '',
 };
 
-const UpdateData = ({ onCancel }: UpdateDataProps) => {
+const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
   const validateForm = (data: FormData) => {
     const errors: IErrors = {};
     const { email, password } = data;
@@ -71,7 +72,7 @@ const UpdateData = ({ onCancel }: UpdateDataProps) => {
 
   return (
     <Container>
-      <AccountEmail email='brent@email.com' />
+      <AccountEmail email={email} />
       <Form onSubmit={handleSubmit}>
         {userDataInputs.map((input) => {
           const { id, name, type, label, placeholder } = input;
