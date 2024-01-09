@@ -10,7 +10,11 @@ const CardReview = ({
 }: CardReviewProps) => {
   return (
     <Container>
-      <StarRating readOnly value={ratingsAverage} name='read-only' />
+      {ratingsQuantity === 0 ? (
+        <StarRating readOnly value={ratingsQuantity} name='read-only' />
+      ) : (
+        <StarRating readOnly value={ratingsAverage} name='read-only' />
+      )}
       <Wrapper>
         <Rating>
           ({ratingsQuantity} {reviewLabel})

@@ -33,7 +33,7 @@ const ProductCard = ({ product, onOpen, onSelect }: ProductCardProps) => {
   }, [product]);
 
   const priceLabel = useMemo(() => {
-    return Math.round(product.price);
+    return product.price;
   }, [product]);
 
   const inCart = useMemo(() => {
