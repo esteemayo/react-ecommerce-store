@@ -1,7 +1,15 @@
 import styled from 'styled-components';
 
-const LogoutButton = () => {
-  return <Button type='button'>Logout</Button>;
+interface LogoutButtonProps {
+  onClick(): void;
+}
+
+const LogoutButton = ({ onClick }: LogoutButtonProps) => {
+  return (
+    <Button type='button' onClick={onClick}>
+      Logout
+    </Button>
+  );
 };
 
 const Button = styled.button`

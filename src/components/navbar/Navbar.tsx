@@ -90,7 +90,7 @@ const Navbar = () => {
             const { id, text } = item;
             return <MenuItem key={id} label={text} onMouse={displaySubmenu} />;
           })}
-          <LogoutButton />
+          {!!user && <LogoutButton />}
         </ListContainer>
         <ButtonContainer>
           <DarkModeToggle />
