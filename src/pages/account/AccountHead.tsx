@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 import { useEffect, useRef } from 'react';
 
-interface AccountHeadProps {
-  onOpen(): void;
-  onAction(): void;
-}
+import { AccountHeadProps } from '../../types';
 
-const AccountHead = ({ onOpen, onAction }: AccountHeadProps) => {
+const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -21,8 +18,10 @@ const AccountHead = ({ onOpen, onAction }: AccountHeadProps) => {
           type='text'
           id='accName'
           name='name'
-          placeholder='Name'
+          value={currentUser.name}
+          placeholder={currentUser.name}
           ref={inputRef}
+          readOnly
         />
       </Wrapper>
       <Wrapper>
@@ -31,12 +30,21 @@ const AccountHead = ({ onOpen, onAction }: AccountHeadProps) => {
           type='text'
           id='accUsername'
           name='username'
-          placeholder='Username'
+          value={currentUser.username}
+          placeholder={currentUser.username}
+          readOnly
         />
       </Wrapper>
       <Wrapper>
         <Label htmlFor='accEmail'>Email address</Label>
-        <Input type='email' id='accEmail' name='email' placeholder='Email' />
+        <Input
+          type='email'
+          id='accEmail'
+          name='email'
+          value={currentUser.email}
+          placeholder={currentUser.email}
+          readOnly
+        />
         <ButtonContainer>
           <Button type='button' onClick={onOpen}>
             Change

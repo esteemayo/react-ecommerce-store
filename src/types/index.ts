@@ -1002,6 +1002,12 @@ export interface AccountInfoProps {
   passwordModal: PasswordModal;
 }
 
+export interface AccountHeadProps {
+  currentUser: CurrentUserType
+  onOpen(): void;
+  onAction(): void;
+}
+
 export interface AccountUploadProps {
   currentUser: CurrentUserType;
   onOpen(): void;

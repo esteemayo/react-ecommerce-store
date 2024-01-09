@@ -19,6 +19,7 @@ const AccountInfo = ({
         <Box>
           <Left>
             <AccountHead
+              currentUser={user}
               onOpen={emailModal.onOpen}
               onAction={passwordModal.onOpen}
             />
