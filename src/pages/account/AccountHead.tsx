@@ -58,6 +58,7 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           id='accPassword'
           name='password'
           placeholder='********'
+          readOnly
         />
         <ButtonContainer>
           <Button type='button' onClick={onAction}>
