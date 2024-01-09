@@ -66,7 +66,7 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isSuccess = true;
           })
         ),
-      loginUserFailure: (payload) =>
+      loginUserRejected: (payload) =>
         set(
           produce((state) => {
             state.isError = true;
@@ -91,7 +91,7 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isSuccess = true;
           })
         ),
-      registerUserFailure: (payload) =>
+      registerUserRejected: (payload) =>
         set(
           produce((state) => {
             state.isError = true;

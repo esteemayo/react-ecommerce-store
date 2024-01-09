@@ -53,8 +53,8 @@ const Login = () => {
     isError,
     isLoading,
     isSuccess,
-    loginUserFailure,
     loginUserPending,
+    loginUserRejected,
     loginUserSuccess,
     message,
     reset,
@@ -91,7 +91,7 @@ const Login = () => {
       const res = await loginUser(credentials);
       loginUserSuccess(res.data.details);
     } catch (err: unknown) {
-      loginUserFailure(err.response.data.message);
+      loginUserRejected(err.response.data.message);
     }
 
     setToStorage(rememberKey, rememberMe);

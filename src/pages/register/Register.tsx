@@ -44,8 +44,8 @@ const Register = () => {
     user,
     isLoading,
     isSuccess,
-    registerUserFailure,
     registerUserPending,
+    registerUserRejected,
     registerUserSuccess,
     reset,
   } = useAuth();
@@ -141,15 +141,15 @@ const Register = () => {
         console.log({ ...data, file });
         handleClear();
       } catch (err: unknown) {
-        registerUserFailure(err.response.data.message);
+        registerUserRejected(err.response.data.message);
       }
     },
     [
       data,
       file,
       handleClear,
-      registerUserFailure,
       registerUserPending,
+      registerUserRejected,
       registerUserSuccess,
       validateForm,
     ]
