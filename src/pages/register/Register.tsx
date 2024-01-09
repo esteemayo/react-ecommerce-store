@@ -45,9 +45,9 @@ const Register = () => {
     isError,
     isLoading,
     isSuccess,
+    registerUserFulfilled,
     registerUserPending,
     registerUserRejected,
-    registerUserSuccess,
     message,
     reset,
     user,
@@ -140,7 +140,7 @@ const Register = () => {
 
         const res = await registerUser(credentials);
         console.log(res);
-        registerUserSuccess(res.data.details);
+        registerUserFulfilled(res.data.details);
         console.log({ ...data, file });
         handleClear();
       } catch (err: unknown) {
@@ -153,7 +153,7 @@ const Register = () => {
       handleClear,
       registerUserPending,
       registerUserRejected,
-      registerUserSuccess,
+      registerUserFulfilled,
       validateForm,
     ]
   );

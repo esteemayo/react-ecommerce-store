@@ -49,22 +49,28 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isLoading = INITIAL_STATE.isLoading;
             state.isError = INITIAL_STATE.isError;
             state.isSuccess = INITIAL_STATE.isSuccess;
-          })
+          }),
+          false,
+          'reset'
         ),
       loginUserPending: () =>
         set(
           produce((state) => {
             state.isLoading = true;
-          })
+          }),
+          false,
+          'pending'
         ),
-      loginUserSuccess: (payload) =>
+      loginUserFulfilled: (payload) =>
         set(
           produce((state) => {
             state.user = payload;
             setToStorage(tokenKey, payload);
             state.isLoading = false;
             state.isSuccess = true;
-          })
+          }),
+          false,
+          'fulfilled'
         ),
       loginUserRejected: (payload) =>
         set(
@@ -74,22 +80,28 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isLoading = false;
             state.user = null;
             state.message = payload;
-          })
+          }),
+          false,
+          'rejected'
         ),
       registerUserPending: () =>
         set(
           produce((state) => {
             state.isLoading = true;
-          })
+          }),
+          false,
+          'pending'
         ),
-      registerUserSuccess: (payload) =>
+      registerUserFulfilled: (payload) =>
         set(
           produce((state) => {
             state.user = payload;
             setToStorage(tokenKey, payload);
             state.isLoading = false;
             state.isSuccess = true;
-          })
+          }),
+          false,
+          'fulfilled'
         ),
       registerUserRejected: (payload) =>
         set(
@@ -99,7 +111,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isLoading = false;
             state.user = null;
             state.message = payload;
-          })
+          }),
+          false,
+          'rejected'
         ),
       logoutUser: () =>
         set(
@@ -107,7 +121,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
             state.isSuccess = false;
             removeFromStorage(tokenKey);
             state.user = null;
-          })
+          }),
+          false,
+          'logout'
         ),
     })),
     { name: 'cart' }

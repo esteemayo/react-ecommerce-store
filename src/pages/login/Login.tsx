@@ -53,9 +53,9 @@ const Login = () => {
     isError,
     isLoading,
     isSuccess,
+    loginUserFulfilled,
     loginUserPending,
     loginUserRejected,
-    loginUserSuccess,
     message,
     reset,
     user,
@@ -89,7 +89,7 @@ const Login = () => {
       };
 
       const res = await loginUser(credentials);
-      loginUserSuccess(res.data.details);
+      loginUserFulfilled(res.data.details);
 
       setToStorage(rememberKey, rememberMe);
       setToStorage(userKey, rememberMe ? data : '');
