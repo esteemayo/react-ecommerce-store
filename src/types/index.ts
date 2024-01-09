@@ -993,6 +993,7 @@ interface CurrentUserType {
   createdAt: string;
   email: string;
   fromGoogle: boolean;
+  image?: string;
   name: string;
   token: string;
   updatedAt: string;
