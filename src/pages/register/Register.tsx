@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useCallback, useEffect, useState } from 'react';
 
 import AuthInfo from '../../components/form/AuthInfo';
@@ -41,13 +42,15 @@ const Register = () => {
 
   const { getAll } = useCountries();
   const {
-    user,
+    isError,
     isLoading,
     isSuccess,
     registerUserPending,
     registerUserRejected,
     registerUserSuccess,
+    message,
     reset,
+    user,
   } = useAuth();
 
   const [perc, setPerc] = useState(0);
@@ -158,6 +161,10 @@ const Register = () => {
   useEffect(() => {
     isSuccess && user && navigate('/login');
   }, [isSuccess, navigate, user]);
+
+  useEffect(() => {
+    isError && toast.error(message);
+  }, [isError, message]);
 
   useEffect(() => {
     return () => reset();
