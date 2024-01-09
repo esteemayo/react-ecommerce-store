@@ -410,7 +410,7 @@ export interface CountrySelectProps {
 }
 
 export type WishlistProps = {
-  (actionId: number, product: WishlistValues, wished: number[]): {
+  (actionId: string, product: WishlistValues, wished: string[]): {
     isWished: boolean;
     handleToggle: (e: React.MouseEvent<HTMLButtonElement>) => void;
   };
@@ -526,13 +526,13 @@ export interface CardButtonProps {
 export interface CardButtonsProps {
   product: CardProduct;
   productId: string;
-  wished: number[];
+  wished: string[];
 }
 
 export interface WishlistButtonProps {
-  actionId: number;
+  actionId: string;
   product: WishlistValues;
-  wished: number[];
+  wished: string[];
 }
 
 export interface CartModalProps {

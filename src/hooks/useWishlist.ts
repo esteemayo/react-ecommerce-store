@@ -4,7 +4,7 @@ import { useCartStore } from './useCartStore';
 import { WishlistProps, WishlistValues } from '../types';
 
 export const useWishlist: WishlistProps = (
-  actionId: number,
+  actionId: string,
   product: WishlistValues,
   wished: number[]
 ) => {
