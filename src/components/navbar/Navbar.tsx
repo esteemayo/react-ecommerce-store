@@ -9,6 +9,7 @@ import CartQuantity from './CartQuantity';
 import MenuItem from './MenuItem';
 import ToggleButton from './ToggleButton';
 import SearchIcon from './SearchIcon';
+import LogoutButton from './LogoutButton';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useSearchModal } from '../../hooks/useSearchModal';
@@ -89,6 +90,7 @@ const Navbar = () => {
             const { id, text } = item;
             return <MenuItem key={id} label={text} onMouse={displaySubmenu} />;
           })}
+          <LogoutButton />
         </ListContainer>
         <ButtonContainer>
           <DarkModeToggle />
