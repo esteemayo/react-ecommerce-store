@@ -45,6 +45,9 @@ export interface AuthActionType {
   updateUserPasswordPending(): void;
   updateUserPasswordFulfilled(payload: CurrentUserType): void;
   updateUserPasswordRejected(payload: string): void;
+  deleteUserPending(): void;
+  deleteUserFulfilled(): void;
+  deleteUserRejected(payload: string): void;
 }
 
 export type CartItem = {
