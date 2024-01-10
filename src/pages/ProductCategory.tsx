@@ -86,7 +86,11 @@ const ProductCategory = () => {
   });
 
   if (isLoading) {
-    return <Loader size='md' />;
+    return (
+      <LoaderContainer>
+        <Loader size='md' />
+      </LoaderContainer>
+    );
   }
 
   return (
@@ -131,6 +135,11 @@ const ProductCategory = () => {
     </ProductBox>
   );
 };
+
+const LoaderContainer = styled.section`
+  width: 100vw;
+  min-height: 100vh;
+`;
 
 const Container = styled.section`
   padding: 7rem 0;
