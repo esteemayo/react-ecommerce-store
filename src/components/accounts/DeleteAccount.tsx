@@ -1,5 +1,6 @@
-import { useCallback } from 'react';
 import styled from 'styled-components';
+import { useCallback, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 import { useAuth } from '../../hooks/useAuth';
 import { deleteUser } from '../../services/userService';
@@ -32,6 +33,13 @@ const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
     }
   }, [deleteUserFulfilled, deleteUserPending, deleteUserRejected]);
 
+  useEffect(() => {
+    isSuccess && onCancel();
+    isError && toast.error(message);
+
+    return () => reset();
+  }, [isError, isSuccess, message, onCancel, reset]);
+
   return (
     <Container>
       <Heading>You are about to delete your account</Heading>
@@ -43,7 +51,7 @@ const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
         <CancelButton type='button' onClick={onCancel}>
           Cancel
         </CancelButton>
-        <DeleteButton type='button' onClick={handleDelete}>
+        <DeleteButton type='button' disabled={isLoading} onClick={handleDelete}>
           Delete account
         </DeleteButton>
       </ButtonContainer>
