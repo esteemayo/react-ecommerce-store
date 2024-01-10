@@ -147,6 +147,11 @@ const DeleteButton = styled.button`
   &:hover {
     background-position: 100%;
   }
+
+  &:disabled {
+    opacity: 0.85;
+    cursor: not-allowed;
+  }
 `;
 
 export default DeleteAccount;
