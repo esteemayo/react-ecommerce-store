@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
+
 import Input from './Input';
 import CancelButton from './CancelButton';
 import Button from './Button';
@@ -5,9 +8,11 @@ import Button from './Button';
 import { Container } from './Container';
 import { ButtonContainer } from './ButtonContainer';
 
+import { useAuth } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 
 import Form from '../form/Form';
+import { updatePassword } from '../../services/authService';
 
 interface UpdatePasswordProps {
   onCancel(): void;
@@ -38,6 +43,17 @@ const initialError: IErrors = {
 };
 
 const UpdatePassword = ({ onCancel }: UpdatePasswordProps) => {
+  const {
+    isError,
+    isLoading,
+    isSuccess,
+    message,
+    reset,
+    updateUserPasswordFulfilled,
+    updateUserPasswordPending,
+    updateUserPasswordRejected,
+  } = useAuth();
+
   const validateForm = (data: FormData) => {
     const errors: IErrors = {};
     const { password, confirmPassword, currentPassword } = data;
@@ -59,8 +75,22 @@ const UpdatePassword = ({ onCancel }: UpdatePasswordProps) => {
     return errors;
   };
 
-  const onSubmitHandler = () => {
-    console.log({ ...data });
+  const onSubmitHandler = async () => {
+    updateUserPasswordPending();
+
+    try {
+      const credentials = {
+        ...data,
+      };
+
+      const res = await updatePassword(credentials);
+      console.log(res.data);
+      updateUserPasswordFulfilled(res.data);
+      console.log({ ...data });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: unknown | any) {
+      updateUserPasswordRejected(err.response.data.message);
+    }
   };
 
   const { errors, data, handleClose, handleChange, handleSubmit } = useForm(
@@ -70,6 +100,13 @@ const UpdatePassword = ({ onCancel }: UpdatePasswordProps) => {
     validateForm,
     onCancel
   );
+
+  useEffect(() => {
+    isSuccess && onCancel();
+    isError && toast.error(message);
+
+    return () => reset();
+  }, [isError, isSuccess, message, onCancel, reset]);
 
   return (
     <Container>
@@ -106,7 +143,7 @@ const UpdatePassword = ({ onCancel }: UpdatePasswordProps) => {
         />
         <ButtonContainer>
           <CancelButton text='Cancel' onClick={handleClose} />
-          <Button text='Save' />
+          <Button text='Save' disabled={isLoading} loading={isLoading} />
         </ButtonContainer>
       </Form>
     </Container>
