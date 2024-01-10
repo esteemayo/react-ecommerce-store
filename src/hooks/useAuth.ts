@@ -29,10 +29,10 @@ const INITIAL_STATE = {
 };
 
 if (token) {
-  const decodedToken = jwtDecode<JwtPayload>(token);
+  const decoded = jwtDecode<JwtPayload>(token);
   const expiryDate = new Date().getTime();
 
-  if (decodedToken.exp * 1000 < expiryDate) {
+  if (decoded.exp * 1000 < expiryDate) {
     removeFromStorage(tokenKey);
     INITIAL_STATE.user = null;
   }
