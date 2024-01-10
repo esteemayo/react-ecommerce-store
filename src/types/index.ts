@@ -39,6 +39,9 @@ export interface AuthActionType {
   registerUserFulfilled(payload: object): void;
   registerUserRejected(payload: string): void;
   logoutUser(): void;
+  updateUserEmailPending(): void;
+  updateUserEmailFulfilled(payload: object): void;
+  updateUserEmailRejected(payload: string): void;
 }
 
 export type CartItem = {
