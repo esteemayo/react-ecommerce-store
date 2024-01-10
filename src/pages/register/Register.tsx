@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 import AuthInfo from '../../components/form/AuthInfo';
 import FormButton from '../../components/form/FormButton';
@@ -176,7 +177,11 @@ const Register = () => {
   }, [reset]);
 
   if (isLoading) {
-    return <Loader size='md' />;
+    return (
+      <Container>
+        <Loader size='md' />
+      </Container>
+    );
   }
 
   return (
@@ -230,5 +235,10 @@ const Register = () => {
     </FormBox>
   );
 };
+
+const Container = styled.section`
+  width: 100vw;
+  min-height: 100vh;
+`;
 
 export default Register;
