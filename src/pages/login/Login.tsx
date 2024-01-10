@@ -94,7 +94,8 @@ const Login = () => {
 
       setToStorage(rememberKey, rememberMe);
       setToStorage(userKey, rememberMe ? data : '');
-    } catch (err: unknown) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: unknown | any) {
       loginUserRejected(err.response.data.message);
     }
   };
