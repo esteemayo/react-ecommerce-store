@@ -144,7 +144,8 @@ const Register = () => {
         registerUserFulfilled(res.data.details);
         console.log({ ...data, file });
         handleClear();
-      } catch (err: unknown) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (err: unknown | any) {
         registerUserRejected(err.response.data.message);
       }
     },
