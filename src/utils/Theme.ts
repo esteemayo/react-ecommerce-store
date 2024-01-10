@@ -134,6 +134,7 @@ export const darkTheme = {
   bgSignInBtn: '#373737',
   textSignInBtn: '#cfd0d1',
   bgSignInBtnHov: 'hsla(0, 0%, 100%, 0.2)',
+  bgImage: '#1c1c1c',
 };
 
 export const lightTheme = {
@@ -272,4 +273,5 @@ export const lightTheme = {
   bgSignInBtn: 'var(--clr-primary-green)',
   textSignInBtn: 'var(--clr-white)',
   bgSignInBtnHov: 'hsla(0, 0%, 100%, 0.4)',
+  bgImage: '#ddd',
 };
