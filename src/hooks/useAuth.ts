@@ -182,6 +182,36 @@ export const useAuth = create<AuthStore & AuthActionType>()(
           false,
           'rejected'
         ),
+      deleteUserPending: () =>
+        set(
+          produce((state) => {
+            state.isLoading = true;
+          }),
+          false,
+          'loading'
+        ),
+      deleteUserFulfilled: () =>
+        set(
+          produce((state) => {
+            state.user = null;
+            state.isLoading = false;
+            state.isSuccess = true;
+          }),
+          false,
+          'fulfilled'
+        ),
+      deleteUserRejected: (payload) =>
+        set(
+          produce((state) => {
+            state.isError = true;
+            state.isSuccess = false;
+            state.isLoading = false;
+            state.user = null;
+            state.message = payload;
+          }),
+          false,
+          'rejected'
+        ),
     })),
     { name: 'auth' }
   )
