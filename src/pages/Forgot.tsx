@@ -1,4 +1,6 @@
 import { useCallback, useState } from 'react';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 import FormButton from '../components/form/FormButton';
 import FormBox from '../components/form/FormBox';
@@ -7,11 +9,16 @@ import Form from '../components/form/Form';
 import { StyledBox } from '../components/form/StyledBox';
 import Heading from '../components/form/Heading';
 
+import { forgotPassword } from '../services/authService';
+
 interface IErrors {
   email?: string;
 }
 
 const Forgot = () => {
+  const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState<IErrors>({});
 
@@ -32,16 +39,28 @@ const Forgot = () => {
   }, [email]);
 
   const handleSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
+    async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
       const errors = validateForm();
       if (Object.keys(errors).length > 0) return setErrors(errors);
       setErrors({});
 
-      console.log(email);
+      setIsLoading(true);
+
+      try {
+        const { data } = await forgotPassword(email);
+        console.log(data);
+        navigate('/login');
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (err: unknown | any) {
+        console.log(err);
+        toast.error(err.response.data.message);
+      } finally {
+        setIsLoading(false);
+      }
     },
-    [email, validateForm]
+    [email, navigate, validateForm]
   );
 
   return (
@@ -61,7 +80,11 @@ const Forgot = () => {
             error={errors.email}
             autoFocus
           />
-          <FormButton label='Reset password' />
+          <FormButton
+            label='Reset password'
+            disabled={isLoading}
+            loading={isLoading}
+          />
         </Form>
       </StyledBox>
     </FormBox>
