@@ -1030,6 +1030,7 @@ export interface AccountInputProps
 export interface AccountButtonProps extends HTMLAttributes<HTMLButtonElement> {
   text: string;
   disabled?: boolean;
+  loading?: boolean;
 }
 
 export interface CancelButtonProps extends HTMLAttributes<HTMLButtonElement> {

@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-import { AccountButtonProps } from '../../types';
+import Spinner from '../Spinner';
 import { CommonButton } from '../buttons/CommonButton';
 
-const Button = ({ text, disabled }: AccountButtonProps) => {
+import { AccountButtonProps } from '../../types';
+
+const Button = ({ text, disabled, loading }: AccountButtonProps) => {
   return (
     <StyledButton type='submit' disabled={disabled}>
-      {text}
+      {loading ? <Spinner /> : text}
     </StyledButton>
   );
 };
