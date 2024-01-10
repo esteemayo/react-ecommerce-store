@@ -23,6 +23,7 @@ const StyledLink = styled(Link)`
 const StyledImage = styled(CommonImage)`
   width: 10rem;
   height: 5rem;
+  background-color: transparent;
 `;
 
 export default Logo;
