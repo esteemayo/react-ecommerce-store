@@ -1,15 +1,20 @@
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
+
 import Button from './Button';
 import CancelButton from './CancelButton';
 import Input from './Input';
 import AccountEmail from './AccountEmail';
+import Form from '../form/Form';
 
 import { Container } from './Container';
 import { ButtonContainer } from './ButtonContainer';
 
+import { useAuth } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 
-import Form from '../form/Form';
 import { UpdateDataProps } from '../../types';
+import { updateEmail } from '../../services/userService';
 
 interface FormData {
   email: string;
@@ -32,6 +37,17 @@ const initialError: IErrors = {
 };
 
 const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
+  const {
+    isError,
+    isLoading,
+    isSuccess,
+    message,
+    reset,
+    updateUserEmailFulfilled,
+    updateUserEmailPending,
+    updateUserEmailRejected,
+  } = useAuth();
+
   const validateForm = (data: FormData) => {
     const errors: IErrors = {};
     const { email, password } = data;
@@ -53,8 +69,22 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
     return errors;
   };
 
-  const onSubmitHandler = () => {
-    console.log({ ...data });
+  const onSubmitHandler = async () => {
+    updateUserEmailPending();
+
+    try {
+      const credentials = {
+        ...data,
+      };
+
+      const res = await updateEmail(credentials);
+      console.log(res.data);
+      updateUserEmailFulfilled(res.data);
+
+      console.log({ ...data });
+    } catch (err: unknown) {
+      updateUserEmailRejected(err.response.data.message);
+    }
   };
 
   const { errors, data, handleClose, handleChange, handleSubmit } = useForm(
@@ -64,6 +94,13 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
     validateForm,
     onCancel
   );
+
+  useEffect(() => {
+    isSuccess && onCancel();
+    isError && toast.error(message);
+
+    return () => reset();
+  }, [isError, isSuccess, message, onCancel, reset]);
 
   return (
     <Container>
@@ -91,7 +128,7 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
         />
         <ButtonContainer>
           <CancelButton text='Cancel' onClick={handleClose} />
-          <Button text='Save' />
+          <Button text='Save' disabled={isLoading} loading={isLoading} />
         </ButtonContainer>
       </Form>
     </Container>
