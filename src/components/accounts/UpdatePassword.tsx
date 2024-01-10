@@ -6,7 +6,6 @@ import { Container } from './Container';
 import { ButtonContainer } from './ButtonContainer';
 
 import { useForm } from '../../hooks/useForm';
-import { passwordInputs } from '../../data/formData';
 
 import Form from '../form/Form';
 
@@ -75,22 +74,36 @@ const UpdatePassword = ({ onCancel }: UpdatePasswordProps) => {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        {passwordInputs.map((input) => {
-          const { id, name, type, label, placeholder } = input;
-          return (
-            <Input
-              key={id}
-              id={id}
-              label={label}
-              type={type}
-              name={name}
-              value={data[name]}
-              placeholder={placeholder}
-              onChange={handleChange}
-              error={errors?.[name]}
-            />
-          );
-        })}
+        <Input
+          id='password1'
+          name='password'
+          type='password'
+          label='Password'
+          value={data.password}
+          placeholder='Type in your new password'
+          onChange={handleChange}
+          error={errors.password}
+        />
+        <Input
+          id='confirm-password'
+          name='confirmPassword'
+          type='password'
+          label='Confirm Password'
+          value={data.confirmPassword}
+          placeholder='Confirm your password'
+          onChange={handleChange}
+          error={errors.confirmPassword}
+        />
+        <Input
+          id='current-password'
+          name='currentPassword'
+          type='password'
+          label='Current Password'
+          value={data.currentPassword}
+          placeholder='Type in your current password'
+          onChange={handleChange}
+          error={errors.currentPassword}
+        />
         <ButtonContainer>
           <CancelButton text='Cancel' onClick={handleClose} />
           <Button text='Save' />
