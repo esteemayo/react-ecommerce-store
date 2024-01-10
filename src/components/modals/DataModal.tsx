@@ -10,7 +10,7 @@ const DataModal = () => {
 
   return (
     <Modal title='Change your email address' isOpen={isOpen} onClose={onClose}>
-      <UpdateData email={currentUser.email} onCancel={onClose} />
+      <UpdateData email={currentUser?.email} onCancel={onClose} />
     </Modal>
   );
 };
