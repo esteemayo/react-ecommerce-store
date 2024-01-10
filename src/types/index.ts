@@ -33,14 +33,14 @@ export interface AuthStore {
 export interface AuthActionType {
   reset(): void;
   loginUserPending(): void;
-  loginUserFulfilled(payload: object): void;
+  loginUserFulfilled(payload: CurrentUserType): void;
   loginUserRejected(payload: string): void;
   registerUserPending(): void;
-  registerUserFulfilled(payload: object): void;
+  registerUserFulfilled(payload: CurrentUserType): void;
   registerUserRejected(payload: string): void;
   logoutUser(): void;
   updateUserEmailPending(): void;
-  updateUserEmailFulfilled(payload: object): void;
+  updateUserEmailFulfilled(payload: CurrentUserType): void;
   updateUserEmailRejected(payload: string): void;
 }
 
