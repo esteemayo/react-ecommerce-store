@@ -53,7 +53,7 @@ const DeleteModal = ({
   );
 
   const deleteWishlistHandler = useCallback(
-    (wishlistId: number) => {
+    (wishlistId: string) => {
       onAction(wishlistId);
       onClose();
     },
