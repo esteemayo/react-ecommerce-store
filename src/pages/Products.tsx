@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
 import Loader from '../components/Loader';
@@ -72,7 +73,11 @@ const Products = () => {
   }, [category, color, price, products, size]);
 
   if (isLoading) {
-    return <Loader size='md' />;
+    return (
+      <Container>
+        <Loader size='md' />
+      </Container>
+    );
   }
 
   return (
@@ -97,5 +102,10 @@ const Products = () => {
     </ProductBox>
   );
 };
+
+const Container = styled.section`
+  width: 100px;
+  min-height: 100vh;
+`;
 
 export default Products;
