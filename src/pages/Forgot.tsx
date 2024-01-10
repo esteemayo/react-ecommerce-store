@@ -49,7 +49,7 @@ const Forgot = () => {
       setIsLoading(true);
 
       try {
-        const { data } = await forgotPassword(email);
+        const { data } = await forgotPassword({ email });
         console.log(data);
         navigate('/login');
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
