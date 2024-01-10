@@ -132,6 +132,7 @@ const Wrapper = styled.div`
 const StyledImage = styled(CommonImage)`
   width: 100%;
   height: 25rem;
+  background-color: ${({ theme }) => theme.bgImage};
   border-radius: 2px;
 
   @media only screen and (max-width: 37.5em) {
