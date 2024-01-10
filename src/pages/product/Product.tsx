@@ -84,7 +84,11 @@ const SingleProduct = () => {
   }, [product]);
 
   if (isLoading) {
-    return <Loader size='md' />;
+    return (
+      <Container>
+        <Loader size='md' />
+      </Container>
+    );
   }
 
   if (!product) {
