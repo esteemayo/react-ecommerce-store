@@ -9,4 +9,7 @@ export const loginUser = (credentials: object) =>
 export const registerUser = (credentials: object) =>
   http.post(`${apiEndpoint}/register`, credentials);
 
+export const updatePassword = (credentials: object) =>
+  http.patch(`${apiEndpoint}/update-my-password`, credentials);
+
 export const getJwt = () => getFromStorage(tokenKey)?.token;
