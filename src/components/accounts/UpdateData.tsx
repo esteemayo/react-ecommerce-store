@@ -78,7 +78,6 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
       };
 
       const res = await updateEmail(credentials);
-      console.log(res.data);
       updateUserEmailFulfilled(res.data.details);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: unknown | any) {
