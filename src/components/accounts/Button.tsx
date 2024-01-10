@@ -14,7 +14,6 @@ const Button = ({ text, disabled, loading }: AccountButtonProps) => {
 };
 
 const StyledButton = styled(CommonButton)`
-  display: inline-block;
   border: none;
   text-transform: uppercase;
   font-weight: 500;
@@ -22,6 +21,10 @@ const StyledButton = styled(CommonButton)`
   width: 50%;
   padding: 1rem;
   color: ${({ theme }) => theme.textModalDelBtn};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     font-size: 1.398rem;
