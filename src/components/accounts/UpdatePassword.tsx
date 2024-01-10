@@ -84,9 +84,7 @@ const UpdatePassword = ({ onCancel }: UpdatePasswordProps) => {
       };
 
       const res = await updatePassword(credentials);
-      console.log(res.data);
-      updateUserPasswordFulfilled(res.data);
-      console.log({ ...data });
+      updateUserPasswordFulfilled(res.data.details);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: unknown | any) {
       updateUserPasswordRejected(err.response.data.message);
