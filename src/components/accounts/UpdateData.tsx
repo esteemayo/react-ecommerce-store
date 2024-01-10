@@ -82,7 +82,8 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
       updateUserEmailFulfilled(res.data);
 
       console.log({ ...data });
-    } catch (err: unknown) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
       updateUserEmailRejected(err.response.data.message);
     }
   };
