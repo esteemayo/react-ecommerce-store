@@ -1,3 +1,7 @@
+import { toast } from 'react-toastify';
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import FormButton from '../components/form/FormButton';
 import FormBox from '../components/form/FormBox';
 import FormInput from '../components/form/FormInput';
@@ -6,6 +10,7 @@ import { StyledBox } from '../components/form/StyledBox';
 import Heading from '../components/form/Heading';
 
 import { useForm } from '../hooks/useForm';
+import { resetPassword } from '../services/authService';
 
 interface FormData {
   password: string;
@@ -28,6 +33,11 @@ const initialError: IErrors = {
 };
 
 const ResetPassword = () => {
+  const { pathname } = useLocation();
+  const token = pathname.split('/').pop();
+
+  const [isLoading, setIsLoading] = useState(false);
+
   const validateForm = (data: FormData) => {
     const tempErrors: IErrors = {};
     const { password, confirmPassword } = data;
@@ -45,7 +55,19 @@ const ResetPassword = () => {
     return tempErrors;
   };
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = async () => {
+    try {
+      const credentials = {
+        ...data,
+      };
+
+      await resetPassword(token, credentials);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: unknown | any) {
+      console.log(err.response.data.message);
+      toast.error(err.response.data.message);
+    }
     console.log({ ...data });
   };
 
