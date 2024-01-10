@@ -2,7 +2,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import logger from './logService';
-import { getJwt } from './authService';
+// import { getJwt } from './authService';
+import { getFromStorage, tokenKey } from '../utils';
 
 const devEnv = process.env.NODE_ENV !== 'production';
 // const { REACT_APP_PROD_API_URL, REACT_APP_DEV_API_URL } = process.env;
@@ -31,7 +32,9 @@ API.interceptors.response.use(null, (error) => {
   return Promise.reject(error);
 });
 
-API.defaults.headers.common['Authorization'] = `Bearer ${getJwt()}`;
+API.defaults.headers.common['Authorization'] = `Bearer ${
+  getFromStorage(tokenKey)?.token
+}`;
 
 const http = {
   get: API.get,
