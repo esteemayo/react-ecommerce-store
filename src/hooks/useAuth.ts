@@ -135,6 +135,7 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       set(
         produce((state) => {
           state.user = payload;
+          setToStorage(tokenKey, payload);
           state.isLoading = false;
           state.isSuccess = true;
         }),
