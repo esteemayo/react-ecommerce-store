@@ -153,6 +153,35 @@ export const useAuth = create<AuthStore & AuthActionType>()(
           false,
           'rejected'
         ),
+      updateUserPasswordPending: () =>
+        set(
+          produce((state) => {
+            state.isLoading = true;
+          }),
+          false,
+          'loading'
+        ),
+      updateUserPasswordFulfilled: (payload) =>
+        set(
+          produce((state) => {
+            state.user = payload;
+            state.isLoading = false;
+            state.isSuccess = true;
+          }),
+          false,
+          'fulfilled'
+        ),
+      updateUserPasswordRejected: (payload) =>
+        set(
+          produce((state) => {
+            state.isError = true;
+            state.isSuccess = false;
+            state.isLoading = false;
+            state.message = payload;
+          }),
+          false,
+          'rejected'
+        ),
     })),
     { name: 'auth' }
   )
