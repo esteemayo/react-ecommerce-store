@@ -136,7 +136,11 @@ const Login = () => {
   }, [reset]);
 
   if (isLoading) {
-    return <Loader size='md' />;
+    return (
+      <Container>
+        <Loader size='md' />
+      </Container>
+    );
   }
 
   return (
@@ -185,6 +189,11 @@ const Login = () => {
     </FormBox>
   );
 };
+
+const Container = styled.section`
+  width: 100vw;
+  min-height: 100vh;
+`;
 
 const Text = styled.p`
   display: block;
