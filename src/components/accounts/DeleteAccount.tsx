@@ -1,14 +1,36 @@
 import { useCallback } from 'react';
 import styled from 'styled-components';
 
+import { useAuth } from '../../hooks/useAuth';
+import { deleteUser } from '../../services/userService';
+
 interface DeleteAccountProps {
   onCancel(): void;
 }
 
 const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
-  const handleDelete = useCallback(() => {
-    console.log('user deleted!');
-  }, []);
+  const {
+    deleteUserFulfilled,
+    deleteUserPending,
+    deleteUserRejected,
+    isError,
+    isLoading,
+    isSuccess,
+    message,
+    reset,
+  } = useAuth();
+
+  const handleDelete = useCallback(async () => {
+    deleteUserPending();
+
+    try {
+      await deleteUser();
+      deleteUserFulfilled();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: unknown | any) {
+      deleteUserRejected(err.response.data.message);
+    }
+  }, [deleteUserFulfilled, deleteUserPending, deleteUserRejected]);
 
   return (
     <Container>
