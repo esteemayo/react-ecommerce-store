@@ -56,6 +56,8 @@ const ResetPassword = () => {
   };
 
   const onSubmitHandler = async () => {
+    setIsLoading(true);
+
     try {
       const credentials = {
         ...data,
@@ -67,8 +69,9 @@ const ResetPassword = () => {
     } catch (err: unknown | any) {
       console.log(err.response.data.message);
       toast.error(err.response.data.message);
+    } finally {
+      setIsLoading(false);
     }
-    console.log({ ...data });
   };
 
   const { errors, data, handleChange, handleSubmit } = useForm(
