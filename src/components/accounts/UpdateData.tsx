@@ -7,7 +7,6 @@ import { Container } from './Container';
 import { ButtonContainer } from './ButtonContainer';
 
 import { useForm } from '../../hooks/useForm';
-import { userDataInputs } from '../../data/formData';
 
 import Form from '../form/Form';
 import { UpdateDataProps } from '../../types';
@@ -70,22 +69,26 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
     <Container>
       <AccountEmail email={email} />
       <Form onSubmit={handleSubmit}>
-        {userDataInputs.map((input) => {
-          const { id, name, type, label, placeholder } = input;
-          return (
-            <Input
-              key={id}
-              id={id}
-              label={label}
-              type={type}
-              name={name}
-              value={data[name]}
-              placeholder={placeholder}
-              onChange={handleChange}
-              error={errors?.[name]}
-            />
-          );
-        })}
+        <Input
+          id='newEmail'
+          name='email'
+          type='email'
+          label='Email'
+          value={data.email}
+          placeholder='Type in your new email address'
+          onChange={handleChange}
+          error={errors.email}
+        />
+        <Input
+          id='passwordCurrent'
+          name='password'
+          type='password'
+          label='Current Password'
+          value={data.password}
+          placeholder='Type in your current password'
+          onChange={handleChange}
+          error={errors.password}
+        />
         <ButtonContainer>
           <CancelButton text='Cancel' onClick={handleClose} />
           <Button text='Save' />
