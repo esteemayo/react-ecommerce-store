@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import { useAuth } from '../../hooks/useAuth';
 import { deleteUser } from '../../services/userService';
 
+import Spinner from '../Spinner';
+
 interface DeleteAccountProps {
   onCancel(): void;
 }
@@ -52,7 +54,7 @@ const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
           Cancel
         </CancelButton>
         <DeleteButton type='button' disabled={isLoading} onClick={handleDelete}>
-          Delete account
+          {isLoading ? <Spinner /> : 'Delete account'}
         </DeleteButton>
       </ButtonContainer>
     </Container>
