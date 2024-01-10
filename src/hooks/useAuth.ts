@@ -207,7 +207,6 @@ export const useAuth = create<AuthStore & AuthActionType>()(
           state.isError = true;
           state.isSuccess = false;
           state.isLoading = false;
-          state.user = null;
           state.message = payload;
         }),
         false,
