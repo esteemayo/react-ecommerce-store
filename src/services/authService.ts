@@ -12,7 +12,7 @@ export const registerUser = (credentials: object) =>
 export const updatePassword = (credentials: object) =>
   http.patch(`${apiEndpoint}/update-my-password`, credentials);
 
-export const forgotPassword = (email: string) =>
+export const forgotPassword = (email: { email: string }) =>
   http.post(`${apiEndpoint}/forgot-password`, email);
 
 export const getJwt = () => getFromStorage(tokenKey)?.token;
