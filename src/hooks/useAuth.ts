@@ -15,7 +15,6 @@ import { getJwt } from '../services/authService';
 
 interface JwtPayload {
   exp: number;
-  iat: number;
 }
 
 const token = getJwt();
