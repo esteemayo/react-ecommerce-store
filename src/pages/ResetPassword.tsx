@@ -35,7 +35,6 @@ const initialError: IErrors = {
 const ResetPassword = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const token = pathname.split('/').pop();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -60,6 +59,8 @@ const ResetPassword = () => {
     setIsLoading(true);
 
     try {
+      const token = pathname.split('/').pop();
+
       const credentials = {
         ...data,
       };
