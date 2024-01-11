@@ -34,6 +34,7 @@ const Select = ({
 
 export const Label = styled.label`
   display: inline-block;
+  width: 7rem;
   font-weight: 600;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.textLabel};
