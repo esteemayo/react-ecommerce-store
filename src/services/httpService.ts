@@ -31,9 +31,9 @@ API.interceptors.response.use(null, (error) => {
   return Promise.reject(error);
 });
 
-API.defaults.headers.common['Authorization'] = `Bearer ${
-  getFromStorage(tokenKey)?.token
-}`;
+const token = getFromStorage(tokenKey)?.token;
+
+API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
 const http = {
   get: API.get,
