@@ -429,6 +429,7 @@ export interface CountrySelectProps {
   name: string;
   label: string;
   value: string | number | readonly string[];
+  size?: boolean;
   error?: string;
   onChange(event: React.ChangeEvent<HTMLSelectElement> | undefined): void;
 }
