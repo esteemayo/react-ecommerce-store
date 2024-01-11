@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import FormButton from '../components/form/FormButton';
 import FormBox from '../components/form/FormBox';
@@ -33,6 +33,7 @@ const initialError: IErrors = {
 };
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const token = pathname.split('/').pop();
 
@@ -64,7 +65,8 @@ const ResetPassword = () => {
       };
 
       await resetPassword(token, credentials);
-
+      toast.success('Successfully changed your password!!!');
+      navigate('/login');
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: unknown | any) {
       console.log(err.response.data.message);
