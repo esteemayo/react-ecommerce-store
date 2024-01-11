@@ -15,7 +15,6 @@ import Form from '../../components/form/Form';
 import CountrySelect from '../../components/inputs/CountrySelect';
 import Loader from '../../components/Loader';
 
-import { registerInputs } from '../../data/formData';
 import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
 
@@ -189,22 +188,54 @@ const Register = () => {
       <StyledBox>
         <Heading small title='Register your account' />
         <Form onSubmit={handleSubmit}>
-          {registerInputs.map((input) => {
-            const { id, name, type, label, placeholder } = input;
-            return (
-              <FormInput
-                key={id}
-                name={name}
-                type={type}
-                label={label}
-                value={data[name]}
-                placeholder={placeholder}
-                onChange={handleChange}
-                autoFocus={name === 'name' ? true : false}
-                error={errors[name]}
-              />
-            );
-          })}
+          <FormInput
+            id='name'
+            name='name'
+            label='Name'
+            placeholder='Enter your name'
+            value={data.name}
+            onChange={handleChange}
+            error={errors.name}
+          />
+          <FormInput
+            id='email'
+            name='email'
+            type='email'
+            label='Email'
+            placeholder='Enter email address'
+            value={data.email}
+            onChange={handleChange}
+            error={errors.email}
+          />
+          <FormInput
+            id='username'
+            name='username'
+            label='username'
+            placeholder='Enter username'
+            value={data.username}
+            onChange={handleChange}
+            error={errors.username}
+          />
+          <FormInput
+            id='password'
+            name='password'
+            type='password'
+            label='Password'
+            placeholder='Enter your password'
+            value={data.password}
+            onChange={handleChange}
+            error={errors.password}
+          />
+          <FormInput
+            id='confirmPassword'
+            name='confirmPassword'
+            type='password'
+            label='Confirm Password'
+            placeholder='Confirm your password'
+            value={data.name}
+            onChange={handleChange}
+            error={errors.confirmPassword}
+          />
           <CountrySelect
             name='country'
             label='Country'
