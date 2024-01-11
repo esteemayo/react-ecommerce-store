@@ -105,7 +105,11 @@ const ResetPassword = () => {
             onChange={handleChange}
             error={errors.confirmPassword}
           />
-          <FormButton label='Reset password' />
+          <FormButton
+            label='Reset password'
+            disabled={isLoading}
+            loading={isLoading}
+          />
         </Form>
       </StyledBox>
     </FormBox>
