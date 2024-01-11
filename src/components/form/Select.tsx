@@ -5,17 +5,24 @@ import { FormGroup } from './FormGroup';
 
 import { SelectProps } from '../../types';
 
+interface ILabel {
+  size?: boolean;
+}
+
 const Select = ({
   data,
   name,
   label,
+  size,
   error,
   defaultText,
   ...rest
 }: SelectProps) => {
   return (
     <FormGroup>
-      <Label htmlFor={name}>{label}</Label>
+      <Label htmlFor={name} size={size}>
+        {label}
+      </Label>
       <StyledSelect {...rest} id={name} name={name}>
         <Option value=''>{defaultText}</Option>
         {data?.map((item) => {
@@ -32,9 +39,9 @@ const Select = ({
   );
 };
 
-export const Label = styled.label`
+export const Label = styled.label<ILabel>`
   display: inline-block;
-  width: 7rem;
+  width: ${({ size }) => (size ? '7rem' : '13rem')};
   font-weight: 600;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.textLabel};
