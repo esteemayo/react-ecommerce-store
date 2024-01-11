@@ -12,8 +12,9 @@ import UploadProgress from '../../components/form/UploadProgress';
 import FormInput from '../../components/form/FormInput';
 import FormUpload from '../../components/form/FormUpload';
 import Form from '../../components/form/Form';
-import CountrySelect from '../../components/inputs/CountrySelect';
+
 import Loader from '../../components/Loader';
+import CountrySelect from '../../components/inputs/CountrySelect';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
