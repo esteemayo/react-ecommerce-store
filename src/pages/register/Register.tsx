@@ -197,6 +197,7 @@ const Register = () => {
             value={data.name}
             onChange={handleChange}
             error={errors.name}
+            login
           />
           <FormInput
             id='email'
@@ -207,6 +208,7 @@ const Register = () => {
             value={data.email}
             onChange={handleChange}
             error={errors.email}
+            login
           />
           <FormInput
             id='username'
@@ -216,6 +218,7 @@ const Register = () => {
             value={data.username}
             onChange={handleChange}
             error={errors.username}
+            login
           />
           <FormInput
             id='password'
@@ -226,6 +229,7 @@ const Register = () => {
             value={data.password}
             onChange={handleChange}
             error={errors.password}
+            login
           />
           <FormInput
             id='confirmPassword'
