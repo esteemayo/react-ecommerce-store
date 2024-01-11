@@ -2,7 +2,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import logger from './logService';
-// import { getJwt } from './authService';
 import { getFromStorage, tokenKey } from '../utils';
 
 const devEnv = process.env.NODE_ENV !== 'production';
