@@ -31,7 +31,7 @@ const FormInput = ({
 
 const Label = styled.label<ILabel>`
   display: inline-block;
-  width: ${({ login }) => login && '7rem'};
+  width: ${({ login }) => (login ? '7rem' : '13rem')};
   text-transform: ${({ login }) => login && 'capitalize'};
   font-weight: 600;
   font-size: 1.4rem;
