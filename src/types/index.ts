@@ -424,12 +424,12 @@ export type CountryValues = {
   label: string;
 }[];
 
-export interface CountrySelectProps {
+export interface CountrySelectProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   data: CountryValues;
   name: string;
   label: string;
   value: string | number | readonly string[];
-  size?: boolean;
   error?: string;
   onChange(event: React.ChangeEvent<HTMLSelectElement> | undefined): void;
 }
