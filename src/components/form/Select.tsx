@@ -17,7 +17,7 @@ const Select = ({
   error,
   defaultText,
   ...rest
-}: SelectProps) => {
+}: SelectProps & ILabel) => {
   return (
     <FormGroup>
       <Label htmlFor={name} size={size}>
