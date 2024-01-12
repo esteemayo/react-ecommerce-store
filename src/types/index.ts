@@ -1030,7 +1030,7 @@ export interface AccountInputProps
   type: string;
   label: string;
   value?: string | number | readonly string[];
-  placeholder: string;
+  placeholder?: string;
   error?: string;
 }
 
