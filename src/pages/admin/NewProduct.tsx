@@ -207,7 +207,9 @@ const NewProduct = () => {
             error={errors.tags}
           />
           <FormGroup>
-            <label className={labelClasses}>Attach images</label>
+            <label htmlFor='file' className={labelClasses}>
+              Attach images
+            </label>
             <input
               type='file'
               id='file'
