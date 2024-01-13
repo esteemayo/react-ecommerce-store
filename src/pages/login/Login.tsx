@@ -90,7 +90,7 @@ const Login = () => {
       };
 
       const res = await loginUser(credentials);
-      loginUserFulfilled(res.data.details);
+      loginUserFulfilled(res.data);
 
       setToStorage(rememberKey, rememberMe);
       setToStorage(userKey, rememberMe ? data : '');
