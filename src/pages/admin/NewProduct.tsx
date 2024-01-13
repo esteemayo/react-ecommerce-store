@@ -50,7 +50,7 @@ const NewProduct = () => {
   // const [isLoading, setIsLoading] = useState(false);
   const [color, setColor] = useState<string[]>([]);
 
-  const { isPending, isSuccess, mutate, reset } = useMutation({
+  const { isPending, isSuccess, mutate } = useMutation({
     mutationFn: async (product: object) => {
       const { data } = await createProduct(product);
       return data;
@@ -136,9 +136,8 @@ const NewProduct = () => {
       console.log({ ...data, files, color, size, tags });
       const newProduct = { ...data, files, color, size, tags };
       mutate(newProduct);
-      reset();
     },
-    [color, data, files, mutate, reset, size, tags, validateForm]
+    [color, data, files, mutate, size, tags, validateForm]
   );
 
   const labelClasses = useMemo(() => {
