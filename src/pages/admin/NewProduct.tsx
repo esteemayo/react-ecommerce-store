@@ -1,7 +1,6 @@
 import { useMutation, QueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import styled from 'styled-components';
 
 import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
@@ -12,7 +11,6 @@ import Select from '../../components/form/Select';
 import TextArea from '../../components/form/TextArea';
 import Form from '../../components/form/Form';
 import { FormGroup } from '../../components/form/FormGroup';
-import Loader from '../../components/Loader';
 
 import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
@@ -47,7 +45,6 @@ const NewProduct = () => {
   const [size, setSize] = useState<string[]>([]);
   const [errors, setErrors] = useState<IErrors>({});
   const [tags, setTags] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [color, setColor] = useState<string[]>([]);
 
   const { isSuccess, mutate } = useMutation({
@@ -157,14 +154,6 @@ const NewProduct = () => {
 
   const { name, desc, category, price, numberInStock, priceDiscount } = data;
 
-  if (isLoading) {
-    return (
-      <Container>
-        <Loader size='md' />
-      </Container>
-    );
-  }
-
   return (
     <FormBox>
       <StyledBox>
@@ -263,10 +252,5 @@ const NewProduct = () => {
     </FormBox>
   );
 };
-
-const Container = styled.section`
-  width: 100vw;
-  min-height: 100vh;
-`;
 
 export default NewProduct;
