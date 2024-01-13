@@ -18,4 +18,4 @@ export const forgotPassword = (email: { email: string }) =>
 export const resetPassword = (token: string | undefined, credentials: object) =>
   http.post(`${apiEndpoint}/reset-password/${token}`, credentials);
 
-export const getJwt = () => getFromStorage(tokenKey)?.token;
+export const getJwt = () => getFromStorage(tokenKey)?.details?.token;
