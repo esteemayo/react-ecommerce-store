@@ -37,8 +37,9 @@ const initialState = {
 };
 
 const NewProduct = () => {
-  const navigate = useNavigate();
   const queryClient = new QueryClient();
+
+  const navigate = useNavigate();
   const mode = useDarkMode((state) => state.mode);
 
   const [data, setData] = useState(initialState);
