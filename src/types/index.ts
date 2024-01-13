@@ -958,7 +958,8 @@ export interface SelectProps
   defaultText: string;
 }
 
-export interface CheckBoxProps extends HTMLAttributes<HTMLInputElement> {
+export interface CheckBoxProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
   checked: boolean;
