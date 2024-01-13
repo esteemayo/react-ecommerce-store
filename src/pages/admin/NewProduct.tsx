@@ -135,8 +135,9 @@ const NewProduct = () => {
       console.log({ ...data, files, color, size, tags });
       const newProduct = { ...data, files, color, size, tags };
       mutate(newProduct);
+      reset();
     },
-    [color, data, files, mutate, size, tags, validateForm]
+    [color, data, files, mutate, reset, size, tags, validateForm]
   );
 
   const labelClasses = useMemo(() => {
