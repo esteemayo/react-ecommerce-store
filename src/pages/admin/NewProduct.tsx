@@ -12,11 +12,11 @@ import Select from '../../components/form/Select';
 import TextArea from '../../components/form/TextArea';
 import Form from '../../components/form/Form';
 import { FormGroup } from '../../components/form/FormGroup';
+import Loader from '../../components/Loader';
 
 import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { createProduct } from '../../services/productService';
-import Loader from '../../components/Loader';
 
 interface IErrors {
   name?: string;
