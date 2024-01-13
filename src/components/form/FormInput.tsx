@@ -6,7 +6,7 @@ import { FormGroup } from './FormGroup';
 import { FormInputProps } from '../../types';
 
 interface ILabel {
-  login?: boolean;
+  small?: boolean;
 }
 
 const FormInput = ({
@@ -15,12 +15,12 @@ const FormInput = ({
   label,
   value,
   error,
-  login,
+  small,
   ...rest
 }: FormInputProps) => {
   return (
     <FormGroup>
-      <Label htmlFor={name} login={login}>
+      <Label htmlFor={name} small={small}>
         {label}
       </Label>
       <Input {...rest} id={name} type={type} name={name} value={value} />
@@ -31,8 +31,8 @@ const FormInput = ({
 
 const Label = styled.label<ILabel>`
   display: inline-block;
-  width: ${({ login }) => (login ? '7rem' : '13rem')};
-  text-transform: ${({ login }) => login && 'capitalize'};
+  width: ${({ small }) => (small ? '7rem' : '13rem')};
+  text-transform: ${({ small }) => small && 'capitalize'};
   font-weight: 600;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.textLabel};
