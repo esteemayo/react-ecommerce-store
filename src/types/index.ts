@@ -7,7 +7,7 @@ export type Announcements = {
   title: string;
 }[];
 
-interface CurrentUserType {
+interface UserDetailType {
   active: boolean;
   country: string;
   createdAt: string;
@@ -20,6 +20,12 @@ interface CurrentUserType {
   username: string;
   __v: number;
   _id: string;
+}
+
+interface CurrentUserType {
+  status: string;
+  details: UserDetailType;
+  role: string;
 }
 
 export interface AuthStore {
