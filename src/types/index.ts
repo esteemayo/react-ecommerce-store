@@ -964,7 +964,8 @@ export interface CheckBoxProps extends HTMLAttributes<HTMLInputElement> {
   checked: boolean;
 }
 
-export interface FormUploadProps extends HTMLAttributes<HTMLInputElement> {
+export interface FormUploadProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
   label: string;
   accept: string;
