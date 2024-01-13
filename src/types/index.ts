@@ -25,7 +25,7 @@ interface UserDetailType {
 interface CurrentUserType {
   status: string;
   details: UserDetailType;
-  role: string;
+  role: 'admin' | 'user';
 }
 
 export interface AuthStore {
