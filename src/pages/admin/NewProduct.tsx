@@ -1,5 +1,5 @@
 import { useMutation, QueryClient } from '@tanstack/react-query';
-import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
@@ -38,6 +38,7 @@ const initialState = {
 };
 
 const NewProduct = () => {
+  const navigate = useNavigate();
   const queryClient = new QueryClient();
   const mode = useDarkMode((state) => state.mode);
 
@@ -49,7 +50,7 @@ const NewProduct = () => {
   // const [isLoading, setIsLoading] = useState(false);
   const [color, setColor] = useState<string[]>([]);
 
-  const { error, isError, isPending, isSuccess, mutate, reset } = useMutation({
+  const { isPending, isSuccess, mutate, reset } = useMutation({
     mutationFn: async (product: object) => {
       const { data } = await createProduct(product);
       return data;
@@ -145,8 +146,8 @@ const NewProduct = () => {
   }, [mode]);
 
   useEffect(() => {
-    isError && toast.error(error);
-  }, [error, isError]);
+    isSuccess && navigate('/products');
+  }, [isSuccess, navigate]);
 
   const { name, desc, category, price, numberInStock, priceDiscount } = data;
 
