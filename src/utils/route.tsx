@@ -19,6 +19,7 @@ import ProductCategory from '../pages/ProductCategory';
 import Account from '../pages/account/Account';
 import NewProduct from '../pages/admin/NewProduct';
 
+import PrivateRoute from './PrivateRoute';
 import AuthRoute from './AuthRoute';
 import ProtectedRoute from './ProtectedRoute';
 
@@ -47,7 +48,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'admin/products/new',
-        element: <NewProduct />,
+        element: (
+          <PrivateRoute>
+            <NewProduct />
+          </PrivateRoute>
+        ),
       },
       {
         path: 'search',
