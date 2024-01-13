@@ -1,4 +1,5 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useMutation, QueryClient } from '@tanstack/react-query';
 
 import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
@@ -12,6 +13,8 @@ import { FormGroup } from '../../components/form/FormGroup';
 
 import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { createProduct } from '../../services/productService';
+import { toast } from 'react-toastify';
 
 interface IErrors {
   name?: string;
@@ -33,6 +36,7 @@ const initialState = {
 };
 
 const NewProduct = () => {
+  const queryClient = new QueryClient();
   const mode = useDarkMode((state) => state.mode);
 
   const [data, setData] = useState(initialState);
@@ -40,8 +44,18 @@ const NewProduct = () => {
   const [size, setSize] = useState<string[]>([]);
   const [errors, setErrors] = useState<IErrors>({});
   const [tags, setTags] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [color, setColor] = useState<string[]>([]);
+
+  const { error, isError, isPending, isSuccess, mutate, reset } = useMutation({
+    mutationFn: async (product: object) => {
+      const { data } = await createProduct(product);
+      return data;
+    },
+    onSuccess() {
+      queryClient.invalidateQueries({ queryKey: ['products'] });
+    },
+  });
 
   const handleChange = useCallback(
     ({
@@ -117,13 +131,19 @@ const NewProduct = () => {
       setErrors({});
 
       console.log({ ...data, files, color, size, tags });
+      const newProduct = { ...data, files, color, size, tags };
+      mutate(newProduct);
     },
-    [color, data, files, size, tags, validateForm]
+    [color, data, files, mutate, size, tags, validateForm]
   );
 
   const labelClasses = useMemo(() => {
     return `formLabel ${mode ? 'dark' : 'light'}`;
   }, [mode]);
+
+  useEffect(() => {
+    isError && toast.error(error);
+  }, [error, isError]);
 
   const { name, desc, category, price, numberInStock, priceDiscount } = data;
 
