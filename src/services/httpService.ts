@@ -5,11 +5,10 @@ import logger from './logService';
 import { getFromStorage, tokenKey } from '../utils';
 
 const devEnv = process.env.NODE_ENV !== 'production';
-// const { REACT_APP_PROD_API_URL, REACT_APP_DEV_API_URL } = process.env;
+const { VITE_APP_DEV_API_URL, VITE_APP_PROD_API_URL } = import.meta.env;
 
 const API = axios.create({
-  baseURL: devEnv ? 'http://localhost:2020/api/v1' : '',
-  // baseURL: devEnv ? REACT_APP_DEV_API_URL : REACT_APP_PROD_API_URL,
+  baseURL: devEnv ? VITE_APP_DEV_API_URL : VITE_APP_PROD_API_URL,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
