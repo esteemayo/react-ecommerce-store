@@ -47,10 +47,10 @@ const NewProduct = () => {
   const [size, setSize] = useState<string[]>([]);
   const [errors, setErrors] = useState<IErrors>({});
   const [tags, setTags] = useState<string[]>([]);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [color, setColor] = useState<string[]>([]);
 
-  const { isPending, isSuccess, mutate } = useMutation({
+  const { isSuccess, mutate } = useMutation({
     mutationFn: async (product: object) => {
       const { data } = await createProduct(product);
       return data;
@@ -134,7 +134,14 @@ const NewProduct = () => {
       setErrors({});
 
       console.log({ ...data, files, color, size, tags });
-      const newProduct = { ...data, files, color, size, tags };
+
+      const newProduct = {
+        ...data,
+        color,
+        size,
+        tags,
+      };
+
       mutate(newProduct);
     },
     [color, data, files, mutate, size, tags, validateForm]
@@ -150,7 +157,7 @@ const NewProduct = () => {
 
   const { name, desc, category, price, numberInStock, priceDiscount } = data;
 
-  if (isPending) {
+  if (isLoading) {
     return (
       <Container>
         <Loader size='md' />
