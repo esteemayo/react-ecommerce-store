@@ -40,6 +40,7 @@ const NewProduct = () => {
   const [size, setSize] = useState<string[]>([]);
   const [errors, setErrors] = useState<IErrors>({});
   const [tags, setTags] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [color, setColor] = useState<string[]>([]);
 
   const handleChange = useCallback(
