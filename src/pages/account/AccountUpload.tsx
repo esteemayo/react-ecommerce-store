@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled, { css } from 'styled-components';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 import { AccountUploadProps } from '../../types';
