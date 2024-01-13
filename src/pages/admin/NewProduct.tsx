@@ -15,6 +15,8 @@ import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { createProduct } from '../../services/productService';
 import { toast } from 'react-toastify';
+import styled from 'styled-components';
+import Loader from '../../components/Loader';
 
 interface IErrors {
   name?: string;
@@ -147,6 +149,14 @@ const NewProduct = () => {
 
   const { name, desc, category, price, numberInStock, priceDiscount } = data;
 
+  if (isPending) {
+    return (
+      <Container>
+        <Loader size='md' />
+      </Container>
+    );
+  }
+
   return (
     <FormBox>
       <StyledBox>
@@ -245,5 +255,10 @@ const NewProduct = () => {
     </FormBox>
   );
 };
+
+const Container = styled.section`
+  width: 100vw;
+  min-height: 100vh;
+`;
 
 export default NewProduct;
