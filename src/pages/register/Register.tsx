@@ -142,7 +142,7 @@ const Register = () => {
 
         const res = await registerUser(credentials);
         console.log(res);
-        registerUserFulfilled(res.data.details);
+        registerUserFulfilled(res.data);
         console.log({ ...data, file });
         handleClear();
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
