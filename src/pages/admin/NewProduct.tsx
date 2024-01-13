@@ -1,6 +1,7 @@
 import { useMutation, QueryClient } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import styled from 'styled-components';
 
 import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
@@ -15,7 +16,6 @@ import { FormGroup } from '../../components/form/FormGroup';
 import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { createProduct } from '../../services/productService';
-import styled from 'styled-components';
 import Loader from '../../components/Loader';
 
 interface IErrors {
