@@ -18,8 +18,8 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           type='text'
           id='accName'
           name='name'
-          value={currentUser.name}
-          placeholder={currentUser.name}
+          value={currentUser.details.name}
+          placeholder={currentUser.details.name}
           ref={inputRef}
           readOnly
         />
@@ -30,8 +30,8 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           type='text'
           id='accUsername'
           name='username'
-          value={currentUser.username}
-          placeholder={currentUser.username}
+          value={currentUser.details.username}
+          placeholder={currentUser.details.username}
           readOnly
         />
       </Wrapper>
@@ -41,8 +41,8 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           type='email'
           id='accEmail'
           name='email'
-          value={currentUser.email}
-          placeholder={currentUser.email}
+          value={currentUser.details.email}
+          placeholder={currentUser.details.email}
           readOnly
         />
         <ButtonContainer>
