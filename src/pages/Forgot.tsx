@@ -79,7 +79,7 @@ const Forgot = () => {
             }
             error={errors.email}
             autoFocus
-            login
+            small
           />
           <FormButton
             label='Reset password'
