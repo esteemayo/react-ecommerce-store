@@ -98,7 +98,7 @@ const ResetPassword = () => {
             onChange={handleChange}
             error={errors.password}
             autoFocus
-            login
+            small
           />
           <FormInput
             type='password'
