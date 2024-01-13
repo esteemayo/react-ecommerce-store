@@ -9,9 +9,9 @@ const AccountUpload = ({ currentUser, onOpen }: AccountUploadProps) => {
   return (
     <Container>
       <Wrapper>
-        {currentUser.image ? (
+        {currentUser.details.image ? (
           <StyledImage
-            src={currentUser.image}
+            src={currentUser.details.image}
             width={100}
             height={100}
             alt=''
