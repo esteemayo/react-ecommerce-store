@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { useMemo } from 'react';
+import styled from 'styled-components';
 
 import { CheckBoxProps } from '../../types';
 import { useDarkMode } from '../../hooks/useDarkMode';
