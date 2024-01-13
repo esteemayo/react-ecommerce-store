@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 import { usePasswordModal } from '../../hooks/usePasswordModal';
 import { useAuth } from '../../hooks/useAuth';
-import { useAccountModal } from '../../hooks/useAccountModal';
-import { useSubmenu } from '../../hooks/useSubmenu';
 import { useEmailModal } from '../../hooks/useEmailModal';
+import { useSubmenu } from '../../hooks/useSubmenu';
+import { useAccountModal } from '../../hooks/useAccountModal';
 import { useFileModal } from '../../hooks/useFileModal';
 
 import Heading from './Heading';
