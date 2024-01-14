@@ -2,20 +2,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import { produce } from 'immer';
 
-import { ProductValue } from '../types';
-
-interface SearchStore {
-  products: ProductValue[];
-  isError: boolean;
-  isLoading: boolean;
-  message: string;
-}
-
-interface SearchActionType {
-  fetchProductPending(): void;
-  fetchProductFulfilled(products: ProductValue[]): void;
-  fetchProductFailure(payload: string): void;
-}
+import { SearchActionType, SearchStore } from '../types';
 
 const INITIAL_STATE = {
   products: [],

@@ -47,6 +47,7 @@ export const useSearch = () => {
     try {
       const { data } = await searchProducts(searchQuery);
       setProducts(data);
+      console.log(data);
     } catch (err: unknown) {
       console.log(err);
     } finally {
