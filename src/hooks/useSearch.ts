@@ -1,6 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 
+import { ProductValues } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
+
+import { searchProducts } from '../services/productService';
 
 interface IHistories {
   id: number;
@@ -13,6 +17,9 @@ const getAllHistories = () => {
 };
 
 export const useSearch = () => {
+  const navigate = useNavigate();
+
+  const [products, setProducts] = useState<ProductValues>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
 
@@ -33,14 +40,28 @@ export const useSearch = () => {
     setHistories((prev) => [data, ...prev]);
   }, [searchQuery]);
 
+  const onSearchHandler = useCallback(async () => {
+    try {
+      const { data } = await searchProducts(searchQuery);
+      setProducts(data);
+    } catch (err: unknown) {
+      console.log(err);
+    }
+  }, [searchQuery]);
+
   const handleSearch = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
+    async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      handleHistory();
-      console.log(searchQuery);
+      if (searchQuery) {
+        await onSearchHandler();
+
+        navigate(`/search?q=${searchQuery}`);
+        handleHistory();
+        console.log(searchQuery);
+      }
     },
-    [handleHistory, searchQuery]
+    [handleHistory, navigate, onSearchHandler, searchQuery]
   );
 
   useEffect(() => {
@@ -48,6 +69,7 @@ export const useSearch = () => {
   }, [histories]);
 
   return {
+    products,
     histories,
     searchQuery,
     handleChange,
