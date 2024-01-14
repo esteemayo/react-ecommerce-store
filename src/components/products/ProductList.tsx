@@ -8,14 +8,19 @@ import EmptyProduct from './EmptyProduct';
 import { useCartModal } from '../../hooks/useCartModal';
 import { ProductListProps, WishlistValues } from '../../types';
 
+import { useQuery } from '../../utils';
+
 const ProductList = ({
   products,
   title = 'No results found!',
 }: ProductListProps) => {
+  const query = useQuery();
+  const searchQuery = query.get('q');
+
   const { isOpen, onOpen, onClose } = useCartModal();
   const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
 
-  if (products?.length < 1) {
+  if (products?.length < 1 && !searchQuery) {
     return (
       <Container>
         <EmptyProduct src='/img/no-result.png' title={title} />
