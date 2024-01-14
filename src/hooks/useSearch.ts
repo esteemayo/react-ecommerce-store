@@ -69,7 +69,6 @@ export const useSearch = () => {
 
         navigate(`/search?q=${searchQuery}`);
         handleHistory();
-        console.log(searchQuery);
       }
     },
     [handleHistory, navigate, onSearchHandler, searchQuery]

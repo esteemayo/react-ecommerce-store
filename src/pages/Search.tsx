@@ -4,10 +4,10 @@ import ProductBox from '../components/products/ProductBox';
 import Loader from '../components/Loader';
 import ProductList from '../components/products/ProductList';
 
-import { useSearch } from '../hooks/useSearch';
+import { useSearchStore } from '../hooks/useSearchStore';
 
 const Search = () => {
-  const { isLoading, products } = useSearch();
+  const { isLoading, products } = useSearchStore();
   console.log(products);
 
   if (isLoading) {
