@@ -8,6 +8,7 @@ const INITIAL_STATE = {
   products: [],
   isError: false,
   isLoading: false,
+  isSuccess: false,
   message: '',
 };
 
@@ -16,6 +17,7 @@ export const useSearchStore = create<SearchStore & SearchActionType>()(
     products: INITIAL_STATE.products,
     isError: INITIAL_STATE.isError,
     isLoading: INITIAL_STATE.isLoading,
+    isSuccess: INITIAL_STATE.isSuccess,
     message: INITIAL_STATE.message,
     fetchProductPending: () =>
       set(
@@ -28,8 +30,9 @@ export const useSearchStore = create<SearchStore & SearchActionType>()(
     fetchProductFulfilled: (payload) =>
       set(
         produce((state) => {
-          state.products = payload;
           state.isLoading = false;
+          state.products = payload;
+          state.isSuccess = true;
         }),
         false,
         'fulfilled'
@@ -39,6 +42,7 @@ export const useSearchStore = create<SearchStore & SearchActionType>()(
         produce((state) => {
           state.isError = true;
           state.isLoading = false;
+          state.isSuccess = false;
           state.message = payload;
         })
       ),

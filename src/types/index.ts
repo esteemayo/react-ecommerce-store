@@ -163,6 +163,7 @@ export interface SearchStore {
   products: ProductValues[];
   isError: boolean;
   isLoading: boolean;
+  isSuccess: boolean;
   message: string;
 }
 
