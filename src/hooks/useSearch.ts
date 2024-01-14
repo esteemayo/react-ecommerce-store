@@ -5,6 +5,7 @@ import { useSearchStore } from './useSearchStore';
 import { searchProducts } from '../services/productService';
 
 import { getFromStorage, searchKey, setToStorage } from '../utils';
+import { useSearchModal } from './useSearchModal';
 
 interface IHistories {
   id: number;
@@ -18,6 +19,8 @@ const getAllHistories = () => {
 
 export const useSearch = () => {
   const navigate = useNavigate();
+
+  const onClose = useSearchModal((state) => state.onClose);
   const { fetchProductFailure, fetchProductFulfilled, fetchProductPending } =
     useSearchStore();
 
@@ -71,9 +74,10 @@ export const useSearch = () => {
         handleHistory();
 
         setSearchQuery('');
+        onClose();
       }
     },
-    [handleHistory, navigate, onSearchHandler, searchQuery]
+    [handleHistory, navigate, onClose, onSearchHandler, searchQuery]
   );
 
   useEffect(() => {
