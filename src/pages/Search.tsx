@@ -1,6 +1,5 @@
-import styled from 'styled-components';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 
 import ProductBox from '../components/products/ProductBox';
 import Loader from '../components/Loader';
@@ -9,9 +8,7 @@ import ProductList from '../components/products/ProductList';
 import { useSearchStore } from '../hooks/useSearchStore';
 import { searchProducts } from '../services/productService';
 
-const useQuery = () => {
-  return new URLSearchParams(useLocation().search);
-};
+import { useQuery } from '../utils';
 
 const Search = () => {
   const {

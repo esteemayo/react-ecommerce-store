@@ -1,3 +1,5 @@
+import { useLocation } from 'react-router-dom';
+
 export const userKey = 'user';
 
 export const tokenKey = 'accessToken';
@@ -37,4 +39,8 @@ export const removeFromStorage = (key: string) => {
   if (typeof window !== 'undefined') {
     return window.localStorage.removeItem(key);
   }
+};
+
+export const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
 };
