@@ -4,13 +4,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSearchStore } from './useSearchStore';
 import { searchProducts } from '../services/productService';
 
+import { IHistories } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
-import { useSearchModal } from './useSearchModal';
 
-interface IHistories {
-  id: number;
-  query: string;
-}
+import { useSearchModal } from './useSearchModal';
 
 const getAllHistories = () => {
   const histories = getFromStorage(searchKey);
