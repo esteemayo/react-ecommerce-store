@@ -527,8 +527,8 @@ interface CardProduct {
   inStock: boolean;
   images: string[];
   featured: boolean;
-  color: string[];
-  size: string[];
+  color: string | string[];
+  size: string | string[];
   category: string;
   tags: string[];
   ratingsQuantity: number;
