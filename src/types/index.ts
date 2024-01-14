@@ -159,6 +159,19 @@ export interface CartActionType {
   calcTotals(): void;
 }
 
+export interface SearchStore {
+  products: ProductValue[];
+  isError: boolean;
+  isLoading: boolean;
+  message: string;
+}
+
+export interface SearchActionType {
+  fetchProductPending(): void;
+  fetchProductFulfilled(products: ProductValue[]): void;
+  fetchProductFailure(payload: string): void;
+}
+
 export type NavLink = {
   id: number;
   text: string;
