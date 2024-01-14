@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 
-import { ProductValues } from '../types';
-import { getFromStorage, searchKey, setToStorage } from '../utils';
-
+import { useSearchStore } from './useSearchStore';
 import { searchProducts } from '../services/productService';
+
+import { getFromStorage, searchKey, setToStorage } from '../utils';
 
 interface IHistories {
   id: number;
@@ -18,9 +18,9 @@ const getAllHistories = () => {
 
 export const useSearch = () => {
   const navigate = useNavigate();
+  const { fetchProductFailure, fetchProductFulfilled, fetchProductPending } =
+    useSearchStore();
 
-  const [products, setProducts] = useState<ProductValues[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -42,18 +42,23 @@ export const useSearch = () => {
   }, [searchQuery]);
 
   const onSearchHandler = useCallback(async () => {
-    setIsLoading(true);
+    fetchProductPending();
 
     try {
       const { data } = await searchProducts(searchQuery);
-      setProducts(data);
+      fetchProductFulfilled(data);
       console.log(data);
-    } catch (err: unknown) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: unknown | any) {
       console.log(err);
-    } finally {
-      setIsLoading(false);
+      fetchProductFailure(err.response.data.message);
     }
-  }, [searchQuery]);
+  }, [
+    fetchProductFailure,
+    fetchProductFulfilled,
+    fetchProductPending,
+    searchQuery,
+  ]);
 
   const handleSearch = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -75,9 +80,7 @@ export const useSearch = () => {
   }, [histories]);
 
   return {
-    products,
     histories,
-    isLoading,
     searchQuery,
     handleChange,
     handleDelete,
