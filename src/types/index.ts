@@ -172,6 +172,11 @@ export interface SearchActionType {
   fetchProductFailure(payload: string): void;
 }
 
+export interface IHistories {
+  id: number;
+  query: string;
+}
+
 export type NavLink = {
   id: number;
   text: string;
