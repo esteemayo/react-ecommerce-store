@@ -2,9 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { css } from 'styled-components';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-import SearchHistory from './SearchHistory';
 import { useSearch } from '../hooks/useSearch';
 import { useSearchModal } from '../hooks/useSearchModal';
+
+import SearchHistory from './SearchHistory';
 
 const Search = () => {
   const onClose = useSearchModal((state) => state.onClose);
