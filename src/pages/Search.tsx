@@ -1,12 +1,12 @@
 import styled from 'styled-components';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import ProductBox from '../components/products/ProductBox';
 import Loader from '../components/Loader';
 import ProductList from '../components/products/ProductList';
 
 import { useSearchStore } from '../hooks/useSearchStore';
-import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import { searchProducts } from '../services/productService';
 
 const useQuery = () => {
