@@ -22,5 +22,8 @@ export const getProduct = (productId: string) =>
 export const getProductByTags = (tags: string[]) =>
   http.get(`${apiEndpoint}/tags?tags=${tags}`);
 
+export const searchProducts = (searchQuery: string) =>
+  http.get(`${apiEndpoint}/search?query=${searchQuery}`);
+
 export const createProduct = <T extends object>(product: T) =>
   http.post(apiEndpoint, product);
