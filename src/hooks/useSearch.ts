@@ -50,7 +50,6 @@ export const useSearch = () => {
     try {
       const { data } = await searchProducts(searchQuery);
       fetchProductFulfilled(data);
-      console.log(data);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: unknown | any) {
       console.log(err);
