@@ -21,6 +21,7 @@ export const useSearch = () => {
   const navigate = useNavigate();
 
   const onClose = useSearchModal((state) => state.onClose);
+  const isOpen = useSearchModal((state) => state.isOpen);
   const { fetchProductFailure, fetchProductFulfilled, fetchProductPending } =
     useSearchStore();
 
@@ -73,10 +74,10 @@ export const useSearch = () => {
         handleHistory();
 
         setSearchQuery('');
-        onClose();
+        isOpen && onClose();
       }
     },
-    [handleHistory, navigate, onClose, onSearchHandler, searchQuery]
+    [handleHistory, isOpen, navigate, onClose, onSearchHandler, searchQuery]
   );
 
   useEffect(() => {
