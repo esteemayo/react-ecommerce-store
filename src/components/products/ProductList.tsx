@@ -2,8 +2,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import ProductCard from '../card/ProductCard';
-import CartModal from '../modals/CartModal';
 import EmptyProduct from './EmptyProduct';
+import CartModal from '../modals/CartModal';
 
 import { useCartModal } from '../../hooks/useCartModal';
 import { ProductListProps, WishlistValues } from '../../types';
