@@ -5,14 +5,21 @@ import { faClock, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { SearchHistoryProps } from '../types';
 
-const SearchHistory = ({ id, query, onDelete }: SearchHistoryProps) => {
+const SearchHistory = ({
+  id,
+  query,
+  onClose,
+  onDelete,
+}: SearchHistoryProps) => {
   return (
     <Container key={id}>
       <IconWRapper>
         <FontAwesomeIcon icon={faClock} />
       </IconWRapper>
       <History>
-        <StyledLink to='#'>{query}</StyledLink>
+        <StyledLink to={`/search?q=${query}`} onClick={onClose}>
+          {query}
+        </StyledLink>
       </History>
       <Remove onClick={() => onDelete(id)}>
         <FontAwesomeIcon icon={faTimes} />

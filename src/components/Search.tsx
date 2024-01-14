@@ -4,8 +4,10 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 import SearchHistory from './SearchHistory';
 import { useSearch } from '../hooks/useSearch';
+import { useSearchModal } from '../hooks/useSearchModal';
 
 const Search = () => {
+  const onClose = useSearchModal((state) => state.onClose);
   const { histories, searchQuery, handleChange, handleDelete, handleSearch } =
     useSearch();
 
@@ -26,7 +28,12 @@ const Search = () => {
       {histories.length > 0 &&
         histories.slice(0, 5).map((item) => {
           return (
-            <SearchHistory key={item.id} {...item} onDelete={handleDelete} />
+            <SearchHistory
+              key={item.id}
+              {...item}
+              onClose={onClose}
+              onDelete={handleDelete}
+            />
           );
         })}
     </Container>
