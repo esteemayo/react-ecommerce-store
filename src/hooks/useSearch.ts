@@ -19,8 +19,12 @@ export const useSearch = () => {
 
   const onClose = useSearchModal((state) => state.onClose);
   const isOpen = useSearchModal((state) => state.isOpen);
-  const { fetchProductFailure, fetchProductFulfilled, fetchProductPending } =
-    useSearchStore();
+  const {
+    fetchProductFailure,
+    fetchProductFulfilled,
+    fetchProductPending,
+    isSuccess,
+  } = useSearchStore();
 
   const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
   const [searchQuery, setSearchQuery] = useState('');
@@ -72,15 +76,18 @@ export const useSearch = () => {
       if (searchQuery) {
         await onSearchHandler();
 
-        navigate(`/search?q=${searchQuery}`);
         handleHistory();
-
         setSearchQuery('');
+
         isOpen && onClose();
       }
     },
-    [handleHistory, isOpen, navigate, onClose, onSearchHandler, searchQuery]
+    [handleHistory, isOpen, onClose, onSearchHandler, searchQuery]
   );
+
+  useEffect(() => {
+    isSuccess && navigate(`/search?q=${searchQuery}`);
+  }, [isSuccess, navigate, searchQuery]);
 
   useEffect(() => {
     setToStorage(searchKey, histories);
