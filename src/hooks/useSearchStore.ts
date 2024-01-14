@@ -19,7 +19,7 @@ export const useSearchStore = create<SearchStore & SearchActionType>()(
     isLoading: INITIAL_STATE.isLoading,
     isSuccess: INITIAL_STATE.isSuccess,
     message: INITIAL_STATE.message,
-    fetchProductPending: () =>
+    searchProductPending: () =>
       set(
         produce((state) => {
           state.isLoading = true;
@@ -27,7 +27,7 @@ export const useSearchStore = create<SearchStore & SearchActionType>()(
         false,
         'pending'
       ),
-    fetchProductFulfilled: (payload) =>
+    searchProductFulfilled: (payload) =>
       set(
         produce((state) => {
           state.isLoading = false;
@@ -37,7 +37,7 @@ export const useSearchStore = create<SearchStore & SearchActionType>()(
         false,
         'fulfilled'
       ),
-    fetchProductFailure: (payload) =>
+    searchProductFailure: (payload) =>
       set(
         produce((state) => {
           state.isError = true;

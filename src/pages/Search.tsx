@@ -12,9 +12,9 @@ import { useQuery } from '../utils';
 
 const Search = () => {
   const {
-    fetchProductFailure,
-    fetchProductFulfilled,
-    fetchProductPending,
+    searchProductFailure,
+    searchProductFulfilled,
+    searchProductPending,
     isLoading,
     products,
   } = useSearchStore();
@@ -25,20 +25,20 @@ const Search = () => {
   useEffect(() => {
     searchQuery &&
       (async () => {
-        fetchProductPending();
+        searchProductPending();
         try {
           const { data } = await searchProducts(searchQuery!);
-          fetchProductFulfilled(data);
+          searchProductFulfilled(data);
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: unknown | any) {
           console.log(err);
-          fetchProductFailure(err.response.data.message);
+          searchProductFailure(err.response.data.message);
         }
       })();
   }, [
-    fetchProductFailure,
-    fetchProductFulfilled,
-    fetchProductPending,
+    searchProductFailure,
+    searchProductFulfilled,
+    searchProductPending,
     searchQuery,
   ]);
 

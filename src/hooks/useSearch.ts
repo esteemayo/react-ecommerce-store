@@ -20,9 +20,9 @@ export const useSearch = () => {
   const onClose = useSearchModal((state) => state.onClose);
   const isOpen = useSearchModal((state) => state.isOpen);
   const {
-    fetchProductFailure,
-    fetchProductFulfilled,
-    fetchProductPending,
+    searchProductFailure,
+    searchProductFulfilled,
+    searchProductPending,
     isSuccess,
   } = useSearchStore();
 
@@ -52,20 +52,20 @@ export const useSearch = () => {
   }, [searchQuery]);
 
   const onSearchHandler = useCallback(async () => {
-    fetchProductPending();
+    searchProductPending();
 
     try {
       const { data } = await searchProducts(searchQuery);
-      fetchProductFulfilled(data);
+      searchProductFulfilled(data);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: unknown | any) {
       console.log(err);
-      fetchProductFailure(err.response.data.message);
+      searchProductFailure(err.response.data.message);
     }
   }, [
-    fetchProductFailure,
-    fetchProductFulfilled,
-    fetchProductPending,
+    searchProductFailure,
+    searchProductFulfilled,
+    searchProductPending,
     searchQuery,
   ]);
 

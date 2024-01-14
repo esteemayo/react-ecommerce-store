@@ -168,9 +168,9 @@ export interface SearchStore {
 }
 
 export interface SearchActionType {
-  fetchProductPending(): void;
-  fetchProductFulfilled(products: ProductValues[]): void;
-  fetchProductFailure(payload: string): void;
+  searchProductPending(): void;
+  searchProductFulfilled(products: ProductValues[]): void;
+  searchProductFailure(payload: string): void;
 }
 
 export interface IHistories {
