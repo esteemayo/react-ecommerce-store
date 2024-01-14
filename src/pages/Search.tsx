@@ -8,7 +8,6 @@ import { useSearchStore } from '../hooks/useSearchStore';
 
 const Search = () => {
   const { isLoading, products } = useSearchStore();
-  console.log(products);
 
   if (isLoading) {
     return (
