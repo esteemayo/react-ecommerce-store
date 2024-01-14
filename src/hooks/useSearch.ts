@@ -22,6 +22,7 @@ export const useSearch = () => {
   const [products, setProducts] = useState<ProductValues>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -41,11 +42,15 @@ export const useSearch = () => {
   }, [searchQuery]);
 
   const onSearchHandler = useCallback(async () => {
+    setIsLoading(true);
+
     try {
       const { data } = await searchProducts(searchQuery);
       setProducts(data);
     } catch (err: unknown) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   }, [searchQuery]);
 
@@ -71,6 +76,7 @@ export const useSearch = () => {
   return {
     products,
     histories,
+    isLoading,
     searchQuery,
     handleChange,
     handleDelete,
