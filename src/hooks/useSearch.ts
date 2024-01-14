@@ -39,7 +39,12 @@ export const useSearch = () => {
       query: searchQuery,
     };
 
-    setHistories((prev) => [data, ...prev]);
+    setHistories((prev) => {
+      if (prev.find((item) => item.query === searchQuery)) {
+        return [...new Set(prev)];
+      }
+      return [data, ...prev];
+    });
   }, [searchQuery]);
 
   const onSearchHandler = useCallback(async () => {
