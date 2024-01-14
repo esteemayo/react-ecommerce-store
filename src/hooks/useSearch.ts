@@ -20,9 +20,9 @@ export const useSearch = () => {
   const navigate = useNavigate();
 
   const [products, setProducts] = useState<ProductValues[]>([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
   const [isLoading, setIsLoading] = useState(false);
+  const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
