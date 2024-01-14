@@ -1093,5 +1093,6 @@ export interface OverlayProps {
 export interface SearchHistoryProps {
   id: number;
   query: string;
+  onClose(): void;
   onDelete(id: number): void;
 }
