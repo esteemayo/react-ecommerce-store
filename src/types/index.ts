@@ -160,7 +160,7 @@ export interface CartActionType {
 }
 
 export interface SearchStore {
-  products: ProductValue[];
+  products: ProductValues[];
   isError: boolean;
   isLoading: boolean;
   message: string;
@@ -168,7 +168,7 @@ export interface SearchStore {
 
 export interface SearchActionType {
   fetchProductPending(): void;
-  fetchProductFulfilled(products: ProductValue[]): void;
+  fetchProductFulfilled(products: ProductValues[]): void;
   fetchProductFailure(payload: string): void;
 }
 
