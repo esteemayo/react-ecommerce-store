@@ -1,12 +1,10 @@
-import { useState } from 'react';
-
 import ProductBox from '../components/products/ProductBox';
 import ProductList from '../components/products/ProductList';
 
-import { storeProducts } from '../data';
+import { useSearch } from '../hooks/useSearch';
 
 const Search = () => {
-  const [products, setProducts] = useState(storeProducts);
+  const { products } = useSearch();
 
   return (
     <ProductBox>
