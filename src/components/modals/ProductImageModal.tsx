@@ -124,8 +124,7 @@ const Overlay = styled.aside<IOverlay>`
     width: 100vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: ${({ mode }) =>
-      mode === 'true' ? 'blur(2px)' : undefined};
+    backdrop-filter: ${({ mode }) => setBackdropFilter(mode)};
     position: fixed;
     top: 0;
     left: 0;
@@ -220,5 +219,9 @@ const StyledImage = styled(CommonImage)`
     height: 80rem;
   }
 `;
+
+const setBackdropFilter = (mode: string) => {
+  return mode === 'true' ? 'blur(2px)' : undefined;
+};
 
 export default ProductImageModal;
