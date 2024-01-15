@@ -493,12 +493,14 @@ export interface ToggleButtonProps {
 export interface SidebarMenuProps {
   items: Sublink;
   onAction(e: React.MouseEvent<HTMLButtonElement>): void;
+  onClose(): void;
 }
 
 export interface SidebarMenuItemProps {
   url: string;
   icon: IconDefinition;
   label: string;
+  onClose(): void;
 }
 
 export interface SidebarSearch {

@@ -1,13 +1,15 @@
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { SidebarMenuItemProps } from '../../types';
-import { useSidebar } from '../../hooks/useSidebar';
 
-const SidebarMenuItem = ({ url, icon, label }: SidebarMenuItemProps) => {
-  const onClose = useSidebar((state) => state.onClose);
-
+const SidebarMenuItem = ({
+  url,
+  icon,
+  label,
+  onClose,
+}: SidebarMenuItemProps) => {
   return (
     <ListItem>
       <StyledLink to={url} onClick={onClose}>

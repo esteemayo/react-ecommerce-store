@@ -42,7 +42,11 @@ const Sidebar = () => {
         <Button type='button' onClick={onClose}>
           <FontAwesomeIcon icon={faXmark} />
         </Button>
-        <SidebarMenu items={sublinks} onAction={handleLogout} />
+        <SidebarMenu
+          items={sublinks}
+          onAction={handleLogout}
+          onClose={onClose}
+        />
         <SearchContainer>
           <Heading title='Search products' />
           <Search
