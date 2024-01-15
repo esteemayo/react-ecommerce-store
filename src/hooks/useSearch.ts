@@ -83,14 +83,20 @@ export const useSearch = () => {
 
         isOpen && onClose();
         sidebarModal.isOpen && sidebarModal.onClose();
+        isSuccess && navigate(`/search?q=${searchQuery}`);
       }
     },
-    [handleHistory, isOpen, onClose, onSearchHandler, searchQuery, sidebarModal]
+    [
+      handleHistory,
+      isOpen,
+      isSuccess,
+      navigate,
+      onClose,
+      onSearchHandler,
+      searchQuery,
+      sidebarModal,
+    ]
   );
-
-  useEffect(() => {
-    isSuccess && navigate(`/search?q=${searchQuery}`);
-  }, [isSuccess, navigate, searchQuery]);
 
   useEffect(() => {
     setToStorage(searchKey, histories);
