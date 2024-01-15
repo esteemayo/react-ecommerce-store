@@ -16,6 +16,7 @@ const EmptySearch = () => {
 const Container = styled.section`
   width: 100vw;
   height: 100vh;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const Wrapper = styled.div`
