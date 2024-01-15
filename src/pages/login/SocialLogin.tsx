@@ -69,6 +69,7 @@ const GoogleButton = styled.button`
 const StyledImage = styled(CommonImage)`
   width: 2.3rem;
   height: 2.3rem;
+  background-color: transparent;
 
   @media only screen and (max-width: 26.25em) {
     width: 2rem;
