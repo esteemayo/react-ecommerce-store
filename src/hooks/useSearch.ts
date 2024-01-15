@@ -47,6 +47,7 @@ export const useSearch = () => {
       if (prev.find((item) => item.query === searchQuery)) {
         return [...new Set(prev)];
       }
+
       return [data, ...prev];
     });
   }, [searchQuery]);
