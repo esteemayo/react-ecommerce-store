@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import LoginButton from './LoginButton';
+import SignInButton from './SignInButton';
 import Heading from './Heading';
 import SidebarMenuItem from './SidebarMenuItem';
 
@@ -35,7 +35,7 @@ const SidebarMenu = ({
           <LogoutButton onClick={onAction} />
         </LogoutBox>
       ) : (
-        <LoginButton onClose={onClose} />
+        <SignInButton onClose={onClose} />
       )}
     </Container>
   );

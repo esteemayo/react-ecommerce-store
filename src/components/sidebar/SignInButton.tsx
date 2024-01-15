@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-interface LoginButtonProps {
+interface SignInButtonProps {
   onClose(): void;
 }
 
-const LoginButton = ({ onClose }: LoginButtonProps) => {
+const SignInButton = ({ onClose }: SignInButtonProps) => {
   return (
     <StyledLink to='/login' onClick={onClose}>
       Sign in
@@ -32,4 +32,4 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export default LoginButton;
+export default SignInButton;
