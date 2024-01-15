@@ -109,7 +109,7 @@ const ProductImageModal = ({
         type='button'
         direction='right'
         onClick={() => onMove('right')}
-        style={{ display: slideIndex === lastIndex && 'none' }}
+        style={{ display: slideIndex === lastIndex ? 'none' : undefined }}
       >
         <FontAwesomeIcon icon={faArrowRight} />
       </ArrowButton>
