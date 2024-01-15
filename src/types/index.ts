@@ -160,7 +160,6 @@ export interface CartActionType {
 }
 
 export interface SearchStore {
-  searchQuery: string;
   products: ProductValues[];
   isError: boolean;
   isLoading: boolean;

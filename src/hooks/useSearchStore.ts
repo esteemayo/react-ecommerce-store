@@ -15,7 +15,6 @@ const INITIAL_STATE = {
 
 export const useSearchStore = create<SearchStore & SearchActionType>()(
   devtools((set) => ({
-    searchQuery: INITIAL_STATE.searchQuery,
     products: INITIAL_STATE.products,
     isError: INITIAL_STATE.isError,
     isLoading: INITIAL_STATE.isLoading,
