@@ -77,6 +77,11 @@ const LoginButton = styled.button`
   border-radius: 3px;
   outline-color: ${({ theme }) => theme.btnOut};
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
 `;
 
 export default SidebarMenu;
