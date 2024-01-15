@@ -3,11 +3,12 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useSearchStore } from './useSearchStore';
 import { useSidebar } from './useSidebar';
-import { searchProducts } from '../services/productService';
 import { useSearchModal } from './useSearchModal';
 
 import { IHistories } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
+
+import { searchProducts } from '../services/productService';
 
 const getAllHistories = () => {
   const histories = getFromStorage(searchKey);
