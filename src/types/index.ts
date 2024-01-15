@@ -514,6 +514,7 @@ export interface SubmenuMenuItemProps {
   url: string;
   icon: IconDefinition;
   label: string;
+  onClose(): void;
 }
 
 export interface ProductCardProps {

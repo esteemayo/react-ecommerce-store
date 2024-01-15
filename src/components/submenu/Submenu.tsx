@@ -17,6 +17,7 @@ interface IColumn {
 const Submenu = () => {
   const location = useSubmenu((state) => state.location);
   const isOpen = useSubmenu((state) => state.isOpen);
+  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
   const { page, links } = useSubmenu((state) => state.page);
 
   const containerRef = useRef<HTMLElement>();
@@ -52,7 +53,7 @@ const Submenu = () => {
       <Heading title={page} />
       <ListContainer columns={columns}>
         {links?.map((link, index) => {
-          return <MenuItem key={index} {...link} />;
+          return <MenuItem key={index} {...link} onClose={closeSubmenu} />;
         })}
       </ListContainer>
     </Container>

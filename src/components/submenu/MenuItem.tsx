@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { SubmenuMenuItemProps } from '../../types';
 
-const MenuItem = ({ url, icon, label }: SubmenuMenuItemProps) => {
+const MenuItem = ({ url, icon, label, onClose }: SubmenuMenuItemProps) => {
   return (
-    <ListItem>
+    <ListItem onClick={onClose}>
       <StyledLink to={url}>
         <FontAwesomeIcon icon={icon} />
         &nbsp;
