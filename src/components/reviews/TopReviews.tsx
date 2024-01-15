@@ -59,7 +59,9 @@ const TopReviews = () => {
         <IconButton
           direction='left'
           onClick={() => handleClick('left')}
-          style={{ display: (!isMoved || currentSlide === 0) && 'none' }}
+          style={{
+            display: !isMoved || currentSlide === 0 ? 'none' : undefined,
+          }}
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </IconButton>
@@ -71,7 +73,9 @@ const TopReviews = () => {
         <IconButton
           direction='right'
           onClick={() => handleClick('right')}
-          style={{ display: currentSlide === lastIndex - 1 && 'none' }}
+          style={{
+            display: currentSlide === lastIndex - 1 ? 'none' : undefined,
+          }}
         >
           <FontAwesomeIcon icon={faArrowRight} />
         </IconButton>
