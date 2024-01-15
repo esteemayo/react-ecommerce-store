@@ -15,6 +15,7 @@ interface IBtn {
 
 const TopReviews = () => {
   const reviewRef = useRef<HTMLDivElement>(null);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
   const [clickLimit, setClickLimit] = useState(window.innerWidth / 730);
