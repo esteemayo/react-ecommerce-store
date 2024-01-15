@@ -20,6 +20,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
   const { isOpen, onOpen, onClose } = useImageModal();
 
   const imgContainerRef = useRef<HTMLElement>(null);
+
   const [slideNumber, setSlideNumber] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
   const [isSliderMoved, setIsSliderMoved] = useState(false);
