@@ -26,9 +26,13 @@ const Container = styled.section`
   width: 100vw;
   height: 100vh;
   text-align: center;
-  margin-top: 10rem;
+  background-color: ${({ theme }) => theme.bg};
+  padding-top: 10rem;
 `;
 
-const Text = styled.h5``;
+const Text = styled.span`
+  font-size: 2rem;
+  color: ${({ theme }) => theme.textNotFound};
+`;
 
 export default LoadingToRedirect;
