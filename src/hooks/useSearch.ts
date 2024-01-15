@@ -21,10 +21,10 @@ export const useSearch = () => {
   const onClose = useSearchModal((state) => state.onClose);
   const isOpen = useSearchModal((state) => state.isOpen);
   const {
+    isSuccess,
     searchProductFailure,
     searchProductFulfilled,
     searchProductPending,
-    isSuccess,
   } = useSearchStore();
 
   const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
