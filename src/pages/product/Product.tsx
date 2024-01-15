@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import { useEffect, useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
+import Reviews from '../../components/reviews/Reviews';
 import Product from '../../components/products/Product';
+
+import EmptyState from '../../components/EmptyState';
 import Loader from '../../components/Loader';
 import Recommendation from '../../components/Recommendation';
-import EmptyState from '../../components/EmptyState';
-import Reviews from '../../components/reviews/Reviews';
 
 import { useSubmenu } from '../../hooks/useSubmenu';
 import { useCartStore } from '../../hooks/useCartStore';
