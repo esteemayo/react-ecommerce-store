@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
+import LoginButton from './LoginButton';
 import Heading from './Heading';
 import SidebarMenuItem from './SidebarMenuItem';
 
@@ -35,9 +35,7 @@ const SidebarMenu = ({
           <LogoutButton onClick={onAction} />
         </LogoutBox>
       ) : (
-        <LoginButton to='/login' onClick={onClose}>
-          Sign in
-        </LoginButton>
+        <LoginButton onClose={onClose} />
       )}
     </Container>
   );
@@ -65,25 +63,6 @@ const LogoutBox = styled.div`
     color: ${({ theme }) => theme.textBtn};
     border-radius: 3px;
     outline-color: ${({ theme }) => theme.btnOut};
-  }
-`;
-
-const LoginButton = styled(Link)`
-  display: inline-block;
-  text-decoration: none;
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  background-color: ${({ theme }) => theme.bgBtn};
-  color: ${({ theme }) => theme.textBtn};
-  border-radius: 3px;
-  outline-color: ${({ theme }) => theme.btnOut};
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    opacity: 0.75;
   }
 `;
 
