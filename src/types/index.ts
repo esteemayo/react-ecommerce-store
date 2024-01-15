@@ -492,6 +492,7 @@ export interface ToggleButtonProps {
 
 export interface SidebarMenuProps {
   items: Sublink;
+  onAction(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 export interface SidebarMenuItemProps {
