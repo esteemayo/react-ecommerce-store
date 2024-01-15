@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useMemo } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
+import Heading from './Heading';
+import Search from './Search';
+import SidebarMenu from './SidebarMenu';
+
 import { useSearch } from '../../hooks/useSearch';
 import { useAuth } from '../../hooks/useAuth';
 import { useSidebar } from '../../hooks/useSidebar';
-
-import Heading from './Heading';
-import SidebarMenu from './SidebarMenu';
-import Search from './Search';
 
 import { sublinks } from '../../data';
 
