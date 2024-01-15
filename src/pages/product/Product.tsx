@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 import { useEffect, useMemo, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useParams } from 'react-router-dom';
 
 import Reviews from '../../components/reviews/Reviews';
 import Product from '../../components/products/Product';
