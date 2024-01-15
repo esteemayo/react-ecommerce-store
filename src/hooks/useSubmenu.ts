@@ -5,7 +5,7 @@ import { produce } from 'immer';
 import { sublinks } from '../data';
 import { OpenSubmenu, SubmenuActionType, SubmenuStore } from '../types';
 
-const INITIAL_STATE = {
+const INITIAL_STATE: SubmenuStore = {
   isOpen: false,
   location: {},
   page: {
