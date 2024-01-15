@@ -28,8 +28,9 @@ const Sidebar = () => {
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
       logoutUser();
+      onClose();
     },
-    [logoutUser]
+    [logoutUser, onClose]
   );
 
   const activeSidebar = useMemo(() => {
