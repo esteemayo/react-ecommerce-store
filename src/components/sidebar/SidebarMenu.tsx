@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Heading from './Heading';
 import SidebarMenuItem from './SidebarMenuItem';
@@ -34,7 +35,9 @@ const SidebarMenu = ({
           <LogoutButton onClick={onAction} />
         </LogoutBox>
       ) : (
-        <LoginButton>Sign in</LoginButton>
+        <LoginButton to='/login' onClick={onClose}>
+          Sign in
+        </LoginButton>
       )}
     </Container>
   );
@@ -65,9 +68,9 @@ const LogoutBox = styled.div`
   }
 `;
 
-const LoginButton = styled.button`
+const LoginButton = styled(Link)`
   display: inline-block;
-  border: none;
+  text-decoration: none;
   font-family: inherit;
   font-weight: 600;
   font-size: 1.5rem;
