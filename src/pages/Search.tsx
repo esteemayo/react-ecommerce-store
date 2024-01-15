@@ -58,10 +58,7 @@ const Search = () => {
 
   return (
     <ProductBox>
-      <ProductList
-        products={products}
-        title='No result matches your search criteria'
-      />
+      <ProductList products={products} />
     </ProductBox>
   );
 };
