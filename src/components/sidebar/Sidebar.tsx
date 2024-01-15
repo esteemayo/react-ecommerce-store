@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { useSearch } from '../../hooks/useSearch';
+import { useAuth } from '../../hooks/useAuth';
 import { useSidebar } from '../../hooks/useSidebar';
 
 import Heading from './Heading';
@@ -18,9 +19,18 @@ interface IContainer {
 
 const Sidebar = () => {
   const isOpen = useSidebar((state) => state.isOpen);
+  const logoutUser = useAuth((state) => state.logoutUser);
   const onClose = useSidebar((state) => state.onClose);
 
   const { searchQuery, handleChange, handleSearch } = useSearch();
+
+  const handleLogout = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+      logoutUser();
+    },
+    [logoutUser]
+  );
 
   const activeSidebar = useMemo(() => {
     return isOpen ? 'show' : '';
@@ -32,7 +42,7 @@ const Sidebar = () => {
         <Button type='button' onClick={onClose}>
           <FontAwesomeIcon icon={faXmark} />
         </Button>
-        <SidebarMenu items={sublinks} />
+        <SidebarMenu items={sublinks} onAction={handleLogout} />
         <SearchContainer>
           <Heading title='Search products' />
           <Search

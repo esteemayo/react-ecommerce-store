@@ -4,8 +4,9 @@ import Heading from './Heading';
 import SidebarMenuItem from './SidebarMenuItem';
 
 import { SidebarMenuProps } from '../../types';
+import LogoutButton from '../navbar/LogoutButton';
 
-const SidebarMenu = ({ items }: SidebarMenuProps) => {
+const SidebarMenu = ({ items, onAction }: SidebarMenuProps) => {
   return (
     <Container>
       {items.map((item, index) => {
@@ -21,6 +22,7 @@ const SidebarMenu = ({ items }: SidebarMenuProps) => {
           </Wrapper>
         );
       })}
+      <LogoutButton onClick={onAction} />
     </Container>
   );
 };
