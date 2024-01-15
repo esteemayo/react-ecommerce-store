@@ -21,6 +21,7 @@ const Sidebar = () => {
   const onClose = useSidebar((state) => state.onClose);
   const isOpen = useSidebar((state) => state.isOpen);
   const logoutUser = useAuth((state) => state.logoutUser);
+  const currentUser = useAuth((state) => state.user);
 
   const { searchQuery, handleChange, handleSearch } = useSearch();
 
@@ -47,6 +48,7 @@ const Sidebar = () => {
           items={sublinks}
           onAction={handleLogout}
           onClose={onClose}
+          currentUser={currentUser}
         />
         <SearchContainer>
           <Heading title='Search products' />

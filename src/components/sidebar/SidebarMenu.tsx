@@ -6,7 +6,12 @@ import SidebarMenuItem from './SidebarMenuItem';
 import { SidebarMenuProps } from '../../types';
 import LogoutButton from '../navbar/LogoutButton';
 
-const SidebarMenu = ({ items, onAction, onClose }: SidebarMenuProps) => {
+const SidebarMenu = ({
+  items,
+  onAction,
+  onClose,
+  currentUser,
+}: SidebarMenuProps) => {
   return (
     <Container>
       {items.map((item, index) => {
@@ -24,9 +29,11 @@ const SidebarMenu = ({ items, onAction, onClose }: SidebarMenuProps) => {
           </Wrapper>
         );
       })}
-      <LogoutBox>
-        <LogoutButton onClick={onAction} />
-      </LogoutBox>
+      {currentUser && (
+        <LogoutBox>
+          <LogoutButton onClick={onAction} />
+        </LogoutBox>
+      )}
     </Container>
   );
 };

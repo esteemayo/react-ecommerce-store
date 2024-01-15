@@ -494,6 +494,7 @@ export interface SidebarMenuProps {
   items: Sublink;
   onAction(e: React.MouseEvent<HTMLButtonElement>): void;
   onClose(): void;
+  currentUser: CurrentUserType;
 }
 
 export interface SidebarMenuItemProps {
