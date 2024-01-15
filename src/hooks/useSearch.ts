@@ -2,12 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 
 import { useSearchStore } from './useSearchStore';
+import { useSidebar } from './useSidebar';
 import { searchProducts } from '../services/productService';
+import { useSearchModal } from './useSearchModal';
 
 import { IHistories } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
-
-import { useSearchModal } from './useSearchModal';
 
 const getAllHistories = () => {
   const histories = getFromStorage(searchKey);
@@ -16,6 +16,7 @@ const getAllHistories = () => {
 
 export const useSearch = () => {
   const navigate = useNavigate();
+  const sidebarModal = useSidebar();
 
   const onClose = useSearchModal((state) => state.onClose);
   const isOpen = useSearchModal((state) => state.isOpen);
@@ -81,9 +82,10 @@ export const useSearch = () => {
         setSearchQuery('');
 
         isOpen && onClose();
+        sidebarModal.isOpen && sidebarModal.onClose();
       }
     },
-    [handleHistory, isOpen, onClose, onSearchHandler, searchQuery]
+    [handleHistory, isOpen, onClose, onSearchHandler, searchQuery, sidebarModal]
   );
 
   useEffect(() => {
