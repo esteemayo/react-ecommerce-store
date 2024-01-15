@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import logger from './logService';
 import { getFromStorage, tokenKey } from '../utils';
 
-const devEnv = process.env.NODE_ENV !== 'production';
+const devEnv = import.meta.env.MODE !== 'production';
 const { VITE_APP_DEV_API_URL, VITE_APP_PROD_API_URL } = import.meta.env;
 
 const API = axios.create({
