@@ -14,7 +14,7 @@ interface IBtn {
 }
 
 const TopReviews = () => {
-  const reviewRef = useRef<HTMLDivElement>();
+  const reviewRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
   const [clickLimit, setClickLimit] = useState(window.innerWidth / 730);
@@ -25,7 +25,7 @@ const TopReviews = () => {
     (direction: string) => {
       setIsMoved(true);
 
-      const container = reviewRef.current;
+      const container = reviewRef.current as HTMLDivElement;
       const distance = container.getBoundingClientRect().x - 50;
 
       if (direction === 'left') {
