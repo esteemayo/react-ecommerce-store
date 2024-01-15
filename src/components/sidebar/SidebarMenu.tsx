@@ -22,7 +22,9 @@ const SidebarMenu = ({ items, onAction }: SidebarMenuProps) => {
           </Wrapper>
         );
       })}
-      <LogoutButton onClick={onAction} />
+      <LogoutBox>
+        <LogoutButton onClick={onAction} />
+      </LogoutBox>
     </Container>
   );
 };
@@ -40,6 +42,15 @@ const ListContainer = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 0.25rem;
+`;
+
+const LogoutBox = styled.div`
+  & > button {
+    padding: 0.5rem 1rem;
+    background-color: ${({ theme }) => theme.bgBtn};
+    color: ${({ theme }) => theme.textBtn};
+    border-radius: 3px;
+  }
 `;
 
 export default SidebarMenu;
