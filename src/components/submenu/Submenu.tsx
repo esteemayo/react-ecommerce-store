@@ -20,7 +20,7 @@ const Submenu = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
   const { page, links } = useSubmenu((state) => state.page);
 
-  const containerRef = useRef<HTMLElement>();
+  const containerRef = useRef<HTMLElement>(null);
   const [columns, setColumns] = useState('col-2');
 
   const activeSubmenu = useMemo(() => {
@@ -29,7 +29,7 @@ const Submenu = () => {
 
   useEffect(() => {
     setColumns('col-2');
-    const submenu = containerRef.current;
+    const submenu = containerRef?.current as HTMLElement;
     const { center, bottom } = location;
 
     submenu.style.left = `${center}px`;
