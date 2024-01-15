@@ -50,6 +50,7 @@ const LogoutBox = styled.div`
     background-color: ${({ theme }) => theme.bgBtn};
     color: ${({ theme }) => theme.textBtn};
     border-radius: 3px;
+    outline-color: ${({ theme }) => theme.btnOut};
   }
 `;
 
