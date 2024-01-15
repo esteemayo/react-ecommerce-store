@@ -29,10 +29,12 @@ const SidebarMenu = ({
           </Wrapper>
         );
       })}
-      {currentUser && (
+      {currentUser ? (
         <LogoutBox>
           <LogoutButton onClick={onAction} />
         </LogoutBox>
+      ) : (
+        <LoginButton>Sign in</LoginButton>
       )}
     </Container>
   );
@@ -61,6 +63,16 @@ const LogoutBox = styled.div`
     border-radius: 3px;
     outline-color: ${({ theme }) => theme.btnOut};
   }
+`;
+
+const LoginButton = styled.button`
+  display: inline-block;
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: ${({ theme }) => theme.bgBtn};
+  color: ${({ theme }) => theme.textBtn};
+  border-radius: 3px;
+  outline-color: ${({ theme }) => theme.btnOut};
 `;
 
 export default SidebarMenu;
