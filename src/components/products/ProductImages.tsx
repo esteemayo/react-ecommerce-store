@@ -19,7 +19,7 @@ interface IBtn {
 const ProductImages = ({ images }: ProductImagesProps) => {
   const { isOpen, onOpen, onClose } = useImageModal();
 
-  const imgContainerRef = useRef<HTMLElement>();
+  const imgContainerRef = useRef<HTMLElement>(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
   const [isSliderMoved, setIsSliderMoved] = useState(false);
@@ -49,7 +49,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
         newSlideIndex = slideIndex + 1;
       }
 
-      setSlideIndex(newSlideIndex);
+      setSlideIndex(newSlideIndex!);
     },
     [slideIndex]
   );
@@ -58,7 +58,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
     (direction: string) => {
       setIsSliderMoved(true);
 
-      const container = imgContainerRef.current;
+      const container = imgContainerRef.current as HTMLElement;
       const distance = container.getBoundingClientRect().x;
 
       if (direction === 'left' && slideNumber > 0) {
@@ -89,7 +89,9 @@ const ProductImages = ({ images }: ProductImagesProps) => {
         type='button'
         direction='left'
         onClick={() => handleDirection('left')}
-        style={{ display: (!isSliderMoved || slideNumber === 0) && 'none' }}
+        style={{
+          display: !isSliderMoved || slideNumber === 0 ? 'none' : undefined,
+        }}
       >
         <FontAwesomeIcon icon={faArrowLeft} />
       </ArrowButton>
@@ -109,7 +111,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
         type='button'
         direction='right'
         onClick={() => handleDirection('right')}
-        style={{ display: slideNumber === lastIndex && 'none' }}
+        style={{ display: slideNumber === lastIndex ? 'none' : undefined }}
       >
         <FontAwesomeIcon icon={faArrowRight} />
       </ArrowButton>
