@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 import { CommonImage } from './CommonImage';
+import { useSubmenu } from '../hooks/useSubmenu';
 
 const EmptySearch = () => {
+  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+
   return (
-    <Container>
+    <Container onMouseOver={closeSubmenu}>
       <Wrapper>
         <StyledImage src='/img/no-result.png' width={500} height={250} alt='' />
         <Message>No result matches your search criteria</Message>
