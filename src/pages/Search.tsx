@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 
 import ProductBox from '../components/products/ProductBox';
-import Loader from '../components/Loader';
 import ProductList from '../components/products/ProductList';
+
+import Loader from '../components/Loader';
 import EmptySearch from '../components/EmptySearch';
 
 import { useSearchStore } from '../hooks/useSearchStore';
