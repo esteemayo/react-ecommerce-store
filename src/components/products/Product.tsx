@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-import { useCart } from '../../hooks/useCart';
-import BreadCrumbs from '../../pages/product/BreadCrumbs';
-
 import ColorSelect from '../inputs/ColorSelect';
 import Counter from '../inputs/Counter';
 import SizeSelect from '../inputs/SizeSelect';
@@ -13,10 +10,13 @@ import ProductInfo from './ProductInfo';
 import ProductImages from './ProductImages';
 import ProductValue from './ProductValue';
 
+import Alert from '../Alert';
+import BreadCrumbs from '../../pages/product/BreadCrumbs';
+
 import { productValue } from '../../data';
 import { ProductProps } from '../../types';
 
-import Alert from '../Alert';
+import { useCart } from '../../hooks/useCart';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
 const Product = ({ product, inCart, actionLabel }: ProductProps) => {
