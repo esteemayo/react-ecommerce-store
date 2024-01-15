@@ -29,7 +29,7 @@ const Submenu = () => {
 
   useEffect(() => {
     setColumns('col-2');
-    const submenu = containerRef?.current as HTMLElement;
+    const submenu = containerRef.current as HTMLElement;
     const { center, bottom } = location;
 
     submenu.style.left = `${center}px`;
