@@ -68,11 +68,15 @@ const LogoutBox = styled.div`
 const LoginButton = styled.button`
   display: inline-block;
   border: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.5rem;
   padding: 0.5rem 1rem;
   background-color: ${({ theme }) => theme.bgBtn};
   color: ${({ theme }) => theme.textBtn};
   border-radius: 3px;
   outline-color: ${({ theme }) => theme.btnOut};
+  cursor: pointer;
 `;
 
 export default SidebarMenu;
