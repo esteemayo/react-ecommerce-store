@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CloseIcon from '@mui/icons-material/Close';
+import styled from 'styled-components';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import CloseIcon from '@mui/icons-material/Close';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { ProductImageModalProps } from '../../types';
