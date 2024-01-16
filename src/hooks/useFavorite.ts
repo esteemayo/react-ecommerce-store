@@ -1,8 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useCallback, useMemo } from 'react';
 import { IUseFavorite } from '../types';
 import { likeProduct } from '../services/productService';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
 export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
   const navigate = useNavigate();
