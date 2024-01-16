@@ -473,9 +473,10 @@ export type WishlistProps = {
 };
 
 export interface IUseFavorite {
-  actionId: string;
-  currentUser: CurrentUserType;
-  likes: string[];
+  (actionId: string, currentUser: CurrentUserType, likes: string[]): {
+    hasFavorited: boolean;
+    toggleFavorite: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
+  };
 }
 
 export interface MenuItemProps {
