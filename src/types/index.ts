@@ -22,7 +22,7 @@ interface UserDetailType {
   _id: string;
 }
 
-interface CurrentUserType {
+export interface CurrentUserType {
   status: string;
   details: UserDetailType;
   role: 'admin' | 'user';
