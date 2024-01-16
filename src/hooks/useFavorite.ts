@@ -10,7 +10,7 @@ export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
 
   const hasFavorited = useMemo(() => {
     const userId = currentUser?.details._id;
-    const list = likes?.includes(userId);
+    const list = likes?.includes(userId) || [];
 
     return !!list;
   }, [currentUser, likes]);
@@ -18,19 +18,24 @@ export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
   const toggleFavorite = useCallback(
     async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
+      console.log('clicked');
+      console.log(hasFavorited);
+      console.log(currentUser);
 
       if (!currentUser) {
         return navigate('/login');
       }
 
       try {
-        await likeProduct(actionId);
+        const { data } = await likeProduct(actionId);
+        console.log(data);
+        console.log('liked');
       } catch (err: unknown) {
         console.log(err);
         toast.error('Something went wrong!!!');
       }
     },
-    [actionId, currentUser, navigate]
+    [actionId, currentUser, hasFavorited, navigate]
   );
 
   return {

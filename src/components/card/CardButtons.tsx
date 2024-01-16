@@ -5,11 +5,20 @@ import WishlistButton from '../buttons/WishlistButton';
 
 import { CardButtonsProps } from '../../types';
 
-const CardButtons = ({ product, productId, wished }: CardButtonsProps) => {
+const CardButtons = ({
+  currentUser,
+  product,
+  productId,
+  wished,
+}: CardButtonsProps) => {
   return (
     <Container>
       <WishlistButton product={product} wished={wished} actionId={productId} />
-      <FavoriteButton />
+      <FavoriteButton
+        actionId={productId}
+        currentUser={currentUser}
+        likes={product.likes}
+      />
     </Container>
   );
 };
