@@ -524,6 +524,7 @@ export interface SubmenuMenuItemProps {
 }
 
 export interface ProductCardProps {
+  currentUser: CurrentUserType;
   product: CardProduct;
   onOpen(): void;
   onSelect(value: WishlistValues): void;
