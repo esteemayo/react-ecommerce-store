@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useMemo } from 'react';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { FavoriteButtonProps } from '../../types';
 import { useFavorite } from '../../hooks/useFavorite';
 
 import { IconButton } from './IconButton';
-import { useMemo } from 'react';
 
 const FavoriteButton = ({
   actionId,
