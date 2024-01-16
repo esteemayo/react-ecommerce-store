@@ -10,6 +10,7 @@ import { CardInfoProps } from '../../types';
 
 const CardInfo = ({
   url,
+  currentUser,
   product,
   initialPrice,
   priceLabel,
@@ -32,7 +33,12 @@ const CardInfo = ({
         priceLabel={priceLabel}
       />
       <CardButton inCart={inCart} onClick={onOpen} />
-      <CardButtons product={product} wished={wished} productId={product.id} />
+      <CardButtons
+        currentUser={currentUser}
+        product={product}
+        wished={wished}
+        productId={product.id}
+      />
     </Container>
   );
 };
