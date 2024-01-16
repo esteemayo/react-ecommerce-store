@@ -18,9 +18,6 @@ export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
   const toggleFavorite = useCallback(
     async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
-      console.log('clicked');
-      console.log(hasFavorited);
-      console.log(currentUser);
 
       if (!currentUser) {
         return navigate('/login');
@@ -29,13 +26,12 @@ export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
       try {
         const { data } = await likeProduct(actionId);
         console.log(data);
-        console.log('liked');
       } catch (err: unknown) {
         console.log(err);
         toast.error('Something went wrong!!!');
       }
     },
-    [actionId, currentUser, hasFavorited, navigate]
+    [actionId, currentUser, navigate]
   );
 
   return {
