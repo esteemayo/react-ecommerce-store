@@ -9,9 +9,10 @@ export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
   const navigate = useNavigate();
 
   const hasFavorited = useMemo(() => {
+    const product = likes || [];
     const userId = currentUser?.details._id;
-    const list = likes?.includes(userId) || [];
 
+    const list = product.includes(userId);
     return !!list;
   }, [currentUser, likes]);
 
