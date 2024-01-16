@@ -26,6 +26,7 @@ export const useFavorite = ({ actionId, currentUser, likes }: IUseFavorite) => {
 
       try {
         await likeProduct(actionId);
+        toast.success('Added to favorites!!!');
       } catch (err: unknown) {
         console.log(err);
         toast.error('Something went wrong!!!');
