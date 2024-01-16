@@ -466,6 +466,12 @@ export type WishlistProps = {
   };
 };
 
+export interface IUseFavorite {
+  likes: string[];
+  currentUser: CurrentUserType;
+  actionId: string;
+}
+
 export interface MenuItemProps {
   label: string;
   onMouse(e: React.MouseEvent<HTMLButtonElement>): void;
