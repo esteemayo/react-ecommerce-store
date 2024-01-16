@@ -554,6 +554,7 @@ interface CardProduct {
 
 export interface CardInfoProps {
   url: string;
+  currentUser: CurrentUserType;
   product: CardProduct;
   initialPrice: number;
   priceLabel: number;
