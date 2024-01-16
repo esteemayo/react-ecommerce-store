@@ -1,13 +1,17 @@
 import { useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useCartStore } from './useCartStore';
-import { WishlistProps, WishlistValues } from '../types';
+import { CurrentUserType, WishlistProps, WishlistValues } from '../types';
 
 export const useWishlist: WishlistProps = (
   actionId: string,
   product: WishlistValues,
-  wished: string[]
+  wished: string[],
+  currentUser: CurrentUserType
 ) => {
+  const navigate = useNavigate();
+
   const addWishlist = useCartStore((state) => state.addWishlist);
   const removeWishlist = useCartStore((state) => state.removeWishlist);
 
@@ -20,6 +24,10 @@ export const useWishlist: WishlistProps = (
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
 
+      if (!currentUser) {
+        return navigate('/login');
+      }
+
       if (wished.includes(actionId)) {
         removeWishlist(actionId);
         return;
@@ -27,7 +35,15 @@ export const useWishlist: WishlistProps = (
 
       addWishlist({ ...product });
     },
-    [actionId, addWishlist, product, removeWishlist, wished]
+    [
+      actionId,
+      addWishlist,
+      currentUser,
+      navigate,
+      product,
+      removeWishlist,
+      wished,
+    ]
   );
 
   return {

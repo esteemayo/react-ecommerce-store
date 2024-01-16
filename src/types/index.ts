@@ -461,7 +461,12 @@ export interface CountrySelectProps
 }
 
 export type WishlistProps = {
-  (actionId: string, product: WishlistValues, wished: string[]): {
+  (
+    actionId: string,
+    product: WishlistValues,
+    wished: string[],
+    currentUser: CurrentUserType
+  ): {
     isWished: boolean;
     handleToggle: (e: React.MouseEvent<HTMLButtonElement>) => void;
   };
