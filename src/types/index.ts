@@ -467,9 +467,9 @@ export type WishlistProps = {
 };
 
 export interface IUseFavorite {
-  likes: string[];
-  currentUser: CurrentUserType;
   actionId: string;
+  currentUser: CurrentUserType;
+  likes: string[];
 }
 
 export interface MenuItemProps {
