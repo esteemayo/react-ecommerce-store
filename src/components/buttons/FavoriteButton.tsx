@@ -1,11 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMemo } from 'react';
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { FavoriteButtonProps } from '../../types';
 import { useFavorite } from '../../hooks/useFavorite';
 
 import { IconButton } from './IconButton';
+import FavoriteIcon from '../icons/FavoriteIcon';
 
 const FavoriteButton = ({
   actionId,
@@ -24,11 +23,7 @@ const FavoriteButton = ({
 
   return (
     <IconButton onClick={toggleFavorite}>
-      {hasFavorited ? (
-        <FontAwesomeIcon icon={faStar} />
-      ) : (
-        <FontAwesomeIcon icon={faStarHalfAlt} />
-      )}
+      <FavoriteIcon isFavorite={hasFavorited} />
       {favLabel}
     </IconButton>
   );
