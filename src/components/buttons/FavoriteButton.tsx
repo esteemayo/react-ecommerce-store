@@ -11,11 +11,11 @@ const FavoriteButton = ({
   currentUser,
   likes,
 }: FavoriteButtonProps) => {
-  const { hasFavorited, toggleFavorite } = useFavorite({
+  const { hasFavorited, toggleFavorite } = useFavorite(
     actionId,
     currentUser,
-    likes,
-  });
+    likes
+  );
 
   const favLabel = useMemo(() => {
     return hasFavorited ? 'Added to favorites' : 'Add to favorites';
