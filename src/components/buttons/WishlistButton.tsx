@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { IconButton } from './IconButton';
 import HeartIcon from '../icons/HeartIcon';
 
-import { useWishlist } from '../../hooks/useWishlist';
 import { WishlistButtonProps } from '../../types';
+import { useWishlist } from '../../hooks/useWishlist';
 
 const WishlistButton = ({
   actionId,
