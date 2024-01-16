@@ -27,3 +27,6 @@ export const searchProducts = (searchQuery: string) =>
 
 export const createProduct = <T extends object>(product: T) =>
   http.post(apiEndpoint, product);
+
+export const likeProduct = (productId: string) =>
+  http.patch(`${apiEndpoint}/like/${productId}`);
