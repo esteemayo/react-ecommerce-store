@@ -115,7 +115,7 @@ export type CartValues = {
 export type WishlistValues = {
   id: string;
   category: string;
-  color: string[];
+  color: string | string[];
   desc: string;
   discount: number;
   featured: boolean;
@@ -127,7 +127,8 @@ export type WishlistValues = {
   priceDiscount: number;
   ratingsAverage: number;
   ratingsQuantity: number;
-  size: string[];
+  size: string | string[];
+  likes: string[];
   slug: string;
   tags: string[];
   createdAt: string;
@@ -542,9 +543,9 @@ interface CardProduct {
   featured: boolean;
   color: string | string[];
   size: string | string[];
+  likes: string[];
   category: string;
   tags: string[];
-  likes: string[];
   ratingsQuantity: number;
   ratingsAverage: number;
   createdAt: string;
