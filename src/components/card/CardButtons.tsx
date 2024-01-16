@@ -13,7 +13,12 @@ const CardButtons = ({
 }: CardButtonsProps) => {
   return (
     <Container>
-      <WishlistButton product={product} wished={wished} actionId={productId} />
+      <WishlistButton
+        product={product}
+        wished={wished}
+        actionId={productId}
+        currentUser={currentUser}
+      />
       <FavoriteButton
         actionId={productId}
         currentUser={currentUser}

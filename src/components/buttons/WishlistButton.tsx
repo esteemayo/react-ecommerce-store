@@ -6,8 +6,18 @@ import HeartIcon from '../icons/HeartIcon';
 import { useWishlist } from '../../hooks/useWishlist';
 import { WishlistButtonProps } from '../../types';
 
-const WishlistButton = ({ actionId, product, wished }: WishlistButtonProps) => {
-  const { isWished, handleToggle } = useWishlist(actionId, product, wished);
+const WishlistButton = ({
+  actionId,
+  product,
+  wished,
+  currentUser,
+}: WishlistButtonProps) => {
+  const { isWished, handleToggle } = useWishlist(
+    actionId,
+    product,
+    wished,
+    currentUser
+  );
 
   const wishlistLabel = useMemo(() => {
     if (wished.includes(actionId)) {
