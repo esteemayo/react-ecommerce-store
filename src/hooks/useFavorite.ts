@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useCallback, useMemo } from 'react';
+
 import { IUseFavorite } from '../types';
 import { likeProduct } from '../services/productService';
 
