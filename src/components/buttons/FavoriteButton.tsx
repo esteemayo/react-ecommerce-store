@@ -5,6 +5,7 @@ import { FavoriteButtonProps } from '../../types';
 import { useFavorite } from '../../hooks/useFavorite';
 
 import { IconButton } from './IconButton';
+import { useMemo } from 'react';
 
 const FavoriteButton = ({
   actionId,
@@ -17,6 +18,10 @@ const FavoriteButton = ({
     actionId,
   });
 
+  const favLabel = useMemo(() => {
+    return hasFavorited ? 'Added to favorites' : 'Add to favorites';
+  }, [hasFavorited]);
+
   return (
     <IconButton onClick={toggleFavorite}>
       {hasFavorited ? (
@@ -24,7 +29,7 @@ const FavoriteButton = ({
       ) : (
         <FontAwesomeIcon icon={faStarHalfAlt} />
       )}
-      Add to favorites
+      {favLabel}
     </IconButton>
   );
 };
