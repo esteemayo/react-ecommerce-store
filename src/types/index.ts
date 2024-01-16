@@ -596,6 +596,12 @@ export interface WishlistButtonProps {
   wished: string[];
 }
 
+export interface FavoriteButtonProps {
+  actionId: string;
+  likes: string[];
+  currentUser: CurrentUserType;
+}
+
 export interface CartModalProps {
   product?: ProductValues;
   isOpen: boolean;
