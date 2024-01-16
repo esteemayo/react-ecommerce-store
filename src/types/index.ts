@@ -585,6 +585,7 @@ export interface CardButtonProps {
 }
 
 export interface CardButtonsProps {
+  currentUser: CurrentUserType;
   product: CardProduct;
   productId: string;
   wished: string[];
