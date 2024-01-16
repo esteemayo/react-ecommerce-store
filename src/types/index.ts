@@ -543,6 +543,7 @@ interface CardProduct {
   size: string | string[];
   category: string;
   tags: string[];
+  likes: string[];
   ratingsQuantity: number;
   ratingsAverage: number;
   createdAt: string;
