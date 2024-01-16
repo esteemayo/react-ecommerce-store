@@ -5,7 +5,7 @@ import { useCallback, useMemo } from 'react';
 import { IUseFavorite } from '../types';
 import { likeProduct } from '../services/productService';
 
-export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
+export const useFavorite = ({ actionId, currentUser, likes }: IUseFavorite) => {
   const navigate = useNavigate();
 
   const hasFavorited = useMemo(() => {
