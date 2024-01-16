@@ -1,13 +1,39 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { IUseFavorite } from '../types';
+import { likeProduct } from '../services/productService';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
+  const navigate = useNavigate();
+
   const hasFavorited = useMemo(() => {
-    const list = likes.includes(actionId);
+    const userId = currentUser.details._id;
+    const list = likes.includes(userId);
+
     return !!list;
-  }, [actionId, likes]);
+  }, [currentUser, likes]);
+
+  const toggleFavorite = useCallback(
+    async (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      if (!currentUser) {
+        return navigate('/login');
+      }
+
+      try {
+        await likeProduct(actionId);
+      } catch (err: unknown) {
+        console.log(err);
+        toast.error('Something went wrong!!!');
+      }
+    },
+    [actionId, currentUser, navigate]
+  );
 
   return {
     hasFavorited,
+    toggleFavorite,
   };
 };
