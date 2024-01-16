@@ -9,7 +9,7 @@ export const useFavorite = ({ likes, currentUser, actionId }: IUseFavorite) => {
   const navigate = useNavigate();
 
   const hasFavorited = useMemo(() => {
-    const userId = currentUser.details._id;
+    const userId = currentUser?.details._id;
     const list = likes.includes(userId);
 
     return !!list;
