@@ -1,5 +1,5 @@
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { IconButton } from './IconButton';
 import { FavoriteButtonProps } from '../../types';
