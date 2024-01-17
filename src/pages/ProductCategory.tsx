@@ -10,6 +10,7 @@ import Option from '../components/filters/Option';
 import ProductBox from '../components/products/ProductBox';
 import Select from '../components/filters/Select';
 import Heading from '../components/filters/Heading';
+import EmptyProduct from '../components/products/EmptyProduct';
 
 import { priceOptions } from '../data';
 import { getUnique } from '../utils';
@@ -90,6 +91,14 @@ const ProductCategory = () => {
       <LoaderContainer>
         <Loader size='md' />
       </LoaderContainer>
+    );
+  }
+
+  if (products?.length < 1) {
+    return (
+      <Container>
+        <EmptyProduct src='/img/no-result.png' title='No results found!' />
+      </Container>
     );
   }
 
