@@ -10,7 +10,6 @@ const ReviewHead = ({
   sort,
   sortLabel,
   ratingsAverage,
-  ratingsQuantity,
   reviews,
   isOpen,
   onOpen,
@@ -23,11 +22,7 @@ const ReviewHead = ({
         <TotalRatings>
           {reviews?.length === 0 ? 0 : reviews?.length?.toFixed(1)}
         </TotalRatings>
-        {ratingsQuantity === 0 ? (
-          <StarRating readOnly value={ratingsQuantity} name='read-only' />
-        ) : (
-          <StarRating readOnly value={ratingsAverage} name='read-only' />
-        )}
+        <StarRating readOnly value={ratingsAverage} name='read-only' />
         <TotalReviews>{reviews?.length} reviews</TotalReviews>
       </Ratings>
       <Wrapper>

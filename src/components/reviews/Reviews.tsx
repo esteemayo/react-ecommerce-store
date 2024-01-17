@@ -53,7 +53,6 @@ const Reviews = ({
           sort={sort}
           sortLabel={sortLabel}
           ratingsAverage={ratingsAverage}
-          ratingsQuantity={ratingsQuantity}
           reviews={reviews}
           isOpen={isFilterOpen}
           onOpen={onOpen}
