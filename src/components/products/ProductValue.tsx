@@ -52,10 +52,10 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled(CommonImage)<IMode>`
+  display: inline-block;
   width: 2.4rem;
   height: auto;
   background-color: ${({ mode }) => setBcg(mode)};
-  display: inline-block;
 `;
 
 const setBcg = (mode: string) => {
