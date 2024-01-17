@@ -54,8 +54,12 @@ const ImageWrapper = styled.div`
 const Image = styled(CommonImage)<IMode>`
   width: 2.4rem;
   height: auto;
-  background-color: ${({ mode }) => mode === 'true' && '#1b1a1a'};
+  background-color: ${({ mode }) => setBcg(mode)};
   display: inline-block;
 `;
+
+const setBcg = (mode: string) => {
+  return mode === 'true' ? '#1b1a1a' : 'transparent';
+};
 
 export default ProductValue;
