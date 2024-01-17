@@ -39,6 +39,7 @@ const Wrapper = styled.div`
 const StyledImage = styled(CommonImage)`
   width: 50rem;
   height: 50rem;
+  background-color: transparent;
 
   @media only screen and (max-width: 25em) {
     width: 40rem;
