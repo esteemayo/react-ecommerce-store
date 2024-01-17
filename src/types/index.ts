@@ -617,7 +617,7 @@ export interface FavoriteButtonProps {
 }
 
 export interface CartModalProps {
-  product?: ProductValues;
+  product: ProductValues;
   isOpen: boolean;
   type?: string;
   onClose(): void;
