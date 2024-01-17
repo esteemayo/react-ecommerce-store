@@ -2,34 +2,18 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import ProductCard from '../card/ProductCard';
-import EmptyProduct from './EmptyProduct';
 import CartModal from '../modals/CartModal';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCartModal } from '../../hooks/useCartModal';
 
-import { useQuery } from '../../utils';
 import { ProductListProps, WishlistValues } from '../../types';
 
-const ProductList = ({
-  products,
-  title = 'No results found!',
-}: ProductListProps) => {
+const ProductList = ({ products }: ProductListProps) => {
   const currentUser = useAuth((state) => state.user);
-
-  const query = useQuery();
-  const searchQuery = query.get('q');
 
   const { isOpen, onOpen, onClose } = useCartModal();
   const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
-
-  if (products?.length < 1 && !searchQuery) {
-    return (
-      <Container>
-        <EmptyProduct src='/img/no-result.png' title={title} />
-      </Container>
-    );
-  }
 
   return (
     <Container>

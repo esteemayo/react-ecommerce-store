@@ -895,7 +895,6 @@ export interface ProductFilterProps {
 
 export interface ProductListProps {
   products: ProductValues[];
-  title?: string;
 }
 
 export interface FilterSelect
