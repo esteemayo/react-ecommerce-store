@@ -6,6 +6,7 @@ import ProductList from '../components/products/ProductList';
 import Pagination from '../components/Pagination';
 import ProductFilter from '../components/products/ProductFilter';
 import ProductBox from '../components/products/ProductBox';
+import EmptyProduct from '../components/products/EmptyProduct';
 
 import { ProductValues } from '../types';
 import { getProducts } from '../services/productService';
@@ -76,6 +77,14 @@ const Products = () => {
     return (
       <Container>
         <Loader size='md' />
+      </Container>
+    );
+  }
+
+  if (products?.length < 1) {
+    return (
+      <Container>
+        <EmptyProduct src='/img/no-result.png' title='No results found!' />
       </Container>
     );
   }
