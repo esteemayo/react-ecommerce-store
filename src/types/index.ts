@@ -808,7 +808,6 @@ export interface EmptyReviewProps {
   title?: string;
   label?: string;
   ratingsAverage: number;
-  ratingsQuantity: number;
   onClick(): void;
 }
 
