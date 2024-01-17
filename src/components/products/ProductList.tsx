@@ -21,7 +21,7 @@ const ProductList = ({ products }: ProductListProps) => {
 
   return (
     <Container>
-      <ProductsContainer>
+      <Wrapper>
         {products?.map((product) => {
           return (
             <ProductCard
@@ -33,7 +33,7 @@ const ProductList = ({ products }: ProductListProps) => {
             />
           );
         })}
-      </ProductsContainer>
+      </Wrapper>
       <CartModal
         product={isSelectedProduct}
         isOpen={isOpen}
@@ -49,7 +49,7 @@ const Container = styled.section`
   padding: 10rem 0;
 `;
 
-const ProductsContainer = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
