@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
+import styled from 'styled-components';
+import { useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Heading from '../components/filters/Heading';
