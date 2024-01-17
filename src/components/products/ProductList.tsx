@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import ProductCard from '../card/ProductCard';
 import CartModal from '../modals/CartModal';
+import ProductCard from '../card/ProductCard';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCartModal } from '../../hooks/useCartModal';
