@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
-import Loader from '../components/Loader';
-import ProductList from '../components/products/ProductList';
-import Pagination from '../components/Pagination';
-import ProductFilter from '../components/products/ProductFilter';
-import ProductBox from '../components/products/ProductBox';
 import EmptyProduct from '../components/products/EmptyProduct';
+import ProductBox from '../components/products/ProductBox';
+import ProductFilter from '../components/products/ProductFilter';
+import ProductList from '../components/products/ProductList';
+
+import Loader from '../components/Loader';
+import Pagination from '../components/Pagination';
 
 import { ProductValues } from '../types';
 import { getProducts } from '../services/productService';
