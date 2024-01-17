@@ -260,6 +260,7 @@ export type StoreProduct = {
   featured: boolean;
   color: string[];
   size: string[];
+  likes: string[];
   category: string;
   tags: string[];
   ratingsQuantity: number;
