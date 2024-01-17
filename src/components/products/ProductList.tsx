@@ -5,6 +5,7 @@ import ProductCard from '../card/ProductCard';
 import EmptyProduct from './EmptyProduct';
 import CartModal from '../modals/CartModal';
 
+import { useAuth } from '../../hooks/useAuth';
 import { useCartModal } from '../../hooks/useCartModal';
 import { ProductListProps, WishlistValues } from '../../types';
 
@@ -14,6 +15,8 @@ const ProductList = ({
   products,
   title = 'No results found!',
 }: ProductListProps) => {
+  const currentUser = useAuth((state) => state.user);
+
   const query = useQuery();
   const searchQuery = query.get('q');
 
@@ -35,6 +38,7 @@ const ProductList = ({
           return (
             <ProductCard
               key={product.id}
+              currentUser={currentUser}
               product={product}
               onOpen={onOpen}
               onSelect={setIsSelectedProduct}
