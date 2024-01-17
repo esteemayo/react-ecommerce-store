@@ -5,12 +5,7 @@ import EmptyReview from './EmptyReview';
 
 import { ReviewCardsProps } from '../../types';
 
-const ReviewCards = ({
-  ratingsAverage,
-  ratingsQuantity,
-  reviews,
-  onOpen,
-}: ReviewCardsProps) => {
+const ReviewCards = ({ ratingsAverage, reviews, onOpen }: ReviewCardsProps) => {
   if (reviews?.length === 0) {
     return (
       <Container>
