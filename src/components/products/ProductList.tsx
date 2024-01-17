@@ -7,9 +7,9 @@ import CartModal from '../modals/CartModal';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCartModal } from '../../hooks/useCartModal';
-import { ProductListProps, WishlistValues } from '../../types';
 
 import { useQuery } from '../../utils';
+import { ProductListProps, WishlistValues } from '../../types';
 
 const ProductList = ({
   products,
