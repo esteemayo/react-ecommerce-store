@@ -9,16 +9,11 @@ const EmptyReview = ({
   title = 'Currently, there are no reviews for this product.',
   label = 'Leave a review',
   ratingsAverage,
-  ratingsQuantity,
   onClick,
 }: EmptyReviewProps) => {
   return (
     <Container>
-      {ratingsQuantity === 0 ? (
-        <StarRating readOnly value={ratingsQuantity} name='read-only' />
-      ) : (
-        <StarRating readOnly value={ratingsAverage} name='read-only' />
-      )}
+      <StarRating readOnly value={ratingsAverage} name='read-only' />
       <Message>{title}</Message>
       <ReviewButton actionLabel={label} onAction={onClick} />
     </Container>
