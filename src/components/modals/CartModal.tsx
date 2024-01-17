@@ -135,15 +135,17 @@ const CartModal = ({
               modal
             />
             <Hr />
-            <ColorSelect
-              title='Color'
-              mode={mode}
-              value={product?.color}
-              selected={isSelected}
-              onAction={setColor}
-              secondaryAction={setIsSelected}
-              modal
-            />
+            {product?.color && (
+              <ColorSelect
+                title='Color'
+                mode={mode}
+                value={product.color}
+                selected={isSelected}
+                onAction={setColor}
+                secondaryAction={setIsSelected}
+                modal
+              />
+            )}
             {product?.size && (
               <SizeSelect
                 value={product.size}
