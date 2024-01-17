@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
 import { produce } from 'immer';
+import { devtools } from 'zustand/middleware';
 
 interface AccountModalStore {
   isOpen: boolean;

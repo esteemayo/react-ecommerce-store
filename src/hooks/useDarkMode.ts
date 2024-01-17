@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
 import { produce } from 'immer';
+import { devtools, persist } from 'zustand/middleware';
 
 interface DarkModeStore {
   mode: boolean;
