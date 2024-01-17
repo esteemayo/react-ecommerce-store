@@ -7,7 +7,11 @@ import ProductCard from '../card/ProductCard';
 import { useAuth } from '../../hooks/useAuth';
 import { useCartModal } from '../../hooks/useCartModal';
 
-import { ProductListProps, WishlistValues } from '../../types';
+import { ProductValues, WishlistValues } from '../../types';
+
+interface ProductListProps {
+  products: ProductValues[];
+}
 
 const ProductList = ({ products }: ProductListProps) => {
   const currentUser = useAuth((state) => state.user);

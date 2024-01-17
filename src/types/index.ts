@@ -893,10 +893,6 @@ export interface ProductFilterProps {
   setPrice(price: number): void;
 }
 
-export interface ProductListProps {
-  products: ProductValues[];
-}
-
 export interface FilterSelect
   extends React.HTMLAttributes<HTMLSelectElement | HTMLInputElement> {
   name: string;
