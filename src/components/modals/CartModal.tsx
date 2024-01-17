@@ -55,7 +55,7 @@ const CartModal = ({
 
   const handleCloseModal = useCallback(() => {
     setShowModal(false);
-    onSelect(null);
+    onSelect(undefined);
     handleReset();
 
     setTimeout(() => {
