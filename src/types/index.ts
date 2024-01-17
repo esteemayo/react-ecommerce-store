@@ -760,7 +760,6 @@ export interface ReviewHeadProps {
   sort: string | null;
   sortLabel?: string;
   ratingsAverage: number;
-  ratingsQuantity: number;
   reviews: ReviewItem;
   isOpen: boolean;
   onOpen(): void;
