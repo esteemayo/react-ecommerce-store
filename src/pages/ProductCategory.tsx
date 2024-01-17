@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 import { useLocation } from 'react-router-dom';
 
-import ProductList from '../components/products/ProductList';
-import Loader from '../components/Loader';
+import Heading from '../components/filters/Heading';
+import Select from '../components/filters/Select';
 import SelectPrice from '../components/filters/SelectPrice';
 import Option from '../components/filters/Option';
 import ProductBox from '../components/products/ProductBox';
-import Select from '../components/filters/Select';
-import Heading from '../components/filters/Heading';
+
+import ProductList from '../components/products/ProductList';
+import Loader from '../components/Loader';
 import EmptyProduct from '../components/products/EmptyProduct';
 
 import { priceOptions } from '../data';
