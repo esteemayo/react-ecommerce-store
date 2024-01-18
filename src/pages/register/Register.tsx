@@ -16,8 +16,9 @@ import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
 import UploadProgress from '../../components/form/UploadProgress';
 import FormInput from '../../components/form/FormInput';
-import FormUpload from '../../components/form/FormUpload';
+// import FormUpload from '../../components/form/FormUpload';
 import Form from '../../components/form/Form';
+import { FormGroup } from '../../components/form/FormGroup';
 
 import Loader from '../../components/Loader';
 import CountrySelect from '../../components/inputs/CountrySelect';
@@ -297,12 +298,21 @@ const Register = () => {
           {perc > 0 && perc < 100 ? (
             <UploadProgress percentage={perc} />
           ) : (
-            <FormUpload
-              id='file'
-              accept='image/*'
-              label='Attach a photo'
-              onChange={handleFile}
-            />
+            <FormGroup>
+              <label htmlFor='file'>Attach a photo</label>
+              <input
+                id='file'
+                type='file'
+                accept='image/*'
+                onChange={handleFile}
+              />
+            </FormGroup>
+            // <FormUpload
+            //   id='file'
+            //   accept='image/*'
+            //   label='Attach a photo'
+            //   onChange={handleFile}
+            // />
           )}
           <FormButton
             label='Register'
