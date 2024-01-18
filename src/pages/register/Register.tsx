@@ -297,14 +297,12 @@ const Register = () => {
           {perc > 0 && perc < 100 ? (
             <UploadProgress percentage={perc} />
           ) : (
-            <>
-              <FormUpload
-                id='file'
-                accept='image/*'
-                label='Attach a photo'
-                onChange={handleFile}
-              />
-            </>
+            <FormUpload
+              id='file'
+              accept='image/*'
+              label='Attach a photo'
+              onChange={handleFile}
+            />
           )}
           <FormButton
             label='Register'
