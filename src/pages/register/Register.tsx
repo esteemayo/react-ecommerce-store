@@ -2,6 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage';
 
 import AuthInfo from '../../components/form/AuthInfo';
 import FormButton from '../../components/form/FormButton';
@@ -19,6 +25,7 @@ import CountrySelect from '../../components/inputs/CountrySelect';
 import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
 
+import app from '../../firebase';
 import { registerUser } from '../../services/authService';
 
 interface IErrors {
@@ -125,6 +132,40 @@ const Register = () => {
     setData(initialState);
   }, []);
 
+  const uploadFile = useCallback((file: File) => {
+    const fileName = `${new Date().getTime()}-${file?.name}`;
+
+    const storage = getStorage(app);
+    const storageRef = ref(storage, `users/${fileName}`);
+
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setPerc(Math.round(progress));
+        switch (snapshot.state) {
+          case 'paused':
+            console.log('Upload is paused');
+            break;
+          case 'running':
+            console.log('Upload is running');
+            break;
+        }
+      },
+      (err: unknown) => {
+        console.log(err);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setData((prev) => ({ ...prev, image: downloadURL }));
+        });
+      }
+    );
+  }, []);
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -160,6 +201,10 @@ const Register = () => {
       validateForm,
     ]
   );
+
+  useEffect(() => {
+    file && uploadFile(file);
+  }, [file, uploadFile]);
 
   useEffect(() => {
     if (isSuccess && user) {
