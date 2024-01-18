@@ -62,10 +62,10 @@ const Register = () => {
     user,
   } = useAuth();
 
-  const [perc, setPerc] = useState(0);
+  const [errors, setErrors] = useState<IErrors>({});
   const [data, setData] = useState(initialState);
   const [file, setFile] = useState<File | null>(null);
-  const [errors, setErrors] = useState<IErrors>({});
+  const [perc, setPerc] = useState(0);
 
   const handleChange = useCallback(
     ({ target: input }: React.ChangeEvent<HTMLInputElement>) => {
