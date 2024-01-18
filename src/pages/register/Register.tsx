@@ -282,7 +282,7 @@ const Register = () => {
             type='password'
             label='Confirm Password'
             placeholder='Confirm your password'
-            value={data.name}
+            value={data.confirmPassword}
             onChange={handleChange}
             error={errors.confirmPassword}
           />
