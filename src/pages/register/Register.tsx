@@ -64,7 +64,7 @@ const Register = () => {
 
   const [perc, setPerc] = useState(0);
   const [data, setData] = useState(initialState);
-  const [file, setFile] = useState<File>();
+  const [file, setFile] = useState<File | null>(null);
   const [errors, setErrors] = useState<IErrors>({});
 
   const handleChange = useCallback(
