@@ -1233,12 +1233,12 @@ export const productValue: ProductValue = [
   {
     id: 1,
     desc: 'Free Shipping over $50',
-    img: '/img/Shipping-black.svg',
+    img: '/svg/Shipping-black.svg',
   },
   {
     id: 2,
     desc: 'Free Returns',
-    img: '/img/Returns-black.svg',
+    img: '/svg/Returns-black.svg',
   },
 ];
 
