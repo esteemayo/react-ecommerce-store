@@ -29,6 +29,7 @@ const Container = styled.div`
 const StyledImage = styled(CommonImage)`
   width: 40rem;
   height: 40rem;
+  background-color: transparent;
 
   @media only screen and (max-width: 56.25em) {
     width: 33rem;
