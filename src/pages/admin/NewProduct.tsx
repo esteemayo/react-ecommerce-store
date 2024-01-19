@@ -24,8 +24,8 @@ import TextArea from '../../components/form/TextArea';
 import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
-import { createProduct } from '../../services/productService';
 import app from '../../firebase';
+import { createProduct } from '../../services/productService';
 
 interface IErrors {
   name?: string;
