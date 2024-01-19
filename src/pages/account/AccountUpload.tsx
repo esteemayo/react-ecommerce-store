@@ -6,23 +6,16 @@ import styled, { css } from 'styled-components';
 import { AccountUploadProps } from '../../types';
 import { CommonImage } from '../../components/CommonImage';
 
-const AccountUpload = ({ currentUser, onOpen }: AccountUploadProps) => {
+const AccountUpload = ({ avatar, onOpen }: AccountUploadProps) => {
   const btnLabel = useMemo(() => {
-    return currentUser.details.image
-      ? 'Change your avatar'
-      : 'Upload a picture';
-  }, [currentUser]);
+    return avatar ? 'Change your avatar' : 'Upload a picture';
+  }, [avatar]);
 
   return (
     <Container>
       <Wrapper>
-        {currentUser.details.image ? (
-          <StyledImage
-            src={currentUser.details.image}
-            width={100}
-            height={100}
-            alt=''
-          />
+        {avatar ? (
+          <StyledImage src={avatar} width={100} height={100} alt='' />
         ) : (
           <FontAwesomeIcon icon={faUser} />
         )}

@@ -27,11 +27,7 @@ const AccountInfo = ({
             <DeactivateAccount onOpen={accountModal.onOpen} />
           </Left>
           <Right>
-            <AccountUpload
-              avatar={avatar}
-              currentUser={user}
-              onOpen={fileModal.onOpen}
-            />
+            <AccountUpload avatar={avatar} onOpen={fileModal.onOpen} />
           </Right>
         </Box>
       </Wrapper>
