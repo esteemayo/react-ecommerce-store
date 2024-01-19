@@ -37,9 +37,9 @@ interface IErrors {
 }
 
 interface IFile {
-  id: number;
-  lastModified: Date;
-  lastModifiedDate: Date;
+  id?: number;
+  lastModified: number;
+  lastModifiedDate?: Date;
   name: string;
   size: number;
   type: string;
@@ -105,9 +105,10 @@ const NewProduct = () => {
 
   const handleFiles = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
+    const files = target.files!;
 
-    for (let i = 0; i < target.files.length; i++) {
-      const newFile = target.files[i];
+    for (let i = 0; i < files.length; i++) {
+      const newFile: IFile = files[i];
       newFile['id'] = Math.random();
       setFiles((prev) => [...prev, newFile]);
     }
@@ -157,7 +158,7 @@ const NewProduct = () => {
       const storage = getStorage(app);
       const storageRef = ref(storage, `products/${fileName}`);
 
-      const uploadTask = uploadBytesResumable(storageRef, file);
+      const uploadTask = uploadBytesResumable(storageRef, file!);
       lists.push(uploadTask);
 
       uploadTask.on(
@@ -208,6 +209,8 @@ const NewProduct = () => {
         tags,
         ...(urls.length > 0 && { images: urls }),
       };
+
+      console.log(newProduct);
 
       mutate(newProduct);
       toast.success('Product added!!!');
