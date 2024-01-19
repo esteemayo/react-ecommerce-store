@@ -1,11 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { css } from 'styled-components';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { useMemo } from 'react';
 
 import { AccountUploadProps } from '../../types';
 import { CommonImage } from '../../components/CommonImage';
 
 const AccountUpload = ({ currentUser, onOpen }: AccountUploadProps) => {
+  const btnLabel = useMemo(() => {
+    return currentUser.details.image
+      ? 'Change your avatar'
+      : 'Upload a picture';
+  }, [currentUser]);
+
   return (
     <Container>
       <Wrapper>
@@ -21,7 +28,7 @@ const AccountUpload = ({ currentUser, onOpen }: AccountUploadProps) => {
         )}
       </Wrapper>
       <Button type='button' onClick={onOpen}>
-        Upload a picture
+        {btnLabel}
       </Button>
     </Container>
   );
