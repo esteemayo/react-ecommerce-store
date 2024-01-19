@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 
 import { usePasswordModal } from '../../hooks/usePasswordModal';
 import { useAuth } from '../../hooks/useAuth';
@@ -9,7 +10,7 @@ import { useFileModal } from '../../hooks/useFileModal';
 
 import Heading from './Heading';
 import AccountInfo from './AccountInfo';
-import { useEffect, useState } from 'react';
+
 import { getCurrentUserData } from '../../services/userService';
 
 const Account = () => {
