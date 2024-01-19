@@ -16,16 +16,16 @@ import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
 import FormInput from '../../components/form/FormInput';
 import Select from '../../components/form/Select';
-import TextArea from '../../components/form/TextArea';
+import UploadProgress from '../../components/form/UploadProgress';
 import Form from '../../components/form/Form';
 import { FormGroup } from '../../components/form/FormGroup';
+import TextArea from '../../components/form/TextArea';
 
 import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
 import { createProduct } from '../../services/productService';
 import app from '../../firebase';
-import UploadProgress from '../../components/form/UploadProgress';
 
 interface IErrors {
   name?: string;
