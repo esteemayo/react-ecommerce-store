@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { useQuery } from '@tanstack/react-query';
 
 import { usePasswordModal } from '../../hooks/usePasswordModal';
 import { useAuth } from '../../hooks/useAuth';
@@ -23,16 +24,17 @@ const Account = () => {
 
   const [avatar, setAvatar] = useState('');
 
+  const { data } = useQuery({
+    queryKey: ['currentUser'],
+    queryFn: async () => {
+      const { data } = await getCurrentUserData();
+      return data;
+    },
+  });
+
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await getCurrentUserData();
-        setAvatar(data?.image);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, []);
+    setAvatar(data?.image);
+  }, [data]);
 
   return (
     <Container onMouseOver={closeSubmenu}>
