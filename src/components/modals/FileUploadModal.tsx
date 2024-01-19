@@ -15,6 +15,7 @@ import { useFileModal } from '../../hooks/useFileModal';
 import app from '../../firebase';
 import UploadProgress from '../form/UploadProgress';
 import { updateData } from '../../services/userService';
+import Spinner from '../Spinner';
 
 interface IOverlay {
   mode: string;
@@ -171,7 +172,7 @@ const FileUploadModal = () => {
                 disabled={disabledBtn}
                 onClick={handleUpload}
               >
-                Upload
+                {isLoading ? <Spinner /> : 'Upload'}
               </Button>
             </ButtonContainer>
           </UploadContainer>
