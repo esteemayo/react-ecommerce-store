@@ -225,6 +225,11 @@ const NewProduct = () => {
     return `formLabel ${mode ? 'dark' : 'light'}`;
   }, [mode]);
 
+  const disabledBtn = useMemo(() => {
+    const disabled = progress > 0 && progress < 100;
+    return !!disabled;
+  }, [progress]);
+
   console.log(files);
   console.log(urls);
 
@@ -334,7 +339,7 @@ const NewProduct = () => {
               />
             </FormGroup>
           )}
-          <FormButton label='Create' />
+          <FormButton label='Create' disabled={disabledBtn} />
         </Form>
       </StyledBox>
     </FormBox>
