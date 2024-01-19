@@ -38,9 +38,9 @@ const FileUploadModal = () => {
     updateUserDataRejected,
   } = useAuth();
 
+  const [file, setFile] = useState<File>();
   const [perc, setPerc] = useState(0);
   const [showModal, setShowModal] = useState(isOpen);
-  const [file, setFile] = useState<File>();
   const [image, setImage] = useState('');
 
   const handleFile = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
