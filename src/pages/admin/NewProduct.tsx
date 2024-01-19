@@ -25,6 +25,7 @@ import { useDarkMode } from '../../hooks/useDarkMode';
 
 import { createProduct } from '../../services/productService';
 import app from '../../firebase';
+import UploadProgress from '../../components/form/UploadProgress';
 
 interface IErrors {
   name?: string;
@@ -68,6 +69,7 @@ const NewProduct = () => {
   const [tags, setTags] = useState<string[]>([]);
   const [color, setColor] = useState<string[]>([]);
   const [urls, setUrls] = useState<string[]>([]);
+  const [progress, setProgress] = useState(0);
 
   const { isSuccess, mutate } = useMutation({
     mutationFn: async (product: object) => {
@@ -164,9 +166,10 @@ const NewProduct = () => {
       uploadTask.on(
         'state_changed',
         (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
+          const progress = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+          setProgress(progress);
           switch (snapshot.state) {
             case 'paused':
               console.log('Upload is paused');
@@ -315,18 +318,22 @@ const NewProduct = () => {
             onChange={handleTags}
             error={errors.tags}
           />
-          <FormGroup>
-            <label htmlFor='file' className={labelClasses}>
-              Attach images
-            </label>
-            <input
-              type='file'
-              id='file'
-              accept='image/*'
-              onChange={handleFiles}
-              multiple
-            />
-          </FormGroup>
+          {progress > 0 && progress < 100 ? (
+            <UploadProgress percentage={progress} />
+          ) : (
+            <FormGroup>
+              <label htmlFor='file' className={labelClasses}>
+                Attach images
+              </label>
+              <input
+                type='file'
+                id='file'
+                accept='image/*'
+                onChange={handleFiles}
+                multiple
+              />
+            </FormGroup>
+          )}
           <FormButton label='Create' />
         </Form>
       </StyledBox>
