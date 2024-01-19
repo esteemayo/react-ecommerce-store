@@ -10,7 +10,7 @@ const NotFound = () => {
     <Container onMouseOver={closeSubmenu}>
       <Wrapper>
         <StyledImage
-          src='/img/startled.svg'
+          src='/svg/startled.svg'
           width={700}
           height={500}
           alt='404'
