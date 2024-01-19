@@ -131,7 +131,7 @@ const FileUploadModal = () => {
   }, [showModal]);
 
   const disabledBtn = useMemo(() => {
-    const disabled = isLoading || image === '' || (perc > 0 && perc < 100);
+    const disabled = !image || isLoading || (perc > 0 && perc < 100);
     return !!disabled;
   }, [image, isLoading, perc]);
 
