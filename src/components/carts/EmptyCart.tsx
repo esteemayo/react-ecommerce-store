@@ -7,9 +7,11 @@ const EmptyCart = () => {
   return (
     <Container>
       <StyledImage src='/svg/empty-cart.svg' width={480} height={400} alt='' />
-      <StyledLink to='/products'>
-        <Button type='button'>Back to shopping</Button>
-      </StyledLink>
+      <Wrapper>
+        <StyledLink to='/products'>
+          <Button type='button'>Back to shopping</Button>
+        </StyledLink>
+      </Wrapper>
     </Container>
   );
 };
@@ -35,6 +37,10 @@ const StyledImage = styled(CommonImage)`
     height: 33rem;
     padding: 0 5rem;
   }
+`;
+
+const Wrapper = styled.div`
+  margin-top: 3rem;
 `;
 
 const StyledLink = styled(Link)`
