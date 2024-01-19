@@ -1059,6 +1059,7 @@ interface PasswordModal {
 }
 
 export interface AccountInfoProps {
+  avatar?: string;
   user: CurrentUserType;
   accountModal: AccountModal;
   emailModal: EmailModal;
