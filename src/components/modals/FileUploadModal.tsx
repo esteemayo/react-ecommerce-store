@@ -186,7 +186,7 @@ const Overlay = styled.aside<IOverlay>`
   width: 100vw;
   height: 100%;
   background-color: ${({ theme }) => theme.bgOverlay};
-  backdrop-filter: ${({ mode }) => mode === 'true' && 'blur(2px)'};
+  backdrop-filter: ${({ mode }) => setBackDropFilter(mode)};
   position: fixed;
   top: 0;
   right: 0;
@@ -362,5 +362,9 @@ const Button = styled.button`
     cursor: not-allowed;
   }
 `;
+
+const setBackDropFilter = (mode: string) => {
+  return mode === 'true' ? 'blur(2px)' : undefined;
+};
 
 export default FileUploadModal;
