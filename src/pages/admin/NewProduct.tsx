@@ -2,6 +2,13 @@ import { useMutation, QueryClient } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+  UploadTask,
+} from 'firebase/storage';
 
 import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
@@ -17,6 +24,7 @@ import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
 import { createProduct } from '../../services/productService';
+import app from '../../firebase';
 
 interface IErrors {
   name?: string;
@@ -26,6 +34,16 @@ interface IErrors {
   numberInStock?: string;
   category?: string;
   tags?: string;
+}
+
+interface IFile {
+  id: number;
+  lastModified: Date;
+  lastModifiedDate: Date;
+  name: string;
+  size: number;
+  type: string;
+  webkitRelativePath: string;
 }
 
 const initialState = {
@@ -44,11 +62,12 @@ const NewProduct = () => {
   const mode = useDarkMode((state) => state.mode);
 
   const [data, setData] = useState(initialState);
-  const [files, setFiles] = useState<FileList | null>(null);
+  const [files, setFiles] = useState<IFile[]>([]);
   const [size, setSize] = useState<string[]>([]);
   const [errors, setErrors] = useState<IErrors>({});
   const [tags, setTags] = useState<string[]>([]);
   const [color, setColor] = useState<string[]>([]);
+  const [urls, setUrls] = useState<string[]>([]);
 
   const { isSuccess, mutate } = useMutation({
     mutationFn: async (product: object) => {
@@ -86,8 +105,12 @@ const NewProduct = () => {
 
   const handleFiles = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
-    const selectedItems = target.files;
-    setFiles(selectedItems);
+
+    for (let i = 0; i < target.files.length; i++) {
+      const newFile = target.files[i];
+      newFile['id'] = Math.random();
+      setFiles((prev) => [...prev, newFile]);
+    }
   }, []);
 
   const validateForm = useCallback(() => {
@@ -125,6 +148,49 @@ const NewProduct = () => {
     return errors;
   }, [data, tags]);
 
+  const uploadFile = useCallback(() => {
+    const lists: UploadTask[] = [];
+
+    files.map((file) => {
+      const fileName = `${file.id}-${file.name}`;
+
+      const storage = getStorage(app);
+      const storageRef = ref(storage, `products/${fileName}`);
+
+      const uploadTask = uploadBytesResumable(storageRef, file);
+      lists.push(uploadTask);
+
+      uploadTask.on(
+        'state_changed',
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          switch (snapshot.state) {
+            case 'paused':
+              console.log('Upload is paused');
+              break;
+            case 'running':
+              console.log('Upload is running');
+              break;
+          }
+        },
+        (err: unknown) => {
+          console.log(err);
+        },
+        async () => {
+          await getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setUrls((prev) => [...prev, downloadURL]);
+          });
+        }
+      );
+    });
+
+    Promise.all(lists)
+      .then(() => toast.success('All images uploaded!!!'))
+      .catch((err) => console.log(err));
+  }, [files]);
+
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -140,17 +206,25 @@ const NewProduct = () => {
         color,
         size,
         tags,
+        images: urls,
       };
 
       mutate(newProduct);
       toast.success('Product added!!!');
     },
-    [color, data, files, mutate, size, tags, validateForm]
+    [color, data, files, mutate, size, tags, urls, validateForm]
   );
 
   const labelClasses = useMemo(() => {
     return `formLabel ${mode ? 'dark' : 'light'}`;
   }, [mode]);
+
+  console.log(files);
+  console.log(urls);
+
+  useEffect(() => {
+    files && uploadFile();
+  }, [files, uploadFile]);
 
   useEffect(() => {
     isSuccess && navigate('/products');
