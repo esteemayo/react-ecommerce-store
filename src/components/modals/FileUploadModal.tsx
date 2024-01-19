@@ -25,6 +25,7 @@ const FileUploadModal = () => {
   const { isOpen, onClose } = useFileModal();
   const mode = useDarkMode((state) => state.mode);
   const {
+    isLoading,
     updateUserDataFulfilled,
     updateUserDataPending,
     updateUserDataRejected,
@@ -121,6 +122,11 @@ const FileUploadModal = () => {
     return showModal ? 'show' : '';
   }, [showModal]);
 
+  const disabledBtn = useMemo(() => {
+    const disabled = isLoading || (perc > 0 && perc < 100);
+    return !!disabled;
+  }, [isLoading, perc]);
+
   useEffect(() => {
     file && uploadFile(file);
   }, [file, uploadFile]);
@@ -162,7 +168,7 @@ const FileUploadModal = () => {
             <ButtonContainer>
               <Button
                 type='button'
-                disabled={perc > 0 && perc < 100}
+                disabled={disabledBtn}
                 onClick={handleUpload}
               >
                 Upload
