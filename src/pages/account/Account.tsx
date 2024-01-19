@@ -20,7 +20,7 @@ const Account = () => {
   const currentUser = useAuth((state) => state.user);
   const accountModal = useAccountModal();
 
-  const [avatar, setAvatar] = useState(currentUser?.details.image);
+  const [avatar, setAvatar] = useState('');
 
   useEffect(() => {
     (async () => {
