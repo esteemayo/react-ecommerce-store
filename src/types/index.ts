@@ -45,6 +45,9 @@ export interface AuthActionType {
   registerUserFulfilled(payload: CurrentUserType): void;
   registerUserRejected(payload: string): void;
   logoutUser(): void;
+  updateUserDataPending(): void;
+  updateUserDataFulfilled(payload: CurrentUserType): void;
+  updateUserDataRejected(payload: string): void;
   updateUserEmailPending(): void;
   updateUserEmailFulfilled(payload: CurrentUserType): void;
   updateUserEmailRejected(payload: string): void;
