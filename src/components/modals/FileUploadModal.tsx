@@ -16,6 +16,7 @@ import app from '../../firebase';
 import UploadProgress from '../form/UploadProgress';
 import { updateData } from '../../services/userService';
 import Spinner from '../Spinner';
+import { toast } from 'react-toastify';
 
 interface IOverlay {
   mode: string;
@@ -26,7 +27,11 @@ const FileUploadModal = () => {
   const { isOpen, onClose } = useFileModal();
   const mode = useDarkMode((state) => state.mode);
   const {
+    isError,
     isLoading,
+    isSuccess,
+    message,
+    reset,
     updateUserDataFulfilled,
     updateUserDataPending,
     updateUserDataRejected,
@@ -131,6 +136,13 @@ const FileUploadModal = () => {
   useEffect(() => {
     file && uploadFile(file);
   }, [file, uploadFile]);
+
+  useEffect(() => {
+    isSuccess && handleClose();
+    isError && toast.error(message);
+
+    return () => reset();
+  }, [handleClose, isError, isSuccess, message, reset]);
 
   useEffect(() => {
     setShowModal(isOpen);
