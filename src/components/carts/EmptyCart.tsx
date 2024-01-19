@@ -6,7 +6,12 @@ import { CommonImage } from '../CommonImage';
 const EmptyCart = () => {
   return (
     <Container>
-      <StyledImage src='/svg/empty-cart.svg' width={480} height={400} alt='' />
+      <StyledImage
+        src='/svg/empty-cart.svg'
+        width={480}
+        height={400}
+        alt='empty cart'
+      />
       <Wrapper>
         <StyledLink to='/products'>
           <Button type='button'>Back to shopping</Button>
