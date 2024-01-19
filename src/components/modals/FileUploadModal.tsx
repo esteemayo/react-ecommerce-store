@@ -7,6 +7,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage';
+import { toast } from 'react-toastify';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { useAuth } from '../../hooks/useAuth';
@@ -16,7 +17,6 @@ import app from '../../firebase';
 import UploadProgress from '../form/UploadProgress';
 import { updateData } from '../../services/userService';
 import Spinner from '../Spinner';
-import { toast } from 'react-toastify';
 
 interface IOverlay {
   mode: string;
