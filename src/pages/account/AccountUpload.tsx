@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled, { css } from 'styled-components';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useMemo } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled, { css } from 'styled-components';
 
 import { AccountUploadProps } from '../../types';
 import { CommonImage } from '../../components/CommonImage';
