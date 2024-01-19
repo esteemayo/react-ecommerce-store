@@ -127,6 +127,36 @@ export const useAuth = create<AuthStore & AuthActionType>()(
         false,
         'logout'
       ),
+    updateUserDataPending: () =>
+      set(
+        produce((state) => {
+          state.isLoading = true;
+        }),
+        false,
+        'loading'
+      ),
+    updateUserDataFulfilled: (payload) =>
+      set(
+        produce((state) => {
+          state.user = payload;
+          setToStorage(tokenKey, payload);
+          state.isLoading = false;
+          state.isSuccess = true;
+        }),
+        false,
+        'fulfilled'
+      ),
+    updateUserDataRejected: (payload) =>
+      set(
+        produce((state) => {
+          state.isError = true;
+          state.isSuccess = false;
+          state.isLoading = false;
+          state.message = payload;
+        }),
+        false,
+        'rejected'
+      ),
     updateUserEmailPending: () =>
       set(
         produce((state) => {
