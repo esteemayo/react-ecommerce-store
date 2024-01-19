@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { usePasswordModal } from '../../hooks/usePasswordModal';
@@ -24,17 +24,13 @@ const Account = () => {
 
   const [avatar, setAvatar] = useState('');
 
-  const { data } = useQuery({
+  useQuery({
     queryKey: ['currentUser'],
     queryFn: async () => {
       const { data } = await getCurrentUserData();
-      return data;
+      setAvatar(data?.image);
     },
   });
-
-  useEffect(() => {
-    setAvatar(data?.image);
-  }, [data]);
 
   return (
     <Container onMouseOver={closeSubmenu}>
