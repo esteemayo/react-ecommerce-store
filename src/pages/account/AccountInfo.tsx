@@ -7,6 +7,7 @@ import DeactivateAccount from './DeactivateAccount';
 import { AccountInfoProps } from '../../types';
 
 const AccountInfo = ({
+  avatar,
   user,
   accountModal,
   emailModal,
@@ -26,7 +27,11 @@ const AccountInfo = ({
             <DeactivateAccount onOpen={accountModal.onOpen} />
           </Left>
           <Right>
-            <AccountUpload onOpen={fileModal.onOpen} currentUser={user} />
+            <AccountUpload
+              avatar={avatar}
+              currentUser={user}
+              onOpen={fileModal.onOpen}
+            />
           </Right>
         </Box>
       </Wrapper>

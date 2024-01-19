@@ -9,6 +9,8 @@ import { useFileModal } from '../../hooks/useFileModal';
 
 import Heading from './Heading';
 import AccountInfo from './AccountInfo';
+import { useEffect, useState } from 'react';
+import { getCurrentUserData } from '../../services/userService';
 
 const Account = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
@@ -18,12 +20,26 @@ const Account = () => {
   const currentUser = useAuth((state) => state.user);
   const accountModal = useAccountModal();
 
+  const [avatar, setAvatar] = useState(currentUser?.details.image);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getCurrentUserData();
+        setAvatar(data?.image);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
+
   return (
     <Container onMouseOver={closeSubmenu}>
       <Box>
         <Wrapper>
           <Heading />
           <AccountInfo
+            avatar={avatar}
             user={currentUser}
             accountModal={accountModal}
             emailModal={emailModal}
