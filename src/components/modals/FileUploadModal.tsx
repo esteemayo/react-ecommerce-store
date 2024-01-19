@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { useFileModal } from '../../hooks/useFileModal';
 
+import app from '../../firebase';
 import UploadProgress from '../form/UploadProgress';
 
 interface IOverlay {
@@ -19,6 +26,7 @@ const FileUploadModal = () => {
   const [perc, setPerc] = useState(0);
   const [showModal, setShowModal] = useState(isOpen);
   const [file, setFile] = useState<File>();
+  const [image, setImage] = useState('');
 
   const handleFile = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
@@ -44,6 +52,41 @@ const FileUploadModal = () => {
     },
     [handleClose]
   );
+
+  const uploadFile = useCallback((file: File) => {
+    const fileName = `${new Date().getTime()}-${file.name}`;
+
+    const storage = getStorage(app);
+    const storageRef = ref(storage, `users/${fileName}`);
+
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setPerc(progress);
+        switch (snapshot.state) {
+          case 'paused':
+            console.log('Upload is paused');
+            break;
+          case 'running':
+            console.log('Upload is running');
+            break;
+        }
+      },
+      (err: unknown) => {
+        console.log(err);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setImage(downloadURL);
+        });
+      }
+    );
+  }, []);
 
   const handleUpload = useCallback(() => {
     console.log(file);
