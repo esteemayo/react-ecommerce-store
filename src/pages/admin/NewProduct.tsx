@@ -160,7 +160,7 @@ const NewProduct = () => {
       const storage = getStorage(app);
       const storageRef = ref(storage, `products/${fileName}`);
 
-      const uploadTask = uploadBytesResumable(storageRef, file!);
+      const uploadTask = uploadBytesResumable(storageRef, file);
       lists.push(uploadTask);
 
       uploadTask.on(
