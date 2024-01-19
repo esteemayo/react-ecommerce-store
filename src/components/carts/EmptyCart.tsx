@@ -32,8 +32,8 @@ const StyledImage = styled(CommonImage)`
   background-color: transparent;
 
   @media only screen and (max-width: 56.25em) {
-    width: 33rem;
     height: 33rem;
+    padding: 0 5rem;
   }
 `;
 
