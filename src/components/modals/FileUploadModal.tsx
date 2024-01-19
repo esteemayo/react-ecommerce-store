@@ -113,7 +113,7 @@ const FileUploadModal = () => {
 
       const { data } = await updateData(dataObj);
       updateUserDataFulfilled(data);
-      toast.error('Avatar successfully changed!!!');
+      toast.success('Avatar successfully changed!!!');
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: unknown | any) {
       console.log(err);
