@@ -9,10 +9,12 @@ import {
 } from 'firebase/storage';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { useAuth } from '../../hooks/useAuth';
 import { useFileModal } from '../../hooks/useFileModal';
 
 import app from '../../firebase';
 import UploadProgress from '../form/UploadProgress';
+import { updateData } from '../../services/userService';
 
 interface IOverlay {
   mode: string;
@@ -22,6 +24,11 @@ interface IOverlay {
 const FileUploadModal = () => {
   const { isOpen, onClose } = useFileModal();
   const mode = useDarkMode((state) => state.mode);
+  const {
+    updateUserDataFulfilled,
+    updateUserDataPending,
+    updateUserDataRejected,
+  } = useAuth();
 
   const [perc, setPerc] = useState(0);
   const [showModal, setShowModal] = useState(isOpen);
@@ -88,13 +95,35 @@ const FileUploadModal = () => {
     );
   }, []);
 
-  const handleUpload = useCallback(() => {
-    console.log(file);
-  }, [file]);
+  const handleUpload = useCallback(async () => {
+    updateUserDataPending();
+
+    try {
+      const dataObj = {
+        image,
+      };
+
+      const { data } = await updateData(dataObj);
+      updateUserDataFulfilled(data);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: unknown | any) {
+      console.log(err);
+      updateUserDataRejected(err.response.data.message);
+    }
+  }, [
+    image,
+    updateUserDataFulfilled,
+    updateUserDataPending,
+    updateUserDataRejected,
+  ]);
 
   const activeModal = useMemo(() => {
     return showModal ? 'show' : '';
   }, [showModal]);
+
+  useEffect(() => {
+    file && uploadFile(file);
+  }, [file, uploadFile]);
 
   useEffect(() => {
     setShowModal(isOpen);
