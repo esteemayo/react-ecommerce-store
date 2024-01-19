@@ -131,9 +131,9 @@ const FileUploadModal = () => {
   }, [showModal]);
 
   const disabledBtn = useMemo(() => {
-    const disabled = isLoading || (perc > 0 && perc < 100);
+    const disabled = isLoading || image === '' || (perc > 0 && perc < 100);
     return !!disabled;
-  }, [isLoading, perc]);
+  }, [image, isLoading, perc]);
 
   useEffect(() => {
     file && uploadFile(file);
