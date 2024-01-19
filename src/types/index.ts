@@ -1075,7 +1075,6 @@ export interface AccountHeadProps {
 
 export interface AccountUploadProps {
   avatar?: string;
-  currentUser: CurrentUserType;
   onOpen(): void;
 }
 
