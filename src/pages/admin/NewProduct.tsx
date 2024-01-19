@@ -206,7 +206,7 @@ const NewProduct = () => {
         color,
         size,
         tags,
-        images: urls,
+        ...(urls.length > 0 && { images: urls }),
       };
 
       mutate(newProduct);
