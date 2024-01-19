@@ -13,10 +13,11 @@ import { useDarkMode } from '../../hooks/useDarkMode';
 import { useAuth } from '../../hooks/useAuth';
 import { useFileModal } from '../../hooks/useFileModal';
 
-import app from '../../firebase';
-import UploadProgress from '../form/UploadProgress';
-import { updateData } from '../../services/userService';
 import Spinner from '../Spinner';
+import UploadProgress from '../form/UploadProgress';
+
+import app from '../../firebase';
+import { updateData } from '../../services/userService';
 
 interface IOverlay {
   mode: string;
