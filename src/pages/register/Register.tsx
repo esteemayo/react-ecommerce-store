@@ -144,9 +144,10 @@ const Register = () => {
     uploadTask.on(
       'state_changed',
       (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        setPerc(Math.round(progress));
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setPerc(progress);
         switch (snapshot.state) {
           case 'paused':
             console.log('Upload is paused');
