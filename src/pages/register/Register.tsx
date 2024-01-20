@@ -64,9 +64,9 @@ const Register = () => {
   } = useAuth();
 
   const [errors, setErrors] = useState<IErrors>({});
-  const [data, setData] = useState(initialState);
-  const [file, setFile] = useState<File | null>(null);
   const [perc, setPerc] = useState(0);
+  const [file, setFile] = useState<File | null>(null);
+  const [data, setData] = useState(initialState);
 
   const handleChange = useCallback(
     ({ target: input }: React.ChangeEvent<HTMLInputElement>) => {
