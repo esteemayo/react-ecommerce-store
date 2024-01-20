@@ -15,7 +15,7 @@ const AccountUpload = ({ avatar, onOpen }: AccountUploadProps) => {
     <Container>
       <Wrapper>
         {avatar ? (
-          <StyledImage src={avatar} width={100} height={100} alt='' />
+          <StyledImage src={avatar} width={100} height={100} alt='avatar' />
         ) : (
           <FontAwesomeIcon icon={faUser} />
         )}
