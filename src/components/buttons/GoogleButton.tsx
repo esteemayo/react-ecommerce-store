@@ -16,8 +16,6 @@ const GoogleButton = () => {
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
 
-      googleLoginPending();
-
       signInWithPopup(auth, provider)
         .then(async (result) => {
           const credentials = {
@@ -30,6 +28,8 @@ const GoogleButton = () => {
             fromGoogle: true,
             image: result.user.photoURL,
           };
+
+          googleLoginPending();
 
           try {
             const { data } = await googleLogin(credentials);
