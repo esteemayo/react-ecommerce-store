@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import StripeCheckout, { Token } from 'react-stripe-checkout';
 import { useNavigate } from 'react-router-dom';
 
+import { useAuth } from '../../hooks/useAuth';
 import { useCartStore } from '../../hooks/useCartStore';
+
 import { formatCurrency } from '../../utils/formatCurrency';
+import { stripePayment } from '../../services/paymentService';
 
 import { CartTotalProps } from '../../types';
-import { stripePayment } from '../../services/paymentService';
 
 interface IBtn {
   btnType?: string;
@@ -19,6 +21,7 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
   const tax = useCartStore((state) => state.tax);
   const subtotal = useCartStore((state) => state.subtotal);
   const total = useCartStore((state) => state.total);
+  const currentUser = useAuth((state) => state.user);
   const reset = useCartStore((state) => state.reset);
 
   const [show, setShow] = useState(isOpen);
@@ -102,6 +105,7 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
               <StripeCheckout
                 name='eStore'
                 image='https://media.istockphoto.com/vectors/shopping-cart-line-icon-fast-buy-vector-logo-vector-id1184670036?k=20&m=1184670036&s=612x612&w=0&h=FpKQukhJ4X8WQkucHPbCqANJROKYB2v3k9ov3x-3vdI='
+                email={currentUser.details.email}
                 billingAddress
                 shippingAddress
                 description={`Your total is ${formatCurrency(total)}`}
