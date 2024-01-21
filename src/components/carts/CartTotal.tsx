@@ -99,31 +99,31 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
               <Button type='button' className='btn-pay' onClick={onAction}>
                 Pay on Delivery
               </Button>
-              <Button type='button' className='btn-pay'>
-                Checkout Now
-              </Button>
+              <StripeCheckout
+                name='eStore'
+                image='https://media.istockphoto.com/vectors/shopping-cart-line-icon-fast-buy-vector-logo-vector-id1184670036?k=20&m=1184670036&s=612x612&w=0&h=FpKQukhJ4X8WQkucHPbCqANJROKYB2v3k9ov3x-3vdI='
+                billingAddress
+                shippingAddress
+                description={`Your total is ${formatCurrency(total)}`}
+                amount={total * 100}
+                currency='USD'
+                stripeKey={STRIPE_KEY}
+                token={onToken}
+              >
+                <Button type='button' className='btn-pay'>
+                  Checkout Now
+                </Button>
+              </StripeCheckout>
             </ButtonWrapper>
           ) : (
-            <StripeCheckout
-              name='eStore'
-              image='https://media.istockphoto.com/vectors/shopping-cart-line-icon-fast-buy-vector-logo-vector-id1184670036?k=20&m=1184670036&s=612x612&w=0&h=FpKQukhJ4X8WQkucHPbCqANJROKYB2v3k9ov3x-3vdI='
-              billingAddress
-              shippingAddress
-              description={`Your total is ${formatCurrency(total)}`}
-              amount={total * 100}
-              currency='USD'
-              stripeKey={STRIPE_KEY}
-              token={onToken}
+            <Button
+              type='button'
+              className='btn-check'
+              btnType='check'
+              onClick={onOpen}
             >
-              <Button
-                type='button'
-                className='btn-check'
-                btnType='check'
-                onClick={onOpen}
-              >
-                Checkout
-              </Button>
-            </StripeCheckout>
+              Checkout
+            </Button>
           )}
         </ButtonContainer>
       </Wrapper>
