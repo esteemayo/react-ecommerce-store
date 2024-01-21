@@ -48,7 +48,6 @@ export const useAuth = create<AuthStore & AuthActionType>()(
     reset: () =>
       set(
         produce((state) => {
-          state.user = INITIAL_STATE.user;
           state.isLoading = INITIAL_STATE.isLoading;
           state.isError = INITIAL_STATE.isError;
           state.isSuccess = INITIAL_STATE.isSuccess;
