@@ -31,13 +31,16 @@ const GoogleButton = () => {
             image: result.user.photoURL,
           };
 
-          const { data } = await googleLogin(credentials);
-          googleLoginFulfilled(data);
+          try {
+            const { data } = await googleLogin(credentials);
+            googleLoginFulfilled(data);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          } catch (err: unknown | any) {
+            googleLoginRejected(err.response.data.message);
+          }
         })
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .catch((err: unknown | any) => {
+        .catch((err: unknown) => {
           console.log(err);
-          googleLoginRejected(err._FirebaseError.message);
         });
     },
     [googleLoginFulfilled, googleLoginPending, googleLoginRejected]
