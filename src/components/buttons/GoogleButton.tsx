@@ -36,7 +36,7 @@ const GoogleButton = () => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .catch((err: unknown | any) => {
           console.log(err);
-          googleLoginRejected(err);
+          googleLoginRejected(err._FirebaseError.message);
         });
     },
     [googleLoginFulfilled, googleLoginPending, googleLoginRejected]
