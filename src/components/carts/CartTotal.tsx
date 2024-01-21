@@ -1,20 +1,34 @@
-import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
+import styled from 'styled-components';
+import StripeCheckout, { Token } from 'react-stripe-checkout';
+import { useNavigate } from 'react-router-dom';
 
 import { useCartStore } from '../../hooks/useCartStore';
-import { CartTotalProps } from '../../types';
 import { formatCurrency } from '../../utils/formatCurrency';
+
+import { CartTotalProps } from '../../types';
+import { stripePayment } from '../../services/paymentService';
 
 interface IBtn {
   btnType?: string;
 }
 
 const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
+  const navigate = useNavigate();
+
   const tax = useCartStore((state) => state.tax);
   const subtotal = useCartStore((state) => state.subtotal);
   const total = useCartStore((state) => state.total);
+  const reset = useCartStore((state) => state.reset);
 
   const [show, setShow] = useState(isOpen);
+  const [stripeToken, setStripeToken] = useState<Token>();
+
+  const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY;
+
+  const onToken = useCallback((token: Token) => {
+    setStripeToken(token);
+  }, []);
 
   const handleClose = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
@@ -33,6 +47,26 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
     },
     [onOpen, onClose]
   );
+
+  useEffect(() => {
+    if (stripeToken && total >= 1) {
+      (async () => {
+        try {
+          const paymentObj = {
+            tokenId: stripeToken?.id,
+            amount: total * 100,
+          };
+
+          const { data } = await stripePayment(paymentObj);
+
+          reset();
+          navigate('/success', { state: data });
+        } catch (err: unknown) {
+          console.log(err);
+        }
+      })();
+    }
+  }, [navigate, reset, stripeToken, total]);
 
   useEffect(() => {
     setShow(isOpen);
@@ -70,14 +104,26 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
               </Button>
             </ButtonWrapper>
           ) : (
-            <Button
-              type='button'
-              className='btn-check'
-              btnType='check'
-              onClick={onOpen}
+            <StripeCheckout
+              name='eStore'
+              image='https://media.istockphoto.com/vectors/shopping-cart-line-icon-fast-buy-vector-logo-vector-id1184670036?k=20&m=1184670036&s=612x612&w=0&h=FpKQukhJ4X8WQkucHPbCqANJROKYB2v3k9ov3x-3vdI='
+              billingAddress
+              shippingAddress
+              description={`Your total is ${formatCurrency(total)}`}
+              amount={total * 100}
+              currency='USD'
+              stripeKey={STRIPE_KEY}
+              token={onToken}
             >
-              Checkout
-            </Button>
+              <Button
+                type='button'
+                className='btn-check'
+                btnType='check'
+                onClick={onOpen}
+              >
+                Checkout
+              </Button>
+            </StripeCheckout>
           )}
         </ButtonContainer>
       </Wrapper>
