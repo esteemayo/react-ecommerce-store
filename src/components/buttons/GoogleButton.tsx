@@ -3,9 +3,10 @@ import { useCallback } from 'react';
 import { signInWithPopup } from 'firebase/auth';
 
 import { CommonImage } from '../CommonImage';
-import { useAuth } from '../../hooks/useAuth';
-
 import { auth, provider } from '../../firebase';
+
+import { useAuth } from '../../hooks/useAuth';
+import { googleLogin } from '../../services/authService';
 
 const GoogleButton = () => {
   const { googleLoginFulfilled, googleLoginPending, googleLoginRejected } =
@@ -18,8 +19,7 @@ const GoogleButton = () => {
       googleLoginPending();
 
       signInWithPopup(auth, provider)
-        .then((result) => {
-          console.log(result.user);
+        .then(async (result) => {
           const credentials = {
             name: result.user.displayName,
             email: result.user.email,
@@ -31,7 +31,8 @@ const GoogleButton = () => {
             image: result.user.photoURL,
           };
 
-          googleLoginFulfilled(credentials);
+          const { data } = await googleLogin(credentials);
+          googleLoginFulfilled(data);
         })
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .catch((err: unknown | any) => {
