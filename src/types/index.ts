@@ -9,7 +9,7 @@ export type Announcements = {
 
 interface UserDetailType {
   active: boolean;
-  country: string;
+  country?: string;
   createdAt: string;
   email: string;
   fromGoogle: boolean;
@@ -42,7 +42,7 @@ export interface AuthActionType {
   loginUserFulfilled(payload: CurrentUserType): void;
   loginUserRejected(payload: string): void;
   googleLoginPending(): void;
-  googleLoginFulfilled(payload: object): void;
+  googleLoginFulfilled(payload: CurrentUserType): void;
   googleLoginRejected(payload: string): void;
   registerUserPending(): void;
   registerUserFulfilled(payload: CurrentUserType): void;
