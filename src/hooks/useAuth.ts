@@ -87,6 +87,37 @@ export const useAuth = create<AuthStore & AuthActionType>()(
         false,
         'rejected'
       ),
+    googleLoginPending: () =>
+      set(
+        produce((state) => {
+          state.isLoading = true;
+        }),
+        false,
+        'pending'
+      ),
+    googleLoginFulfilled: (payload) =>
+      set(
+        produce((state) => {
+          state.user = payload;
+          setToStorage(tokenKey, payload);
+          state.isLoading = false;
+          state.isSuccess = true;
+        }),
+        false,
+        'fulfilled'
+      ),
+    googleLoginRejected: (payload) =>
+      set(
+        produce((state) => {
+          state.isError = true;
+          state.isSuccess = false;
+          state.isLoading = false;
+          state.user = null;
+          state.message = payload;
+        }),
+        false,
+        'rejected'
+      ),
     registerUserPending: () =>
       set(
         produce((state) => {
