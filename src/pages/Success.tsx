@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
 import {
   faEnvelope,
   faLocationDot,
   faMessage,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link, useLocation } from 'react-router-dom';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { formatCurrency } from '../utils/formatCurrency';
 
 const Success = () => {
+  const { state } = useLocation();
+  console.log(state);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   return (
