@@ -1,12 +1,50 @@
-import styled from 'styled-components';
 import { FaFacebookF } from 'react-icons/fa';
+import { useCallback } from 'react';
+import { signInWithPopup } from 'firebase/auth';
+import styled from 'styled-components';
 
+import { auth, provider } from '../../firebase';
 import { CommonImage } from '../../components/CommonImage';
+import { useAuth } from '../../hooks/useAuth';
 
 const SocialLogin = () => {
+  const { googleLoginFulfilled, googleLoginPending, googleLoginRejected } =
+    useAuth();
+
+  const signInWithGoogle = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      googleLoginPending();
+
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          console.log(result.user);
+          const credentials = {
+            name: result.user.displayName,
+            email: result.user.email,
+            username: result.user.displayName
+              ?.split(' ')
+              .shift()
+              ?.toLowerCase(),
+            fromGoogle: true,
+            image: result.user.photoURL,
+          };
+
+          googleLoginFulfilled(credentials);
+        })
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .catch((err: unknown | any) => {
+          console.log(err);
+          googleLoginRejected(err);
+        });
+    },
+    [googleLoginFulfilled, googleLoginPending, googleLoginRejected]
+  );
+
   return (
     <Container>
-      <GoogleButton type='button'>
+      <GoogleButton type='button' onClick={signInWithGoogle}>
         <StyledImage src='/img/google-logo.png' width={23} height={23} alt='' />
         Google
       </GoogleButton>
