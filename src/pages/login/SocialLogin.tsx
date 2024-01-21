@@ -3,9 +3,10 @@ import { useCallback } from 'react';
 import { signInWithPopup } from 'firebase/auth';
 import styled from 'styled-components';
 
-import { auth, provider } from '../../firebase';
-import { CommonImage } from '../../components/CommonImage';
 import { useAuth } from '../../hooks/useAuth';
+import { CommonImage } from '../../components/CommonImage';
+
+import { auth, provider } from '../../firebase';
 
 const SocialLogin = () => {
   const { googleLoginFulfilled, googleLoginPending, googleLoginRejected } =
