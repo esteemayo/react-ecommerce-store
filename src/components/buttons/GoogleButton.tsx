@@ -25,7 +25,6 @@ const GoogleButton = () => {
               ?.split(' ')
               .shift()
               ?.toLowerCase(),
-            fromGoogle: true,
             image: result.user.photoURL,
           };
 
