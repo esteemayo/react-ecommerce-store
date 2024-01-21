@@ -41,6 +41,9 @@ export interface AuthActionType {
   loginUserPending(): void;
   loginUserFulfilled(payload: CurrentUserType): void;
   loginUserRejected(payload: string): void;
+  googleLoginPending(): void;
+  googleLoginFulfilled(payload: object): void;
+  googleLoginRejected(payload: string): void;
   registerUserPending(): void;
   registerUserFulfilled(payload: CurrentUserType): void;
   registerUserRejected(payload: string): void;
