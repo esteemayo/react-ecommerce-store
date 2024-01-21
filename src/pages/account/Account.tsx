@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useQuery } from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
 
 import { usePasswordModal } from '../../hooks/usePasswordModal';
 import { useAuth } from '../../hooks/useAuth';
@@ -12,8 +11,6 @@ import { useFileModal } from '../../hooks/useFileModal';
 import Heading from './Heading';
 import AccountInfo from './AccountInfo';
 
-import { getCurrentUserData } from '../../services/userService';
-
 const Account = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
   const emailModal = useEmailModal();
@@ -22,19 +19,11 @@ const Account = () => {
   const currentUser = useAuth((state) => state.user);
   const accountModal = useAccountModal();
 
-  const [avatar, setAvatar] = useState('');
-
-  const { data } = useQuery({
-    queryKey: ['currentUser'],
-    queryFn: async () => {
-      const { data } = await getCurrentUserData();
-      return data?.image;
-    },
-  });
+  const [avatar, setAvatar] = useState(currentUser.details?.image);
 
   useEffect(() => {
-    setAvatar(data);
-  }, [data]);
+    setAvatar(currentUser.details?.image);
+  }, [currentUser]);
 
   return (
     <Container onMouseOver={closeSubmenu}>
