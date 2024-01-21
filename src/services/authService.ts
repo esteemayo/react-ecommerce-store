@@ -6,6 +6,9 @@ const apiEndpoint = '/auth';
 export const loginUser = (credentials: object) =>
   http.post(`${apiEndpoint}/login`, credentials);
 
+export const googleLogin = (credentials: object) =>
+  http.post(`${apiEndpoint}/google-login`, credentials);
+
 export const registerUser = (credentials: object) =>
   http.post(`${apiEndpoint}/register`, credentials);
 
