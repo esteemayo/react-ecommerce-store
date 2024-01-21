@@ -45,7 +45,12 @@ const SocialLogin = () => {
   return (
     <Container>
       <GoogleButton type='button' onClick={signInWithGoogle}>
-        <StyledImage src='/img/google-logo.png' width={23} height={23} alt='' />
+        <StyledImage
+          src='/img/google-logo.png'
+          width={23}
+          height={23}
+          alt='google'
+        />
         Google
       </GoogleButton>
       <FacebookButton type='button'>
