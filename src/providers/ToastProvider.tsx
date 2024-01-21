@@ -12,6 +12,8 @@ const ToastProvider = () => {
       theme={mode ? 'dark' : 'light'}
       position='bottom-right'
       autoClose={3000}
+      closeButton
+      hideProgressBar
     />
   );
 };
