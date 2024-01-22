@@ -23,6 +23,8 @@ const Success = () => {
 
   const email = state.email;
   const phone = state.phone;
+  const total = state.total;
+  const address = state.address;
 
   const data = state.data;
   const cart: CartValues[] = state.cart;
@@ -30,13 +32,17 @@ const Success = () => {
   const reset = useCartStore((state) => state.reset);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
-  const address = useMemo(() => {
-    return data.billing_details.address.line1;
-  }, [data]);
+  const customerAddress = useMemo(() => {
+    return data?.billing_details.address.line1 ?? address;
+  }, [data, address]);
 
   const emailAddress = useMemo(() => {
-    return data.billing_details.email ?? email;
+    return data?.billing_details.email ?? email;
   }, [data, email]);
+
+  const amount = useMemo(() => {
+    return total;
+  }, [total]);
 
   useEffect(() => {
     if (data) {
@@ -82,7 +88,7 @@ const Success = () => {
                 <InfoText>Here we will deliver your order.</InfoText>
                 <IconContainer>
                   <FontAwesomeIcon icon={faLocationDot} />
-                  <Address>{address}</Address>
+                  <Address>{customerAddress}</Address>
                 </IconContainer>
                 {phone && (
                   <IconContainer>
@@ -102,7 +108,7 @@ const Success = () => {
                 </IconContainer>
               </MushroomContainer>
               <TotalPayment>
-                The payment of <Price>{formatCurrency(17959)}</Price>{' '}
+                The payment of <Price>{formatCurrency(amount)}</Price>{' '}
                 you&apos;ll make when the courier arrives with your order.
               </TotalPayment>
               <Link to='/orders'>
