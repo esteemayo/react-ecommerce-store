@@ -98,6 +98,7 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
       };
 
       navigate('/success', { state });
+      onClose();
     } catch (err: unknown) {
       console.log(err);
     }
