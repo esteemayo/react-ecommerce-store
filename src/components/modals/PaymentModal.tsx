@@ -10,6 +10,9 @@ import Overlay from './Overlay';
 import OrderDetails from '../orders/OrderDetails';
 
 import { PaymentModalProps } from '../../types';
+import { createOrder } from '../../services/orderService';
+import { useAuth } from '../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 interface FormData {
   name: string;
@@ -32,8 +35,12 @@ const initialError: IErrors = {
 };
 
 const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
+  const navigate = useNavigate();
+
   const mode = useDarkMode((state) => state.mode);
   const total = useCartStore((state) => state.total);
+  const cart = useCartStore((state) => state.cart);
+  const currentUser = useAuth((state) => state.user);
 
   const [showModal, setShowModal] = useState(isOpen);
 
@@ -68,8 +75,32 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
     return errors;
   };
 
-  const onSubmitHandler = () => {
-    console.log({ ...data });
+  const onSubmitHandler = async () => {
+    try {
+      const newOrder = {
+        customer: currentUser.details.name,
+        address: data.address,
+        products: cart.map((item) => ({
+          productId: item.id,
+          quantity: item.quantity,
+        })),
+        total,
+        paymentMethod: 0,
+      };
+
+      const res = await createOrder(newOrder);
+      console.log(res.data);
+
+      const state = {
+        cart,
+        email: currentUser.details.email,
+        phone: currentUser.details.phone,
+      };
+
+      navigate('/success', { state });
+    } catch (err: unknown) {
+      console.log(err);
+    }
   };
 
   const { errors, data, handleChange, handleClose, handleSubmit } = useForm(
