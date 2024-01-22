@@ -1,18 +1,18 @@
-import { useEffect, useMemo, useState } from 'react';
-import styled from 'styled-components';
 import CloseIcon from '@mui/icons-material/Close';
+import styled from 'styled-components';
+import { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { useDarkMode } from '../../hooks/useDarkMode';
+import { useAuth } from '../../hooks/useAuth';
 import { useCartStore } from '../../hooks/useCartStore';
 import { useForm } from '../../hooks/useForm';
-import { useDarkMode } from '../../hooks/useDarkMode';
 
 import Overlay from './Overlay';
 import OrderDetails from '../orders/OrderDetails';
 
 import { PaymentModalProps } from '../../types';
 import { createOrder } from '../../services/orderService';
-import { useAuth } from '../../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
 
 interface FormData {
   name: string;
