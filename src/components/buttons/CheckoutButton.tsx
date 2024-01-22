@@ -8,9 +8,12 @@ interface IBtn {
   btnType?: string;
 }
 
-const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY;
-
-const CheckoutButton = ({ currentUser, total, token }: CheckoutButtonProps) => {
+const CheckoutButton = ({
+  currentUser,
+  total,
+  stripeKey,
+  token,
+}: CheckoutButtonProps) => {
   return (
     <StripeCheckout
       name='eStore'
@@ -21,7 +24,7 @@ const CheckoutButton = ({ currentUser, total, token }: CheckoutButtonProps) => {
       description={`Your total is ${formatCurrency(total)}`}
       amount={total * 100}
       currency='USD'
-      stripeKey={STRIPE_KEY}
+      stripeKey={stripeKey}
       token={token}
     >
       <Button type='button' className='btn-pay'>

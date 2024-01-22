@@ -872,6 +872,7 @@ export interface CartTotalProps {
 export interface CheckoutButtonProps {
   currentUser: CurrentUserType;
   total: number;
+  stripeKey: string;
   token: Token;
 }
 
