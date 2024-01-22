@@ -33,6 +33,14 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
     setStripeToken(token);
   }, []);
 
+  const handleOpen = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+      onAction();
+    },
+    [onAction]
+  );
+
   const handleClose = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
@@ -65,6 +73,8 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
           const state = {
             cart,
             data,
+            email: currentUser.details.email,
+            phone: currentUser.details.phone,
           };
 
           navigate('/success', { state });
@@ -73,7 +83,7 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
         }
       })();
     }
-  }, [cart, navigate, stripeToken, total]);
+  }, [cart, currentUser, navigate, stripeToken, total]);
 
   useEffect(() => {
     setShow(isOpen);
@@ -103,7 +113,7 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
         <ButtonContainer>
           {show ? (
             <ButtonWrapper>
-              <Button type='button' className='btn-pay' onClick={onAction}>
+              <Button type='button' className='btn-pay' onClick={handleOpen}>
                 Pay on Delivery
               </Button>
               <StripeCheckout
