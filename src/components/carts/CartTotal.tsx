@@ -15,6 +15,8 @@ interface IBtn {
   btnType?: string;
 }
 
+const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY;
+
 const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
   const navigate = useNavigate();
 
@@ -26,8 +28,6 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
 
   const [show, setShow] = useState(isOpen);
   const [stripeToken, setStripeToken] = useState<Token>();
-
-  const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY;
 
   const onToken = useCallback((token: Token) => {
     setStripeToken(token);
