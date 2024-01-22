@@ -19,11 +19,12 @@ const Success = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
-  const data = state.data;
   const email = state.email;
   const phone = state.phone;
+
+  const data = state.data;
   const cart: CartValues[] = state.cart;
-  console.log(state);
+
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   const address = useMemo(() => {
@@ -47,18 +48,19 @@ const Success = () => {
             })),
             total: data.amount,
             paymentMethod: 1,
-            // ...(data.id ? { paymentMethod: 1 } : { paymentMethod: 0 }),
           };
 
           const res = await createOrder(newOrder);
-          // navigate(`/orders/${res.data._id}`)
-          console.log(res.data);
+
+          setTimeout(() => {
+            navigate(`/orders/${res.data._id}`);
+          }, 5000);
         } catch (err: unknown) {
           console.log(err);
         }
       })();
     }
-  }, [cart, data]);
+  }, [cart, data, navigate]);
 
   return (
     <Container onMouseOver={closeSubmenu}>
