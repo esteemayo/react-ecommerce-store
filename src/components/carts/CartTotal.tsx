@@ -11,6 +11,7 @@ import { stripePayment } from '../../services/paymentService';
 
 import { CartTotalProps } from '../../types';
 import CheckoutButton from '../buttons/CheckoutButton';
+import PaymentButton from '../buttons/PaymentButton';
 
 interface IBtn {
   btnType?: string;
@@ -114,9 +115,7 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
         <ButtonContainer>
           {show ? (
             <ButtonWrapper>
-              <Button type='button' className='btn-pay' onClick={handleOpen}>
-                Pay on Delivery
-              </Button>
+              <PaymentButton onOpen={handleOpen} />
               <CheckoutButton
                 email={currentUser.details.email}
                 total={total}
