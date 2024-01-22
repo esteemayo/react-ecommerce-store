@@ -24,7 +24,6 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
   const subtotal = useCartStore((state) => state.subtotal);
   const total = useCartStore((state) => state.total);
   const currentUser = useAuth((state) => state.user);
-  const reset = useCartStore((state) => state.reset);
 
   const [show, setShow] = useState(isOpen);
   const [stripeToken, setStripeToken] = useState<Token>();
@@ -61,15 +60,13 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
           };
 
           const { data } = await stripePayment(paymentObj);
-
-          reset();
           navigate('/success', { state: data });
         } catch (err: unknown) {
           console.log(err);
         }
       })();
     }
-  }, [navigate, reset, stripeToken, total]);
+  }, [navigate, stripeToken, total]);
 
   useEffect(() => {
     setShow(isOpen);

@@ -18,6 +18,7 @@ interface UserDetailType {
   token: string;
   updatedAt: string;
   username: string;
+  phone?: number;
   __v: number;
   _id: string;
 }
