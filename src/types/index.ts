@@ -1,6 +1,7 @@
 import { HTMLAttributes, SetStateAction } from 'react';
 import { IconType } from 'react-icons/lib';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Token } from 'react-stripe-checkout';
 
 export type Announcements = {
   id: number;
@@ -866,6 +867,12 @@ export interface CartTotalProps {
   onOpen(): void;
   onClose(): void;
   onAction(): void;
+}
+
+export interface CheckoutButtonProps {
+  currentUser: CurrentUserType;
+  total: number;
+  token: Token;
 }
 
 export interface PaymentModalProps {
