@@ -26,6 +26,7 @@ const GoogleButton = () => {
               .shift()
               ?.toLowerCase(),
             image: result.user.photoURL,
+            phone: result.user.phoneNumber,
           };
 
           googleLoginPending();
