@@ -1,8 +1,8 @@
-import StripeCheckout from 'react-stripe-checkout';
 import styled from 'styled-components';
-import { formatCurrency } from '../../utils/formatCurrency';
+import StripeCheckout from 'react-stripe-checkout';
 
 import { CheckoutButtonProps } from '../../types';
+import { formatCurrency } from '../../utils/formatCurrency';
 
 interface IBtn {
   btnType?: string;
@@ -39,8 +39,7 @@ const Button = styled.button<IBtn>`
   display: inline-block;
   font-size: 1.5rem;
   width: 100%;
-  padding: ${({ btnType }) =>
-    btnType === 'check' ? '1rem 3rem' : '1rem 0.5rem'};
+  padding: 1rem 0.5rem;
   background-color: ${({ theme }) => theme.bgCartBtn};
   color: ${({ theme }) => theme.textBtn};
   background-image: linear-gradient(
@@ -64,12 +63,6 @@ const Button = styled.button<IBtn>`
 
   @media only screen and (max-width: 43.75em) {
     font-size: 1.47rem;
-    padding: ${({ btnType }) => btnType === 'check' && '1rem 2.7rem'};
-  }
-
-  @media only screen and (max-width: 18.75em) {
-    padding: ${({ btnType }) =>
-      btnType === 'check' ? '0.7rem 2rem' : '0.7rem 0.5rem'};
   }
 
   &:hover {
