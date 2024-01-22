@@ -18,7 +18,7 @@ interface IBtn {
   btnType?: string;
 }
 
-const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY;
+const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY as string;
 
 const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
   const navigate = useNavigate();
