@@ -93,6 +93,8 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
 
       const state = {
         cart,
+        total: res.data.total,
+        address: res.data.address,
         email: currentUser.details.email,
         phone: currentUser.details.phone,
       };
