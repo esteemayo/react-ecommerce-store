@@ -9,8 +9,10 @@ import {
 import { useEffect, useMemo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-import { createOrder } from '../services/orderService';
 import { useSubmenu } from '../hooks/useSubmenu';
+import { useCartStore } from '../hooks/useCartStore';
+
+import { createOrder } from '../services/orderService';
 import { formatCurrency } from '../utils/formatCurrency';
 
 import { CartValues } from '../types';
@@ -25,6 +27,7 @@ const Success = () => {
   const data = state.data;
   const cart: CartValues[] = state.cart;
 
+  const reset = useCartStore((state) => state.reset);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   const address = useMemo(() => {
@@ -60,7 +63,9 @@ const Success = () => {
         }
       })();
     }
-  }, [cart, data, navigate]);
+
+    return () => reset();
+  }, [cart, data, navigate, reset]);
 
   return (
     <Container onMouseOver={closeSubmenu}>
