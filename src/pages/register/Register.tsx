@@ -33,6 +33,7 @@ interface IErrors {
   name?: string;
   email?: string;
   username?: string;
+  phone?: string;
   password?: string;
   confirmPassword?: string;
   country?: string;
@@ -42,6 +43,7 @@ const initialState = {
   name: '',
   email: '',
   username: '',
+  phone: '',
   password: '',
   confirmPassword: '',
   country: '',
@@ -92,7 +94,8 @@ const Register = () => {
 
   const validateForm = useCallback(() => {
     const errors: IErrors = {};
-    const { name, email, username, password, confirmPassword, country } = data;
+    const { name, email, username, phone, password, confirmPassword, country } =
+      data;
 
     if (name.trim() === '') {
       errors.name = 'Name must not be empty';
@@ -110,6 +113,10 @@ const Register = () => {
 
     if (username.trim() === '') {
       errors.username = 'Username must not be empty';
+    }
+
+    if (phone.trim() === '') {
+      errors.username = 'Phone must not be empty';
     }
 
     if (password === '') {
@@ -260,11 +267,22 @@ const Register = () => {
           <FormInput
             id='username'
             name='username'
-            label='username'
+            label='Username'
             placeholder='Enter username'
             value={data.username}
             onChange={handleChange}
             error={errors.username}
+            small
+          />
+          <FormInput
+            id='phone'
+            name='phone'
+            type='tel'
+            label='Phone'
+            placeholder='Enter your telephone number'
+            value={data.phone}
+            onChange={handleChange}
+            error={errors.phone}
             small
           />
           <FormInput
