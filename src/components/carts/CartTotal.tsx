@@ -20,9 +20,10 @@ const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY;
 const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
   const navigate = useNavigate();
 
-  const tax = useCartStore((state) => state.tax);
   const subtotal = useCartStore((state) => state.subtotal);
+  const tax = useCartStore((state) => state.tax);
   const total = useCartStore((state) => state.total);
+  const cart = useCartStore((state) => state.cart);
   const currentUser = useAuth((state) => state.user);
 
   const [show, setShow] = useState(isOpen);
@@ -60,13 +61,19 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
           };
 
           const { data } = await stripePayment(paymentObj);
-          navigate('/success', { state: data });
+
+          const stateObj = {
+            stripeData: data,
+            products: cart,
+          };
+
+          navigate('/success', { state: stateObj });
         } catch (err: unknown) {
           console.log(err);
         }
       })();
     }
-  }, [navigate, stripeToken, total]);
+  }, [cart, navigate, stripeToken, total]);
 
   useEffect(() => {
     setShow(isOpen);
