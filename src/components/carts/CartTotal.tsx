@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import StripeCheckout, { Token } from 'react-stripe-checkout';
+import { Token } from 'react-stripe-checkout';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/useAuth';
@@ -10,6 +10,7 @@ import { formatCurrency } from '../../utils/formatCurrency';
 import { stripePayment } from '../../services/paymentService';
 
 import { CartTotalProps } from '../../types';
+import CheckoutButton from '../buttons/CheckoutButton';
 
 interface IBtn {
   btnType?: string;
@@ -116,22 +117,12 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
               <Button type='button' className='btn-pay' onClick={handleOpen}>
                 Pay on Delivery
               </Button>
-              <StripeCheckout
-                name='eStore'
-                image='https://media.istockphoto.com/vectors/shopping-cart-line-icon-fast-buy-vector-logo-vector-id1184670036?k=20&m=1184670036&s=612x612&w=0&h=FpKQukhJ4X8WQkucHPbCqANJROKYB2v3k9ov3x-3vdI='
+              <CheckoutButton
                 email={currentUser.details.email}
-                billingAddress
-                shippingAddress
-                description={`Your total is ${formatCurrency(total)}`}
-                amount={total * 100}
-                currency='USD'
+                total={total}
                 stripeKey={STRIPE_KEY}
-                token={onToken}
-              >
-                <Button type='button' className='btn-pay'>
-                  Checkout Now
-                </Button>
-              </StripeCheckout>
+                onToken={onToken}
+              />
             </ButtonWrapper>
           ) : (
             <Button
