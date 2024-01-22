@@ -10,11 +10,48 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { formatCurrency } from '../utils/formatCurrency';
+import { useEffect, useMemo } from 'react';
+import { CartValues } from '../types';
+import { createOrder } from '../services/orderService';
 
 const Success = () => {
   const { state } = useLocation();
+
+  const data = state.data;
+  const email = state.email;
+  const phone = state.phone;
+  const cart: CartValues[] = state.cart;
   console.log(state);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+
+  const emailAddress = useMemo(() => {
+    return data.billing_details.email ?? email;
+  }, [data, email]);
+
+  useEffect(() => {
+    if (data) {
+      (async () => {
+        try {
+          const newOrder = {
+            customer: data.billing_details.name,
+            address: data.billing_details.address.line1,
+            products: cart.map((item) => ({
+              productId: item.id,
+              quantity: item.quantity,
+            })),
+            total: data.amount,
+            paymentMethod: 1,
+            // ...(data.id ? { paymentMethod: 1 } : { paymentMethod: 0 }),
+          };
+
+          const res = await createOrder(newOrder);
+          console.log(res.data);
+        } catch (err: unknown) {
+          console.log(err);
+        }
+      })();
+    }
+  }, [cart, data]);
 
   return (
     <Container onMouseOver={closeSubmenu}>
@@ -35,11 +72,11 @@ const Success = () => {
                 </IconContainer>
                 <IconContainer>
                   <FontAwesomeIcon icon={faPhone} />
-                  <Phone>60640582</Phone>
+                  <Phone>{phone}</Phone>
                 </IconContainer>
                 <IconContainer>
                   <FontAwesomeIcon icon={faEnvelope} />
-                  <Email>gorczany.tamara@yahoo.com</Email>
+                  <Email>{emailAddress}</Email>
                 </IconContainer>
               </InfoContainer>
               <MushroomContainer>
