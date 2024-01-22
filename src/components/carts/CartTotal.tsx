@@ -14,10 +14,6 @@ import { stripePayment } from '../../services/paymentService';
 
 import { CartTotalProps } from '../../types';
 
-interface IBtn {
-  btnType?: string;
-}
-
 const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY as string;
 
 const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
@@ -125,12 +121,7 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
               />
             </ButtonWrapper>
           ) : (
-            <Button
-              type='button'
-              className='btn-check'
-              btnType='check'
-              onClick={onOpen}
-            >
+            <Button type='button' className='btn-check' onClick={onOpen}>
               Checkout
             </Button>
           )}
@@ -211,7 +202,7 @@ const ButtonContainer = styled.div`
 
 const ButtonWrapper = styled.div``;
 
-const Button = styled.button<IBtn>`
+const Button = styled.button`
   border: none;
   display: inline-block;
   font-size: 1.5rem;
