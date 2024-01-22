@@ -62,12 +62,12 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
 
           const { data } = await stripePayment(paymentObj);
 
-          const stateObj = {
-            stripeData: data,
-            products: cart,
+          const state = {
+            cart,
+            data,
           };
 
-          navigate('/success', { state: stateObj });
+          navigate('/success', { state });
         } catch (err: unknown) {
           console.log(err);
         }
