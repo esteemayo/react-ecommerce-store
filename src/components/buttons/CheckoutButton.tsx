@@ -4,10 +4,6 @@ import StripeCheckout from 'react-stripe-checkout';
 import { CheckoutButtonProps } from '../../types';
 import { formatCurrency } from '../../utils/formatCurrency';
 
-interface IBtn {
-  btnType?: string;
-}
-
 const CheckoutButton = ({
   email,
   total,
@@ -34,7 +30,7 @@ const CheckoutButton = ({
   );
 };
 
-const Button = styled.button<IBtn>`
+const Button = styled.button`
   border: none;
   display: inline-block;
   font-size: 1.5rem;

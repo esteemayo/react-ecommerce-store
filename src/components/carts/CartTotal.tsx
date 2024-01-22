@@ -1,7 +1,10 @@
-import { useCallback, useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { Token } from 'react-stripe-checkout';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { useCallback, useEffect, useState } from 'react';
+import { Token } from 'react-stripe-checkout';
+
+import PaymentButton from '../buttons/PaymentButton';
+import CheckoutButton from '../buttons/CheckoutButton';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCartStore } from '../../hooks/useCartStore';
@@ -10,8 +13,6 @@ import { formatCurrency } from '../../utils/formatCurrency';
 import { stripePayment } from '../../services/paymentService';
 
 import { CartTotalProps } from '../../types';
-import CheckoutButton from '../buttons/CheckoutButton';
-import PaymentButton from '../buttons/PaymentButton';
 
 interface IBtn {
   btnType?: string;
