@@ -873,7 +873,7 @@ export interface CheckoutButtonProps {
   currentUser: CurrentUserType;
   total: number;
   stripeKey: string;
-  token: Token;
+  onToken(token: Token): void;
 }
 
 export interface PaymentModalProps {

@@ -12,7 +12,7 @@ const CheckoutButton = ({
   currentUser,
   total,
   stripeKey,
-  token,
+  onToken,
 }: CheckoutButtonProps) => {
   return (
     <StripeCheckout
@@ -25,7 +25,7 @@ const CheckoutButton = ({
       amount={total * 100}
       currency='USD'
       stripeKey={stripeKey}
-      token={token}
+      token={onToken}
     >
       <Button type='button' className='btn-pay'>
         Checkout Now
