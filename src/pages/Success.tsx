@@ -1,20 +1,22 @@
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
 import {
   faEnvelope,
   faLocationDot,
   faMessage,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+import { createOrder } from '../services/orderService';
 import { useSubmenu } from '../hooks/useSubmenu';
 import { formatCurrency } from '../utils/formatCurrency';
-import { useEffect, useMemo } from 'react';
+
 import { CartValues } from '../types';
-import { createOrder } from '../services/orderService';
 
 const Success = () => {
+  const navigate = useNavigate();
   const { state } = useLocation();
 
   const data = state.data;
@@ -23,6 +25,10 @@ const Success = () => {
   const cart: CartValues[] = state.cart;
   console.log(state);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+
+  const address = useMemo(() => {
+    return data.billing_details.address.line1;
+  }, [data]);
 
   const emailAddress = useMemo(() => {
     return data.billing_details.email ?? email;
@@ -45,6 +51,7 @@ const Success = () => {
           };
 
           const res = await createOrder(newOrder);
+          // navigate(`/orders/${res.data._id}`)
           console.log(res.data);
         } catch (err: unknown) {
           console.log(err);
@@ -68,12 +75,14 @@ const Success = () => {
                 <InfoText>Here we will deliver your order.</InfoText>
                 <IconContainer>
                   <FontAwesomeIcon icon={faLocationDot} />
-                  <Address>3711 Schultz Meadow</Address>
+                  <Address>{address}</Address>
                 </IconContainer>
-                <IconContainer>
-                  <FontAwesomeIcon icon={faPhone} />
-                  <Phone>{phone}</Phone>
-                </IconContainer>
+                {phone && (
+                  <IconContainer>
+                    <FontAwesomeIcon icon={faPhone} />
+                    <Phone>{phone}</Phone>
+                  </IconContainer>
+                )}
                 <IconContainer>
                   <FontAwesomeIcon icon={faEnvelope} />
                   <Email>{emailAddress}</Email>
