@@ -99,8 +99,8 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
         phone: currentUser.details.phone,
       };
 
-      navigate('/success', { state });
       onClose();
+      navigate('/success', { state });
     } catch (err: unknown) {
       console.log(err);
     }
