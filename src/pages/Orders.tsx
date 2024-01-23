@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 
 import OrderCard from '../components/orders/OrderCard';
+import Loader from '../components/Loader';
 import { CommonImage } from '../components/CommonImage';
 
 import { useSubmenu } from '../hooks/useSubmenu';
@@ -23,6 +24,14 @@ const Orders = () => {
   console.log(data);
 
   let bodyContent: JSX.Element | undefined;
+
+  if (isLoading) {
+    return (
+      <Box>
+        <Loader size='md' title='Loading...' />
+      </Box>
+    );
+  }
 
   if (data.length < 1) {
     bodyContent = (
@@ -57,6 +66,11 @@ const Orders = () => {
     </Container>
   );
 };
+
+const Box = styled.main`
+  width: 100vw;
+  height: 100vh;
+`;
 
 const Container = styled.main`
   width: 100vw;
