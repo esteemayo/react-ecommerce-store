@@ -22,14 +22,14 @@ const OrderStatus = ({ statusClass }: OrderStatusProps) => {
   return (
     <Container>
       {orderStatus.map((item) => {
-        const { id, img, text, status } = item;
+        const { id, icon, text, status } = item;
         return (
           <StatusWrapper
             key={id}
             className={statusClass(status)}
             mode={activeMode}
           >
-            <Image src={img} width={30} height={30} alt='' />
+            <Image src={icon} width={30} height={30} alt='' />
             <Status>{text}</Status>
             <Image
               src='/img/checked.png'

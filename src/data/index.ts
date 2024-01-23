@@ -1261,25 +1261,25 @@ export const priceOptions: PriceOption = [
 export const orderStatus: OrderStatusType = [
   {
     id: 1,
-    img: '/img/paid.png',
+    icon: '/img/paid.png',
     text: 'Payment',
     status: 0,
   },
   {
     id: 2,
-    img: '/img/bake.png',
+    icon: '/img/bake.png',
     text: 'Preparing',
     status: 1,
   },
   {
     id: 3,
-    img: '/img/bike.png',
+    icon: '/img/bike.png',
     text: 'On the way',
     status: 2,
   },
   {
     id: 4,
-    img: '/img/delivered.png',
+    icon: '/img/delivered.png',
     text: 'Delivered',
     status: 3,
   },

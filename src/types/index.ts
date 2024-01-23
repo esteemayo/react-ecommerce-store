@@ -1154,7 +1154,7 @@ export interface SearchHistoryProps {
 
 export type OrderStatusType = {
   id: number;
-  img: string;
+  icon: string;
   text: string;
   status: number;
 }[];
