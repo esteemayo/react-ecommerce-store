@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { useCallback } from 'react';
+import styled from 'styled-components';
 
 import CartInfo from './CartInfo';
 import CartCounter from './CartCounter';
