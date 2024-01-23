@@ -241,7 +241,7 @@ const Register = () => {
   return (
     <FormBox>
       <StyledBox>
-        <Heading small title='Register your account' />
+        <Heading small='true' title='Register your account' />
         <Form onSubmit={handleSubmit}>
           <FormInput
             id='name'

@@ -146,7 +146,7 @@ const Login = () => {
   return (
     <FormBox>
       <StyledBox>
-        <Heading small type='login' title='Log in with' />
+        <Heading small='true' type='login' title='Log in with' />
         <SocialLogin />
         <Text>or</Text>
         <Form type='login' onSubmit={handleSubmit}>
