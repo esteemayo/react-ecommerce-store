@@ -1,17 +1,29 @@
 import styled from 'styled-components';
+import { useQuery } from '@tanstack/react-query';
 
 import OrderCard from '../components/orders/OrderCard';
 import { CommonImage } from '../components/CommonImage';
 
-import { orders } from '../data';
 import { useSubmenu } from '../hooks/useSubmenu';
+import { getUserOrders } from '../services/orderService';
+import { OrderType } from '../types';
 
 const Orders = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
+  const { isLoading, data, error } = useQuery({
+    queryKey: ['orders'],
+    queryFn: async () => {
+      const { data } = await getUserOrders();
+      return data;
+    },
+  });
+
+  console.log(data);
+
   let bodyContent: JSX.Element | undefined;
 
-  if (orders.length < 1) {
+  if (data.length < 1) {
     bodyContent = (
       <ImageContainer>
         <StyledImage
@@ -25,13 +37,13 @@ const Orders = () => {
     );
   }
 
-  if (orders.length > 0) {
+  if (data.length > 0) {
     bodyContent = (
       <>
         <Heading>Order history</Heading>
         <OrderContainer>
-          {orders.map((order) => {
-            return <OrderCard key={order.id} {...order} />;
+          {data.map((order: OrderType) => {
+            return <OrderCard key={order._id} {...order} />;
           })}
         </OrderContainer>
       </>
