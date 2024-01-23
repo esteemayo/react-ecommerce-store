@@ -64,11 +64,7 @@ const Container = styled.article<IContainer>`
     width: 95%;
     height: 2px;
     margin: 0 auto;
-    background-color: ${({ status }) =>
-      status === 0 && 'var(--clr-primary-red)'};
-    background-color: ${({ status }) => status === 1 && '#ffb900'};
-    background-color: ${({ status }) =>
-      status === 2 && 'var(--clr-secondary-green)'};
+    background-color: ${({ status }) => setBcg(status)};
     border-radius: 1rem;
   }
 `;
@@ -173,5 +169,11 @@ const Button = styled.button`
     padding: 1rem 2.5rem;
   }
 `;
+
+const setBcg = (status: number) => {
+  if (status === 0) return 'var(--clr-primary-red)';
+  if (status === 1) return '#ffb900';
+  if (status === 2) return 'var(--clr-secondary-green)';
+};
 
 export default OrderCard;
