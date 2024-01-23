@@ -34,7 +34,7 @@ const Container = styled.div`
 const StyledCheckBox = styled.input.attrs({ type: 'checkbox' })``;
 
 const Label = styled.label`
-  width: 10rem;
+  width: 11rem;
   display: inline-block;
   text-transform: capitalize;
   font-weight: 600;
