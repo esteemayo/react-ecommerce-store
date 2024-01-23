@@ -15,6 +15,7 @@ const Order = () => {
   const orderId = pathname.split('/').pop();
 
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+
   const [status, setStatus] = useState(0);
 
   const { isLoading, data: order } = useQuery({
@@ -79,7 +80,7 @@ const Order = () => {
                 <Heading>Cart total</Heading>
                 <TotalContainer>
                   <TotalText>Subtotal:</TotalText>
-                  <Price>{formatCurrency(99.99)}</Price>
+                  <Price>{formatCurrency(order.total)}</Price>
                 </TotalContainer>
                 <TotalContainer>
                   <TotalText>Discount:</TotalText>
@@ -87,7 +88,7 @@ const Order = () => {
                 </TotalContainer>
                 <TotalContainer>
                   <TotalText>Total:</TotalText>
-                  <Price>{formatCurrency(88.9)}</Price>
+                  <Price>{formatCurrency(order.total)}</Price>
                 </TotalContainer>
                 <Button type='button' disabled>
                   Paid
