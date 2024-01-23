@@ -40,6 +40,7 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
   const mode = useDarkMode((state) => state.mode);
   const total = useCartStore((state) => state.total);
   const cart = useCartStore((state) => state.cart);
+  const reset = useCartStore((state) => state.reset);
   const currentUser = useAuth((state) => state.user);
 
   const [showModal, setShowModal] = useState(isOpen);
@@ -99,6 +100,7 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
       };
 
       onClose();
+      reset();
       navigate('/success', { state });
     } catch (err: unknown) {
       console.log(err);
