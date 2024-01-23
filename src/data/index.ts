@@ -1256,3 +1256,34 @@ export const priceOptions: PriceOption = [
     text: 'Price (desc)',
   },
 ];
+
+export const orderStatus = [
+  {
+    id: 1,
+    img: '/img/paid.png',
+    text: 'Payment',
+    checked: '/img/checked.png',
+    status: 0,
+  },
+  {
+    id: 2,
+    img: '/img/bake.png',
+    text: 'Preparing',
+    checked: '/img/checked.png',
+    status: 1,
+  },
+  {
+    id: 3,
+    img: '/img/bike.png',
+    text: 'On the way',
+    checked: '/img/checked.png',
+    status: 2,
+  },
+  {
+    id: 4,
+    img: '/img/paid.png',
+    text: 'Delivered',
+    checked: '/img/delivered.png',
+    status: 3,
+  },
+];
