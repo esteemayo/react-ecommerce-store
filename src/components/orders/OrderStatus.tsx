@@ -29,13 +29,13 @@ const OrderStatus = ({ statusClass }: OrderStatusProps) => {
             className={statusClass(status)}
             mode={activeMode}
           >
-            <Image src={icon} width={30} height={30} alt='' />
+            <Image src={icon} width={30} height={30} alt='icon' />
             <Status>{text}</Status>
             <Image
               src='/img/checked.png'
               width={20}
               height={20}
-              alt=''
+              alt='check icon'
               className='checkedIcon'
             />
           </StatusWrapper>
