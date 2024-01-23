@@ -21,8 +21,6 @@ const Orders = () => {
     },
   });
 
-  console.log(orders);
-
   let bodyContent: JSX.Element | undefined;
 
   if (isLoading) {
