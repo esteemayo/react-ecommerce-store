@@ -44,7 +44,7 @@ const Order = () => {
 
   return (
     <Container onMouseOver={closeSubmenu}>
-      <OrderWrapper>
+      <Box>
         <Wrapper>
           <OrderContainer>
             <Left>
@@ -79,7 +79,7 @@ const Order = () => {
             <OrderInfo total={order.total} />
           </OrderContainer>
         </Wrapper>
-      </OrderWrapper>
+      </Box>
     </Container>
   );
 };
@@ -90,7 +90,7 @@ const Container = styled.main`
   background-color: ${({ theme }) => theme.bg};
 `;
 
-const OrderWrapper = styled.div`
+const Box = styled.div`
   width: 100%;
   max-width: 120rem;
   margin: 0 auto;
