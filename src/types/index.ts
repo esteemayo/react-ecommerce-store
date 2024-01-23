@@ -1151,3 +1151,11 @@ export interface SearchHistoryProps {
   onClose(): void;
   onDelete(id: number): void;
 }
+
+export interface OrderStatusType {
+  id: number;
+  img: string;
+  text: string;
+  checkIcon: string;
+  status: number;
+}
