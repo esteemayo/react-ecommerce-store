@@ -90,7 +90,7 @@ const ProductCategory = () => {
   if (isLoading) {
     return (
       <LoaderContainer>
-        <Loader size='md' />
+        <Loader size='md' title='Loading...' />
       </LoaderContainer>
     );
   }
