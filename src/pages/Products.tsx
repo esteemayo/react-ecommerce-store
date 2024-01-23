@@ -77,7 +77,7 @@ const Products = () => {
   if (isLoading) {
     return (
       <Container>
-        <Loader size='md' />
+        <Loader size='md' title='Loading...' />
       </Container>
     );
   }
