@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { orderStatus } from '../../data';
 
 interface OrderStatusProps {
   statusClass(index: number): 'done' | 'inProgress' | 'undone' | undefined;
@@ -20,50 +21,26 @@ const OrderStatus = ({ statusClass }: OrderStatusProps) => {
 
   return (
     <Container>
-      <StatusWrapper className={statusClass(0)} mode={activeMode}>
-        <Image src='/img/paid.png' width={30} height={30} alt='' />
-        <Status>Payment</Status>
-        <Image
-          src='/img/checked.png'
-          width={20}
-          height={20}
-          alt=''
-          className='checkedIcon'
-        />
-      </StatusWrapper>
-      <StatusWrapper className={statusClass(1)} mode={activeMode}>
-        <Image src='/img/bake.png' width={30} height={30} alt='' />
-        <Status>Preparing</Status>
-        <Image
-          src='/img/checked.png'
-          width={20}
-          height={20}
-          alt=''
-          className='checkedIcon'
-        />
-      </StatusWrapper>
-      <StatusWrapper className={statusClass(2)} mode={activeMode}>
-        <Image src='/img/bike.png' width={30} height={30} alt='' />
-        <Status>On the way</Status>
-        <Image
-          src='/img/checked.png'
-          width={20}
-          height={20}
-          alt=''
-          className='checkedIcon'
-        />
-      </StatusWrapper>
-      <StatusWrapper className={statusClass(3)} mode={activeMode}>
-        <Image src='/img/delivered.png' width={30} height={30} alt='' />
-        <Status>Delivered</Status>
-        <Image
-          src='/img/checked.png'
-          width={20}
-          height={20}
-          alt=''
-          className='checkedIcon'
-        />
-      </StatusWrapper>
+      {orderStatus.map((item) => {
+        const { id, img, text, status } = item;
+        return (
+          <StatusWrapper
+            key={id}
+            className={statusClass(status)}
+            mode={activeMode}
+          >
+            <Image src={img} width={30} height={30} alt='' />
+            <Status>{text}</Status>
+            <Image
+              src='/img/checked.png'
+              width={20}
+              height={20}
+              alt=''
+              className='checkedIcon'
+            />
+          </StatusWrapper>
+        );
+      })}
     </Container>
   );
 };
