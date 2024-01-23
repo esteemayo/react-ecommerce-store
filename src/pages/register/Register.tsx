@@ -233,7 +233,7 @@ const Register = () => {
   if (isLoading) {
     return (
       <Container>
-        <Loader size='md' />
+        <Loader size='md' title='Creating your account...' />
       </Container>
     );
   }
