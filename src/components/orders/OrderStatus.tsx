@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import styled from 'styled-components';
 
-import { useDarkMode } from '../../hooks/useDarkMode';
 import { orderStatus } from '../../data';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 interface OrderStatusProps {
   statusClass(index: number): 'done' | 'inProgress' | 'undone' | undefined;
