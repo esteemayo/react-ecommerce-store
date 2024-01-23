@@ -89,7 +89,6 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
       };
 
       const res = await createOrder(newOrder);
-      console.log(res.data);
 
       const state = {
         cart,
