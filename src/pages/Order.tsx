@@ -34,9 +34,9 @@ const Order = () => {
 
   if (isLoading) {
     return (
-      <Box>
+      <Container>
         <Loader size='md' title='Loading...' />
-      </Box>
+      </Container>
     );
   }
 
@@ -100,12 +100,6 @@ const Order = () => {
     </Container>
   );
 };
-
-const Box = styled.main`
-  width: 100vw;
-  height: 70vh;
-  background-color: ${({ theme }) => theme.bg};
-`;
 
 const Container = styled.main`
   width: 100vw;
