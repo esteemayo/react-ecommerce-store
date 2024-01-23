@@ -123,6 +123,7 @@ const ImageContainer = styled.div`
 const StyledImage = styled(CommonImage)`
   width: 30rem;
   height: 30rem;
+  background-color: transparent;
 `;
 
 const Message = styled.span`
