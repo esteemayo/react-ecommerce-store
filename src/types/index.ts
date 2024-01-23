@@ -999,7 +999,7 @@ export interface FormInputProps
   value: string | number | readonly string[];
   placeholder: string;
   error?: string;
-  small?: boolean;
+  small?: string;
 }
 
 export interface TextAreaProps

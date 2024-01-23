@@ -6,7 +6,7 @@ import { FormGroup } from './FormGroup';
 import { FormInputProps } from '../../types';
 
 interface ILabel {
-  small?: boolean;
+  small?: string;
 }
 
 const FormInput = ({
@@ -31,7 +31,7 @@ const FormInput = ({
 
 const Label = styled.label<ILabel>`
   display: inline-block;
-  width: ${({ small }) => (small ? '7rem' : '13rem')};
+  width: ${({ small }) => (small === 'true' ? '7rem' : '13rem')};
   text-transform: ${({ small }) => small && 'capitalize'};
   font-weight: 600;
   font-size: 1.4rem;

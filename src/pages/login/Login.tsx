@@ -157,7 +157,7 @@ const Login = () => {
             placeholder='Enter username'
             onChange={handleChange}
             error={errors.username}
-            small
+            small='true'
           />
           <FormInput
             name='password'
@@ -167,7 +167,7 @@ const Login = () => {
             placeholder='Enter your password'
             onChange={handleChange}
             error={errors.password}
-            small
+            small='true'
           />
           <CheckBox
             name='rememberMe'
