@@ -15,7 +15,7 @@ const OrderStatusItem = ({
   mode,
 }: OrderStatusItemProps) => {
   return (
-    <StatusWrapper key={id} className={statusClass(status)} mode={mode}>
+    <Container key={id} className={statusClass(status)} mode={mode}>
       <Image src={icon} width={30} height={30} alt='icon' />
       <Status>{text}</Status>
       <Image
@@ -25,11 +25,11 @@ const OrderStatusItem = ({
         alt='check icon'
         className='checkedIcon'
       />
-    </StatusWrapper>
+    </Container>
   );
 };
 
-const StatusWrapper = styled.div<IMode>`
+const Container = styled.div<IMode>`
   img:first-child {
     width: 3rem;
     height: 3rem;
