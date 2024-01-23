@@ -13,7 +13,7 @@ import { OrderType } from '../types';
 const Orders = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
-  const { isLoading, data, error } = useQuery({
+  const { isLoading, data: orders } = useQuery({
     queryKey: ['orders'],
     queryFn: async () => {
       const { data } = await getUserOrders();
@@ -21,7 +21,7 @@ const Orders = () => {
     },
   });
 
-  console.log(data);
+  console.log(orders);
 
   let bodyContent: JSX.Element | undefined;
 
@@ -33,7 +33,7 @@ const Orders = () => {
     );
   }
 
-  if (data.length < 1) {
+  if (orders.length < 1) {
     bodyContent = (
       <ImageContainer>
         <StyledImage
@@ -47,12 +47,12 @@ const Orders = () => {
     );
   }
 
-  if (data.length > 0) {
+  if (orders.length > 0) {
     bodyContent = (
       <>
         <Heading>Order history</Heading>
         <OrderContainer>
-          {data.map((order: OrderType) => {
+          {orders.map((order: OrderType) => {
             return <OrderCard key={order._id} {...order} />;
           })}
         </OrderContainer>
