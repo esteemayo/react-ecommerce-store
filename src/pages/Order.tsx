@@ -26,9 +26,6 @@ const Order = () => {
     },
   });
 
-  console.log(order);
-  console.log('status', status);
-
   const statusClass = (index: number) => {
     if (index - status < 1) return 'done';
     if (index - status === 1) return 'inProgress';
@@ -61,16 +58,16 @@ const Order = () => {
                 <Tbody>
                   <Tr>
                     <Td>
-                      <OrderId>63deb1d1</OrderId>
+                      <OrderId>{order._id}</OrderId>
                     </Td>
                     <Td>
-                      <OrderName>Mary Doe</OrderName>
+                      <OrderName>{order.customer}</OrderName>
                     </Td>
                     <Td>
-                      <OrderAddress>Lagos,Nigeria</OrderAddress>
+                      <OrderAddress>{order.address}</OrderAddress>
                     </Td>
                     <Td>
-                      <OrderTotal>{formatCurrency(420)}</OrderTotal>
+                      <OrderTotal>{formatCurrency(order.total)}</OrderTotal>
                     </Td>
                   </Tr>
                 </Tbody>
