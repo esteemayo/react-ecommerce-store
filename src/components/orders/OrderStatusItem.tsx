@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 
+import { OrderStatusItemProps } from '../../types';
+
 interface IMode {
   mode: string;
 }
 
-const OrderStatusItem = ({ id, icon, text, status, statusClass, mode }) => {
+const OrderStatusItem = ({
+  id,
+  icon,
+  text,
+  status,
+  statusClass,
+  mode,
+}: OrderStatusItemProps) => {
   return (
     <StatusWrapper key={id} className={statusClass(status)} mode={mode}>
       <Image src={icon} width={30} height={30} alt='icon' />
