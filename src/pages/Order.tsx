@@ -1,19 +1,47 @@
+import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 
+import Loader from '../components/Loader';
 import OrderStatus from '../components/orders/OrderStatus';
 
+import { getOrder } from '../services/orderService';
 import { useSubmenu } from '../hooks/useSubmenu';
 import { formatCurrency } from '../utils/formatCurrency';
 
 const Order = () => {
+  const { pathname } = useLocation();
+  const orderId = pathname.split('/').pop();
+
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
-  const status = 0;
+  const [status, setStatus] = useState(0);
+
+  const { isLoading, data: order } = useQuery({
+    queryKey: ['orders'],
+    queryFn: async () => {
+      const { data } = await getOrder(orderId!);
+      setStatus(data.status);
+      return data;
+    },
+  });
+
+  console.log(order);
+  console.log('status', status);
 
   const statusClass = (index: number) => {
     if (index - status < 1) return 'done';
     if (index - status === 1) return 'inProgress';
     if (index - status > 1) return 'undone';
   };
+
+  if (isLoading) {
+    return (
+      <Box>
+        <Loader size='md' title='Loading...' />
+      </Box>
+    );
+  }
 
   return (
     <Container onMouseOver={closeSubmenu}>
@@ -75,6 +103,12 @@ const Order = () => {
     </Container>
   );
 };
+
+const Box = styled.main`
+  width: 100vw;
+  height: 70vh;
+  background-color: ${({ theme }) => theme.bg};
+`;
 
 const Container = styled.main`
   width: 100vw;
