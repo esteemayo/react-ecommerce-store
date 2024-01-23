@@ -1156,6 +1156,5 @@ export type OrderStatusType = {
   id: number;
   img: string;
   text: string;
-  checkIcon: string;
   status: number;
 }[];
