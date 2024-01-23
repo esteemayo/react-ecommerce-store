@@ -138,7 +138,7 @@ const Login = () => {
   if (isLoading) {
     return (
       <Container>
-        <Loader size='md' />
+        <Loader size='md' title='Logging in...' />
       </Container>
     );
   }
