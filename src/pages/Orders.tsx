@@ -31,7 +31,7 @@ const Orders = () => {
     );
   }
 
-  if (orders.length < 1) {
+  if (orders?.length < 1) {
     bodyContent = (
       <ImageContainer>
         <StyledImage
@@ -45,7 +45,7 @@ const Orders = () => {
     );
   }
 
-  if (orders.length > 0) {
+  if (orders?.length > 0) {
     bodyContent = (
       <>
         <Heading>Order history</Heading>
