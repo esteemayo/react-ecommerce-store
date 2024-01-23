@@ -942,6 +942,20 @@ export interface PaginationProps {
   numberOfPages: number;
 }
 
+export interface OrderType {
+  _id: string;
+  address: string;
+  customer: string;
+  paymentMethod: number;
+  products: object[];
+  status: number;
+  total: number;
+  createdAt: string;
+  updatedAt: string;
+  user: string;
+  __v: number;
+}
+
 export interface OrderCardProps {
   _id: string;
   total: number;
