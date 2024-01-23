@@ -1158,3 +1158,12 @@ export type OrderStatusType = {
   text: string;
   status: number;
 }[];
+
+export interface OrderStatusItemProps {
+  id: number;
+  icon: string;
+  text: string;
+  status: number;
+  statusClass(index: number): 'done' | 'inProgress' | 'undone' | undefined;
+  mode: string;
+}
