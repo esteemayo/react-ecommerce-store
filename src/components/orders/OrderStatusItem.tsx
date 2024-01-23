@@ -7,7 +7,6 @@ interface IMode {
 }
 
 const OrderStatusItem = ({
-  id,
   icon,
   text,
   status,
@@ -15,7 +14,7 @@ const OrderStatusItem = ({
   mode,
 }: OrderStatusItemProps) => {
   return (
-    <Container key={id} className={statusClass(status)} mode={mode}>
+    <Container className={statusClass(status)} mode={mode}>
       <Image src={icon} width={30} height={30} alt='icon' />
       <Status>{text}</Status>
       <Image
