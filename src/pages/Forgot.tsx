@@ -66,7 +66,7 @@ const Forgot = () => {
   return (
     <FormBox>
       <StyledBox>
-        <Heading small title='Forgot password' />
+        <Heading small='true' title='Forgot password' />
         <Form onSubmit={handleSubmit}>
           <FormInput
             type='email'
@@ -78,8 +78,8 @@ const Forgot = () => {
               setEmail(e.target.value)
             }
             error={errors.email}
+            small='true'
             autoFocus
-            small
           />
           <FormButton
             label='Reset password'
