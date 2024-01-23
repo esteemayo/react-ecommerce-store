@@ -943,7 +943,7 @@ export interface PaginationProps {
 }
 
 export interface OrderCardProps {
-  id: number;
+  _id: string;
   total: number;
   status: number;
   createdAt: string;
