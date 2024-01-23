@@ -1152,10 +1152,10 @@ export interface SearchHistoryProps {
   onDelete(id: number): void;
 }
 
-export interface OrderStatusType {
+export type OrderStatusType = {
   id: number;
   img: string;
   text: string;
   checkIcon: string;
   status: number;
-}
+}[];

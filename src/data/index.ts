@@ -35,6 +35,7 @@ import {
   FooterMenu,
   NavLink,
   OrderItem,
+  OrderStatusType,
   PriceOption,
   ProductValue,
   RecommendationType,
@@ -1257,7 +1258,7 @@ export const priceOptions: PriceOption = [
   },
 ];
 
-export const orderStatus = [
+export const orderStatus: OrderStatusType = [
   {
     id: 1,
     img: '/img/paid.png',
