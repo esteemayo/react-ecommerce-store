@@ -10,7 +10,7 @@ interface IContainer {
   status: number;
 }
 
-const OrderCard = ({ id, total, status, createdAt }: OrderCardProps) => {
+const OrderCard = ({ _id: id, total, status, createdAt }: OrderCardProps) => {
   const dateLabel = useMemo(() => {
     const options: DateOptions = {
       month: 'long',
