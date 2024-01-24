@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 
-import OrderInfo from '../components/orders/OrderInfo';
 import OrderTable from '../components/orders/OrderTable';
+import OrderInfo from '../components/orders/OrderInfo';
 import OrderStatus from '../components/orders/OrderStatus';
 
 import Loader from '../components/Loader';
