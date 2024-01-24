@@ -10,6 +10,7 @@ import { useReviewModal } from '../../hooks/useReviewModal';
 import ReviewModal from '../modals/ReviewModal';
 
 const Reviews = ({
+  productId,
   reviews,
   ratingsAverage,
   ratingsQuantity,
@@ -66,7 +67,7 @@ const Reviews = ({
           onOpen={onOpen}
         />
       </Wrapper>
-      <ReviewModal isOpen={isOpen} onClose={onClose} />
+      <ReviewModal productId={productId} isOpen={isOpen} onClose={onClose} />
     </Container>
   );
 };
