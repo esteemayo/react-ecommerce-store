@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+import { useCallback } from 'react';
 import styled, { css } from 'styled-components';
+
+import { useAuth } from '../../hooks/useAuth';
 
 interface ReviewButtonProps {
   actionLabel: string;
@@ -6,8 +10,24 @@ interface ReviewButtonProps {
 }
 
 const ReviewButton = ({ actionLabel, onAction }: ReviewButtonProps) => {
+  const navigate = useNavigate();
+  const currentUser = useAuth((state) => state.user);
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      if (!currentUser) {
+        return navigate('/login');
+      }
+
+      onAction();
+    },
+    [currentUser, navigate, onAction]
+  );
+
   return (
-    <Button type='button' onClick={onAction}>
+    <Button type='button' onClick={handleClick}>
       {actionLabel}
     </Button>
   );
