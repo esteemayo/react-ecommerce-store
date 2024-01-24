@@ -1181,3 +1181,10 @@ export interface TableProps {
   columns: ColumnType;
   data: OrderType;
 }
+
+export interface TableBodyProps {
+  _id: string;
+  address: string;
+  customer: string;
+  total: number;
+}
