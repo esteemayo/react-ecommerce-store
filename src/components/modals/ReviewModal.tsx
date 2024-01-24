@@ -1,12 +1,14 @@
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { ReviewModalProps } from '../../types';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
 import ReviewForm from '../reviews/ReviewForm';
+import { createReviewOnProduct } from '../../services/productService';
 
 interface IOverlay {
   mode: string;
@@ -16,13 +18,29 @@ interface IWrapper {
   active: string;
 }
 
-const ReviewModal = ({ isOpen, onClose }: ReviewModalProps) => {
+const ReviewModal = ({ productId, isOpen, onClose }: ReviewModalProps) => {
+  const queryClient = useQueryClient();
   const mode = useDarkMode((state) => state.mode);
 
   const [rating, setRating] = useState<number | null>(null);
   const [review, setReview] = useState('');
   const [showModal, setShowModal] = useState(isOpen);
   const [terms, setTerms] = useState(false);
+
+  const { mutate } = useMutation({
+    mutationFn: async ({
+      data,
+      productId,
+    }: {
+      data: object;
+      productId?: string;
+    }) => {
+      return await createReviewOnProduct(data, productId);
+    },
+    onSuccess() {
+      queryClient.invalidateQueries({ queryKey: ['reviews'] });
+    },
+  });
 
   const handleChangeRating = useCallback(
     (
@@ -77,13 +95,19 @@ const ReviewModal = ({ isOpen, onClose }: ReviewModalProps) => {
   );
 
   const handleSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
+    async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      console.log({ rating, review, terms });
+      const data = {
+        rating,
+        review,
+        terms,
+      };
+
+      mutate({ data, productId });
       handleClear();
     },
-    [rating, review, terms, handleClear]
+    [mutate, productId, rating, review, terms, handleClear]
   );
 
   const activeModal = useMemo(() => {
