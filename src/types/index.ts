@@ -1169,10 +1169,15 @@ export interface OrderStatusItemProps {
 }
 
 export interface OrderTableProps {
-  order: {
-    _id: string;
-    customer: string;
-    address: string;
-    total: number;
-  };
+  order: OrderType;
+}
+
+type ColumnType = {
+  path: string;
+  label: string;
+}[];
+
+export interface TableProps {
+  columns: ColumnType;
+  data: OrderType;
 }
