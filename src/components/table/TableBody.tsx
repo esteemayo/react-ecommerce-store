@@ -1,20 +1,22 @@
 import styled from 'styled-components';
 
-import { TableBodyProps } from '../../types';
+import { excerpts } from '../../utils';
 import { formatCurrency } from '../../utils/formatCurrency';
+
+import { TableBodyProps } from '../../types';
 
 const TableBody = ({ _id: id, address, customer, total }: TableBodyProps) => {
   return (
     <Tbody>
       <Tr>
         <Td>
-          <OrderId>{id}</OrderId>
+          <OrderId>{excerpts(id, 10)}</OrderId>
         </Td>
         <Td>
           <Span>{customer}</Span>
         </Td>
         <Td>
-          <Span>{address}</Span>
+          <Span>{excerpts(address, 50)}</Span>
         </Td>
         <Td>
           <Span>{formatCurrency(total)}</Span>
