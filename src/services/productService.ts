@@ -31,8 +31,10 @@ export const getReviewsOnProduct = (productId: string) =>
 export const createProduct = <T extends object>(product: T) =>
   http.post(apiEndpoint, product);
 
-export const createReview = <T extends object>(data: T, productId: string) =>
-  http.post(`${apiEndpoint}/${productId}/reviews`, data);
+export const createReviewOnProduct = <T extends object>(
+  data: T,
+  productId?: string
+) => http.post(`${apiEndpoint}/${productId}/reviews`, data);
 
 export const likeProduct = (productId: string) =>
   http.patch(`${apiEndpoint}/like/${productId}`);
