@@ -14,7 +14,11 @@ import { useSubmenu } from '../../hooks/useSubmenu';
 import { useCartStore } from '../../hooks/useCartStore';
 
 import { RecommendationType, ReviewItem } from '../../types';
-import { getProduct, getProductByTags } from '../../services/productService';
+import {
+  getProduct,
+  getProductByTags,
+  getReviewsOnProduct,
+} from '../../services/productService';
 
 interface IContainer {
   type?: string;
@@ -37,6 +41,17 @@ const SingleProduct = () => {
       return res.data;
     },
   });
+
+  const { data } = useQuery({
+    queryKey: ['reviews'],
+    queryFn: async () => {
+      const { data } = await getReviewsOnProduct(product._id);
+      return data;
+    },
+  });
+
+  console.log(data);
+  console.log('reviews', reviews);
 
   const inCart = useMemo(() => {
     const cartItem = cart.find((item) => item.id === productId);
@@ -81,8 +96,8 @@ const SingleProduct = () => {
   }, [product]);
 
   useEffect(() => {
-    setReviews(product?.reviews);
-  }, [product]);
+    setReviews(data);
+  }, [data]);
 
   if (isLoading) {
     return (
