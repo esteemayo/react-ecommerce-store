@@ -1,4 +1,4 @@
-import { useMutation, QueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -57,7 +57,7 @@ const initialState = {
 };
 
 const NewProduct = () => {
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
 
   const navigate = useNavigate();
   const mode = useDarkMode((state) => state.mode);
