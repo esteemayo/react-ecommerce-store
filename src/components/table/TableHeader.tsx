@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-import { TableHeaderProps } from '../../types';
+import { ColumnType } from '../../types';
+
+interface TableHeaderProps {
+  columns: ColumnType;
+}
 
 const TableHeader = ({ columns }: TableHeaderProps) => {
   return (
