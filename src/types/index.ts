@@ -757,6 +757,7 @@ export interface RecommendationItemProps {
 }
 
 export interface ReviewsProps {
+  productId?: string;
   reviews: ReviewItem;
   ratingsAverage: number;
   ratingsQuantity: number;
@@ -796,6 +797,7 @@ export interface ReviewCardProps {
 }
 
 export interface ReviewModalProps {
+  productId?: string;
   isOpen: boolean;
   onClose(): void;
 }
