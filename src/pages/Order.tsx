@@ -4,12 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 
 import OrderInfo from '../components/orders/OrderInfo';
-import Loader from '../components/Loader';
+import OrderTable from '../components/orders/OrderTable';
 import OrderStatus from '../components/orders/OrderStatus';
 
-import { getOrder } from '../services/orderService';
+import Loader from '../components/Loader';
+
 import { useSubmenu } from '../hooks/useSubmenu';
-import { formatCurrency } from '../utils/formatCurrency';
+import { getOrder } from '../services/orderService';
 
 const Order = () => {
   const { pathname } = useLocation();
@@ -48,32 +49,7 @@ const Order = () => {
         <Wrapper>
           <OrderContainer>
             <Left>
-              <Table>
-                <Thead>
-                  <Tr>
-                    <Th>Order ID</Th>
-                    <Th>Customer</Th>
-                    <Th>Address</Th>
-                    <Th>Total</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  <Tr>
-                    <Td>
-                      <OrderId>{order._id}</OrderId>
-                    </Td>
-                    <Td>
-                      <OrderName>{order.customer}</OrderName>
-                    </Td>
-                    <Td>
-                      <OrderAddress>{order.address}</OrderAddress>
-                    </Td>
-                    <Td>
-                      <OrderTotal>{formatCurrency(order.total)}</OrderTotal>
-                    </Td>
-                  </Tr>
-                </Tbody>
-              </Table>
+              <OrderTable {...order} />
               <OrderStatus statusClass={statusClass} />
             </Left>
             <OrderInfo total={order.total} />
@@ -157,43 +133,5 @@ const Left = styled.div`
     width: 100%;
   }
 `;
-
-const Table = styled.table`
-  width: 100%;
-  text-align: left;
-  margin-bottom: 5rem;
-`;
-
-const Thead = styled.thead``;
-
-const Tr = styled.tr``;
-
-const Th = styled.th`
-  font-weight: 600;
-  font-size: 1.7rem;
-  color: ${({ theme }) => theme.text};
-
-  @media only screen and (max-width: 64em) {
-    font-size: var(--default-font-size);
-  }
-`;
-
-const Tbody = styled.tbody``;
-
-const Td = styled.td`
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.text};
-`;
-
-const OrderId = styled.span`
-  display: inline-block;
-  text-transform: uppercase;
-`;
-
-const OrderName = styled.span``;
-
-const OrderAddress = styled.span``;
-
-const OrderTotal = styled.span``;
 
 export default Order;
