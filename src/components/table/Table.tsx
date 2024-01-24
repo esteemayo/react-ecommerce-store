@@ -9,7 +9,7 @@ const Table = ({ columns, data }: TableProps) => {
   return (
     <StyledTable>
       <TableHeader columns={columns} />
-      <TableBody data={data} />
+      <TableBody {...data} />
     </StyledTable>
   );
 };

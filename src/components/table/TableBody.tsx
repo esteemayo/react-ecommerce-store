@@ -1,27 +1,23 @@
 import styled from 'styled-components';
 
-import { OrderType } from '../../types';
+import { TableBodyProps } from '../../types';
 import { formatCurrency } from '../../utils/formatCurrency';
 
-interface TableBodyProps {
-  data: OrderType;
-}
-
-const TableBody = ({ data }: TableBodyProps) => {
+const TableBody = ({ _id: id, address, customer, total }: TableBodyProps) => {
   return (
     <Tbody>
       <Tr>
         <Td>
-          <OrderId>{data._id}</OrderId>
+          <OrderId>{id}</OrderId>
         </Td>
         <Td>
-          <OrderName>{data.customer}</OrderName>
+          <OrderName>{customer}</OrderName>
         </Td>
         <Td>
-          <OrderAddress>{data.address}</OrderAddress>
+          <OrderAddress>{address}</OrderAddress>
         </Td>
         <Td>
-          <OrderTotal>{formatCurrency(data.total)}</OrderTotal>
+          <OrderTotal>{formatCurrency(total)}</OrderTotal>
         </Td>
       </Tr>
     </Tbody>
