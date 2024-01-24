@@ -11,13 +11,13 @@ const TableBody = ({ _id: id, address, customer, total }: TableBodyProps) => {
           <OrderId>{id}</OrderId>
         </Td>
         <Td>
-          <OrderName>{customer}</OrderName>
+          <Span>{customer}</Span>
         </Td>
         <Td>
-          <OrderAddress>{address}</OrderAddress>
+          <Span>{address}</Span>
         </Td>
         <Td>
-          <OrderTotal>{formatCurrency(total)}</OrderTotal>
+          <Span>{formatCurrency(total)}</Span>
         </Td>
       </Tr>
     </Tbody>
@@ -38,10 +38,6 @@ const OrderId = styled.span`
   text-transform: uppercase;
 `;
 
-const OrderName = styled.span``;
-
-const OrderAddress = styled.span``;
-
-const OrderTotal = styled.span``;
+const Span = styled.span``;
 
 export default TableBody;
