@@ -49,7 +49,7 @@ const Order = () => {
         <Wrapper>
           <OrderContainer>
             <OrderWrapper>
-              <OrderTable {...order} />
+              <OrderTable order={order} />
               <OrderStatus statusClass={statusClass} />
             </OrderWrapper>
             <OrderInfo total={order.total} />
