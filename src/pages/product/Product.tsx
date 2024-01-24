@@ -50,9 +50,6 @@ const SingleProduct = () => {
     },
   });
 
-  console.log(data);
-  console.log('reviews', reviews);
-
   const inCart = useMemo(() => {
     const cartItem = cart.find((item) => item.id === productId);
     return !!cartItem;
