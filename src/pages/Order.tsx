@@ -48,10 +48,10 @@ const Order = () => {
       <Box>
         <Wrapper>
           <OrderContainer>
-            <Left>
+            <OrderWrapper>
               <OrderTable {...order} />
               <OrderStatus statusClass={statusClass} />
-            </Left>
+            </OrderWrapper>
             <OrderInfo total={order.total} />
           </OrderContainer>
         </Wrapper>
@@ -126,7 +126,7 @@ const OrderContainer = styled.div`
   }
 `;
 
-const Left = styled.div`
+const OrderWrapper = styled.div`
   flex: 2;
 
   @media only screen and (max-width: 37.5em) {
