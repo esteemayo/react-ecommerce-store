@@ -31,6 +31,7 @@ import {
 import {
   Announcements,
   CartItem,
+  ColumnType,
   FooterLink,
   FooterMenu,
   NavLink,
@@ -1255,6 +1256,25 @@ export const priceOptions: PriceOption = [
   {
     value: 'desc',
     text: 'Price (desc)',
+  },
+];
+
+export const orderColumns: ColumnType = [
+  {
+    path: '_id',
+    label: 'Order ID',
+  },
+  {
+    path: 'customer',
+    label: 'Customer',
+  },
+  {
+    path: 'address',
+    label: 'Address',
+  },
+  {
+    path: 'total',
+    label: 'Total',
   },
 ];
 
