@@ -1169,8 +1169,10 @@ export interface OrderStatusItemProps {
 }
 
 export interface OrderTableProps {
-  _id: string;
-  customer: string;
-  address: string;
-  total: number;
+  order: {
+    _id: string;
+    customer: string;
+    address: string;
+    total: number;
+  };
 }
