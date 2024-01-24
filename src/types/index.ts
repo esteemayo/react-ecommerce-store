@@ -1167,3 +1167,10 @@ export interface OrderStatusItemProps {
   statusClass(index: number): 'done' | 'inProgress' | 'undone' | undefined;
   mode: string;
 }
+
+export interface OrderTableProps {
+  _id: string;
+  customer: string;
+  address: string;
+  total: number;
+}
