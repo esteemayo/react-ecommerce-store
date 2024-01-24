@@ -121,6 +121,7 @@ const SingleProduct = () => {
         <Line />
         <Recommendation data={recommendations} productId={productId} />
         <Reviews
+          productId={productId}
           reviews={reviews}
           ratingsAverage={product.ratingsAverage}
           ratingsQuantity={product.ratingsQuantity}
