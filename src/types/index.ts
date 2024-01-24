@@ -1181,3 +1181,7 @@ export interface TableProps {
   columns: ColumnType;
   data: OrderType;
 }
+
+export interface TableHeaderProps {
+  columns: ColumnType;
+}
