@@ -246,7 +246,7 @@ const NewProduct = () => {
   return (
     <FormBox>
       <StyledBox>
-        <Heading small='true' title='Create new product' />
+        <Heading small title='Create new product' />
         <Form onSubmit={handleSubmit}>
           <FormInput
             name='name'
