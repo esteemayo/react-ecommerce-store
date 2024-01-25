@@ -60,7 +60,10 @@ const SingleProduct = () => {
   useEffect(() => {
     if (sort === 'newest') {
       setReviews((prev) =>
-        [...prev].sort((a, b) => +a.createdAt - +b.createdAt)
+        [...prev].sort(
+          (a, b) =>
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+        )
       );
     }
 
