@@ -652,7 +652,7 @@ export interface FooterMenuItemProps {
 
 export interface FooterHeadingProps {
   title: string;
-  small?: string;
+  small?: boolean;
 }
 
 export interface SocialIconProps {

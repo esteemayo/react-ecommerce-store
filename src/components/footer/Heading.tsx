@@ -7,7 +7,7 @@ interface IHeader {
 }
 
 const Heading = ({ title, small }: FooterHeadingProps) => {
-  return <Header small={small}>{title}</Header>;
+  return <Header small={small?.toString()}>{title}</Header>;
 };
 
 const Header = styled.h4<IHeader>`
