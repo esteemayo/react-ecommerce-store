@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import AuthInfo from '../../components/form/AuthInfo';
@@ -63,6 +63,13 @@ const Login = () => {
   } = useAuth();
 
   const [rememberMe, setRememberMe] = useState(false);
+
+  const handleChangeRememberMe = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setRememberMe(e.currentTarget.checked);
+    },
+    []
+  );
 
   const validateForm = (data: FormData) => {
     const tempErrors: IErrors = {};
@@ -173,9 +180,7 @@ const Login = () => {
             name='rememberMe'
             label='Remember me'
             checked={rememberMe}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setRememberMe(e.currentTarget.checked)
-            }
+            onChange={handleChangeRememberMe}
           />
           <FormButton label='Log in' disabled={isLoading} />
           <Forgot url='/forgot' label='Forgot your password?' />
