@@ -12,7 +12,12 @@ import Recommendation from '../../components/Recommendation';
 import { useSubmenu } from '../../hooks/useSubmenu';
 import { useCartStore } from '../../hooks/useCartStore';
 
-import { RecommendationType, ReviewItem } from '../../types';
+import {
+  CartValues,
+  ProductValues,
+  RecommendationType,
+  ReviewItem,
+} from '../../types';
 import {
   getProduct,
   getProductByTags,
@@ -37,7 +42,9 @@ const SingleProduct = () => {
   const [reviews, setReviews] = useState<ReviewItem>([]);
   const [sort, setSort] = useState('');
   const [recommendations, setRecommendation] = useState<RecommendationType>([]);
-  const [product, setProduct] = useState(singleProduct);
+  const [product, setProduct] = useState<ProductValues | CartValues>(
+    singleProduct
+  );
 
   const refetchProduct = useCallback(async () => {
     try {
