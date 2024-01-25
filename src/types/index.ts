@@ -766,6 +766,7 @@ export interface ReviewsProps {
   sort: string | null;
   onSort: React.Dispatch<SetStateAction<string>>;
   onReviews(value: React.SetStateAction<ReviewItem>): void;
+  onRefetch(): void;
 }
 
 export interface ReviewHeadProps {
@@ -803,6 +804,7 @@ export interface ReviewModalProps {
   isOpen: boolean;
   onClose(): void;
   onReviews(value: React.SetStateAction<ReviewItem>): void;
+  onRefetch(): void;
 }
 
 export interface ReviewFormProps {
