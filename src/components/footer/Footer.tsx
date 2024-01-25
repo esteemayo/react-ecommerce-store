@@ -25,7 +25,7 @@ const Footer = () => {
         <FooterRight>
           <FooterContainer>
             <Search />
-            <Heading title='Follow us' small />
+            <Heading title='Follow us' small='true' />
             <SocialIcon data={social} />
           </FooterContainer>
         </FooterRight>

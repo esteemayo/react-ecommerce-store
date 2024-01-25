@@ -651,7 +651,7 @@ export interface FooterMenuItemProps {
 
 export interface FooterHeadingProps {
   title: string;
-  small?: boolean;
+  small?: string;
 }
 
 export interface SocialIconProps {
