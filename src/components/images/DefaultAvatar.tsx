@@ -5,7 +5,7 @@ interface DefaultAvatarProps {
 }
 
 const DefaultAvatar = ({ name }: DefaultAvatarProps) => {
-  return <Container>{name.charAt(0)}</Container>;
+  return <Container>{name?.charAt(0)}</Container>;
 };
 
 const Container = styled.div`
