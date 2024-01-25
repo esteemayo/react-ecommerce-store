@@ -764,6 +764,7 @@ export interface ReviewsProps {
   sortLabel?: 'newest' | 'highest rating' | 'lowest rating';
   sort: string | null;
   onSort: React.Dispatch<SetStateAction<string>>;
+  onReviews(value: React.SetStateAction<ReviewItem>): void;
 }
 
 export interface ReviewHeadProps {
@@ -800,6 +801,7 @@ export interface ReviewModalProps {
   productId?: string;
   isOpen: boolean;
   onClose(): void;
+  onReviews(value: React.SetStateAction<ReviewItem>): void;
 }
 
 export interface ReviewFormProps {
