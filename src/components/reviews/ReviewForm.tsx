@@ -49,7 +49,7 @@ const ReviewForm = ({
         other marketting.
       </Information>
       <Button type='submit'>
-        {isLoading ? <Spinner /> : 'Submit product review'}
+        {isLoading ? <Spinner size='xs' /> : 'Submit product review'}
       </Button>
     </Form>
   );
