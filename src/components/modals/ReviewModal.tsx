@@ -102,10 +102,10 @@ const ReviewModal = ({
         console.log(err);
       } finally {
         setIsLoading(false);
-        handleClear();
+        closeModalHandler();
       }
     },
-    [onReviews, productId, rating, review, terms, handleClear]
+    [closeModalHandler, onReviews, productId, rating, review, terms]
   );
 
   const activeModal = useMemo(() => {
