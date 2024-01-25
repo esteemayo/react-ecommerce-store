@@ -13,7 +13,12 @@ const ProductButton = ({
   onAction,
 }: ProductButtonProps) => {
   return (
-    <Button type='button' small={small} disabled={inCart} onClick={onAction}>
+    <Button
+      type='button'
+      small={small?.toString()}
+      disabled={inCart}
+      onClick={onAction}
+    >
       {actionLabel}
     </Button>
   );
