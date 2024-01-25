@@ -721,7 +721,7 @@ export interface CounterProps {
 }
 
 export interface ProductButtonProps {
-  small?: boolean;
+  small?: string;
   actionLabel: string;
   inCart: boolean;
   onAction(): void;
