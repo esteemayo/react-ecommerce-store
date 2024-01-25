@@ -127,6 +127,7 @@ const SingleProduct = () => {
           sortLabel={getSort}
           sort={sort}
           onSort={setSort}
+          onReviews={setReviews}
         />
       </Wrapper>
     </Container>

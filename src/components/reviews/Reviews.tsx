@@ -17,6 +17,7 @@ const Reviews = ({
   sortLabel,
   sort,
   onSort,
+  onReviews,
 }: ReviewsProps) => {
   const { isOpen, onOpen, onClose } = useReviewModal();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -67,7 +68,12 @@ const Reviews = ({
           onOpen={onOpen}
         />
       </Wrapper>
-      <ReviewModal productId={productId} isOpen={isOpen} onClose={onClose} />
+      <ReviewModal
+        productId={productId}
+        isOpen={isOpen}
+        onClose={onClose}
+        onReviews={onReviews}
+      />
     </Container>
   );
 };
