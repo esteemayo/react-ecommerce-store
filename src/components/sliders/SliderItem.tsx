@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { CommonImage } from '../CommonImage';
 import { SliderItemProps } from '../../types';
 
-interface IType {
+interface IPosition {
   position: string;
 }
 
@@ -32,7 +32,7 @@ const SliderItem = ({
   );
 };
 
-const Article = styled.article<IType>`
+const Article = styled.article<IPosition>`
   position: absolute;
   top: 0;
   left: 0;
