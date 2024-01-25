@@ -60,7 +60,9 @@ const Container = styled.div<IProps>`
 `;
 
 const Heading = styled.h3<IProps>`
-  display: inline-block;
+  display: ${({ modal }) => (modal === 'true' ? 'none' : 'inline-block')};
+  opacity: ${({ modal }) => (modal === 'true' ? 0 : 1)};
+  visibility: ${({ modal }) => (modal === 'true' ? 'hidden' : 'visible')};
   font-weight: 400;
   font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.65rem')};
   color: ${({ theme }) => theme.text};
