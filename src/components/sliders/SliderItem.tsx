@@ -5,7 +5,7 @@ import { CommonImage } from '../CommonImage';
 import { SliderItemProps } from '../../types';
 
 interface IType {
-  type: string;
+  position: string;
 }
 
 const SliderItem = ({
@@ -17,7 +17,7 @@ const SliderItem = ({
   position,
 }: SliderItemProps) => {
   return (
-    <Article type={position}>
+    <Article position={position}>
       <Container>
         <StyledImage src={img} alt={`Slide ${index}`} />
       </Container>
@@ -38,10 +38,8 @@ const Article = styled.article<IType>`
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: ${({ type }) => (type === 'activeSlide' ? 1 : 0)};
-  transform: translateX(${({ type }) => type === 'activeSlide' && 0});
-  transform: translateX(${({ type }) => type === 'lastSlide' && '-100%'});
-  transform: translateX(${({ type }) => type === 'nextSlide' && '100%'});
+  opacity: ${({ position }) => (position === 'activeSlide' ? 1 : 0)};
+  transform: translateX(${({ position }) => setTransform(position)});
   transition: all 0.3s linear;
 `;
 
@@ -212,5 +210,11 @@ const Button = styled.button`
     font-size: 1.2rem;
   }
 `;
+
+const setTransform = (position: string) => {
+  if (position === 'activeSlide') return 0;
+  if (position === 'lastSlide') return '-100%';
+  if (position === 'nextSlide') return '100%';
+};
 
 export default SliderItem;
