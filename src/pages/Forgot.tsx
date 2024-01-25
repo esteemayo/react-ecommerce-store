@@ -22,6 +22,10 @@ const Forgot = () => {
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState<IErrors>({});
 
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  }, []);
+
   const validateForm = useCallback(() => {
     const errors: IErrors = {};
 
@@ -66,7 +70,7 @@ const Forgot = () => {
   return (
     <FormBox>
       <StyledBox>
-        <Heading small='true' title='Forgot password' />
+        <Heading small title='Forgot password' />
         <Form onSubmit={handleSubmit}>
           <FormInput
             type='email'
@@ -74,11 +78,9 @@ const Forgot = () => {
             label='Email'
             value={email}
             placeholder='Enter email address'
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEmail(e.target.value)
-            }
+            onChange={handleChange}
             error={errors.email}
-            small='true'
+            small
             autoFocus
           />
           <FormButton
