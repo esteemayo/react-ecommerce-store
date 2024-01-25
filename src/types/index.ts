@@ -664,7 +664,7 @@ export interface FooterLinkProps {
 }
 
 export interface ProductProps {
-  product: CartValues;
+  product: ProductValues | CartValues;
   inCart: boolean;
   actionLabel: string;
 }
