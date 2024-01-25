@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { ReviewModalProps } from '../../types';
+import { useAuth } from '../../hooks/useAuth';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
-import ReviewForm from '../reviews/ReviewForm';
+import { ReviewModalProps } from '../../types';
 import { createReviewOnProduct } from '../../services/productService';
+
+import ReviewForm from '../reviews/ReviewForm';
 
 interface IOverlay {
   mode: string;
@@ -25,6 +27,7 @@ const ReviewModal = ({
   onReviews,
 }: ReviewModalProps) => {
   const mode = useDarkMode((state) => state.mode);
+  const currentUser = useAuth((state) => state.user);
 
   const [isLoading, setIsLoading] = useState(false);
   const [review, setReview] = useState('');
@@ -98,7 +101,14 @@ const ReviewModal = ({
 
       try {
         const { data } = await createReviewOnProduct(newReview, productId);
-        onReviews((prev) => [data, ...prev]);
+        const reviewData = {
+          ...data,
+          user: {
+            ...currentUser.details,
+          },
+        };
+
+        onReviews((prev) => [reviewData, ...prev]);
       } catch (err: unknown) {
         console.log(err);
         toast.error('Something went wrong!!!');
@@ -107,7 +117,15 @@ const ReviewModal = ({
         closeModalHandler();
       }
     },
-    [closeModalHandler, onReviews, productId, rating, review, terms]
+    [
+      closeModalHandler,
+      currentUser,
+      onReviews,
+      productId,
+      rating,
+      review,
+      terms,
+    ]
   );
 
   const activeModal = useMemo(() => {
