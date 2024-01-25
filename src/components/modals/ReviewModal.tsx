@@ -22,9 +22,9 @@ const ReviewModal = ({ productId, isOpen, onClose }: ReviewModalProps) => {
   const queryClient = useQueryClient();
   const mode = useDarkMode((state) => state.mode);
 
-  const [rating, setRating] = useState<number | null>(null);
-  const [review, setReview] = useState('');
   const [showModal, setShowModal] = useState(isOpen);
+  const [review, setReview] = useState('');
+  const [rating, setRating] = useState<number | null>(null);
   const [terms, setTerms] = useState(false);
 
   const { mutate } = useMutation({
