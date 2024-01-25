@@ -41,8 +41,6 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
     return mode.toString();
   }, [mode]);
 
-  console.log('sizes', product);
-
   return (
     <Container>
       <ProductContainer>
