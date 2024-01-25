@@ -11,11 +11,13 @@ import { getFeaturedProducts } from '../../services/productService';
 
 import { StyledWrapper } from '../StyledWrapper';
 import { ProductType, WishlistValues } from '../../types';
+import { useAuth } from '../../hooks/useAuth';
 
 const FeaturedProducts = () => {
   const isOpen = useCartModal((state) => state.isOpen);
   const onClose = useCartModal((state) => state.onClose);
   const onOpen = useCartModal((state) => state.onOpen);
+  const currentUser = useAuth((state) => state.user);
 
   const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
 
@@ -36,6 +38,7 @@ const FeaturedProducts = () => {
             return (
               <ProductCard
                 key={product.id}
+                currentUser={currentUser}
                 product={product}
                 onOpen={onOpen}
                 onSelect={setIsSelectedProduct}
