@@ -4,6 +4,9 @@ const apiEndpoint = '/products';
 
 const productUrl = (productId?: string) => `${apiEndpoint}/${productId}`;
 
+const productReviewUrl = (productId: string) =>
+  `${apiEndpoint}/${productId}/reviews`;
+
 export const getProducts = (page?: number) =>
   http.get(`${apiEndpoint}?page=${page}`);
 
@@ -26,15 +29,15 @@ export const searchProducts = (searchQuery: string) =>
   http.get(`${apiEndpoint}/search?query=${searchQuery}`);
 
 export const getReviewsOnProduct = (productId: string) =>
-  http.get(`${apiEndpoint}/${productId}/reviews`);
+  http.get(productReviewUrl(productId));
 
 export const createProduct = <T extends object>(product: T) =>
   http.post(apiEndpoint, product);
 
 export const createReviewOnProduct = <T extends object>(
   data: T,
-  productId?: string
-) => http.post(`${apiEndpoint}/${productId}/reviews`, data);
+  productId: string
+) => http.post(productReviewUrl(productId), data);
 
 export const likeProduct = (productId: string) =>
   http.patch(`${apiEndpoint}/like/${productId}`);
