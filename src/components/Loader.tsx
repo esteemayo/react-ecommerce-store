@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Spinner from './Spinner';
 
 interface LoaderProps {
-  size?: string;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
   title?: string;
 }
 
