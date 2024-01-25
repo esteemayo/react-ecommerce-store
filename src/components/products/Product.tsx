@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import ColorSelect from '../inputs/ColorSelect';
@@ -36,6 +37,10 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
     setColor,
   } = useCart(product);
 
+  const activeMode = useMemo(() => {
+    return mode.toString();
+  }, [mode]);
+
   return (
     <Container>
       <ProductContainer>
@@ -56,7 +61,7 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
             <Hr />
             <ColorSelect
               title='Color'
-              mode={mode}
+              mode={activeMode}
               value={product.color}
               selected={isSelected}
               onAction={setColor}
