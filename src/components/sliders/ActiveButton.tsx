@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ActiveButtonProps } from '../../types';
 
 interface IBtn {
-  active: boolean;
+  active: string;
 }
 
 const ActiveButton = ({
@@ -18,7 +18,7 @@ const ActiveButton = ({
           <Button
             key={index}
             type='button'
-            active={index === slideNumber}
+            active={String(index === slideNumber)}
             onClick={() => setSlideNumber(index)}
           />
         );
@@ -46,14 +46,14 @@ const Button = styled.button<IBtn>`
   width: ${({ active }) => (active ? '1.5rem' : '1rem')};
   height: ${({ active }) => (active ? '1.5rem' : '1rem')};
   background-color: ${({ active, theme }) =>
-    active ? theme.bgActiveBtn : theme.bgCarActiveBtn};
+    active === 'true' ? theme.bgActiveBtn : theme.bgCarActiveBtn};
   border-radius: 50%;
   outline-color: #f5f5f5;
   cursor: pointer;
 
   @media only screen and (max-width: 25em) {
-    width: ${({ active }) => (active ? '1.3rem' : '0.8rem')};
-    height: ${({ active }) => (active ? '1.3rem' : '0.8rem')};
+    width: ${({ active }) => (active === 'true' ? '1.3rem' : '0.8rem')};
+    height: ${({ active }) => (active === 'true' ? '1.3rem' : '0.8rem')};
   }
 `;
 
