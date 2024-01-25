@@ -138,7 +138,7 @@ const CartModal = ({
             {product?.color && (
               <ColorSelect
                 title='Color'
-                mode={mode}
+                mode={modeValue}
                 value={product.color}
                 selected={isSelected}
                 onAction={setColor}

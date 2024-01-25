@@ -5,7 +5,7 @@ import { ColorSelectProps } from '../../types';
 
 interface IProps {
   modal?: string;
-  mode?: boolean;
+  mode?: string;
   selected?: boolean;
 }
 
@@ -85,9 +85,9 @@ const Color = styled.button<IProps>`
   width: 2.2rem;
   height: 2.2rem;
   background-color: ${({ color, mode, modal }) =>
-    mode && modal !== 'true' && color === 'black' ? '#111' : color};
+    mode === 'true' && modal !== 'true' && color === 'black' ? '#111' : color};
   background-color: ${({ color, mode }) =>
-    !mode && color === 'white' && '#f9f9f9'};
+    mode !== 'true' && color === 'white' && '#f9f9f9'};
   border-radius: 50%;
   outline: 1px solid
     ${({ theme, selected }) => (selected ? theme.cartSelected : 'transparent')};

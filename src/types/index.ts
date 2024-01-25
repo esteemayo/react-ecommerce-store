@@ -697,7 +697,7 @@ export interface ProductHeadProps {
 
 export interface ColorSelectProps {
   title: string;
-  mode?: boolean;
+  mode?: string;
   value: string | string[];
   modal?: string;
   selected?: string | null;
