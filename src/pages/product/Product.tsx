@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 import Reviews from '../../components/reviews/Reviews';
 import Product from '../../components/products/Product';
 
-import EmptyState from '../../components/EmptyState';
 import Loader from '../../components/Loader';
 import Recommendation from '../../components/Recommendation';
 
@@ -19,10 +18,6 @@ import {
   getProductByTags,
   getReviewsOnProduct,
 } from '../../services/productService';
-
-interface IContainer {
-  type?: string;
-}
 
 const SingleProduct = () => {
   const { id: productId } = useParams();
@@ -117,16 +112,6 @@ const SingleProduct = () => {
     );
   }
 
-  if (!product) {
-    return (
-      <Container type='error' onMouseOver={closeSubmenu}>
-        <Wrapper>
-          <EmptyState />
-        </Wrapper>
-      </Container>
-    );
-  }
-
   return (
     <Container onMouseOver={closeSubmenu}>
       <Wrapper>
@@ -149,15 +134,15 @@ const SingleProduct = () => {
   );
 };
 
-const Container = styled.main<IContainer>`
+const Container = styled.main`
   width: 100vw;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.bg};
-  padding-top: ${({ type }) => type !== 'error' && '8rem'};
-  padding-bottom: ${({ type }) => type !== 'error' && '4rem'};
+  padding-top: 8rem;
+  padding-bottom: 4rem;
 
   @media only screen and (max-width: 37.5em) {
-    padding-top: ${({ type }) => type !== 'error' && '4rem'};
+    padding-top: 4rem;
   }
 `;
 
