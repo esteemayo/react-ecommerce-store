@@ -87,7 +87,7 @@ const ResetPassword = () => {
   return (
     <FormBox>
       <StyledBox>
-        <Heading small='true' title='Reset your password' />
+        <Heading small title='Reset your password' />
         <Form onSubmit={handleSubmit}>
           <FormInput
             type='password'
@@ -97,7 +97,7 @@ const ResetPassword = () => {
             placeholder='Enter your password'
             onChange={handleChange}
             error={errors.password}
-            small='true'
+            small
             autoFocus
           />
           <FormInput
