@@ -36,7 +36,7 @@ const ProductHead = ({
         <Discount modal={modalValue}>-{priceDiscount}%</Discount>
       </PriceContainer>
       <TotalPrice modal={modalValue}>{formatCurrency(price!)}</TotalPrice>
-      {modal && (
+      {!modal && (
         <>
           <Message>
             4 interest-free payments of $49.75. &nbsp;
