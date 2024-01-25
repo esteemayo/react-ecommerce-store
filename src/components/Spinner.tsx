@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 interface SpinnerProps {
-  size?: string;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
 }
 
 interface IContainer {
