@@ -51,7 +51,7 @@ const CartModal = ({
     setIsSelected,
     setColor,
     handleReset,
-  } = useCart(product);
+  } = useCart(product!);
 
   const handleCloseModal = useCallback(() => {
     setShowModal(false);
