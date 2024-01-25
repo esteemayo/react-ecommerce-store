@@ -699,7 +699,7 @@ export interface ColorSelectProps {
   title: string;
   mode?: string;
   value: string | string[];
-  modal?: string;
+  modal?: boolean;
   selected?: string | null;
   onAction(value: string): void;
   secondaryAction: React.Dispatch<SetStateAction<string | null>>;
@@ -708,7 +708,7 @@ export interface ColorSelectProps {
 export interface SizeSelectProps {
   value: string | string[];
   title?: string;
-  modal?: string;
+  modal?: boolean;
   selected?: string | null;
   onAction(value: string): void;
   secondaryAction: React.Dispatch<SetStateAction<string | null>>;
