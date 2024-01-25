@@ -8,7 +8,7 @@ import { formatCurrency } from '../../utils/formatCurrency';
 import StarRating from '../StarRating';
 
 interface IProps {
-  modal?: boolean;
+  modal?: string;
 }
 
 const ProductHead = ({
@@ -24,15 +24,19 @@ const ProductHead = ({
     return price! + discount!;
   }, [discount, price]);
 
+  const modalValue = useMemo(() => {
+    return modal?.toString();
+  }, [modal]);
+
   return (
     <>
-      <Heading modal={modal}>{name}</Heading>
+      <Heading modal={modalValue}>{name}</Heading>
       <PriceContainer>
-        <Price modal={modal}>{formatCurrency(initialPrice)}</Price>
-        <Discount modal={modal}>-{priceDiscount}%</Discount>
+        <Price modal={modalValue}>{formatCurrency(initialPrice)}</Price>
+        <Discount modal={modalValue}>-{priceDiscount}%</Discount>
       </PriceContainer>
-      <TotalPrice modal={modal}>{formatCurrency(price!)}</TotalPrice>
-      {!modal && (
+      <TotalPrice modal={modalValue}>{formatCurrency(price!)}</TotalPrice>
+      {modal && (
         <>
           <Message>
             4 interest-free payments of $49.75. &nbsp;
@@ -57,21 +61,22 @@ const ProductHead = ({
 const Heading = styled.h1<IProps>`
   display: inline-block;
   font-weight: 500;
-  font-size: ${({ modal }) => (modal ? '1.8rem' : '2.4rem')};
-  color: ${({ theme, modal }) => (modal ? theme.text : theme.textProdHeader)};
-  line-height: ${({ modal }) => (modal ? '1' : '1.3')};
-  margin-bottom: ${({ modal }) => (modal ? '1rem' : '2rem')};
+  font-size: ${({ modal }) => (modal === 'true' ? '1.8rem' : '2.4rem')};
+  color: ${({ theme, modal }) =>
+    modal === 'true' ? theme.text : theme.textProdHeader};
+  line-height: ${({ modal }) => (modal === 'true' ? '1' : '1.3')};
+  margin-bottom: ${({ modal }) => (modal === 'true' ? '1rem' : '2rem')};
 
   @media only screen and (max-width: 59.375em) {
-    margin-bottom: ${({ modal }) => !modal && '1.75rem'};
+    margin-bottom: ${({ modal }) => modal !== 'true' && '1.75rem'};
   }
 
   @media only screen and (max-width: 37.5em) {
-    font-size: ${({ modal }) => !modal && '2.23rem'};
+    font-size: ${({ modal }) => modal !== 'true' && '2.23rem'};
   }
 
   @media only screen and (max-width: 18.75em) {
-    font-size: ${({ modal }) => !modal && '2rem'};
+    font-size: ${({ modal }) => modal !== 'true' && '2rem'};
   }
 `;
 
@@ -83,17 +88,17 @@ const PriceContainer = styled.div`
 
 const Price = styled.p<IProps>`
   text-decoration: line-through;
-  font-size: ${({ modal }) => (modal ? '1.5rem' : '1.6rem')};
+  font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.6rem')};
   color: ${({ theme }) => theme.text};
 
   @media only screen and (max-width: 18.75em) {
-    font-size: ${({ modal }) => !modal && '1.5rem'};
+    font-size: ${({ modal }) => modal !== 'true' && '1.5rem'};
   }
 `;
 
 const Discount = styled.p<IProps>`
-  font-weight: ${({ modal }) => (modal ? '500' : '700')};
-  font-size: ${({ modal }) => (modal ? '1.3rem' : '1.4rem')};
+  font-weight: ${({ modal }) => (modal === 'true' ? '500' : '700')};
+  font-size: ${({ modal }) => (modal === 'true' ? '1.3rem' : '1.4rem')};
   padding: 0.4rem 0.6rem;
   background-color: #fa4b21;
   color: var(--clr-white);
@@ -102,19 +107,19 @@ const Discount = styled.p<IProps>`
   letter-spacing: 0.02em;
 
   @media only screen and (max-width: 18.75em) {
-    font-size: ${({ modal }) => !modal && '1.37rem'};
+    font-size: ${({ modal }) => modal !== 'true' && '1.37rem'};
   }
 `;
 
 const TotalPrice = styled.p<IProps>`
-  font-weight: ${({ modal }) => (modal ? '400' : '500')};
-  font-size: ${({ modal }) => (modal ? '1.5rem' : '1.6rem')};
+  font-weight: ${({ modal }) => (modal === 'true' ? '400' : '500')};
+  font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.6rem')};
   color: #fa4b21;
   line-height: 1.3;
-  margin-bottom: ${({ modal }) => modal && '1rem'};
+  margin-bottom: ${({ modal }) => modal === 'true' && '1rem'};
 
   @media only screen and (max-width: 18.75em) {
-    font-size: ${({ modal }) => !modal && '1.5rem'};
+    font-size: ${({ modal }) => modal !== 'true' && '1.5rem'};
   }
 `;
 
