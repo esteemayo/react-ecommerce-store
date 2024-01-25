@@ -152,7 +152,7 @@ const CartModal = ({
                 selected={selectedSize}
                 onAction={setSize}
                 secondaryAction={setSelectedSize}
-                modal
+                modal='true'
               />
             )}
             <Hr />
