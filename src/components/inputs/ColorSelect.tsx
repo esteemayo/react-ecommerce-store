@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import styled from 'styled-components';
+import { useCallback, useMemo } from 'react';
 
 import { ColorSelectProps } from '../../types';
 
@@ -26,10 +26,14 @@ const ColorSelect = ({
     [onAction, secondaryAction]
   );
 
+  const modalValue = useMemo(() => {
+    return modal?.toString();
+  }, [modal]);
+
   return (
-    <Container modal={modal}>
-      <Heading modal={modal}>{title}</Heading>
-      <Wrapper modal={modal}>
+    <Container modal={modalValue}>
+      <Heading modal={modalValue}>{title}</Heading>
+      <Wrapper modal={modalValue}>
         {value?.map((item, index) => {
           return (
             <Color
@@ -39,7 +43,7 @@ const ColorSelect = ({
               mode={mode}
               selected={item === selected}
               onClick={() => handleSelect(item as string)}
-              modal={modal}
+              modal={modalValue}
             />
           );
         })}

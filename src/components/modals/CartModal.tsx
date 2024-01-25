@@ -143,7 +143,7 @@ const CartModal = ({
                 selected={isSelected}
                 onAction={setColor}
                 secondaryAction={setIsSelected}
-                modal='true'
+                modal
               />
             )}
             {product?.size && (
@@ -152,7 +152,7 @@ const CartModal = ({
                 selected={selectedSize}
                 onAction={setSize}
                 secondaryAction={setSelectedSize}
-                modal='true'
+                modal
               />
             )}
             <Hr />

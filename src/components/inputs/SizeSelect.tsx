@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import styled from 'styled-components';
+import { useCallback, useMemo } from 'react';
 
 import { SizeSelectProps } from '../../types';
 
@@ -24,10 +24,14 @@ const SizeSelect = ({
     [onAction, secondaryAction]
   );
 
+  const modalValue = useMemo(() => {
+    return modal?.toString();
+  }, [modal]);
+
   return (
-    <Container modal={modal}>
-      <Heading modal={modal}>{title}</Heading>
-      <Wrapper modal={modal}>
+    <Container modal={modalValue}>
+      <Heading modal={modalValue}>{title}</Heading>
+      <Wrapper modal={modalValue}>
         {value?.map((item, index) => {
           return (
             <Size
@@ -35,7 +39,7 @@ const SizeSelect = ({
               type='button'
               bcg={String(selected === item)}
               onClick={() => handleSelect(item as string)}
-              modal={modal}
+              modal={modalValue}
             >
               {item}
             </Size>
