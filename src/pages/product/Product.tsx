@@ -42,14 +42,6 @@ const SingleProduct = () => {
     },
   });
 
-  const { data } = useQuery({
-    queryKey: ['reviews'],
-    queryFn: async () => {
-      const { data } = await getReviewsOnProduct(product._id);
-      return data;
-    },
-  });
-
   const inCart = useMemo(() => {
     const cartItem = cart.find((item) => item.id === productId);
     return !!cartItem;
@@ -93,8 +85,15 @@ const SingleProduct = () => {
   }, [product]);
 
   useEffect(() => {
-    setReviews(data);
-  }, [data]);
+    (async () => {
+      try {
+        const { data } = await getReviewsOnProduct(productId!);
+        setReviews(data);
+      } catch (err: unknown) {
+        console.log(err);
+      }
+    })();
+  }, [productId]);
 
   if (isLoading) {
     return (
