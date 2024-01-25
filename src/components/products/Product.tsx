@@ -41,6 +41,8 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
     return mode.toString();
   }, [mode]);
 
+  console.log('sizes', product);
+
   return (
     <Container>
       <ProductContainer>
@@ -67,13 +69,15 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
               onAction={setColor}
               secondaryAction={setIsSelected}
             />
-            <SizeSelect
-              value={product.size}
-              title='Select a size'
-              selected={selectedSize}
-              onAction={setSize}
-              secondaryAction={setSelectedSize}
-            />
+            {product.size.length > 0 && (
+              <SizeSelect
+                value={product.size}
+                title='Select a size'
+                selected={selectedSize}
+                onAction={setSize}
+                secondaryAction={setSelectedSize}
+              />
+            )}
             <Hr />
             <Counter title='Quantity' value={quantity} onClick={setQuantity} />
             <Hr />
