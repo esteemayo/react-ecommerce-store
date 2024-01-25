@@ -8,7 +8,7 @@ import Spinner from '../Spinner';
 const FormButton = ({ label, loading, disabled, ...rest }: FormButtonProps) => {
   return (
     <Button {...rest} disabled={disabled} type='submit'>
-      {loading ? <Spinner /> : label}
+      {loading ? <Spinner size='xs' /> : label}
     </Button>
   );
 };
