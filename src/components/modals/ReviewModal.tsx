@@ -1,7 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components';
-import { useCallback, useEffect, useMemo, useState } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { toast } from 'react-toastify';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { ReviewModalProps } from '../../types';
 import { useDarkMode } from '../../hooks/useDarkMode';
@@ -100,6 +101,7 @@ const ReviewModal = ({
         onReviews((prev) => [data, ...prev]);
       } catch (err: unknown) {
         console.log(err);
+        toast.error('Something went wrong!!!');
       } finally {
         setIsLoading(false);
         closeModalHandler();
