@@ -10,6 +10,7 @@ const ReviewForm = ({
   rating,
   review,
   terms,
+  isLoading,
   onChangeRating,
   onChangeReview,
   onChangeTerms,

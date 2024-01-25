@@ -808,6 +808,7 @@ export interface ReviewFormProps {
   rating: number | null;
   review: string;
   terms: boolean;
+  isLoading: boolean;
   onChangeRating(
     event: React.SyntheticEvent<Element, Event>,
     value: number | null

@@ -137,6 +137,7 @@ const ReviewModal = ({
             rating={rating}
             review={review}
             terms={terms}
+            isLoading={isLoading}
             onChangeRating={handleChangeRating}
             onChangeReview={handleChangeReview}
             onChangeTerms={handleChangeTerms}
