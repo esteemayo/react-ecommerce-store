@@ -5,7 +5,7 @@ import { SizeSelectProps } from '../../types';
 
 interface IProps {
   modal?: boolean;
-  bcg?: boolean;
+  bcg?: string;
 }
 
 const SizeSelect = ({
@@ -33,7 +33,7 @@ const SizeSelect = ({
             <Size
               key={index}
               type='button'
-              bcg={selected === item}
+              bcg={String(selected === item)}
               onClick={() => handleSelect(item as string)}
               modal={modal}
             >
@@ -82,10 +82,11 @@ const Size = styled.button<IProps>`
   padding: 1.6rem 0.4rem;
   line-height: 0.2;
   background-color: ${({ bcg, theme }) =>
-    bcg ? theme.cartSelected : 'transparent'};
-  color: ${({ bcg }) => (bcg ? 'var(--clr-white)' : 'inherit')};
+    bcg === 'true' ? theme.cartSelected : 'transparent'};
+  color: ${({ bcg }) => (bcg === 'true' ? 'var(--clr-white)' : 'inherit')};
   border: 2px solid
-    ${({ bcg, theme }) => (bcg ? theme.cartSelected : theme.sizeHover)};
+    ${({ bcg, theme }) =>
+      bcg === 'true' ? theme.cartSelected : theme.sizeHover};
   border-radius: 0.4rem;
   outline-color: #ccc;
   margin-bottom: 0.8rem;
@@ -101,7 +102,7 @@ const Size = styled.button<IProps>`
 
   &:hover {
     background-color: ${({ bcg, theme }) =>
-      bcg ? theme.cartSelected : theme.sizeHover};
+      bcg === 'true' ? theme.cartSelected : theme.sizeHover};
   }
 `;
 
