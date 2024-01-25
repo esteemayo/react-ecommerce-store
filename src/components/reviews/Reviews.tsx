@@ -18,6 +18,7 @@ const Reviews = ({
   sort,
   onSort,
   onReviews,
+  onRefetch,
 }: ReviewsProps) => {
   const { isOpen, onOpen, onClose } = useReviewModal();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -73,6 +74,7 @@ const Reviews = ({
         isOpen={isOpen}
         onClose={onClose}
         onReviews={onReviews}
+        onRefetch={onRefetch}
       />
     </Container>
   );

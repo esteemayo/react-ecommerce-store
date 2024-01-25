@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Reviews from '../../components/reviews/Reviews';
@@ -30,17 +30,28 @@ const SingleProduct = () => {
   const cart = useCartStore((state) => state.cart);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
+  const { isLoading, data: singleProduct } = useQuery({
+    queryKey: ['product'],
+    queryFn: async () => {
+      const { data } = await getProduct(productId);
+      setProduct(data);
+      return data;
+    },
+  });
+
   const [reviews, setReviews] = useState<ReviewItem>([]);
   const [sort, setSort] = useState('');
   const [recommendations, setRecommendation] = useState<RecommendationType>([]);
+  const [product, setProduct] = useState(singleProduct);
 
-  const { isLoading, data: product } = useQuery({
-    queryKey: ['product'],
-    queryFn: async () => {
-      const res = await getProduct(productId);
-      return res.data;
-    },
-  });
+  const refetchProduct = useCallback(async () => {
+    try {
+      const { data } = await getProduct(productId);
+      setProduct(data);
+    } catch (err: unknown) {
+      console.log(err);
+    }
+  }, [productId]);
 
   const inCart = useMemo(() => {
     const cartItem = cart.find((item) => item.id === productId);
@@ -131,6 +142,7 @@ const SingleProduct = () => {
           sort={sort}
           onSort={setSort}
           onReviews={setReviews}
+          onRefetch={refetchProduct}
         />
       </Wrapper>
     </Container>

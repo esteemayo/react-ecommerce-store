@@ -25,6 +25,7 @@ const ReviewModal = ({
   isOpen,
   onClose,
   onReviews,
+  onRefetch,
 }: ReviewModalProps) => {
   const mode = useDarkMode((state) => state.mode);
   const currentUser = useAuth((state) => state.user);
@@ -109,6 +110,7 @@ const ReviewModal = ({
         };
 
         onReviews((prev) => [reviewData, ...prev]);
+        onRefetch();
       } catch (err: unknown) {
         console.log(err);
         toast.error('Something went wrong!!!');
@@ -120,6 +122,7 @@ const ReviewModal = ({
     [
       closeModalHandler,
       currentUser,
+      onRefetch,
       onReviews,
       productId,
       rating,
