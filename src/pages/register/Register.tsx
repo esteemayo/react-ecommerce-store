@@ -241,7 +241,7 @@ const Register = () => {
   return (
     <FormBox>
       <StyledBox>
-        <Heading small='true' title='Register your account' />
+        <Heading small title='Register your account' />
         <Form onSubmit={handleSubmit}>
           <FormInput
             id='name'
@@ -251,7 +251,7 @@ const Register = () => {
             value={data.name}
             onChange={handleChange}
             error={errors.name}
-            small='true'
+            small
           />
           <FormInput
             id='email'
@@ -262,7 +262,7 @@ const Register = () => {
             value={data.email}
             onChange={handleChange}
             error={errors.email}
-            small='true'
+            small
           />
           <FormInput
             id='username'
@@ -272,7 +272,7 @@ const Register = () => {
             value={data.username}
             onChange={handleChange}
             error={errors.username}
-            small='true'
+            small
           />
           <FormInput
             id='phone'
@@ -283,7 +283,7 @@ const Register = () => {
             value={data.phone}
             onChange={handleChange}
             error={errors.phone}
-            small='true'
+            small
           />
           <FormInput
             id='password'
@@ -294,7 +294,7 @@ const Register = () => {
             value={data.password}
             onChange={handleChange}
             error={errors.password}
-            small='true'
+            small
           />
           <FormInput
             id='confirmPassword'
