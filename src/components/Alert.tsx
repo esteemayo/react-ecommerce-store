@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { AlertProps } from '../types';
 
 interface IMessage {
-  center?: boolean;
+  center?: string;
 }
 
 const Alert = ({ alert, center, message, onChange }: AlertProps) => {
