@@ -115,6 +115,7 @@ export type CartValues = {
   ratingsAverage: number;
   ratingsQuantity: number;
   size: string | string[];
+  likes: string[];
   slug: string;
   tags: string[];
   createdAt: string;
