@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
+import Spinner from '../Spinner';
 import Form from '../form/Form';
 import StarRating from '../StarRating';
 
@@ -47,7 +48,9 @@ const ReviewForm = ({
         unsubscribe. We can use the text and star rating from your review in
         other marketting.
       </Information>
-      <Button type='submit'>Submit product review</Button>
+      <Button type='submit'>
+        {isLoading ? <Spinner /> : 'Submit product review'}
+      </Button>
     </Form>
   );
 };
