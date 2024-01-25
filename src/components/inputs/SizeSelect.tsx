@@ -30,7 +30,7 @@ const SizeSelect = ({
 
   return (
     <Container modal={modalValue}>
-      <Heading modal={modalValue}>{title}</Heading>
+      <Heading>{title}</Heading>
       <Wrapper modal={modalValue}>
         {value?.map((item, index) => {
           return (
@@ -60,9 +60,7 @@ const Container = styled.div<IProps>`
 `;
 
 const Heading = styled.h3<IProps>`
-  display: ${({ modal }) => (modal === 'true' ? 'none' : 'inline-block')};
-  opacity: ${({ modal }) => (modal === 'true' ? 0 : 1)};
-  visibility: ${({ modal }) => (modal === 'true' ? 'hidden' : 'visible')};
+  display: inline-block;
   font-weight: 400;
   font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.65rem')};
   color: ${({ theme }) => theme.text};

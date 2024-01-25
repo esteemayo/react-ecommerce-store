@@ -148,6 +148,7 @@ const CartModal = ({
             )}
             {product?.size && (
               <SizeSelect
+                title='Select a size'
                 value={product.size}
                 selected={selectedSize}
                 onAction={setSize}
