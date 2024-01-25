@@ -26,11 +26,11 @@ const ReviewModal = ({
 }: ReviewModalProps) => {
   const mode = useDarkMode((state) => state.mode);
 
-  const [showModal, setShowModal] = useState(isOpen);
-  const [review, setReview] = useState('');
-  const [rating, setRating] = useState<number | null>(null);
-  const [terms, setTerms] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [review, setReview] = useState('');
+  const [showModal, setShowModal] = useState(isOpen);
+  const [terms, setTerms] = useState(false);
+  const [rating, setRating] = useState<number | null>(null);
 
   const handleChangeRating = useCallback(
     (
