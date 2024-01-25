@@ -43,11 +43,7 @@ const ProductHead = ({
             <StyledLink to='#'>Learn more</StyledLink>
           </Message>
           <Rating>
-            {ratingsQuantity === 0 ? (
-              <StarRating readOnly value={ratingsQuantity} name='read-only' />
-            ) : (
-              <StarRating readOnly value={ratingsAverage} name='read-only' />
-            )}
+            <StarRating readOnly value={ratingsAverage} name='read-only' />
             <ReviewQuantity>
               <a href='#reviews'>{ratingsQuantity} Review</a>
             </ReviewQuantity>
