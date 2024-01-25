@@ -100,7 +100,7 @@ const ReviewModal = ({
       };
 
       try {
-        const { data } = await createReviewOnProduct(newReview, productId);
+        const { data } = await createReviewOnProduct(newReview, productId!);
         const reviewData = {
           ...data,
           user: {
