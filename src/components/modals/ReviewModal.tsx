@@ -155,7 +155,7 @@ const Overlay = styled.aside<IOverlay>`
   width: 100vw;
   height: 100%;
   background-color: ${({ theme }) => theme.bgOverlay};
-  backdrop-filter: ${({ mode }) => (mode === 'true' ? 'blur(2px)' : undefined)};
+  backdrop-filter: ${({ mode }) => setBackDropFilter(mode)};
   position: fixed;
   top: 0;
   left: 0;
@@ -230,5 +230,9 @@ const CloseButton = styled.button`
     color: currentColor;
   }
 `;
+
+const setBackDropFilter = (mode: string) => {
+  return mode === 'true' ? 'blur(2px)' : undefined;
+};
 
 export default ReviewModal;
