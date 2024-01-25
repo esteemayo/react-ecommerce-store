@@ -9,7 +9,7 @@ interface IProps {
 
 const Heading = ({ small, type, title }: FormHeadingProps) => {
   return (
-    <StyledHeading small={small} type={type}>
+    <StyledHeading small={small?.toString()} type={type}>
       {title}
     </StyledHeading>
   );

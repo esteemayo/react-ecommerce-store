@@ -20,7 +20,7 @@ const FormInput = ({
 }: FormInputProps) => {
   return (
     <FormGroup>
-      <Label htmlFor={name} small={small}>
+      <Label htmlFor={name} small={small?.toString()}>
         {label}
       </Label>
       <Input {...rest} id={name} type={type} name={name} value={value} />

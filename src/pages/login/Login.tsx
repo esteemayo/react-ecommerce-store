@@ -146,7 +146,7 @@ const Login = () => {
   return (
     <FormBox>
       <StyledBox>
-        <Heading small='true' type='login' title='Log in with' />
+        <Heading small type='login' title='Log in with' />
         <SocialLogin />
         <Text>or</Text>
         <Form type='login' onSubmit={handleSubmit}>
@@ -157,7 +157,7 @@ const Login = () => {
             placeholder='Enter username'
             onChange={handleChange}
             error={errors.username}
-            small='true'
+            small
           />
           <FormInput
             name='password'
@@ -167,7 +167,7 @@ const Login = () => {
             placeholder='Enter your password'
             onChange={handleChange}
             error={errors.password}
-            small='true'
+            small
           />
           <CheckBox
             name='rememberMe'
