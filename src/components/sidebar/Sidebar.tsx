@@ -28,6 +28,7 @@ const Sidebar = () => {
   const handleLogout = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
+
       logoutUser();
       onClose();
     },
