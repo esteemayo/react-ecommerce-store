@@ -12,6 +12,7 @@ import { getFeaturedProducts } from '../../services/productService';
 import { StyledWrapper } from '../StyledWrapper';
 import { ProductType, WishlistValues } from '../../types';
 import { useAuth } from '../../hooks/useAuth';
+import Spinner from '../Spinner';
 
 const FeaturedProducts = () => {
   const isOpen = useCartModal((state) => state.isOpen);
@@ -21,7 +22,7 @@ const FeaturedProducts = () => {
 
   const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
 
-  const { data } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: ['products'],
     queryFn: async () => {
       const res = await getFeaturedProducts();
@@ -34,17 +35,25 @@ const FeaturedProducts = () => {
       <StyledWrapper>
         <Header title='Featured products' />
         <ProductsContainer>
-          {data?.products?.map((product: ProductType) => {
-            return (
-              <ProductCard
-                key={product.id}
-                currentUser={currentUser}
-                product={product}
-                onOpen={onOpen}
-                onSelect={setIsSelectedProduct}
-              />
-            );
-          })}
+          {isLoading ? (
+            <Box>
+              <Spinner size='md' />
+            </Box>
+          ) : (
+            <>
+              {data?.products?.map((product: ProductType) => {
+                return (
+                  <ProductCard
+                    key={product.id}
+                    currentUser={currentUser}
+                    product={product}
+                    onOpen={onOpen}
+                    onSelect={setIsSelectedProduct}
+                  />
+                );
+              })}
+            </>
+          )}
         </ProductsContainer>
       </StyledWrapper>
       <CartModal
@@ -93,6 +102,13 @@ const ProductsContainer = styled.div`
   @media only screen and (max-width: 18.75em) {
     gap: 1rem;
   }
+`;
+
+const Box = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default FeaturedProducts;
