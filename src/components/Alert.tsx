@@ -16,14 +16,14 @@ const Alert = ({ alert, center, message, onChange }: AlertProps) => {
     return () => clearTimeout(timeout);
   }, [alert, onChange]);
 
-  return <Message center={center}>{message}</Message>;
+  return <Message center={center?.toString()}>{message}</Message>;
 };
 
 const Message = styled.span<IMessage>`
   display: block;
   font-size: 1.4rem;
   color: #409384;
-  text-align: ${({ center }) => (center ? 'center' : 'left')};
+  text-align: ${({ center }) => (center === 'true' ? 'center' : 'left')};
 `;
 
 export default Alert;
