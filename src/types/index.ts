@@ -1069,7 +1069,7 @@ export interface FormProps {
 }
 
 export interface FormHeadingProps {
-  small: string;
+  small: boolean;
   type?: string;
   title: string;
 }
