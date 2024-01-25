@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useCallback, useMemo } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useCallback, useMemo } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Heading from './Heading';
 import Search from './Search';
