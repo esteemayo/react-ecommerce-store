@@ -159,7 +159,7 @@ const CartModal = ({
             <Counter title='Quantity' value={quantity} onClick={setQuantity} />
             <Hr />
             <ProductButton
-              small
+              small='true'
               actionLabel={actionLabel}
               inCart={inCart}
               onAction={onClickHandler}
