@@ -143,7 +143,7 @@ const CartModal = ({
                 selected={isSelected}
                 onAction={setColor}
                 secondaryAction={setIsSelected}
-                modal
+                modal='true'
               />
             )}
             {product?.size && (

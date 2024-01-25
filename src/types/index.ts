@@ -708,7 +708,7 @@ export interface ColorSelectProps {
 export interface SizeSelectProps {
   value: string | string[];
   title?: string;
-  modal?: boolean;
+  modal?: string;
   selected?: string | null;
   onAction(value: string): void;
   secondaryAction: React.Dispatch<SetStateAction<string | null>>;

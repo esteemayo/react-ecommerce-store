@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { SizeSelectProps } from '../../types';
 
 interface IProps {
-  modal?: boolean;
+  modal?: string;
   bcg?: string;
 }
 
@@ -48,28 +48,28 @@ const SizeSelect = ({
 
 const Container = styled.div<IProps>`
   margin-top: 1rem;
-  margin-bottom: ${({ modal }) => (modal ? '1rem' : '4rem')};
+  margin-bottom: ${({ modal }) => (modal === 'true' ? '1rem' : '4rem')};
 
   @media only screen and (max-width: 37.5em) {
-    margin-bottom: ${({ modal }) => !modal && '2rem'};
+    margin-bottom: ${({ modal }) => modal !== 'true' && '2rem'};
   }
 `;
 
 const Heading = styled.h3<IProps>`
   display: inline-block;
   font-weight: 400;
-  font-size: ${({ modal }) => (modal ? '1.5rem' : '1.65rem')};
+  font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.65rem')};
   color: ${({ theme }) => theme.text};
 `;
 
 const Wrapper = styled.div<IProps>`
-  margin-top: ${({ modal }) => (modal ? '0.5rem' : '1.5rem')};
+  margin-top: ${({ modal }) => (modal === 'true' ? '0.5rem' : '1.5rem')};
   display: flex;
   align-items: center;
-  gap: ${({ modal }) => (modal ? '0.5rem' : '1rem')};
+  gap: ${({ modal }) => (modal === 'true' ? '0.5rem' : '1rem')};
 
   @media only screen and (max-width: 37.5em) {
-    margin-top: ${({ modal }) => !modal && '1.3rem'};
+    margin-top: ${({ modal }) => modal !== 'true' && '1.3rem'};
   }
 `;
 
@@ -94,10 +94,10 @@ const Size = styled.button<IProps>`
   transition: all 0.1s ease-in-out;
 
   @media only screen and (max-width: 37.5em) {
-    min-width: ${({ modal }) => !modal && '3.75rem'};
-    padding-top: ${({ modal }) => !modal && '1.4rem'};
-    padding-bottom: ${({ modal }) => !modal && '1.4rem'};
-    font-size: ${({ modal }) => !modal && '1.35rem'};
+    min-width: ${({ modal }) => modal !== 'true' && '3.75rem'};
+    padding-top: ${({ modal }) => modal !== 'true' && '1.4rem'};
+    padding-bottom: ${({ modal }) => modal !== 'true' && '1.4rem'};
+    font-size: ${({ modal }) => modal !== 'true' && '1.35rem'};
   }
 
   &:hover {
