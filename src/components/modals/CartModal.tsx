@@ -196,7 +196,7 @@ const Box = styled.div<IMode>`
   width: 40rem;
   padding: 2rem 4rem;
   background-color: ${({ theme }) => theme.bgModal};
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   box-shadow: ${({ mode }) => setBoxShadow(mode)};
   -webkit-box-shadow: ${({ mode }) => setBoxShadow(mode)};
   -moz-box-shadow: ${({ mode }) => setBoxShadow(mode)};
@@ -222,8 +222,8 @@ const Box = styled.div<IMode>`
 
 const ButtonContainer = styled.div`
   position: absolute;
-  top: 0.5rem;
-  right: 1rem;
+  top: -1.15rem;
+  right: -1.15rem;
 `;
 
 const CloseButton = styled.button`
