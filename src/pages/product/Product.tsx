@@ -46,6 +46,8 @@ const SingleProduct = () => {
     singleProduct
   );
 
+  const tags = product?.tags;
+
   const refetchProduct = useCallback(async () => {
     try {
       const { data } = await getProduct(productId);
@@ -90,15 +92,17 @@ const SingleProduct = () => {
   }, [sort]);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await getProductByTags(product?.tags);
-        setRecommendation(data);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, [product]);
+    if (tags) {
+      (async () => {
+        try {
+          const { data } = await getProductByTags(tags);
+          setRecommendation(data);
+        } catch (err) {
+          console.log(err);
+        }
+      })();
+    }
+  }, [tags]);
 
   useEffect(() => {
     (async () => {
