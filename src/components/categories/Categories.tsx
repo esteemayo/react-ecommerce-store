@@ -1,14 +1,40 @@
 import styled from 'styled-components';
+import { useQuery } from '@tanstack/react-query';
 
 import Header from '../Header';
 import Category from './Category';
 
+import { getCategoryCount } from '../../services/productService';
+
 const Categories = () => {
+  const { data } = useQuery({
+    queryKey: ['categories'],
+    queryFn: async () => {
+      const res = await getCategoryCount();
+      return res.data;
+    },
+  });
+
+  const images = [
+    '/img/category-1.jpg',
+    '/img/category-2.jpg',
+    '/img/category-3.jpg',
+    '/img/category-4.jpg',
+    '/img/category-5.jpg',
+  ];
+
   return (
     <Container>
       <Wrapper>
         <Header title='Shop by category' />
-        <Category />
+        <Box>
+          {data &&
+            images.map((item, index) => {
+              return (
+                <Category key={index} data={data} src={item} index={index} />
+              );
+            })}
+        </Box>
       </Wrapper>
     </Container>
   );
@@ -51,6 +77,40 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 23.75em) {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+`;
+
+const Box = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 3rem;
+
+  @media only screen and (max-width: 64em) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  @media only screen and (max-width: 59.375em) {
+    gap: 4rem;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    gap: 2rem;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    gap: 1.5rem;
+  }
+
+  @media only screen and (max-width: 26.25em) {
+    gap: 3rem;
+  }
+
+  @media only screen and (max-width: 18.75em) {
+    gap: 1rem;
   }
 `;
 

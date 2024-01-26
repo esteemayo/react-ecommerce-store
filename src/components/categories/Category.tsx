@@ -2,85 +2,27 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useQuery } from '@tanstack/react-query';
 
+import { CategoryProps } from '../../types';
 import { CommonImage } from '../CommonImage';
-import { getCategoryCount } from '../../services/productService';
 
-const Category = () => {
-  const { data } = useQuery({
-    queryKey: ['categories'],
-    queryFn: async () => {
-      const res = await getCategoryCount();
-      return res.data;
-    },
-  });
-
-  const images = [
-    '/img/category-1.jpg',
-    '/img/category-2.jpg',
-    '/img/category-3.jpg',
-    '/img/category-4.jpg',
-    '/img/category-5.jpg',
-  ];
-
+const Category = ({ data, src, index }: CategoryProps) => {
   return (
     <Container>
-      {data &&
-        images.map((item, index) => {
-          return (
-            <Wrapper key={index}>
-              <StyledImage src={item} width={225} height={250} alt='' />
-              <HeadingWrapper>
-                <MainHeading>{data[index]?.category}</MainHeading>
-                <SubHeading>{data[index]?.count}</SubHeading>
-              </HeadingWrapper>
-              <StyledLink to={`/products/category/${data[index]?.category}`}>
-                <Button>
-                  Shop now &nbsp;
-                  <FontAwesomeIcon icon={faArrowRight} />
-                </Button>
-              </StyledLink>
-            </Wrapper>
-          );
-        })}
+      <StyledImage src={src} width={225} height={250} alt='' />
+      <HeadingWrapper>
+        <MainHeading>{data[index]?.category}</MainHeading>
+        <SubHeading>{data[index]?.count}</SubHeading>
+      </HeadingWrapper>
+      <StyledLink to={`/products/category/${data[index]?.category}`}>
+        <Button>
+          Shop now &nbsp;
+          <FontAwesomeIcon icon={faArrowRight} />
+        </Button>
+      </StyledLink>
     </Container>
   );
 };
-
-const Container = styled.article`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 3rem;
-
-  @media only screen and (max-width: 64em) {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  @media only screen and (max-width: 59.375em) {
-    gap: 4rem;
-  }
-
-  @media only screen and (max-width: 37.5em) {
-    gap: 2rem;
-  }
-
-  @media only screen and (max-width: 31.25em) {
-    gap: 1.5rem;
-  }
-
-  @media only screen and (max-width: 26.25em) {
-    gap: 3rem;
-  }
-
-  @media only screen and (max-width: 18.75em) {
-    gap: 1rem;
-  }
-`;
 
 const Button = styled.button`
   border: none;
@@ -104,7 +46,7 @@ const Button = styled.button`
   gap: 0.5rem;
 `;
 
-const Wrapper = styled.div`
+const Container = styled.article`
   width: 20%;
   box-shadow: ${({ theme }) => theme.boxCat};
   -webkit-box-shadow: ${({ theme }) => theme.boxCat};
