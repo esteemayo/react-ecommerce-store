@@ -17,11 +17,11 @@ const Categories = () => {
   });
 
   const images = [
-    '/img/category-1.jpg',
-    '/img/category-2.jpg',
-    '/img/category-3.jpg',
-    '/img/category-4.jpg',
-    '/img/category-5.jpg',
+    '/img/shirt-2.jpg',
+    '/img/gadgets-1.jpg',
+    '/img/electronics-2.jpg',
+    '/img/jean-1.jpg',
+    '/img/sneakers.jpg',
   ];
 
   return (
