@@ -17,17 +17,24 @@ const SizeSelect = ({
   secondaryAction,
 }: SizeSelectProps) => {
   const handleSelect = useCallback(
-    (size: string) => {
+    (e: React.MouseEvent<HTMLButtonElement>, size: string) => {
+      e.stopPropagation();
+
       onAction(size);
       secondaryAction(size);
     },
     [onAction, secondaryAction]
   );
 
-  const handleRemove = useCallback(() => {
-    onAction('');
-    secondaryAction(null);
-  }, [onAction, secondaryAction]);
+  const handleRemove = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      onAction('');
+      secondaryAction(null);
+    },
+    [onAction, secondaryAction]
+  );
 
   const modalValue = useMemo(() => {
     return modal?.toString();
@@ -43,7 +50,7 @@ const SizeSelect = ({
               key={index}
               type='button'
               bcg={String(selected === item)}
-              onClick={() => handleSelect(item as string)}
+              onClick={(e) => handleSelect(e, item as string)}
               onDoubleClick={handleRemove}
               modal={modalValue}
             >
