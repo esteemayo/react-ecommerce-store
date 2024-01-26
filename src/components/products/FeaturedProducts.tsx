@@ -3,16 +3,17 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import ProductCard from '../card/ProductCard';
-import Header from '../Header';
 import CartModal from '../modals/CartModal';
 
+import Header from '../Header';
+import Spinner from '../Spinner';
+
+import { useAuth } from '../../hooks/useAuth';
 import { useCartModal } from '../../hooks/useCartModal';
 import { getFeaturedProducts } from '../../services/productService';
 
 import { StyledWrapper } from '../StyledWrapper';
 import { ProductType, WishlistValues } from '../../types';
-import { useAuth } from '../../hooks/useAuth';
-import Spinner from '../Spinner';
 
 const FeaturedProducts = () => {
   const isOpen = useCartModal((state) => state.isOpen);
@@ -25,7 +26,7 @@ const FeaturedProducts = () => {
   const { isLoading, data } = useQuery({
     queryKey: ['products'],
     queryFn: async () => {
-      const {data} = await getFeaturedProducts();
+      const { data } = await getFeaturedProducts();
       return data;
     },
   });
