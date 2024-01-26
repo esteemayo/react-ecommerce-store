@@ -31,6 +31,7 @@ import {
 import {
   Announcements,
   CartItem,
+  CategoryImage,
   ColumnType,
   FooterLink,
   FooterMenu,
@@ -267,6 +268,14 @@ export const sliderItems: SliderItem = [
     title: 'SHIRT COLLECTION',
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
   },
+];
+
+export const categoryImages: CategoryImage = [
+  '/img/shirt-2.jpg',
+  '/img/gadgets-1.jpg',
+  '/img/electronics-2.jpg',
+  '/img/jean-1.jpg',
+  '/img/sneakers.jpg',
 ];
 
 export const footerMenus: FooterMenu = [
