@@ -308,7 +308,7 @@ export interface ProductType {
 type CategoryType = {
   category: string;
   count: number;
-};
+}[];
 
 export interface CategoryProps {
   data: CategoryType;
