@@ -759,7 +759,7 @@ export interface ProductInfoProps {
   content: string;
 }
 
-export interface RecommendationProps {
+export interface RecommendationsProps {
   data: RecommendationType;
   productId?: string;
 }

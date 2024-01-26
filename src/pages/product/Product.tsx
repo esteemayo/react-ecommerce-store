@@ -7,7 +7,7 @@ import Reviews from '../../components/reviews/Reviews';
 import Product from '../../components/products/Product';
 
 import Loader from '../../components/Loader';
-import Recommendation from '../../components/Recommendation';
+import Recommendations from '../../components/Recommendations';
 
 import { useSubmenu } from '../../hooks/useSubmenu';
 import { useCartStore } from '../../hooks/useCartStore';
@@ -128,7 +128,7 @@ const SingleProduct = () => {
       <Wrapper>
         <Product product={product} inCart={inCart} actionLabel={actionLabel} />
         <Line />
-        <Recommendation data={recommendations} productId={productId} />
+        <Recommendations data={recommendations} productId={productId} />
         <Reviews
           productId={productId}
           reviews={reviews}
