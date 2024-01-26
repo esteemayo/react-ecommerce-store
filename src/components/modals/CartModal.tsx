@@ -16,7 +16,6 @@ import { CartModalProps } from '../../types';
 import { useCartStore } from '../../hooks/useCartStore';
 
 import Alert from '../Alert';
-import { CommonImage } from '../CommonImage';
 
 interface IMode {
   mode: string;
@@ -118,14 +117,6 @@ const CartModal = ({
               <CloseIcon />
             </CloseButton>
           </ButtonContainer>
-          <ImageContainer>
-            <StyledImage
-              src={product?.images?.[0] ?? '/img/img-1.jpg'}
-              width={320}
-              height={200}
-              alt=''
-            />
-          </ImageContainer>
           <ProductContainer>
             <ProductHead
               name={product?.name}
@@ -146,7 +137,7 @@ const CartModal = ({
                 modal
               />
             )}
-            {product?.size && (
+            {product?.size?.length > 0 && (
               <SizeSelect
                 title='Select a size'
                 value={product.size}
@@ -252,23 +243,6 @@ const CloseButton = styled.button`
     font-size: 1.8rem;
     fill: currentColor;
   }
-`;
-
-const ImageContainer = styled.div`
-  margin-top: 2rem;
-  width: 100%;
-  height: 20rem;
-  background-color: #ede9e6;
-
-  @media only screen and (max-width: 25em) {
-    display: none;
-  }
-`;
-
-const StyledImage = styled(CommonImage)`
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
 `;
 
 const ProductContainer = styled.div`
