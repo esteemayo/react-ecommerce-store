@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 
-import Header from '../Header';
 import Category from './Category';
+import Header from '../Header';
+import Spinner from '../Spinner';
 
 import { getCategoryCount } from '../../services/productService';
 
 const Categories = () => {
-  const { data } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: ['categories'],
     queryFn: async () => {
       const { data } = await getCategoryCount();
@@ -27,14 +28,20 @@ const Categories = () => {
     <Container>
       <Wrapper>
         <Header title='Shop by category' />
-        <Box>
-          {data &&
-            images.map((item, index) => {
-              return (
-                <Category key={index} data={data} src={item} index={index} />
-              );
-            })}
-        </Box>
+        {isLoading ? (
+          <SpinnerWrapper>
+            <Spinner size='md' />
+          </SpinnerWrapper>
+        ) : (
+          <Box>
+            {data &&
+              images.map((item, index) => {
+                return (
+                  <Category key={index} data={data} src={item} index={index} />
+                );
+              })}
+          </Box>
+        )}
       </Wrapper>
     </Container>
   );
@@ -78,6 +85,13 @@ const Wrapper = styled.div`
     padding-left: 2rem;
     padding-right: 2rem;
   }
+`;
+
+const SpinnerWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Box = styled.div`
