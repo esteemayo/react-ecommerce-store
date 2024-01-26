@@ -10,8 +10,8 @@ const Categories = () => {
   const { data } = useQuery({
     queryKey: ['categories'],
     queryFn: async () => {
-      const res = await getCategoryCount();
-      return res.data;
+      const { data } = await getCategoryCount();
+      return data;
     },
   });
 
