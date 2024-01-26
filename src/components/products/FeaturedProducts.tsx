@@ -25,8 +25,8 @@ const FeaturedProducts = () => {
   const { isLoading, data } = useQuery({
     queryKey: ['products'],
     queryFn: async () => {
-      const res = await getFeaturedProducts();
-      return res.data;
+      const {data} = await getFeaturedProducts();
+      return data;
     },
   });
 
