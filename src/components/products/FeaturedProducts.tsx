@@ -10,10 +10,11 @@ import Spinner from '../Spinner';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCartModal } from '../../hooks/useCartModal';
+
+import { ProductType, WishlistValues } from '../../types';
 import { getFeaturedProducts } from '../../services/productService';
 
 import { StyledWrapper } from '../StyledWrapper';
-import { ProductType, WishlistValues } from '../../types';
 
 const FeaturedProducts = () => {
   const isOpen = useCartModal((state) => state.isOpen);
