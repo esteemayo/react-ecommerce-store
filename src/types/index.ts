@@ -305,6 +305,17 @@ export interface ProductType {
   discount: number;
 }
 
+type CategoryType = {
+  category: string;
+  count: number;
+};
+
+export interface CategoryProps {
+  data: CategoryType;
+  src: string;
+  index: number;
+}
+
 export type TopReview = {
   id: number;
   rating: number;
