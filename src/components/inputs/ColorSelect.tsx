@@ -28,6 +28,16 @@ const ColorSelect = ({
     [onAction, secondaryAction]
   );
 
+  const handleRemove = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      onAction('');
+      secondaryAction(null);
+    },
+    [onAction, secondaryAction]
+  );
+
   const modalValue = useMemo(() => {
     return modal?.toString();
   }, [modal]);
@@ -45,6 +55,7 @@ const ColorSelect = ({
               mode={mode}
               selected={item === selected}
               onClick={(e) => handleSelect(e, item as string)}
+              onDoubleClick={handleRemove}
               modal={modalValue}
             />
           );
