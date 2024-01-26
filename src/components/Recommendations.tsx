@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
+import Recommendation from './Recommendation';
 import { RecommendationsProps } from '../types';
-import RecommendationItem from './RecommendationItem';
 
 const Recommendations = ({ data, productId }: RecommendationsProps) => {
   return (
@@ -13,7 +13,7 @@ const Recommendations = ({ data, productId }: RecommendationsProps) => {
             .filter((item) => item.id !== productId)
             .slice(0, 3)
             .map((item) => {
-              return <RecommendationItem key={item.id} {...item} />;
+              return <Recommendation key={item.id} {...item} />;
             })}
       </Wrapper>
     </Container>

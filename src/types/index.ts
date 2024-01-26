@@ -764,7 +764,7 @@ export interface RecommendationsProps {
   productId?: string;
 }
 
-export interface RecommendationItemProps {
+export interface RecommendationProps {
   id: string;
   name: string;
   price: number;
