@@ -5,6 +5,7 @@ import Category from './Category';
 import Header from '../Header';
 import Spinner from '../Spinner';
 
+import { categoryImages } from '../../data';
 import { getCategoryCount } from '../../services/productService';
 
 const Categories = () => {
@@ -15,14 +16,6 @@ const Categories = () => {
       return data;
     },
   });
-
-  const images = [
-    '/img/shirt-2.jpg',
-    '/img/gadgets-1.jpg',
-    '/img/electronics-2.jpg',
-    '/img/jean-1.jpg',
-    '/img/sneakers.jpg',
-  ];
 
   return (
     <Container>
@@ -35,7 +28,7 @@ const Categories = () => {
         ) : (
           <Box>
             {data &&
-              images.map((item, index) => {
+              categoryImages.map((item, index) => {
                 return (
                   <Category key={index} data={data} src={item} index={index} />
                 );
