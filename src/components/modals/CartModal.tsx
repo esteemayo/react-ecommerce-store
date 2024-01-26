@@ -137,7 +137,7 @@ const CartModal = ({
                 modal
               />
             )}
-            {product?.size?.length > 0 && (
+            {product?.size.length > 0 && (
               <SizeSelect
                 title='Select a size'
                 value={product.size}
