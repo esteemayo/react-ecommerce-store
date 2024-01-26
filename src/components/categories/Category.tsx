@@ -1,12 +1,17 @@
-import styled from 'styled-components';
+import { useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 import { CategoryProps } from '../../types';
 import { CommonImage } from '../CommonImage';
 
 const Category = ({ data, src, index }: CategoryProps) => {
+  const url = useMemo(() => {
+    return `/products/category/${data[index]?.category}`;
+  }, [data, index]);
+
   return (
     <Container>
       <StyledImage src={src} width={225} height={250} alt='' />
@@ -14,7 +19,7 @@ const Category = ({ data, src, index }: CategoryProps) => {
         <MainHeading>{data[index]?.category}</MainHeading>
         <SubHeading>{data[index]?.count}</SubHeading>
       </HeadingWrapper>
-      <StyledLink to={`/products/category/${data[index]?.category}`}>
+      <StyledLink to={url}>
         <Button>
           Shop now &nbsp;
           <FontAwesomeIcon icon={faArrowRight} />
