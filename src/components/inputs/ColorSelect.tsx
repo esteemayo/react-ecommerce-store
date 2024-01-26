@@ -19,7 +19,7 @@ const ColorSelect = ({
   secondaryAction,
 }: ColorSelectProps) => {
   const handleSelect = useCallback(
-    (color: string) => {
+    (e: React.MouseEvent<HTMLButtonElement>, color: string) => {
       onAction(color);
       secondaryAction(color);
     },
@@ -42,7 +42,7 @@ const ColorSelect = ({
               color={item}
               mode={mode}
               selected={item === selected}
-              onClick={() => handleSelect(item as string)}
+              onClick={(e) => handleSelect(e, item as string)}
               modal={modalValue}
             />
           );
