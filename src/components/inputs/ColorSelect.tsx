@@ -20,6 +20,8 @@ const ColorSelect = ({
 }: ColorSelectProps) => {
   const handleSelect = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>, color: string) => {
+      e.stopPropagation();
+
       onAction(color);
       secondaryAction(color);
     },
