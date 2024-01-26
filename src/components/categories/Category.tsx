@@ -14,7 +14,7 @@ const Category = ({ data, src, index }: CategoryProps) => {
 
   return (
     <Container>
-      <StyledImage src={src} width={225} height={250} alt='' />
+      <Image src={src} width={225} height={250} alt={data[index]?.category} />
       <HeadingWrapper>
         <MainHeading>{data[index]?.category}</MainHeading>
         <SubHeading>{data[index]?.count}</SubHeading>
@@ -76,7 +76,7 @@ const Container = styled.article`
   }
 `;
 
-const StyledImage = styled(CommonImage)`
+const Image = styled(CommonImage)`
   width: 100%;
   height: 25rem;
   border-radius: 2px;
