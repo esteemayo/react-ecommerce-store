@@ -234,6 +234,8 @@ export type SliderButtonProps = {
   onClick(): void;
 };
 
+export type CategoryImage = string[];
+
 type LinkFooter = {
   id: number;
   url: string;
