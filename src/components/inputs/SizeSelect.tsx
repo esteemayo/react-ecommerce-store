@@ -24,6 +24,11 @@ const SizeSelect = ({
     [onAction, secondaryAction]
   );
 
+  const handleRemove = useCallback(() => {
+    onAction('');
+    secondaryAction(null);
+  }, [onAction, secondaryAction]);
+
   const modalValue = useMemo(() => {
     return modal?.toString();
   }, [modal]);
@@ -39,6 +44,7 @@ const SizeSelect = ({
               type='button'
               bcg={String(selected === item)}
               onClick={() => handleSelect(item as string)}
+              onDoubleClick={handleRemove}
               modal={modalValue}
             >
               {item}
