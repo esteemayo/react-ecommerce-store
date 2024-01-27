@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mooli&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-// #0d2136 === light
-// #0f243a === lighter
-// #95a5bd === lightest
+
 :root {
   --clr-white: #ffffff;
   --clr-black: #000000;
@@ -131,7 +129,7 @@ body {
   border-radius: 2px;
 
   &.dark {
-    background-color: #121212;
+    background-color: #0d2136;
   }
 
   &.light {
@@ -141,7 +139,7 @@ body {
 
 .checkContainer:hover .checkbox ~ .checkmark {
   &.dark {
-    background-color: #272727;
+    background-color: #041e49;
   }
 
   &.light {
@@ -151,7 +149,7 @@ body {
 
 .checkContainer .checkbox:checked ~ .checkmark {
   &.dark {
-    background-color: #201f1f;
+    background-color: #0f243a;
   }
 
   &.light {
