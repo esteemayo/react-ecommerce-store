@@ -7,7 +7,7 @@ interface IProps {
   modal?: string;
   mode?: string;
   color: string;
-  selected?: string;
+  selected: string;
 }
 
 const ColorSelect = ({
@@ -121,7 +121,7 @@ const setBcg = (color: string, mode?: string) => {
   return color;
 };
 
-const setProperty = (selected?: string, val1: string, val2: string) => {
+const setProperty = (selected: string, val1: string, val2: string) => {
   return selected === 'true' ? val1 : val2;
 };
 
