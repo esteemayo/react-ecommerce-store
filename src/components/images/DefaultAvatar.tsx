@@ -16,7 +16,7 @@ const Container = styled.div`
   width: 5rem;
   height: 5rem;
   font-size: 2.5rem;
-  background-color: #d5a66a;
+  background-color: ${({ theme }) => theme.bgDefAvatar};
   color: ${({ theme }) => theme.textBtn};
   border-radius: 50%;
 
