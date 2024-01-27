@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { ProductButtonProps } from '../../types';
 
@@ -26,23 +26,25 @@ const ProductButton = ({
 
 const Button = styled.button<IBtn>`
   display: inline-block;
+  border: none;
   text-align: center;
   font-size: ${({ small }) => (small === 'true' ? '1.5rem' : '1.8rem')};
   width: 100%;
   padding: ${({ small }) => (small === 'true' ? '1.3rem 1rem' : '2rem 1rem')};
   background-color: ${({ theme, small }) =>
-    small === 'true' ? 'var(--clr-black)' : theme.bgProdBtn};
-  color: var(--clr-white);
-  background-image: linear-gradient(
+    small === 'true' ? '#031525' : theme.bgProdBtn};
+  color: ${({ theme }) => theme.textBtn};
+  background-image: ${({ theme }) => css`
+  linear-gradient(
     120deg,
     transparent 0%,
     transparent 50%,
-    #333 50%
+    ${theme.bgBtnCart} 50%
   );
+  `};
   background-size: 220%;
-  border: 1px solid var(--clr-black);
   border-radius: 0.5rem;
-  outline-color: #777;
+  outline-color: ${({ theme }) => theme.btnCartOut};
   line-height: ${({ small }) => (small === 'true' ? '1em' : '1.3em')};
   margin: ${({ small }) => (small === 'true' ? '1rem 0' : '3rem 0')};
   cursor: pointer;
