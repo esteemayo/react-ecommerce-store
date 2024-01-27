@@ -11,7 +11,7 @@ export const darkTheme = {
   box: '2px 0.4rem 1rem 1px rgba(70, 69, 69, 0.47)',
   boxCard: 'none',
   textProdCard: '#95a5bd',
-  star: '#9dd9fd',
+  star: '#7cacf8',
   textBtn: '#cfd0d1',
   textPrice: '#95a5bd',
   textDiscount: '#b8c5da',
