@@ -83,7 +83,7 @@ export const darkTheme = {
   textWlHeader: '#95a5bd',
   bgWlHeaderBtn: '#1c1b1b',
   textWlHeaderBtn: 'rgb(211, 227, 253)',
-  bgWlCard: '#1c1b1b',
+  bgWlCard: '#0d2136',
   textWlCardName: '#95a5bd',
   textWlCard: '#95a5bd',
   boxWlCard: '2px 0.4rem 1rem 1px rgba(27, 27, 27, 0.25)',
