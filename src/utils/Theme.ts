@@ -120,7 +120,7 @@ export const darkTheme = {
   spnrBorTop: '#797979',
   textSlider: 'rgb(211, 227, 253)',
   boxSub: '0 0.5rem 2rem rgba(197, 196, 196, 0.09)',
-  bgSearch: '#0f243a',
+  bgSearch: '#031525',
   bgToggleMode: 'rgb(211, 227, 253)',
   bgToggleModeHov: '#b7b7b8',
   bgToggleModeIcon: 'rgb(211, 227, 253)',
