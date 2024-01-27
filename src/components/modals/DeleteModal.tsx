@@ -94,7 +94,7 @@ const DeleteModal = ({
             </CancelButton>
             <DeleteButton
               type='button'
-              onClick={() => deleteWishlistHandler(actionId)}
+              onClick={() => deleteWishlistHandler(actionId!)}
             >
               Remove
             </DeleteButton>
