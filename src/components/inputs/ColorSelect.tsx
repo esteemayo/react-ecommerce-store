@@ -6,6 +6,7 @@ import { ColorSelectProps } from '../../types';
 interface IProps {
   modal?: string;
   mode?: string;
+  color: string;
   selected?: boolean;
 }
 
@@ -101,10 +102,7 @@ const Color = styled.button<IProps>`
   display: block;
   width: 2.2rem;
   height: 2.2rem;
-  background-color: ${({ color, mode, modal }) =>
-    mode === 'true' && modal !== 'true' && color === 'black' ? '#111' : color};
-  background-color: ${({ color, mode }) =>
-    mode !== 'true' && color === 'white' && '#f9f9f9'};
+  background-color: ${({ color, mode }) => setBcg(color, mode)};
   border-radius: 50%;
   outline: 1px solid
     ${({ theme, selected }) => (selected ? theme.cartSelected : 'transparent')};
@@ -116,5 +114,10 @@ const Color = styled.button<IProps>`
     height: ${({ modal }) => modal !== 'true' && '2rem'};
   }
 `;
+
+const setBcg = (color: string, mode?: string) => {
+  if (mode !== 'true' && color === 'white') return '#f9f9f9';
+  return color;
+};
 
 export default ColorSelect;
