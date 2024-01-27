@@ -68,7 +68,7 @@ const Button = styled.button`
 
   &:disabled {
     background-color: ${({ theme }) => theme.bgCartQty};
-    color: #999;
+    color: ${({ theme }) => theme.cartBtnDis};
     cursor: default;
   }
 
