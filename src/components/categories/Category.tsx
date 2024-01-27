@@ -34,7 +34,7 @@ const Button = styled.button`
   padding: 1rem 2rem;
   width: 100%;
   background-color: ${({ theme }) => theme.bgCatBtn};
-  color: ${({ theme }) => theme.textCat};
+  color: var(--clr-white);
   outline-color: ${({ theme }) => theme.bgCatBtnOut};
   cursor: pointer;
   visibility: hidden;
