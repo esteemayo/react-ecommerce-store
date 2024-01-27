@@ -26,7 +26,7 @@ const ListItem = styled.li`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    outline-color: #f5f5f5;
+    outline-color: ${({ theme }) => theme.menuOut};
   }
 `;
 
