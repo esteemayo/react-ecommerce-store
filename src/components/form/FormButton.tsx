@@ -20,6 +20,7 @@ const Button = styled(CommonButton)`
   font-size: 1.4rem;
   width: 100%;
   padding: 1.5rem;
+  background-color: ${({ theme }) => theme.bgFormBtn};
 
   display: flex;
   align-items: center;
