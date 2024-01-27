@@ -30,15 +30,15 @@ const Text = styled.p`
     &:visited {
       display: inline-block;
       text-decoration: none;
-      text-decoration-color: var(--clr-tertiary-green);
-      color: var(--clr-tertiary-green);
-      outline-color: #ddd;
+      text-decoration-color: ${({ theme }) => theme.textInfo};
+      color: ${({ theme }) => theme.textInfo};
+      outline-color: ${({ theme }) => theme.forgotOut};
       transition: all 0.3s ease;
     }
 
     &:hover {
       text-decoration: underline;
-      text-decoration-color: var(--clr-tertiary-green);
+      text-decoration-color: ${({ theme }) => theme.textInfo};
       text-underline-offset: 0.4rem;
     }
   }
