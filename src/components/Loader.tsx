@@ -45,6 +45,7 @@ const Wrapper = styled.div`
 
 const Text = styled.span`
   margin-top: 1rem;
+  color: ${({ theme }) => theme.text};
 `;
 
 export default Loader;
