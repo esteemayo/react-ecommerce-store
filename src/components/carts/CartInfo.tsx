@@ -1,11 +1,14 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
+import { useDarkMode } from '../../hooks/useDarkMode';
 import { CartInfoProps } from '../../types';
 import { formatCurrency } from '../../utils/formatCurrency';
 
 import { CommonImage } from '../CommonImage';
 
 interface IColor {
+  mode: string;
   color: string | string[];
 }
 
@@ -18,6 +21,12 @@ const CartInfo = ({
   size,
   onAction,
 }: CartInfoProps) => {
+  const mode = useDarkMode((state) => state.mode);
+
+  const modeValue = useMemo(() => {
+    return mode.toString();
+  }, [mode]);
+
   return (
     <Container>
       <ImageContainer>
@@ -31,7 +40,9 @@ const CartInfo = ({
         </PriceContainer>
         <ColorContainer>
           <Label>Color:</Label>
-          <Color color={color}>{color}</Color>
+          <Color mode={modeValue} color={color}>
+            {color}
+          </Color>
         </ColorContainer>
         {size && (
           <SizeContainer>
@@ -142,7 +153,7 @@ const Color = styled.span<IColor>`
     display: block;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: ${({ color }) => setBackground(color)};
+    background-color: ${({ mode, color }) => setBackground(mode, color)};
     border: 1px solid ${({ color }) => color};
     border-radius: 50%;
 
@@ -183,8 +194,8 @@ const RemoveButton = styled.button`
   cursor: pointer;
 `;
 
-const setBackground = (color: string | string[]) => {
-  if (color === 'white') return '#f9f9f9';
+const setBackground = (mode: string, color: string | string[]) => {
+  if (mode !== 'true' && color === 'white') return '#f9f9f9';
   return color;
 };
 
