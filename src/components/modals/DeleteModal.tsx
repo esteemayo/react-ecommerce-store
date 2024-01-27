@@ -152,10 +152,10 @@ const CloseButton = styled.button`
   width: 3rem;
   height: 3rem;
   background-color: transparent;
-  color: #a2a8b0;
-  border: 1px solid #f2f9fb;
+  color: ${({ theme }) => theme.textModalDelCloseBtn};
+  border: 1px solid ${({ theme }) => theme.textBorModalDelCloseBtn};
   border-radius: 50%;
-  outline-color: #f1e4f4;
+  outline-color: ${({ theme }) => theme.textWlCloseBtnOut};
   cursor: pointer;
 
   @media only screen and (max-width: 18.75em) {
@@ -198,7 +198,7 @@ const CancelButton = styled.button`
   color: ${({ theme }) => theme.textModalBtn};
   border: 1px solid #e3e3f3;
   border-radius: 0.5rem;
-  outline-color: #f1e4f4;
+  outline-color: ${({ theme }) => theme.textWlCloseBtnOut};
   cursor: pointer;
 `;
 
