@@ -131,12 +131,9 @@ const Box = styled.div<IMode>`
   padding: 5rem;
   background-color: ${({ theme }) => theme.bgModal};
   border-radius: 1rem;
-  box-shadow: ${({ mode }) =>
-    mode === 'true' ? 'none' : '0 2rem 4rem rgba(145, 143, 143, 0.1)'};
-  -webkit-box-shadow: ${({ mode }) =>
-    mode === 'true' ? 'none' : '0 2rem 4rem rgba(145, 143, 143, 0.1)'};
-  -moz-box-shadow: ${({ mode }) =>
-    mode === 'true' ? 'none' : '0 2rem 4rem rgba(145, 143, 143, 0.1)'};
+  box-shadow: ${({ mode }) => setBoxShadow(mode)};
+  -webkit-box-shadow: ${({ mode }) => setBoxShadow(mode)};
+  -moz-box-shadow: ${({ mode }) => setBoxShadow(mode)};
   position: relative;
 
   @media only screen and (max-width: 18.75em) {
@@ -216,5 +213,9 @@ const DeleteButton = styled.button`
   outline-color: #b10101;
   cursor: pointer;
 `;
+
+const setBoxShadow = (mode: string) => {
+  return mode === 'true' ? 'none' : '0 2rem 4rem rgba(145, 143, 143, 0.1)';
+};
 
 export default DeleteModal;
