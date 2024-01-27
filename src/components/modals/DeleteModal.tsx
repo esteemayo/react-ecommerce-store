@@ -190,28 +190,27 @@ const ButtonContainer = styled.div`
   gap: 1rem;
 `;
 
-const CancelButton = styled.button`
+const Button = styled.button`
   display: inline-block;
   font-size: 1.43rem;
   padding: 1rem 3rem;
-  background-color: transparent;
-  color: ${({ theme }) => theme.textModalBtn};
   border: 1px solid #e3e3f3;
   border-radius: 0.5rem;
-  outline-color: ${({ theme }) => theme.textWlCloseBtnOut};
   cursor: pointer;
 `;
 
-const DeleteButton = styled.button`
-  display: inline-block;
-  font-size: 1.43rem;
-  padding: 1rem 3rem;
+const CancelButton = styled(Button)`
+  background-color: transparent;
+  color: ${({ theme }) => theme.textModalBtn};
+  border: 1px solid #e3e3f3;
+  outline-color: ${({ theme }) => theme.textWlCloseBtnOut};
+`;
+
+const DeleteButton = styled(Button)`
   background-color: var(--clr-primary-red);
   color: ${({ theme }) => theme.textModalDelBtn};
   border: 1px solid #e3e3f3;
-  border-radius: 0.5rem;
   outline-color: #b10101;
-  cursor: pointer;
 `;
 
 const setBoxShadow = (mode: string) => {
