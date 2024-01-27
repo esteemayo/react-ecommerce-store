@@ -1,8 +1,8 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import { CommonImage } from '../CommonImage';
 import { ProductValueProps } from '../../types';
-import { useMemo } from 'react';
 
 interface IMode {
   mode: string;
