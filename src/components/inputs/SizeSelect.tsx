@@ -100,7 +100,8 @@ const Size = styled.button<IProps>`
   line-height: 0.2;
   background-color: ${({ bcg, theme }) =>
     bcg === 'true' ? theme.cartSelected : 'transparent'};
-  color: ${({ bcg }) => (bcg === 'true' ? 'var(--clr-white)' : 'inherit')};
+  color: ${({ bcg, theme }) =>
+    bcg === 'true' ? 'var(--clr-white)' : theme.textSize};
   border: 2px solid
     ${({ bcg, theme }) =>
       bcg === 'true' ? theme.cartSelected : theme.sizeHover};

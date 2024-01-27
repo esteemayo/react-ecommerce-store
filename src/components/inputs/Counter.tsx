@@ -45,6 +45,7 @@ const Counter = ({ value, title, modal, onClick }: CounterProps) => {
 };
 
 const Container = styled.div<IProps>`
+  color: ${({ theme }) => theme.text};
   margin: ${({ modal }) => (modal ? '0.5rem 0' : '2rem 0')};
 `;
 
@@ -53,7 +54,7 @@ const Heading = styled.h3<IProps>`
   text-transform: capitalize;
   font-weight: 400;
   font-size: ${({ modal }) => (modal ? '1.5rem' : '1.65rem')};
-  color: ${({ theme }) => theme.text};
+  color: currentColor;
   margin-bottom: ${({ modal }) => (modal ? '0.5rem' : '1rem')};
 `;
 
@@ -92,7 +93,7 @@ const Button = styled.button<IProps>`
 
   &:disabled {
     background-color: ${({ theme }) => theme.bgAddBtnDis};
-    color: #999;
+    color: ${({ theme }) => theme.cartBtnDis};
     cursor: default;
   }
 
