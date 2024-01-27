@@ -19,7 +19,7 @@ const Button = styled.button`
   color: ${({ theme }) => theme.text};
   border: 1px solid ${({ theme }) => theme.inputBorder};
   border-radius: 0.5rem;
-  outline-color: #ccc;
+  outline-color: ${({ theme }) => theme.btnRevOut};
   cursor: pointer;
   transition: all 0.3s ease;
 
