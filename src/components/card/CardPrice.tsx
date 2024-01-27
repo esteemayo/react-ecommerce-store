@@ -41,7 +41,7 @@ const Price = styled.span`
 const Discount = styled.span`
   text-decoration: line-through;
   font-size: 1.7rem;
-  color: #adacac;
+  color: ${({ theme }) => theme.textDiscount};
 
   @media only screen and (max-width: 35em) {
     font-size: 1.58rem;
