@@ -43,8 +43,8 @@ const Container = styled.div`
 
 const Button = styled.button<IBtn>`
   border: none;
-  width: ${({ active }) => (active ? '1.5rem' : '1rem')};
-  height: ${({ active }) => (active ? '1.5rem' : '1rem')};
+  width: ${({ active }) => (active === 'true' ? '2rem' : '1.5rem')};
+  height: ${({ active }) => (active === 'true' ? '2rem' : '1.5rem')};
   background-color: ${({ active, theme }) =>
     active === 'true' ? theme.bgActiveBtn : theme.bgCarActiveBtn};
   border-radius: 50%;
@@ -52,8 +52,8 @@ const Button = styled.button<IBtn>`
   cursor: pointer;
 
   @media only screen and (max-width: 25em) {
-    width: ${({ active }) => (active === 'true' ? '1.3rem' : '0.8rem')};
-    height: ${({ active }) => (active === 'true' ? '1.3rem' : '0.8rem')};
+    width: ${({ active }) => (active === 'true' ? '1.8rem' : '1.3rem')};
+    height: ${({ active }) => (active === 'true' ? '1.8rem' : '1.3rem')};
   }
 `;
 
