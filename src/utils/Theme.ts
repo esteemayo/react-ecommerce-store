@@ -66,7 +66,7 @@ export const darkTheme = {
   bgCartHeader: '#0f243a',
   boxCartHeader: 'none',
   textCartItem: '#95a5bd',
-  textRemoveCart: '#041e49',
+  textRemoveCart: '#7cacf8',
   cartBorder: '#142e49',
   bgCartBtn: '#0f243a',
   bgOverlay: 'rgba(47, 46, 46, 0.5)',
