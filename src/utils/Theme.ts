@@ -140,7 +140,7 @@ export const darkTheme = {
   bgSignInBtn: '#06192a',
   textSignInBtn: '#95a5bd',
   bgSignInBtnHov: 'hsla(0, 0%, 100%, 0.2)',
-  bgImage: '#1c1c1c',
+  bgImage: '#0d2136',
   btnIcon: '#95a5bd',
   btnIconHov: '#06192a',
   btnRevOut: '#033058',
