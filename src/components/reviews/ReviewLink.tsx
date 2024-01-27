@@ -13,7 +13,7 @@ const StyledLink = styled(Link)`
   width: 9rem;
   text-decoration: none;
   color: inherit;
-  outline-color: #ccc;
+  outline-color: ${({ theme }) => theme.btnRevOut};
 
   &:active {
     color: currentColor;
@@ -29,7 +29,7 @@ const Button = styled.button`
   width: 9rem;
   background-color: transparent;
   color: ${({ theme }) => theme.textRevBtn};
-  outline-color: #ccc;
+  outline-color: ${({ theme }) => theme.btnRevOut};
   cursor: pointer;
   transition: all 0.3s ease;
 

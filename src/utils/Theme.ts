@@ -138,6 +138,7 @@ export const darkTheme = {
   bgImage: '#1c1c1c',
   btnIcon: '#95a5bd',
   btnIconHov: '#06192a',
+  btnRevOut: '#033058',
 };
 
 export const lightTheme = {
@@ -280,4 +281,5 @@ export const lightTheme = {
   bgImage: '#ddd',
   btnIcon: '#858585',
   btnIconHov: '#b8b6b6',
+  btnRevOut: '#ccc',
 };
