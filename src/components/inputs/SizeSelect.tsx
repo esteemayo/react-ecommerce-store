@@ -5,7 +5,7 @@ import { SizeSelectProps } from '../../types';
 
 interface IProps {
   modal?: string;
-  bcg?: string;
+  bcg: string;
 }
 
 const SizeSelect = ({
@@ -99,16 +99,15 @@ const Size = styled.button<IProps>`
   padding: 1.6rem 0.4rem;
   line-height: 0.2;
   background-color: ${({ bcg, theme }) =>
-    bcg === 'true' ? theme.cartSelected : 'transparent'};
+    setProperty(bcg, theme.cartSelected, 'transparent')};
   color: ${({ bcg, theme }) =>
-    bcg === 'true' ? 'var(--clr-white)' : theme.textSize};
+    setProperty(bcg, 'var(--clr-white)', theme.textSize)};
   border: 2px solid
-    ${({ bcg, theme }) =>
-      bcg === 'true' ? theme.cartSelected : theme.sizeHover};
+    ${({ bcg, theme }) => setProperty(bcg, theme.cartSelected, theme.sizeHover)};
   border-radius: 0.4rem;
   outline-color: #ccc;
   margin-bottom: 0.8rem;
-  cursor: ${({ bcg }) => (bcg === 'true' ? 'default' : 'pointer')};
+  cursor: ${({ bcg }) => setProperty(bcg, 'default', 'pointer')};
   transition: all 0.1s ease-in-out;
 
   @media only screen and (max-width: 37.5em) {
@@ -120,8 +119,12 @@ const Size = styled.button<IProps>`
 
   &:hover {
     background-color: ${({ bcg, theme }) =>
-      bcg === 'true' ? theme.cartSelected : theme.sizeHover};
+      setProperty(bcg, theme.cartSelected, theme.sizeHover)};
   }
 `;
+
+const setProperty = (bcg: string, val1: string, val2: string) => {
+  return bcg === 'true' ? val1 : val2;
+};
 
 export default SizeSelect;
