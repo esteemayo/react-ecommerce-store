@@ -32,7 +32,7 @@ const FormInput = ({
 const Label = styled.label<ILabel>`
   display: inline-block;
   width: ${({ small }) => (small === 'true' ? '7rem' : '13rem')};
-  text-transform: ${({ small }) => small && 'capitalize'};
+  text-transform: ${({ small }) => small === 'true' && 'capitalize'};
   font-weight: 600;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.textLabel};
@@ -59,7 +59,7 @@ const Input = styled.input`
   &::-webkit-input-placeholder {
     font-weight: 300;
     font-size: 1.5rem;
-    color: #bbb;
+    color: ${({ theme }) => theme.textRevPlace};
   }
 `;
 
