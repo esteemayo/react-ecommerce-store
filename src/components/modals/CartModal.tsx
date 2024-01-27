@@ -234,7 +234,7 @@ const CloseButton = styled.button`
   width: 2.5rem;
   height: 2.5rem;
   background-color: ${({ theme }) => theme.bgModalCloseBtn};
-  color: #a2a8b0;
+  color: ${({ theme }) => theme.textModalCloseBtn};
   border-radius: 50%;
   outline-color: #f1e4f4;
   cursor: pointer;
