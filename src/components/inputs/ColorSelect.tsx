@@ -106,9 +106,9 @@ const Color = styled.button<IProps>`
   border-radius: 50%;
   outline: 1px solid
     ${({ theme, selected }) =>
-      selected === 'true' ? theme.cartSelected : 'transparent'};
+      setProperty(selected, theme.cartSelected, 'transparent')};
   outline-offset: 2px;
-  cursor: ${({ selected }) => (selected === 'true' ? 'default' : 'pointer')};
+  cursor: ${({ selected }) => setProperty(selected, 'default', 'pointer')};
 
   @media only screen and (max-width: 37.5em) {
     width: ${({ modal }) => modal !== 'true' && '2rem'};
@@ -119,6 +119,10 @@ const Color = styled.button<IProps>`
 const setBcg = (color: string, mode?: string) => {
   if (mode !== 'true' && color === 'white') return '#f9f9f9';
   return color;
+};
+
+const setProperty = (selected?: string, val1: string, val2: string) => {
+  return selected === 'true' ? val1 : val2;
 };
 
 export default ColorSelect;
