@@ -126,7 +126,7 @@ export const darkTheme = {
   boxSub: '0 0.5rem 2rem rgba(197, 196, 196, 0.09)',
   bgSearch: '#031525',
   bgToggleMode: 'rgb(211, 227, 253)',
-  bgToggleModeHov: '#b7b7b8',
+  bgToggleModeHov: '#95a5bd',
   bgToggleModeIcon: 'rgb(211, 227, 253)',
   bgBtn: '#031525',
   bgBtnModal: '#403e3e',
