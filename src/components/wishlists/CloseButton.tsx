@@ -22,8 +22,8 @@ const Button = styled.button`
   font-weight: lighter;
   font-size: 2rem;
   background-color: transparent;
-  color: #d2d3d2;
-  outline-color: #f1e4f4;
+  color: ${({ theme }) => theme.textWlCloseBtn};
+  outline-color: ${({ theme }) => theme.textWlCloseBtnOut};
   cursor: pointer;
 
   @media only screen and (max-width: 37.5em) {

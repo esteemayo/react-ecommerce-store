@@ -96,7 +96,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: currentColor;
   transition: all 0.3s ease;
-  outline-color: #f1e4f4;
+  outline-color: ${({ theme }) => theme.textWlCloseBtnOut};
 
   &:hover {
     text-decoration: underline;
