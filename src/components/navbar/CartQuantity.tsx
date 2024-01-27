@@ -8,33 +8,30 @@ import { CartQuantityProps } from '../../types';
 const CartQuantity = ({ amount }: CartQuantityProps) => {
   return (
     <Container>
-      <Link to='/cart'>
+      <StyledLink to='/cart'>
         <FontAwesomeIcon icon={faBagShopping} />
         <CartTotal>{amount}</CartTotal>
-      </Link>
+      </StyledLink>
     </Container>
   );
 };
 
 const Container = styled.div`
   position: relative;
+`;
 
-  a {
-    &:link,
-    &:visited {
-      text-decoration: none;
-      color: ${({ theme }) => theme.bgToggleModeIcon};
-      outline-color: ${({ theme }) => theme.navOut};
-    }
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.bgToggleModeIcon};
+  outline-color: ${({ theme }) => theme.navOut};
 
-    &:active {
-      color: currentColor;
-    }
+  &:active {
+    color: ${({ theme }) => theme.bgToggleModeIcon};
+  }
 
-    svg {
-      font-size: 2.3rem;
-      color: currentColor;
-    }
+  svg {
+    font-size: 2.3rem;
+    color: currentColor;
   }
 `;
 
