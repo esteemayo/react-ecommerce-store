@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import StripeCheckout from 'react-stripe-checkout';
 
 import { CheckoutButtonProps } from '../../types';
@@ -38,14 +38,16 @@ const Button = styled.button`
   padding: 1rem 0.5rem;
   background-color: ${({ theme }) => theme.bgCartBtn};
   color: ${({ theme }) => theme.textBtn};
-  background-image: linear-gradient(
+  background-image: ${({ theme }) => css`
+  linear-gradient(
     120deg,
     transparent 0%,
     transparent 50%,
-    #333 50%
+    ${theme.bgImgCartBtn} 50%
   );
+  `};
   background-size: 220%;
-  border: 1px solid var(--clr-black);
+  border: 1px solid ${({ theme }) => theme.btnBorder};
   border-radius: 0.5rem;
   outline-color: #777;
   line-height: 1.3em;
