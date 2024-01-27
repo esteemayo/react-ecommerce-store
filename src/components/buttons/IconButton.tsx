@@ -7,7 +7,7 @@ export const IconButton = styled.button`
   font-size: 1.4rem;
   background-color: transparent;
   color: ${({ theme }) => theme.btnIcon};
-  outline-color: #b8b6b6;
+  outline-color: ${({ theme }) => theme.btnIconHov};
   outline-offset: 3px;
   cursor: pointer;
   transition: all 0.3s ease;

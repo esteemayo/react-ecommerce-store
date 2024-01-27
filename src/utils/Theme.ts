@@ -137,6 +137,7 @@ export const darkTheme = {
   bgSignInBtnHov: 'hsla(0, 0%, 100%, 0.2)',
   bgImage: '#1c1c1c',
   btnIcon: '#95a5bd',
+  btnIconHov: '#06192a',
 };
 
 export const lightTheme = {
@@ -278,4 +279,5 @@ export const lightTheme = {
   bgSignInBtnHov: 'hsla(0, 0%, 100%, 0.4)',
   bgImage: '#ddd',
   btnIcon: '#858585',
+  btnIconHov: '#b8b6b6',
 };
