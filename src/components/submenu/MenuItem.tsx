@@ -41,7 +41,7 @@ const StyledLink = styled(Link)`
   }
 
   &:hover {
-    color: #9f9797;
+    color: ${({ theme }) => theme.textMenuHov};
   }
 
   svg {
