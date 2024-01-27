@@ -115,7 +115,7 @@ const TextArea = styled.textarea`
 
   &::placeholder {
     font-size: 1.3rem;
-    color: #bbb;
+    color: ${({ theme }) => theme.textRevPlace};
   }
 `;
 

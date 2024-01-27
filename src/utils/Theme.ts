@@ -149,6 +149,7 @@ export const darkTheme = {
   btnIconHov: '#06192a',
   btnRevOut: '#033058',
   textSearchInput: '#95a5bd',
+  textRevPlace: '#95a5bd',
 };
 
 export const lightTheme = {
@@ -302,4 +303,5 @@ export const lightTheme = {
   btnIconHov: '#b8b6b6',
   btnRevOut: '#ccc',
   textSearchInput: '#aaa',
+  textRevPlace: '#bbb',
 };
