@@ -19,11 +19,11 @@ const STRIPE_KEY = import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY as string;
 const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
   const navigate = useNavigate();
 
-  const subtotal = useCartStore((state) => state.subtotal);
+  const currentUser = useAuth((state) => state.user);
   const tax = useCartStore((state) => state.tax);
   const total = useCartStore((state) => state.total);
   const cart = useCartStore((state) => state.cart);
-  const currentUser = useAuth((state) => state.user);
+  const subtotal = useCartStore((state) => state.subtotal);
 
   const [show, setShow] = useState(isOpen);
   const [stripeToken, setStripeToken] = useState<Token>();
