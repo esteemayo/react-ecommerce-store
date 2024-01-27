@@ -21,7 +21,7 @@ const Rotate = keyframes`
 const Container = styled.div<IContainer>`
   width: ${({ size }) => setWidth(size)};
   height: ${({ size }) => setHeight(size)};
-  border: 0.5rem solid ${({ theme }) => theme.bgSpnr};
+  border: 3.85px solid ${({ theme }) => theme.bgSpnr};
   border-top-color: ${({ theme }) => theme.spnrBorTop};
   border-radius: 50%;
   animation: ${Rotate} 0.6s linear infinite;
