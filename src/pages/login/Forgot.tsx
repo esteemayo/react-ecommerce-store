@@ -25,7 +25,7 @@ const Container = styled.p`
       text-decoration: none;
       font-size: inherit;
       color: currentColor;
-      outline-color: #ddd;
+      outline-color: ${({ theme }) => theme.forgotOut};
       margin-top: 1rem;
       transition: all 0.3s ease;
     }
