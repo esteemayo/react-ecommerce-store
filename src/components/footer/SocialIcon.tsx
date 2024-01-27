@@ -61,8 +61,8 @@ const Container = styled.div`
 const IconWrapper = styled.div<IMode>`
   width: 4rem;
   height: 4rem;
-  background-color: #${({ color, mode }) => (mode === 'true' ? '121212' : color)};
-  color: ${({ mode }) => (mode === 'true' ? '#cfd0d1' : 'inherit')};
+  background-color: #${({ color, mode }) => (mode === 'true' ? '031525' : color)};
+  color: ${({ mode }) => (mode === 'true' ? 'rgb(211, 227, 253)' : 'inherit')};
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -78,7 +78,7 @@ const IconWrapper = styled.div<IMode>`
 
   &:hover {
     background-color: #${({ color, mode }) => mode === 'true' && color};
-    color: ${({ mode }) => mode === 'true' && 'var(--color-white)'};
+    color: ${({ mode }) => mode === 'true' && 'var(--clr-white)'};
   }
 
   svg {
