@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
 import { Token } from 'react-stripe-checkout';
 
@@ -210,12 +210,14 @@ const Button = styled.button`
   padding: 1rem 3rem;
   background-color: ${({ theme }) => theme.bgCartBtn};
   color: ${({ theme }) => theme.textBtn};
-  background-image: linear-gradient(
+  background-image: ${({ theme }) => css`
+  linear-gradient(
     120deg,
     transparent 0%,
     transparent 50%,
-    #333 50%
+    ${theme.bgImgCartBtn} 50%
   );
+  `};
   background-size: 220%;
   border: 1px solid var(--clr-black);
   border-radius: 0.5rem;
