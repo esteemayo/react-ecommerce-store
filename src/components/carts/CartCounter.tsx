@@ -54,8 +54,8 @@ const Button = styled.button`
   font-weight: lighter;
   font-size: 1.4rem;
   background-color: transparent;
-  color: #c3c3c4;
-  border: 1px solid #eee;
+  color: ${({ theme }) => theme.textCartBtn};
+  border: 1px solid ${({ theme }) => theme.cartBtnBorder};
   border-radius: 50%;
   outline-color: #ddd;
   cursor: pointer;
