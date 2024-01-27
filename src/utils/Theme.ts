@@ -95,7 +95,7 @@ export const darkTheme = {
   textAccBtn: '#95a5bd',
   textDelHeader: '#95a5bd',
   textProdHeader: '#95a5bd',
-  textReviewCount: '#b1aaaa',
+  textReviewCount: '#7cacf8',
   bgProdBtn: '#0d2136',
   filterBorder: '#403e3e',
   filterHov: 'rgba(0, 0, 0, 0.3)',
