@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { CommonImage } from '../CommonImage';
+
 interface AvatarProps {
   src: string;
 }
@@ -14,11 +16,10 @@ const Avatar = ({ src }: AvatarProps) => {
 
 const Container = styled.div``;
 
-const Image = styled.img`
+const Image = styled(CommonImage)`
   width: 5rem;
   height: 5rem;
   display: inline-block;
-  object-fit: cover;
   border-radius: 50%;
 
   @media only screen and (max-width: 31.25em) {
