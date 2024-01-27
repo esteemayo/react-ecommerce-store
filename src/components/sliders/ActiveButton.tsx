@@ -43,18 +43,22 @@ const Container = styled.div`
 
 const Button = styled.button<IBtn>`
   border: none;
-  width: ${({ active }) => (active === 'true' ? '2rem' : '1.5rem')};
-  height: ${({ active }) => (active === 'true' ? '2rem' : '1.5rem')};
+  width: ${({ active }) => setProperty(active, '2rem', '1.5rem')};
+  height: ${({ active }) => setProperty(active, '2rem', '1.5rem')};
   background-color: ${({ active, theme }) =>
-    active === 'true' ? theme.bgActiveBtn : theme.bgCarActiveBtn};
+    setProperty(active, theme.bgActiveBtn, theme.bgCarActiveBtn)};
   border-radius: 50%;
   outline-color: #f5f5f5;
   cursor: pointer;
 
   @media only screen and (max-width: 25em) {
-    width: ${({ active }) => (active === 'true' ? '1.8rem' : '1.3rem')};
-    height: ${({ active }) => (active === 'true' ? '1.8rem' : '1.3rem')};
+    width: ${({ active }) => setProperty(active, '1.8rem', '1.3rem')};
+    height: ${({ active }) => setProperty(active, '1.8rem', '1.3rem')};
   }
 `;
+
+const setProperty = (active: string, val1: string, val2: string) => {
+  return active === 'true' ? val1 : val2;
+};
 
 export default ActiveButton;
