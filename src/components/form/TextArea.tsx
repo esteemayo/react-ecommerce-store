@@ -46,7 +46,7 @@ const StyledTextArea = styled.textarea`
   &::-webkit-input-placeholder {
     font-weight: 300;
     font-size: 1.5rem;
-    color: #bbb;
+    color: ${({ theme }) => theme.textRevPlace};
   }
 `;
 
