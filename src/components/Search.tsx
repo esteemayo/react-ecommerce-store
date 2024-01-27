@@ -86,7 +86,7 @@ const Input = styled.input`
 
   &::-webkit-input-placeholder {
     font-size: 1.4rem;
-    color: #bbb;
+    color: ${({ theme }) => theme.textRevPlace};
     letter-spacing: 1px;
   }
 `;
