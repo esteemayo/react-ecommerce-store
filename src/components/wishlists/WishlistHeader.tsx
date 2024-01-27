@@ -63,7 +63,7 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.bgWlHeaderBtn};
   color: ${({ theme }) => theme.textWlHeaderBtn};
   border-radius: 0.5rem;
-  outline-color: #ccc;
+  outline-color: ${({ theme }) => theme.btnRevOut};
   cursor: pointer;
 
   @media only screen and (max-width: 56.25em) {
