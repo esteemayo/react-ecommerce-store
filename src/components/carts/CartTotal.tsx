@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { useCallback, useEffect, useState } from 'react';
 import { Token } from 'react-stripe-checkout';
+import { useCallback, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import PaymentButton from '../buttons/PaymentButton';
 import CheckoutButton from '../buttons/CheckoutButton';
