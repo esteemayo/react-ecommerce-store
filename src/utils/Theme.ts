@@ -107,7 +107,7 @@ export const darkTheme = {
   bgRevBtn: '#031525',
   bgImgRevBtn: '#0f243a',
   textRevBtn: 'rgb(211, 227, 253)',
-  textReview: '#b6b5b5',
+  textReview: '#95a5bd',
   revOut: '#95a5bd',
   bgRevCloseBtn: '#031525',
   bgRevCloseBtnHov: '#06192a',
