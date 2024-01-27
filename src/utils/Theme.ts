@@ -81,7 +81,7 @@ export const darkTheme = {
   textEmptyCartBtn: '#95a5bd',
   bgWlHeader: '#0f243a',
   textWlHeader: '#95a5bd',
-  bgWlHeaderBtn: '#1c1b1b',
+  bgWlHeaderBtn: '#031525',
   textWlHeaderBtn: 'rgb(211, 227, 253)',
   bgWlCard: '#0d2136',
   textWlCardName: 'rgb(211, 227, 253)',
