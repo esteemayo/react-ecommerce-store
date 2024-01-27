@@ -7,7 +7,7 @@ interface IProps {
   modal?: string;
   mode?: string;
   color: string;
-  selected?: boolean;
+  selected?: string;
 }
 
 const ColorSelect = ({
@@ -54,7 +54,7 @@ const ColorSelect = ({
               type='button'
               color={item}
               mode={mode}
-              selected={item === selected}
+              selected={String(item === selected)}
               onClick={(e) => handleSelect(e, item as string)}
               onDoubleClick={handleRemove}
               modal={modalValue}
@@ -105,9 +105,10 @@ const Color = styled.button<IProps>`
   background-color: ${({ color, mode }) => setBcg(color, mode)};
   border-radius: 50%;
   outline: 1px solid
-    ${({ theme, selected }) => (selected ? theme.cartSelected : 'transparent')};
+    ${({ theme, selected }) =>
+      selected === 'true' ? theme.cartSelected : 'transparent'};
   outline-offset: 2px;
-  cursor: ${({ selected }) => (selected ? 'default' : 'pointer')};
+  cursor: ${({ selected }) => (selected === 'true' ? 'default' : 'pointer')};
 
   @media only screen and (max-width: 37.5em) {
     width: ${({ modal }) => modal !== 'true' && '2rem'};
