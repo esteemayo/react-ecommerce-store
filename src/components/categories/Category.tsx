@@ -107,7 +107,7 @@ const HeadingWrapper = styled.div`
   top: 80%;
   right: 2rem;
   transform: translateY(-80%);
-  color: ${({ theme }) => theme.textCat};
+  color: var(--clr-white);
   text-align: right;
 
   @media only screen and (max-width: 64em) {
