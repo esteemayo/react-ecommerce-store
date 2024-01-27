@@ -123,7 +123,8 @@ export const darkTheme = {
   bgOrderTotal: '#0f243a',
   textOrderTotal: 'rgb(211, 227, 253)',
   boxOrderTotal: '0 1rem 4rem rgba(145, 143, 143, 0.15)',
-  spnrBorTop: '#041e49',
+  bgSpnr: '#7cacf8',
+  spnrBorTop: '#0f243a',
   textSlider: 'rgb(211, 227, 253)', //rgb(241, 243, 248)
   boxSub: '0 0.5rem 2rem rgba(197, 196, 196, 0.09)',
   bgSearch: '#031525',
@@ -280,6 +281,7 @@ export const lightTheme = {
   bgOrderTotal: '#555555',
   textOrderTotal: 'var(--clr-white)',
   boxOrderTotal: '0 2rem 4rem rgba(0, 0, 0, 0.15)',
+  bgSpnr: '#f5f5f5',
   spnrBorTop: '#979797',
   textSlider: 'var(--clr-white)',
   boxSub: '0 2rem 5rem rgba(0, 0, 0, 0.09)',
