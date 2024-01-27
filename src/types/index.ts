@@ -851,7 +851,7 @@ export interface ReviewFilterProps {
 }
 
 export interface DeleteModalProps {
-  actionId: string;
+  actionId?: string;
   wishlistLabel: 'wishlists' | 'wishlist';
   isOpen: boolean;
   onClose(): void;
