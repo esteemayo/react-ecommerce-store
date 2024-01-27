@@ -3,9 +3,9 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 import FormButton from '../components/form/FormButton';
-import FormBox from '../components/form/FormBox';
-import FormInput from '../components/form/FormInput';
 import Form from '../components/form/Form';
+import FormInput from '../components/form/FormInput';
+import FormBox from '../components/form/FormBox';
 import { StyledBox } from '../components/form/StyledBox';
 import Heading from '../components/form/Heading';
 
