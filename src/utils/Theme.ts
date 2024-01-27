@@ -113,7 +113,7 @@ export const darkTheme = {
   textRevCloseBtnHov: '#b0b0b1',
   bgAddBtnDis: '#031525',
   bgCartQty: '#0f243a',
-  colCrumbs: '#333333',
+  colCrumbs: '#033058',
   bgMode: '#000000',
   bgIconMode: '#e4e4e8',
   textMode: '#39393c',
