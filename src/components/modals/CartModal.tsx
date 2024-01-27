@@ -175,7 +175,7 @@ const Overlay = styled.aside<IMode>`
   width: 100vw;
   height: 100%;
   background-color: ${({ theme }) => theme.bgOverlay};
-  backdrop-filter: ${({ mode }) => (mode === 'true' ? 'blur(2px)' : undefined)};
+  backdrop-filter: ${({ mode }) => setBackDropFilter(mode)};
   position: fixed;
   top: 0;
   left: 0;
@@ -258,6 +258,10 @@ const Hr = styled.hr`
 
 const setBoxShadow = (mode: string) => {
   return mode === 'true' ? 'none' : '0 2rem 4rem rgba(145, 143, 143, 0.1)';
+};
+
+const setBackDropFilter = (mode: string) => {
+  return mode === 'true' ? 'blur(2px)' : undefined;
 };
 
 export default CartModal;
