@@ -751,7 +751,7 @@ export interface AlertProps {
 
 export interface ProductValueProps {
   items: ProductValue;
-  mode: string;
+  mode: boolean;
 }
 
 export interface ProductInfoProps {

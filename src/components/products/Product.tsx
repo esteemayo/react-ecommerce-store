@@ -92,7 +92,7 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
               />
             )}
             <Hr />
-            <ProductValue items={productValue} mode={mode.toString()} />
+            <ProductValue items={productValue} mode={mode} />
             <Hr />
             <ProductInfo title='Overview' content={product.desc} />
           </ProductWrapper>

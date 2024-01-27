@@ -2,12 +2,17 @@ import styled from 'styled-components';
 
 import { CommonImage } from '../CommonImage';
 import { ProductValueProps } from '../../types';
+import { useMemo } from 'react';
 
 interface IMode {
   mode: string;
 }
 
 const ProductValue = ({ items, mode }: ProductValueProps) => {
+  const modeValue = useMemo(() => {
+    return mode.toString();
+  }, [mode]);
+
   return (
     <Container>
       <ValueAdd>
@@ -15,7 +20,7 @@ const ProductValue = ({ items, mode }: ProductValueProps) => {
           const { id, desc, img } = item;
           return (
             <ImageWrapper key={id}>
-              <Image src={img} width={24} height={24} alt='' mode={mode} />
+              <Image src={img} width={24} height={24} alt='' mode={modeValue} />
               <span>{desc}</span>
             </ImageWrapper>
           );
@@ -59,7 +64,7 @@ const Image = styled(CommonImage)<IMode>`
 `;
 
 const setBcg = (mode: string) => {
-  return mode === 'true' ? '#1b1a1a' : 'transparent';
+  return mode === 'true' ? '#0d2136' : 'transparent';
 };
 
 export default ProductValue;
