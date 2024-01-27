@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { useCallback, useState } from 'react';
 
-import EmptyCart from '../components/carts/EmptyCart';
-import PaymentModal from '../components/modals/PaymentModal';
 import CartItem from '../components/carts/CartItem';
+import PaymentModal from '../components/modals/PaymentModal';
+import EmptyCart from '../components/carts/EmptyCart';
 import CartHeader from '../components/carts/CartHeader';
 import CartTotal from '../components/carts/CartTotal';
 
