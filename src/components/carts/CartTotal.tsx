@@ -221,7 +221,7 @@ const Button = styled.button`
   background-size: 220%;
   border: 1px solid ${({ theme }) => theme.btnBorder};
   border-radius: 0.5rem;
-  outline-color: #777;
+  outline-color: ${({ theme }) => theme.btnCartOut};
   line-height: 1.3em;
   margin-bottom: 0.5rem;
   cursor: pointer;
