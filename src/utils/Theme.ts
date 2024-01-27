@@ -102,7 +102,7 @@ export const darkTheme = {
   bgRevCard: '#0f243a',
   starBorder: '#95a5bd',
   bgDefAvatar: '#7cacf8',
-  textRevDate: '#999898',
+  textRevDate: '#95a5bd',
   bgRevBtn: '#031525',
   bgImgRevBtn: '#0f243a',
   textRevBtn: 'rgb(211, 227, 253)',
