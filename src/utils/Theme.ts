@@ -6,7 +6,7 @@ export const darkTheme = {
   text: 'rgb(211, 227, 253)',
   textSoft: 'rgb(211, 227, 253)',
   textHeader: 'rgb(211, 227, 253)',
-  textMenuHov: '#9dd9fd',
+  textMenuHov: '#7cacf8',
   soft: '#0d2136',
   bgProdCard: '#0f243a',
   box: '2px 0.4rem 1rem 1px rgba(70, 69, 69, 0.47)',
