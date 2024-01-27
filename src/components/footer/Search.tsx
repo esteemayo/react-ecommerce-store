@@ -51,7 +51,7 @@ const Input = styled.input`
 
   &::placeholder {
     font-size: 1.4rem;
-    color: #aaa;
+    color: ${({ theme }) => theme.textSearchInput};
   }
 `;
 
