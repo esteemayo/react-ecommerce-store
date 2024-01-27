@@ -23,7 +23,7 @@ const Button = styled.button`
   text-transform: capitalize;
   background-color: transparent;
   color: ${({ theme }) => theme.textNav};
-  outline-color: var(--clr-primary-green);
+  outline-color: ${({ theme }) => theme.navOut};
   transition: all 0.3s ease;
 
   &:hover {

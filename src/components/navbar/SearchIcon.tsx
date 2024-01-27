@@ -18,7 +18,7 @@ const Container = styled.button`
   font-size: 2rem;
   background-color: transparent;
   color: ${({ theme }) => theme.bgToggleModeIcon};
-  outline-color: var(--clr-primary-green);
+  outline-color: ${({ theme }) => theme.navOut};
   cursor: pointer;
 
   svg {

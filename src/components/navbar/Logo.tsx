@@ -17,7 +17,7 @@ const Container = styled.div``;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  outline-color: var(--clr-primary-green);
+  outline-color: ${({ theme }) => theme.navOut};
 `;
 
 const StyledImage = styled(CommonImage)`
