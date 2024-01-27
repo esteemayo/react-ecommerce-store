@@ -219,7 +219,7 @@ const Button = styled.button`
   );
   `};
   background-size: 220%;
-  border: 1px solid var(--clr-black);
+  border: 1px solid ${({ theme }) => theme.btnBorder};
   border-radius: 0.5rem;
   outline-color: #777;
   line-height: 1.3em;
