@@ -187,7 +187,7 @@ const CloseButton = styled.button`
   height: 2.5rem;
   font-size: 2.3rem;
   background-color: transparent;
-  color: #838283;
+  color: ${({ theme }) => theme.textPayModal};
   outline-color: #f7f3f8;
   cursor: pointer;
 
