@@ -148,6 +148,7 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
           name={data.name}
           address={data.address}
           total={total}
+          isLoading={isLoading}
           errors={errors}
           onChange={handleChange}
           onSubmit={handleSubmit}
