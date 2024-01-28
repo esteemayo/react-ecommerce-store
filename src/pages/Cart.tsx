@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import CartItem from '../components/carts/CartItem';
 import PaymentModal from '../components/modals/PaymentModal';
@@ -10,8 +10,14 @@ import CartTotal from '../components/carts/CartTotal';
 import { useCartStore } from '../hooks/useCartStore';
 import { useSubmenu } from '../hooks/useSubmenu';
 import { usePaymentModal } from '../hooks/usePaymentModal';
+import { useDarkMode } from '../hooks/useDarkMode';
+
+interface IProps {
+  mode: string;
+}
 
 const Cart = () => {
+  const mode = useDarkMode((state) => state.mode);
   const cart = useCartStore((state) => state.cart);
 
   const paymentModal = usePaymentModal();
@@ -27,13 +33,17 @@ const Cart = () => {
     setIsOpen(false);
   }, []);
 
+  const modeValue = useMemo(() => {
+    return mode.toString();
+  }, [mode]);
+
   let bodyContent: JSX.Element | undefined;
 
   if (cart.length < 1) {
     bodyContent = <EmptyCart />;
   } else {
     bodyContent = (
-      <Wrapper>
+      <Wrapper mode={modeValue}>
         <CartHeader />
         <CartItemsContainer>
           {cart.map((cart) => {
@@ -107,10 +117,11 @@ const CartContainer = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<IProps>`
   width: 100%;
   max-width: 80rem;
   margin: 0 auto;
+  background-color: ${({ mode }) => (mode === 'true' ? '#0d2136' : undefined)};
   box-shadow: ${({ theme }) => theme.boxCart};
   -webkit-box-shadow: ${({ theme }) => theme.boxCart};
   -moz-box-shadow: ${({ theme }) => theme.boxCart};
