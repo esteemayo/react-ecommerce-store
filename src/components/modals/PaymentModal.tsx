@@ -44,6 +44,7 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
   const currentUser = useAuth((state) => state.user);
 
   const [showModal, setShowModal] = useState(isOpen);
+  const [isLoading, setIsLoading] = useState(false);
 
   const closeHandler = () => {
     setShowModal(false);
@@ -77,6 +78,8 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
   };
 
   const onSubmitHandler = async () => {
+    setIsLoading(true);
+
     try {
       const newOrder = {
         customer: currentUser.details.name,
@@ -104,6 +107,8 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
       navigate('/success', { state });
     } catch (err: unknown) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
