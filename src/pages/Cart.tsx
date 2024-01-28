@@ -122,9 +122,9 @@ const Wrapper = styled.div<IProps>`
   max-width: 80rem;
   margin: 0 auto;
   background-color: ${({ mode }) => (mode === 'true' ? '#0d2136' : undefined)};
-  box-shadow: ${({ theme }) => theme.boxCart};
-  -webkit-box-shadow: ${({ theme }) => theme.boxCart};
-  -moz-box-shadow: ${({ theme }) => theme.boxCart};
+  box-shadow: 2px 0.4rem 1rem 1px rgba(201, 201, 201, 0.47);
+  -webkit-box-shadow: 2px 0.4rem 1rem 1px rgba(201, 201, 201, 0.47);
+  -moz-box-shadow: 2px 0.4rem 1rem 1px rgba(201, 201, 201, 0.47);
   border-radius: 1rem;
 `;
 
