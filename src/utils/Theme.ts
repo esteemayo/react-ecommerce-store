@@ -70,7 +70,7 @@ export const darkTheme = {
   textCartBtn: '#7cacf8',
   cartBtnBorder: '#7cacf8',
   cartBorder: '#142e49',
-  bgCartBtn: '#0f243a',
+  bgCartBtn: '#06192a',
   bgImgCartBtn: '#0d2136',
   btnBorder: '#031525',
   bgOverlay: 'rgba(47, 46, 46, 0.5)',
