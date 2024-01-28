@@ -908,6 +908,7 @@ export interface OrderDetailsProps {
   name: string;
   address: string;
   total: number;
+  isLoading: boolean;
   errors: {
     name?: string;
     address?: string;
