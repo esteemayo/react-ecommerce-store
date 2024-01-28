@@ -163,6 +163,7 @@ export const darkTheme = {
   textRevPlace: '#95a5bd',
   forgotOut: '#033058',
   textPayModal: '#95a5bd',
+  payModalOut: '#033058',
 };
 
 export const lightTheme = {
@@ -330,4 +331,5 @@ export const lightTheme = {
   textRevPlace: '#bbb',
   forgotOut: '#ddd',
   textPayModal: '#838283',
+  payModalOut: '#f7f3f8',
 };
