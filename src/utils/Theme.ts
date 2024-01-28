@@ -60,7 +60,7 @@ export const darkTheme = {
   bgSuccess: '#0f243a',
   bgInfo: '#272727',
   successIcon: '#9dd9fd',
-  boxCart: '2px 0.4rem 1rem 1px rgba(80, 78, 78, 0.25)',
+  boxCart: 'none',
   boxRevCard: 'none',
   textCartHeader: '#95a5bd',
   bgCartHeader: '#0f243a',
