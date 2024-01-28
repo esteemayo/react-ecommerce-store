@@ -188,7 +188,7 @@ const CloseButton = styled.button`
   font-size: 2.3rem;
   background-color: transparent;
   color: ${({ theme }) => theme.textPayModal};
-  outline-color: #f7f3f8;
+  outline-color: ${({ theme }) => theme.payModalOut};
   cursor: pointer;
 
   svg {
