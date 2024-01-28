@@ -162,6 +162,7 @@ export const darkTheme = {
   textSearchInput: '#95a5bd',
   textRevPlace: '#95a5bd',
   forgotOut: '#033058',
+  textPayModal: '#95a5bd',
 };
 
 export const lightTheme = {
@@ -328,4 +329,5 @@ export const lightTheme = {
   textSearchInput: '#aaa',
   textRevPlace: '#bbb',
   forgotOut: '#ddd',
+  textPayModal: '#838283',
 };
