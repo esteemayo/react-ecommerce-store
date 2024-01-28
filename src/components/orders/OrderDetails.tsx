@@ -13,6 +13,7 @@ const OrderDetails = ({
   name,
   address,
   total,
+  isLoading,
   errors,
   onChange,
   onSubmit,
@@ -37,7 +38,7 @@ const OrderDetails = ({
         onChange={onChange}
         error={errors.address}
       />
-      <FormButton label='Order' />
+      <FormButton label='Order' disabled={isLoading} loading={isLoading} />
     </Form>
   );
 };
