@@ -64,7 +64,7 @@ const Image = styled(CommonImage)<IMode>`
 `;
 
 const setBcg = (mode: string) => {
-  return mode === 'true' ? '#0d2136' : 'transparent';
+  return mode === 'true' ? '#0d2136' : undefined;
 };
 
 export default ProductValue;
