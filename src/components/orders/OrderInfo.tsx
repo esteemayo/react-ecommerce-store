@@ -23,7 +23,9 @@ const OrderInfo = ({ total }: OrderInfoProps) => {
           <TotalText>Total:</TotalText>
           <Price>{formatCurrency(total)}</Price>
         </TotalContainer>
-        <Button type='button'>Paid</Button>
+        <Button type='button' disabled>
+          Paid
+        </Button>
       </Wrapper>
     </Container>
   );
@@ -133,7 +135,7 @@ const Button = styled.button`
   }
 
   &:disabled {
-    opacity: 0.75;
+    cursor: default;
   }
 `;
 
