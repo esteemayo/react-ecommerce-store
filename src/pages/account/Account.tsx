@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { usePasswordModal } from '../../hooks/usePasswordModal';
 import { useAuth } from '../../hooks/useAuth';
@@ -10,6 +10,11 @@ import { useFileModal } from '../../hooks/useFileModal';
 
 import Heading from './Heading';
 import AccountInfo from './AccountInfo';
+import { useDarkMode } from '../../hooks/useDarkMode';
+
+interface IProps {
+  mode: string;
+}
 
 const Account = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
@@ -18,8 +23,13 @@ const Account = () => {
   const fileModal = useFileModal();
   const currentUser = useAuth((state) => state.user);
   const accountModal = useAccountModal();
+  const mode = useDarkMode((state) => state.mode);
 
   const [avatar, setAvatar] = useState(currentUser.details?.image);
+
+  const modeValue = useMemo(() => {
+    return mode.toString();
+  }, [mode]);
 
   useEffect(() => {
     setAvatar(currentUser.details?.image);
@@ -28,7 +38,7 @@ const Account = () => {
   return (
     <Container onMouseOver={closeSubmenu}>
       <Box>
-        <Wrapper>
+        <Wrapper mode={modeValue}>
           <Heading />
           <AccountInfo
             avatar={avatar}
@@ -84,10 +94,11 @@ const Box = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<IProps>`
   width: 100%;
   max-width: 80rem;
   margin: 0 auto;
+  background-color: ${({ mode }) => (mode === 'true' ? '#0d2136' : undefined)};
 `;
 
 export default Account;

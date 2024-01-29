@@ -150,7 +150,7 @@ export const darkTheme = {
   btnCartOut: '#033058',
   bgBtnModalOut: '#033058',
   menuOut: '#033058',
-  bgImg: '#0d2136',
+  bgImg: '#031525',
   bgImgIcon: 'rgb(211, 227, 253)',
   bgSignInBtn: '#06192a',
   textSignInBtn: '#95a5bd',
