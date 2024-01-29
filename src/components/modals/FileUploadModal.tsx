@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import {
@@ -343,14 +343,16 @@ const Button = styled.button`
   font-weight: 500;
   font-size: 1.4rem;
   padding: 1rem 3rem;
-  background-color: var(--clr-black);
-  color: var(--clr-white);
-  background-image: linear-gradient(
+  background-color: ${({ theme }) => theme.bgCartBtn};
+  color: ${({ theme }) => theme.textBtn};
+  background-image: ${({ theme }) => css`
+  linear-gradient(
     120deg,
     transparent 0%,
     transparent 50%,
-    #333 50%
+    ${theme.bgImgCartBtn} 50%
   );
+  `};
   background-size: 220%;
   border-radius: 0.5rem;
   outline-color: #777;
