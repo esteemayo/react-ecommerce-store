@@ -55,7 +55,7 @@ const Status = styled.span`
 `;
 
 const setBcg = (mode: string) => {
-  return mode === 'true' ? '#1b1a1a' : undefined;
+  return mode === 'true' ? '#0f243a' : undefined;
 };
 
 export default OrderStatusItem;
