@@ -164,6 +164,7 @@ export const darkTheme = {
   forgotOut: '#033058',
   textPayModal: '#95a5bd',
   payModalOut: '#033058',
+  accInputBorder: '#95a5bd',
 };
 
 export const lightTheme = {
@@ -332,4 +333,5 @@ export const lightTheme = {
   forgotOut: '#ddd',
   textPayModal: '#838283',
   payModalOut: '#f7f3f8',
+  accInputBorder: '#f3f4f6',
 };
