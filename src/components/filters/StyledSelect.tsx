@@ -13,7 +13,7 @@ export const StyledSelect = styled.select<ISelect>`
   font-size: 1.4rem;
   background-color: transparent;
   color: ${({ theme }) => theme.textFilterSelect};
-  border: 1px solid #ddd;
+  border: 1px solid ${({ theme }) => theme.textFilterBorder};
   border-radius: 3px;
   outline-color: ${({ theme }) => theme.filterOut};
 
