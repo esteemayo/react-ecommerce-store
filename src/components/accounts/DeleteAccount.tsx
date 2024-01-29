@@ -74,7 +74,7 @@ const Heading = styled.h4`
 
 const WarningText = styled.p`
   font-size: 1.5rem;
-  color: #aaa;
+  color: ${({ theme }) => theme.textSearchInput};
   line-height: 1.2;
   margin-top: 1rem;
 `;
