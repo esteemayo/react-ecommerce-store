@@ -68,11 +68,14 @@ const Orders = () => {
 const Box = styled.main`
   width: 100vw;
   height: 100vh;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const Container = styled.main`
   width: 100vw;
+  min-height: 100vh;
   padding: 10rem 0;
+  background-color: ${({ theme }) => theme.bg};
 
   @media only screen and (max-width: 64em) {
     padding-top: 8rem;
