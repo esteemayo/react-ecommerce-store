@@ -55,7 +55,7 @@ export const darkTheme = {
   boxForm: '0 1rem 2rem rgba(145, 143, 143, 0.15)',
   inputCaret: 'var(--caret-dark)',
   fileInput: '#0f243a',
-  uploadFileInput: '#353535',
+  uploadFileInput: '#95a5bd',
   textFile: '#95a5bd',
   bgSuccess: '#0f243a',
   bgInfo: '#272727',
