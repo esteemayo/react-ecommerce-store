@@ -143,11 +143,11 @@ const OrderTotal = styled.p`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #aaa;
+  color: ${({ theme }) => theme.textSearchInput};
   outline: none;
 
   &:active {
-    color: #aaa;
+    color: currentColor;
   }
 `;
 
@@ -160,7 +160,7 @@ const Button = styled.button`
   color: ${({ theme }) => theme.textSearchInput};
   border: 1px solid ${({ theme }) => theme.textOrderBtn};
   border-radius: 0.5rem;
-  outline-color: #eee;
+  outline-color: ${({ theme }) => theme.inputOut};
   cursor: pointer;
 
   @media only screen and (max-width: 64em) {
