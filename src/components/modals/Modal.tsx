@@ -103,8 +103,8 @@ const Button = styled.button`
   height: 2.5rem;
   font-size: 2.3rem;
   background-color: transparent;
-  color: #838283;
-  outline-color: #f7f3f8;
+  color: ${({ theme }) => theme.textPayModal};
+  outline-color: ${({ theme }) => theme.payModalOut};
   cursor: pointer;
 
   @media only screen and (max-width: 25em) {
