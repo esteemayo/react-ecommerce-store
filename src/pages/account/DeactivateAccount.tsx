@@ -37,7 +37,7 @@ const Header = styled.h2`
 
 const Warning = styled.p`
   font-size: 1.3rem;
-  color: #999;
+  color: ${({ theme }) => theme.textDelWarning};
   line-height: 1.2;
   word-wrap: break-word;
 
