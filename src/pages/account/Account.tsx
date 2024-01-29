@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
-import { usePasswordModal } from '../../hooks/usePasswordModal';
-import { useAuth } from '../../hooks/useAuth';
 import { useEmailModal } from '../../hooks/useEmailModal';
-import { useSubmenu } from '../../hooks/useSubmenu';
+import { useAuth } from '../../hooks/useAuth';
 import { useAccountModal } from '../../hooks/useAccountModal';
+import { useSubmenu } from '../../hooks/useSubmenu';
+import { usePasswordModal } from '../../hooks/usePasswordModal';
 import { useFileModal } from '../../hooks/useFileModal';
 
 import Heading from './Heading';
