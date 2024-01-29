@@ -1,15 +1,8 @@
 import styled from 'styled-components';
-import { useEffect, useRef } from 'react';
 
 import { AccountHeadProps } from '../../types';
 
 const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
-
   return (
     <Container>
       <Wrapper>
@@ -20,7 +13,6 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           name='name'
           value={currentUser.details.name}
           placeholder={currentUser.details.name}
-          ref={inputRef}
           readOnly
         />
       </Wrapper>
