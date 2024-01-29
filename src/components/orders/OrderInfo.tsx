@@ -112,7 +112,7 @@ const Button = styled.button`
     120deg,
     transparent 0%,
     transparent 50%,
-    ${theme.bgCartBtn} 50%
+    ${theme.bgPayBtn} 50%
   );
   `};
   background-size: 220%;
