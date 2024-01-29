@@ -177,7 +177,7 @@ const Button = styled.button`
 
 const setBcg = (status: number) => {
   if (status === 0) return 'var(--clr-primary-red)';
-  if (status === 1) return '#ffb900';
+  if (status === 1) return 'var(--clr-yellow)';
   if (status === 2) return 'var(--clr-primary-green)';
 };
 
