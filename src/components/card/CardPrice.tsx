@@ -49,7 +49,7 @@ const Discount = styled.span`
 `;
 
 const InStock = styled.div`
-  color: #00e774;
+  color: var(--clr-green);
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@ const InStock = styled.div`
     display: inline-block;
     width: 1rem;
     height: 1rem;
-    background-color: #00e774;
+    background-color: var(--clr-green);
     border-radius: 50%;
 
     @media only screen and (max-width: 35em) {
