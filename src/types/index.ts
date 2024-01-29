@@ -776,7 +776,7 @@ export interface ReviewsProps {
   reviews: ReviewItem;
   ratingsAverage: number;
   ratingsQuantity: number;
-  sortLabel?: 'newest' | 'highest rating' | 'lowest rating';
+  sortLabel?: 'latest' | 'highest rating' | 'lowest rating';
   sort: string | null;
   onSort: React.Dispatch<SetStateAction<string>>;
   onReviews(value: React.SetStateAction<ReviewItem>): void;
@@ -785,7 +785,7 @@ export interface ReviewsProps {
 
 export interface ReviewHeadProps {
   sort: string | null;
-  sortLabel?: string;
+  sortLabel?: 'latest' | 'highest rating' | 'lowest rating';
   ratingsAverage: number;
   reviews: ReviewItem;
   isOpen: boolean;
@@ -844,7 +844,7 @@ export interface EmptyReviewProps {
 
 export interface ReviewFilterProps {
   sort: string | null;
-  value?: string;
+  value?: 'latest' | 'highest rating' | 'lowest rating';
   isOpen: boolean;
   onClick(): void;
   onSort: React.Dispatch<SetStateAction<string>>;
