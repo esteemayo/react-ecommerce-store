@@ -127,6 +127,7 @@ const Image = styled(CommonImage)`
 const Message = styled.span`
   display: block;
   font-size: 3rem;
+  color: ${({ theme }) => theme.text};
   margin-top: -5rem;
 
   @media only screen and (max-width: 37.5em) {
@@ -139,6 +140,7 @@ const Heading = styled.h1`
   text-transform: capitalize;
   font-weight: 500;
   font-size: 2.8rem;
+  color: ${({ theme }) => theme.text};
 
   @media only screen and (max-width: 64em) {
     font-size: 2.5rem;
