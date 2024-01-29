@@ -101,7 +101,7 @@ export const darkTheme = {
   sizeHover: '#142e49',
   sizeHovModal: '#252525',
   textAccBtn: '#9dd9fd',
-  textDelHeader: '#95a5bd',
+  textDelHeader: '#9dd9fd',
   textProdHeader: '#95a5bd',
   textReviewCount: '#7cacf8',
   textInfo: '#7cacf8',
