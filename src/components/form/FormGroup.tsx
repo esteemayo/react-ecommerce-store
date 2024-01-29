@@ -10,7 +10,6 @@ export const FormGroup = styled.div`
 
   & > label {
     display: inline-block;
-    width: 13rem;
     font-weight: 600;
     font-size: 1.4rem;
     color: ${({ theme }) => theme.textLabel};
