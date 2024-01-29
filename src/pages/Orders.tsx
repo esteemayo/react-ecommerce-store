@@ -34,12 +34,7 @@ const Orders = () => {
   if (orders?.length < 1) {
     bodyContent = (
       <ImageContainer>
-        <StyledImage
-          src='/img/empty-list.png'
-          width={500}
-          height={500}
-          alt=''
-        />
+        <Image src='/img/empty-list.png' width={500} height={500} alt='' />
         <Message>No orders found</Message>
       </ImageContainer>
     );
@@ -123,7 +118,7 @@ const ImageContainer = styled.div`
   justify-content: center;
 `;
 
-const StyledImage = styled(CommonImage)`
+const Image = styled(CommonImage)`
   width: 30rem;
   height: 30rem;
   background-color: transparent;
