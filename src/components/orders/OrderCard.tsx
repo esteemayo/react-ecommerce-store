@@ -52,7 +52,10 @@ const OrderCard = ({ _id: id, total, status, createdAt }: OrderCardProps) => {
 const Container = styled.article<IContainer>`
   width: 30%;
   background-color: ${({ theme }) => theme.bgOrderCard};
-  border-radius: 1rem;
+  border-top-left-radius: ${({ status }) => setRadius(status)};
+  border-top-right-radius: ${({ status }) => setRadius(status)};
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   box-shadow: ${({ theme }) => theme.boxCat};
   -webkit-box-shadow: ${({ theme }) => theme.boxCat};
   -moz-box-shadow: ${({ theme }) => theme.boxCat};
@@ -68,11 +71,10 @@ const Container = styled.article<IContainer>`
   &::before {
     content: '';
     display: block;
-    width: 95%;
-    height: 2px;
+    width: 100%;
+    height: 3px;
     margin: 0 auto;
     background-color: ${({ status }) => setBcg(status)};
-    border-radius: 1rem;
   }
 `;
 
@@ -174,6 +176,11 @@ const Button = styled.button`
     padding: 1rem 2.5rem;
   }
 `;
+
+const setRadius = (status: number) => {
+  if (status < 3) return 0;
+  return '1rem';
+};
 
 const setBcg = (status: number) => {
   if (status === 0) return 'var(--clr-primary-red)';
