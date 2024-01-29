@@ -1,6 +1,6 @@
+import { Filter } from './Filter';
 import { Label } from './Label';
 import { StyledSelect } from './StyledSelect';
-import { Filter } from './Filter';
 
 import { FilterSelect } from '../../types';
 
