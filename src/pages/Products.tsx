@@ -117,6 +117,7 @@ const Container = styled.section`
   width: 100vw;
   min-height: 100vh;
   padding: 10rem 0;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 export default Products;
