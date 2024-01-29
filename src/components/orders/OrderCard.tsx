@@ -157,8 +157,8 @@ const Button = styled.button`
   font-size: 1.3rem;
   padding: 1rem 2rem;
   background-color: transparent;
-  color: #aaa;
-  border: 1px solid #ccc;
+  color: ${({ theme }) => theme.textSearchInput};
+  border: 1px solid ${({ theme }) => theme.textOrderBtn};
   border-radius: 0.5rem;
   outline-color: #eee;
   cursor: pointer;
