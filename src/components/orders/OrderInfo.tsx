@@ -23,9 +23,7 @@ const OrderInfo = ({ total }: OrderInfoProps) => {
           <TotalText>Total:</TotalText>
           <Price>{formatCurrency(total)}</Price>
         </TotalContainer>
-        <Button type='button' disabled>
-          Paid
-        </Button>
+        <Button type='button'>Paid</Button>
       </Wrapper>
     </Container>
   );
