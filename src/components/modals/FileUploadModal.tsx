@@ -355,7 +355,7 @@ const Button = styled.button`
   `};
   background-size: 220%;
   border-radius: 0.5rem;
-  outline-color: #777;
+  outline-color: ${({ theme }) => theme.btnCartOut};
   cursor: pointer;
   transition: all 0.3s;
 
