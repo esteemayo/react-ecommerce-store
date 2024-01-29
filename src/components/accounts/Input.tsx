@@ -31,7 +31,7 @@ const StyledInput = styled.input`
   padding: 1.25rem 1rem;
   background-color: transparent;
   color: ${({ theme }) => theme.textInput};
-  border: 2px solid #f3f4f6;
+  border: 2px solid ${({ theme }) => theme.accInputBorder};
   border-radius: 0.5rem;
   outline-color: ${({ theme }) => theme.inputOut};
   caret-color: ${({ theme }) => theme.inputCaret};
