@@ -100,7 +100,7 @@ export const darkTheme = {
   textSize: '#95a5bd',
   sizeHover: '#142e49',
   sizeHovModal: '#252525',
-  textAccBtn: '#95a5bd',
+  textAccBtn: '#9dd9fd',
   textDelHeader: '#95a5bd',
   textProdHeader: '#95a5bd',
   textReviewCount: '#7cacf8',
