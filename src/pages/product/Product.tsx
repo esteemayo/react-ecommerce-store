@@ -67,13 +67,13 @@ const SingleProduct = () => {
   }, [inCart]);
 
   const getSort = useMemo(() => {
-    if (sort === 'newest') return 'newest';
+    if (sort === 'latest') return 'latest';
     if (sort === 'highest') return 'highest rating';
     if (sort === 'lowest') return 'lowest rating';
   }, [sort]);
 
   useEffect(() => {
-    if (sort === 'newest') {
+    if (sort === 'latest') {
       setReviews((prev) =>
         [...prev].sort(
           (a, b) =>

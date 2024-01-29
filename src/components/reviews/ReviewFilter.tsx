@@ -28,7 +28,7 @@ const ReviewFilter = ({
         </FilterIcon>
       </Wrapper>
       <FilterListContainer type={isOpen ? 'show' : ''}>
-        <FilterList onClick={() => onSort('newest')}>Newest</FilterList>
+        <FilterList onClick={() => onSort('latest')}>Latest</FilterList>
         <FilterList onClick={() => onSort('highest')}>
           Highest rating
         </FilterList>
