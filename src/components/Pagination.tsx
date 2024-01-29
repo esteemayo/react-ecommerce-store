@@ -123,7 +123,7 @@ const TotalItems = styled.p`
   text-transform: lowercase;
   padding-top: 2rem;
   font-size: 1.5rem;
-  color: #999;
+  color: ${({ theme }) => theme.textCartItem};
 `;
 
 export default Pagination;
