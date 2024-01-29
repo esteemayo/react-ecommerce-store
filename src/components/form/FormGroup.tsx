@@ -8,7 +8,7 @@ export const FormGroup = styled.div`
     margin-bottom: 2rem;
   }
 
-  & > label {
+  label {
     display: inline-block;
     font-weight: 600;
     font-size: 1.4rem;
