@@ -12,11 +12,11 @@ import Heading from './Heading';
 import AccountInfo from './AccountInfo';
 
 const Account = () => {
-  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
-  const emailModal = useEmailModal();
   const passwordModal = usePasswordModal();
   const fileModal = useFileModal();
   const currentUser = useAuth((state) => state.user);
+  const emailModal = useEmailModal();
+  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
   const accountModal = useAccountModal();
 
   const [avatar, setAvatar] = useState(currentUser.details?.image);
