@@ -10,7 +10,6 @@ const Heading = () => {
 };
 
 const Container = styled.div`
-  padding: 3rem 3rem 0 3rem;
   margin-bottom: 1.2rem;
 `;
 

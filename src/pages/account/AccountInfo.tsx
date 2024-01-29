@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import AccountUpload from './AccountUpload';
@@ -5,6 +6,11 @@ import AccountHead from './AccountHead';
 import DeactivateAccount from './DeactivateAccount';
 
 import { AccountInfoProps } from '../../types';
+import { useDarkMode } from '../../hooks/useDarkMode';
+
+interface IProps {
+  mode: string;
+}
 
 const AccountInfo = ({
   avatar,
@@ -14,8 +20,14 @@ const AccountInfo = ({
   fileModal,
   passwordModal,
 }: AccountInfoProps) => {
+  const mode = useDarkMode((state) => state.mode);
+
+  const modeValue = useMemo(() => {
+    return mode.toString();
+  }, [mode]);
+
   return (
-    <Container>
+    <Container mode={modeValue}>
       <Wrapper>
         <Box>
           <Left>
@@ -35,8 +47,9 @@ const AccountInfo = ({
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<IProps>`
   padding: 3rem 5rem;
+  background-color: ${({ mode }) => (mode === 'true' ? '#0d2136' : undefined)};
   box-shadow: ${({ theme }) => theme.boxCart};
   -webkit-box-shadow: ${({ theme }) => theme.boxCart};
   -moz-box-shadow: ${({ theme }) => theme.boxCart};
