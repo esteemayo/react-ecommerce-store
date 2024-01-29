@@ -134,7 +134,7 @@ export const darkTheme = {
   bgOrderTotal: '#0f243a',
   textOrderTotal: 'rgb(211, 227, 253)',
   textOrderBtn: '#95a5bd',
-  boxOrderTotal: '0 1rem 4rem rgba(145, 143, 143, 0.15)',
+  boxOrderTotal: 'none',
   bgSpnr: '#7cacf8',
   spnrBorTop: '#0f243a',
   textSlider: 'rgb(211, 227, 253)', //rgb(241, 243, 248)
