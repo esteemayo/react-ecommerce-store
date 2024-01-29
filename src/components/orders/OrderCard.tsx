@@ -39,9 +39,9 @@ const OrderCard = ({ _id: id, total, status, createdAt }: OrderCardProps) => {
           </OrderIconWrapper>
         </OrderDateIconContainer>
         <OrderTotal>Total: {formatCurrency(total)}</OrderTotal>
-        <Link to={url}>
+        <StyledLink to={url}>
           <Button type='button'>Order details</Button>
-        </Link>
+        </StyledLink>
       </Order>
     </Container>
   );
@@ -95,19 +95,6 @@ const OrderIconWrapper = styled.div`
 
 const Order = styled.div`
   padding: 2rem;
-
-  a {
-    &:link,
-    &:visited {
-      text-decoration: none;
-      color: #aaa;
-      outline: none;
-    }
-
-    &:active {
-      color: #aaa;
-    }
-  }
 `;
 
 const OrderId = styled.h2`
@@ -151,6 +138,16 @@ const OrderTotal = styled.p`
 
   @media only screen and (max-width: 37.5em) {
     font-size: 2.43rem;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #aaa;
+  outline: none;
+
+  &:active {
+    color: #aaa;
   }
 `;
 
