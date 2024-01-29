@@ -85,7 +85,7 @@ const OrderDateWrapper = styled.div``;
 const OrderIconWrapper = styled.div`
   svg {
     font-size: 1.8rem;
-    fill: #bbb;
+    fill: ${({ theme }) => theme.textRevPlace};
 
     @media only screen and (max-width: 37.5em) {
       font-size: 2.3rem;
