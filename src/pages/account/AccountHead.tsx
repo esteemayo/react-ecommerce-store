@@ -116,7 +116,7 @@ const Button = styled.button`
   background-color: transparent;
   color: ${({ theme }) => theme.textAccBtn};
   outline-offset: 3px;
-  outline-color: #ccc;
+  outline-color: ${({ theme }) => theme.btnRevOut};
   cursor: pointer;
 `;
 
