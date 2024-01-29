@@ -22,6 +22,10 @@ const OrderCard = ({ _id: id, total, status, createdAt }: OrderCardProps) => {
     return date;
   }, [createdAt]);
 
+  const url = useMemo(() => {
+    return `/orders/${encodeURIComponent(id)}`;
+  }, [id]);
+
   return (
     <Container status={status}>
       <Order>
@@ -35,7 +39,7 @@ const OrderCard = ({ _id: id, total, status, createdAt }: OrderCardProps) => {
           </OrderIconWrapper>
         </OrderDateIconContainer>
         <OrderTotal>Total: {formatCurrency(total)}</OrderTotal>
-        <Link to={`/orders/${encodeURIComponent(id)}`}>
+        <Link to={url}>
           <Button type='button'>Order details</Button>
         </Link>
       </Order>
