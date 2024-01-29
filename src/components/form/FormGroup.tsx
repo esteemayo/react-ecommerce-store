@@ -7,4 +7,12 @@ export const FormGroup = styled.div`
   &:not(:last-of-type) {
     margin-bottom: 2rem;
   }
+
+  & > label {
+    display: inline-block;
+    width: 13rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: ${({ theme }) => theme.textLabel};
+  }
 `;
