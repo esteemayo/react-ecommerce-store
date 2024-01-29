@@ -3,8 +3,10 @@ import { useMemo } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
 
-import { DateOptions, OrderCardProps } from '../../types';
+import { excerpts } from '../../utils';
 import { formatCurrency } from '../../utils/formatCurrency';
+
+import { DateOptions, OrderCardProps } from '../../types';
 
 interface IContainer {
   status: number;
@@ -31,7 +33,7 @@ const OrderCard = ({ _id: id, total, status, createdAt }: OrderCardProps) => {
       <Order>
         <OrderDateIconContainer>
           <OrderDateWrapper>
-            <OrderId>Order id: {id}</OrderId>
+            <OrderId>Order id: {excerpts(id, 15)}</OrderId>
             <OrderDate dateTime={createdAt}>Placed on {dateLabel}</OrderDate>
           </OrderDateWrapper>
           <OrderIconWrapper>
