@@ -114,6 +114,7 @@ const OrderId = styled.h2`
   display: inline-block;
   font-weight: 400;
   font-size: 2rem;
+  color: ${({ theme }) => theme.text};
 
   @media only screen and (max-width: 64em) {
     font-size: 1.8rem;
@@ -127,7 +128,7 @@ const OrderId = styled.h2`
 const OrderDate = styled.time`
   display: block;
   font-size: 1.45rem;
-  color: #aaa;
+  color: ${({ theme }) => theme.textSearchInput};
 
   @media only screen and (max-width: 64em) {
     font-size: 1.3rem;
@@ -141,7 +142,7 @@ const OrderDate = styled.time`
 const OrderTotal = styled.p`
   font-weight: 500;
   font-size: 2.5rem;
-  color: inherit;
+  color: ${({ theme }) => theme.text};
   margin: 1rem 0 0.5rem;
 
   @media only screen and (max-width: 64em) {
