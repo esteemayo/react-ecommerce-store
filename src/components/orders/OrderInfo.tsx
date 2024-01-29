@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { formatCurrency } from '../../utils/formatCurrency';
 
@@ -105,14 +105,16 @@ const Button = styled.button`
   font-weight: 600;
   font-size: 1.5rem;
   padding: 1.35rem 3rem;
-  background-color: var(--clr-black);
+  background-color: ${({ theme }) => theme.bgPay};
   color: ${({ theme }) => theme.textBtn};
-  background-image: linear-gradient(
+  background-image: ${({ theme }) => css`
+  linear-gradient(
     120deg,
     transparent 0%,
     transparent 50%,
-    #333 50%
+    ${theme.bgCartBtn} 50%
   );
+  `};
   background-size: 220%;
   border-radius: 0.5rem;
   outline-color: #222;
