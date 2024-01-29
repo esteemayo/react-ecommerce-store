@@ -309,7 +309,7 @@ export const lightTheme = {
   bgOrderTotal: 'var(--clr-secondary-green)',
   textOrderTotal: 'var(--clr-white)',
   textOrderBtn: '#cccccc',
-  boxOrderTotal: '0 2rem 4rem rgba(0, 0, 0, 0.15)',
+  boxOrderTotal: '0 1rem 2rem rgba(0, 0, 0, 0.1)',
   bgSpnr: '#f5f5f5',
   spnrBorTop: '#979797',
   textSlider: 'var(--clr-white)',
