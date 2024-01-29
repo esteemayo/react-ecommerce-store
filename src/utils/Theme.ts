@@ -305,7 +305,7 @@ export const lightTheme = {
   bgIconMode: '#39393c',
   textMode: '#e4e4e8',
   boxMode: '0 0 0.4rem rgba(82, 76, 76, 0.5)',
-  bgOrderTotal: '#555555',
+  bgOrderTotal: 'var(--clr-secondary-green)',
   textOrderTotal: 'var(--clr-white)',
   textOrderBtn: '#cccccc',
   boxOrderTotal: '0 2rem 4rem rgba(0, 0, 0, 0.15)',
