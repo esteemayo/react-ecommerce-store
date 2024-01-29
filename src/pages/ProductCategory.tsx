@@ -149,6 +149,7 @@ const ProductCategory = () => {
 const LoaderContainer = styled.section`
   width: 100vw;
   min-height: 100vh;
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 const Container = styled.section`
