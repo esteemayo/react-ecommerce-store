@@ -9,9 +9,10 @@ import ProductList from '../components/products/ProductList';
 import Loader from '../components/Loader';
 import Pagination from '../components/Pagination';
 
-import { ProductValues } from '../types';
-import { getProducts } from '../services/productService';
 import { useQuery } from '../utils';
+import { ProductValues } from '../types';
+
+import { getProducts } from '../services/productService';
 
 const Products = () => {
   const query = useQuery();
