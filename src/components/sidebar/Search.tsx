@@ -34,6 +34,7 @@ const Input = styled.input`
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   outline-color: ${({ theme }) => theme.inputOut};
+  outline: none;
   caret-color: ${({ theme }) => theme.inputCaret};
 
   @media only screen and (max-width: 25rem) {
