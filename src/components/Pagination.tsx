@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { useCallback, useMemo } from 'react';
 
 import { PaginationProps } from '../types';
 
@@ -13,7 +13,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
     return `/products?page=${page! - 1}`;
   }, [page]);
 
-  const renderPagination = () => {
+  const renderPagination = useCallback(() => {
     if (page === 1 && page === numberOfPages) return null;
 
     if (page === 1) {
@@ -49,7 +49,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
         </>
       );
     }
-  };
+  }, [nextPage, numberOfPages, page, prevPage]);
 
   return (
     <Container>
