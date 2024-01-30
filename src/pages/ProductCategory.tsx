@@ -36,6 +36,10 @@ const ProductCategory = () => {
     },
   });
 
+  const handleSort = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSort(e.target.value);
+  }, []);
+
   const handleFilter = useCallback(
     ({
       target: input,
@@ -130,9 +134,7 @@ const ProductCategory = () => {
               label='Product price'
               value={sort}
               options={priceOptions}
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                setSort(e.target.value)
-              }
+              onChange={handleSort}
             />
           </Right>
         </Wrapper>
