@@ -30,6 +30,7 @@ const Input = styled.input`
   background-color: transparent;
   color: ${({ theme }) => theme.textInput};
   border: 2px solid ${({ theme }) => theme.modalInputBorder};
+  border-right: none;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   outline-color: ${({ theme }) => theme.inputOut};
