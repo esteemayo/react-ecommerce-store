@@ -138,7 +138,7 @@ export const darkTheme = {
   boxOrderTotal: 'none',
   bgSpnr: '#7cacf8',
   spnrBorTop: '#0f243a',
-  textSlider: 'rgb(211, 227, 253)', //rgb(241, 243, 248)
+  textSlider: 'rgb(211, 227, 253)',
   boxSub: '0 0.5rem 2rem rgba(197, 196, 196, 0.09)',
   bgSearch: '#031525',
   bgToggleMode: 'rgb(211, 227, 253)',
