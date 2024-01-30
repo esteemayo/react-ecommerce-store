@@ -119,7 +119,7 @@ const ProductCategory = () => {
               options={colors}
               onChange={handleFilter}
             />
-            {sizes.length > 0 && (
+            {sizes.length > 1 && (
               <Select
                 name='size'
                 label='Product size'
