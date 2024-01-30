@@ -13,9 +13,9 @@ const SearchHistory = ({
 }: SearchHistoryProps) => {
   return (
     <Container key={id}>
-      <IconWRapper>
+      <IconWrapper>
         <FontAwesomeIcon icon={faClock} />
-      </IconWRapper>
+      </IconWrapper>
       <History>
         <StyledLink to={`/search?q=${query}`} onClick={onClose}>
           {query}
@@ -42,7 +42,7 @@ const Container = styled.article`
   }
 `;
 
-const IconWRapper = styled.div`
+const IconWrapper = styled.div`
   svg {
     font-size: 1.75rem;
     color: inherit;
