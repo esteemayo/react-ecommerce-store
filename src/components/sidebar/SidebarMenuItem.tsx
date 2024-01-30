@@ -22,7 +22,7 @@ const SidebarMenuItem = ({
 };
 
 const ListItem = styled.li`
-  font-size: 1.4rem;
+  font-size: var(--default-font-size);
   color: ${({ theme }) => theme.text};
 
   @media only screen and (max-width: 18.75em) {
