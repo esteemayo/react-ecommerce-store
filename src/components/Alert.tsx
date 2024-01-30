@@ -23,7 +23,11 @@ const Message = styled.span<IMessage>`
   display: block;
   font-size: 1.4rem;
   color: var(--clr-green-dark);
-  text-align: ${({ center }) => (center === 'true' ? 'center' : 'left')};
+  text-align: ${({ center }) => setProperty(center)};
 `;
+
+const setProperty = (center?: string) => {
+  return center === 'true' ? 'center' : 'left';
+};
 
 export default Alert;
