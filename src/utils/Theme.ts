@@ -7,7 +7,7 @@ export const darkTheme = {
   textSoft: 'rgb(211, 227, 253)',
   textHeader: 'rgb(211, 227, 253)',
   textMenuHov: '#7cacf8',
-  textSideMenuHov: '#7cacf8',
+  textSideMenuHov: '#95a5bd',
   soft: '#0d2136',
   bgProdCard: '#0f243a',
   bgOrderCard: '#0d2136',
