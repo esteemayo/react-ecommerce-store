@@ -11,8 +11,14 @@ import Pagination from '../components/Pagination';
 
 import { ProductValues } from '../types';
 import { getProducts } from '../services/productService';
+import { useQuery } from '../utils';
 
 const Products = () => {
+  const query = useQuery();
+  const currentPage = query.get('page');
+
+  const pageNumber = Number(currentPage);
+
   const [category, setCategory] = useState('all');
   const [size, setSize] = useState('all');
   const [color, setColor] = useState('all');
@@ -23,17 +29,16 @@ const Products = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
 
-  const [counts, setCounts] = useState(20);
-  const [page, setPage] = useState(1);
-  const [numberOfPages, setNumberOfPages] = useState(1);
+  const [counts, setCounts] = useState<number>();
+  const [page, setPage] = useState<number>();
+  const [numberOfPages, setNumberOfPages] = useState<number>();
 
   useEffect(() => {
     (async () => {
       setIsLoading(true);
 
       try {
-        const { data } = await getProducts(page);
-        console.log(data);
+        const { data } = await getProducts(pageNumber);
         const maxPrice = Math.max(
           ...data.products.map((item: ProductValues) => item.price)
         );
@@ -52,7 +57,7 @@ const Products = () => {
         setIsLoading(false);
       }
     })();
-  }, [page]);
+  }, [pageNumber]);
 
   useEffect(() => {
     let tempProducts = [...products];
