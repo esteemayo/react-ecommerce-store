@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
+import { Filter } from './Filter';
 import { Label } from './Label';
 import { StyledSelect } from './StyledSelect';
-import { Filter } from './Filter';
 
 import { SelectPriceProps } from '../../types';
 
