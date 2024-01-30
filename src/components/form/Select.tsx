@@ -63,7 +63,7 @@ export const StyledSelect = styled.select`
 
 export const Option = styled.option`
   text-transform: capitalize;
-  background-color: ${({ theme }) => theme.bgProdCard};
+  background-color: ${({ theme }) => theme.bgSelect};
   color: inherit;
 `;
 
