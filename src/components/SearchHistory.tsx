@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import { useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import { faClock, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 import { SearchHistoryProps } from '../types';
 
@@ -11,13 +12,17 @@ const SearchHistory = ({
   onClose,
   onDelete,
 }: SearchHistoryProps) => {
+  const url = useMemo(() => {
+    return `/search?q=${query}`;
+  }, [query]);
+
   return (
     <Container key={id}>
       <IconWrapper>
         <FontAwesomeIcon icon={faClock} />
       </IconWrapper>
       <History>
-        <StyledLink to={`/search?q=${query}`} onClick={onClose}>
+        <StyledLink to={url} onClick={onClose}>
           {query}
         </StyledLink>
       </History>
