@@ -44,6 +44,7 @@ const StyledLink = styled(Link)`
     & > svg {
       color: ${({ theme }) => theme.textMenuHov};
     }
+
     color: ${({ theme }) => theme.textMenuHov};
   }
 
