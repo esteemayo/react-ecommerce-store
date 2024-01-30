@@ -30,13 +30,15 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
         </>
       );
     } else {
-      <>
-        <StyledLink to={`/products?page=${page - 1}`}>
-          <Button type='button'>Prev</Button>
-        </StyledLink>
-        <CurrentPage>9</CurrentPage>
-        <Button type='button'>&nbsp;</Button>
-      </>;
+      return (
+        <>
+          <StyledLink to={`/products?page=${page - 1}`}>
+            <Button type='button'>Prev</Button>
+          </StyledLink>
+          <CurrentPage>9</CurrentPage>
+          <Button type='button'>&nbsp;</Button>
+        </>
+      );
     }
   };
 
