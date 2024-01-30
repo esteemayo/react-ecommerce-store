@@ -82,12 +82,12 @@ const ProductCategory = () => {
   }, [sort]);
 
   let colors = getUnique(products, 'color');
-  colors = colors.map((color, index) => {
+  colors = colors?.map((color, index) => {
     return <Option key={index} value={color} />;
   });
 
   let sizes = getUnique(products, 'size');
-  sizes = sizes.map((size, index) => {
+  sizes = sizes?.map((size, index) => {
     return <Option key={index} value={size} />;
   });
 
