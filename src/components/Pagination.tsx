@@ -1,9 +1,18 @@
 import styled from 'styled-components';
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { PaginationProps } from '../types';
 
 const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
+  const nextPage = useMemo(() => {
+    return `/products?page=${page! + 1}`;
+  }, [page]);
+
+  const prevPage = useMemo(() => {
+    return `/products?page=${page! - 1}`;
+  }, [page]);
+
   const renderPagination = () => {
     if (page === 1 && page === numberOfPages) return null;
 
@@ -12,7 +21,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
         <>
           <Button type='button'>&nbsp;</Button>
           <CurrentPage>{page!}</CurrentPage>
-          <StyledLink to={`/products?page=${page! + 1}`}>
+          <StyledLink to={nextPage}>
             <Button type='button'>Next</Button>
           </StyledLink>
         </>
@@ -20,11 +29,11 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
     } else if (page !== numberOfPages) {
       return (
         <>
-          <StyledLink to={`/products?page=${page! - 1}`}>
+          <StyledLink to={prevPage}>
             <Button type='button'>Prev</Button>
           </StyledLink>
           <CurrentPage>{page!}</CurrentPage>
-          <StyledLink to={`/products?page=${page! + 1}`}>
+          <StyledLink to={nextPage}>
             <Button type='button'>Next</Button>
           </StyledLink>
         </>
@@ -32,7 +41,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
     } else {
       return (
         <>
-          <StyledLink to={`/products?page=${page! - 1}`}>
+          <StyledLink to={prevPage}>
             <Button type='button'>Prev</Button>
           </StyledLink>
           <CurrentPage>{page!}</CurrentPage>
