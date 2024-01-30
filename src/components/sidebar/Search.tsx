@@ -29,10 +29,10 @@ const Input = styled.input`
   padding: 1rem;
   background-color: transparent;
   color: ${({ theme }) => theme.textInput};
-  border: 2px solid #eef2ff;
+  border: 2px solid ${({ theme }) => theme.modalInputBorder};
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
-  outline-color: #eee;
+  outline-color: ${({ theme }) => theme.inputOut};
   caret-color: ${({ theme }) => theme.inputCaret};
 
   @media only screen and (max-width: 25rem) {
