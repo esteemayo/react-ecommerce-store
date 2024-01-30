@@ -5,7 +5,7 @@ import ProductBox from '../components/products/ProductBox';
 import ProductList from '../components/products/ProductList';
 
 import Loader from '../components/Loader';
-import EmptySearch from '../components/EmptySearch';
+import EmptySearch from '../components/empty/EmptySearch';
 
 import { useSearchStore } from '../hooks/useSearchStore';
 import { searchProducts } from '../services/productService';
