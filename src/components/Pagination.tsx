@@ -11,7 +11,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
       return (
         <>
           <Button type='button'>&nbsp;</Button>
-          <CurrentPage>9</CurrentPage>
+          <CurrentPage>{numberOfPages}</CurrentPage>
           <StyledLink to={`/products?page=${page + 1}`}>
             <Button type='button'>Next</Button>
           </StyledLink>
@@ -23,7 +23,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
           <StyledLink to={`/products?page=${page - 1}`}>
             <Button type='button'>Prev</Button>
           </StyledLink>
-          <CurrentPage>9</CurrentPage>
+          <CurrentPage>{numberOfPages}</CurrentPage>
           <StyledLink to={`/products?page=${page + 1}`}>
             <Button type='button'>Next</Button>
           </StyledLink>
@@ -35,7 +35,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
           <StyledLink to={`/products?page=${page - 1}`}>
             <Button type='button'>Prev</Button>
           </StyledLink>
-          <CurrentPage>9</CurrentPage>
+          <CurrentPage>{numberOfPages}</CurrentPage>
           <Button type='button'>&nbsp;</Button>
         </>
       );
