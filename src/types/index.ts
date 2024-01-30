@@ -960,9 +960,9 @@ export interface RangeInputProps
 }
 
 export interface PaginationProps {
-  page: number;
-  counts: number;
-  numberOfPages: number;
+  page?: number;
+  counts?: number;
+  numberOfPages?: number;
 }
 
 export interface OrderType {
