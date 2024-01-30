@@ -88,7 +88,7 @@ const Products = () => {
     );
   }
 
-  if (products?.length < 1) {
+  if (products?.length < 1 && !currentPage) {
     return (
       <Container>
         <EmptyProduct src='/img/no-result.png' title='No results found!' />
