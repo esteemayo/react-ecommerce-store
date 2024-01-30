@@ -2,10 +2,8 @@ import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 
 import OrderCard from '../components/orders/OrderCard';
-import EmptyOrder from '../components/empty/EmptyOrder';
-
 import Loader from '../components/Loader';
-import { CommonImage } from '../components/CommonImage';
+import EmptyOrder from '../components/empty/EmptyOrder';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { getUserOrders } from '../services/orderService';
