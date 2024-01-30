@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
   font-weight: 600;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-  background-color: ${({ theme }) => theme.bgBtn};
+  background-color: ${({ theme }) => theme.bgSideBtn};
   color: ${({ theme }) => theme.textBtn};
   border-radius: 3px;
   outline-color: ${({ theme }) => theme.btnOut};
