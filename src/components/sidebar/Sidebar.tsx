@@ -72,6 +72,7 @@ const Container = styled.aside<IContainer>`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: ${({ type }) => (type === 'show' ? 'block' : 'none')};
+  opacity: ${({ type }) => (type === 'show' ? 1 : 0)};
   visibility: ${({ type }) => (type === 'show' ? 'visible' : 'hidden')};
   z-index: ${({ type }) => (type === 'show' ? 2000 : -1)};
 
