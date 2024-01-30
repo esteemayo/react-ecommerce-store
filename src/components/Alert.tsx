@@ -22,7 +22,7 @@ const Alert = ({ alert, center, message, onChange }: AlertProps) => {
 const Message = styled.span<IMessage>`
   display: block;
   font-size: 1.4rem;
-  color: #409384;
+  color: var(--clr-green-dark);
   text-align: ${({ center }) => (center === 'true' ? 'center' : 'left')};
 `;
 
