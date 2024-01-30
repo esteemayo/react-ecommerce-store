@@ -37,7 +37,7 @@ export const useCart = (product: ProductValues) => {
       return navigate('/login');
     }
 
-    if ((quantity && color) || size) {
+    if ((quantity >= 1 && color) || size) {
       addProduct({ ...product, size, color, quantity });
       removeWishlist(product.id);
       setAlert(true);
