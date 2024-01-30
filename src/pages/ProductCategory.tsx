@@ -23,7 +23,7 @@ const ProductCategory = () => {
   const { pathname } = useLocation();
   const category = pathname.split('/').pop();
 
-  const [sort, setSort] = useState('newest');
+  const [sort, setSort] = useState('latest');
   const [products, setProducts] = useState<ProductValues[]>([]);
   const [filters, setFilters] = useState({});
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
@@ -62,7 +62,7 @@ const ProductCategory = () => {
   }, [category, filters, products]);
 
   useEffect(() => {
-    if (sort === 'newest') {
+    if (sort === 'latest') {
       setSortedProducts((prev) =>
         [...prev].sort((a, b) => b.createdAt.localeCompare(a.createdAt))
       );
