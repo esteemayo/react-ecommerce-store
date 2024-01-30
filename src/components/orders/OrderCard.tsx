@@ -185,7 +185,7 @@ const setRadius = (status: number) => {
 const setBcg = (status: number) => {
   if (status === 0) return 'var(--clr-primary-red)';
   if (status === 1) return 'var(--clr-yellow)';
-  if (status === 2) return 'var(--clr-greenn-light)';
+  if (status === 2) return 'var(--clr-green-light)';
 };
 
 export default OrderCard;
