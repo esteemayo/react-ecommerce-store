@@ -57,7 +57,7 @@ const Button = styled.button`
   font-weight: 500;
   font-size: 1.45rem;
   padding: 1.4rem 2.5rem;
-  background-color: ${({ theme }) => theme.bgBtn};
+  background-color: ${({ theme }) => theme.bgSideBtn};
   color: ${({ theme }) => theme.textBtn};
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
