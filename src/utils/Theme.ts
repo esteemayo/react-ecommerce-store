@@ -159,7 +159,7 @@ export const darkTheme = {
   bgSignInBtn: '#06192a',
   textSignInBtn: '#95a5bd',
   bgSignInBtnHov: 'hsla(0, 0%, 100%, 0.2)',
-  bgImage: '#0d2136',
+  bgImage: '#0f243a',
   bgPay: '#031525',
   bgPayBtn: '#06192a',
   btnIcon: '#95a5bd',
