@@ -40,7 +40,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   text-transform: capitalize;
   color: inherit;
-  outline-color: #eee;
+  outline-color: ${({ theme }) => theme.filterOut};
   transition: all 0.2s ease;
 
   &:active {
