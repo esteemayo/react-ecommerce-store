@@ -51,6 +51,7 @@ export const useAuth = create<AuthStore & AuthActionType>()(
           state.isLoading = INITIAL_STATE.isLoading;
           state.isError = INITIAL_STATE.isError;
           state.isSuccess = INITIAL_STATE.isSuccess;
+          state.message = INITIAL_STATE.message;
         }),
         false,
         'reset'
@@ -66,9 +67,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
     loginUserFulfilled: (payload) =>
       set(
         produce((state) => {
+          state.isLoading = false;
           state.user = payload;
           setToStorage(tokenKey, payload);
-          state.isLoading = false;
           state.isSuccess = true;
         }),
         false,
@@ -78,8 +79,8 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       set(
         produce((state) => {
           state.isError = true;
-          state.isSuccess = false;
           state.isLoading = false;
+          state.isSuccess = false;
           state.user = null;
           state.message = payload;
         }),
@@ -97,9 +98,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
     googleLoginFulfilled: (payload) =>
       set(
         produce((state) => {
+          state.isLoading = false;
           state.user = payload;
           setToStorage(tokenKey, payload);
-          state.isLoading = false;
           state.isSuccess = true;
         }),
         false,
@@ -109,8 +110,8 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       set(
         produce((state) => {
           state.isError = true;
-          state.isSuccess = false;
           state.isLoading = false;
+          state.isSuccess = false;
           state.user = null;
           state.message = payload;
         }),
@@ -128,9 +129,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
     registerUserFulfilled: (payload) =>
       set(
         produce((state) => {
+          state.isLoading = false;
           state.user = payload;
           setToStorage(tokenKey, payload);
-          state.isLoading = false;
           state.isSuccess = true;
         }),
         false,
@@ -140,8 +141,8 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       set(
         produce((state) => {
           state.isError = true;
-          state.isSuccess = false;
           state.isLoading = false;
+          state.isSuccess = false;
           state.user = null;
           state.message = payload;
         }),
@@ -168,9 +169,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
     updateUserDataFulfilled: (payload) =>
       set(
         produce((state) => {
+          state.isLoading = false;
           state.user = payload;
           setToStorage(tokenKey, payload);
-          state.isLoading = false;
           state.isSuccess = true;
         }),
         false,
@@ -180,8 +181,8 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       set(
         produce((state) => {
           state.isError = true;
-          state.isSuccess = false;
           state.isLoading = false;
+          state.isSuccess = false;
           state.message = payload;
         }),
         false,
@@ -198,9 +199,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
     updateUserEmailFulfilled: (payload) =>
       set(
         produce((state) => {
+          state.isLoading = false;
           state.user = payload;
           setToStorage(tokenKey, payload);
-          state.isLoading = false;
           state.isSuccess = true;
         }),
         false,
@@ -210,8 +211,8 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       set(
         produce((state) => {
           state.isError = true;
-          state.isSuccess = false;
           state.isLoading = false;
+          state.isSuccess = false;
           state.message = payload;
         }),
         false,
@@ -228,8 +229,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
     updateUserPasswordFulfilled: (payload) =>
       set(
         produce((state) => {
-          state.user = payload;
           state.isLoading = false;
+          state.user = payload;
+          setToStorage(tokenKey, payload);
           state.isSuccess = true;
         }),
         false,
@@ -239,8 +241,8 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       set(
         produce((state) => {
           state.isError = true;
-          state.isSuccess = false;
           state.isLoading = false;
+          state.isSuccess = false;
           state.message = payload;
         }),
         false,
@@ -257,9 +259,9 @@ export const useAuth = create<AuthStore & AuthActionType>()(
     deleteUserFulfilled: () =>
       set(
         produce((state) => {
+          state.isLoading = false;
           state.user = null;
           removeFromStorage(tokenKey);
-          state.isLoading = false;
           state.isSuccess = true;
         }),
         false,
@@ -269,8 +271,8 @@ export const useAuth = create<AuthStore & AuthActionType>()(
       set(
         produce((state) => {
           state.isError = true;
-          state.isSuccess = false;
           state.isLoading = false;
+          state.isSuccess = false;
           state.message = payload;
         }),
         false,
