@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 interface UploadProgressProps {
@@ -10,7 +11,15 @@ interface ISpan {
 }
 
 const UploadProgress = ({ type, percentage }: UploadProgressProps) => {
-  return <Container type={type}>Uploading: {percentage}%</Container>;
+  const progressLabel = useMemo(() => {
+    return percentage === 100 ? 'Uploaded:' : 'Uploading:';
+  }, [percentage]);
+
+  return (
+    <Container type={type}>
+      {progressLabel} {percentage}%
+    </Container>
+  );
 };
 
 const Container = styled.span<ISpan>`
