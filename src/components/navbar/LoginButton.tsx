@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Link } from 'react-router-dom';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import { LoginButtonProps } from '../../types';
 
@@ -12,7 +12,7 @@ const LoginButton = ({
 }: LoginButtonProps) => {
   return (
     <Container>
-      <Link to='/login'>
+      <StyledLink to='/login'>
         <Button
           type='button'
           onMouseOver={onMouseOver}
@@ -21,21 +21,18 @@ const LoginButton = ({
           Sign in &nbsp;
           {isHover ? <ArrowForwardIcon /> : <ArrowForwardIosIcon />}
         </Button>
-      </Link>
+      </StyledLink>
     </Container>
   );
 };
 
-const Container = styled.div`
-  a {
-    &:link,
-    &:visited {
-      display: inline-block;
-      text-decoration: none;
-      color: currentColor;
-      outline: none;
-    }
-  }
+const Container = styled.div``;
+
+const StyledLink = styled(Link)`
+  display: inline-block;
+  text-decoration: none;
+  color: currentColor;
+  outline: none;
 `;
 
 const Button = styled.button`
