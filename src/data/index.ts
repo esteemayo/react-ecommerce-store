@@ -1255,8 +1255,8 @@ export const productValue: ProductValue = [
 
 export const priceOptions: PriceOption = [
   {
-    value: 'newest',
-    text: 'Newest',
+    value: 'latest',
+    text: 'Latest',
   },
   {
     value: 'asc',
