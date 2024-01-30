@@ -59,7 +59,7 @@ const ListContainer = styled.ul`
 const LogoutBox = styled.div`
   & > button {
     padding: 0.5rem 1rem;
-    background-color: ${({ theme }) => theme.bgBtn};
+    background-color: ${({ theme }) => theme.bgSideBtn};
     color: ${({ theme }) => theme.textBtn};
     border-radius: 3px;
     outline-color: ${({ theme }) => theme.btnOut};
