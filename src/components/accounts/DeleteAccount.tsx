@@ -91,19 +91,22 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const CancelButton = styled.button`
-  display: inline-block;
+const Button = styled.button`
   text-transform: capitalize;
   font-weight: 500;
   font-size: 1.4rem;
   width: 50%;
   padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+`;
+
+const CancelButton = styled(Button)`
+  display: inline-block;
   background-color: transparent;
   color: ${({ theme }) => theme.textModalBtn};
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
   outline-color: #eee;
-  cursor: pointer;
 
   @media only screen and (max-width: 18.75em) {
     font-size: 1.3rem;
@@ -112,17 +115,12 @@ const CancelButton = styled.button`
   }
 `;
 
-const DeleteButton = styled.button`
+const DeleteButton = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
 
   border: none;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 1.4rem;
-  width: 50%;
-  padding: 1rem;
   background-color: var(--clr-primary-red);
   color: ${({ theme }) => theme.textModalDelBtn};
   background-image: linear-gradient(
@@ -132,9 +130,7 @@ const DeleteButton = styled.button`
     #fd8181 50%
   );
   background-size: 220%;
-  border-radius: 0.5rem;
   outline-color: #e92222;
-  cursor: pointer;
   transition: all 0.3s;
 
   @media only screen and (max-width: 56.25em), only screen and (hover: none) {
