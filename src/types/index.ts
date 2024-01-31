@@ -1255,3 +1255,13 @@ export interface ResetPasswordErrors {
   password?: string;
   confirmPassword?: string;
 }
+
+export interface UpdateData {
+  email: string;
+  password: string;
+}
+
+export interface UpdateDataErrors {
+  email?: string;
+  password?: string;
+}
