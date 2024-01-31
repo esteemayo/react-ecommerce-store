@@ -7,7 +7,7 @@ const Logo = () => {
   return (
     <Container>
       <StyledLink to='/'>
-        <StyledImage src='/img/logo.png' width={100} height={50} alt='' />
+        <Image src='/img/logo.png' width={100} height={50} alt='' />
       </StyledLink>
     </Container>
   );
@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
   outline-color: ${({ theme }) => theme.navOut};
 `;
 
-const StyledImage = styled(CommonImage)`
+const Image = styled(CommonImage)`
   width: 10rem;
   height: 5rem;
   background-color: transparent;
