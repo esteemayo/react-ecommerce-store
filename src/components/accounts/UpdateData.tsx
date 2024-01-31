@@ -16,9 +16,9 @@ import { useForm } from '../../hooks/useForm';
 import { updateEmail } from '../../services/userService';
 import { validateDataForm } from '../../validations/data';
 
-import { UpdateData, UpdateDataErrors, UpdateDataProps } from '../../types';
+import { UpdateUserData, UpdateDataErrors, UpdateDataProps } from '../../types';
 
-const initialState: UpdateData = {
+const initialState: UpdateUserData = {
   email: '',
   password: '',
 };

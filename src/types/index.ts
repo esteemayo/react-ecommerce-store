@@ -1256,7 +1256,7 @@ export interface ResetPasswordErrors {
   confirmPassword?: string;
 }
 
-export interface UpdateData {
+export interface UpdateUserData {
   email: string;
   password: string;
 }

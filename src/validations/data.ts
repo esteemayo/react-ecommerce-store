@@ -1,6 +1,6 @@
-import { UpdateData, UpdateDataErrors } from '../types';
+import { UpdateUserData, UpdateDataErrors } from '../types';
 
-export const validateDataForm = (data: UpdateData) => {
+export const validateDataForm = (data: UpdateUserData) => {
   const errors: UpdateDataErrors = {};
   const { email, password } = data;
 
