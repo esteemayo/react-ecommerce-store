@@ -10,32 +10,25 @@ import {
   UploadTask,
 } from 'firebase/storage';
 
+import FormInput from '../../components/form/FormInput';
+import Form from '../../components/form/Form';
 import FormButton from '../../components/form/FormButton';
-import FormBox from '../../components/form/FormBox';
+import Select from '../../components/form/Select';
 import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
-import FormInput from '../../components/form/FormInput';
-import Select from '../../components/form/Select';
-import UploadProgress from '../../components/form/UploadProgress';
-import Form from '../../components/form/Form';
 import { FormGroup } from '../../components/form/FormGroup';
+import FormBox from '../../components/form/FormBox';
+import UploadProgress from '../../components/form/UploadProgress';
 import TextArea from '../../components/form/TextArea';
 
 import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
-import app from '../../firebase';
 import { createProduct } from '../../services/productService';
+import { validateProductForm } from '../../validations/product';
 
-interface IErrors {
-  name?: string;
-  desc?: string;
-  price?: string;
-  priceDiscount?: string;
-  numberInStock?: string;
-  category?: string;
-  tags?: string;
-}
+import app from '../../firebase';
+import { ProductData, ProductErrors } from '../../types';
 
 interface IFile {
   id?: number;
@@ -47,7 +40,7 @@ interface IFile {
   webkitRelativePath: string;
 }
 
-const initialState = {
+const initialState: ProductData = {
   name: '',
   desc: '',
   price: '',
@@ -65,11 +58,11 @@ const NewProduct = () => {
   const [data, setData] = useState(initialState);
   const [files, setFiles] = useState<IFile[]>([]);
   const [size, setSize] = useState<string[]>([]);
-  const [errors, setErrors] = useState<IErrors>({});
-  const [tags, setTags] = useState<string[]>([]);
   const [color, setColor] = useState<string[]>([]);
-  const [urls, setUrls] = useState<string[]>([]);
+  const [tags, setTags] = useState<string[]>([]);
+  const [errors, setErrors] = useState<ProductErrors>({});
   const [progress, setProgress] = useState(0);
+  const [urls, setUrls] = useState<string[]>([]);
 
   const { isSuccess, mutate } = useMutation({
     mutationFn: async (product: object) => {
@@ -115,41 +108,6 @@ const NewProduct = () => {
       setFiles((prev) => [...prev, newFile]);
     }
   }, []);
-
-  const validateForm = useCallback(() => {
-    const errors: IErrors = {};
-    const { name, desc, price, priceDiscount, numberInStock, category } = data;
-
-    if (name.trim() === '') {
-      errors.name = 'Product name must not be empty';
-    }
-
-    if (desc.trim() === '') {
-      errors.desc = 'Product description must not be empty';
-    }
-
-    if (price === '') {
-      errors.price = 'Price must not be empty';
-    }
-
-    if (priceDiscount === '') {
-      errors.priceDiscount = 'Price discount must not be empty';
-    }
-
-    if (numberInStock === '') {
-      errors.numberInStock = 'Number in stock must not be empty';
-    }
-
-    if (category.trim() === '') {
-      errors.category = 'Category must not be empty';
-    }
-
-    if (tags.length < 1) {
-      errors.tags = 'Please provide some tags';
-    }
-
-    return errors;
-  }, [data, tags]);
 
   const uploadFile = useCallback(() => {
     const lists: UploadTask[] = [];
@@ -199,7 +157,7 @@ const NewProduct = () => {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      const errors = validateForm();
+      const errors = validateProductForm(data, tags);
       if (Object.keys(errors).length > 0) return setErrors(errors);
       setErrors({});
 
@@ -218,7 +176,7 @@ const NewProduct = () => {
       mutate(newProduct);
       toast.success('Product added!!!');
     },
-    [color, data, files, mutate, size, tags, urls, validateForm]
+    [color, data, files, mutate, size, tags, urls]
   );
 
   const labelClasses = useMemo(() => {
