@@ -9,25 +9,17 @@ import Form from '../components/form/Form';
 import { StyledBox } from '../components/form/StyledBox';
 import Heading from '../components/form/Heading';
 
-import { useForm } from '../hooks/useForm';
 import { resetPassword } from '../services/authService';
+import { useForm } from '../hooks/useForm';
+import { validateResetPasswordForm } from '../validations/resetPassword';
+import { ResetPasswordData, ResetPasswordErrors } from '../types';
 
-interface FormData {
-  password: string;
-  confirmPassword: string;
-}
-
-interface IErrors {
-  password?: string;
-  confirmPassword?: string;
-}
-
-const initialState: FormData = {
+const initialState: ResetPasswordData = {
   password: '',
   confirmPassword: '',
 };
 
-const initialError: IErrors = {
+const initialError: ResetPasswordErrors = {
   password: '',
   confirmPassword: '',
 };
@@ -37,23 +29,6 @@ const ResetPassword = () => {
   const { pathname } = useLocation();
 
   const [isLoading, setIsLoading] = useState(false);
-
-  const validateForm = (data: FormData) => {
-    const tempErrors: IErrors = {};
-    const { password, confirmPassword } = data;
-
-    if (password === '') {
-      tempErrors.password = 'Please enter your new password';
-    } else if (password.length < 8) {
-      tempErrors.password = 'Password should be at least 8 characters long';
-    } else if (confirmPassword === '') {
-      tempErrors.confirmPassword = 'Please confirm your new password';
-    } else if (password !== confirmPassword) {
-      tempErrors.confirmPassword = 'Passwords do not match';
-    }
-
-    return tempErrors;
-  };
 
   const onSubmitHandler = async () => {
     setIsLoading(true);
@@ -81,7 +56,7 @@ const ResetPassword = () => {
     onSubmitHandler,
     initialState,
     initialError,
-    validateForm
+    validateResetPasswordForm
   );
 
   return (
