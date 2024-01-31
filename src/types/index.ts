@@ -1211,3 +1211,13 @@ export interface TableBodyProps {
   customer: string;
   total: number;
 }
+
+export interface LoginData {
+  username: string;
+  password: string;
+}
+
+export interface LoginErrors {
+  username?: string;
+  password?: string;
+}

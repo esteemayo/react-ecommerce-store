@@ -1,15 +1,7 @@
-interface FormData {
-  username: string;
-  password: string;
-}
+import { LoginData, LoginErrors } from '../types';
 
-interface IErrors {
-  username?: string;
-  password?: string;
-}
-
-export const validateLoginForm = (data: FormData) => {
-  const tempErrors: IErrors = {};
+export const validateLoginForm = (data: LoginData) => {
+  const tempErrors: LoginErrors = {};
   const { password, username } = data;
 
   if (username.trim() === '') {

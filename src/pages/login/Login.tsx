@@ -22,6 +22,7 @@ import { useForm } from '../../hooks/useForm';
 import { loginUser } from '../../services/authService';
 import { validateLoginForm } from '../../validations/login';
 
+import { LoginData, LoginErrors } from '../../types';
 import {
   getFromStorage,
   rememberKey,
@@ -29,22 +30,12 @@ import {
   userKey,
 } from '../../utils';
 
-interface FormData {
-  username: string;
-  password: string;
-}
-
-interface IErrors {
-  username?: string;
-  password?: string;
-}
-
-const initialState: FormData = {
+const initialState: LoginData = {
   username: '',
   password: '',
 };
 
-const initialError: IErrors = {
+const initialError: LoginErrors = {
   username: '',
   password: '',
 };
