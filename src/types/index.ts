@@ -1265,3 +1265,15 @@ export interface UpdateDataErrors {
   email?: string;
   password?: string;
 }
+
+export interface UpdatePasswordData {
+  password: string;
+  confirmPassword: string;
+  currentPassword: string;
+}
+
+export interface UpdatePasswordErrors {
+  password?: string;
+  confirmPassword?: string;
+  currentPassword?: string;
+}
