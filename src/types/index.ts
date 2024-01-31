@@ -98,11 +98,6 @@ export type ProductValues = {
   updatedAt: string;
 };
 
-export interface ProductStore {
-  products: ProductValues[];
-  onFavorite(payload: ProductValues): void;
-}
-
 export type CartValues = {
   id: string;
   category: string;
