@@ -14,11 +14,10 @@ import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
 import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
+import { FormGroup } from '../../components/form/FormGroup';
+import Form from '../../components/form/Form';
 import UploadProgress from '../../components/form/UploadProgress';
 import FormInput from '../../components/form/FormInput';
-// import FormUpload from '../../components/form/FormUpload';
-import Form from '../../components/form/Form';
-import { FormGroup } from '../../components/form/FormGroup';
 
 import Loader from '../../components/Loader';
 import CountrySelect from '../../components/inputs/CountrySelect';
@@ -26,20 +25,13 @@ import CountrySelect from '../../components/inputs/CountrySelect';
 import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
 
-import app from '../../firebase';
 import { registerUser } from '../../services/authService';
+import { validateRegisterForm } from '../../validations/register';
 
-interface IErrors {
-  name?: string;
-  email?: string;
-  username?: string;
-  phone?: string;
-  password?: string;
-  confirmPassword?: string;
-  country?: string;
-}
+import app from '../../firebase';
+import { RegisterData, RegisterErrors } from '../../types';
 
-const initialState = {
+const initialState: RegisterData = {
   name: '',
   email: '',
   username: '',
@@ -65,7 +57,7 @@ const Register = () => {
     user,
   } = useAuth();
 
-  const [errors, setErrors] = useState<IErrors>({});
+  const [errors, setErrors] = useState<RegisterErrors>({});
   const [perc, setPerc] = useState(0);
   const [file, setFile] = useState<File | null>(null);
   const [data, setData] = useState(initialState);
@@ -91,50 +83,6 @@ const Register = () => {
     const item = (target.files as FileList)[0];
     setFile(item);
   }, []);
-
-  const validateForm = useCallback(() => {
-    const errors: IErrors = {};
-    const { name, email, username, phone, password, confirmPassword, country } =
-      data;
-
-    if (name.trim() === '') {
-      errors.name = 'Name must not be empty';
-    }
-
-    if (email.trim() === '') {
-      errors.email = 'Email must not be empty';
-    } else {
-      const regEx =
-        /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)*[a-zA-Z]{2,9})$/;
-      if (!email.match(regEx)) {
-        errors.email = 'Email must be a valid email address';
-      }
-    }
-
-    if (username.trim() === '') {
-      errors.username = 'Username must not be empty';
-    }
-
-    if (phone.trim() === '') {
-      errors.username = 'Phone must not be empty';
-    }
-
-    if (password === '') {
-      errors.password = 'Password must not be empty';
-    } else if (password.length < 8) {
-      errors.password = 'Password should be at least 8 characters long';
-    } else if (!confirmPassword) {
-      errors.confirmPassword = 'Please confirm your new password';
-    } else if (password !== confirmPassword) {
-      errors.confirmPassword = 'Passwords do not match';
-    }
-
-    if (country.trim() === '') {
-      errors.country = 'Country must not be empty';
-    }
-
-    return errors;
-  }, [data]);
 
   const handleClear = useCallback(() => {
     setData(initialState);
@@ -179,7 +127,7 @@ const Register = () => {
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      const errors = validateForm();
+      const errors = validateRegisterForm(data);
       if (Object.keys(errors).length > 0) return setErrors(errors);
       setErrors({});
 
@@ -207,7 +155,6 @@ const Register = () => {
       registerUserPending,
       registerUserRejected,
       registerUserFulfilled,
-      validateForm,
     ]
   );
 
@@ -326,12 +273,6 @@ const Register = () => {
                 onChange={handleFile}
               />
             </FormGroup>
-            // <FormUpload
-            //   id='file'
-            //   accept='image/*'
-            //   label='Attach a photo'
-            //   onChange={handleFile}
-            // />
           )}
           <FormButton
             label='Register'
