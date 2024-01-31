@@ -24,7 +24,7 @@ export const validateRegisterForm = (data: RegisterData) => {
   }
 
   if (phone.trim() === '') {
-    errors.username = 'Phone must not be empty';
+    errors.phone = 'Phone must not be empty';
   }
 
   if (password === '') {
