@@ -13,25 +13,17 @@ import { ButtonContainer } from './ButtonContainer';
 import { useAuth } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 
-import { UpdateDataProps } from '../../types';
 import { updateEmail } from '../../services/userService';
+import { validateDataForm } from '../../validations/data';
 
-interface FormData {
-  email: string;
-  password: string;
-}
+import { UpdateData, UpdateDataErrors, UpdateDataProps } from '../../types';
 
-interface IErrors {
-  email?: string;
-  password?: string;
-}
-
-const initialState: FormData = {
+const initialState: UpdateData = {
   email: '',
   password: '',
 };
 
-const initialError: IErrors = {
+const initialError: UpdateDataErrors = {
   email: '',
   password: '',
 };
@@ -47,27 +39,6 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
     updateUserEmailPending,
     updateUserEmailRejected,
   } = useAuth();
-
-  const validateForm = (data: FormData) => {
-    const errors: IErrors = {};
-    const { email, password } = data;
-
-    if (email.trim() === '') {
-      errors.email = 'Please enter your new email address';
-    } else {
-      const regEx =
-        /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)*[a-zA-Z]{2,9})$/;
-      if (!email.match(regEx)) {
-        errors.email = 'Email must be a valid email address';
-      }
-    }
-
-    if (password === '') {
-      errors.password = 'Please enter your password';
-    }
-
-    return errors;
-  };
 
   const onSubmitHandler = async () => {
     updateUserEmailPending();
@@ -89,7 +60,7 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
     onSubmitHandler,
     initialState,
     initialError,
-    validateForm,
+    validateDataForm,
     onCancel
   );
 
