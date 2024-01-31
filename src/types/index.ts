@@ -1277,3 +1277,22 @@ export interface UpdatePasswordErrors {
   confirmPassword?: string;
   currentPassword?: string;
 }
+
+export interface ProductData {
+  name: string;
+  desc: string;
+  price: string;
+  priceDiscount: string;
+  numberInStock: string;
+  category: string;
+}
+
+export interface ProductErrors {
+  name?: string;
+  desc?: string;
+  price?: string;
+  priceDiscount?: string;
+  numberInStock?: string;
+  category?: string;
+  tags?: string;
+}
