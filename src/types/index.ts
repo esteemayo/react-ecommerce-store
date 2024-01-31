@@ -1241,3 +1241,7 @@ export interface RegisterErrors {
   confirmPassword?: string;
   country?: string;
 }
+
+export interface ForgotErrors {
+  email?: string;
+}

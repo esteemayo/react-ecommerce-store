@@ -10,43 +10,26 @@ import { StyledBox } from '../components/form/StyledBox';
 import Heading from '../components/form/Heading';
 
 import { forgotPassword } from '../services/authService';
+import { validateForgotForm } from '../validations/forgot';
 
-interface IErrors {
-  email?: string;
-}
+import { ForgotErrors } from '../types';
 
 const Forgot = () => {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
-  const [errors, setErrors] = useState<IErrors>({});
+  const [errors, setErrors] = useState<ForgotErrors>({});
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   }, []);
 
-  const validateForm = useCallback(() => {
-    const errors: IErrors = {};
-
-    if (!email) {
-      errors.email = 'Please enter your email address';
-    } else {
-      const regEx =
-        /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)*[a-zA-Z]{2,9})$/;
-      if (!email.match(regEx)) {
-        errors.email = 'Email must be a valid email address';
-      }
-    }
-
-    return errors;
-  }, [email]);
-
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      const errors = validateForm();
+      const errors = validateForgotForm(email);
       if (Object.keys(errors).length > 0) return setErrors(errors);
       setErrors({});
 
@@ -64,7 +47,7 @@ const Forgot = () => {
         setIsLoading(false);
       }
     },
-    [email, navigate, validateForm]
+    [email, navigate]
   );
 
   return (
