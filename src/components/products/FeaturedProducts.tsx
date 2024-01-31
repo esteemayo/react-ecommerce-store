@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import ProductCard from '../card/ProductCard';
@@ -22,6 +22,7 @@ const FeaturedProducts = () => {
   const onOpen = useCartModal((state) => state.onOpen);
   const currentUser = useAuth((state) => state.user);
 
+  const [featuredProducts, setFeaturedProduct] = useState<ProductType[]>([]);
   const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
 
   const { isLoading, data } = useQuery({
@@ -31,6 +32,10 @@ const FeaturedProducts = () => {
       return data;
     },
   });
+
+  useEffect(() => {
+    setFeaturedProduct(data?.products);
+  }, [data]);
 
   return (
     <Container>
@@ -43,7 +48,7 @@ const FeaturedProducts = () => {
             </Box>
           ) : (
             <>
-              {data?.products?.map((product: ProductType) => {
+              {featuredProducts?.map((product: ProductType) => {
                 return (
                   <ProductCard
                     key={product.id}
@@ -51,6 +56,7 @@ const FeaturedProducts = () => {
                     product={product}
                     onOpen={onOpen}
                     onSelect={setIsSelectedProduct}
+                    onUpdate={setFeaturedProduct}
                   />
                 );
               })}
