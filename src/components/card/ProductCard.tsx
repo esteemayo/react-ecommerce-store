@@ -9,7 +9,12 @@ import { useCartStore } from '../../hooks/useCartStore';
 
 import { ProductCardProps } from '../../types';
 
-const ProductCard = ({ product, onOpen, onSelect }: ProductCardProps) => {
+const ProductCard = ({
+  product,
+  onOpen,
+  onSelect,
+  onUpdate,
+}: ProductCardProps) => {
   const cart = useCartStore((state) => state.cart);
   const wished = useCartStore((state) => state.wished);
   const currentUser = useAuth((state) => state.user);
@@ -57,6 +62,7 @@ const ProductCard = ({ product, onOpen, onSelect }: ProductCardProps) => {
         inCart={inCart}
         wished={wished}
         onOpen={handleOpen}
+        onUpdate={onUpdate}
       />
     </Container>
   );

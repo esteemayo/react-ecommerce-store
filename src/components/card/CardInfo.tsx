@@ -18,6 +18,7 @@ const CardInfo = ({
   inCart,
   wished,
   onOpen,
+  onUpdate,
 }: CardInfoProps) => {
   return (
     <Container>
@@ -38,6 +39,7 @@ const CardInfo = ({
         product={product}
         wished={wished}
         productId={product.id}
+        onUpdate={onUpdate}
       />
     </Container>
   );
