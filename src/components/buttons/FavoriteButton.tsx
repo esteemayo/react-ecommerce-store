@@ -10,11 +10,13 @@ const FavoriteButton = ({
   actionId,
   currentUser,
   likes,
+  onUpdate,
 }: FavoriteButtonProps) => {
   const { hasFavorited, toggleFavorite } = useFavorite(
     actionId,
     currentUser,
-    likes
+    likes,
+    onUpdate
   );
 
   const favLabel = useMemo(() => {

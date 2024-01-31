@@ -10,6 +10,7 @@ const CardButtons = ({
   product,
   productId,
   wished,
+  onUpdate,
 }: CardButtonsProps) => {
   return (
     <Container>
@@ -23,6 +24,7 @@ const CardButtons = ({
         actionId={productId}
         currentUser={currentUser}
         likes={product.likes}
+        onUpdate={onUpdate}
       />
     </Container>
   );
