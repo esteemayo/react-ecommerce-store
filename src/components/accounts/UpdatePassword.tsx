@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
+import Button from './Button';
 import Input from './Input';
 import CancelButton from './CancelButton';
-import Button from './Button';
 
 import { Container } from './Container';
 import { ButtonContainer } from './ButtonContainer';
@@ -12,31 +12,22 @@ import { useAuth } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 
 import Form from '../form/Form';
+import { UpdatePasswordData, UpdatePasswordErrors } from '../../types';
+
 import { updatePassword } from '../../services/authService';
+import { validatePasswordForm } from '../../validations/password';
 
 interface UpdatePasswordProps {
   onCancel(): void;
 }
 
-interface FormData {
-  password: string;
-  confirmPassword: string;
-  currentPassword: string;
-}
-
-interface IErrors {
-  password?: string;
-  confirmPassword?: string;
-  currentPassword?: string;
-}
-
-const initialState: FormData = {
+const initialState: UpdatePasswordData = {
   password: '',
   confirmPassword: '',
   currentPassword: '',
 };
 
-const initialError: IErrors = {
+const initialError: UpdatePasswordErrors = {
   password: '',
   confirmPassword: '',
   currentPassword: '',
@@ -53,27 +44,6 @@ const UpdatePassword = ({ onCancel }: UpdatePasswordProps) => {
     updateUserPasswordPending,
     updateUserPasswordRejected,
   } = useAuth();
-
-  const validateForm = (data: FormData) => {
-    const errors: IErrors = {};
-    const { password, confirmPassword, currentPassword } = data;
-
-    if (password === '') {
-      errors.password = 'Please enter your new password';
-    } else if (password.length < 8) {
-      errors.password = 'Password should be at least 8 characters long';
-    } else if (!confirmPassword) {
-      errors.confirmPassword = 'Please confirm your new password';
-    } else if (password !== confirmPassword) {
-      errors.confirmPassword = 'Passwords do not match';
-    }
-
-    if (currentPassword === '') {
-      errors.currentPassword = 'Please enter your current password';
-    }
-
-    return errors;
-  };
 
   const onSubmitHandler = async () => {
     updateUserPasswordPending();
@@ -95,7 +65,7 @@ const UpdatePassword = ({ onCancel }: UpdatePasswordProps) => {
     onSubmitHandler,
     initialState,
     initialError,
-    validateForm,
+    validatePasswordForm,
     onCancel
   );
 
