@@ -9,14 +9,14 @@ import {
   getDownloadURL,
 } from 'firebase/storage';
 
-import AuthInfo from '../../components/form/AuthInfo';
+import Form from '../../components/form/Form';
 import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
 import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
-import { FormGroup } from '../../components/form/FormGroup';
-import Form from '../../components/form/Form';
 import UploadProgress from '../../components/form/UploadProgress';
+import AuthInfo from '../../components/form/AuthInfo';
+import { UploadContainer } from '../../components/form/UploadContainer';
 import FormInput from '../../components/form/FormInput';
 
 import Loader from '../../components/Loader';
@@ -264,7 +264,7 @@ const Register = () => {
           {perc > 0 && perc < 100 ? (
             <UploadProgress percentage={perc} />
           ) : (
-            <FormGroup>
+            <UploadContainer>
               <label htmlFor='file'>Attach a photo</label>
               <input
                 id='file'
@@ -272,7 +272,7 @@ const Register = () => {
                 accept='image/*'
                 onChange={handleFile}
               />
-            </FormGroup>
+            </UploadContainer>
           )}
           <FormButton
             label='Register'
