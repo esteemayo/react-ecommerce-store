@@ -113,8 +113,11 @@ const CancelButton = styled.button`
 `;
 
 const DeleteButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border: none;
-  display: inline-block;
   text-transform: capitalize;
   font-weight: 500;
   font-size: 1.4rem;
