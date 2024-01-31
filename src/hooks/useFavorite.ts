@@ -8,7 +8,8 @@ import { likeProduct } from '../services/productService';
 export const useFavorite: IFavorite = (
   actionId: string,
   currentUser: CurrentUserType,
-  likes: string[]
+  likes: string[],
+  onUpdate
 ) => {
   const navigate = useNavigate();
 
@@ -29,13 +30,16 @@ export const useFavorite: IFavorite = (
       }
 
       try {
-        await likeProduct(actionId);
+        const { data } = await likeProduct(actionId);
+        onUpdate((prev) => {
+          return prev.map((item) => (item.id === actionId ? data : item));
+        });
       } catch (err: unknown) {
         console.log(err);
         toast.error('Something went wrong!!!');
       }
     },
-    [actionId, currentUser, navigate]
+    [actionId, currentUser, navigate, onUpdate]
   );
 
   return {
