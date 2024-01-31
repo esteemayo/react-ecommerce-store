@@ -2,10 +2,10 @@ import { useCallback, useMemo } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-import { CurrentUserType, IUseFavorite } from '../types';
+import { CurrentUserType, IFavorite } from '../types';
 import { likeProduct } from '../services/productService';
 
-export const useFavorite: IUseFavorite = (
+export const useFavorite: IFavorite = (
   actionId: string,
   currentUser: CurrentUserType,
   likes: string[]
