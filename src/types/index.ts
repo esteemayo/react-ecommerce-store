@@ -1245,3 +1245,13 @@ export interface RegisterErrors {
 export interface ForgotErrors {
   email?: string;
 }
+
+export interface ResetPasswordData {
+  password: string;
+  confirmPassword: string;
+}
+
+export interface ResetPasswordErrors {
+  password?: string;
+  confirmPassword?: string;
+}
