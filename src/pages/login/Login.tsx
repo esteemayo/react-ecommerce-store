@@ -19,13 +19,15 @@ import SocialLogin from './SocialLogin';
 import { useAuth } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 
+import { loginUser } from '../../services/authService';
+import { validateLoginForm } from '../../validations/login';
+
 import {
   getFromStorage,
   rememberKey,
   setToStorage,
   userKey,
 } from '../../utils';
-import { loginUser } from '../../services/authService';
 
 interface FormData {
   username: string;
@@ -71,23 +73,6 @@ const Login = () => {
     []
   );
 
-  const validateForm = (data: FormData) => {
-    const tempErrors: IErrors = {};
-    const { password, username } = data;
-
-    if (username.trim() === '') {
-      tempErrors.username = 'Username must not be empty';
-    }
-
-    if (password === '') {
-      tempErrors.password = 'Password must not be empty';
-    } else if (password.length < 8) {
-      tempErrors.password = 'Password should be at least 8 characters long';
-    }
-
-    return tempErrors;
-  };
-
   const onSubmitHandler = async () => {
     loginUserPending();
 
@@ -111,7 +96,7 @@ const Login = () => {
     onSubmitHandler,
     initialState,
     initialError,
-    validateForm
+    validateLoginForm
   );
 
   useEffect(() => {
