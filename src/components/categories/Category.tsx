@@ -33,6 +33,7 @@ const Button = styled.button`
   border: none;
   padding: 1rem 2rem;
   width: 100%;
+  height: 100%;
   background-color: ${({ theme }) => theme.bgCatBtn};
   color: var(--clr-white);
   outline-color: ${({ theme }) => theme.bgCatBtnOut};
@@ -41,7 +42,7 @@ const Button = styled.button`
   opacity: 0;
 
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   transition: all 0.5s ease;
 
