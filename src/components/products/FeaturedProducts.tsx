@@ -11,7 +11,7 @@ import Spinner from '../Spinner';
 import { useAuth } from '../../hooks/useAuth';
 import { useCartModal } from '../../hooks/useCartModal';
 
-import { ProductType, WishlistValues } from '../../types';
+import { ProductValues, WishlistValues } from '../../types';
 import { getFeaturedProducts } from '../../services/productService';
 
 import { StyledWrapper } from '../StyledWrapper';
@@ -22,7 +22,7 @@ const FeaturedProducts = () => {
   const onOpen = useCartModal((state) => state.onOpen);
   const currentUser = useAuth((state) => state.user);
 
-  const [featuredProducts, setFeaturedProduct] = useState<ProductType[]>([]);
+  const [featuredProducts, setFeaturedProduct] = useState<ProductValues[]>([]);
   const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
 
   const { isLoading, data } = useQuery({
@@ -48,7 +48,7 @@ const FeaturedProducts = () => {
             </Box>
           ) : (
             <>
-              {featuredProducts?.map((product: ProductType) => {
+              {featuredProducts?.map((product: ProductValues) => {
                 return (
                   <ProductCard
                     key={product.id}
