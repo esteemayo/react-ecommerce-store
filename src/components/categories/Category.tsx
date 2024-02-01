@@ -107,7 +107,6 @@ const HeadingWrapper = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  transform: translateY(0);
   text-align: right;
   padding: 0.5rem;
   background-color: rgba(255, 185, 0, 0.4);
@@ -158,7 +157,7 @@ const MainHeading = styled.h2`
 
 const SubHeading = styled.h3`
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: var(--default-font-size);
   color: inherit;
 
   @media only screen and (max-width: 59.375em) {
