@@ -104,11 +104,15 @@ const Image = styled(CommonImage)`
 
 const HeadingWrapper = styled.div`
   position: absolute;
-  top: 80%;
-  right: 2rem;
-  transform: translateY(-80%);
-  color: var(--clr-white);
+  top: 0;
+  right: 0;
+  transform: translateY(0);
   text-align: right;
+  padding: 0.5rem;
+  background-color: rgba(255, 185, 0, 0.4);
+  color: var(--clr-white);
+  line-height: 1.05;
+  border-bottom-left-radius: 2.5rem;
 
   @media only screen and (max-width: 64em) {
     top: 70%;
