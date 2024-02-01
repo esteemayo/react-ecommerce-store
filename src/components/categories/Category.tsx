@@ -115,7 +115,7 @@ const HeadingWrapper = styled.div`
   top: 0;
   right: 0;
   text-align: right;
-  padding: 0.5rem;
+  padding: 3px;
   background-color: rgba(250, 229, 173, 0.4);
   color: var(--clr-white);
   line-height: 1.05;
