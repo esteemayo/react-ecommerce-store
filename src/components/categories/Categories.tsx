@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 
-import Category from './Category';
-import Header from '../Header';
 import Spinner from '../Spinner';
+import Header from '../Header';
+import Category from './Category';
 
 import { categoryImages } from '../../data';
 import { getCategoryCount } from '../../services/productService';
