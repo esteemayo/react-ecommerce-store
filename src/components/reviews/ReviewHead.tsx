@@ -30,7 +30,7 @@ const ReviewHead = ({
   return (
     <Container>
       <Ratings>
-        <TotalRatings>{avgRatings}</TotalRatings>
+        <AverageRatings>{avgRatings}</AverageRatings>
         <StarRating readOnly value={ratingsAverage} name='read-only' />
         <TotalReviews>{reviews?.length} reviews</TotalReviews>
       </Ratings>
@@ -83,7 +83,7 @@ const Ratings = styled.div`
   }
 `;
 
-const TotalRatings = styled.span`
+const AverageRatings = styled.span`
   display: inline-block;
   font-weight: 500;
   font-size: 3.2rem;
