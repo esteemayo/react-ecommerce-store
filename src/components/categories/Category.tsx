@@ -39,14 +39,14 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.bgCatBtn};
   color: var(--clr-white);
   outline-color: ${({ theme }) => theme.bgCatBtnOut};
-  cursor: pointer;
   visibility: hidden;
   opacity: 0;
+  cursor: pointer;
+  transition: all 0.5s ease;
 
   position: absolute;
   top: 0;
   left: 0;
-  transition: all 0.5s ease;
 
   display: flex;
   align-items: center;
