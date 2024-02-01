@@ -41,6 +41,7 @@ const Button = styled.button`
   outline-color: ${({ theme }) => theme.bgCatBtnOut};
   visibility: hidden;
   opacity: 0;
+  z-index: -1;
   cursor: pointer;
   transition: all 0.5s ease;
 
@@ -76,6 +77,7 @@ const Container = styled.article`
   &:hover ${Button} {
     visibility: visible;
     opacity: 1;
+    z-index: 1000;
   }
 `;
 
