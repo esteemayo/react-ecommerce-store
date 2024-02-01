@@ -48,6 +48,8 @@ const Button = styled.button`
   position: absolute;
   top: 0;
   left: 0;
+  transform: translateY(100%);
+  backface-visibility: hidden;
 
   display: flex;
   align-items: center;
@@ -78,6 +80,7 @@ const Container = styled.article`
     visibility: visible;
     opacity: 1;
     z-index: 1000;
+    transform: translateY(0);
   }
 `;
 
