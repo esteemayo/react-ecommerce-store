@@ -502,7 +502,7 @@ export interface IFavorite {
     actionId: string,
     currentUser: CurrentUserType,
     likes: string[],
-    onUpdate: React.Dispatch<SetStateAction<ProductType[]>>
+    onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>
   ): {
     hasFavorited: boolean;
     toggleFavorite: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
@@ -560,12 +560,17 @@ export interface SubmenuMenuItemProps {
   onClose(): void;
 }
 
+export interface ProductListProps {
+  products: ProductValues[];
+  onUpdate: React.Dispatch<SetStateAction<ProductValues[] | ProductType[]>>;
+}
+
 export interface ProductCardProps {
   currentUser: CurrentUserType;
   product: CardProduct;
   onOpen(): void;
   onSelect(value: WishlistValues): void;
-  onUpdate: React.Dispatch<SetStateAction<ProductType[]>>;
+  onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>;
 }
 
 interface CardProduct {
@@ -601,7 +606,7 @@ export interface CardInfoProps {
   inCart: boolean;
   wished: string[];
   onOpen(): void;
-  onUpdate: React.Dispatch<SetStateAction<ProductType[]>>;
+  onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>;
 }
 
 export interface CardHeadingProps {
@@ -631,7 +636,7 @@ export interface CardButtonsProps {
   product: CardProduct;
   productId: string;
   wished: string[];
-  onUpdate: React.Dispatch<SetStateAction<ProductType[]>>;
+  onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>;
 }
 
 export interface WishlistButtonProps {
@@ -645,7 +650,7 @@ export interface FavoriteButtonProps {
   actionId: string;
   likes: string[];
   currentUser: CurrentUserType;
-  onUpdate: React.Dispatch<SetStateAction<ProductType[]>>;
+  onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>;
 }
 
 export interface CartModalProps {
