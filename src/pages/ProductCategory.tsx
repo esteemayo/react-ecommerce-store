@@ -140,9 +140,9 @@ const ProductCategory = () => {
         </Wrapper>
       </Container>
       {category ? (
-        <ProductList products={sortedProducts} />
+        <ProductList products={sortedProducts} onUpdate={setProducts} />
       ) : (
-        <ProductList products={products} />
+        <ProductList products={products} onUpdate={setProducts} />
       )}
     </ProductBox>
   );
