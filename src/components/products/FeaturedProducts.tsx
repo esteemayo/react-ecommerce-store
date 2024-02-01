@@ -18,9 +18,9 @@ import { StyledWrapper } from '../StyledWrapper';
 
 const FeaturedProducts = () => {
   const isOpen = useCartModal((state) => state.isOpen);
+  const currentUser = useAuth((state) => state.user);
   const onClose = useCartModal((state) => state.onClose);
   const onOpen = useCartModal((state) => state.onOpen);
-  const currentUser = useAuth((state) => state.user);
 
   const [featuredProducts, setFeaturedProduct] = useState<ProductValues[]>([]);
   const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
