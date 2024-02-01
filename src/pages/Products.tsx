@@ -111,7 +111,7 @@ const Products = () => {
         setColor={setColor}
         setPrice={setPrice}
       />
-      <ProductList products={sortedProducts} />
+      <ProductList products={sortedProducts} onUpdate={setProducts} />
       {products.length > 0 && (
         <Pagination counts={counts} page={page} numberOfPages={numberOfPages} />
       )}
