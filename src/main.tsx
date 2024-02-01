@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import QueryProvider from './providers/QueryProvider.tsx';
-import AppThemeProvider from './providers/ThemeProvider.tsx';
 import CartProvider from './providers/CartProvider.tsx';
+import AppThemeProvider from './providers/ThemeProvider.tsx';
 
 import App from './App.tsx';
 
