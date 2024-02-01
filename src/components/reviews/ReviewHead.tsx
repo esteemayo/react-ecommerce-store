@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import ReviewButton from './ReviewButton';
@@ -16,12 +17,20 @@ const ReviewHead = ({
   onSort,
   onToggle,
 }: ReviewHeadProps) => {
+  const avgRatings = useMemo(() => {
+    if (ratingsAverage === 0) {
+      return 0;
+    } else if (ratingsAverage.toString().length > 3) {
+      return ratingsAverage.toFixed(2);
+    } else {
+      return ratingsAverage.toFixed(1);
+    }
+  }, [ratingsAverage]);
+
   return (
     <Container>
       <Ratings>
-        <TotalRatings>
-          {reviews?.length === 0 ? 0 : reviews?.length?.toFixed(1)}
-        </TotalRatings>
+        <TotalRatings>{avgRatings}</TotalRatings>
         <StarRating readOnly value={ratingsAverage} name='read-only' />
         <TotalReviews>{reviews?.length} reviews</TotalReviews>
       </Ratings>
