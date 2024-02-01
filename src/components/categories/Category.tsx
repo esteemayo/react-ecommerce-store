@@ -31,9 +31,11 @@ const Category = ({ data, src, index }: CategoryProps) => {
 
 const Button = styled.button`
   border: none;
-  padding: 1rem 2rem;
   width: 100%;
   height: 100%;
+  font-weight: 600;
+  font-size: var(--default-font-size);
+  text-transform: capitalize;
   background-color: ${({ theme }) => theme.bgCatBtn};
   color: var(--clr-white);
   outline-color: ${({ theme }) => theme.bgCatBtnOut};
