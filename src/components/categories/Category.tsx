@@ -131,16 +131,6 @@ const HeadingWrapper = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  outline-color: var(--clr-tertiary-green);
-
-  &:active {
-    color: currentColor;
-  }
-`;
-
 const MainHeading = styled.h2`
   text-transform: capitalize;
   font-weight: 600;
@@ -184,6 +174,16 @@ const SubHeading = styled.h3`
 
   @media only screen and (max-width: 18.75em) {
     font-size: 1.7rem;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  outline-color: var(--clr-tertiary-green);
+
+  &:active {
+    color: currentColor;
   }
 `;
 
