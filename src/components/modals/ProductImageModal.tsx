@@ -192,8 +192,8 @@ const ArrowButton = styled.button<IBtn>`
 const Wrapper = styled.div<IActive>`
   width: 100%;
   height: 100%;
-  transform: translateY(${({ active }) => (active === 'true' ? 0 : '100%')});
-  opacity: ${({ active }) => (active === 'true' ? 1 : 0)};
+  transform: translateY(${({ active }) => setProperty(active, 0, '100%')});
+  opacity: ${({ active }) => setProperty(active, 1, 0)};
   transition: all 300ms;
 `;
 
@@ -223,6 +223,10 @@ const StyledImage = styled(CommonImage)`
 
 const setBackdropFilter = (mode: string) => {
   return mode === 'true' ? 'blur(2px)' : undefined;
+};
+
+const setProperty = (active: string, val1: number, val2: string | number) => {
+  return active === 'true' ? val1 : val2;
 };
 
 export default ProductImageModal;
