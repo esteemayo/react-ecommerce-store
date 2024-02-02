@@ -12,9 +12,9 @@ import SearchIcon from './SearchIcon';
 import LogoutButton from './LogoutButton';
 
 import { useAuth } from '../../hooks/useAuth';
-import { useSearchModal } from '../../hooks/useSearchModal';
-import { useSidebar } from '../../hooks/useSidebar';
 import { useCartStore } from '../../hooks/useCartStore';
+import { useSidebar } from '../../hooks/useSidebar';
+import { useSearchModal } from '../../hooks/useSearchModal';
 import { useSubmenu } from '../../hooks/useSubmenu';
 
 import { navLinks } from '../../data';
