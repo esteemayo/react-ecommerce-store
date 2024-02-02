@@ -24,6 +24,8 @@ const Button = styled.button`
   font-size: 1.5rem;
   background-color: transparent;
   color: ${({ theme }) => theme.textNav};
+  outline-color: ${({ theme }) => theme.navOut};
+  cursor: pointer;
 `;
 
 export default AddButton;
