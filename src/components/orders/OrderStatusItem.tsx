@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import CheckedIcon from '../icons/CheckedIcon';
 import { OrderStatusItemProps } from '../../types';
 
 const OrderStatusItem = ({
@@ -19,13 +20,7 @@ const OrderStatusItem = ({
         alt={text}
       />
       <Status>{text}</Status>
-      <Image
-        src='/img/checked.png'
-        width={20}
-        height={20}
-        alt='check icon'
-        className='checkedIcon'
-      />
+      <CheckedIcon />
     </Container>
   );
 };
@@ -35,12 +30,6 @@ const Container = styled.div`
     width: 3rem;
     height: 3rem;
     display: block;
-    object-fit: cover;
-  }
-
-  img:last-child {
-    width: 2rem;
-    height: 2rem;
     object-fit: cover;
   }
 `;
