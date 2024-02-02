@@ -8,6 +8,7 @@ interface IMode {
 
 const OrderStatusItem = ({
   icon,
+  src,
   text,
   status,
   statusClass,
@@ -15,7 +16,12 @@ const OrderStatusItem = ({
 }: OrderStatusItemProps) => {
   return (
     <Container className={statusClass(status)} mode={mode}>
-      <Image src={icon} width={30} height={30} alt='icon' />
+      <Image
+        src={mode === 'true' ? src : icon}
+        width={30}
+        height={30}
+        alt={text}
+      />
       <Status>{text}</Status>
       <Image
         src='/img/checked.png'
@@ -34,7 +40,6 @@ const Container = styled.div<IMode>`
     height: 3rem;
     display: block;
     object-fit: cover;
-    background-color: ${({ mode }) => setBcg(mode)};
   }
 
   img:last-child {
@@ -53,9 +58,5 @@ const Status = styled.span`
     font-size: 1.5rem;
   }
 `;
-
-const setBcg = (mode: string) => {
-  return mode === 'true' ? '#0f243a' : undefined;
-};
 
 export default OrderStatusItem;
