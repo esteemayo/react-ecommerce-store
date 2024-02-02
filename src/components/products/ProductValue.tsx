@@ -1,32 +1,17 @@
-import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import { CommonImage } from '../CommonImage';
 import { ProductValueProps } from '../../types';
 
-interface IMode {
-  mode: string;
-}
-
 const ProductValue = ({ items, mode }: ProductValueProps) => {
-  const modeValue = useMemo(() => {
-    return mode.toString();
-  }, [mode]);
-
   return (
     <Container>
       <ValueAdd>
         {items?.map((item) => {
-          const { id, desc, img } = item;
+          const { id, desc, img, src } = item;
           return (
             <ImageWrapper key={id}>
-              <Image
-                src={img}
-                width={24}
-                height={24}
-                alt='icon'
-                mode={modeValue}
-              />
+              <Image src={mode ? src : img} width={24} height={24} alt='icon' />
               <span>{desc}</span>
             </ImageWrapper>
           );
@@ -62,15 +47,11 @@ const ImageWrapper = styled.div`
   gap: 0.8rem;
 `;
 
-const Image = styled(CommonImage)<IMode>`
+const Image = styled(CommonImage)`
   display: inline-block;
   width: 2.4rem;
   height: auto;
-  background-color: ${({ mode }) => setBcg(mode)};
+  background-color: transparent;
 `;
-
-const setBcg = (mode: string) => {
-  return mode === 'true' ? '#0d2136' : 'transparent';
-};
 
 export default ProductValue;
