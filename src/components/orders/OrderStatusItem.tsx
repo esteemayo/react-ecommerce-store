@@ -2,10 +2,6 @@ import styled from 'styled-components';
 
 import { OrderStatusItemProps } from '../../types';
 
-interface IMode {
-  mode: string;
-}
-
 const OrderStatusItem = ({
   icon,
   src,
@@ -15,7 +11,7 @@ const OrderStatusItem = ({
   mode,
 }: OrderStatusItemProps) => {
   return (
-    <Container className={statusClass(status)} mode={mode}>
+    <Container className={statusClass(status)}>
       <Image
         src={mode === 'true' ? src : icon}
         width={30}
@@ -34,7 +30,7 @@ const OrderStatusItem = ({
   );
 };
 
-const Container = styled.div<IMode>`
+const Container = styled.div`
   img:first-child {
     width: 3rem;
     height: 3rem;
