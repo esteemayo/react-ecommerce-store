@@ -6,17 +6,17 @@ import { ProductValueProps } from '../../types';
 const ProductValue = ({ items, mode }: ProductValueProps) => {
   return (
     <Container>
-      <ValueAdd>
+      <Wrapper>
         {items?.map((item) => {
           const { id, desc, img, src } = item;
           return (
-            <ImageWrapper key={id}>
+            <Box key={id}>
               <Image src={mode ? src : img} width={24} height={24} alt='icon' />
               <span>{desc}</span>
-            </ImageWrapper>
+            </Box>
           );
         })}
-      </ValueAdd>
+      </Wrapper>
     </Container>
   );
 };
@@ -27,7 +27,7 @@ const Container = styled.div`
   margin-bottom: 2rem;
 `;
 
-const ValueAdd = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -40,7 +40,7 @@ const ValueAdd = styled.div`
   }
 `;
 
-const ImageWrapper = styled.div`
+const Box = styled.div`
   color: inherit;
   display: flex;
   align-items: center;
