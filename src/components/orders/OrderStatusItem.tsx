@@ -25,16 +25,14 @@ const OrderStatusItem = ({
   );
 };
 
-const Container = styled.div`
-  img:first-child {
-    width: 3rem;
-    height: 3rem;
-    display: block;
-    object-fit: cover;
-  }
-`;
+const Container = styled.div``;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  object-fit: cover;
+`;
 
 const Status = styled.span`
   color: ${({ theme }) => theme.text};
