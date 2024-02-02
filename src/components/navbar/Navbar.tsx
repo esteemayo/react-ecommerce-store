@@ -1,6 +1,6 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
 import { useCallback, useState } from 'react';
+import styled from 'styled-components';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import Logo from './Logo';
 import DarkModeToggle from './DarkModeToggle';
