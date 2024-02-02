@@ -1,6 +1,7 @@
-import { useCallback, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { useCallback, useState } from 'react';
 
 import LoginButton from './LoginButton';
 import Logo from './Logo';
@@ -22,6 +23,8 @@ import { navLinks } from '../../data';
 import { Submenu } from '../../types';
 
 const Navbar = () => {
+  const { pathname } = useLocation();
+
   const cart = useCartStore((state) => state.cart);
   const searchModal = useSearchModal();
   const qty = useCartStore((state) => state.qty);
@@ -104,7 +107,9 @@ const Navbar = () => {
           {!!currentUser && <LogoutButton onClick={handleLogout} />}
         </ListContainer>
         <ButtonContainer>
-          <AddButton />
+          {currentUser?.role === 'admin' && !pathname.includes('/admin') && (
+            <AddButton />
+          )}
           <DarkModeToggle />
           <SearchIcon onOpen={searchModal.onOpen} />
           {!currentUser && (
