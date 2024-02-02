@@ -28,8 +28,8 @@ const Button = styled.button`
   cursor: pointer;
 
   svg {
-    color: currentColor;
     font-size: inherit;
+    color: currentColor;
   }
 `;
 
