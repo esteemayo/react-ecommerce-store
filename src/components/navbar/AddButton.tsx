@@ -20,6 +20,10 @@ const StyledLink = styled(Link)`
 const Button = styled.button`
   display: inline-block;
   border: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: ${({ theme }) => theme.textNav};
 `;
 
 export default AddButton;
