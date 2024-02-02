@@ -1292,25 +1292,29 @@ export const orderColumns: ColumnType = [
 export const orderStatus: OrderStatusType = [
   {
     id: 1,
-    icon: '/img/paid.png',
+    icon: '/svg/banknotes-black.svg',
+    src: '/svg/banknotes-white.svg',
     text: 'Payment',
     status: 0,
   },
   {
     id: 2,
-    icon: '/img/bake.png',
+    icon: '/svg/printer-black.svg',
+    src: '/svg/printer-white.svg',
     text: 'Preparing',
     status: 1,
   },
   {
     id: 3,
-    icon: '/img/bike.png',
+    icon: '/svg/truck-black.svg',
+    src: '/svg/truck-white.svg',
     text: 'On the way',
     status: 2,
   },
   {
     id: 4,
-    icon: '/img/delivered.png',
+    icon: '/svg/home-black.svg',
+    src: '/svg/home-white.svg',
     text: 'Delivered',
     status: 3,
   },
