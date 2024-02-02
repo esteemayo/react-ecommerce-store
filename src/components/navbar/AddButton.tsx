@@ -26,6 +26,11 @@ const Button = styled.button`
   color: ${({ theme }) => theme.textNav};
   outline-color: ${({ theme }) => theme.navOut};
   cursor: pointer;
+
+  svg {
+    color: currentColor;
+    font-size: inherit;
+  }
 `;
 
 export default AddButton;
