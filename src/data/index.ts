@@ -1245,11 +1245,13 @@ export const productValue: ProductValue = [
     id: 1,
     desc: 'Free Shipping over $50',
     img: '/svg/Shipping-black.svg',
+    src: '/svg/Shipping-white.svg',
   },
   {
     id: 2,
     desc: 'Free Returns',
     img: '/svg/Returns-black.svg',
+    src: '/svg/Returns-white.svg',
   },
 ];
 
