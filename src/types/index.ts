@@ -1193,6 +1193,7 @@ export interface SearchHistoryProps {
 export type OrderStatusType = {
   id: number;
   icon: string;
+  src: string;
   text: string;
   status: number;
 }[];
