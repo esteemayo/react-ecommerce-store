@@ -396,6 +396,7 @@ export type ProductValue = {
   id: number;
   desc: string;
   img: string;
+  src: string;
 }[];
 
 export type PriceOption = {
