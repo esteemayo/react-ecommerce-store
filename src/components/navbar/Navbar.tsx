@@ -2,14 +2,15 @@ import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-import Logo from './Logo';
-import DarkModeToggle from './DarkModeToggle';
 import LoginButton from './LoginButton';
+import Logo from './Logo';
 import CartQuantity from './CartQuantity';
 import MenuItem from './MenuItem';
 import ToggleButton from './ToggleButton';
-import SearchIcon from './SearchIcon';
+import AddButton from './AddButton';
 import LogoutButton from './LogoutButton';
+import SearchIcon from './SearchIcon';
+import DarkModeToggle from './DarkModeToggle';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCartStore } from '../../hooks/useCartStore';
@@ -103,6 +104,7 @@ const Navbar = () => {
           {!!currentUser && <LogoutButton onClick={handleLogout} />}
         </ListContainer>
         <ButtonContainer>
+          <AddButton />
           <DarkModeToggle />
           <SearchIcon onOpen={searchModal.onOpen} />
           {!currentUser && (
