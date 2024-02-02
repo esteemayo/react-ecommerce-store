@@ -20,7 +20,13 @@ const ProductValue = ({ items, mode }: ProductValueProps) => {
           const { id, desc, img } = item;
           return (
             <ImageWrapper key={id}>
-              <Image src={img} width={24} height={24} alt='' mode={modeValue} />
+              <Image
+                src={img}
+                width={24}
+                height={24}
+                alt='icon'
+                mode={modeValue}
+              />
               <span>{desc}</span>
             </ImageWrapper>
           );
@@ -64,7 +70,7 @@ const Image = styled(CommonImage)<IMode>`
 `;
 
 const setBcg = (mode: string) => {
-  return mode === 'true' ? '#0d2136' : undefined;
+  return mode === 'true' ? '#0d2136' : 'transparent';
 };
 
 export default ProductValue;
