@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { DefaultTheme, css } from 'styled-components';
 
 import { ProductButtonProps } from '../../types';
 
@@ -31,8 +31,7 @@ const Button = styled.button<IBtn>`
   font-size: ${({ small }) => (small === 'true' ? '1.5rem' : '1.8rem')};
   width: 100%;
   padding: ${({ small }) => (small === 'true' ? '1.3rem 1rem' : '2rem 1rem')};
-  background-color: ${({ theme, small }) =>
-    small === 'true' ? '#031525' : theme.bgProdBtn};
+  background-color: ${({ theme, small }) => setBcg(theme, small)};
   color: ${({ theme }) => theme.textBtn};
   background-image: ${({ theme }) => css`
   linear-gradient(
@@ -84,5 +83,10 @@ const Button = styled.button<IBtn>`
     background-position: 0%;
   }
 `;
+
+const setBcg = (theme: DefaultTheme, small?: string) => {
+  if (small === 'true') return theme.bgAddBtn;
+  return theme.bgProdBtn;
+};
 
 export default ProductButton;
