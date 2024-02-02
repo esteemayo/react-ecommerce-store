@@ -1201,6 +1201,7 @@ export type OrderStatusType = {
 export interface OrderStatusItemProps {
   id: number;
   icon: string;
+  src: string;
   text: string;
   status: number;
   statusClass(index: number): 'done' | 'inProgress' | 'undone' | undefined;
