@@ -220,6 +220,7 @@ const NewProduct = () => {
             type='number'
             name='price'
             label='Price'
+            min={1}
             value={price}
             placeholder='Enter product price'
             onChange={handleChange}
@@ -229,6 +230,7 @@ const NewProduct = () => {
             type='number'
             name='priceDiscount'
             label='Price discount'
+            min={1}
             value={priceDiscount}
             placeholder='Enter price discount'
             onChange={handleChange}
@@ -238,6 +240,7 @@ const NewProduct = () => {
             type='number'
             name='numberInStock'
             label='Number in stock'
+            min={1}
             value={numberInStock}
             placeholder='Enter number in stock'
             onChange={handleChange}
