@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Heading from './Heading';
+import Heading from '../Heading';
 
 const ErrorState = () => {
   return (
