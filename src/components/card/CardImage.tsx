@@ -23,6 +23,7 @@ const StyledImage = styled(CommonImage)`
   height: 20rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+  overflow: hidden;
 
   @media only screen and (max-width: 37.5em) {
     height: 17.5rem;

@@ -75,6 +75,7 @@ const Container = styled.article`
   box-shadow: ${({ theme }) => theme.boxCard};
   -webkit-box-shadow: ${({ theme }) => theme.boxCard};
   -moz-box-shadow: ${({ theme }) => theme.boxCard};
+  overflow: hidden;
 
   @media only screen and (max-width: 50em) {
     width: 33rem;
