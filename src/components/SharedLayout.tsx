@@ -12,6 +12,8 @@ import Sidebar from './sidebar/Sidebar';
 import ModalProvider from '../providers/ModalProvider';
 import ToastProvider from '../providers/ToastProvider';
 
+import ErrorBoundary from './errors/ErrorBoundary';
+
 const SharedLayout = () => {
   return (
     <div className='container'>
@@ -21,7 +23,9 @@ const SharedLayout = () => {
       <Submenu />
       <Sidebar />
       <ModalProvider />
-      <Outlet />
+      <ErrorBoundary>
+        <Outlet />
+      </ErrorBoundary>
       <Footer />
       <ScrollToTop />
       <Darkmode />
