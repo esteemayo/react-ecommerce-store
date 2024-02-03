@@ -5,13 +5,15 @@ import Heading from '../Heading';
 const ErrorState = () => {
   return (
     <Container>
-      <Image
-        src='/svg/qa-engineers.svg'
-        width={500}
-        height={400}
-        alt='error icon'
-      />
-      <Heading title='Uh oh' subtitle='Something went wrong!' center />
+      <Wrapper>
+        <Image
+          src='/svg/qa-engineers.svg'
+          width={500}
+          height={400}
+          alt='error icon'
+        />
+        <Heading title='Uh oh' subtitle='Something went wrong!' center />
+      </Wrapper>
     </Container>
   );
 };
@@ -21,6 +23,12 @@ const Container = styled.main`
   height: 100vh;
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  place-items: center;
 `;
 
 const Image = styled.img`
