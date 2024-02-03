@@ -77,7 +77,7 @@ export const darkTheme = {
   bgCartBtn: '#06192a',
   bgImgCartBtn: '#0d2136',
   btnBorder: '#031525',
-  bgOverlay: 'rgba(47, 46, 46, 0.5)',
+  bgOverlay: 'rgba(39, 77, 117, 0.5)',
   bgModal: '#0f243a',
   bgModalCloseBtn: '#031525',
   textModalCloseBtn: '#d3e3fd',
