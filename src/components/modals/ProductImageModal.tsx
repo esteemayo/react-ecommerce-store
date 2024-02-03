@@ -123,7 +123,7 @@ const Overlay = styled.aside<IOverlay>`
   @media only screen and (min-width: 50em) {
     width: 100vw;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: ${({ theme }) => theme.bgImgOverlay};
     backdrop-filter: ${({ mode }) => setBackDropFilter(mode)};
     position: fixed;
     top: 0;
