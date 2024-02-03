@@ -1,6 +1,7 @@
 import { Component } from 'react';
 
 import ErrorState from './ErrorState';
+import logger from '../../services/logService';
 
 interface IProps {
   children: React.ReactNode;
@@ -22,6 +23,7 @@ class ErrorBoundary extends Component<IProps> {
   }
 
   componentDidCatch(error: Error, info: object) {
+    logger.log(error);
     console.log(error, info);
   }
 
