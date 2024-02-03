@@ -1,15 +1,15 @@
 import { Component } from 'react';
+import ErrorState from './ErrorState';
 
 interface IProps {
   children: React.ReactNode;
-  fallback: React.ReactElement;
 }
 
 interface IState {
   hasError: boolean;
 }
 
-class ErrorBoundary extends Component<IProps & IState> {
+class ErrorBoundary extends Component<IProps> {
   state: IState = {
     hasError: false,
   };
@@ -26,7 +26,7 @@ class ErrorBoundary extends Component<IProps & IState> {
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback;
+      return <ErrorState />;
     }
 
     return this.props.children;
