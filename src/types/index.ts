@@ -1313,3 +1313,9 @@ export interface ProductErrors {
   category?: string;
   tags?: string;
 }
+
+export interface HeadingProps {
+  title: string;
+  subtitle: string;
+  center?: boolean;
+}
