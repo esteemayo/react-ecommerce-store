@@ -28,10 +28,10 @@ const StyledOverlay = styled.aside<IProps>`
   position: fixed;
   top: 0;
   left: 0;
-  display: ${({ type }) => (type === 'show' ? 'block' : 'none')};
-  visibility: ${({ type }) => (type === 'show' ? 'visible' : 'hidden')};
-  opacity: ${({ type }) => (type === 'show' ? 1 : 0)};
-  z-index: ${({ type }) => (type === 'show' ? 4000 : -1)};
+  display: ${({ type }) => setProperty(type, 'block', 'none')};
+  visibility: ${({ type }) => setProperty(type, 'visible', 'hidden')};
+  opacity: ${({ type }) => setProperty(type, 1, 0)};
+  z-index: ${({ type }) => setProperty(type, 4000, -1)};
 `;
 
 const Container = styled.div`
@@ -43,6 +43,14 @@ const Container = styled.div`
 
 const setBackDropFilter = (mode: string) => {
   return mode === 'true' ? 'blur(2px)' : undefined;
+};
+
+const setProperty = (
+  type: string,
+  val1: string | number,
+  val2: string | number
+) => {
+  return type === 'show' ? val1 : val2;
 };
 
 export default Overlay;
