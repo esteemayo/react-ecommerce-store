@@ -65,7 +65,7 @@ const NewProduct = () => {
   const [urls, setUrls] = useState<string[]>([]);
 
   const { isSuccess, mutate } = useMutation({
-    mutationFn: async (product: object) => {
+    mutationFn: async ({ product }: { product: object }) => {
       const { data } = await createProduct(product);
       return data;
     },
@@ -161,9 +161,7 @@ const NewProduct = () => {
       if (Object.keys(errors).length > 0) return setErrors(errors);
       setErrors({});
 
-      console.log({ ...data, files, color, size, tags });
-
-      const newProduct = {
+      const product = {
         ...data,
         color,
         size,
@@ -171,12 +169,10 @@ const NewProduct = () => {
         ...(urls.length > 0 && { images: urls }),
       };
 
-      console.log(newProduct);
-
-      mutate(newProduct);
+      mutate({ product });
       toast.success('Product added!!!');
     },
-    [color, data, files, mutate, size, tags, urls]
+    [color, data, mutate, size, tags, urls]
   );
 
   const labelClasses = useMemo(() => {
@@ -187,9 +183,6 @@ const NewProduct = () => {
     const disabled = progress > 0 && progress < 100;
     return !!disabled;
   }, [progress]);
-
-  console.log(files);
-  console.log(urls);
 
   useEffect(() => {
     files && uploadFile();
