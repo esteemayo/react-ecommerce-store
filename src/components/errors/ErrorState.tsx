@@ -23,6 +23,7 @@ const Container = styled.main`
   height: 100vh;
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
+  padding: 10rem 0;
 `;
 
 const Wrapper = styled.div`
