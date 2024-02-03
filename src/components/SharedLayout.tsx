@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
-import Announcement from './Announcement';
-import Darkmode from './DarkMode';
 import ScrollToTop from './ScrollToTop';
+import Darkmode from './DarkMode';
+import Announcement from './Announcement';
 
 import Navbar from './navbar/Navbar';
 import Submenu from './submenu/Submenu';
