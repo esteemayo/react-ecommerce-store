@@ -64,7 +64,7 @@ const NewProduct = () => {
   const [progress, setProgress] = useState(0);
   const [urls, setUrls] = useState<string[]>([]);
 
-  const { isSuccess, mutate } = useMutation({
+  const { isPending, isSuccess, mutate } = useMutation({
     mutationFn: async ({ product }: { product: object }) => {
       const { data } = await createProduct(product);
       return data;
@@ -149,7 +149,7 @@ const NewProduct = () => {
     });
 
     Promise.all(lists)
-      .then(() => toast.success('All images uploaded!!!'))
+      .then((res) => res.length > 0 && toast.success('All images uploaded!!!'))
       .catch((err) => console.log(err));
   }, [files]);
 
@@ -180,9 +180,9 @@ const NewProduct = () => {
   }, [mode]);
 
   const disabledBtn = useMemo(() => {
-    const disabled = progress > 0 && progress < 100;
+    const disabled = isPending || (progress > 0 && progress < 100);
     return !!disabled;
-  }, [progress]);
+  }, [isPending, progress]);
 
   useEffect(() => {
     files && uploadFile();
@@ -293,7 +293,11 @@ const NewProduct = () => {
               />
             </FormGroup>
           )}
-          <FormButton label='Create' disabled={disabledBtn} />
+          <FormButton
+            label='Create'
+            disabled={disabledBtn}
+            loading={isPending}
+          />
         </Form>
       </StyledBox>
     </FormBox>
