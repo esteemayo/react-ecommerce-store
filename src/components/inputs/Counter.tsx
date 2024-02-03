@@ -12,8 +12,15 @@ interface IProps {
 const Counter = ({ value, title, modal, onClick }: CounterProps) => {
   const handleQuantity = useCallback(
     (type: string) => {
-      type === 'dec' && value > 1 && onClick(value - 1);
-      type === 'inc' && value < 10 ? onClick(value + 1) : value;
+      if (type === 'dec' && value > 1) {
+        return onClick(value - 1);
+      }
+
+      if (type === 'inc' && value < 10) {
+        return onClick(value + 1);
+      } else {
+        return value;
+      }
     },
     [value, onClick]
   );
