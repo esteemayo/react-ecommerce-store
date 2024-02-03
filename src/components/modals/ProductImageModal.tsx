@@ -185,7 +185,7 @@ const ArrowButton = styled.button<IBtn>`
   }
 
   svg {
-    fill: var(--clr-white);
+    color: var(--clr-white);
   }
 `;
 
