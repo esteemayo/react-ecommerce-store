@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import CloseIcon from '@mui/icons-material/Close';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { ProductImageModalProps } from '../../types';
 import { useDarkMode } from '../../hooks/useDarkMode';
