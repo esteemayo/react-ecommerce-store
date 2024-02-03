@@ -16,9 +16,9 @@ import FormButton from '../../components/form/FormButton';
 import Select from '../../components/form/Select';
 import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
-import { FormGroup } from '../../components/form/FormGroup';
-import FormBox from '../../components/form/FormBox';
 import UploadProgress from '../../components/form/UploadProgress';
+import FormBox from '../../components/form/FormBox';
+import { UploadContainer } from '../../components/form/UploadContainer';
 import TextArea from '../../components/form/TextArea';
 
 import { selectInputs } from '../../data/formData';
@@ -280,7 +280,7 @@ const NewProduct = () => {
           {progress > 0 && progress < 100 ? (
             <UploadProgress percentage={progress} />
           ) : (
-            <FormGroup>
+            <UploadContainer>
               <label htmlFor='file' className={labelClasses}>
                 Attach images
               </label>
@@ -291,7 +291,7 @@ const NewProduct = () => {
                 onChange={handleFiles}
                 multiple
               />
-            </FormGroup>
+            </UploadContainer>
           )}
           <FormButton
             label='Create'
