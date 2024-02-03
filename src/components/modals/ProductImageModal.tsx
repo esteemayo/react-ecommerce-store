@@ -162,7 +162,7 @@ const ArrowButton = styled.button<IBtn>`
   display: inline-block;
   width: 4rem;
   height: 4rem;
-  background-color: var(--clr-black);
+  background-color: ${({ theme }) => theme.bgImgModal};
   color: var(--clr-white);
   border-radius: 50%;
   outline-color: #777;
