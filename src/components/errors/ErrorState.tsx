@@ -37,6 +37,8 @@ const Wrapper = styled.div`
 const Image = styled.img`
   width: 50rem;
   height: 40rem;
+  display: inline-block;
+  object-fit: contain;
 `;
 
 export default ErrorState;
