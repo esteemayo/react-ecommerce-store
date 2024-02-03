@@ -225,7 +225,11 @@ const setBackDropFilter = (mode: string) => {
   return mode === 'true' ? 'blur(2px)' : undefined;
 };
 
-const setProperty = (active: string, val1: number, val2: string | number) => {
+const setProperty = (
+  active: string,
+  val1: string | number,
+  val2: string | number
+) => {
   return active === 'true' ? val1 : val2;
 };
 
