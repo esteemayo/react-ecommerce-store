@@ -43,12 +43,12 @@ const Button = styled.button`
   opacity: 0;
   z-index: -1;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.3s linear;
 
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(100%);
+  transform: scale(0);
   backface-visibility: hidden;
 
   display: flex;
@@ -80,7 +80,7 @@ const Container = styled.article`
     visibility: visible;
     opacity: 1;
     z-index: 1000;
-    transform: translateY(0);
+    transform: scale(1);
   }
 `;
 
