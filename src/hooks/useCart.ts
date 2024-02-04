@@ -17,11 +17,11 @@ export const useCart = (product: ProductValues) => {
   const removeWishlist = useCartStore((state) => state.removeWishlist);
 
   const [color, setColor] = useState<string | string[]>('');
+  const [alert, setAlert] = useState(false);
+  const [isSelected, setIsSelected] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [size, setSize] = useState<string | string[]>('');
-  const [isSelected, setIsSelected] = useState<string | null>(null);
-  const [alert, setAlert] = useState(false);
 
   const handleReset = useCallback(() => {
     setSize('');
