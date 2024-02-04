@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 import Heading from '../Heading';
+import { useSubmenu } from '../../hooks/useSubmenu';
 
 const ErrorState = () => {
+  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+
   return (
-    <Container>
+    <Container onMouseOver={closeSubmenu}>
       <Wrapper>
         <Image
           src='/svg/qa-engineers.svg'
