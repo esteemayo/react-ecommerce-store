@@ -346,7 +346,7 @@ export const lightTheme = {
   bgSignInBtn: 'var(--clr-primary-green)',
   textSignInBtn: 'var(--clr-white)',
   bgSignInBtnHov: 'hsla(0, 0%, 100%, 0.4)',
-  bgImage: '#ddd',
+  bgImage: '#eee',
   bgPay: 'var(--clr-primary-green)',
   bgPayBtn: 'var(--clr-tertiary-green)',
   btnIcon: '#858585',
