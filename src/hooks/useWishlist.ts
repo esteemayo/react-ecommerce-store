@@ -1,9 +1,9 @@
 import { useCallback, useMemo } from 'react';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 import { useCartStore } from './useCartStore';
 import { CurrentUserType, WishlistProps, WishlistValues } from '../types';
-import { toast } from 'react-toastify';
 
 export const useWishlist: WishlistProps = (
   actionId: string,
