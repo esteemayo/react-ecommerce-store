@@ -51,7 +51,7 @@ const ProductCard = ({
 
   return (
     <Container>
-      <CardImage src={product.images?.[0]} />
+      <CardImage src={product.images?.[0]} name={product.name} />
       <CardInfo
         url={url}
         currentUser={currentUser}

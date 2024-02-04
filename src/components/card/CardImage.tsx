@@ -4,12 +4,13 @@ import { CommonImage } from '../CommonImage';
 
 interface CardImageProps {
   src: string;
+  name: string;
 }
 
-const CardImage = ({ src }: CardImageProps) => {
+const CardImage = ({ src, name }: CardImageProps) => {
   return (
     <Container>
-      <StyledImage src={src} width={300} height={200} alt='' />
+      <StyledImage src={src} width={300} height={200} alt={name} />
     </Container>
   );
 };
