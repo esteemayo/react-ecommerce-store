@@ -74,20 +74,24 @@ const SingleProduct = () => {
 
   useEffect(() => {
     if (sort === 'latest') {
-      setReviews((prev) =>
-        [...prev].sort(
+      setReviews((prev) => {
+        return [...prev].sort(
           (a, b) =>
             new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        )
-      );
+        );
+      });
     }
 
     if (sort === 'highest') {
-      setReviews((prev) => [...prev].sort((a, b) => b.rating - a.rating));
+      setReviews((prev) => {
+        return [...prev].sort((a, b) => b.rating - a.rating);
+      });
     }
 
     if (sort === 'lowest') {
-      setReviews((prev) => [...prev].sort((a, b) => a.rating - b.rating));
+      setReviews((prev) => {
+        return [...prev].sort((a, b) => a.rating - b.rating);
+      });
     }
   }, [sort]);
 
