@@ -1,6 +1,6 @@
 function init() {}
 
-function log(error: Error) {
+function log(error: Error | unknown) {
   console.error(error);
 }
 
