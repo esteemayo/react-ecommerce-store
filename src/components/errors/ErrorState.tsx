@@ -27,6 +27,10 @@ const Container = styled.main`
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
   padding: 10rem 0;
+
+  @media only screen and (max-width: 31.25em) {
+    height: 80vh;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -43,6 +47,10 @@ const Image = styled.img`
   height: 40rem;
   display: inline-block;
   object-fit: contain;
+
+  @media only screen and (max-width: 31.25em) {
+    width: 40rem;
+  }
 `;
 
 export default ErrorState;
