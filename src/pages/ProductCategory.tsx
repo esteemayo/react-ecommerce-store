@@ -70,17 +70,21 @@ const ProductCategory = () => {
 
   useEffect(() => {
     if (sort === 'latest') {
-      setSortedProducts((prev) =>
-        [...prev].sort((a, b) => b.createdAt.localeCompare(a.createdAt))
-      );
+      setSortedProducts((prev) => {
+        return [...prev].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+      });
     }
 
     if (sort === 'asc') {
-      setSortedProducts((prev) => [...prev].sort((a, b) => a.price - b.price));
+      setSortedProducts((prev) => {
+        return [...prev].sort((a, b) => a.price - b.price);
+      });
     }
 
     if (sort === 'desc') {
-      setSortedProducts((prev) => [...prev].sort((a, b) => b.price - a.price));
+      setSortedProducts((prev) => {
+        return [...prev].sort((a, b) => b.price - a.price);
+      });
     }
   }, [sort]);
 
