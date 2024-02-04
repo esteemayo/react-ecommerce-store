@@ -19,8 +19,7 @@ const EmptyProduct = ({ src, title }: EmptyProductProps) => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  place-items: center;
   padding-bottom: 3rem;
 `;
 
