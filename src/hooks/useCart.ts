@@ -37,6 +37,11 @@ export const useCart = (product: ProductValues) => {
       return navigate('/login');
     }
 
+    if (currentUser.role === 'admin') {
+      isOpen && onClose();
+      return;
+    }
+
     if ((quantity >= 1 && color) || size) {
       addProduct({ ...product, size, color, quantity });
       removeWishlist(product.id);
