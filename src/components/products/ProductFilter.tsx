@@ -21,18 +21,18 @@ const ProductFilter = ({
   setColor,
   setPrice,
 }: ProductFilterProps) => {
-  let colors = ['all', ...getUnique(products, 'color')];
-  colors = colors.map((color, index) => {
+  const allColors = ['all', ...getUnique(products, 'color')];
+  const colors = allColors.map((color, index) => {
     return <Option key={index} value={color} />;
   });
 
-  let categories = ['all', ...getUnique(products, 'category')];
-  categories = categories.map((category, index) => {
+  const allCategories = ['all', ...getUnique(products, 'category')];
+  const categories = allCategories.map((category, index) => {
     return <Option key={index} value={category} />;
   });
 
-  let sizes = ['all', ...getUnique(products, 'size')];
-  sizes = sizes.map((size, index) => {
+  const allSizes = ['all', ...getUnique(products, 'size')];
+  const sizes = allSizes.map((size, index) => {
     return <Option key={index} value={size} />;
   });
 

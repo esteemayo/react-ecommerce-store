@@ -89,12 +89,12 @@ const ProductCategory = () => {
   }, [sort]);
 
   const allColors: string[] = getUnique(products, 'color');
-  const colors: React.ReactNode[] = allColors?.map((color, index) => {
+  const colors = allColors?.map((color, index) => {
     return <Option key={index} value={color} />;
   });
 
   const allSizes = getUnique(products, 'size');
-  const sizes: React.ReactNode[] = allSizes?.map((size, index) => {
+  const sizes = allSizes?.map((size, index) => {
     return <Option key={index} value={size} />;
   });
 
