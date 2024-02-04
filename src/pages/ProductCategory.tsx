@@ -1,7 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import Heading from '../components/filters/Heading';
 import Select from '../components/filters/Select';
@@ -27,14 +26,7 @@ const ProductCategory = () => {
   const [products, setProducts] = useState<ProductValues[]>([]);
   const [filters, setFilters] = useState({});
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
-
-  const { isLoading, data } = useQuery({
-    queryKey: ['products'],
-    queryFn: async () => {
-      const { data } = await getProductCategory(category);
-      return data.products;
-    },
-  });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSort = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setSort(e.target.value);
@@ -51,8 +43,19 @@ const ProductCategory = () => {
   );
 
   useEffect(() => {
-    setProducts(data);
-  }, [data]);
+    (async () => {
+      setIsLoading(true);
+
+      try {
+        const { data } = await getProductCategory(category);
+        setProducts(data.products);
+      } catch (err: unknown) {
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
+  }, [category]);
 
   useEffect(() => {
     category &&
