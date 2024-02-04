@@ -96,17 +96,17 @@ const ProductCategory = () => {
 
   if (isLoading) {
     return (
-      <LoaderContainer>
+      <Box>
         <Loader size='md' title='Loading...' />
-      </LoaderContainer>
+      </Box>
     );
   }
 
   if (products?.length < 1) {
     return (
-      <Container>
+      <Box>
         <EmptyProduct src='/img/no-result.png' title='No results found!' />
-      </Container>
+      </Box>
     );
   }
 
@@ -151,10 +151,14 @@ const ProductCategory = () => {
   );
 };
 
-const LoaderContainer = styled.section`
+const Box = styled.section`
   width: 100vw;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.bg};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Container = styled.section`
