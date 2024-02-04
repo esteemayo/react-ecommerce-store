@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 import { useCartModal } from './useCartModal';
@@ -39,6 +40,7 @@ export const useCart = (product: ProductValues) => {
 
     if (currentUser.role === 'admin') {
       isOpen && onClose();
+      toast.error('You are not authorized!');
       return;
     }
 
