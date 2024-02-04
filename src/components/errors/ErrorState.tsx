@@ -39,7 +39,8 @@ const Wrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Image = styled.img`

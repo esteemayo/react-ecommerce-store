@@ -37,7 +37,8 @@ const Wrapper = styled.div`
   height: 100%;
 
   display: flex;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
 `;
 
 const StyledImage = styled(CommonImage)`
