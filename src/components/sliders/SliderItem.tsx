@@ -19,7 +19,7 @@ const SliderItem = ({
   return (
     <Article position={position}>
       <Container>
-        <StyledImage src={img} alt={`Slide ${index}`} />
+        <StyledImage src={img} alt={`slide ${index + 1}`} />
       </Container>
       <Wrapper>
         <Title>{title}</Title>
