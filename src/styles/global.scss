@@ -51,8 +51,8 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #ebe9e9;
+  scrollbar-width: auto;
+  scrollbar-color: #333;
 
   @media only screen and (max-width: 75em) {
     font-size: 56.25%;
