@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useCartStore } from './useCartStore';
 import { CurrentUserType, WishlistProps, WishlistValues } from '../types';
+import { toast } from 'react-toastify';
 
 export const useWishlist: WishlistProps = (
   actionId: string,
@@ -26,6 +27,11 @@ export const useWishlist: WishlistProps = (
 
       if (!currentUser) {
         return navigate('/login');
+      }
+
+      if (currentUser.role === 'admin') {
+        toast.error('You are not authorized!');
+        return;
       }
 
       if (wished.includes(actionId)) {
