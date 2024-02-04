@@ -62,7 +62,7 @@ const ProductCategory = () => {
       setSortedProducts(
         products?.filter((item) =>
           Object.entries(filters).every(([key, value]) =>
-            item[key].includes(value)
+            item[key as keyof typeof item].includes(value)
           )
         )
       );
@@ -88,13 +88,13 @@ const ProductCategory = () => {
     }
   }, [sort]);
 
-  let colors = getUnique(products, 'color');
-  colors = colors?.map((color, index) => {
+  const allColors: string[] = getUnique(products, 'color');
+  const colors: React.ReactNode[] = allColors?.map((color, index) => {
     return <Option key={index} value={color} />;
   });
 
-  let sizes = getUnique(products, 'size');
-  sizes = sizes?.map((size, index) => {
+  const allSizes = getUnique(products, 'size');
+  const sizes: React.ReactNode[] = allSizes?.map((size, index) => {
     return <Option key={index} value={size} />;
   });
 
