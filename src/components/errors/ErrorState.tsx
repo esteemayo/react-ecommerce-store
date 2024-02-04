@@ -51,6 +51,10 @@ const Image = styled.img`
   @media only screen and (max-width: 31.25em) {
     width: 40rem;
   }
+
+  @media only screen and (max-width: 18.75em) {
+    width: 30rem;
+  }
 `;
 
 export default ErrorState;
