@@ -68,7 +68,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'wishlists',
-        element: <WishLists />,
+        element: (
+          <AuthRoute>
+            <WishLists />
+          </AuthRoute>
+        ),
       },
       {
         path: 'success',
