@@ -28,6 +28,9 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled(CommonImage)`
+  display: inline-block;
+  width: 50rem;
+  height: 40rem;
   background-color: transparent;
 `;
 
