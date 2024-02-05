@@ -8,7 +8,7 @@ const EmptyWishlist = () => {
       <Wrapper>
         <Image
           src='/svg/empty-list.svg'
-          width={600}
+          width={500}
           height={400}
           alt='empty list'
         />
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 
 const Image = styled(CommonImage)`
   display: inline-block;
-  width: 60rem;
+  width: 50rem;
   height: 40rem;
   background-color: transparent;
 
@@ -38,8 +38,11 @@ const Image = styled(CommonImage)`
     width: 50rem;
   }
 
-  @media only screen and (max-width: 18.75em) {
+  @media only screen and (max-width: 25em) {
     width: 40rem;
+  }
+
+  @media only screen and (max-width: 18.75em) {
     height: 25rem;
   }
 `;
