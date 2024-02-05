@@ -1,6 +1,5 @@
-import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useCallback, useState } from 'react';
 
 import FormButton from '../components/form/FormButton';
 import Form from '../components/form/Form';
@@ -15,8 +14,6 @@ import { validateForgotForm } from '../validations/forgot';
 import { ForgotErrors } from '../types';
 
 const Forgot = () => {
-  const navigate = useNavigate();
-
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState<ForgotErrors>({});
@@ -37,8 +34,10 @@ const Forgot = () => {
 
       try {
         const { data } = await forgotPassword({ email });
-        console.log(data);
-        navigate('/login');
+        if (data.status === 'success') {
+          toast.success(data.message);
+        }
+        setEmail('');
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: unknown | any) {
         console.log(err);
@@ -47,7 +46,7 @@ const Forgot = () => {
         setIsLoading(false);
       }
     },
-    [email, navigate]
+    [email]
   );
 
   return (
