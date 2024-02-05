@@ -112,7 +112,7 @@ const Products = () => {
         setPrice={setPrice}
       />
       <ProductList products={sortedProducts} onUpdate={setProducts} />
-      {products.length > 0 && (
+      {products.length > 0 && sortedProducts.length > 0 && (
         <Pagination counts={counts} page={page} numberOfPages={numberOfPages} />
       )}
     </ProductBox>
