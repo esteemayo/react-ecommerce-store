@@ -9,12 +9,7 @@ const NotFound = () => {
   return (
     <Container onMouseOver={closeSubmenu}>
       <Wrapper>
-        <StyledImage
-          src='/svg/startled.svg'
-          width={700}
-          height={500}
-          alt='404'
-        />
+        <Image src='/svg/startled.svg' width={700} height={500} alt='404' />
       </Wrapper>
     </Container>
   );
@@ -41,7 +36,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const StyledImage = styled(CommonImage)`
+const Image = styled(CommonImage)`
   width: 70rem;
   height: 50rem;
   background-color: transparent;
