@@ -21,7 +21,7 @@ const Category = ({ data, src, index }: CategoryProps) => {
       </HeadingWrapper>
       <StyledLink to={url}>
         <Button>
-          Shop now &nbsp;
+          Shop now
           <FontAwesomeIcon icon={faArrowRight} />
         </Button>
       </StyledLink>
