@@ -1,5 +1,5 @@
 export const darkTheme = {
-  bg: '#031525',
+  bg: 'var(--bg-primary-dark)',
   bgLight: '#06192a',
   bgNav: '#0d2136',
   textNav: '#d3e3fd',
@@ -180,7 +180,7 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
-  bg: 'var(--clr-white)',
+  bg: 'var(--bg-primary-light)',
   bgLight: '#f4f8f7',
   bgNav: 'var(--clr-secondary-green)',
   textNav: 'var(--clr-white)',
