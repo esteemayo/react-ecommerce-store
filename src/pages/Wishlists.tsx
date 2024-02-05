@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import WishlistCard from '../components/wishlists/WishlistCard';
-import CartModal from '../components/modals/CartModal';
 import WishlistHeader from '../components/wishlists/WishlistHeader';
+
+import CartModal from '../components/modals/CartModal';
+import EmptyWishlist from '../components/empty/EmptyWishlist';
 
 import { useCartModal } from '../hooks/useCartModal';
 import { useSubmenu } from '../hooks/useSubmenu';
@@ -60,7 +62,7 @@ const WishLists = () => {
   let bodyContent: JSX.Element | undefined;
 
   if (products.length < 1) {
-    bodyContent = <Text>Your wishlist is currently empty!</Text>;
+    bodyContent = <EmptyWishlist />;
   }
 
   if (products.length > 0) {
@@ -127,28 +129,6 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 50em) {
     max-width: 70rem;
-  }
-`;
-
-const Text = styled.p`
-  font-size: 4rem;
-  text-align: center;
-  color: ${({ theme }) => theme.textCartHeader};
-
-  @media only screen and (max-width: 37.5em) {
-    font-size: 3.5rem;
-  }
-
-  @media only screen and (max-width: 26.25em) {
-    font-size: 3rem;
-  }
-
-  @media only screen and (max-width: 25em) {
-    font-size: 2.8rem;
-  }
-
-  @media only screen and (max-width: 18.75em) {
-    font-size: 2rem;
   }
 `;
 
