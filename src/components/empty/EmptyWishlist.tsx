@@ -37,6 +37,11 @@ const Image = styled(CommonImage)`
   @media only screen and (max-width: 31.25em) {
     width: 50rem;
   }
+
+  @media only screen and (max-width: 18.75em) {
+    width: 40rem;
+    height: 25rem;
+  }
 `;
 
 export default EmptyWishlist;
