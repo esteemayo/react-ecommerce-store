@@ -8,7 +8,7 @@ const productReviewUrl = (productId: string) =>
   `${apiEndpoint}/${productId}/reviews`;
 
 export const getProducts = (page?: number) =>
-  http.get(`${apiEndpoint}?page=${page}`);
+  http.get(`${apiEndpoint}?page=${page}&limit=12`);
 
 export const getCategoryCount = () =>
   http.get(`${apiEndpoint}/count-by-category`);
