@@ -111,7 +111,16 @@ const Products = () => {
         setColor={setColor}
         setPrice={setPrice}
       />
-      <ProductList products={sortedProducts} onUpdate={setProducts} />
+      {sortedProducts.length < 1 && !currentPage ? (
+        <Box>
+          <EmptyProduct
+            src='/img/no-result.png'
+            title='No product matches your filter criteria'
+          />
+        </Box>
+      ) : (
+        <ProductList products={sortedProducts} onUpdate={setProducts} />
+      )}
       {products.length > 0 && sortedProducts.length > 0 && (
         <Pagination counts={counts} page={page} numberOfPages={numberOfPages} />
       )}
@@ -124,6 +133,12 @@ const Container = styled.section`
   min-height: 100vh;
   padding: 10rem 0;
   background-color: ${({ theme }) => theme.bg};
+`;
+
+const Box = styled.section`
+  width: 100%;
+  min-height: 80vh;
+  padding-top: 5rem;
 `;
 
 export default Products;
