@@ -15,7 +15,6 @@ const API = axios.create({
     Accept: 'application/json',
     'Content-Type': 'application/json',
   },
-  withCredentials: true,
 });
 
 API.interceptors.response.use(null, (error) => {
