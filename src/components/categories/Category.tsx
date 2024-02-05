@@ -9,7 +9,7 @@ import { CommonImage } from '../CommonImage';
 
 const Category = ({ data, src, index }: CategoryProps) => {
   const url = useMemo(() => {
-    return `/products/category/${data[index]?.category}`;
+    return `/products/category/${encodeURIComponent(data[index]?.category)}`;
   }, [data, index]);
 
   return (
