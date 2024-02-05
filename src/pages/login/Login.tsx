@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -41,8 +40,6 @@ const initialError: LoginErrors = {
 };
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const {
     isError,
     isLoading,
@@ -106,9 +103,9 @@ const Login = () => {
   useEffect(() => {
     if (isSuccess && user) {
       toast.success('Access granted!!!');
-      navigate('/');
+      window.location.reload();
     }
-  }, [isSuccess, navigate, user]);
+  }, [isSuccess, user]);
 
   useEffect(() => {
     isError && toast.error(message);
