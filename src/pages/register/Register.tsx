@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -42,8 +41,6 @@ const initialState: RegisterData = {
 };
 
 const Register = () => {
-  const navigate = useNavigate();
-
   const { getAll } = useCountries();
   const {
     isError,
@@ -139,9 +136,7 @@ const Register = () => {
         };
 
         const res = await registerUser(credentials);
-        console.log(res);
         registerUserFulfilled(res.data);
-        console.log({ ...data, file });
         handleClear();
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: unknown | any) {
@@ -150,7 +145,6 @@ const Register = () => {
     },
     [
       data,
-      file,
       handleClear,
       registerUserPending,
       registerUserRejected,
@@ -165,9 +159,9 @@ const Register = () => {
   useEffect(() => {
     if (isSuccess && user) {
       toast.success('Account successfully created!!!');
-      navigate('/login');
+      window.location.reload();
     }
-  }, [isSuccess, navigate, user]);
+  }, [isSuccess, user]);
 
   useEffect(() => {
     isError && toast.error(message);
