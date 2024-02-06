@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { DefaultTheme, keyframes } from 'styled-components';
 
 interface SpinnerProps {
   size?: 'xs' | 'sm' | 'md' | 'lg';
@@ -21,7 +21,7 @@ const Rotate = keyframes`
 const Container = styled.div<IContainer>`
   width: ${({ size }) => setWidth(size)};
   height: ${({ size }) => setHeight(size)};
-  border: 3.85px solid ${({ theme }) => theme.bgSpnr};
+  border: ${({ theme, size }) => setBorder(theme, size)};
   border-top-color: ${({ theme }) => theme.spnrBorTop};
   border-radius: 50%;
   animation: ${Rotate} 0.6s linear infinite;
@@ -39,6 +39,11 @@ const setHeight = (size: string) => {
   if (size === 'sm') return '2rem';
   if (size === 'md') return '5rem';
   if (size === 'lg') return '10rem';
+};
+
+const setBorder = (theme: DefaultTheme, size: string) => {
+  if (size === 'md' || size === 'lg') return `0.5rem solid ${theme.bgSpnr}`;
+  return `3.85px solid ${theme.bgSpnr}`;
 };
 
 export default Spinner;
