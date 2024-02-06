@@ -131,7 +131,7 @@ const Reviewer = styled.div`
 const Name = styled.h3`
   display: inline-block;
   text-transform: capitalize;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.text};
 
