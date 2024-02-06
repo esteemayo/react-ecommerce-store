@@ -17,7 +17,7 @@ const Announcement = () => {
 
   return (
     <Container onMouseOver={closeSubmenu}>
-      <Marquee speed={100} gradient={gradient}>
+      <Marquee speed={50} gradient={gradient}>
         <Wrapper>
           {announcements.map((item) => {
             const { id, title } = item;
