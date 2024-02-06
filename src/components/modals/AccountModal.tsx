@@ -1,5 +1,6 @@
-import DeleteAccount from '../accounts/DeleteAccount';
 import Modal from './Modal';
+
+import DeleteAccount from '../accounts/DeleteAccount';
 import { useAccountModal } from '../../hooks/useAccountModal';
 
 const AccountModal = () => {
