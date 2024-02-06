@@ -5,7 +5,7 @@ import { ProductImageProps } from '../../types';
 
 const ProductImage = ({ image, index, onOpen }: ProductImageProps) => {
   return (
-    <StyledImage
+    <Image
       src={image}
       width={350}
       height={350}
@@ -15,7 +15,7 @@ const ProductImage = ({ image, index, onOpen }: ProductImageProps) => {
   );
 };
 
-const StyledImage = styled(CommonImage)`
+const Image = styled(CommonImage)`
   width: 35rem;
   height: 35rem;
   border-radius: 2px;
