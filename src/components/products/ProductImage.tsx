@@ -9,7 +9,7 @@ const ProductImage = ({ image, index, onOpen }: ProductImageProps) => {
       src={image}
       width={350}
       height={350}
-      alt=''
+      alt={`image ${index + 1}`}
       onClick={() => onOpen(index)}
     />
   );
