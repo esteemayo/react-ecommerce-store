@@ -19,22 +19,15 @@ const Rotate = keyframes`
 `;
 
 const Container = styled.div<IContainer>`
-  width: ${({ size }) => setWidth(size)};
-  height: ${({ size }) => setHeight(size)};
+  width: ${({ size }) => setProperty(size)};
+  height: ${({ size }) => setProperty(size)};
   border: ${({ theme, size }) => setBorder(theme, size)};
   border-top-color: ${({ theme }) => theme.spnrBorTop};
   border-radius: 50%;
   animation: ${Rotate} 0.6s linear infinite;
 `;
 
-const setWidth = (size: string) => {
-  if (size === 'xs') return '1.5rem';
-  if (size === 'sm') return '2rem';
-  if (size === 'md') return '5rem';
-  if (size === 'lg') return '10rem';
-};
-
-const setHeight = (size: string) => {
+const setProperty = (size: string) => {
   if (size === 'xs') return '1.5rem';
   if (size === 'sm') return '2rem';
   if (size === 'md') return '5rem';
