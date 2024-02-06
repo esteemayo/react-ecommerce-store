@@ -138,6 +138,7 @@ const Register = () => {
         const res = await registerUser(credentials);
         registerUserFulfilled(res.data);
         handleClear();
+        window.location.reload();
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: unknown | any) {
         registerUserRejected(err.response.data.message);
@@ -159,7 +160,6 @@ const Register = () => {
   useEffect(() => {
     if (isSuccess && user) {
       toast.success('Account successfully created!!!');
-      window.location.reload();
     }
   }, [isSuccess, user]);
 
