@@ -54,15 +54,26 @@ const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
           Cancel
         </CancelButton>
         <DeleteButton type='button' disabled={isLoading} onClick={handleDelete}>
-          {isLoading ? <Spinner /> : 'Delete account'}
+          Delete account
         </DeleteButton>
       </ButtonContainer>
+      {isLoading && <Spinner size='md' />}
     </Container>
   );
 };
 
 const Container = styled.div`
   padding: 2rem 0;
+  position: relative;
+
+  & > div:last-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
 `;
 
 const Heading = styled.h4`
