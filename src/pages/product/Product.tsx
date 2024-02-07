@@ -132,9 +132,7 @@ const SingleProduct = () => {
       <Wrapper>
         <Product product={product} inCart={inCart} actionLabel={actionLabel} />
         <Line />
-        {recommendations.length >= 3 && (
-          <Recommendations data={recommendations} productId={productId} />
-        )}
+        <Recommendations data={recommendations} productId={productId} />
         <Reviews
           productId={productId}
           reviews={reviews}
