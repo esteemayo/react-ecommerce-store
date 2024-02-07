@@ -98,7 +98,7 @@ const ProductImageModal = ({
       <Wrapper active={activeModal}>
         <ImageContainer className='imageContainer' onClick={closeModalHandler}>
           <StyledImage
-            src={images?.[slideIndex] ?? '/img/img-1.jpg'}
+            src={images?.[slideIndex]}
             width={500}
             height={700}
             alt={`Image ${slideIndex + 1}`}
