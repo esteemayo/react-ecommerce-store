@@ -307,6 +307,12 @@ export interface ProductType {
   discount: number;
 }
 
+export interface SlideProps {
+  slidesToShow: number;
+  arrowsScroll: number;
+  children: React.ReactNode;
+}
+
 type CategoryType = {
   category: string;
   count: number;
