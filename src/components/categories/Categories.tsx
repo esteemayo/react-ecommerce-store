@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 
 import Spinner from '../Spinner';
-import Header from '../Header';
+import Slide from '../Slide';
 import Category from './Category';
+import Header from '../Header';
 
 import { categoryImages } from '../../data';
 import { getCategoryCount } from '../../services/productService';
-import Slide from '../Slide';
 
 const Categories = () => {
   const { isLoading, data } = useQuery({
