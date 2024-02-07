@@ -7,6 +7,7 @@ import Category from './Category';
 
 import { categoryImages } from '../../data';
 import { getCategoryCount } from '../../services/productService';
+import Slide from '../Slide';
 
 const Categories = () => {
   const { isLoading, data } = useQuery({
@@ -27,12 +28,19 @@ const Categories = () => {
           </SpinnerWrapper>
         ) : (
           <Box>
-            {data &&
-              categoryImages.map((item, index) => {
-                return (
-                  <Category key={index} data={data} src={item} index={index} />
-                );
-              })}
+            <Slide slidesToShow={5} arrowsScroll={5}>
+              {data &&
+                categoryImages.map((item, index) => {
+                  return (
+                    <Category
+                      key={index}
+                      data={data}
+                      src={item}
+                      index={index}
+                    />
+                  );
+                })}
+            </Slide>
           </Box>
         )}
       </Wrapper>
