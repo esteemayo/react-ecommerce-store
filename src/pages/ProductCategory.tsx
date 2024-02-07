@@ -109,7 +109,10 @@ const ProductCategory = () => {
   if (products?.length < 1) {
     return (
       <Box>
-        <EmptyProduct src='/img/no-result.png' title='No results found!' />
+        <EmptyProduct
+          src='/img/no-result.png'
+          title={`Category "${category}" is currently empty.`}
+        />
       </Box>
     );
   }
