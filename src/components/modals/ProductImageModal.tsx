@@ -97,7 +97,7 @@ const ProductImageModal = ({
       )}
       <Wrapper active={activeModal}>
         <ImageContainer className='imageContainer' onClick={closeModalHandler}>
-          <StyledImage
+          <Image
             src={images?.[slideIndex]}
             width={500}
             height={700}
@@ -205,7 +205,7 @@ const ImageContainer = styled.div`
   justify-content: center;
 `;
 
-const StyledImage = styled(CommonImage)`
+const Image = styled(CommonImage)`
   width: 50rem;
   height: 100%;
   object-fit: contain;
