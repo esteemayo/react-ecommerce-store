@@ -4,6 +4,10 @@ import Recommendation from './Recommendation';
 import { RecommendationsProps } from '../types';
 
 const Recommendations = ({ data, productId }: RecommendationsProps) => {
+  if (data.length < 3) {
+    return null;
+  }
+
   return (
     <Container>
       <Heading>You might also like</Heading>
