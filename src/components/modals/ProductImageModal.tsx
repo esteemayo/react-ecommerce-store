@@ -101,7 +101,7 @@ const ProductImageModal = ({
             src={images?.[slideIndex] ?? '/img/img-1.jpg'}
             width={500}
             height={700}
-            alt=''
+            alt={`Image ${slideIndex + 1}`}
           />
         </ImageContainer>
       </Wrapper>
