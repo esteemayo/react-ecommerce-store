@@ -652,6 +652,12 @@ export interface WishlistButtonProps {
   currentUser: CurrentUserType;
 }
 
+export interface WishProductProps {
+  actionId: string;
+  product: WishlistValues;
+  currentUser: CurrentUserType;
+}
+
 export interface FavoriteButtonProps {
   actionId: string;
   likes: string[];
