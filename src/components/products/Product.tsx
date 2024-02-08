@@ -10,6 +10,7 @@ import ProductButton from './ProductButton';
 import ProductInfo from './ProductInfo';
 import ProductImages from './ProductImages';
 import ProductValue from './ProductValue';
+import FavoriteButton from './FavoriteButton';
 
 import Alert from '../Alert';
 import BreadCrumbs from '../../pages/product/BreadCrumbs';
@@ -91,6 +92,9 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
                 message='Item added to cart'
               />
             )}
+            <ButtonWrapper>
+              <FavoriteButton />
+            </ButtonWrapper>
             <Hr />
             <ProductValue items={productValue} mode={mode} />
             <Hr />
@@ -174,5 +178,7 @@ const Hr = styled.hr`
   border: none;
   background-color: ${({ theme }) => theme.cartModalBorder};
 `;
+
+const ButtonWrapper = styled.div``;
 
 export default Product;

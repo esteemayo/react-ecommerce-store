@@ -6,7 +6,7 @@ const FavoriteButton = () => {
   return (
     <Button>
       Favorite
-      <FavoriteOutlinedIcon />
+      <FavoriteBorderOutlinedIcon />
     </Button>
   );
 };
