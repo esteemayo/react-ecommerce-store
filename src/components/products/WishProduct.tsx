@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import { useWishlist } from '../../hooks/useWishlist';
@@ -16,9 +17,13 @@ const WishProduct = ({ actionId, product, currentUser }: WishProductProps) => {
     currentUser
   );
 
+  const btnLabel = useMemo(() => {
+    return isWished ? 'Wished' : 'Wishlist';
+  }, [isWished]);
+
   return (
     <Button onClick={handleToggle}>
-      Wishlist
+      {btnLabel}
       <HeartIcon isWished={isWished} />
     </Button>
   );
