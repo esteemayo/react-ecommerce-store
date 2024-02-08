@@ -309,7 +309,6 @@ export interface ProductType {
 
 export interface SlideProps {
   slidesToShow: number;
-  arrowsScroll: number;
   children: React.ReactNode;
 }
 
