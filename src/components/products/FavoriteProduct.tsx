@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useMemo } from 'react';
 import styled from 'styled-components';
-import { faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { FavoriteProductProps } from '../../types';
 import { useFavorite } from '../../hooks/useFavorite';
+import FavoriteIcon from '../icons/FavoriteIcon';
 
 const FavoriteProduct = ({
   actionId,
@@ -14,13 +14,19 @@ const FavoriteProduct = ({
   const { hasFavorited, toggleFavorite } = useFavorite(
     actionId,
     currentUser,
-    likes
+    likes,
+    undefined,
+    onFavorite
   );
 
+  const btnLabel = useMemo(() => {
+    return hasFavorited ? 'Favorited' : 'Favorite';
+  }, [hasFavorited]);
+
   return (
-    <Button>
-      Favorite
-      <FontAwesomeIcon icon={faStarHalfAlt} />
+    <Button onClick={toggleFavorite}>
+      {btnLabel}
+      <FavoriteIcon isFavorite={hasFavorited} />
     </Button>
   );
 };

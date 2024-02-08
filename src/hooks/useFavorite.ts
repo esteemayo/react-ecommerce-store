@@ -9,7 +9,8 @@ export const useFavorite: IFavorite = (
   actionId: string,
   currentUser: CurrentUserType,
   likes: string[],
-  onUpdate
+  onUpdate,
+  onFavorite
 ) => {
   const navigate = useNavigate();
 
@@ -34,12 +35,13 @@ export const useFavorite: IFavorite = (
         onUpdate?.((prev) => {
           return [...prev].map((item) => (item.id === actionId ? data : item));
         });
+        onFavorite?.();
       } catch (err: unknown) {
         console.log(err);
         toast.error('Something went wrong!!!');
       }
     },
-    [actionId, currentUser, navigate, onUpdate]
+    [actionId, currentUser, navigate, onFavorite, onUpdate]
   );
 
   return {

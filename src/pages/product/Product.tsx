@@ -137,7 +137,7 @@ const SingleProduct = () => {
           inCart={inCart}
           actionLabel={actionLabel}
           currentUser={currentUser}
-          onFavorite={setProduct}
+          onFavorite={refetchProduct}
         />
         <Line />
         <Recommendations data={recommendations} productId={productId} />
