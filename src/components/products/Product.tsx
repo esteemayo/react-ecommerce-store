@@ -94,8 +94,8 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
               />
             )}
             <ButtonWrapper>
-              <FavoriteButton />
               <WishProduct />
+              <FavoriteButton />
             </ButtonWrapper>
             <Hr />
             <ProductValue items={productValue} mode={mode} />
