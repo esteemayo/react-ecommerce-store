@@ -21,7 +21,7 @@ const Button = styled.button`
   font-size: 1.8rem;
   background-color: transparent;
   color: ${({ theme }) => theme.text};
-  border: 1px solid ${({ theme }) => theme.cartModalBorder};
+  border: 1px solid ${({ theme }) => theme.colCrumbs};
   border-radius: 0.5rem;
   line-height: 1.3em;
   outline: none;
