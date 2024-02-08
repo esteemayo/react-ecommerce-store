@@ -181,6 +181,11 @@ const Hr = styled.hr`
   background-color: ${({ theme }) => theme.cartModalBorder};
 `;
 
-const ButtonWrapper = styled.div``;
+const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+`;
 
 export default Product;
