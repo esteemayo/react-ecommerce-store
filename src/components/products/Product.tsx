@@ -104,7 +104,11 @@ const Product = ({
                 product={product}
                 currentUser={currentUser}
               />
-              <FavoriteProduct />
+              <FavoriteProduct
+                actionId={product.id}
+                currentUser={currentUser}
+                likes={product.likes}
+              />
             </ButtonWrapper>
             <Hr />
             <ProductValue items={productValue} mode={mode} />
