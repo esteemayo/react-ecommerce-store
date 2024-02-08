@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { FavoriteProductProps } from '../../types';
 import { useFavorite } from '../../hooks/useFavorite';
+
 import FavoriteIcon from '../icons/FavoriteIcon';
 
 const FavoriteProduct = ({
