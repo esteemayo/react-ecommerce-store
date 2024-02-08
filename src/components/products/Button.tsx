@@ -24,7 +24,7 @@ export const Button = styled.button`
   }
 
   svg {
-    font-size: inherit;
+    font-size: 2rem;
     fill: currentColor;
   }
 `;
