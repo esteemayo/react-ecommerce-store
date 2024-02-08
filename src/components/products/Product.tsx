@@ -10,7 +10,7 @@ import ProductButton from './ProductButton';
 import ProductInfo from './ProductInfo';
 import ProductImages from './ProductImages';
 import WishProduct from './WishProduct';
-import FavoriteButton from './FavoriteButton';
+import FavoriteProduct from './FavoriteProduct';
 import ProductValue from './ProductValue';
 
 import Alert from '../Alert';
@@ -99,8 +99,12 @@ const Product = ({
               />
             )}
             <ButtonWrapper>
-              <WishProduct actionId={product.id} product={product} currentUser={currentUser} />
-              <FavoriteButton />
+              <WishProduct
+                actionId={product.id}
+                product={product}
+                currentUser={currentUser}
+              />
+              <FavoriteProduct />
             </ButtonWrapper>
             <Hr />
             <ProductValue items={productValue} mode={mode} />
