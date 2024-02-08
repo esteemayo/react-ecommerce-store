@@ -785,6 +785,14 @@ export interface AlertProps {
   onChange(alert: boolean): void;
 }
 
+export interface ProductButtonsProps {
+  actionId: string;
+  currentUser: CurrentUserType;
+  product: WishlistValues;
+  likes: string[];
+  onFavorite(): void;
+}
+
 export interface ProductValueProps {
   items: ProductValue;
   mode: boolean;
