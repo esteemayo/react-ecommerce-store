@@ -25,7 +25,7 @@ const FavoriteProduct = ({
   }, [hasFavorited]);
 
   return (
-    <Button onClick={toggleFavorite}>
+    <Button type='button' onClick={toggleFavorite}>
       {btnLabel}
       <FavoriteIcon isFavorite={hasFavorited} />
     </Button>
