@@ -701,6 +701,7 @@ export interface ProductProps {
   product: ProductValues | CartValues;
   inCart: boolean;
   actionLabel: string;
+  currentUser: CurrentUserType;
 }
 
 export interface ProductImageProps {
