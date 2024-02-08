@@ -19,6 +19,14 @@ export const Button = styled.button`
   cursor: pointer;
   transition: all 0.3s;
 
+  @media only screen and (max-width: 26.875em) {
+    font-size: 1.55rem;
+  }
+
+  @media only screen and (max-width: 18.75em) {
+    font-size: 1.4rem;
+  }
+
   &:hover {
     border-color: ${({ theme }) => theme.cartSelected};
   }
