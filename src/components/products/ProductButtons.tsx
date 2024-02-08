@@ -7,6 +7,7 @@ import { ProductButtonsProps } from '../../types';
 
 const ProductButtons = ({
   actionId,
+  alert,
   currentUser,
   product,
   likes,
@@ -34,6 +35,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  margin-top: 2rem;
 `;
 
 export default ProductButtons;

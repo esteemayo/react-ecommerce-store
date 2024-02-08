@@ -100,6 +100,7 @@ const Product = ({
             )}
             <ProductButtons
               actionId={product.id}
+              alert={alert}
               currentUser={currentUser}
               product={product}
               likes={product.likes}

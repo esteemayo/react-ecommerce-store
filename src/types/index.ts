@@ -787,6 +787,7 @@ export interface AlertProps {
 
 export interface ProductButtonsProps {
   actionId: string;
+  alert: boolean;
   currentUser: CurrentUserType;
   product: WishlistValues;
   likes: string[];
