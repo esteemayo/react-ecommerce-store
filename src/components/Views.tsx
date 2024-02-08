@@ -15,6 +15,10 @@ const Container = styled.div`
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+
+  svg {
+    font-size: 2rem;
+  }
 `;
 
 const Span = styled.span``;
