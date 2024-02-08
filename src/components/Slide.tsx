@@ -5,7 +5,7 @@ import { SlideProps } from '../types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Slide = ({ slidesToShow, arrowsScroll, children }: SlideProps) => {
+const Slide = ({ slidesToShow, children }: SlideProps) => {
   const settings = {
     dots: true,
     infinite: true,
