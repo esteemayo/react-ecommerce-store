@@ -3,12 +3,20 @@ import styled from 'styled-components';
 import { faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { FavoriteProductProps } from '../../types';
+import { useFavorite } from '../../hooks/useFavorite';
 
 const FavoriteProduct = ({
   actionId,
   currentUser,
   likes,
+  onFavorite,
 }: FavoriteProductProps) => {
+  const { hasFavorited, toggleFavorite } = useFavorite(
+    actionId,
+    currentUser,
+    likes
+  );
+
   return (
     <Button>
       Favorite

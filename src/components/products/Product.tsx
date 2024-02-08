@@ -27,6 +27,7 @@ const Product = ({
   inCart,
   actionLabel,
   currentUser,
+  onFavorite,
 }: ProductProps) => {
   const mode = useDarkMode((state) => state.mode);
 
@@ -108,6 +109,7 @@ const Product = ({
                 actionId={product.id}
                 currentUser={currentUser}
                 likes={product.likes}
+                onFavorite={onFavorite}
               />
             </ButtonWrapper>
             <Hr />

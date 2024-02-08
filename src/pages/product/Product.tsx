@@ -137,6 +137,7 @@ const SingleProduct = () => {
           inCart={inCart}
           actionLabel={actionLabel}
           currentUser={currentUser}
+          onFavorite={setProduct}
         />
         <Line />
         <Recommendations data={recommendations} productId={productId} />

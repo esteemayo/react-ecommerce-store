@@ -667,8 +667,9 @@ export interface FavoriteButtonProps {
 
 export interface FavoriteProductProps {
   actionId: string;
-  likes: string[];
   currentUser: CurrentUserType;
+  likes: string[];
+  onFavorite: React.Dispatch<SetStateAction<ProductValues | CartValues>>;
 }
 
 export interface CartModalProps {
@@ -714,6 +715,7 @@ export interface ProductProps {
   inCart: boolean;
   actionLabel: string;
   currentUser: CurrentUserType;
+  onFavorite: React.Dispatch<SetStateAction<ProductValues | CartValues>>;
 }
 
 export interface ProductImageProps {
