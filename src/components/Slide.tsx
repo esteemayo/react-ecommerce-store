@@ -1,10 +1,20 @@
-import Slider from 'infinite-react-carousel';
+import Slider from 'react-slick';
 
 import { SlideProps } from '../types';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 const Slide = ({ slidesToShow, arrowsScroll, children }: SlideProps) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+  };
+
   return (
-    <Slider slidesToShow={slidesToShow} arrowsScroll={arrowsScroll}>
+    <Slider {...settings} slidesToShow={slidesToShow}>
       {children}
     </Slider>
   );
