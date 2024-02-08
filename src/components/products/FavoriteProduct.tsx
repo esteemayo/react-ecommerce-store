@@ -2,7 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
-const FavoriteProduct = () => {
+import { FavoriteProductProps } from '../../types';
+
+const FavoriteProduct = ({
+  actionId,
+  currentUser,
+  likes,
+}: FavoriteProductProps) => {
   return (
     <Button>
       Favorite
