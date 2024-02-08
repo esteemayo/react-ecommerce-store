@@ -508,7 +508,8 @@ export interface IFavorite {
     actionId: string,
     currentUser: CurrentUserType,
     likes: string[],
-    onUpdate?: React.Dispatch<SetStateAction<ProductValues[]>>
+    onUpdate?: React.Dispatch<SetStateAction<ProductValues[]>>,
+    onFavorite?: () => void
   ): {
     hasFavorited: boolean;
     toggleFavorite: (e: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
@@ -669,7 +670,7 @@ export interface FavoriteProductProps {
   actionId: string;
   currentUser: CurrentUserType;
   likes: string[];
-  onFavorite: React.Dispatch<SetStateAction<ProductValues | CartValues>>;
+  onFavorite(): void;
 }
 
 export interface CartModalProps {
@@ -715,7 +716,7 @@ export interface ProductProps {
   inCart: boolean;
   actionLabel: string;
   currentUser: CurrentUserType;
-  onFavorite: React.Dispatch<SetStateAction<ProductValues | CartValues>>;
+  onFavorite(): void;
 }
 
 export interface ProductImageProps {
