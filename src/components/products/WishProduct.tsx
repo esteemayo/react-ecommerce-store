@@ -1,3 +1,4 @@
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import styled from 'styled-components';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
@@ -17,9 +18,9 @@ const WishProduct = ({ actionId, product, currentUser }: WishProductProps) => {
   );
 
   return (
-    <Button>
+    <Button onClick={handleToggle}>
       Wishlist
-      <FavoriteBorderOutlinedIcon />
+      {isWished ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
     </Button>
   );
 };
