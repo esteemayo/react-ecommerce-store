@@ -9,8 +9,6 @@ import ProductHead from './ProductHead';
 import ProductButton from './ProductButton';
 import ProductInfo from './ProductInfo';
 import ProductImages from './ProductImages';
-import WishProduct from './WishProduct';
-import FavoriteProduct from './FavoriteProduct';
 import ProductValue from './ProductValue';
 
 import Alert from '../Alert';
@@ -21,6 +19,7 @@ import { ProductProps } from '../../types';
 
 import { useCart } from '../../hooks/useCart';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import ProductButtons from './ProductButtons';
 
 const Product = ({
   product,
@@ -99,19 +98,13 @@ const Product = ({
                 message='Item added to cart'
               />
             )}
-            <ButtonWrapper>
-              <WishProduct
-                actionId={product.id}
-                product={product}
-                currentUser={currentUser}
-              />
-              <FavoriteProduct
-                actionId={product.id}
-                currentUser={currentUser}
-                likes={product.likes}
-                onFavorite={onFavorite}
-              />
-            </ButtonWrapper>
+            <ProductButtons
+              actionId={product.id}
+              currentUser={currentUser}
+              product={product}
+              likes={product.likes}
+              onFavorite={onFavorite}
+            />
             <Hr />
             <ProductValue items={productValue} mode={mode} />
             <Hr />
@@ -194,13 +187,6 @@ const Hr = styled.hr`
   height: 1px;
   border: none;
   background-color: ${({ theme }) => theme.cartModalBorder};
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
 `;
 
 export default Product;
