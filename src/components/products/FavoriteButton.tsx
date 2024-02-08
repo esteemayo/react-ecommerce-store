@@ -1,12 +1,12 @@
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import { faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 const FavoriteButton = () => {
   return (
     <Button>
       Favorite
-      <FavoriteBorderOutlinedIcon />
+      <FontAwesomeIcon icon={faStarHalfAlt} />
     </Button>
   );
 };
