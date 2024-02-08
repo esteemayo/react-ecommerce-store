@@ -10,8 +10,8 @@ export const Button = styled.button`
   padding: 2rem 1rem;
   font-size: 1.8rem;
   background-color: transparent;
-  color: ${({ theme }) => theme.text};
-  border: 1px solid ${({ theme }) => theme.colCrumbs};
+  color: ${({ theme }) => theme.textSize};
+  border: 1px solid ${({ theme }) => theme.sizeHover};
   border-radius: 0.5rem;
   line-height: 1.3em;
   outline-color: #eee;
@@ -20,7 +20,7 @@ export const Button = styled.button`
   transition: all 0.3s;
 
   &:hover {
-    border-color: ${({ theme }) => theme.text};
+    border-color: ${({ theme }) => theme.cartSelected};
   }
 
   svg {
