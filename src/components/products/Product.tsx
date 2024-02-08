@@ -12,6 +12,8 @@ import ProductImages from './ProductImages';
 import ProductValue from './ProductValue';
 
 import Alert from '../Alert';
+import ProductButtons from './ProductButtons';
+import Views from '../Views';
 import BreadCrumbs from '../../pages/product/BreadCrumbs';
 
 import { productValue } from '../../data';
@@ -19,7 +21,6 @@ import { ProductProps } from '../../types';
 
 import { useCart } from '../../hooks/useCart';
 import { useDarkMode } from '../../hooks/useDarkMode';
-import ProductButtons from './ProductButtons';
 
 const Product = ({
   product,
@@ -56,6 +57,7 @@ const Product = ({
         </Left>
         <Right>
           <BreadCrumbs category={product.category} />
+          <Views />
           <ProductWrapper>
             <ProductHead
               name={product.name}
