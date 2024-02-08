@@ -99,7 +99,7 @@ const Product = ({
               />
             )}
             <ButtonWrapper>
-              <WishProduct />
+              <WishProduct actionId={product.id} product={product} currentUser={currentUser} />
               <FavoriteButton />
             </ButtonWrapper>
             <Hr />

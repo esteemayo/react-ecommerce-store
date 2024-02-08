@@ -1,7 +1,21 @@
 import styled from 'styled-components';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
-const WishProduct = () => {
+import { useWishlist } from '../../hooks/useWishlist';
+import { useCartStore } from '../../hooks/useCartStore';
+
+import { WishProductProps } from '../../types';
+
+const WishProduct = ({ actionId, product, currentUser }: WishProductProps) => {
+  const wished = useCartStore((state) => state.wished);
+
+  const { isWished, handleToggle } = useWishlist(
+    actionId,
+    product,
+    wished,
+    currentUser
+  );
+
   return (
     <Button>
       Wishlist
