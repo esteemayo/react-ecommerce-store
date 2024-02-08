@@ -12,7 +12,13 @@ const FavoriteButton = () => {
 };
 
 const Button = styled.button`
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  width: 100%;
+  padding: 2rem 1rem;
 `;
 
 export default FavoriteButton;
