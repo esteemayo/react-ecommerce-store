@@ -31,8 +31,8 @@ export const useFavorite: IFavorite = (
 
       try {
         const { data } = await likeProduct(actionId);
-        onUpdate((prev) => {
-          return prev.map((item) => (item.id === actionId ? data : item));
+        onUpdate?.((prev) => {
+          return [...prev].map((item) => (item.id === actionId ? data : item));
         });
       } catch (err: unknown) {
         console.log(err);
