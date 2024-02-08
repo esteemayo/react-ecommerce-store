@@ -24,6 +24,8 @@ const Button = styled.button`
   color: ${({ theme }) => theme.text};
   border: 1px solid ${({ theme }) => theme.text};
   border-radius: 0.5rem;
+  line-height: 1.3em;
+  outline: none;
   margin-bottom: 3rem;
   cursor: pointer;
 
