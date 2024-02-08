@@ -665,6 +665,12 @@ export interface FavoriteButtonProps {
   onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>;
 }
 
+export interface FavoriteProductProps {
+  actionId: string;
+  likes: string[];
+  currentUser: CurrentUserType;
+}
+
 export interface CartModalProps {
   product?: ProductValues;
   isOpen: boolean;
