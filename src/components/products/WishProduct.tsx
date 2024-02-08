@@ -1,10 +1,9 @@
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import styled from 'styled-components';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import { useWishlist } from '../../hooks/useWishlist';
 import { useCartStore } from '../../hooks/useCartStore';
 
+import HeartIcon from '../icons/HeartIcon';
 import { WishProductProps } from '../../types';
 
 const WishProduct = ({ actionId, product, currentUser }: WishProductProps) => {
@@ -20,7 +19,7 @@ const WishProduct = ({ actionId, product, currentUser }: WishProductProps) => {
   return (
     <Button onClick={handleToggle}>
       Wishlist
-      {isWished ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
+      <HeartIcon isWished={isWished} />
     </Button>
   );
 };
