@@ -28,6 +28,7 @@ export const Button = styled.button`
   }
 
   &:hover {
+    background-color: ${({ theme }) => theme.sizeHover};
     border-color: ${({ theme }) => theme.cartSelected};
   }
 
