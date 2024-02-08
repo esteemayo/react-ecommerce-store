@@ -39,7 +39,11 @@ const Container = styled.div<IProps>`
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: ${({ alert }) => (alert === 'true' ? '1rem' : undefined)};
+  margin-top: ${({ alert }) => setProperty(alert)};
 `;
+
+const setProperty = (alert: string) => {
+  return alert === 'true' ? '1rem' : undefined;
+};
 
 export default ProductButtons;
