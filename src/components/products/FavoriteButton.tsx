@@ -22,12 +22,17 @@ const Button = styled.button`
   font-size: 1.8rem;
   background-color: transparent;
   color: ${({ theme }) => theme.text};
-  border: 1px solid ${({ theme }) => theme.text};
+  border: 1px solid ${({ theme }) => theme.cartModalBorder};
   border-radius: 0.5rem;
   line-height: 1.3em;
   outline: none;
   margin-bottom: 3rem;
   cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.text};
+  }
 
   svg {
     font-size: inherit;
