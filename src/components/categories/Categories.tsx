@@ -2,9 +2,8 @@ import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 
 import Spinner from '../Spinner';
-import Slide from '../Slide';
-import Category from './Category';
 import Header from '../Header';
+import Category from './Category';
 
 import { categoryImages } from '../../data';
 import { getCategoryCount } from '../../services/productService';
@@ -28,19 +27,12 @@ const Categories = () => {
           </SpinnerWrapper>
         ) : (
           <Box>
-            <Slide slidesToShow={5} arrowsScroll={5}>
-              {data &&
-                categoryImages.map((item, index) => {
-                  return (
-                    <Category
-                      key={index}
-                      data={data}
-                      src={item}
-                      index={index}
-                    />
-                  );
-                })}
-            </Slide>
+            {data &&
+              categoryImages.map((item, index) => {
+                return (
+                  <Category key={index} data={data} src={item} index={index} />
+                );
+              })}
           </Box>
         )}
       </Wrapper>
