@@ -19,12 +19,18 @@ const Button = styled.button`
 
   width: 100%;
   padding: 2rem 1rem;
+  font-size: 1.8rem;
   background-color: transparent;
   color: ${({ theme }) => theme.text};
   border: 1px solid ${({ theme }) => theme.text};
   border-radius: 0.5rem;
   margin-bottom: 3rem;
   cursor: pointer;
+
+  svg {
+    font-size: inherit;
+    color: currentColor;
+  }
 `;
 
 export default FavoriteButton;
