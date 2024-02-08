@@ -9,8 +9,9 @@ import ProductHead from './ProductHead';
 import ProductButton from './ProductButton';
 import ProductInfo from './ProductInfo';
 import ProductImages from './ProductImages';
-import ProductValue from './ProductValue';
+import WishProduct from './WishProduct';
 import FavoriteButton from './FavoriteButton';
+import ProductValue from './ProductValue';
 
 import Alert from '../Alert';
 import BreadCrumbs from '../../pages/product/BreadCrumbs';
@@ -94,6 +95,7 @@ const Product = ({ product, inCart, actionLabel }: ProductProps) => {
             )}
             <ButtonWrapper>
               <FavoriteButton />
+              <WishProduct />
             </ButtonWrapper>
             <Hr />
             <ProductValue items={productValue} mode={mode} />
