@@ -5,6 +5,10 @@ import FavoriteProduct from './FavoriteProduct';
 
 import { ProductButtonsProps } from '../../types';
 
+interface IProps {
+  alert: string;
+}
+
 const ProductButtons = ({
   actionId,
   alert,
@@ -14,7 +18,7 @@ const ProductButtons = ({
   onFavorite,
 }: ProductButtonsProps) => {
   return (
-    <Container>
+    <Container alert={alert.toString()}>
       <WishProduct
         actionId={actionId}
         product={product}
@@ -30,12 +34,12 @@ const ProductButtons = ({
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<IProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: ${({ alert }) => (alert ? '2rem' : undefined)};
 `;
 
 export default ProductButtons;
