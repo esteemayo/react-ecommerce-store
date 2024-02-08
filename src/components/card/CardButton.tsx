@@ -1,18 +1,36 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
+import { useAuth } from '../../hooks/useAuth';
 import { CardButtonProps } from '../../types';
+
 import { CommonButton } from '../buttons/CommonButton';
 
 const CardButton = ({ inCart, onClick }: CardButtonProps) => {
+  const navigate = useNavigate();
+  const currentUser = useAuth((state) => state.user);
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+
+      if (!currentUser) {
+        return navigate('/login');
+      }
+      onClick();
+    },
+    [currentUser, navigate, onClick]
+  );
+
   const btnLabel = useMemo(() => {
     return `${inCart ? 'added' : 'add'} to cart`;
   }, [inCart]);
 
   return (
-    <Button type='button' disabled={inCart} onClick={onClick}>
+    <Button type='button' disabled={inCart} onClick={handleClick}>
       <FontAwesomeIcon icon={faShoppingCart} />
       &nbsp; {btnLabel}
     </Button>
