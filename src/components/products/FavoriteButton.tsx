@@ -28,7 +28,7 @@ const Button = styled.button`
   outline: none;
   margin-bottom: 3rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s;
 
   &:hover {
     border-color: ${({ theme }) => theme.text};
