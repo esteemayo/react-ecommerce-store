@@ -10,6 +10,7 @@ import Loader from '../../components/Loader';
 import Recommendations from '../../components/Recommendations';
 
 import { useSubmenu } from '../../hooks/useSubmenu';
+import { useAuth } from '../../hooks/useAuth';
 import { useCartStore } from '../../hooks/useCartStore';
 
 import {
@@ -29,6 +30,7 @@ const SingleProduct = () => {
 
   const cart = useCartStore((state) => state.cart);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+  const currentUser = useAuth((state) => state.user);
 
   const { isLoading, data: singleProduct } = useQuery({
     queryKey: ['product'],
@@ -130,7 +132,12 @@ const SingleProduct = () => {
   return (
     <Container onMouseOver={closeSubmenu}>
       <Wrapper>
-        <Product product={product} inCart={inCart} actionLabel={actionLabel} />
+        <Product
+          product={product}
+          inCart={inCart}
+          actionLabel={actionLabel}
+          currentUser={currentUser}
+        />
         <Line />
         <Recommendations data={recommendations} productId={productId} />
         <Reviews

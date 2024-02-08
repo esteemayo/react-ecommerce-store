@@ -22,7 +22,12 @@ import { ProductProps } from '../../types';
 import { useCart } from '../../hooks/useCart';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
-const Product = ({ product, inCart, actionLabel }: ProductProps) => {
+const Product = ({
+  product,
+  inCart,
+  actionLabel,
+  currentUser,
+}: ProductProps) => {
   const mode = useDarkMode((state) => state.mode);
 
   const {
