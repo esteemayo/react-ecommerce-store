@@ -662,7 +662,7 @@ export interface FavoriteButtonProps {
   actionId: string;
   likes: string[];
   currentUser: CurrentUserType;
-  onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>;
+  onUpdate?: React.Dispatch<SetStateAction<ProductValues[]>>;
 }
 
 export interface FavoriteProductProps {
