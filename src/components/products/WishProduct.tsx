@@ -24,7 +24,7 @@ const Button = styled.button`
   border: 1px solid ${({ theme }) => theme.colCrumbs};
   border-radius: 0.5rem;
   line-height: 1.3em;
-  outline: none;
+  outline-color: #eee;
   margin-bottom: 3rem;
   cursor: pointer;
   transition: all 0.3s;
