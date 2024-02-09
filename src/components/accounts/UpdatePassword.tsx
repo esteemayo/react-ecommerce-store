@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-import Button from './Button';
 import Input from './Input';
+import Form from '../form/Form';
+import Button from './Button';
 import CancelButton from './CancelButton';
 
 import { Container } from './Container';
@@ -15,7 +16,6 @@ import { updatePassword } from '../../services/authService';
 import { passwordInputs } from '../../data/formData';
 import { validatePasswordForm } from '../../validations/password';
 
-import Form from '../form/Form';
 import { UpdatePasswordData, UpdatePasswordErrors } from '../../types';
 
 interface UpdatePasswordProps {
