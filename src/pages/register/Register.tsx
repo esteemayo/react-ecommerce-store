@@ -25,6 +25,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
 
 import { registerUser } from '../../services/authService';
+import { registerInputs } from '../../data/formData';
 import { validateRegisterForm } from '../../validations/register';
 
 import app from '../../firebase';
@@ -184,69 +185,23 @@ const Register = () => {
       <StyledBox>
         <Heading small title='Register your account' />
         <Form onSubmit={handleSubmit}>
-          <FormInput
-            id='name'
-            name='name'
-            label='Name'
-            placeholder='Enter your name'
-            value={data.name}
-            onChange={handleChange}
-            error={errors.name}
-            small
-          />
-          <FormInput
-            id='email'
-            name='email'
-            type='email'
-            label='Email'
-            placeholder='Enter email address'
-            value={data.email}
-            onChange={handleChange}
-            error={errors.email}
-            small
-          />
-          <FormInput
-            id='username'
-            name='username'
-            label='Username'
-            placeholder='Enter username'
-            value={data.username}
-            onChange={handleChange}
-            error={errors.username}
-            small
-          />
-          <FormInput
-            id='phone'
-            name='phone'
-            type='tel'
-            label='Phone'
-            placeholder='Enter your telephone number'
-            value={data.phone}
-            onChange={handleChange}
-            error={errors.phone}
-            small
-          />
-          <FormInput
-            id='password'
-            name='password'
-            type='password'
-            label='Password'
-            placeholder='Enter your password'
-            value={data.password}
-            onChange={handleChange}
-            error={errors.password}
-            small
-          />
-          <FormInput
-            id='confirmPassword'
-            name='confirmPassword'
-            type='password'
-            label='Confirm Password'
-            placeholder='Confirm your password'
-            value={data.confirmPassword}
-            onChange={handleChange}
-            error={errors.confirmPassword}
-          />
+          {registerInputs.map((input) => {
+            const { id, name, type, label, placeholder } = input;
+            return (
+              <FormInput
+                key={id}
+                id={id}
+                name={name}
+                type={type}
+                label={label}
+                placeholder={placeholder}
+                value={data[name as keyof typeof data]}
+                onChange={handleChange}
+                error={errors[name as keyof typeof errors]}
+                small={name !== 'confirmPassword' && true}
+              />
+            );
+          })}
           <CountrySelect
             name='country'
             label='Country'
