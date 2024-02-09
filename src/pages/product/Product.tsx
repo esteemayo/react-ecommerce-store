@@ -1,6 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
-import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import styled from 'styled-components';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 
 import Reviews from '../../components/reviews/Reviews';
@@ -23,9 +23,11 @@ import {
   getProduct,
   getProductByTags,
   getReviewsOnProduct,
+  updateViews,
 } from '../../services/productService';
 
 const SingleProduct = () => {
+  const queryClient = useQueryClient();
   const { id: productId } = useParams();
 
   const currentUser = useAuth((state) => state.user);
@@ -38,6 +40,16 @@ const SingleProduct = () => {
       const { data } = await getProduct(productId);
       setProduct(data);
       return data;
+    },
+  });
+
+  const { mutate } = useMutation({
+    mutationFn: async ({ productId }: { productId: string }) => {
+      const { data } = await updateViews(productId);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['product'] });
     },
   });
 
@@ -120,6 +132,10 @@ const SingleProduct = () => {
       }
     })();
   }, [productId]);
+
+  useEffect(() => {
+    productId && mutate({ productId });
+  }, [mutate, productId]);
 
   if (isLoading) {
     return (
