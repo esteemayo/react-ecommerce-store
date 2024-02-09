@@ -16,6 +16,7 @@ import { useForm } from '../../hooks/useForm';
 import { updateEmail } from '../../services/userService';
 import { validateDataForm } from '../../validations/data';
 
+import { userDataInputs } from '../../data/formData';
 import { UpdateUserData, UpdateDataErrors, UpdateDataProps } from '../../types';
 
 const initialState: UpdateUserData = {
@@ -75,26 +76,22 @@ const UpdateData = ({ email, onCancel }: UpdateDataProps) => {
     <Container>
       <AccountEmail email={email} />
       <Form onSubmit={handleSubmit}>
-        <Input
-          id='newEmail'
-          name='email'
-          type='email'
-          label='Email'
-          value={data.email}
-          placeholder='Type in your new email address'
-          onChange={handleChange}
-          error={errors.email}
-        />
-        <Input
-          id='passwordCurrent'
-          name='password'
-          type='password'
-          label='Current Password'
-          value={data.password}
-          placeholder='Type in your current password'
-          onChange={handleChange}
-          error={errors.password}
-        />
+        {userDataInputs.map((input) => {
+          const { id, name, type, label, placeholder } = input;
+          return (
+            <Input
+              key={id}
+              id={id}
+              name={name}
+              type={type}
+              label={label}
+              value={data[name as keyof typeof data]}
+              placeholder={placeholder}
+              onChange={handleChange}
+              error={errors[name as keyof typeof errors]}
+            />
+          );
+        })}
         <ButtonContainer>
           <CancelButton text='Cancel' onClick={handleClose} />
           <Button text='Save' disabled={isLoading} loading={isLoading} />
