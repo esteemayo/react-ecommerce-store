@@ -58,6 +58,7 @@ const Wrapper = styled.div`
   padding: 2rem 4rem;
   background-color: ${({ theme }) => theme.bgModal};
   border-radius: 0.5rem;
+  position: relative;
 
   @media only screen and (max-width: 25em) {
     width: 35rem;
