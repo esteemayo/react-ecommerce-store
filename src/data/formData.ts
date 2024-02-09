@@ -28,6 +28,13 @@ export const registerInputs: RegisterInput = [
     placeholder: 'Enter username',
   },
   {
+    id: 'phone',
+    name: 'phone',
+    type: 'tel',
+    label: 'phone',
+    placeholder: 'Enter your telephone number',
+  },
+  {
     id: 'password',
     name: 'password',
     type: 'password',
