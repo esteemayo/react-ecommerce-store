@@ -92,6 +92,7 @@ export type ProductValues = {
   ratingsQuantity: number;
   size: string | string[];
   likes: string[];
+  views: number;
   slug: string;
   tags: string[];
   createdAt: string;
@@ -116,6 +117,7 @@ export type CartValues = {
   ratingsQuantity: number;
   size: string | string[];
   likes: string[];
+  views: number;
   slug: string;
   tags: string[];
   createdAt: string;
@@ -139,6 +141,7 @@ export type WishlistValues = {
   ratingsQuantity: number;
   size: string | string[];
   likes: string[];
+  views: number;
   slug: string;
   tags: string[];
   createdAt: string;
@@ -296,6 +299,7 @@ export interface ProductType {
   color: string[];
   size: string[];
   likes: string[];
+  views: number;
   category: string;
   tags: string[];
   ratingsQuantity: number;
@@ -593,6 +597,7 @@ interface CardProduct {
   color: string | string[];
   size: string | string[];
   likes: string[];
+  views: number;
   category: string;
   tags: string[];
   ratingsQuantity: number;
