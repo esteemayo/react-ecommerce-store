@@ -20,13 +20,7 @@ import {
   ReviewItem,
   ViewType,
 } from '../../types';
-import {
-  getProduct,
-  getProductByTags,
-  getReviewsOnProduct,
-  getWeeklyViews,
-  updateViews,
-} from '../../services/productService';
+import * as productAPI from '../../services/productService';
 
 const SingleProduct = () => {
   const queryClient = useQueryClient();
@@ -39,7 +33,7 @@ const SingleProduct = () => {
   const { isLoading, data: singleProduct } = useQuery({
     queryKey: ['product'],
     queryFn: async () => {
-      const { data } = await getProduct(productId);
+      const { data } = await productAPI.getProduct(productId);
       setProduct(data);
       return data;
     },
@@ -47,7 +41,7 @@ const SingleProduct = () => {
 
   const { mutate } = useMutation({
     mutationFn: async ({ productId }: { productId: string }) => {
-      const { data } = await updateViews(productId);
+      const { data } = await productAPI.updateViews(productId);
       return data;
     },
     onSuccess: () => {
@@ -67,7 +61,7 @@ const SingleProduct = () => {
 
   const refetchProduct = useCallback(async () => {
     try {
-      const { data } = await getProduct(productId);
+      const { data } = await productAPI.getProduct(productId);
       setProduct(data);
     } catch (err: unknown) {
       console.log(err);
@@ -116,7 +110,7 @@ const SingleProduct = () => {
     if (tags) {
       (async () => {
         try {
-          const { data } = await getProductByTags(tags);
+          const { data } = await productAPI.getProductByTags(tags);
           setRecommendation(data);
         } catch (err) {
           console.log(err);
@@ -128,7 +122,7 @@ const SingleProduct = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await getReviewsOnProduct(productId!);
+        const { data } = await productAPI.getReviewsOnProduct(productId!);
         setReviews(data);
       } catch (err: unknown) {
         console.log(err);
@@ -144,7 +138,7 @@ const SingleProduct = () => {
     if (productId) {
       (async () => {
         try {
-          const { data } = await getWeeklyViews(productId);
+          const { data } = await productAPI.getWeeklyViews(productId);
           setViews(data);
         } catch (err) {
           console.log(err);
