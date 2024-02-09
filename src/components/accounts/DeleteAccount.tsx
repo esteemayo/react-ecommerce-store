@@ -64,7 +64,6 @@ const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
 
 const Container = styled.div`
   padding: 2rem 0;
-  position: relative;
 `;
 
 const Heading = styled.h4`
