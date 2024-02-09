@@ -24,6 +24,7 @@ import { useDarkMode } from '../../hooks/useDarkMode';
 
 const Product = ({
   product,
+  views,
   inCart,
   actionLabel,
   currentUser,
@@ -57,7 +58,7 @@ const Product = ({
         </Left>
         <Right>
           <BreadCrumbs category={product.category} />
-          <Views />
+          <Views totalViews={views[0]?._id} />
           <ProductWrapper>
             <ProductHead
               name={product.name}

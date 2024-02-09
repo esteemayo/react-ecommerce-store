@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import { FiEye } from 'react-icons/fi';
 
-const Views = () => {
+interface ViewsProps {
+  totalViews: number;
+}
+
+const Views = ({ totalViews }: ViewsProps) => {
   return (
     <Container>
       <FiEye />
-      <Span>248 views in the last 7 days</Span>
+      <Span>{totalViews} views in the last 7 days</Span>
     </Container>
   );
 };

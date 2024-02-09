@@ -18,11 +18,13 @@ import {
   ProductValues,
   RecommendationType,
   ReviewItem,
+  ViewType,
 } from '../../types';
 import {
   getProduct,
   getProductByTags,
   getReviewsOnProduct,
+  getWeeklyViews,
   updateViews,
 } from '../../services/productService';
 
@@ -56,6 +58,7 @@ const SingleProduct = () => {
   const [reviews, setReviews] = useState<ReviewItem>([]);
   const [sort, setSort] = useState('');
   const [recommendations, setRecommendation] = useState<RecommendationType>([]);
+  const [views, setViews] = useState<ViewType[]>([]);
   const [product, setProduct] = useState<ProductValues | CartValues>(
     singleProduct
   );
@@ -137,6 +140,19 @@ const SingleProduct = () => {
     productId && mutate({ productId });
   }, [mutate, productId]);
 
+  useEffect(() => {
+    if (productId) {
+      (async () => {
+        try {
+          const { data } = await getWeeklyViews(productId);
+          setViews(data);
+        } catch (err) {
+          console.log(err);
+        }
+      })();
+    }
+  }, [productId]);
+
   if (isLoading) {
     return (
       <Container>
@@ -150,6 +166,7 @@ const SingleProduct = () => {
       <Wrapper>
         <Product
           product={product}
+          views={views}
           inCart={inCart}
           actionLabel={actionLabel}
           currentUser={currentUser}
