@@ -41,3 +41,6 @@ export const createReviewOnProduct = <T extends object>(
 
 export const likeProduct = (productId: string) =>
   http.patch(`${apiEndpoint}/like/${productId}`);
+
+export const updateViews = (productId: string) =>
+  http.patch(`${apiEndpoint}/views/${productId}`);
