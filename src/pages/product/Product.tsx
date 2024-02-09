@@ -28,9 +28,9 @@ import {
 const SingleProduct = () => {
   const { id: productId } = useParams();
 
+  const currentUser = useAuth((state) => state.user);
   const cart = useCartStore((state) => state.cart);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
-  const currentUser = useAuth((state) => state.user);
 
   const { isLoading, data: singleProduct } = useQuery({
     queryKey: ['product'],
