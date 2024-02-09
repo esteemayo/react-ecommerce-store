@@ -11,12 +11,12 @@ import { ButtonContainer } from './ButtonContainer';
 import { useAuth } from '../../hooks/useAuth';
 import { useForm } from '../../hooks/useForm';
 
-import Form from '../form/Form';
-import { UpdatePasswordData, UpdatePasswordErrors } from '../../types';
-
 import { updatePassword } from '../../services/authService';
 import { passwordInputs } from '../../data/formData';
 import { validatePasswordForm } from '../../validations/password';
+
+import Form from '../form/Form';
+import { UpdatePasswordData, UpdatePasswordErrors } from '../../types';
 
 interface UpdatePasswordProps {
   onCancel(): void;
