@@ -32,7 +32,7 @@ export const getReviewsOnProduct = (productId: string) =>
   http.get(productReviewUrl(productId));
 
 export const getWeeklyViews = (productId: string) =>
-  http.get(`${apiEndpoint}views/weekly/${productId}`);
+  http.get(`${apiEndpoint}/views/weekly/${productId}`);
 
 export const createProduct = <T extends object>(product: T) =>
   http.post(apiEndpoint, product);
