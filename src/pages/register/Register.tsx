@@ -198,6 +198,7 @@ const Register = () => {
                 value={data[name as keyof typeof data]}
                 onChange={handleChange}
                 error={errors[name as keyof typeof errors]}
+                autoFocus={name === 'name' ? true : false}
                 small={name !== 'confirmPassword' && true}
               />
             );
