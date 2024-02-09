@@ -57,7 +57,7 @@ const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
           Delete account
         </DeleteButton>
       </ButtonContainer>
-      {isLoading && <Spinner size='md' />}
+      <Overlay>{isLoading && <Spinner size='md' />}</Overlay>
     </Container>
   );
 };
@@ -65,15 +65,6 @@ const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
 const Container = styled.div`
   padding: 2rem 0;
   position: relative;
-
-  & > div:last-of-type {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-  }
 `;
 
 const Heading = styled.h4`
@@ -162,6 +153,19 @@ const DeleteButton = styled(Button)`
     opacity: 0.85;
     cursor: not-allowed;
   }
+`;
+
+const Overlay = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default DeleteAccount;
