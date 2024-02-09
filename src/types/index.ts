@@ -716,8 +716,13 @@ export interface FooterLinkProps {
   data: FooterLink;
 }
 
+export interface ViewType {
+  _id: number;
+}
+
 export interface ProductProps {
   product: ProductValues | CartValues;
+  views: ViewType[];
   inCart: boolean;
   actionLabel: string;
   currentUser: CurrentUserType;
