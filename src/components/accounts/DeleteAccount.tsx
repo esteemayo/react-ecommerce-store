@@ -167,11 +167,15 @@ const Overlay = styled.div<IProps>`
   top: 0;
   left: 0;
   margin: auto;
-  z-index: ${({ loading }) => (loading === 'true' ? 1 : -1)};
+  z-index: ${({ loading }) => setProperty(loading)};
 
   display: flex;
   align-items: center;
   justify-content: center;
 `;
+
+const setProperty = (loading: string) => {
+  return loading === 'true' ? 1 : -1;
+};
 
 export default DeleteAccount;
