@@ -26,7 +26,7 @@ const Select = ({
       <StyledSelect {...rest} id={name} name={name}>
         <Option value=''>{defaultText}</Option>
         {data?.map((item) => {
-          const { id, name } = item;
+          const { _id: id, name } = item;
           return (
             <Option key={id} value={name}>
               {name}
