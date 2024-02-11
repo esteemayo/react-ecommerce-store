@@ -1112,6 +1112,7 @@ export interface SelectProps
   value: string | number | readonly string[];
   error?: string;
   defaultText: string;
+  loading?: boolean;
 }
 
 export interface CheckBoxProps
