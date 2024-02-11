@@ -16,6 +16,7 @@ const Select = ({
   size,
   error,
   defaultText,
+  loading,
   ...rest
 }: SelectProps & ILabel) => {
   return (
@@ -25,14 +26,16 @@ const Select = ({
       </Label>
       <StyledSelect {...rest} id={name} name={name}>
         <Option value=''>{defaultText}</Option>
-        {data?.map((item) => {
-          const { _id: id, name } = item;
-          return (
-            <Option key={id} value={name}>
-              {name}
-            </Option>
-          );
-        })}
+        {loading
+          ? 'Loading...'
+          : data?.map((item) => {
+              const { _id: id, name } = item;
+              return (
+                <Option key={id} value={name}>
+                  {name}
+                </Option>
+              );
+            })}
       </StyledSelect>
       {error && <FormError message={error} />}
     </FormGroup>
