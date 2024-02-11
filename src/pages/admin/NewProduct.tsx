@@ -1,6 +1,6 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { toast } from 'react-toastify';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { toast } from 'react-toastify';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import {
   getStorage,
@@ -21,11 +21,11 @@ import FormBox from '../../components/form/FormBox';
 import { UploadContainer } from '../../components/form/UploadContainer';
 import TextArea from '../../components/form/TextArea';
 
-import { selectInputs } from '../../data/formData';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { validateProductForm } from '../../validations/product';
 
 import { createProduct } from '../../services/productService';
-import { validateProductForm } from '../../validations/product';
+import { getCategories } from '../../services/categoryService';
 
 import app from '../../firebase';
 import { ProductData, ProductErrors } from '../../types';
@@ -63,6 +63,14 @@ const NewProduct = () => {
   const [errors, setErrors] = useState<ProductErrors>({});
   const [progress, setProgress] = useState(0);
   const [urls, setUrls] = useState<string[]>([]);
+
+  const { isLoading, data: categories } = useQuery({
+    queryKey: ['categories'],
+    queryFn: async () => {
+      const { data } = await getCategories();
+      return data;
+    },
+  });
 
   const { isPending, isSuccess, mutate } = useMutation({
     mutationFn: async ({ product }: { product: object }) => {
@@ -266,7 +274,8 @@ const NewProduct = () => {
             value={category}
             defaultText='Select a category'
             onChange={handleChange}
-            data={selectInputs}
+            data={categories}
+            loading={isLoading}
             error={errors.category}
           />
           <FormInput
