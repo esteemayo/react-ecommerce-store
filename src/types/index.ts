@@ -316,7 +316,7 @@ export interface SlideProps {
   children: React.ReactNode;
 }
 
-type CategoryType = {
+type CategorValuese = {
   category: string;
   count: number;
 }[];
@@ -1358,4 +1358,13 @@ export interface HeadingProps {
   title: string;
   subtitle: string;
   center?: boolean;
+}
+
+export interface CategoryValues {
+  _id: string;
+  name: string;
+  parent?: string;
+  properties: [];
+  createdAt: string;
+  updatedAt: string;
 }
