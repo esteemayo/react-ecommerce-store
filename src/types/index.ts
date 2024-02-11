@@ -316,7 +316,7 @@ export interface SlideProps {
   children: React.ReactNode;
 }
 
-type CategorValuese = {
+type CategoryType = {
   category: string;
   count: number;
 }[];
@@ -1106,7 +1106,7 @@ export interface TextAreaProps
 
 export interface SelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement> {
-  data: SelectInput;
+  data: CategoryValues[];
   name: string;
   label: string;
   value: string | number | readonly string[];
