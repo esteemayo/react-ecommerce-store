@@ -11,6 +11,10 @@ interface DeleteAccountProps {
   onCancel(): void;
 }
 
+interface IProps {
+  loading: string;
+}
+
 const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
   const {
     deleteUserFulfilled,
@@ -57,7 +61,9 @@ const DeleteAccount = ({ onCancel }: DeleteAccountProps) => {
           Delete account
         </DeleteButton>
       </ButtonContainer>
-      <Overlay>{isLoading && <Spinner size='md' />}</Overlay>
+      <Overlay loading={isLoading.toString()}>
+        {isLoading && <Spinner size='md' />}
+      </Overlay>
     </Container>
   );
 };
@@ -154,13 +160,14 @@ const DeleteButton = styled(Button)`
   }
 `;
 
-const Overlay = styled.div`
+const Overlay = styled.div<IProps>`
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   margin: auto;
+  z-index: ${({ loading }) => (loading === 'true' ? 1 : -1)};
 
   display: flex;
   align-items: center;
