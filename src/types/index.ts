@@ -689,10 +689,7 @@ export interface CartModalProps {
 export interface ReviewItemProps {
   rating: number;
   review: string;
-  user: {
-    name: string;
-    photo: string;
-  };
+  user: string;
 }
 
 export interface FooterMenuItemsProps {
