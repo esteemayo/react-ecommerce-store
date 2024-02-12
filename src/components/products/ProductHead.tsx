@@ -29,7 +29,7 @@ const ProductHead = ({
   }, [modal]);
 
   const reviewLabel = useMemo(() => {
-    return ratingsQuantity! > 1 ? 'Reviews' : 'Review';
+    return ratingsQuantity! < 1 || ratingsQuantity! > 1 ? 'Reviews' : 'Review';
   }, [ratingsQuantity]);
 
   return (
