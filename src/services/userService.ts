@@ -2,7 +2,9 @@ import http from './httpService';
 
 const apiEndpoint = '/users';
 
-export const getUser = (userId: string) => http.get(`${apiEndpoint}/${userId}`);
+const userUrl = (userId: string) => `${apiEndpoint}/${userId}`;
+
+export const getUser = (userId: string) => http.get(userUrl(userId));
 
 export const getCurrentUserData = () => http.get(`${apiEndpoint}/me`);
 
