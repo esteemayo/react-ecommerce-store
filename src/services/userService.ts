@@ -2,6 +2,8 @@ import http from './httpService';
 
 const apiEndpoint = '/users';
 
+export const getUser = (userId: string) => http.get(`${apiEndpoint}/${userId}`);
+
 export const getCurrentUserData = () => http.get(`${apiEndpoint}/me`);
 
 export const updateData = (data: object) =>
