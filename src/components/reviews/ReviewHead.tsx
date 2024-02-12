@@ -27,12 +27,24 @@ const ReviewHead = ({
     }
   }, [ratingsAverage]);
 
+  const reviewLabel = useMemo(() => {
+    if (reviews?.length === 0) {
+      return 'reviews';
+    } else if (reviews?.length === 1) {
+      return 'review';
+    } else {
+      return 'reviews';
+    }
+  }, [reviews]);
+
   return (
     <Container>
       <Ratings>
         <AverageRatings>{avgRatings}</AverageRatings>
         <StarRating readOnly value={ratingsAverage} name='read-only' />
-        <TotalReviews>{reviews?.length} reviews</TotalReviews>
+        <TotalReviews>
+          {reviews?.length} {reviewLabel}
+        </TotalReviews>
       </Ratings>
       <Wrapper>
         {reviews?.length > 0 && (
