@@ -28,6 +28,10 @@ const ProductHead = ({
     return modal?.toString();
   }, [modal]);
 
+  const reviewLabel = useMemo(() => {
+    return ratingsQuantity! > 1 ? 'Reviews' : 'Review';
+  }, [ratingsQuantity]);
+
   return (
     <>
       <Heading modal={modalValue}>{name}</Heading>
@@ -45,7 +49,9 @@ const ProductHead = ({
           <Rating>
             <StarRating readOnly value={ratingsAverage} name='read-only' />
             <ReviewQuantity>
-              <a href='#reviews'>{ratingsQuantity} Review</a>
+              <a href='#reviews'>
+                {ratingsQuantity} {reviewLabel}
+              </a>
             </ReviewQuantity>
           </Rating>
         </>
