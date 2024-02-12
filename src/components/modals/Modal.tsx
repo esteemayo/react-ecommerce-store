@@ -34,6 +34,10 @@ const Modal = ({ title, children, isOpen, onClose }: ModalProps) => {
     setShowModal(isOpen);
   }, [isOpen]);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
     <Overlay
       mode={mode.toString()}
