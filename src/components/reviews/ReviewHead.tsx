@@ -28,11 +28,7 @@ const ReviewHead = ({
   }, [ratingsAverage]);
 
   const reviewLabel = useMemo(() => {
-    if (reviews?.length < 1 || reviews?.length > 1) {
-      return 'reviews';
-    } else {
-      return 'review';
-    }
+    return reviews?.length < 1 || reviews?.length > 1 ? 'reviews' : 'review';
   }, [reviews]);
 
   return (
