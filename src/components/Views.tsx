@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import millify from 'millify';
 import { FiEye } from 'react-icons/fi';
 
 interface ViewsProps {
@@ -9,7 +10,7 @@ const Views = ({ totalViews }: ViewsProps) => {
   return (
     <Container>
       <FiEye />
-      <Span>{totalViews} views in the last 7 days</Span>
+      <Span>{millify(totalViews)} views in the last 7 days</Span>
     </Container>
   );
 };
