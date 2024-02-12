@@ -28,12 +28,10 @@ const ReviewHead = ({
   }, [ratingsAverage]);
 
   const reviewLabel = useMemo(() => {
-    if (reviews?.length === 0) {
+    if (reviews?.length < 1 || reviews?.length > 1) {
       return 'reviews';
-    } else if (reviews?.length === 1) {
-      return 'review';
     } else {
-      return 'reviews';
+      return 'review';
     }
   }, [reviews]);
 
