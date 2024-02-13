@@ -15,8 +15,8 @@ const ReviewItem = ({ user, rating, review }: ReviewItemProps) => {
       const name = users.name.split(' ');
 
       return `
-        ${name.shift()}
-        ${name!.pop().charAt(0)}.
+        ${name[0]}
+        ${name[1].charAt(0)}.
       `;
     }
   }, [users]);
