@@ -31,6 +31,7 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
           <StarRating readOnly value={rating} name='read-only' />
         </ReviewContainer>
         <Review>{review}</Review>
+        <Button type='button'>More</Button>
         <DateContainer>
           <DateTime
             date={new Date(createdAt)}
@@ -167,6 +168,14 @@ const Review = styled.p`
     font-size: 1.4rem;
     line-height: 1.2;
   }
+`;
+
+const Button = styled.button`
+  display: inline-block;
+  border: none;
+  text-transform: capitalize;
+  background-color: transparent;
+  color: ${({ theme }) => theme.text};
 `;
 
 const DateContainer = styled.div`
