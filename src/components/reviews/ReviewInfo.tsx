@@ -1,17 +1,12 @@
-import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import { excerpts } from '../../utils';
 import { ReviewInfoProps } from '../../types';
 
 const ReviewInfo = ({ review, reviewer }: ReviewInfoProps) => {
-  const reviewText = useMemo(() => {
-    return review.length >= 130 ? excerpts(review, 130) : review;
-  }, [review]);
-
   return (
     <Container>
-      <Review>{reviewText}</Review>
+      <Review>{excerpts(review, 130)}</Review>
       <Reviewer>{reviewer}</Reviewer>
     </Container>
   );
