@@ -21,11 +21,7 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
   };
 
   const reviewText = useMemo(() => {
-    return show
-      ? review.length > 150
-        ? excerpts(review, 150)
-        : review
-      : review;
+    return show && review.length > 150 ? review : excerpts(review, 150);
   }, [review, show]);
 
   const btnLabel = useMemo(() => {
