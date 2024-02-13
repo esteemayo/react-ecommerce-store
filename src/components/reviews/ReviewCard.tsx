@@ -180,6 +180,7 @@ const Button = styled.button`
   font-size: var(--default-font-size);
   background-color: transparent;
   color: ${({ theme }) => theme.text};
+  margin-bottom: 2rem;
   cursor: pointer;
 `;
 
