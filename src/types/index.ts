@@ -352,7 +352,7 @@ export type ReviewItem = {
 export interface ReviewContentProps {
   rating: number;
   review: string;
-  reviewer: string;
+  reviewer?: string;
 }
 
 export interface ReviewInfoProps {
