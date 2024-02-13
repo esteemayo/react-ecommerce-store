@@ -60,7 +60,7 @@ const GoogleButton = () => {
 };
 
 const Button = styled.button`
-  width: 50%;
+  width: 100%;
   padding: 1rem 4rem;
   font-weight: 400;
   font-size: 1.5rem;
@@ -74,6 +74,7 @@ const Button = styled.button`
 
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
 
   @media only screen and (max-width: 56.25em), only screen and (hover: none) {
