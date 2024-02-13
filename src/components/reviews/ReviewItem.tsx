@@ -36,7 +36,7 @@ const ReviewItem = ({ user, rating, review }: ReviewItemProps) => {
     <Container>
       <Wrapper>
         <ReviewContent rating={rating} review={review} reviewer={reviewer} />
-        <ReviewImage photo={users?.image} />
+        <ReviewImage name={reviewer} photo={users?.image} />
       </Wrapper>
     </Container>
   );

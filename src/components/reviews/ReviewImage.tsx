@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { CommonImage } from '../CommonImage';
 
 interface ReviewImageProps {
+  name?: string;
   photo?: string;
 }
 
-const ReviewImage = ({ photo }: ReviewImageProps) => {
+const ReviewImage = ({ name, photo }: ReviewImageProps) => {
   return (
     <Container>
-      <StyledImage src={photo} width={700} height={900} alt='' />
+      <StyledImage src={photo} width={700} height={900} alt={name} />
     </Container>
   );
 };
