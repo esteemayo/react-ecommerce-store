@@ -11,6 +11,7 @@ import { topReviews } from '../../data';
 import { getTopReviews } from '../../services/reviewService';
 
 import { StyledWrapper } from '../StyledWrapper';
+import { ReviewType } from '../../types';
 
 interface IBtn {
   direction: string;
@@ -78,7 +79,7 @@ const TopReviews = () => {
           <FontAwesomeIcon icon={faArrowLeft} />
         </IconButton>
         <ReviewContainer ref={reviewRef}>
-          {data?.map((review) => {
+          {data?.map((review: ReviewType) => {
             return <ReviewItem key={review._id} {...review} />;
           })}
         </ReviewContainer>
