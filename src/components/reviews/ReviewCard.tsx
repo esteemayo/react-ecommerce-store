@@ -8,8 +8,8 @@ import ShareButton from './ShareButton';
 import DateTime from '../DateTime';
 import StarRating from '../StarRating';
 
-import { DateOptions, ReviewCardProps } from '../../types';
 import { excerpts } from '../../utils';
+import { DateOptions, ReviewCardProps } from '../../types';
 
 const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
   const [show, setShow] = useState(false);
