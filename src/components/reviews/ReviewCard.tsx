@@ -20,7 +20,7 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
     year: 'numeric',
   };
 
-  const toggleReview = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleToggle = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setShow((value) => !value);
   }, []);
@@ -49,7 +49,7 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
         </ReviewContainer>
         <Review>{reviewText}</Review>
         {review.length > 150 && (
-          <Button type='button' onClick={toggleReview}>
+          <Button type='button' onClick={handleToggle}>
             {btnLabel}
           </Button>
         )}
