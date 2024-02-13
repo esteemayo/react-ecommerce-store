@@ -5,7 +5,7 @@ const FacebookButton = () => {
   return (
     <Button type='button'>
       <FaFacebookF />
-      Continue with Facebook
+      Facebook
     </Button>
   );
 };
