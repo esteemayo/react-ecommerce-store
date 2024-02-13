@@ -7,11 +7,10 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Header from '../Header';
 import ReviewItem from './ReviewItem';
 
-import { topReviews } from '../../data';
+import { ReviewType } from '../../types';
 import { getTopReviews } from '../../services/reviewService';
 
 import { StyledWrapper } from '../StyledWrapper';
-import { ReviewType } from '../../types';
 
 interface IBtn {
   direction: string;
@@ -32,7 +31,7 @@ const TopReviews = () => {
   const [isMoved, setIsMoved] = useState(false);
   const [clickLimit, setClickLimit] = useState(window.innerWidth / 730);
 
-  const lastIndex = topReviews.lastIndexOf(topReviews.slice(-1)[0]);
+  const lastIndex = data?.lastIndexOf(data?.slice(-1)[0]);
 
   const handleClick = useCallback(
     (direction: string) => {
