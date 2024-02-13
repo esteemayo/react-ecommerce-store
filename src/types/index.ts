@@ -686,6 +686,16 @@ export interface CartModalProps {
   onSelect: React.Dispatch<SetStateAction<WishlistValues | undefined>>;
 }
 
+export interface ReviewType {
+  _id: string;
+  review: string;
+  rating: number;
+  product: string;
+  user: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface ReviewItemProps {
   rating: number;
   review: string;
