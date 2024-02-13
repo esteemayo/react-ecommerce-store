@@ -1,26 +1,42 @@
-import { useMemo } from 'react';
 import styled from 'styled-components';
+import { useEffect, useMemo, useState } from 'react';
 
 import ReviewImage from './ReviewImage';
 import ReviewContent from './ReviewContent';
 
-import { ReviewItemProps } from '../../types';
+import { getUser } from '../../services/userService';
+import { ReviewItemProps, ReviewerType } from '../../types';
 
 const ReviewItem = ({ user, rating, review }: ReviewItemProps) => {
-  const reviewer = useMemo(() => {
-    const name = user.name.split(' ');
+  const [users, setUsers] = useState<ReviewerType>();
 
-    return `
-      ${name.shift()} 
-      ${name.pop().charAt(0)}.
-    `;
+  const reviewer = useMemo(() => {
+    if (users) {
+      const name = users.name.split(' ');
+
+      return `
+        ${name.shift()}
+        ${name!.pop().charAt(0)}.
+      `;
+    }
+  }, [users]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getUser(user);
+        setUsers(data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
   }, [user]);
 
   return (
     <Container>
       <Wrapper>
         <ReviewContent rating={rating} review={review} reviewer={reviewer} />
-        <ReviewImage photo={user.photo} />
+        <ReviewImage photo={users?.image} />
       </Wrapper>
     </Container>
   );
