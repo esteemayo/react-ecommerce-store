@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useMemo, useState } from 'react';
 
 import Avatar from '../images/Avatar';
 import DefaultAvatar from '../images/DefaultAvatar';
@@ -8,13 +9,24 @@ import DateTime from '../DateTime';
 import StarRating from '../StarRating';
 
 import { DateOptions, ReviewCardProps } from '../../types';
+import { excerpts } from '../../utils';
 
 const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
+  const [show, setShow] = useState(false);
+
   const options: DateOptions = {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
   };
+
+  const reviewText = useMemo(() => {
+    return show
+      ? review.length > 150
+        ? excerpts(review, 150)
+        : review
+      : review;
+  }, [review, show]);
 
   return (
     <Container>
@@ -30,8 +42,12 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
           </Reviewer>
           <StarRating readOnly value={rating} name='read-only' />
         </ReviewContainer>
-        <Review>{review}</Review>
-        <Button type='button'>More</Button>
+        <Review>{reviewText}</Review>
+        {review.length > 150 && (
+          <Button type='button' onClick={() => setShow(!show)}>
+            More
+          </Button>
+        )}
         <DateContainer>
           <DateTime
             date={new Date(createdAt)}
