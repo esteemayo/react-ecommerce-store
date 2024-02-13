@@ -174,6 +174,10 @@ const Button = styled.button`
   display: inline-block;
   border: none;
   text-transform: capitalize;
+  text-decoration: underline;
+  text-underline-offset: 0.7rem;
+  font-weight: 600;
+  font-size: var(--default-font-size);
   background-color: transparent;
   color: ${({ theme }) => theme.text};
 `;
