@@ -54,7 +54,7 @@ const GoogleButton = () => {
         height={23}
         alt='google'
       />
-      Google
+      Continue with Google
     </Button>
   );
 };
