@@ -194,6 +194,7 @@ const Review = styled.p`
 const Button = styled.button`
   display: inline-block;
   border: none;
+  outline: none;
   text-transform: capitalize;
   text-decoration: underline;
   text-underline-offset: 0.7rem;
