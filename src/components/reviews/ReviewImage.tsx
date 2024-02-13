@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { CommonImage } from '../CommonImage';
 
 interface ReviewImageProps {
-  photo: string;
+  photo?: string;
 }
 
 const ReviewImage = ({ photo }: ReviewImageProps) => {
