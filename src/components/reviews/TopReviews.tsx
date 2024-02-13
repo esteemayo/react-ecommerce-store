@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useQuery } from '@tanstack/react-query';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import Header from '../Header';
 import ReviewItem from './ReviewItem';
 
 import { topReviews } from '../../data';
+import { getTopReviews } from '../../services/reviewService';
+
 import { StyledWrapper } from '../StyledWrapper';
 
 interface IBtn {
@@ -14,6 +17,14 @@ interface IBtn {
 }
 
 const TopReviews = () => {
+  const { data } = useQuery({
+    queryKey: ['reviews'],
+    queryFn: async () => {
+      const { data } = await getTopReviews();
+      return data;
+    },
+  });
+
   const reviewRef = useRef<HTMLDivElement>(null);
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -67,8 +78,8 @@ const TopReviews = () => {
           <FontAwesomeIcon icon={faArrowLeft} />
         </IconButton>
         <ReviewContainer ref={reviewRef}>
-          {topReviews.map((review) => {
-            return <ReviewItem key={review.id} {...review} />;
+          {data?.map((review) => {
+            return <ReviewItem key={review._id} {...review} />;
           })}
         </ReviewContainer>
         <IconButton
