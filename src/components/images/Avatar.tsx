@@ -4,12 +4,13 @@ import { CommonImage } from '../CommonImage';
 
 interface AvatarProps {
   src: string;
+  name: string;
 }
 
-const Avatar = ({ src }: AvatarProps) => {
+const Avatar = ({ src, name }: AvatarProps) => {
   return (
     <Container>
-      <Image src={src} width={50} height={50} alt='' />
+      <Image src={src} width={50} height={50} alt={name} />
     </Container>
   );
 };
