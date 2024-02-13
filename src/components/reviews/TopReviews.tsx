@@ -17,7 +17,7 @@ interface IBtn {
 }
 
 const TopReviews = () => {
-  const { data } = useQuery({
+  const { data: reviews } = useQuery({
     queryKey: ['reviews'],
     queryFn: async () => {
       const { data } = await getTopReviews();
@@ -31,7 +31,7 @@ const TopReviews = () => {
   const [isMoved, setIsMoved] = useState(false);
   const [clickLimit, setClickLimit] = useState(window.innerWidth / 730);
 
-  const lastIndex = data?.lastIndexOf(data?.slice(-1)[0]);
+  const lastIndex = reviews?.lastIndexOf(reviews?.slice(-1)[0]);
 
   const handleClick = useCallback(
     (direction: string) => {
@@ -78,7 +78,7 @@ const TopReviews = () => {
           <FontAwesomeIcon icon={faArrowLeft} />
         </IconButton>
         <ReviewContainer ref={reviewRef}>
-          {data?.map((review: ReviewType) => {
+          {reviews?.map((review: ReviewType) => {
             return <ReviewItem key={review._id} {...review} />;
           })}
         </ReviewContainer>
