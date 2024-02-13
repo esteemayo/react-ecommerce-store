@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import Avatar from '../images/Avatar';
 import DefaultAvatar from '../images/DefaultAvatar';
@@ -19,6 +19,11 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
     day: 'numeric',
     year: 'numeric',
   };
+
+  const toggleReview = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    setShow((value) => !value);
+  }, []);
 
   const reviewText = useMemo(() => {
     return show && review.length > 150 ? review : excerpts(review, 150);
@@ -44,7 +49,7 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
         </ReviewContainer>
         <Review>{reviewText}</Review>
         {review.length > 150 && (
-          <Button type='button' onClick={() => setShow(!show)}>
+          <Button type='button' onClick={toggleReview}>
             {btnLabel}
           </Button>
         )}
