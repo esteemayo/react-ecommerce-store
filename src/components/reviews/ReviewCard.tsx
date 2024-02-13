@@ -28,6 +28,10 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
       : review;
   }, [review, show]);
 
+  const btnLabel = useMemo(() => {
+    return show ? 'Less' : 'More';
+  }, [show]);
+
   return (
     <Container>
       <Wrapper>
@@ -45,7 +49,7 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
         <Review>{reviewText}</Review>
         {review.length > 150 && (
           <Button type='button' onClick={() => setShow(!show)}>
-            More
+            {btnLabel}
           </Button>
         )}
         <DateContainer>
