@@ -696,6 +696,11 @@ export interface ReviewType {
   updatedAt: string;
 }
 
+export interface ReviewerType {
+  name: string;
+  image: string;
+}
+
 export interface ReviewItemProps {
   rating: number;
   review: string;
