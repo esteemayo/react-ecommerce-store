@@ -54,13 +54,13 @@ const GoogleButton = () => {
         height={23}
         alt='google'
       />
-      Continue with Google
+      Google
     </Button>
   );
 };
 
 const Button = styled.button`
-  width: 100%;
+  width: 50%;
   padding: 1rem 4rem;
   font-weight: 400;
   font-size: 1.5rem;
@@ -74,7 +74,6 @@ const Button = styled.button`
 
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.8rem;
 
   @media only screen and (max-width: 56.25em), only screen and (hover: none) {
