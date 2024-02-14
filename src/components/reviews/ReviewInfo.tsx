@@ -6,7 +6,7 @@ import { ReviewInfoProps } from '../../types';
 const ReviewInfo = ({ review, reviewer }: ReviewInfoProps) => {
   return (
     <Container>
-      <Review>{excerpts(review, 130)}</Review>
+      <Review>{excerpts(review, 100)}</Review>
       <Reviewer>{reviewer}</Reviewer>
     </Container>
   );
