@@ -692,12 +692,13 @@ export interface ReviewType {
   review: string;
   rating: number;
   product: string;
-  user: string;
+  user: ReviewerType;
   createdAt: string;
   updatedAt: string;
 }
 
 export interface ReviewerType {
+  _id: string;
   name: string;
   image: string;
 }
