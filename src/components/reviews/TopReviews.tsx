@@ -11,13 +11,14 @@ import { ReviewType } from '../../types';
 import { getTopReviews } from '../../services/reviewService';
 
 import { StyledWrapper } from '../StyledWrapper';
+import Spinner from '../Spinner';
 
 interface IBtn {
   direction: string;
 }
 
 const TopReviews = () => {
-  const { data: reviews } = useQuery({
+  const { isLoading, data: reviews } = useQuery({
     queryKey: ['reviews'],
     queryFn: async () => {
       const { data } = await getTopReviews();
@@ -67,31 +68,37 @@ const TopReviews = () => {
       <StyledWrapper>
         <Header title={`You didn't hear it from us`} />
       </StyledWrapper>
-      <Wrapper>
-        <IconButton
-          direction='left'
-          onClick={() => handleClick('left')}
-          style={{
-            display: !isMoved || currentSlide === 0 ? 'none' : undefined,
-          }}
-        >
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </IconButton>
-        <ReviewContainer ref={reviewRef}>
-          {reviews?.map((review: ReviewType) => {
-            return <ReviewItem key={review._id} {...review} />;
-          })}
-        </ReviewContainer>
-        <IconButton
-          direction='right'
-          onClick={() => handleClick('right')}
-          style={{
-            display: currentSlide === lastIndex - 1 ? 'none' : undefined,
-          }}
-        >
-          <FontAwesomeIcon icon={faArrowRight} />
-        </IconButton>
-      </Wrapper>
+      {isLoading ? (
+        <Box>
+          <Spinner size='md' />
+        </Box>
+      ) : (
+        <Wrapper>
+          <IconButton
+            direction='left'
+            onClick={() => handleClick('left')}
+            style={{
+              display: !isMoved || currentSlide === 0 ? 'none' : undefined,
+            }}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </IconButton>
+          <ReviewContainer ref={reviewRef}>
+            {reviews?.map((review: ReviewType) => {
+              return <ReviewItem key={review._id} {...review} />;
+            })}
+          </ReviewContainer>
+          <IconButton
+            direction='right'
+            onClick={() => handleClick('right')}
+            style={{
+              display: currentSlide === lastIndex - 1 ? 'none' : undefined,
+            }}
+          >
+            <FontAwesomeIcon icon={faArrowRight} />
+          </IconButton>
+        </Wrapper>
+      )}
     </Container>
   );
 };
@@ -105,6 +112,14 @@ const Container = styled.section`
     padding-top: 8rem;
     padding-bottom: 8rem;
   }
+`;
+
+const Box = styled.div`
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
