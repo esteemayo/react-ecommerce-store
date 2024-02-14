@@ -197,6 +197,7 @@ const Box = styled.div`
   width: 40rem;
   padding: 2rem 4rem;
   background-color: ${({ theme }) => theme.bgModal};
+  border: 1px solid ${({ theme }) => theme.modalBorder};
   border-radius: 1.5rem;
 
   @media only screen and (max-width: 25em) {
