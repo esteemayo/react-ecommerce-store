@@ -702,6 +702,7 @@ export interface ReviewerType {
 }
 
 export interface ReviewItemProps {
+  _id: string;
   rating: number;
   review: string;
   user: string;
