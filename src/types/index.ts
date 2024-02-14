@@ -698,6 +698,7 @@ export interface ReviewType {
 }
 
 export interface ReviewerType {
+  _id: string;
   name: string;
   image: string;
 }
@@ -706,7 +707,7 @@ export interface ReviewItemProps {
   _id: string;
   rating: number;
   review: string;
-  user: string;
+  user: ReviewerType;
 }
 
 export interface FooterMenuItemsProps {
