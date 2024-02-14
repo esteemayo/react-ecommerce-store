@@ -4,35 +4,19 @@ import { useEffect, useMemo, useState } from 'react';
 import ReviewImage from './ReviewImage';
 import ReviewContent from './ReviewContent';
 
-import { getUser } from '../../services/userService';
+import { ReviewItemProps } from '../../types';
 import { getTotalReviewsOnProduct } from '../../services/reviewService';
 
-import { ReviewItemProps, ReviewerType } from '../../types';
-
 const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
-  const [users, setUsers] = useState<ReviewerType>();
   const [totalReviews, setTotalReviews] = useState<number>(0);
 
   const reviewer = useMemo(() => {
-    if (users) {
-      const name = users.name.split(' ');
+    const name = user.name.split(' ');
 
-      return `
+    return `
         ${name[0]}
         ${name[1].charAt(0)}.
       `;
-    }
-  }, [users]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await getUser(user);
-        setUsers(data);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
   }, [user]);
 
   useEffect(() => {
@@ -55,7 +39,7 @@ const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
           reviewer={reviewer}
           totalReviews={totalReviews}
         />
-        <ReviewImage name={reviewer} photo={users?.image} />
+        <ReviewImage name={reviewer} photo={user.image} />
       </Wrapper>
     </Container>
   );
