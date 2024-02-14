@@ -53,7 +53,7 @@ const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
           rating={rating}
           review={review}
           reviewer={reviewer}
-          totalReview={totalReviews}
+          totalReviews={totalReviews}
         />
         <ReviewImage name={reviewer} photo={users?.image} />
       </Wrapper>

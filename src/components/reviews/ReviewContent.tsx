@@ -6,10 +6,15 @@ import ReviewLink from './ReviewLink';
 
 import { ReviewContentProps } from '../../types';
 
-const ReviewContent = ({ rating, review, reviewer }: ReviewContentProps) => {
+const ReviewContent = ({
+  rating,
+  review,
+  reviewer,
+  totalReviews,
+}: ReviewContentProps) => {
   return (
     <Container>
-      <RatingInfo rating={rating} />
+      <RatingInfo rating={rating} totalReviews={totalReviews} />
       <ReviewInfo review={review} reviewer={reviewer} />
       <ReviewLink />
     </Container>

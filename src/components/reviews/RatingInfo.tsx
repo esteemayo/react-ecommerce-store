@@ -4,13 +4,14 @@ import StarRating from '../StarRating';
 
 interface RatingInfoProps {
   rating: number;
+  totalReviews: number;
 }
 
-const RatingInfo = ({ rating }: RatingInfoProps) => {
+const RatingInfo = ({ rating, totalReviews }: RatingInfoProps) => {
   return (
     <Container>
       <StarRating readOnly value={rating} name='read-only' />
-      <Count>Based on 61 reviews</Count>
+      <Count>Based on {totalReviews} reviews</Count>
     </Container>
   );
 };
