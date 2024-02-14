@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
+import Spinner from '../Spinner';
 import Header from '../Header';
 import ReviewItem from './ReviewItem';
 
@@ -11,7 +12,6 @@ import { ReviewType } from '../../types';
 import { getTopReviews } from '../../services/reviewService';
 
 import { StyledWrapper } from '../StyledWrapper';
-import Spinner from '../Spinner';
 
 interface IBtn {
   direction: string;
