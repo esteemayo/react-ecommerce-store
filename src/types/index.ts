@@ -359,7 +359,6 @@ export interface ReviewContentProps {
 export interface ReviewInfoProps {
   review: string;
   reviewer?: string;
-  totalReviews: number;
 }
 
 export type WishlistItem = {
