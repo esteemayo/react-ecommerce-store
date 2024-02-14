@@ -5,10 +5,13 @@ import ReviewImage from './ReviewImage';
 import ReviewContent from './ReviewContent';
 
 import { getUser } from '../../services/userService';
+import { getTotalReviewsOnProduct } from '../../services/reviewService';
+
 import { ReviewItemProps, ReviewerType } from '../../types';
 
-const ReviewItem = ({ user, rating, review }: ReviewItemProps) => {
+const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
   const [users, setUsers] = useState<ReviewerType>();
+  const [totalReviews, setTotalReviews] = useState<number>(0);
 
   const reviewer = useMemo(() => {
     if (users) {
@@ -32,10 +35,26 @@ const ReviewItem = ({ user, rating, review }: ReviewItemProps) => {
     })();
   }, [user]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getTotalReviewsOnProduct(id);
+        setTotalReviews(data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [id]);
+
   return (
     <Container>
       <Wrapper>
-        <ReviewContent rating={rating} review={review} reviewer={reviewer} />
+        <ReviewContent
+          rating={rating}
+          review={review}
+          reviewer={reviewer}
+          totalReview={totalReviews}
+        />
         <ReviewImage name={reviewer} photo={users?.image} />
       </Wrapper>
     </Container>
