@@ -93,7 +93,7 @@ const Input = styled.input`
 
 const Button = styled.button`
   flex: 1;
-  border: 3px solid ${({ theme }) => theme.textScroll};
+  border: 3px solid ${({ theme }) => theme.searchBorder};
   border-left: none;
   outline: none;
   font-weight: 500;
