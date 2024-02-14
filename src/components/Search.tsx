@@ -57,7 +57,7 @@ const Form = styled.form`
 const FormGroup = styled.div`
   flex: 3;
   padding: 1rem 0;
-  border: 3px solid ${({ theme }) => theme.textScroll};
+  border: 3px solid ${({ theme }) => theme.searchBorder};
   border-right: none;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -67,7 +67,7 @@ const FormGroup = styled.div`
     left: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
-    color: ${({ theme }) => theme.textScroll};
+    color: ${({ theme }) => theme.searchBorder};
     cursor: text;
   }
 `;
