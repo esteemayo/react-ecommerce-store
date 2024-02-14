@@ -698,7 +698,6 @@ export interface ReviewType {
 }
 
 export interface ReviewerType {
-  _id: string;
   name: string;
   image: string;
 }
