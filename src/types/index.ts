@@ -353,11 +353,13 @@ export interface ReviewContentProps {
   rating: number;
   review: string;
   reviewer?: string;
+  totalReviews: number;
 }
 
 export interface ReviewInfoProps {
   review: string;
   reviewer?: string;
+  totalReviews: number;
 }
 
 export type WishlistItem = {
