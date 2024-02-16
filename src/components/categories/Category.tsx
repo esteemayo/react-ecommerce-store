@@ -59,9 +59,11 @@ const Button = styled.button`
 
 const Container = styled.article`
   width: 20%;
+  border-radius: 2px;
   box-shadow: ${({ theme }) => theme.boxCat};
   -webkit-box-shadow: ${({ theme }) => theme.boxCat};
   -moz-box-shadow: ${({ theme }) => theme.boxCat};
+  overflow: hidden;
   position: relative;
 
   @media only screen and (max-width: 64em) {
@@ -87,7 +89,6 @@ const Container = styled.article`
 const Image = styled(CommonImage)`
   width: 100%;
   height: 25rem;
-  border-radius: 2px;
 
   @media only screen and (max-width: 37.5em) {
     height: 20rem;
