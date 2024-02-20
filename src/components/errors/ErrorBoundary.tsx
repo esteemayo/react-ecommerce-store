@@ -3,16 +3,16 @@ import { Component } from 'react';
 import ErrorState from './ErrorState';
 import logger from '../../services/logService';
 
-interface IProps {
+interface ErrorBoundaryProps {
   children: React.ReactNode;
 }
 
-interface IState {
+interface ErrorBoundaryState {
   hasError: boolean;
 }
 
-class ErrorBoundary extends Component<IProps> {
-  state: IState = {
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  state = {
     hasError: false,
   };
 
