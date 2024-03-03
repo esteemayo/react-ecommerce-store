@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
   const [featuredProducts, setFeaturedProduct] = useState<ProductValues[]>([]);
   const [isSelectedProduct, setIsSelectedProduct] = useState<WishlistValues>();
 
-  const { isLoading, data } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ['products'],
     queryFn: async () => {
       const { data } = await getFeaturedProducts();
@@ -46,6 +46,8 @@ const FeaturedProducts = () => {
             <Box>
               <Spinner size='md' />
             </Box>
+          ) : error ? (
+            'Something went wrong!'
           ) : (
             <>
               {featuredProducts?.map((product: ProductValues) => {
