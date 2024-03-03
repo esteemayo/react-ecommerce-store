@@ -4,7 +4,7 @@ import Recommendation from './Recommendation';
 import { RecommendationsProps } from '../types';
 
 const Recommendations = ({ data, productId }: RecommendationsProps) => {
-  if (data.length < 3) {
+  if (data?.length < 3) {
     return null;
   }
 
