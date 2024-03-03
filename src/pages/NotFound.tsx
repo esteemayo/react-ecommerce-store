@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { CommonImage } from '../components/CommonImage';
@@ -9,7 +10,9 @@ const NotFound = () => {
   return (
     <Container onMouseOver={closeSubmenu}>
       <Wrapper>
-        <Image src='/svg/startled.svg' width={500} height={500} alt='404' />
+        <StyledLink to='/'>
+          <Image src='/svg/startled.svg' width={500} height={500} alt='404' />
+        </StyledLink>
       </Wrapper>
     </Container>
   );
@@ -34,6 +37,10 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
 
 const Image = styled(CommonImage)`
