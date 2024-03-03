@@ -58,7 +58,7 @@ const Product = ({
         </Left>
         <Right>
           <BreadCrumbs category={product.category} />
-          <Views totalViews={views[0]?._id} />
+          <Views totalViews={product.views} />
           <ProductWrapper>
             <ProductHead
               name={product.name}
