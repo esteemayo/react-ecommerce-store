@@ -56,6 +56,14 @@ const SingleProduct = () => {
     },
   });
 
+  const { data: productReviews } = useQuery({
+    queryKey: ['reviews'],
+    queryFn: async () => {
+      const { data } = await productAPI.getReviewsOnProduct(productId!);
+      return data;
+    },
+  });
+
   const { mutate } = useMutation({
     mutationFn: async (productId: string) => {
       const { data } = await productAPI.updateViews(productId);
@@ -111,15 +119,8 @@ const SingleProduct = () => {
   }, [sort]);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await productAPI.getReviewsOnProduct(productId!);
-        setReviews(data);
-      } catch (err: unknown) {
-        console.log(err);
-      }
-    })();
-  }, [productId]);
+    setReviews(productReviews);
+  }, [productReviews]);
 
   useEffect(() => {
     if (productId) {
