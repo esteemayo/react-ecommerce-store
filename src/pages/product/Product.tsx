@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
@@ -24,7 +24,11 @@ const SingleProduct = () => {
   const cart = useCartStore((state) => state.cart);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
-  const { isLoading, data: singleProduct } = useQuery({
+  const {
+    isLoading,
+    data: singleProduct,
+    refetch,
+  } = useQuery({
     queryKey: ['product'],
     queryFn: async () => {
       const { data } = await productAPI.getProduct(productId);
@@ -67,15 +71,6 @@ const SingleProduct = () => {
   const [product, setProduct] = useState<ProductValues | CartValues>(
     singleProduct
   );
-
-  const refetchProduct = useCallback(async () => {
-    try {
-      const { data } = await productAPI.getProduct(productId);
-      setProduct(data);
-    } catch (err: unknown) {
-      console.log(err);
-    }
-  }, [productId]);
 
   const inCart = useMemo(() => {
     const cartItem = cart.find((item) => item.id === productId);
@@ -127,8 +122,11 @@ const SingleProduct = () => {
   }, [productId]);
 
   useEffect(() => {
-    productId && mutate(productId);
-  }, [mutate, productId]);
+    if (productId) {
+      mutate(productId);
+      refetch();
+    }
+  }, [mutate, productId, refetch]);
 
   if (isLoading) {
     return (
@@ -147,7 +145,7 @@ const SingleProduct = () => {
           inCart={inCart}
           actionLabel={actionLabel}
           currentUser={currentUser}
-          onFavorite={refetchProduct}
+          onFavorite={refetch}
         />
         <Line />
         <Recommendations productId={productId} data={recommendations} />
@@ -160,7 +158,7 @@ const SingleProduct = () => {
           sort={sort}
           onSort={setSort}
           onReviews={setReviews}
-          onRefetch={refetchProduct}
+          onRefetch={refetch}
         />
       </Wrapper>
     </Container>
