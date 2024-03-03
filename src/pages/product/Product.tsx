@@ -39,6 +39,17 @@ const SingleProduct = () => {
     },
   });
 
+  const tags = singleProduct?.tags;
+
+  const { data: recommendations } = useQuery({
+    queryKey: ['recommendations'],
+    queryFn: async () => {
+      const { data } = await productAPI.getProductByTags(tags);
+      return data;
+    },
+    enabled: !!tags,
+  });
+
   const { mutate } = useMutation({
     mutationFn: async ({ productId }: { productId: string }) => {
       const { data } = await productAPI.updateViews(productId);
@@ -51,13 +62,10 @@ const SingleProduct = () => {
 
   const [reviews, setReviews] = useState<ReviewItem>([]);
   const [sort, setSort] = useState('');
-  const [recommendations, setRecommendation] = useState<RecommendationType>([]);
   const [views, setViews] = useState<ViewType[]>([]);
   const [product, setProduct] = useState<ProductValues | CartValues>(
     singleProduct
   );
-
-  const tags = product?.tags;
 
   const refetchProduct = useCallback(async () => {
     try {
@@ -107,19 +115,6 @@ const SingleProduct = () => {
   }, [sort]);
 
   useEffect(() => {
-    if (tags) {
-      (async () => {
-        try {
-          const { data } = await productAPI.getProductByTags(tags);
-          setRecommendation(data);
-        } catch (err) {
-          console.log(err);
-        }
-      })();
-    }
-  }, [tags]);
-
-  useEffect(() => {
     (async () => {
       try {
         const { data } = await productAPI.getReviewsOnProduct(productId!);
@@ -167,7 +162,10 @@ const SingleProduct = () => {
           onFavorite={refetchProduct}
         />
         <Line />
-        <Recommendations data={recommendations} productId={productId} />
+        <Recommendations
+          data={recommendations as RecommendationType}
+          productId={productId}
+        />
         <Reviews
           productId={productId}
           reviews={reviews}
