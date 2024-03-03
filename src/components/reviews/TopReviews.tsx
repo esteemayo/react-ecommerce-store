@@ -70,7 +70,7 @@ const TopReviews = () => {
   return (
     <Container>
       <StyledWrapper>
-        <Header title={`You didn't hear it from us`} />
+        <Header title="You didn't hear it from us" />
       </StyledWrapper>
       {isLoading ? (
         <Box>
