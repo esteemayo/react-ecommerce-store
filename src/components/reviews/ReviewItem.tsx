@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 import ReviewImage from './ReviewImage';
 import ReviewContent from './ReviewContent';
@@ -8,7 +9,13 @@ import { ReviewItemProps } from '../../types';
 import { getTotalReviewsOnProduct } from '../../services/reviewService';
 
 const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
-  const [totalReviews, setTotalReviews] = useState<number>(0);
+  const { data } = useQuery({
+    queryKey: ['totalReviews'],
+    queryFn: async () => {
+      const { data } = await getTotalReviewsOnProduct(id);
+      return data;
+    },
+  });
 
   const reviewer = useMemo(() => {
     const name = user.name.split(' ');
@@ -19,17 +26,6 @@ const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
       `;
   }, [user]);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await getTotalReviewsOnProduct(id);
-        setTotalReviews(data);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, [id]);
-
   return (
     <Container>
       <Wrapper>
@@ -37,7 +33,7 @@ const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
           rating={rating}
           review={review}
           reviewer={reviewer}
-          totalReviews={totalReviews}
+          totalReviews={data}
         />
         <ReviewImage name={reviewer} photo={user.image} />
       </Wrapper>
