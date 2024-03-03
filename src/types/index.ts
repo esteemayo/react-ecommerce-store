@@ -737,7 +737,6 @@ export interface ViewType {
 
 export interface ProductProps {
   product: ProductValues | CartValues;
-  views: ViewType[];
   inCart: boolean;
   actionLabel: string;
   currentUser: CurrentUserType;

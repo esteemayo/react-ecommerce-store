@@ -24,7 +24,6 @@ import { useDarkMode } from '../../hooks/useDarkMode';
 
 const Product = ({
   product,
-  views,
   inCart,
   actionLabel,
   currentUser,

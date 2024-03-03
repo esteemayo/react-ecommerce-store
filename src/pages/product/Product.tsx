@@ -48,14 +48,6 @@ const SingleProduct = () => {
     enabled: !!tags,
   });
 
-  const { data: views } = useQuery({
-    queryKey: ['views'],
-    queryFn: async () => {
-      const { data } = await productAPI.getWeeklyViews(productId!);
-      return data;
-    },
-  });
-
   const { data: productReviews } = useQuery({
     queryKey: ['reviews'],
     queryFn: async () => {
@@ -142,7 +134,6 @@ const SingleProduct = () => {
       <Wrapper>
         <Product
           product={product}
-          views={views}
           inCart={inCart}
           actionLabel={actionLabel}
           currentUser={currentUser}
