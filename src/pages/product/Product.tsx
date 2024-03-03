@@ -13,14 +13,8 @@ import { useSubmenu } from '../../hooks/useSubmenu';
 import { useAuth } from '../../hooks/useAuth';
 import { useCartStore } from '../../hooks/useCartStore';
 
-import {
-  CartValues,
-  ProductValues,
-  RecommendationType,
-  ReviewItem,
-  ViewType,
-} from '../../types';
 import * as productAPI from '../../services/productService';
+import { CartValues, ProductValues, ReviewItem } from '../../types';
 
 const SingleProduct = () => {
   const queryClient = useQueryClient();
@@ -50,6 +44,14 @@ const SingleProduct = () => {
     enabled: !!tags,
   });
 
+  const { data: views } = useQuery({
+    queryKey: ['views'],
+    queryFn: async () => {
+      const { data } = await productAPI.getWeeklyViews(productId!);
+      return data;
+    },
+  });
+
   const { mutate } = useMutation({
     mutationFn: async ({ productId }: { productId: string }) => {
       const { data } = await productAPI.updateViews(productId);
@@ -62,7 +64,6 @@ const SingleProduct = () => {
 
   const [reviews, setReviews] = useState<ReviewItem>([]);
   const [sort, setSort] = useState('');
-  const [views, setViews] = useState<ViewType[]>([]);
   const [product, setProduct] = useState<ProductValues | CartValues>(
     singleProduct
   );
@@ -129,19 +130,6 @@ const SingleProduct = () => {
     productId && mutate({ productId });
   }, [mutate, productId]);
 
-  useEffect(() => {
-    if (productId) {
-      (async () => {
-        try {
-          const { data } = await productAPI.getWeeklyViews(productId);
-          setViews(data);
-        } catch (err) {
-          console.log(err);
-        }
-      })();
-    }
-  }, [productId]);
-
   if (isLoading) {
     return (
       <Container>
@@ -162,10 +150,7 @@ const SingleProduct = () => {
           onFavorite={refetchProduct}
         />
         <Line />
-        <Recommendations
-          data={recommendations as RecommendationType}
-          productId={productId}
-        />
+        <Recommendations productId={productId} data={recommendations} />
         <Reviews
           productId={productId}
           reviews={reviews}
