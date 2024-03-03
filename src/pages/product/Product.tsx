@@ -53,7 +53,7 @@ const SingleProduct = () => {
   });
 
   const { mutate } = useMutation({
-    mutationFn: async ({ productId }: { productId: string }) => {
+    mutationFn: async (productId: string) => {
       const { data } = await productAPI.updateViews(productId);
       return data;
     },
@@ -127,7 +127,7 @@ const SingleProduct = () => {
   }, [productId]);
 
   useEffect(() => {
-    productId && mutate({ productId });
+    productId && mutate(productId);
   }, [mutate, productId]);
 
   if (isLoading) {
