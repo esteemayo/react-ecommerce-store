@@ -18,7 +18,11 @@ interface IBtn {
 }
 
 const TopReviews = () => {
-  const { isLoading, data: reviews } = useQuery({
+  const {
+    isLoading,
+    error,
+    data: reviews,
+  } = useQuery({
     queryKey: ['reviews'],
     queryFn: async () => {
       const { data } = await getTopReviews();
@@ -72,6 +76,8 @@ const TopReviews = () => {
         <Box>
           <Spinner size='md' />
         </Box>
+      ) : error ? (
+        'Something went wrong!'
       ) : (
         <Wrapper>
           <IconButton
