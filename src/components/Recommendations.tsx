@@ -12,7 +12,7 @@ const Recommendations = ({ data, productId }: RecommendationsProps) => {
     <Container>
       <Heading>You might also like</Heading>
       <Wrapper>
-        {data.length > 0 &&
+        {data?.length > 0 &&
           data
             .filter((item) => item.id !== productId)
             .slice(0, 3)
