@@ -731,10 +731,6 @@ export interface FooterLinkProps {
   data: FooterLink;
 }
 
-export interface ViewType {
-  _id: number;
-}
-
 export interface ProductProps {
   product: ProductValues | CartValues;
   inCart: boolean;
