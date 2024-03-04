@@ -43,8 +43,8 @@ const Container = styled.div`
 
 const Button = styled.button<IBtn>`
   border: none;
-  width: ${({ active }) => setProperty(active, '2rem', '1.5rem')};
-  height: ${({ active }) => setProperty(active, '2rem', '1.5rem')};
+  width: ${({ active }) => setProperty(active, '2rem', '1rem')};
+  height: ${({ active }) => setProperty(active, '2rem', '1rem')};
   background-color: ${({ active, theme }) =>
     setProperty(active, theme.bgActiveBtn, theme.bgCarActiveBtn)};
   border-radius: 50%;
