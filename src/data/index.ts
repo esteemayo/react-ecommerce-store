@@ -296,6 +296,13 @@ export const sliderItems: SliderItem = [
     title: 'TV COLLECTION',
     desc: "DON'T COMPROMISE ON QUALITY! GET HIGH DEFINITION TELEVISION SET.",
   },
+  {
+    id: 10,
+    url: '/products',
+    img: '/img/hero-19.avif',
+    title: 'HOME APPLIANCES',
+    desc: "DON'T COMPROMISE ON QUALITY! GET YOUR DOMESTIC APPLIANCES AT CHEAPER RATES.",
+  },
 ];
 
 export const categoryImages: CategoryImage = [
