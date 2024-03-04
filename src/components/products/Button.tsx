@@ -23,6 +23,11 @@ export const Button = styled.button`
     padding: 1.75rem 0;
   }
 
+  @media only screen and (max-width: 37.5em), only screen and (hover: none) {
+    font-size: 1.7rem;
+    padding: 1.6rem 0;
+  }
+
   @media only screen and (max-width: 26.875em) {
     font-size: 1.55rem;
   }
