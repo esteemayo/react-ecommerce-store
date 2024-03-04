@@ -20,7 +20,7 @@ export const Button = styled.button`
   transition: all 0.3s;
 
   @media only screen and (max-width: 59.375em) {
-    padding: 1.75rem;
+    padding: 1.75rem 0;
   }
 
   @media only screen and (max-width: 26.875em) {
