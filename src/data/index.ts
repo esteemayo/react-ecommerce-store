@@ -64,6 +64,10 @@ export const announcements: Announcements = [
     title:
       'Spend $110 or more for free US shipping. 365days risk-free guarantee. Shop Now!',
   },
+  {
+    id: 4,
+    title: 'Get flat 30% off for new arrivals.',
+  },
 ];
 
 export const navLinks: NavLink = [
