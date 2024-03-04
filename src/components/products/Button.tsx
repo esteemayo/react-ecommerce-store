@@ -34,6 +34,7 @@ export const Button = styled.button`
 
   @media only screen and (max-width: 18.75em) {
     font-size: 1.4rem;
+    padding: 1rem 0;
   }
 
   &:hover {
