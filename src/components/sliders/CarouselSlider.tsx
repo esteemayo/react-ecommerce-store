@@ -45,6 +45,7 @@ const CarouselSlider = () => {
   return (
     <Container>
       <Wrapper>
+        <Overlay>&nbsp;</Overlay>
         {sliderItems.map((item, index) => {
           let position = 'nextSlide';
 
@@ -100,6 +101,16 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   overflow: hidden;
+`;
+
+const Overlay = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 31, 44, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 `;
 
 export default CarouselSlider;
