@@ -12,6 +12,7 @@ import Pagination from '../components/Pagination';
 import { useQuery } from '../utils';
 import { ProductValues } from '../types';
 
+import { useSubmenu } from '../hooks/useSubmenu';
 import { getProducts } from '../services/productService';
 
 const Products = () => {
@@ -19,6 +20,8 @@ const Products = () => {
   const currentPage = query.get('page');
 
   const pageNumber = Number(currentPage);
+
+  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   const [category, setCategory] = useState('all');
   const [size, setSize] = useState('all');
@@ -90,7 +93,7 @@ const Products = () => {
 
   if (products?.length < 1 && !currentPage) {
     return (
-      <Container>
+      <Container onMouseOver={closeSubmenu}>
         <EmptyProduct src='/img/no-result.png' title='No results found!' />
       </Container>
     );
