@@ -236,8 +236,8 @@ export const sliderItems: SliderItem = [
   {
     id: 1,
     url: '/products',
-    img: '/img/hero-1.jpg',
-    title: 'WINTER SALE',
+    img: '/img/hero-12.webp',
+    title: "WOMEN'S COLLECTION",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
   },
   {
@@ -285,8 +285,8 @@ export const sliderItems: SliderItem = [
   {
     id: 8,
     url: '/products',
-    img: '/img/hero-12.webp',
-    title: "WOMEN'S COLLECTION",
+    img: '/img/hero-1.jpg',
+    title: 'WINTER SALE',
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
   },
   {
