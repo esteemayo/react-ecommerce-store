@@ -37,6 +37,7 @@ const StyledImage = styled(CommonImage)`
   width: 48rem;
   height: 40rem;
   background-color: transparent;
+  object-fit: contain;
 
   @media only screen and (max-width: 56.25em) {
     height: 33rem;
