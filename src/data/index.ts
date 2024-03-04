@@ -243,14 +243,14 @@ export const sliderItems: SliderItem = [
   {
     id: 2,
     url: '/products',
-    img: '/img/hero-4.jpg',
+    img: '/img/hero-22.webp',
     title: 'AUTUMN COLLECTION',
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
   },
   {
     id: 3,
     url: '/products',
-    img: '/img/hero-2.jpg',
+    img: '/img/hero-21.webp',
     title: 'SUMMER SALE',
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
   },
@@ -264,9 +264,37 @@ export const sliderItems: SliderItem = [
   {
     id: 5,
     url: '/products',
-    img: '/img/hero-10.jpg',
+    img: '/img/hero-15.webp',
     title: 'SHIRT COLLECTION',
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+  },
+  {
+    id: 6,
+    url: '/products',
+    img: '/img/hero-13.webp',
+    title: 'JACKET COLLECTION',
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+  },
+  {
+    id: 7,
+    url: '/products',
+    img: '/img/hero-14.webp',
+    title: "MEN'S COLLECTION",
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+  },
+  {
+    id: 8,
+    url: '/products',
+    img: '/img/hero-12.webp',
+    title: "WOMEN'S COLLECTION",
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+  },
+  {
+    id: 9,
+    url: '/products',
+    img: '/img/hero-18.webp',
+    title: 'TELEVISION COLLECTION',
+    desc: "DON'T COMPROMISE ON QUALITY! GET HIGH DEFINITION TELEVISION SET.",
   },
 ];
 
