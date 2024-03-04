@@ -10,8 +10,10 @@ import SliderItem from './SliderItem';
 import SliderButton from './SliderButton';
 
 import { sliderItems } from '../../data';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
 const CarouselSlider = () => {
+  const mode = useDarkMode((state) => state.mode);
   const [slideNumber, setSlideNumber] = useState(0);
 
   const handlePrev = useCallback(() => {
@@ -45,7 +47,7 @@ const CarouselSlider = () => {
   return (
     <Container>
       <Wrapper>
-        <Overlay>&nbsp;</Overlay>
+        {mode && <Overlay>&nbsp;</Overlay>}
         {sliderItems.map((item, index) => {
           let position = 'nextSlide';
 
