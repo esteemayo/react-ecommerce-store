@@ -19,6 +19,10 @@ export const Button = styled.button`
   cursor: pointer;
   transition: all 0.3s;
 
+  @media only screen and (max-width: 59.375em) {
+    padding: 1.75rem;
+  }
+
   @media only screen and (max-width: 26.875em) {
     font-size: 1.55rem;
   }
