@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Marquee from 'react-fast-marquee';
 
 import { useSubmenu } from '../hooks/useSubmenu';
@@ -11,9 +11,24 @@ const Announcement = () => {
   const mode = useDarkMode((state) => state.mode);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+  const handleSize = useCallback(() => {
+    setScreenSize(window.innerWidth);
+  }, []);
+
   const gradient = useMemo(() => {
+    if (screenSize <= 420) {
+      return false;
+    }
+
     return mode ? false : true;
-  }, [mode]);
+  }, [mode, screenSize]);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleSize);
+    return () => window.removeEventListener('resize', handleSize);
+  }, [handleSize]);
 
   return (
     <Container onMouseOver={closeSubmenu}>
