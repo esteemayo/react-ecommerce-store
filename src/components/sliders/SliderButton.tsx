@@ -44,14 +44,8 @@ const Button = styled.button<IBtn>`
     height: 3.5rem;
   }
 
-  @media only screen and (max-width: 25em) {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  @media only screen and (max-width: 18.75em) {
-    width: 2.5rem;
-    height: 2.5rem;
+  @media only screen and (max-width: 31.25em) {
+    display: none;
   }
 
   &:hover {
