@@ -70,6 +70,7 @@ const Container = styled.aside<IContainer>`
   left: 0;
   width: 100%;
   height: 100%;
+  min-height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: ${({ type }) => (type === 'show' ? 'block' : 'none')};
   opacity: ${({ type }) => (type === 'show' ? 1 : 0)};
@@ -85,7 +86,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100%;
   max-width: 100%;
-  padding: 4rem 2rem;
+  padding: 1rem 3rem;
   background-color: ${({ theme }) => theme.bg};
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
@@ -99,8 +100,8 @@ const Wrapper = styled.div`
 
 const Button = styled.button`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  right: 0;
   border: none;
   outline: none;
   display: inline-block;
