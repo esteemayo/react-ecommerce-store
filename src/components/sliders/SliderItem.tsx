@@ -153,7 +153,7 @@ const Description = styled.p`
     letter-spacing: 2px;
   }
 
-  @media only screen and (max-width: 31.25em) {
+  @media only screen and (max-width: 33.75em) {
     margin: 3rem 0;
   }
 
