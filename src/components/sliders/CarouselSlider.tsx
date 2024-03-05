@@ -88,7 +88,7 @@ const CarouselSlider = () => {
   );
 };
 
-const Container = styled.section`
+const Container = styled.header`
   width: 100vw;
   height: 40vw;
   background-color: #f1ede7;
