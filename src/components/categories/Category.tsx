@@ -137,10 +137,6 @@ const MainHeading = styled.h2`
   @media only screen and (max-width: 31.25em) {
     font-size: 2rem;
   }
-
-  @media only screen and (max-width: 18.75em) {
-    font-size: 2.3rem;
-  }
 `;
 
 const SubHeading = styled.h3`
