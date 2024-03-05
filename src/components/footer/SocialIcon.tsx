@@ -36,7 +36,7 @@ const Container = styled.div`
   margin-top: 1rem;
 
   @media only screen and (max-width: 26.875em) {
-    margin-top: 0.7rem;
+    margin-top: 1.5rem;
   }
 
   a {
