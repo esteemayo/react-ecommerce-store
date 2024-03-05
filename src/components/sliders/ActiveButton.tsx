@@ -31,7 +31,7 @@ const Container = styled.div`
   position: absolute;
   top: 90%;
   left: 50%;
-  transform: translate(-90%, -50%);
+  transform: translate(-50%, -90%);
   display: flex;
   align-items: center;
   gap: 0.5rem;
