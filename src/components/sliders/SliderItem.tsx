@@ -82,6 +82,11 @@ const Wrapper = styled.div`
     top: 40%;
     left: 67%;
   }
+
+  @media only screen and (max-width: 31.25em) {
+    top: 50%;
+    left: 75%;
+  }
 `;
 
 const Title = styled.h1`
