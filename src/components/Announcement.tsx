@@ -1,6 +1,6 @@
+import Marquee from 'react-fast-marquee';
 import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import Marquee from 'react-fast-marquee';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { useDarkMode } from '../hooks/useDarkMode';
