@@ -135,11 +135,7 @@ const MainHeading = styled.h2`
   }
 
   @media only screen and (max-width: 31.25em) {
-    font-size: 2.25rem;
-  }
-
-  @media only screen and (max-width: 26.25em) {
-    font-size: 3.3rem;
+    font-size: 2rem;
   }
 
   @media only screen and (max-width: 18.75em) {
