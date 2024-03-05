@@ -87,6 +87,11 @@ const Wrapper = styled.div`
     left: 67%;
   }
 
+  @media only screen and (max-width: 33.75em) {
+    top: 50%;
+    left: 75%;
+  }
+
   @media only screen and (max-width: 31.25em) {
     top: 50%;
     left: 75%;
