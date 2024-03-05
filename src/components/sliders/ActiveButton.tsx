@@ -35,6 +35,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  @media only screen and (max-width: 31.25em) {
+    display: none;
+  }
 `;
 
 const Button = styled.button<IBtn>`
