@@ -197,10 +197,9 @@ const Button = styled.button`
   }
 
   @media only screen and (max-width: 31.25em) {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 1rem;
     font-size: 1.4rem;
-    border-width: 1px;
+    border-width: 2px;
   }
 
   @media only screen and (max-width: 25em) {
