@@ -68,6 +68,10 @@ const Wrapper = styled.div`
     padding-right: 0;
   }
 
+  @media only screen and (max-width: 64em) {
+    right: -20%;
+  }
+
   @media only screen and (max-width: 50em) {
     width: 100%;
     padding: 0;
