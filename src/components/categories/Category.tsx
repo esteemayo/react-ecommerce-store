@@ -121,10 +121,6 @@ const HeadingWrapper = styled.div`
   color: var(--clr-white);
   line-height: 1.05;
   border-bottom-left-radius: 2.5rem;
-
-  @media only screen and (max-width: 31.25em) {
-    line-height: 1.3;
-  }
 `;
 
 const MainHeading = styled.h2`
