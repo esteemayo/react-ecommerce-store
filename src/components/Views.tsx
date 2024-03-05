@@ -1,16 +1,23 @@
 import styled from 'styled-components';
 import millify from 'millify';
 import { FiEye } from 'react-icons/fi';
+import { useMemo } from 'react';
 
 interface ViewsProps {
   totalViews: number;
 }
 
 const Views = ({ totalViews }: ViewsProps) => {
+  const viewLabel = useMemo(() => {
+    return totalViews === 1 ? 'view' : 'views';
+  }, [totalViews]);
+
   return (
     <Container>
       <FiEye />
-      <Span>{millify(totalViews)} views in the last 7 days</Span>
+      <Span>
+        {millify(totalViews)} {viewLabel} in the last 7 days
+      </Span>
     </Container>
   );
 };
