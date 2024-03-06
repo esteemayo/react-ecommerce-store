@@ -92,6 +92,7 @@ const Box = styled.div`
 
   @media only screen and (max-width: 43.75em) {
     flex-direction: column-reverse;
+    gap: 7rem;
   }
 `;
 
