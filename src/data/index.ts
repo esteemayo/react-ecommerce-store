@@ -303,7 +303,7 @@ export const sliderItems: SliderItem = [
   {
     id: 10,
     url: '/products',
-    img: '/img/hero/hero-19.avif',
+    img: '/img/hero/hero-19.jpg',
     title: 'HOME APPLIANCES',
     desc: "DON'T COMPROMISE ON QUALITY! GET YOUR DOMESTIC APPLIANCES AT CHEAPER RATES.",
   },
