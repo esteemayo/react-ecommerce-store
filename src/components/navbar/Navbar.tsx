@@ -100,10 +100,10 @@ const Navbar = () => {
         <LogoBox>
           <Logo />
         </LogoBox>
-        <div>
+        <ToggleBox>
           {!!currentUser && cart.length > 0 && <CartTotal amount={qty} />}
           <ToggleButton icon={faBars} onClick={onOpen} />
-        </div>
+        </ToggleBox>
         <ListContainer>
           {navLinks.map((item) => {
             const { id, text } = item;
@@ -166,6 +166,13 @@ const LogoBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const ToggleBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 `;
 
 const ListContainer = styled.ul`
