@@ -77,7 +77,9 @@ const TopReviews = () => {
           <Spinner size='md' />
         </Box>
       ) : error ? (
-        'Something went wrong!'
+        <Box>
+          <ErrorMessage>Something went wrong!</ErrorMessage>
+        </Box>
       ) : (
         <Wrapper>
           <IconButton
@@ -127,6 +129,8 @@ const Box = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+const ErrorMessage = styled.span``;
 
 const Wrapper = styled.div`
   position: relative;
