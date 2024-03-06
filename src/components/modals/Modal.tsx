@@ -10,7 +10,7 @@ import Overlay from './Overlay';
 const Modal = ({ title, children, isOpen, onClose }: ModalProps) => {
   const mode = useDarkMode((state) => state.mode);
 
-  const [showModal, setShowModal] = useState(isOpen);
+  const [showModal, setShowModal] = useState(false);
 
   const closeModalHandler = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
