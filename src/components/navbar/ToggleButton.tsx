@@ -17,7 +17,7 @@ const Button = styled.button`
   width: 4rem;
   height: 4rem;
   background-color: transparent;
-  color: var(--clr-white);
+  color: ${({ theme }) => theme.textToggleBtn};
   margin-right: 2rem;
   transition: all 0.5s ease;
 
