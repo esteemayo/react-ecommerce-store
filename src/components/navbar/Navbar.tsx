@@ -22,6 +22,8 @@ import { useSubmenu } from '../../hooks/useSubmenu';
 import { navLinks } from '../../data';
 import { Submenu } from '../../types';
 
+import CartTotal from './CartTotal';
+
 const Navbar = () => {
   const { pathname } = useLocation();
 
@@ -98,7 +100,10 @@ const Navbar = () => {
         <LogoBox>
           <Logo />
         </LogoBox>
-        <ToggleButton icon={faBars} onClick={onOpen} />
+        <div>
+          {!!currentUser && cart.length > 0 && <CartTotal amount={qty} />}
+          <ToggleButton icon={faBars} onClick={onOpen} />
+        </div>
         <ListContainer>
           {navLinks.map((item) => {
             const { id, text } = item;
