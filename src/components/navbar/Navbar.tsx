@@ -173,6 +173,10 @@ const ToggleBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  @media only screen and (min-width: 50em) {
+    display: none;
+  }
 `;
 
 const ListContainer = styled.ul`
