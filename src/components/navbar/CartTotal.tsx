@@ -27,6 +27,10 @@ const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.textToggleBtn};
   outline-color: ${({ theme }) => theme.navOut};
 
+  &:active {
+    color: ${({ theme }) => theme.textToggleBtn};
+  }
+
   svg {
     font-size: 2.3rem;
     color: currentColor;
