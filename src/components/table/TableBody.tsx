@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import { excerpts } from '../../utils';
@@ -6,6 +7,10 @@ import { formatCurrency } from '../../utils/formatCurrency';
 import { TableBodyProps } from '../../types';
 
 const TableBody = ({ _id: id, address, customer, total }: TableBodyProps) => {
+  const addressLabel = useMemo(() => {
+    return address.length >= 50 ? excerpts(address, 50) : address;
+  }, [address]);
+
   return (
     <Tbody>
       <Tr>
@@ -16,7 +21,7 @@ const TableBody = ({ _id: id, address, customer, total }: TableBodyProps) => {
           <Span>{customer}</Span>
         </Td>
         <Td>
-          <Span>{excerpts(address, 50)}</Span>
+          <Span>{addressLabel}</Span>
         </Td>
         <Td>
           <Span>{formatCurrency(total)}</Span>
