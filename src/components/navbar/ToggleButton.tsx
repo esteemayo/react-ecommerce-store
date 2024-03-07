@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { ToggleButtonProps } from '../../types';
 
-const ToggleButton = ({ icon: Icon, onClick }: ToggleButtonProps) => {
+const ToggleButton = ({ icon, onClick }: ToggleButtonProps) => {
   return (
     <Button type='button' onClick={onClick}>
-      <FontAwesomeIcon icon={Icon} />
+      <FontAwesomeIcon icon={icon} />
     </Button>
   );
 };
