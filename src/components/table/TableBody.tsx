@@ -8,7 +8,7 @@ import { TableBodyProps } from '../../types';
 
 const TableBody = ({ _id: id, address, customer, total }: TableBodyProps) => {
   const addressLabel = useMemo(() => {
-    return address.length >= 50 ? excerpts(address, 50) : address;
+    return address?.length >= 50 ? excerpts(address, 50) : address;
   }, [address]);
 
   return (
