@@ -99,8 +99,8 @@ const Navbar = () => {
           <Logo />
         </LogoBox>
         <ToggleBox>
-          {!!currentUser && cart.length > 0 && <CartQuantity amount={qty} />}
           <ToggleButton icon={faBars} onClick={onOpen} />
+          {!!currentUser && cart.length > 0 && <CartQuantity amount={qty} />}
         </ToggleBox>
         <ListContainer>
           {navLinks.map((item) => {
@@ -168,6 +168,7 @@ const LogoBox = styled.div`
 
 const ToggleBox = styled.div`
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
   gap: 2rem;
