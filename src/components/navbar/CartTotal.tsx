@@ -18,9 +18,15 @@ const CartTotal = ({ amount }: CartTotalProps) => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  position: relative;
+`;
 
-const StyledLink = styled(Link)``;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--clr-white);
+  outline-color: ${({ theme }) => theme.navOut};
+`;
 
 const CartQuantity = styled.span``;
 
