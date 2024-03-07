@@ -8,7 +8,7 @@ export const darkTheme = {
   textHeader: '#d3e3fd',
   textMenuHov: '#7cacf8',
   textSideMenuHov: '#95a5bd',
-  textToggleBtn: '#7cacf8',
+  textToggleBtn: '#d3e3fd',
   soft: '#0d2136',
   bgProdCard: '#0f243a',
   bgOrderCard: '#0d2136',
