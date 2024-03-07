@@ -34,11 +34,15 @@ const StyledLink = styled(Link)`
 `;
 
 const CartQuantity = styled.span`
+  display: inline-block;
   width: 2rem;
   height: 2rem;
   font-size: 1rem;
-  background-color: transparent;
-  color: var(--clr-white);
+  background-color: var(--clr-white);
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default CartTotal;
