@@ -30,10 +30,6 @@ const Button = styled.button`
     height: 3rem;
     fill: inherit;
   }
-
-  @media only screen and (min-width: 50em) {
-    display: none;
-  }
 `;
 
 export default ToggleButton;
