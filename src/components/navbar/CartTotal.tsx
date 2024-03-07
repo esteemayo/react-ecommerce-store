@@ -26,6 +26,11 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--clr-white);
   outline-color: ${({ theme }) => theme.navOut};
+
+  svg {
+    font-size: 2.3rem;
+    color: currentColor;
+  }
 `;
 
 const CartQuantity = styled.span``;
