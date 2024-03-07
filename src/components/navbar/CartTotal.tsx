@@ -33,6 +33,12 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const CartQuantity = styled.span``;
+const CartQuantity = styled.span`
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: var(--clr-white);
+`;
 
 export default CartTotal;
