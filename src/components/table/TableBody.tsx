@@ -33,6 +33,12 @@ const Tr = styled.tr``;
 const Td = styled.td`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.text};
+
+  &:first-child {
+    @media only screen and (max-width: 64em) {
+      display: none;
+    }
+  }
 `;
 
 const OrderId = styled.span`

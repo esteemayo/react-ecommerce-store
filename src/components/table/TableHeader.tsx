@@ -28,6 +28,12 @@ const Th = styled.th`
   font-size: 1.7rem;
   color: ${({ theme }) => theme.text};
 
+  &:first-child {
+    @media only screen and (max-width: 64em) {
+      display: none;
+    }
+  }
+
   @media only screen and (max-width: 64em) {
     font-size: var(--default-font-size);
   }
