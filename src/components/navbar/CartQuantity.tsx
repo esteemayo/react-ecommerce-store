@@ -40,7 +40,7 @@ const CartTotal = styled.span`
   height: 2rem;
   font-size: 1.23rem;
   background-color: ${({ theme }) => theme.bgToggleMode};
-  color: var(--clr-white);
+  color: ${({ theme }) => theme.textCartQty};
   border-radius: 50%;
   display: flex;
   align-items: center;
