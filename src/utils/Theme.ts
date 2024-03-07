@@ -40,7 +40,7 @@ export const darkTheme = {
   bgCarouselBtnHov: 'hsla(0, 0%, 100%, 0.4)',
   textCarouselBtn: '#95a5bd',
   bgCarActiveBtn: '#0f243a',
-  bgActiveBtn: '#95a5bd',
+  bgActiveBtn: '#d3e3fd',
   boxCat: 'none',
   textCat: '#95a5bd',
   bgCatBtn: 'rgba(119, 131, 153, 0.5)',
