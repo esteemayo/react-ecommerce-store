@@ -40,9 +40,14 @@ const CartQuantity = styled.span`
   font-size: 1rem;
   background-color: var(--clr-white);
   color: red;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  cursor: pointer;
 `;
 
 export default CartTotal;
