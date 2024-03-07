@@ -24,7 +24,7 @@ const Container = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: var(--clr-white);
+  color: ${({ theme }) => theme.textToggleBtn};
   outline-color: ${({ theme }) => theme.navOut};
 
   svg {
@@ -37,9 +37,9 @@ const CartQuantity = styled.span`
   display: inline-block;
   width: 2rem;
   height: 2rem;
-  font-size: 1rem;
-  background-color: var(--clr-white);
-  color: red;
+  font-size: 1.23rem;
+  background-color: ${({ theme }) => theme.textToggleBtn};
+  color: ${({ theme }) => theme.bgNav};
   border-radius: 50%;
   display: flex;
   align-items: center;
