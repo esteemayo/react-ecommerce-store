@@ -38,7 +38,7 @@ const StyledLink = styled(Link)`
 const CartTotal = styled.span`
   width: 2rem;
   height: 2rem;
-  font-size: 1rem;
+  font-size: 1.23rem;
   background-color: ${({ theme }) => theme.bgToggleMode};
   color: var(--clr-white);
   border-radius: 50%;
