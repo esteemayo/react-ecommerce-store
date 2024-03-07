@@ -46,7 +46,7 @@ const CartTotal = styled.span`
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: -0.7rem;
+  top: -1rem;
   right: -1rem;
   cursor: pointer;
 `;
