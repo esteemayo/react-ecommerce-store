@@ -40,6 +40,9 @@ export interface AuthStore {
 
 export interface AuthActionType {
   reset(): void;
+  facebookLoginPending(): void;
+  facebookLoginFulfilled(payload: CurrentUserType): void;
+  facebookLoginRejected(payload: string): void;
   loginUserPending(): void;
   loginUserFulfilled(payload: CurrentUserType): void;
   loginUserRejected(payload: string): void;
