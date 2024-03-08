@@ -3,10 +3,11 @@ import { useCallback } from 'react';
 import { signInWithPopup } from 'firebase/auth';
 import styled from 'styled-components';
 
-import { SocialButton } from './SocialButton';
-import { auth, facebookProvider } from '../../firebase';
 import { useAuth } from '../../hooks/useAuth';
 import { facebookLogin } from '../../services/authService';
+
+import { SocialButton } from './SocialButton';
+import { auth, facebookProvider } from '../../firebase';
 
 const FacebookButton = () => {
   const {
