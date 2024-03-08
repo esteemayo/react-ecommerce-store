@@ -20,12 +20,9 @@ const FacebookButton = () => {
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
 
-      facebookLoginPending();
-
       signInWithPopup(auth, facebookProvider)
         .then(async (result) => {
           const user = result.user.providerData[0];
-          console.log(user);
 
           const credentials = {
             name: user.displayName,
@@ -34,6 +31,8 @@ const FacebookButton = () => {
             image: user.photoURL,
             phone: user.phoneNumber,
           };
+
+          facebookLoginPending();
 
           try {
             const { data } = await facebookLogin({ ...credentials });
