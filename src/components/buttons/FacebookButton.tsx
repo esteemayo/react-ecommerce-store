@@ -1,6 +1,6 @@
 import { FaFacebookF } from 'react-icons/fa';
 import { useCallback } from 'react';
-import { signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
+import { signInWithPopup } from 'firebase/auth';
 import styled from 'styled-components';
 
 import { SocialButton } from './SocialButton';
@@ -13,14 +13,16 @@ const FacebookButton = () => {
 
       signInWithPopup(auth, facebookProvider)
         .then((result) => {
-          // The signed-in user info.
-          const user = result.user;
+          const user = result.user.providerData[0];
           console.log(user);
 
-          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-          const credential = FacebookAuthProvider.credentialFromResult(result);
-          const accessToken = credential?.accessToken;
-          console.log(accessToken);
+          const credentials = {
+            name: user.displayName,
+            email: user.email,
+            username: user.displayName?.split(' ').shift()?.toLowerCase(),
+            image: user.photoURL,
+            phone: user.phoneNumber,
+          };
         })
         .catch((err: unknown) => {
           console.log(err);
