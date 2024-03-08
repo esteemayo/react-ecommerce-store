@@ -13,8 +13,8 @@ interface UserDetailType {
   country?: string;
   createdAt: string;
   email: string;
-  fromGoogle: boolean;
   fromFacebook: boolean;
+  fromGoogle: boolean;
   image?: string;
   name: string;
   token: string;
