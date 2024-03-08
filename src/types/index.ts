@@ -14,6 +14,7 @@ interface UserDetailType {
   createdAt: string;
   email: string;
   fromGoogle: boolean;
+  fromFacebook: boolean;
   image?: string;
   name: string;
   token: string;
