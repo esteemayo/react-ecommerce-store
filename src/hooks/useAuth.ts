@@ -56,6 +56,37 @@ export const useAuth = create<AuthStore & AuthActionType>()(
         false,
         'reset'
       ),
+    facebookLoginPending: () =>
+      set(
+        produce((state) => {
+          state.isLoading = true;
+        }),
+        false,
+        'pending'
+      ),
+    facebookLoginFulfilled: (payload) =>
+      set(
+        produce((state) => {
+          state.isLoading = false;
+          state.user = payload;
+          setToStorage(tokenKey, payload);
+          state.isSuccess = true;
+        }),
+        false,
+        'fulfilled'
+      ),
+    facebookLoginRejected: (payload) =>
+      set(
+        produce((state) => {
+          state.isError = true;
+          state.isLoading = false;
+          state.isSuccess = false;
+          state.user = null;
+          state.message = payload;
+        }),
+        false,
+        'rejected'
+      ),
     loginUserPending: () =>
       set(
         produce((state) => {
