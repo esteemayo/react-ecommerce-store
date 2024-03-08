@@ -37,14 +37,14 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           placeholder={currentUser.details.email}
           readOnly
         />
-        {(!currentUser.details.fromGoogle ||
-          !currentUser.details.fromFacebook) && (
-          <ButtonContainer>
-            <Button type='button' onClick={onOpen}>
-              Change
-            </Button>
-          </ButtonContainer>
-        )}
+        {!currentUser.details.fromGoogle &&
+          !currentUser.details.fromFacebook && (
+            <ButtonContainer>
+              <Button type='button' onClick={onOpen}>
+                Change
+              </Button>
+            </ButtonContainer>
+          )}
       </Wrapper>
       <Wrapper>
         <Label htmlFor='accPassword'>Password</Label>
@@ -55,14 +55,14 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           placeholder='********'
           readOnly
         />
-        {(!currentUser.details.fromGoogle ||
-          !currentUser.details.fromFacebook) && (
-          <ButtonContainer>
-            <Button type='button' onClick={onAction}>
-              Change
-            </Button>
-          </ButtonContainer>
-        )}
+        {!currentUser.details.fromGoogle &&
+          !currentUser.details.fromFacebook && (
+            <ButtonContainer>
+              <Button type='button' onClick={onAction}>
+                Change
+              </Button>
+            </ButtonContainer>
+          )}
       </Wrapper>
     </Container>
   );
