@@ -37,7 +37,8 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           placeholder={currentUser.details.email}
           readOnly
         />
-        {!currentUser.details.fromGoogle && (
+        {(!currentUser.details.fromGoogle ||
+          !currentUser.details.fromFacebook) && (
           <ButtonContainer>
             <Button type='button' onClick={onOpen}>
               Change
@@ -54,7 +55,8 @@ const AccountHead = ({ currentUser, onOpen, onAction }: AccountHeadProps) => {
           placeholder='********'
           readOnly
         />
-        {!currentUser.details.fromGoogle && (
+        {(!currentUser.details.fromGoogle ||
+          !currentUser.details.fromFacebook) && (
           <ButtonContainer>
             <Button type='button' onClick={onAction}>
               Change
