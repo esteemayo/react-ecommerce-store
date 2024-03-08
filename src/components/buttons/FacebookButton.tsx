@@ -5,14 +5,24 @@ import styled from 'styled-components';
 
 import { SocialButton } from './SocialButton';
 import { auth, facebookProvider } from '../../firebase';
+import { useAuth } from '../../hooks/useAuth';
+import { facebookLogin } from '../../services/authService';
 
 const FacebookButton = () => {
+  const {
+    facebookLoginFulfilled,
+    facebookLoginPending,
+    facebookLoginRejected,
+  } = useAuth();
+
   const signInWithFacebook = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
 
+      facebookLoginPending();
+
       signInWithPopup(auth, facebookProvider)
-        .then((result) => {
+        .then(async (result) => {
           const user = result.user.providerData[0];
           console.log(user);
 
@@ -23,12 +33,20 @@ const FacebookButton = () => {
             image: user.photoURL,
             phone: user.phoneNumber,
           };
+
+          try {
+            const { data } = await facebookLogin({ ...credentials });
+            facebookLoginFulfilled(data);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          } catch (err: unknown | any) {
+            facebookLoginRejected(err.response.data.message);
+          }
         })
         .catch((err: unknown) => {
           console.log(err);
         });
     },
-    []
+    [facebookLoginFulfilled, facebookLoginPending, facebookLoginRejected]
   );
 
   return (
