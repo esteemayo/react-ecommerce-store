@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 
@@ -29,11 +29,14 @@ const Order = () => {
     },
   });
 
-  const statusClass = (index: number) => {
-    if (index - status < 1) return 'done';
-    if (index - status === 1) return 'inProgress';
-    if (index - status > 1) return 'undone';
-  };
+  const statusClass = useCallback(
+    (index: number) => {
+      if (index - status < 1) return 'done';
+      if (index - status === 1) return 'inProgress';
+      if (index - status > 1) return 'undone';
+    },
+    [status]
+  );
 
   if (isLoading) {
     return (
