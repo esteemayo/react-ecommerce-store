@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
-import { useCallback, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
+import { useQuery } from '@tanstack/react-query';
+import { useCallback, useState } from 'react';
 
 import OrderTable from '../components/orders/OrderTable';
 import OrderInfo from '../components/orders/OrderInfo';
