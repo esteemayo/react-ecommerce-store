@@ -1,6 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close';
 import styled from 'styled-components';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
@@ -61,6 +61,15 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
       closeHandler();
     }
   };
+
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeHandler();
+      }
+    },
+    [closeHandler]
+  );
 
   const validateForm = (data: FormData) => {
     const errors: IErrors = {};
