@@ -50,20 +50,15 @@ const ProductImageModal = ({
       if (target.classList.contains('imageContainer')) {
         handleClose();
       }
-
-      const exitModal = (e: { preventDefault: () => void; key: string }) => {
-        e.preventDefault();
-
-        if (e.key === 'Escape') {
-          handleClose();
-        }
-      };
-
-      window.addEventListener('keydown', exitModal);
-      return () => window.removeEventListener('keydown', exitModal);
     },
     [handleClose]
   );
+
+  const handleEscape = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      handleClose();
+    }
+  }, []);
 
   const activeModal = useMemo(() => {
     return showModal?.toString();
