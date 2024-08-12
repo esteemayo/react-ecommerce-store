@@ -12,6 +12,11 @@ const Modal = ({ title, children, isOpen, onClose }: ModalProps) => {
 
   const [showModal, setShowModal] = useState(false);
 
+  const handleClose = useCallback(() => {
+    setShowModal(false);
+    onClose();
+  }, [onClose]);
+
   const closeModalHandler = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
@@ -19,21 +24,19 @@ const Modal = ({ title, children, isOpen, onClose }: ModalProps) => {
       const target = e.target as Element;
 
       if (target.classList.contains('overlay')) {
-        setShowModal(false);
-        onClose();
+        handleClose();
       }
     },
-    [onClose]
+    [handleClose]
   );
 
   const handleEscape = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setShowModal(false);
-        onClose();
+        handleClose();
       }
     },
-    [onClose]
+    [handleClose]
   );
 
   const activeModal = useMemo(() => {
