@@ -31,6 +31,7 @@ const ProductImageModal = ({
   onClose,
 }: ProductImageModalProps) => {
   const mode = useDarkMode((state) => state.mode);
+
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = useCallback(() => {
