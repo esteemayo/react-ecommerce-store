@@ -43,8 +43,8 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
   const reset = useCartStore((state) => state.reset);
   const currentUser = useAuth((state) => state.user);
 
-  const [showModal, setShowModal] = useState(isOpen);
   const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const closeHandler = () => {
     setShowModal(false);
