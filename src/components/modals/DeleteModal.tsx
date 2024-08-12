@@ -23,6 +23,14 @@ const DeleteModal = ({
   const mode = useDarkMode((state) => state.mode);
   const [showModal, setShowModal] = useState(false);
 
+  const handleClose = useCallback(() => {
+    setShowModal(false);
+
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  }, [onClose]);
+
   const closeModalHandler = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
@@ -30,26 +38,21 @@ const DeleteModal = ({
       const target = e.target as Element;
 
       if (target.classList.contains('overlay')) {
-        setShowModal(false);
-
-        setTimeout(() => {
-          onClose();
-        }, 300);
+        handleClose();
       }
 
       const exitModal = (e: { preventDefault: () => void; key: string }) => {
         e.preventDefault();
 
         if (e.key === 'Escape') {
-          setShowModal(false);
-          onClose();
+          handleClose();
         }
       };
 
       window.addEventListener('keydown', exitModal);
       return window.removeEventListener('keydown', exitModal);
     },
-    [onClose]
+    [handleClose()]
   );
 
   const deleteWishlistHandler = useCallback(
