@@ -40,17 +40,6 @@ const DeleteModal = ({
       if (target.classList.contains('overlay')) {
         handleClose();
       }
-
-      const exitModal = (e: { preventDefault: () => void; key: string }) => {
-        e.preventDefault();
-
-        if (e.key === 'Escape') {
-          handleClose();
-        }
-      };
-
-      window.addEventListener('keydown', exitModal);
-      return window.removeEventListener('keydown', exitModal);
     },
     [handleClose()]
   );
@@ -83,6 +72,11 @@ const DeleteModal = ({
   useEffect(() => {
     setShowModal(isOpen);
   }, [isOpen]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleEscape);
+    return window.removeEventListener('keydown', handleEscape);
+  }, [handleEscape]);
 
   if (!isOpen) {
     return null;
