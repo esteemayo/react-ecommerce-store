@@ -32,7 +32,7 @@ const ReviewModal = ({
 
   const [isLoading, setIsLoading] = useState(false);
   const [review, setReview] = useState('');
-  const [showModal, setShowModal] = useState(isOpen);
+  const [showModal, setShowModal] = useState(false);
   const [terms, setTerms] = useState(false);
   const [rating, setRating] = useState<number | null>(null);
 
