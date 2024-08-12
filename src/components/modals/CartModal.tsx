@@ -151,10 +151,10 @@ const CartModal = ({
                 modal
               />
             )}
-            {product?.size.length > 0 && (
+            {product?.size.length! > 0 && (
               <SizeSelect
                 title='Select a size'
-                value={product.size}
+                value={product?.size!}
                 selected={selectedSize}
                 onAction={setSize}
                 secondaryAction={setSelectedSize}
