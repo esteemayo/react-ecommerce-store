@@ -75,6 +75,15 @@ const CartModal = ({
     [handleCloseModal]
   );
 
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleCloseModal();
+      }
+    },
+    [handleCloseModal]
+  );
+
   const onClickHandler = useCallback(() => {
     handleClick();
 
