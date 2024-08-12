@@ -26,6 +26,16 @@ const Modal = ({ title, children, isOpen, onClose }: ModalProps) => {
     [onClose]
   );
 
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setShowModal(false);
+        onClose();
+      }
+    },
+    [onClose]
+  );
+
   const activeModal = useMemo(() => {
     return showModal ? 'show' : '';
   }, [showModal]);
@@ -33,6 +43,11 @@ const Modal = ({ title, children, isOpen, onClose }: ModalProps) => {
   useEffect(() => {
     setShowModal(isOpen);
   }, [isOpen]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [handleEscape]);
 
   if (!isOpen) {
     return null;
