@@ -9,9 +9,9 @@ import SizeSelect from '../inputs/SizeSelect';
 import ProductHead from '../products/ProductHead';
 import ProductButton from '../products/ProductButton';
 
-import { useCartStore } from '../../hooks/useCartStore';
-import { useCart } from '../../hooks/useCart';
 import { useDarkMode } from '../../hooks/useDarkMode';
+import { useCart } from '../../hooks/useCart';
+import { useCartStore } from '../../hooks/useCartStore';
 
 import { CartModalProps } from '../../types';
 
