@@ -55,6 +55,15 @@ const DeleteModal = ({
     [handleClose()]
   );
 
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    },
+    [handleClose]
+  );
+
   const deleteWishlistHandler = useCallback(
     (wishlistId: string) => {
       onAction(wishlistId);
