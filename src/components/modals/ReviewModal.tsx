@@ -88,6 +88,15 @@ const ReviewModal = ({
     [closeModalHandler]
   );
 
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeModalHandler();
+      }
+    },
+    [closeModalHandler]
+  );
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
