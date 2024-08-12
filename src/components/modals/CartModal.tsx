@@ -35,7 +35,7 @@ const CartModal = ({
   const mode = useDarkMode((state) => state.mode);
   const cart = useCartStore((state) => state.cart);
 
-  const [showModal, setShowModal] = useState(isOpen);
+  const [showModal, setShowModal] = useState(false);
 
   const {
     alert,
