@@ -15,9 +15,9 @@ const ProductCard = ({
   onSelect,
   onUpdate,
 }: ProductCardProps) => {
+  const currentUser = useAuth((state) => state.user);
   const cart = useCartStore((state) => state.cart);
   const wished = useCartStore((state) => state.wished);
-  const currentUser = useAuth((state) => state.user);
 
   const handleOpen = useCallback(() => {
     onOpen();
