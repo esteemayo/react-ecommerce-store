@@ -55,9 +55,9 @@ const Register = () => {
     user,
   } = useAuth();
 
-  const [errors, setErrors] = useState<RegisterErrors>({});
-  const [perc, setPerc] = useState(0);
   const [file, setFile] = useState<File | null>(null);
+  const [perc, setPerc] = useState(0);
+  const [errors, setErrors] = useState<RegisterErrors>({});
   const [data, setData] = useState(initialState);
 
   const handleChange = useCallback(
