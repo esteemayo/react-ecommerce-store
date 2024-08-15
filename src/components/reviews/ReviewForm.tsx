@@ -22,7 +22,8 @@ const ReviewForm = ({
       <Header>Overall rating</Header>
       <RatingContainer>
         <StarRating
-          name='size-large'
+          name='hover-feedback'
+          // name='size-large'
           value={rating}
           onChange={onChangeRating}
         />
