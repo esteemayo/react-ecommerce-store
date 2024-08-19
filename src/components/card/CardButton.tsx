@@ -30,7 +30,7 @@ const CardButton = ({ inCart, onClick }: CardButtonProps) => {
   }, [inCart]);
 
   return (
-    <Button type='button' disabled={inCart} onClick={handleClick}>
+    <Button type='button' onClick={handleClick}>
       <FontAwesomeIcon icon={faShoppingCart} />
       &nbsp; {btnLabel}
     </Button>
