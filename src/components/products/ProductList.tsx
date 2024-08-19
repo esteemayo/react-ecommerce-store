@@ -57,20 +57,25 @@ const Wrapper = styled.div`
     gap: 4rem;
   }
 
-  @media only screen and (max-width: 37.5em) {
-    gap: 2rem;
+  @media only screen and (max-width: 34.375em) {
+    column-gap: 2rem;
   }
 
-  @media only screen and (max-width: 31.25em) {
-    gap: 1.5rem;
+  @media only screen and (max-width: 31.9375em) {
+    justify-content: space-between;
+    column-gap: 1rem;
+  }
+
+  @media only screen and (max-width: 30em) {
+    gap: 7rem;
   }
 
   @media only screen and (max-width: 26.25em) {
-    gap: 3rem;
+    gap: 5rem;
   }
 
   @media only screen and (max-width: 18.75em) {
-    gap: 1rem;
+    gap: 4rem;
   }
 `;
 
