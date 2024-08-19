@@ -40,7 +40,7 @@ const Input = styled.input.attrs({
   }
 
   @media only screen and (max-width: 31.25em) {
-    width: 40rem;
+    width: 52rem;
   }
 
   @media only screen and (max-width: 25em) {
