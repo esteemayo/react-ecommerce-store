@@ -1380,3 +1380,15 @@ export interface CategoryValues {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface StarRatingProps {
+  name: 'read-only' | 'hover-feedback' | 'disabled' | 'no-value';
+  value: number | null;
+  readOnly?: boolean;
+  onChange?:
+    | ((
+        event: React.SyntheticEvent<Element, Event>,
+        value: number | null
+      ) => void)
+    | undefined;
+}
