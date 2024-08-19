@@ -57,8 +57,6 @@ const Button = styled(CommonButton)`
   }
 
   @media only screen and (max-width: 37.5em) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     font-size: 1.4rem;
   }
 
