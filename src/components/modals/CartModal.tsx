@@ -2,9 +2,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import ColorSelect from '../inputs/ColorSelect';
-import Counter from '../inputs/Counter';
 import SizeSelect from '../inputs/SizeSelect';
+import Counter from '../inputs/Counter';
+import ColorSelect from '../inputs/ColorSelect';
 
 import ProductHead from '../products/ProductHead';
 import ProductButton from '../products/ProductButton';
