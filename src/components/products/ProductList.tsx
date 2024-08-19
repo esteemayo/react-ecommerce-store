@@ -57,6 +57,14 @@ const Wrapper = styled.div`
     gap: 4rem;
   }
 
+  @media only screen and (max-width: 51.25em) {
+    gap: 7rem;
+  }
+
+  @media only screen and (max-width: 48em) {
+    gap: 4rem;
+  }
+
   @media only screen and (max-width: 34.375em) {
     column-gap: 2rem;
   }
