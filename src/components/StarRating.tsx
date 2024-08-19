@@ -1,24 +1,20 @@
 import Rating from '@mui/material/Rating';
 
 interface StarRatingProps {
-  value: number | null | undefined;
-  name?: string;
+  name: 'read-only' | 'hover-feedback' | 'disabled' | 'no-value';
+  value: number;
   readOnly?: boolean;
-  onChange?(
-    event: React.SyntheticEvent<Element, Event>,
-    value: number | null
-  ): void | undefined;
+  onChange?:
+    | ((
+        event: React.SyntheticEvent<Element, Event>,
+        value: number | null
+      ) => void)
+    | undefined;
 }
 
-const StarRating = ({ value, onChange, ...rest }: StarRatingProps) => {
+const StarRating = ({ name, value, ...rest }: StarRatingProps) => {
   return (
-    <Rating
-      {...rest}
-      value={value}
-      precision={0.5}
-      size='large'
-      onChange={onChange}
-    />
+    <Rating {...rest} name={name} value={value} precision={0.5} size='large' />
   );
 };
 
