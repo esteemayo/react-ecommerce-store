@@ -25,16 +25,4 @@ export const StyledSelect = styled.select<ISelect>`
   @media only screen and (max-width: 35em) {
     width: ${({ page }) => page !== 'product' && '54rem'};
   }
-
-  @media only screen and (max-width: 25em) {
-    width: 39rem;
-  }
-
-  @media only screen and (max-width: 21.875em) {
-    width: 37rem;
-  }
-
-  @media only screen and (max-width: 18.75em) {
-    width: 31rem;
-  }
 `;
