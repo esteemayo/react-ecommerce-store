@@ -23,9 +23,10 @@ const ReviewForm = ({
       <RatingContainer>
         <StarRating
           name='hover-feedback'
-          // name='size-large'
           value={rating}
-          onChange={onChangeRating}
+          onChange={(_event, newValue) => {
+            onChangeRating(newValue);
+          }}
         />
         <Text>Click to rate</Text>
       </RatingContainer>
