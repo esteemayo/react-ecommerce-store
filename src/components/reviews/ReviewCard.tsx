@@ -4,9 +4,9 @@ import { useCallback, useMemo, useState } from 'react';
 import Avatar from '../images/Avatar';
 import DefaultAvatar from '../images/DefaultAvatar';
 
-import ShareButton from './ShareButton';
-import DateTime from '../DateTime';
 import StarRating from '../StarRating';
+import DateTime from '../DateTime';
+import ShareButton from './ShareButton';
 
 import { excerpts } from '../../utils';
 import { DateOptions, ReviewCardProps } from '../../types';
