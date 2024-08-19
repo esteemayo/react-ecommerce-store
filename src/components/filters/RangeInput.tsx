@@ -32,10 +32,6 @@ const Input = styled.input.attrs({
   outline-color: ${({ theme }) => theme.filterOut};
 
   @media only screen and (max-width: 37.5em) {
-    width: 26rem;
-  }
-
-  @media only screen and (max-width: 31.875em) {
     width: 100%;
   }
 
