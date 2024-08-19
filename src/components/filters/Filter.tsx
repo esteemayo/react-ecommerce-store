@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const Filter = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media only screen and (max-width: 37.5em) {
+    width: 100%;
+  }
 `;
