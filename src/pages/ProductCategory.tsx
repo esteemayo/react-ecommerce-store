@@ -195,10 +195,11 @@ const Left = styled.div`
   }
 
   @media only screen and (max-width: 37.5em) {
+    width: 100%;
+
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    width: 100%;
   }
 
   @media only screen and (max-width: 31.25em) {
