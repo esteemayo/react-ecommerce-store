@@ -895,10 +895,7 @@ export interface ReviewFormProps {
   review: string;
   terms: boolean;
   isLoading: boolean;
-  onChangeRating(
-    event: React.SyntheticEvent<Element, Event>,
-    value: number | null
-  ): void | undefined;
+  onChangeRating: React.Dispatch<React.SetStateAction<number | null>>;
   onChangeReview(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   onChangeTerms(e: React.ChangeEvent<HTMLInputElement>): void;
   onSubmit(e: React.FormEvent<HTMLFormElement>): void;
