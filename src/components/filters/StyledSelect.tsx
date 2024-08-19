@@ -18,11 +18,7 @@ export const StyledSelect = styled.select<ISelect>`
   outline-color: ${({ theme }) => theme.filterOut};
 
   @media only screen and (max-width: 37.5em) {
-    width: ${({ page }) => (page === 'product' ? '100%' : '60rem')};
+    width: 100%;
     padding: ${({ page }) => page !== 'product' && '0.7rem'};
-  }
-
-  @media only screen and (max-width: 35em) {
-    width: ${({ page }) => page !== 'product' && '54rem'};
   }
 `;
