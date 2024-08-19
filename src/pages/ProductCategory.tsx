@@ -222,6 +222,7 @@ const Right = styled.div`
   justify-content: flex-end;
 
   @media only screen and (max-width: 37.5em) {
+    width: 100%;
     margin-top: 2rem;
   }
 `;
