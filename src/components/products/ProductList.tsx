@@ -61,7 +61,7 @@ const Wrapper = styled.div`
     gap: 7rem;
   }
 
-  @media only screen and (max-width: 48em) {
+  @media only screen and (max-width: 50em) {
     gap: 4rem;
   }
 
