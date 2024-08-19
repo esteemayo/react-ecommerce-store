@@ -198,6 +198,7 @@ const Left = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    width: 100%;
   }
 
   @media only screen and (max-width: 31.25em) {
