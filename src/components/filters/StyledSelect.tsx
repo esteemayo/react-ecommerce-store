@@ -26,6 +26,10 @@ export const StyledSelect = styled.select<ISelect>`
     width: ${({ page }) => page !== 'product' && '54rem'};
   }
 
+  @media only screen and (max-width: 31.875em) {
+    width: 53rem;
+  }
+
   @media only screen and (max-width: 31.25em) {
     width: 40rem;
   }
