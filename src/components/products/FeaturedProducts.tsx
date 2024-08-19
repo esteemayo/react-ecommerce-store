@@ -106,6 +106,10 @@ const ProductsContainer = styled.div`
     column-gap: 1rem;
   }
 
+  @media only screen and (max-width: 30em) {
+    gap: 7rem;
+  }
+
   @media only screen and (max-width: 26.25em) {
     gap: 3rem;
   }
