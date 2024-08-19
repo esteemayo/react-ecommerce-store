@@ -36,16 +36,6 @@ const ReviewModal = ({
   const [terms, setTerms] = useState(false);
   const [rating, setRating] = useState<number | null>(null);
 
-  const handleChangeRating = useCallback(
-    (
-      _e: React.SyntheticEvent<Element, Event>,
-      value: number | null
-    ): void | undefined => {
-      setRating(value);
-    },
-    []
-  );
-
   const handleChangeReview = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       setReview(e.target.value);
@@ -175,7 +165,7 @@ const ReviewModal = ({
             review={review}
             terms={terms}
             isLoading={isLoading}
-            onChangeRating={handleChangeRating}
+            onChangeRating={setRating}
             onChangeReview={handleChangeReview}
             onChangeTerms={handleChangeTerms}
             onSubmit={handleSubmit}
