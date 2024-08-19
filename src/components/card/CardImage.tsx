@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const StyledImage = styled(CommonImage)`
   width: 100%;
-  height: 20rem;
+  height: 27rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   overflow: hidden;
