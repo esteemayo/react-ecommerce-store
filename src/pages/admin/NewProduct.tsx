@@ -354,9 +354,11 @@ const NewProduct = () => {
         <Form onSubmit={handleSubmit}>
           {bodyContent}
           <ButtonContainer>
-            <Button type='button' onClick={secondaryAction}>
-              {secondaryActionLabel}
-            </Button>
+            {secondaryActionLabel && secondaryAction && (
+              <Button type='button' onClick={secondaryAction}>
+                {secondaryActionLabel}
+              </Button>
+            )}
             <FormButton
               label={actionLabel}
               disabled={disabledBtn}
