@@ -6,11 +6,11 @@ import { PaginationProps } from '../types';
 
 const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
   const nextPage = useMemo(() => {
-    return `/products?page=${page! + 1}`;
+    return `/products?page=${page + 1}`;
   }, [page]);
 
   const prevPage = useMemo(() => {
-    return `/products?page=${page! - 1}`;
+    return `/products?page=${page - 1}`;
   }, [page]);
 
   const renderPagination = useCallback(() => {
