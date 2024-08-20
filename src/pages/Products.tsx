@@ -34,7 +34,7 @@ const Products = () => {
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
 
   const [counts, setCounts] = useState<number>();
-  const [page, setPage] = useState<number>();
+  const [page, setPage] = useState(0);
   const [numberOfPages, setNumberOfPages] = useState<number>();
 
   const handleChangeColor = useCallback(
