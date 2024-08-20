@@ -23,14 +23,14 @@ const Products = () => {
 
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
-  const [category, setCategory] = useState('all');
-  const [size, setSize] = useState('all');
-  const [color, setColor] = useState('all');
-  const [minPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
+  const [minPrice] = useState(0);
+  const [category, setCategory] = useState('all');
   const [price, setPrice] = useState(0);
-  const [products, setProducts] = useState<ProductValues[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [size, setSize] = useState('all');
+  const [products, setProducts] = useState<ProductValues[]>([]);
+  const [color, setColor] = useState('all');
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
 
   const [counts, setCounts] = useState<number>();
