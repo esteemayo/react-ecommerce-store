@@ -8,7 +8,7 @@ const EmptyCart = () => {
     <Container>
       <StyledImage
         src='/svg/empty-cart.svg'
-        width={480}
+        width={300}
         height={400}
         alt='empty cart'
       />
@@ -34,7 +34,7 @@ const Container = styled.div`
 `;
 
 const StyledImage = styled(CommonImage)`
-  width: 48rem;
+  width: 30rem;
   height: 40rem;
   background-color: transparent;
   object-fit: contain;
