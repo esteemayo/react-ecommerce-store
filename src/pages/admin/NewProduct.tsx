@@ -89,17 +89,13 @@ const NewProduct = () => {
   const [urls, setUrls] = useState<string[]>([]);
   const [steps, setSteps] = useState(STEPS.INFO);
 
-  const onPrev = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-
+  const onPrev = useCallback(() => {
     setSteps((value) => {
       return value - 1;
     });
   }, []);
 
-  const onNext = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-
+  const onNext = useCallback(() => {
     setSteps((value) => {
       return value + 1;
     });
@@ -187,6 +183,10 @@ const NewProduct = () => {
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+
+      if (steps !== STEPS.IMAGES) {
+        onNext();
+      }
 
       const errors = validateProductForm(data, tags);
       if (Object.keys(errors).length > 0) return setErrors(errors);
