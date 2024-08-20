@@ -220,106 +220,122 @@ const NewProduct = () => {
 
   const { name, desc, category, price, numberInStock, priceDiscount } = data;
 
+  let bodyContent: JSX.Element | undefined;
+
+  bodyContent = (
+    <>
+      <FormInput
+        name='name'
+        label='Product name'
+        value={name}
+        placeholder='Enter product name'
+        onChange={handleChange}
+        error={errors.name}
+        autoFocus
+      />
+      <TextArea
+        name='desc'
+        label='Description'
+        value={desc}
+        placeholder='Enter product description'
+        onChange={handleChange}
+        error={errors.desc}
+      />
+      <FormInput
+        type='number'
+        name='price'
+        label='Price'
+        min={1}
+        value={price}
+        placeholder='Enter product price'
+        onChange={handleChange}
+        error={errors.price}
+      />
+      <FormInput
+        type='number'
+        name='priceDiscount'
+        label='Price discount'
+        min={1}
+        value={priceDiscount}
+        placeholder='Enter price discount'
+        onChange={handleChange}
+        error={errors.priceDiscount}
+      />
+      <FormInput
+        type='number'
+        name='numberInStock'
+        label='Number in stock'
+        min={1}
+        value={numberInStock}
+        placeholder='Enter number in stock'
+        onChange={handleChange}
+        error={errors.numberInStock}
+      />
+    </>
+  );
+
+  if (steps === STEPS.IMAGES) {
+    bodyContent = (
+      <>
+        <FormInput
+          name='color'
+          label='Color'
+          value={color}
+          placeholder='Separate the color with commas'
+          onChange={handleColor}
+        />
+        <FormInput
+          name='size'
+          label='Size'
+          value={size}
+          placeholder='Separate the size with commas'
+          onChange={handleSize}
+        />
+        <Select
+          name='category'
+          label='Select category'
+          value={category}
+          defaultText='Select a category'
+          onChange={handleChange}
+          data={categories}
+          loading={isLoading}
+          error={errors.category}
+        />
+        <FormInput
+          name='tags'
+          label='Product tags'
+          value={tags}
+          placeholder='Separate the tags with commas'
+          onChange={handleTags}
+          error={errors.tags}
+        />
+        {progress > 0 && progress < 100 ? (
+          <UploadProgress percentage={progress} />
+        ) : (
+          <UploadContainer>
+            <label htmlFor='file' className={labelClasses}>
+              Attach images
+            </label>
+            <input
+              type='file'
+              id='file'
+              accept='image/*'
+              onChange={handleFiles}
+              multiple
+            />
+          </UploadContainer>
+        )}
+      </>
+    );
+  }
+
   return (
     <FormBox>
       <StyledBox>
         <Heading small title='Create new product' />
         <Form onSubmit={handleSubmit}>
-          <FormInput
-            name='name'
-            label='Product name'
-            value={name}
-            placeholder='Enter product name'
-            onChange={handleChange}
-            error={errors.name}
-            autoFocus
-          />
-          <TextArea
-            name='desc'
-            label='Description'
-            value={desc}
-            placeholder='Enter product description'
-            onChange={handleChange}
-            error={errors.desc}
-          />
-          <FormInput
-            type='number'
-            name='price'
-            label='Price'
-            min={1}
-            value={price}
-            placeholder='Enter product price'
-            onChange={handleChange}
-            error={errors.price}
-          />
-          <FormInput
-            type='number'
-            name='priceDiscount'
-            label='Price discount'
-            min={1}
-            value={priceDiscount}
-            placeholder='Enter price discount'
-            onChange={handleChange}
-            error={errors.priceDiscount}
-          />
-          <FormInput
-            type='number'
-            name='numberInStock'
-            label='Number in stock'
-            min={1}
-            value={numberInStock}
-            placeholder='Enter number in stock'
-            onChange={handleChange}
-            error={errors.numberInStock}
-          />
-          <FormInput
-            name='color'
-            label='Color'
-            value={color}
-            placeholder='Separate the color with commas'
-            onChange={handleColor}
-          />
-          <FormInput
-            name='size'
-            label='Size'
-            value={size}
-            placeholder='Separate the size with commas'
-            onChange={handleSize}
-          />
-          <Select
-            name='category'
-            label='Select category'
-            value={category}
-            defaultText='Select a category'
-            onChange={handleChange}
-            data={categories}
-            loading={isLoading}
-            error={errors.category}
-          />
-          <FormInput
-            name='tags'
-            label='Product tags'
-            value={tags}
-            placeholder='Separate the tags with commas'
-            onChange={handleTags}
-            error={errors.tags}
-          />
-          {progress > 0 && progress < 100 ? (
-            <UploadProgress percentage={progress} />
-          ) : (
-            <UploadContainer>
-              <label htmlFor='file' className={labelClasses}>
-                Attach images
-              </label>
-              <input
-                type='file'
-                id='file'
-                accept='image/*'
-                onChange={handleFiles}
-                multiple
-              />
-            </UploadContainer>
-          )}
+          {bodyContent}
+
           <FormButton
             label='Create'
             disabled={disabledBtn}
