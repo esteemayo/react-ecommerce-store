@@ -93,13 +93,11 @@ const Product = ({
               inCart={inCart}
               onAction={handleClick}
             />
-            {alert && (
-              <Alert
-                alert={alert}
-                onChange={setAlert}
-                message='Item added to cart'
-              />
-            )}
+            <Alert
+              alert={alert}
+              onChange={setAlert}
+              message='Item added to cart'
+            />
             <ProductButtons
               actionId={product.id}
               alert={alert}
