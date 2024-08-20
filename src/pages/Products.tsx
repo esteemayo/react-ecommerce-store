@@ -33,7 +33,7 @@ const Products = () => {
   const [color, setColor] = useState('all');
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
 
-  const [counts, setCounts] = useState<number>();
+  const [counts, setCounts] = useState(12);
   const [page, setPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState<number>();
 
