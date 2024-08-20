@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import EmptyProduct from '../components/products/EmptyProduct';
 import ProductBox from '../components/products/ProductBox';
@@ -36,6 +36,13 @@ const Products = () => {
   const [counts, setCounts] = useState<number>();
   const [page, setPage] = useState<number>();
   const [numberOfPages, setNumberOfPages] = useState<number>();
+
+  const handleChangeColor = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setColor(e.target.value);
+    },
+    []
+  );
 
   useEffect(() => {
     (async () => {
