@@ -5,7 +5,7 @@ import { CommonImage } from '../CommonImage';
 const EmptyOrder = () => {
   return (
     <Container>
-      <Image src='/svg/no-data.svg' width={500} height={500} alt='no data' />
+      <Image src='/svg/no-data.svg' width={300} height={400} alt='no data' />
       <Message>No orders found</Message>
     </Container>
   );
@@ -19,8 +19,8 @@ const Container = styled.div`
 `;
 
 const Image = styled(CommonImage)`
-  width: 35%;
-  height: 35%;
+  width: 30rem;
+  height: 40rem;
   background-color: transparent;
   object-fit: contain;
 
@@ -37,7 +37,6 @@ const Message = styled.span`
   display: block;
   font-size: 3rem;
   color: ${({ theme }) => theme.text};
-  margin-top: 5rem;
 
   @media only screen and (max-width: 37.5em) {
     font-size: 2.5rem;
