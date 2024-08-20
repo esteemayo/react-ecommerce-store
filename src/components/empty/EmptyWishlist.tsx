@@ -8,7 +8,7 @@ const EmptyWishlist = () => {
       <Wrapper>
         <Image
           src='/svg/empty-list.svg'
-          width={500}
+          width={300}
           height={400}
           alt='empty list'
         />
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 
 const Image = styled(CommonImage)`
   display: inline-block;
-  width: 50rem;
+  width: 30rem;
   height: 40rem;
   background-color: transparent;
   object-fit: contain;
