@@ -236,7 +236,7 @@ export const lightTheme = {
   filterOut: '#eeeeee',
   bgPagination: 'var(--clr-white)',
   textPagination: 'var(--clr-tertiary-green)',
-  boxPagination: '0 2rem 4rem rgba(145, 143, 143, 0.1)',
+  boxPagination: '0px 0px 5px -1px rgba(73, 73, 73, 0.16)',
   textNotFound: 'inherit',
   textFormHeader: '#979797',
   inputBorder: '#dddddd',
