@@ -292,7 +292,7 @@ const NewProduct = () => {
     </>
   );
 
-  if (steps === STEPS.IMAGES) {
+  if (step === STEPS.IMAGES) {
     bodyContent = (
       <>
         <FormInput
