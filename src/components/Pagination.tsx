@@ -20,7 +20,7 @@ const Pagination = ({ counts, page, numberOfPages }: PaginationProps) => {
       return (
         <>
           <Button type='button'>&nbsp;</Button>
-          <CurrentPage>{page!}</CurrentPage>
+          <CurrentPage>{page}</CurrentPage>
           <StyledLink to={nextPage}>
             <Button type='button'>Next</Button>
           </StyledLink>

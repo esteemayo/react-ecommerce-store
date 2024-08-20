@@ -1027,7 +1027,7 @@ export interface RangeInputProps
 
 export interface PaginationProps {
   page: number;
-  counts?: number;
+  counts: number;
   numberOfPages?: number;
 }
 
