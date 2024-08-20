@@ -44,6 +44,13 @@ const Products = () => {
     []
   );
 
+  const handleChangeCategory = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setCategory(e.target.value);
+    },
+    []
+  );
+
   const handleChangeSize = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       setSize(e.target.value);
