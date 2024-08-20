@@ -359,11 +359,13 @@ const NewProduct = () => {
                 {secondaryActionLabel}
               </Button>
             )}
-            <FormButton
-              label={actionLabel}
-              disabled={disabledBtn}
-              loading={isPending}
-            />
+            {actionLabel && (
+              <FormButton
+                label={actionLabel}
+                disabled={disabledBtn}
+                loading={isPending}
+              />
+            )}
           </ButtonContainer>
         </Form>
       </StyledBox>
