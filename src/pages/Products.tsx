@@ -44,6 +44,13 @@ const Products = () => {
     []
   );
 
+  const handleChangeSize = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setSize(e.target.value);
+    },
+    []
+  );
+
   useEffect(() => {
     (async () => {
       setIsLoading(true);
