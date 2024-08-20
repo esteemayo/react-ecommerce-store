@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
@@ -335,16 +336,22 @@ const NewProduct = () => {
         <Heading small title='Create new product' />
         <Form onSubmit={handleSubmit}>
           {bodyContent}
-
-          <FormButton
-            label='Create'
-            disabled={disabledBtn}
-            loading={isPending}
-          />
+          <ButtonContainer>
+            <Button type='button'>Next</Button>
+            <FormButton
+              label='Create'
+              disabled={disabledBtn}
+              loading={isPending}
+            />
+          </ButtonContainer>
         </Form>
       </StyledBox>
     </FormBox>
   );
 };
+
+const ButtonContainer = styled.div``;
+
+const Button = styled.button``;
 
 export default NewProduct;
