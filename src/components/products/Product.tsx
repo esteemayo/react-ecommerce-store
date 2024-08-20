@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import styled from 'styled-components';
 
-import ColorSelect from '../inputs/ColorSelect';
-import Counter from '../inputs/Counter';
 import SizeSelect from '../inputs/SizeSelect';
+import Counter from '../inputs/Counter';
+import ColorSelect from '../inputs/ColorSelect';
 
 import ProductHead from './ProductHead';
 import ProductButton from './ProductButton';
