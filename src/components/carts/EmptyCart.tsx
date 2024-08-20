@@ -45,9 +45,7 @@ const StyledImage = styled(CommonImage)`
   }
 `;
 
-const Wrapper = styled.div`
-  margin-top: 3rem;
-`;
+const Wrapper = styled.div``;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
