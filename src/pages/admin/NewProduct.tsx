@@ -87,16 +87,16 @@ const NewProduct = () => {
   const [errors, setErrors] = useState<ProductErrors>({});
   const [progress, setProgress] = useState(0);
   const [urls, setUrls] = useState<string[]>([]);
-  const [steps, setSteps] = useState(STEPS.INFO);
+  const [step, setStep] = useState(STEPS.INFO);
 
   const onPrev = useCallback(() => {
-    setSteps((value) => {
+    setStep((value) => {
       return value - 1;
     });
   }, []);
 
   const onNext = useCallback(() => {
-    setSteps((value) => {
+    setStep((value) => {
       return value + 1;
     });
   }, []);
@@ -212,16 +212,16 @@ const NewProduct = () => {
   }, [mode]);
 
   const actionLabel = useMemo(() => {
-    return steps === STEPS.IMAGES ? 'Create' : 'Next';
-  }, [steps]);
+    return step === STEPS.IMAGES ? 'Create' : 'Next';
+  }, [step]);
 
   const secondaryActionLabel = useMemo(() => {
-    return steps !== STEPS.INFO ? 'Back' : undefined;
-  }, [steps]);
+    return step !== STEPS.INFO ? 'Back' : undefined;
+  }, [step]);
 
   const secondaryAction = useMemo(() => {
-    return steps !== STEPS.INFO ? onPrev : undefined;
-  }, [onPrev, steps]);
+    return step !== STEPS.INFO ? onPrev : undefined;
+  }, [onPrev, step]);
 
   const disabledBtn = useMemo(() => {
     const disabled = isPending || (progress > 0 && progress < 100);
