@@ -124,6 +124,7 @@ const ProductsContainer = styled.div`
 
 const Box = styled.div`
   width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
