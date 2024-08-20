@@ -16,10 +16,10 @@ const ProductFilter = ({
   color,
   minPrice,
   maxPrice,
-  setCategory,
-  setSize,
-  setColor,
-  setPrice,
+  onChangeColor,
+  onChangeCategory,
+  onChangeSize,
+  onChangePrice,
 }: ProductFilterProps) => {
   const allColors = ['all', ...getUnique(products, 'color')];
   const colors = allColors.map((color, index) => {
@@ -46,9 +46,7 @@ const ProductFilter = ({
           page='product'
           value={color}
           options={colors}
-          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-            setColor(e.target.value)
-          }
+          onChange={onChangeColor}
         />
         <Select
           name='category'
@@ -56,9 +54,7 @@ const ProductFilter = ({
           page='product'
           value={category}
           options={categories}
-          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-            setCategory(e.target.value)
-          }
+          onChange={onChangeCategory}
         />
         <Select
           name='size'
@@ -66,9 +62,7 @@ const ProductFilter = ({
           page='product'
           value={size}
           options={sizes}
-          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-            setSize(e.target.value)
-          }
+          onChange={onChangeSize}
         />
         <RangeInput
           name='price'
@@ -77,9 +71,7 @@ const ProductFilter = ({
           value={price}
           min={minPrice}
           max={maxPrice}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setPrice(+e.target.value)
-          }
+          onChange={onChangePrice}
         />
       </Wrapper>
     </Container>

@@ -137,10 +137,10 @@ const Products = () => {
         color={color}
         minPrice={minPrice}
         maxPrice={maxPrice}
-        setCategory={setCategory}
-        setSize={setSize}
-        setColor={setColor}
-        setPrice={setPrice}
+        onChangeColor={handleChangeColor}
+        onChangeCategory={handleChangeCategory}
+        onChangeSize={handleChangeSize}
+        onChangePrice={handleChangePrice}
       />
       {sortedProducts.length < 1 && !currentPage ? (
         <Box>
