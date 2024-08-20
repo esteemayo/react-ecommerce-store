@@ -184,7 +184,7 @@ const NewProduct = () => {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      if (steps !== STEPS.IMAGES) {
+      if (step !== STEPS.IMAGES) {
         onNext();
         return;
       }
