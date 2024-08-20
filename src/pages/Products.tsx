@@ -35,7 +35,7 @@ const Products = () => {
 
   const [counts, setCounts] = useState(12);
   const [page, setPage] = useState(1);
-  const [numberOfPages, setNumberOfPages] = useState<number>();
+  const [numberOfPages, setNumberOfPages] = useState(1);
 
   const handleChangeColor = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
