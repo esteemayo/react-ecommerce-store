@@ -360,9 +360,13 @@ const Button = styled.button`
   display: inline-block;
   border: none;
   outline: none;
+  text-align: center;
+  text-transform: capitalize;
   font-weight: 500;
   font-size: 1.4rem;
   width: 100%;
+  padding: 1.5rem;
+  cursor: pointer;
 `;
 
 export default NewProduct;
