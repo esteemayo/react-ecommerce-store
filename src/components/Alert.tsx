@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { AlertProps } from '../types';
 
 interface IMessage {
+  alert: string;
   center?: string;
 }
 
@@ -16,11 +17,15 @@ const Alert = ({ alert, center, message, onChange }: AlertProps) => {
     return () => clearTimeout(timeout);
   }, [alert, onChange]);
 
-  return <Message center={center?.toString()}>{message}</Message>;
+  return (
+    <Message alert={alert.toString()} center={center?.toString()}>
+      {message}
+    </Message>
+  );
 };
 
 const Message = styled.span<IMessage>`
-  display: block;
+  display: ${({ alert }) => (alert === 'true' ? 'block' : 'none')};
   font-size: 1.4rem;
   color: var(--clr-green-dark);
   text-align: ${({ center }) => setProperty(center)};

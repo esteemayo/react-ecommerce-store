@@ -170,14 +170,12 @@ const CartModal = ({
               inCart={inCart}
               onAction={onClickHandler}
             />
-            {alert && (
-              <Alert
-                alert={alert}
-                message='Item added to cart'
-                onChange={setAlert}
-                center
-              />
-            )}
+            <Alert
+              alert={alert}
+              message='Item added to cart'
+              onChange={setAlert}
+              center
+            />
           </ProductContainer>
         </Box>
       </Wrapper>
