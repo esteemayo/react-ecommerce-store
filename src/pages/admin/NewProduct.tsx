@@ -219,6 +219,10 @@ const NewProduct = () => {
     return steps !== STEPS.INFO ? 'Back' : undefined;
   }, [steps]);
 
+  const secondaryAction = useMemo(() => {
+    return steps !== STEPS.INFO ? onPrev : undefined;
+  }, [onPrev, steps]);
+
   const disabledBtn = useMemo(() => {
     const disabled = isPending || (progress > 0 && progress < 100);
     return !!disabled;
@@ -350,7 +354,9 @@ const NewProduct = () => {
         <Form onSubmit={handleSubmit}>
           {bodyContent}
           <ButtonContainer>
-            <Button type='button'>{secondaryActionLabel}</Button>
+            <Button type='button' onClick={secondaryAction}>
+              {secondaryActionLabel}
+            </Button>
             <FormButton
               label={actionLabel}
               disabled={disabledBtn}
