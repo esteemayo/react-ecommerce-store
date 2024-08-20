@@ -994,7 +994,7 @@ export interface ProductFilterProps {
   onChangeColor(e: React.ChangeEvent<HTMLSelectElement>): void;
   onChangeCategory(e: React.ChangeEvent<HTMLSelectElement>): void;
   onChangeSize(e: React.ChangeEvent<HTMLSelectElement>): void;
-  onChangePrice(e: React.ChangeEvent<HTMLSelectElement>): void;
+  onChangePrice(e: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 export interface FilterSelect
