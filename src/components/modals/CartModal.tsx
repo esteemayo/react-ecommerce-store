@@ -9,13 +9,13 @@ import ColorSelect from '../inputs/ColorSelect';
 import ProductHead from '../products/ProductHead';
 import ProductButton from '../products/ProductButton';
 
+import Alert from '../Alert';
+
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { useCart } from '../../hooks/useCart';
 import { useCartStore } from '../../hooks/useCartStore';
 
 import { CartModalProps } from '../../types';
-
-import Alert from '../Alert';
 
 interface IMode {
   mode: string;
