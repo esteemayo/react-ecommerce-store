@@ -90,8 +90,12 @@ const ProductsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 7rem;
+
+  @media only screen and (max-width: 64em) {
+    justify-content: space-between;
+  }
 
   @media only screen and (max-width: 59.375em) {
     gap: 4rem;
