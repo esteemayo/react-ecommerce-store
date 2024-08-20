@@ -98,7 +98,7 @@ const ProductsContainer = styled.div`
   }
 
   @media only screen and (max-width: 37.5em) {
-    column-gap: 2rem;
+    gap: 2rem;
   }
 
   @media only screen and (max-width: 34.375em) {
