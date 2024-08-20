@@ -354,6 +354,10 @@ const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  & > button[type='submit'] {
+    margin-top: 0;
+  }
 `;
 
 const Button = styled.button`
