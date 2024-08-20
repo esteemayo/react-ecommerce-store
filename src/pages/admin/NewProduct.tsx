@@ -353,7 +353,7 @@ const NewProduct = () => {
 const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
 
   & > button[type='submit'] {
     margin-top: 0;
