@@ -220,7 +220,8 @@ export const lightTheme = {
   textScroll: 'var(--clr-primary-green)',
   searchBorder: 'var(--clr-primary-green)',
   boxScroll: '0px 0px 5px -1px rgba(73, 73, 73, 0.16)',
-  boxScrollHov: 'rgb(0, 0, 0, 0.25) 0 0.4rem 2rem',
+  boxScrollHov:
+    '0 0 0 1px rgba(67, 41, 163, 0.08), 0 1px 5px 0 rgba(67, 41, 163, 0.08)',
   bgCarouselBtn: 'var(--clr-white)',
   bgCarouselBtnHov: 'transparent',
   textCarouselBtn: '#777777',
