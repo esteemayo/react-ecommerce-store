@@ -88,6 +88,12 @@ const NewProduct = () => {
   const [urls, setUrls] = useState<string[]>([]);
   const [steps, setSteps] = useState(STEPS.INFO);
 
+  const onPrev = useCallback(() => {
+    setSteps((value) => {
+      return value - 1;
+    });
+  }, []);
+
   const handleChange = useCallback(
     ({
       target: input,
