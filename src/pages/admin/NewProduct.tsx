@@ -40,6 +40,11 @@ interface IFile {
   webkitRelativePath: string;
 }
 
+const enum STEPS {
+  INFO = 0,
+  IMAGES = 1,
+}
+
 const initialState: ProductData = {
   name: '',
   desc: '',
@@ -54,15 +59,6 @@ const NewProduct = () => {
 
   const navigate = useNavigate();
   const mode = useDarkMode((state) => state.mode);
-
-  const [data, setData] = useState(initialState);
-  const [files, setFiles] = useState<IFile[]>([]);
-  const [size, setSize] = useState<string[]>([]);
-  const [color, setColor] = useState<string[]>([]);
-  const [tags, setTags] = useState<string[]>([]);
-  const [errors, setErrors] = useState<ProductErrors>({});
-  const [progress, setProgress] = useState(0);
-  const [urls, setUrls] = useState<string[]>([]);
 
   const { isLoading, data: categories } = useQuery({
     queryKey: ['categories'],
@@ -81,6 +77,16 @@ const NewProduct = () => {
       queryClient.invalidateQueries({ queryKey: ['products'] });
     },
   });
+
+  const [data, setData] = useState(initialState);
+  const [files, setFiles] = useState<IFile[]>([]);
+  const [size, setSize] = useState<string[]>([]);
+  const [color, setColor] = useState<string[]>([]);
+  const [tags, setTags] = useState<string[]>([]);
+  const [errors, setErrors] = useState<ProductErrors>({});
+  const [progress, setProgress] = useState(0);
+  const [urls, setUrls] = useState<string[]>([]);
+  const [steps, setSteps] = useState(STEPS.INFO);
 
   const handleChange = useCallback(
     ({
