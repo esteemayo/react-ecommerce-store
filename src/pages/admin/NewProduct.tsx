@@ -215,6 +215,10 @@ const NewProduct = () => {
     return steps === STEPS.IMAGES ? 'Create' : 'Next';
   }, [steps]);
 
+  const secondaryActionLabel = useMemo(() => {
+    return steps !== STEPS.INFO ? 'Back' : undefined;
+  }, [steps]);
+
   const disabledBtn = useMemo(() => {
     const disabled = isPending || (progress > 0 && progress < 100);
     return !!disabled;
@@ -346,7 +350,7 @@ const NewProduct = () => {
         <Form onSubmit={handleSubmit}>
           {bodyContent}
           <ButtonContainer>
-            <Button type='button'>Next</Button>
+            <Button type='button'>{secondaryActionLabel}</Button>
             <FormButton
               label={actionLabel}
               disabled={disabledBtn}
