@@ -94,6 +94,12 @@ const NewProduct = () => {
     });
   }, []);
 
+  const onNext = useCallback(() => {
+    setSteps((value) => {
+      return value + 1;
+    });
+  }, []);
+
   const handleChange = useCallback(
     ({
       target: input,
