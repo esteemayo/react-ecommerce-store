@@ -62,7 +62,7 @@ const Button = styled.button`
   display: inline-block;
   font-weight: 400;
   font-size: 1.5rem;
-  padding: 1rem 0.5rem;
+  padding: 1rem 1.5rem;
   background-color: transparent;
   color: ${({ theme }) => theme.textEmptyCartBtn};
   border: 2px solid ${({ theme }) => theme.textEmptyCartBtn};
