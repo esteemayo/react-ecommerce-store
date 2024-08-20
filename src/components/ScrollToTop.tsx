@@ -62,8 +62,8 @@ const Wrapper = styled.div`
   color: ${({ theme }) => theme.textScroll};
   border-radius: 50%;
   box-shadow: ${({ theme }) => theme.boxScroll};
-  -webkit-box-shadow: ${({ theme }) => theme.bgScroll};
-  -moz-box-shadow: ${({ theme }) => theme.bgScroll};
+  -webkit-box-shadow: ${({ theme }) => theme.boxScroll};
+  -moz-box-shadow: ${({ theme }) => theme.boxScroll};
   display: flex;
   align-items: center;
   justify-content: center;
