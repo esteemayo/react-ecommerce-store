@@ -60,7 +60,7 @@ const Products = () => {
 
   const handleChangePrice = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      setPrice(e.target.value);
+      setPrice(+e.target.value);
     },
     []
   );
