@@ -358,7 +358,6 @@ const ButtonContainer = styled.div`
 
 const Button = styled.button`
   display: inline-block;
-  border: none;
   outline: none;
   text-align: center;
   text-transform: capitalize;
@@ -366,6 +365,9 @@ const Button = styled.button`
   font-size: 1.4rem;
   width: 100%;
   padding: 1.5rem;
+  background-color: transparent;
+  color: ${({ theme }) => theme.bgImgBtn};
+  border: 1px solid ${({ theme }) => theme.bgImgBtn};
   border-radius: 0.5rem;
   cursor: pointer;
 
