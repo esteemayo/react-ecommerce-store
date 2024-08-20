@@ -74,7 +74,6 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 31.9375em) {
-    justify-content: space-between;
     column-gap: 1rem;
   }
 
