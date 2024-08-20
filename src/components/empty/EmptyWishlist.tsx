@@ -36,7 +36,7 @@ const Image = styled(CommonImage)`
   object-fit: contain;
 
   @media only screen and (max-width: 18.75em) {
-    height: 25rem;
+    height: 35rem;
   }
 `;
 
