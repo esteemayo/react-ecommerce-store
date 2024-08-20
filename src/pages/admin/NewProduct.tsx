@@ -356,6 +356,13 @@ const ButtonContainer = styled.div`
   justify-content: space-between;
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  display: inline-block;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  width: 100%;
+`;
 
 export default NewProduct;
