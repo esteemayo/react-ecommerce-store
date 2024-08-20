@@ -366,6 +366,7 @@ const Button = styled.button`
   font-size: 1.4rem;
   width: 100%;
   padding: 1.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
 `;
 
