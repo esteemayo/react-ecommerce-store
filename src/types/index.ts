@@ -991,10 +991,10 @@ export interface ProductFilterProps {
   color: string;
   minPrice: number;
   maxPrice: number;
-  setCategory(category: string): void;
-  setSize(size: string): void;
-  setColor(color: string): void;
-  setPrice(price: number): void;
+  onChangeColor(e: React.ChangeEvent<HTMLSelectElement>): void;
+  onChangeCategory(e: React.ChangeEvent<HTMLSelectElement>): void;
+  onChangeSize(e: React.ChangeEvent<HTMLSelectElement>): void;
+  onChangePrice(e: React.ChangeEvent<HTMLSelectElement>): void;
 }
 
 export interface FilterSelect
