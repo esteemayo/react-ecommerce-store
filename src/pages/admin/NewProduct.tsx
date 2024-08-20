@@ -89,13 +89,17 @@ const NewProduct = () => {
   const [urls, setUrls] = useState<string[]>([]);
   const [steps, setSteps] = useState(STEPS.INFO);
 
-  const onPrev = useCallback(() => {
+  const onPrev = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+
     setSteps((value) => {
       return value - 1;
     });
   }, []);
 
-  const onNext = useCallback(() => {
+  const onNext = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+
     setSteps((value) => {
       return value + 1;
     });
