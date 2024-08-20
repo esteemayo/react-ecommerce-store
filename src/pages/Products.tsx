@@ -58,6 +58,13 @@ const Products = () => {
     []
   );
 
+  const handleChangePrice = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setPrice(e.target.value);
+    },
+    []
+  );
+
   useEffect(() => {
     (async () => {
       setIsLoading(true);
