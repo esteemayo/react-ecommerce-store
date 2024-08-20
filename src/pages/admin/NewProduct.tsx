@@ -368,6 +368,11 @@ const Button = styled.button`
   padding: 1.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
 `;
 
 export default NewProduct;
