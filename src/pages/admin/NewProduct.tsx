@@ -215,14 +215,6 @@ const NewProduct = () => {
     return step === STEPS.IMAGES ? 'Create' : 'Next';
   }, [step]);
 
-  const secondaryActionLabel = useMemo(() => {
-    return step !== STEPS.INFO ? 'Back' : undefined;
-  }, [step]);
-
-  const secondaryAction = useMemo(() => {
-    return step !== STEPS.INFO ? onPrev : undefined;
-  }, [onPrev, step]);
-
   const disabledBtn = useMemo(() => {
     const disabled = isPending || (progress > 0 && progress < 100);
     return !!disabled;
