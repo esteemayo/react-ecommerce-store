@@ -190,6 +190,7 @@ const NewProduct = () => {
 
       const errors = validateProductForm(data, tags);
       if (Object.keys(errors).length > 0) return setErrors(errors);
+
       setErrors({});
 
       const product = {
