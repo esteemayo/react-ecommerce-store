@@ -20,6 +20,7 @@ import Heading from '../../components/form/Heading';
 import UploadProgress from '../../components/form/UploadProgress';
 import FormBox from '../../components/form/FormBox';
 import { UploadContainer } from '../../components/form/UploadContainer';
+import RegisterInfo from '../../components/registerInfo/RegisterInfo';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { validateProductForm } from '../../validations/product';
@@ -29,7 +30,6 @@ import { getCategories } from '../../services/categoryService';
 
 import app from '../../firebase';
 import { ProductData, ProductErrors } from '../../types';
-import RegisterInfo from '../../components/registerInfo/RegisterInfo';
 
 interface IFile {
   id?: number;
