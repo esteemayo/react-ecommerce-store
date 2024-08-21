@@ -7,6 +7,7 @@ const RegisterInfo = ({
   name,
   desc,
   price,
+  priceDiscount,
   numberInStock,
   errors,
   onChange,
