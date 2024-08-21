@@ -1392,3 +1392,16 @@ export interface StarRatingProps {
       ) => void)
     | undefined;
 }
+
+export interface RegisterInfoProps {
+  name: string;
+  desc: string;
+  price: number;
+  numberInStock: number;
+  errors: ProductErrors;
+  onChange(
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ): void;
+}
