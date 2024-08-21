@@ -9,7 +9,7 @@ const RegisterImages = ({
   category,
   categories,
   tags,
-  erros,
+  errors,
   loading,
   progress,
   labelClasses,
