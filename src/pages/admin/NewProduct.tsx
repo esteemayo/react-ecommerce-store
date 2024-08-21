@@ -11,12 +11,14 @@ import {
   UploadTask,
 } from 'firebase/storage';
 
+import Heading from '../../components/form/Heading';
 import Form from '../../components/form/Form';
 import FormButton from '../../components/form/FormButton';
-import { StyledBox } from '../../components/form/StyledBox';
-import Heading from '../../components/form/Heading';
 import FormBox from '../../components/form/FormBox';
+
 import RegisterInfo from '../../components/registerInfo/RegisterInfo';
+import { StyledBox } from '../../components/form/StyledBox';
+import RegisterImages from '../../components/registerImages/RegisterImages';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { validateProductForm } from '../../validations/product';
@@ -26,7 +28,6 @@ import { getCategories } from '../../services/categoryService';
 
 import app from '../../firebase';
 import { ProductData, ProductErrors } from '../../types';
-import RegisterImages from '../../components/registerImages/RegisterImages';
 
 interface IFile {
   id?: number;
