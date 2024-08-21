@@ -235,6 +235,12 @@ const NewProduct = () => {
     isSuccess && navigate('/products');
   }, [isSuccess, navigate]);
 
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setTimeout(() => setErrors({}), 5000);
+    }
+  }, [errors]);
+
   const { name, desc, category, price, numberInStock, priceDiscount } = data;
 
   let bodyContent: JSX.Element | undefined;
