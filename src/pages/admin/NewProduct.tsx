@@ -360,19 +360,14 @@ const NewProduct = () => {
         <Form onSubmit={handleSubmit}>
           {bodyContent}
           <ButtonContainer>
-            {secondaryActionLabel && secondaryAction && (
-              <Button type='button' onClick={secondaryAction}>
-                {secondaryActionLabel}
-              </Button>
-            )}
-            {actionLabel && (
-              <FormButton
-                label={actionLabel}
-                disabled={disabledBtn}
-                loading={isPending}
-              />
-            )}
+            <Button type='button'>Prev</Button>
+            <Button type='button'>Next</Button>
           </ButtonContainer>
+          <FormButton
+            label={actionLabel}
+            disabled={disabledBtn}
+            loading={isPending}
+          />
         </Form>
       </StyledBox>
     </FormBox>
