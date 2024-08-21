@@ -347,7 +347,7 @@ const NewProduct = () => {
             <Button type='button' onClick={onPrev}>
               Prev
             </Button>
-            <Button type='button' onClick={onPrev}>
+            <Button type='button' onClick={onNext}>
               Next
             </Button>
           </ButtonContainer>
