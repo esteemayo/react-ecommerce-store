@@ -1434,3 +1434,9 @@ export interface RegisterImagesProps {
   onChangeTags(e: React.ChangeEvent<HTMLInputElement>): void;
   onChangeFiles(e: React.ChangeEvent<HTMLInputElement>): void;
 }
+
+export interface SlideButtonsProps {
+  onNext(e: React.MouseEvent<HTMLButtonElement>): void;
+  onPrev(e: React.MouseEvent<HTMLButtonElement>): void;
+  disabled: boolean;
+}
