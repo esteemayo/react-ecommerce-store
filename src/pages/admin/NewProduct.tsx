@@ -391,11 +391,10 @@ const Button = styled.button`
   text-transform: capitalize;
   font-weight: 500;
   font-size: 1.4rem;
-  width: 100%;
-  padding: 1.5rem;
+  padding: 3px 0.5rem;
   background-color: transparent;
   color: ${({ theme }) => theme.bgImgBtn};
-  border: 1px solid ${({ theme }) => theme.bgImgBtn};
+  border: 1px solid currentColor;
   border-radius: 0.5rem;
   cursor: pointer;
 
