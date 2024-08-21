@@ -1,7 +1,7 @@
-import FormInput from '../form/FormInput';
+import UploadProgress from '../form/UploadProgress';
 import Select from '../form/Select';
 import { UploadContainer } from '../form/UploadContainer';
-import UploadProgress from '../form/UploadProgress';
+import FormInput from '../form/FormInput';
 
 import { RegisterImagesProps } from '../../types';
 
