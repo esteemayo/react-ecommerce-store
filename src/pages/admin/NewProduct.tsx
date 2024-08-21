@@ -79,15 +79,15 @@ const NewProduct = () => {
     },
   });
 
+  const [progress, setProgress] = useState(0);
   const [data, setData] = useState(initialState);
+  const [step, setStep] = useState(STEPS.INFO);
   const [files, setFiles] = useState<IFile[]>([]);
   const [size, setSize] = useState<string[]>([]);
   const [color, setColor] = useState<string[]>([]);
   const [tags, setTags] = useState<string[]>([]);
   const [errors, setErrors] = useState<ProductErrors>({});
-  const [progress, setProgress] = useState(0);
   const [urls, setUrls] = useState<string[]>([]);
-  const [step, setStep] = useState(STEPS.INFO);
 
   const onPrev = useCallback(() => {
     setStep((value) => {
