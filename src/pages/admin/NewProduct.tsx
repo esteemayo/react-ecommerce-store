@@ -30,6 +30,7 @@ import { getCategories } from '../../services/categoryService';
 
 import app from '../../firebase';
 import { ProductData, ProductErrors } from '../../types';
+import RegisterImages from '../../components/registerImages/RegisterImages';
 
 interface IFile {
   id?: number;
@@ -244,56 +245,22 @@ const NewProduct = () => {
 
   if (step === STEPS.IMAGES) {
     bodyContent = (
-      <>
-        <FormInput
-          name='color'
-          label='Color'
-          value={color}
-          placeholder='Separate the color with commas'
-          onChange={handleColor}
-        />
-        <FormInput
-          name='size'
-          label='Size'
-          value={size}
-          placeholder='Separate the size with commas'
-          onChange={handleSize}
-        />
-        <Select
-          name='category'
-          label='Select category'
-          value={category}
-          defaultText='Select a category'
-          onChange={handleChange}
-          data={categories}
-          loading={isLoading}
-          error={errors.category}
-        />
-        <FormInput
-          name='tags'
-          label='Product tags'
-          value={tags}
-          placeholder='Separate the tags with commas'
-          onChange={handleTags}
-          error={errors.tags}
-        />
-        {progress > 0 && progress < 100 ? (
-          <UploadProgress percentage={progress} />
-        ) : (
-          <UploadContainer>
-            <label htmlFor='file' className={labelClasses}>
-              Attach images
-            </label>
-            <input
-              type='file'
-              id='file'
-              accept='image/*'
-              onChange={handleFiles}
-              multiple
-            />
-          </UploadContainer>
-        )}
-      </>
+      <RegisterImages
+        color={color}
+        size={size}
+        category={category}
+        categories={categories}
+        tags={tags}
+        errors={errors}
+        loading={isLoading}
+        progress={progress}
+        labelClasses={labelClasses}
+        onChange={handleChange}
+        onChangeColor={handleColor}
+        onChangeSize={handleSize}
+        onChangeTags={handleTags}
+        onChangeFiles={handleFiles}
+      />
     );
   }
 
