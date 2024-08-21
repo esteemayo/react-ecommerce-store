@@ -185,8 +185,7 @@ const NewProduct = () => {
       e.preventDefault();
 
       if (step !== STEPS.IMAGES) {
-        onNext();
-        return;
+        return onNext();
       }
 
       const errors = validateProductForm(data, tags);
