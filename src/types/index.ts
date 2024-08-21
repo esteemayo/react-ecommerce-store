@@ -1397,6 +1397,7 @@ export interface RegisterInfoProps {
   name: string;
   desc: string;
   price: number;
+  priceDiscount: number;
   numberInStock: number;
   errors: ProductErrors;
   onChange(
