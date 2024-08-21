@@ -1,5 +1,5 @@
-import FormInput from '../form/FormInput';
 import TextArea from '../form/TextArea';
+import FormInput from '../form/FormInput';
 
 import { RegisterInfoProps } from '../../types';
 
