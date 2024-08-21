@@ -348,8 +348,12 @@ const NewProduct = () => {
         <Form onSubmit={handleSubmit}>
           {bodyContent}
           <ButtonContainer>
-            <Button type='button'>Prev</Button>
-            <Button type='button'>Next</Button>
+            <Button type='button' onClick={onPrev}>
+              Prev
+            </Button>
+            <Button type='button' onClick={onPrev}>
+              Next
+            </Button>
           </ButtonContainer>
           <FormButton
             label='Create'
