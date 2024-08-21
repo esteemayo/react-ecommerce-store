@@ -1350,9 +1350,9 @@ export interface UpdatePasswordErrors {
 export interface ProductData {
   name: string;
   desc: string;
-  price: string;
-  priceDiscount: string;
-  numberInStock: string;
+  price: number;
+  priceDiscount: number;
+  numberInStock: number;
   category: string;
 }
 
