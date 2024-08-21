@@ -11,15 +11,11 @@ import {
   UploadTask,
 } from 'firebase/storage';
 
-import FormInput from '../../components/form/FormInput';
 import Form from '../../components/form/Form';
 import FormButton from '../../components/form/FormButton';
-import Select from '../../components/form/Select';
 import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
-import UploadProgress from '../../components/form/UploadProgress';
 import FormBox from '../../components/form/FormBox';
-import { UploadContainer } from '../../components/form/UploadContainer';
 import RegisterInfo from '../../components/registerInfo/RegisterInfo';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
