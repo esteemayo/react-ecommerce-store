@@ -28,6 +28,7 @@ import { getCategories } from '../../services/categoryService';
 
 import app from '../../firebase';
 import { ProductData, ProductErrors } from '../../types';
+import SlideButtons from '../../components/slideButtons/SlideButtons';
 
 interface IFile {
   id?: number;
@@ -267,14 +268,7 @@ const NewProduct = () => {
         <Heading small title='Create new product' />
         <Form onSubmit={handleSubmit}>
           {bodyContent}
-          <ButtonContainer>
-            <Button type='button' onClick={onPrev}>
-              Prev
-            </Button>
-            <Button type='button' onClick={onNext}>
-              Next
-            </Button>
-          </ButtonContainer>
+          <SlideButtons onNext={onNext} onPrev={onPrev} disabled={isPending} />
           <FormButton
             label='Create'
             disabled={disabledBtn}
@@ -285,35 +279,5 @@ const NewProduct = () => {
     </FormBox>
   );
 };
-
-const ButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  & > button[type='submit'] {
-    margin-top: 0;
-  }
-`;
-
-const Button = styled.button`
-  display: inline-block;
-  outline: none;
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 3px 0.5rem;
-  background-color: transparent;
-  color: ${({ theme }) => theme.bgImgBtn};
-  border: 1px solid currentColor;
-  border-radius: 0.5rem;
-  cursor: pointer;
-
-  &:disabled {
-    opacity: 0.7;
-    cursor: default;
-  }
-`;
 
 export default NewProduct;
