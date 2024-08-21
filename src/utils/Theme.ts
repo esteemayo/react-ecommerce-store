@@ -245,7 +245,7 @@ export const lightTheme = {
   textLabel: '#888888',
   bgInput: '#f9f9f9',
   inputOut: '#eeeeee',
-  boxForm: '0 2rem 4rem rgba(145, 143, 143, 0.25)',
+  boxForm: '0px 0px 5px -1px rgba(73, 73, 73, 0.16)',
   inputCaret: 'var(--caret-light)',
   fileInput: 'var(--clr-tertiary-green)',
   uploadFileInput: 'var(--clr-tertiary-green)',
