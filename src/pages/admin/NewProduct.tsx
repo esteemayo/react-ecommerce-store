@@ -14,6 +14,7 @@ import Heading from '../../components/form/Heading';
 import Form from '../../components/form/Form';
 import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
+import SlideButtons from '../../components/slideButtons/SlideButtons';
 
 import RegisterInfo from '../../components/registerInfo/RegisterInfo';
 import { StyledBox } from '../../components/form/StyledBox';
@@ -27,7 +28,6 @@ import { getCategories } from '../../services/categoryService';
 
 import app from '../../firebase';
 import { ProductData, ProductErrors } from '../../types';
-import SlideButtons from '../../components/slideButtons/SlideButtons';
 
 interface IFile {
   id?: number;
