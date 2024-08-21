@@ -356,7 +356,7 @@ const NewProduct = () => {
             <Button type='button'>Next</Button>
           </ButtonContainer>
           <FormButton
-            label={actionLabel}
+            label='Create'
             disabled={disabledBtn}
             loading={isPending}
           />
