@@ -184,10 +184,6 @@ const NewProduct = () => {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      if (step !== STEPS.IMAGES) {
-        return onNext();
-      }
-
       const errors = validateProductForm(data, tags);
       if (Object.keys(errors).length > 0) return setErrors(errors);
 
