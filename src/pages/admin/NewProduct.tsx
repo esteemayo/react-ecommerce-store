@@ -49,9 +49,9 @@ const enum STEPS {
 const initialState: ProductData = {
   name: '',
   desc: '',
-  price: '',
-  priceDiscount: '',
-  numberInStock: '',
+  price: 1,
+  priceDiscount: 1,
+  numberInStock: 1,
   category: '',
 };
 
