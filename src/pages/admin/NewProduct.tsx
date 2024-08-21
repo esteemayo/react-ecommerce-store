@@ -30,6 +30,7 @@ import { getCategories } from '../../services/categoryService';
 
 import app from '../../firebase';
 import { ProductData, ProductErrors } from '../../types';
+import RegisterInfo from '../../components/registerInfo/RegisterInfo';
 
 interface IFile {
   id?: number;
@@ -231,55 +232,15 @@ const NewProduct = () => {
   let bodyContent: JSX.Element | undefined;
 
   bodyContent = (
-    <>
-      <FormInput
-        name='name'
-        label='Product name'
-        value={name}
-        placeholder='Enter product name'
-        onChange={handleChange}
-        error={errors.name}
-        autoFocus
-      />
-      <TextArea
-        name='desc'
-        label='Description'
-        value={desc}
-        placeholder='Enter product description'
-        onChange={handleChange}
-        error={errors.desc}
-      />
-      <FormInput
-        type='number'
-        name='price'
-        label='Price'
-        min={1}
-        value={price}
-        placeholder='Enter product price'
-        onChange={handleChange}
-        error={errors.price}
-      />
-      <FormInput
-        type='number'
-        name='priceDiscount'
-        label='Price discount'
-        min={1}
-        value={priceDiscount}
-        placeholder='Enter price discount'
-        onChange={handleChange}
-        error={errors.priceDiscount}
-      />
-      <FormInput
-        type='number'
-        name='numberInStock'
-        label='Number in stock'
-        min={1}
-        value={numberInStock}
-        placeholder='Enter number in stock'
-        onChange={handleChange}
-        error={errors.numberInStock}
-      />
-    </>
+    <RegisterInfo
+      name={name}
+      desc={desc}
+      price={price}
+      priceDiscount={priceDiscount}
+      numberInStock={numberInStock}
+      errors={errors}
+      onChange={handleChange}
+    />
   );
 
   if (step === STEPS.IMAGES) {
