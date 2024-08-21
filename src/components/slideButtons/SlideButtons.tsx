@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const SlideButtons = ({ onNext, onPrev, disabled }) => {
+import { SlideButtonsProps } from '../../types';
+
+const SlideButtons = ({ onNext, onPrev, disabled }: SlideButtonsProps) => {
   return (
     <ButtonContainer>
       <Button type='button' disabled={disabled} onClick={onPrev}>
