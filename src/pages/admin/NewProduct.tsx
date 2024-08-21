@@ -211,10 +211,6 @@ const NewProduct = () => {
     return `formLabel ${mode ? 'dark' : 'light'}`;
   }, [mode]);
 
-  const actionLabel = useMemo(() => {
-    return step === STEPS.IMAGES ? 'Create' : 'Next';
-  }, [step]);
-
   const disabledBtn = useMemo(() => {
     const disabled = isPending || (progress > 0 && progress < 100);
     return !!disabled;
