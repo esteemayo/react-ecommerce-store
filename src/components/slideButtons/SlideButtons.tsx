@@ -4,18 +4,18 @@ import { SlideButtonsProps } from '../../types';
 
 const SlideButtons = ({ onNext, onPrev, disabled }: SlideButtonsProps) => {
   return (
-    <ButtonContainer>
+    <Container>
       <Button type='button' disabled={disabled} onClick={onPrev}>
         Prev
       </Button>
       <Button type='button' disabled={disabled} onClick={onNext}>
         Next
       </Button>
-    </ButtonContainer>
+    </Container>
   );
 };
 
-const ButtonContainer = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
