@@ -1406,3 +1406,24 @@ export interface RegisterInfoProps {
     >
   ): void;
 }
+
+export interface RegisterImagesProps {
+  color: string[];
+  size: string[];
+  category: string;
+  categories: any;
+  tags: string[];
+  errors: ProductErrors;
+  loading: boolean;
+  progress: number;
+  labelClasses: string;
+  onChange(
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ): void;
+  onChangeColor(e: React.ChangeEvent<HTMLInputElement>): void;
+  onChangeSize(e: React.ChangeEvent<HTMLInputElement>): void;
+  onChangeTags(e: React.ChangeEvent<HTMLInputElement>): void;
+  onChangeFiles(e: React.ChangeEvent<HTMLInputElement>): void;
+}
