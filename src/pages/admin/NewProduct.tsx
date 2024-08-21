@@ -20,7 +20,6 @@ import Heading from '../../components/form/Heading';
 import UploadProgress from '../../components/form/UploadProgress';
 import FormBox from '../../components/form/FormBox';
 import { UploadContainer } from '../../components/form/UploadContainer';
-import TextArea from '../../components/form/TextArea';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { validateProductForm } from '../../validations/product';
