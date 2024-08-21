@@ -378,7 +378,7 @@ const Button = styled.button`
   text-align: center;
   text-transform: capitalize;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding: 3px 0.5rem;
   background-color: transparent;
   color: ${({ theme }) => theme.bgImgBtn};
