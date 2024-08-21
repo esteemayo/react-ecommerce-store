@@ -1,3 +1,4 @@
+import { RegisterImagesProps } from '../../types';
 import FormInput from '../form/FormInput';
 import Select from '../form/Select';
 import { UploadContainer } from '../form/UploadContainer';
@@ -18,7 +19,7 @@ const RegisterImages = ({
   onChangeSize,
   onChangeTags,
   onChangeFiles,
-}) => {
+}: RegisterImagesProps) => {
   return (
     <>
       <FormInput
