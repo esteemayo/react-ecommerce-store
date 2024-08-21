@@ -1,6 +1,8 @@
 import FormInput from '../form/FormInput';
 import TextArea from '../form/TextArea';
 
+import { RegisterInfoProps } from '../../types';
+
 const RegisterInfo = ({
   name,
   desc,
@@ -8,7 +10,7 @@ const RegisterInfo = ({
   numberInStock,
   errors,
   onChange,
-}) => {
+}: RegisterInfoProps) => {
   return (
     <>
       <FormInput
