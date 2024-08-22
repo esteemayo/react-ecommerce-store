@@ -206,7 +206,7 @@ const NewProduct = () => {
   }, [mode]);
 
   const isPrevBtn = useMemo(() => {
-    return step !== STEPS.INFO && true;
+    return step === STEPS.INFO && true;
   }, [step]);
 
   const isNextBtn = useMemo(() => {
