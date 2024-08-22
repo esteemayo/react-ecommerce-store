@@ -2,7 +2,13 @@ import styled from 'styled-components';
 
 import { SlideButtonsProps } from '../../types';
 
-const SlideButtons = ({ onNext, onPrev, disabled }: SlideButtonsProps) => {
+const SlideButtons = ({
+  disabled,
+  isNextBtn,
+  isPrevBtn,
+  onNext,
+  onPrev,
+}: SlideButtonsProps) => {
   return (
     <Container>
       <Button type='button' disabled={disabled} onClick={onPrev}>
