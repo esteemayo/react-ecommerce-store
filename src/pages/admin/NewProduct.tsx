@@ -276,11 +276,11 @@ const NewProduct = () => {
         <Form onSubmit={handleSubmit}>
           {bodyContent}
           <SlideButtons
+            disabled={isPending}
             isNextBtn={isNextBtn}
             isPrevBtn={isPrevBtn}
             onNext={onNext}
             onPrev={onPrev}
-            disabled={isPending}
           />
           <FormButton
             label='Create'
