@@ -42,7 +42,7 @@ const Container = styled.div`
 `;
 
 const Button = styled.button<IBtn>`
-  display: inline-block;
+  display: ${({ show }) => (show === 'true' ? 'none' : undefined)};
   outline: none;
   text-align: center;
   text-transform: capitalize;
