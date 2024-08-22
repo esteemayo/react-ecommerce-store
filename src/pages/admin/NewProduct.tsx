@@ -210,7 +210,7 @@ const NewProduct = () => {
   }, [step]);
 
   const isNextBtn = useMemo(() => {
-    return step === STEPS.IMAGES && false;
+    return step === STEPS.IMAGES && true;
   }, [step]);
 
   const disabledBtn = useMemo(() => {
