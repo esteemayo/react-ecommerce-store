@@ -209,6 +209,10 @@ const NewProduct = () => {
     return step !== STEPS.INFO && true;
   }, [step]);
 
+  const isNextBtn = useMemo(() => {
+    return step === STEPS.IMAGES && false;
+  }, [step]);
+
   const disabledBtn = useMemo(() => {
     const disabled = isPending || (progress > 0 && progress < 100);
     return !!disabled;
