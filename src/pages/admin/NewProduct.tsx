@@ -275,7 +275,13 @@ const NewProduct = () => {
         <Heading small title='Create new product' />
         <Form onSubmit={handleSubmit}>
           {bodyContent}
-          <SlideButtons onNext={onNext} onPrev={onPrev} disabled={isPending} />
+          <SlideButtons
+            isNextBtn={isNextBtn}
+            isPrevBtn={isPrevBtn}
+            onNext={onNext}
+            onPrev={onPrev}
+            disabled={isPending}
+          />
           <FormButton
             label='Create'
             disabled={disabledBtn}
