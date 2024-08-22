@@ -1437,6 +1437,8 @@ export interface RegisterImagesProps {
 
 export interface SlideButtonsProps {
   disabled: boolean;
+  isNextBtn: boolean;
+  isPrevBtn: boolean;
   onNext(e: React.MouseEvent<HTMLButtonElement>): void;
   onPrev(e: React.MouseEvent<HTMLButtonElement>): void;
 }
