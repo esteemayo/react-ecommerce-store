@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import { SlideButtonsProps } from '../../types';
 
+interface IBtn {
+  show: string;
+}
+
 const SlideButtons = ({
   disabled,
   isNextBtn,
@@ -11,10 +15,20 @@ const SlideButtons = ({
 }: SlideButtonsProps) => {
   return (
     <Container>
-      <Button type='button' disabled={disabled} onClick={onPrev}>
+      <Button
+        type='button'
+        show={String(isPrevBtn)}
+        disabled={disabled}
+        onClick={onPrev}
+      >
         Prev
       </Button>
-      <Button type='button' disabled={disabled} onClick={onNext}>
+      <Button
+        type='button'
+        show={String(isNextBtn)}
+        disabled={disabled}
+        onClick={onNext}
+      >
         Next
       </Button>
     </Container>
@@ -27,7 +41,7 @@ const Container = styled.div`
   gap: 1rem;
 `;
 
-const Button = styled.button`
+const Button = styled.button<IBtn>`
   display: inline-block;
   outline: none;
   text-align: center;
