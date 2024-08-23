@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { SlideButtonsProps } from '../../types';
+import SlideButton from '../slideButton/SlideButton';
 
 interface IBtn {
   show: string;
@@ -15,22 +16,18 @@ const SlideButtons = ({
 }: SlideButtonsProps) => {
   return (
     <Container>
-      <Button
-        type='button'
-        show={String(isPrevBtn)}
+      <SlideButton
+        label='Prev'
+        show={isPrevBtn}
         disabled={disabled}
-        onClick={onPrev}
-      >
-        Prev
-      </Button>
-      <Button
-        type='button'
-        show={String(isNextBtn)}
+        onAction={onPrev}
+      />
+      <SlideButton
+        label='Next'
+        show={isNextBtn}
         disabled={disabled}
-        onClick={onNext}
-      >
-        Next
-      </Button>
+        onAction={onNext}
+      />
     </Container>
   );
 };
