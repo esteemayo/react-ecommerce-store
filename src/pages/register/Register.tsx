@@ -317,10 +317,12 @@ const Register = () => {
             onNext={handleNext}
             onPrev={handlePrev}
           />
-          <FormButton
-            label='Register'
-            disabled={(perc > 0 && perc < 100) || isLoading}
-          />
+          {step === STEPS.PASSWORD && (
+            <FormButton
+              label='Register'
+              disabled={(perc > 0 && perc < 100) || isLoading}
+            />
+          )}
         </Form>
       </StyledBox>
       <AuthInfo url='/login' text='Already have an account?' label='Sign in' />
