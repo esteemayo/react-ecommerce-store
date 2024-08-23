@@ -3,7 +3,7 @@ import FormInput from '../form/FormInput';
 
 import { RegisterInfoProps } from '../../types';
 
-const RegisterInfo = ({
+const ProductInfo = ({
   name,
   desc,
   price,
@@ -65,4 +65,4 @@ const RegisterInfo = ({
   );
 };
 
-export default RegisterInfo;
+export default ProductInfo;
