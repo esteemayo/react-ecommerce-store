@@ -5,7 +5,7 @@ import {
   UserDataInput,
 } from '../types';
 
-export const registerInputs = [
+export const registerInputs: RegisterInput = [
   {
     info: [
       {
