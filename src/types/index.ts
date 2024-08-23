@@ -1442,3 +1442,10 @@ export interface SlideButtonsProps {
   onNext(e: React.MouseEvent<HTMLButtonElement>): void;
   onPrev(e: React.MouseEvent<HTMLButtonElement>): void;
 }
+
+export interface SlideButtonProps {
+  label: string;
+  show: string;
+  disabled: boolean;
+  onAction(e: React.MouseEvent<HTMLButtonElement>): void;
+}
