@@ -1,6 +1,14 @@
 import FormInput from '../form/FormInput';
+import { RegisterInfoProps } from '../../types';
 
-const RegisterInfo = ({ name, email, username, phone, errors, onChange }) => {
+const RegisterInfo = ({
+  name,
+  email,
+  username,
+  phone,
+  errors,
+  onChange,
+}: RegisterInfoProps) => {
   return (
     <>
       <FormInput
