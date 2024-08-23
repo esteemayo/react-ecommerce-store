@@ -21,6 +21,7 @@ import FormInput from '../../components/form/FormInput';
 import CountrySelect from '../../components/inputs/CountrySelect';
 import Loader from '../../components/Loader';
 import SlideButtons from '../../components/slideButtons/SlideButtons';
+import RegisterInfo from '../../components/registerInfo/RegisterInfo';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
@@ -213,48 +214,14 @@ const Register = () => {
   let bodyContent: JSX.Element | undefined;
 
   bodyContent = (
-    <>
-      <FormInput
-        id='name'
-        name='name'
-        type='text'
-        label='Name'
-        value={data.name}
-        placeholder='Enter your name'
-        onChange={handleChange}
-        error={errors.name}
-      />
-      <FormInput
-        id='email'
-        name='email'
-        type='email'
-        label='Email'
-        value={data.email}
-        placeholder='Enter email address'
-        onChange={handleChange}
-        error={errors.email}
-      />
-      <FormInput
-        id='username'
-        name='username'
-        type='text'
-        label='Username'
-        value={data.username}
-        placeholder='Enter username'
-        onChange={handleChange}
-        error={errors.username}
-      />
-      <FormInput
-        id='phone'
-        name='phone'
-        type='tel'
-        label='Phone'
-        value={data.phone}
-        placeholder='Enter your telephone number'
-        onChange={handleChange}
-        error={errors.phone}
-      />
-    </>
+    <RegisterInfo
+      name={data.name}
+      email={data.email}
+      username={data.username}
+      phone={data.phone}
+      errors={errors}
+      onChange={handleChange}
+    />
   );
 
   if (step === STEPS.PASSWORD) {
