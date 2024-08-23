@@ -1398,7 +1398,7 @@ export interface StarRatingProps {
     | undefined;
 }
 
-export interface RegisterInfoProps {
+export interface ProductInfoProps {
   name: string;
   desc: string;
   price: number;
