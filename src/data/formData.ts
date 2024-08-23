@@ -31,7 +31,7 @@ export const registerInputs: RegisterInput = [
     id: 'phone',
     name: 'phone',
     type: 'tel',
-    label: 'phone',
+    label: 'Phone',
     placeholder: 'Enter your telephone number',
   },
   {
