@@ -312,7 +312,6 @@ const Register = () => {
         <Form onSubmit={handleSubmit}>
           {bodyContent}
           <SlideButtons
-            disabled
             isNextBtn={isNextBtn}
             isPrevBtn={isPrevBtn}
             onNext={handleNext}
