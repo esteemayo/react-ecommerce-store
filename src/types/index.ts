@@ -1359,9 +1359,9 @@ export interface ProductData {
 export interface ProductErrors {
   name?: string;
   desc?: string;
-  price?: string;
-  priceDiscount?: string;
-  numberInStock?: string;
+  price?: number;
+  priceDiscount?: number;
+  numberInStock?: number;
   category?: string;
   tags?: string;
 }
