@@ -1445,7 +1445,7 @@ export interface SlideButtonsProps {
 
 export interface SlideButtonProps {
   label: string;
-  show: string;
+  show: boolean;
   disabled: boolean;
   onAction(e: React.MouseEvent<HTMLButtonElement>): void;
 }
