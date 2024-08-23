@@ -5,7 +5,7 @@ import FormInput from '../form/FormInput';
 
 import { RegisterImagesProps } from '../../types';
 
-const RegisterImages = ({
+const ProductImages = ({
   color,
   size,
   category,
@@ -75,4 +75,4 @@ const RegisterImages = ({
   );
 };
 
-export default RegisterImages;
+export default ProductImages;
