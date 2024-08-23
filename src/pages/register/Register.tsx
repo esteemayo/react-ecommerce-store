@@ -25,7 +25,6 @@ import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
 
 import { registerUser } from '../../services/authService';
-import { registerInputs } from '../../data/formData';
 import { validateRegisterForm } from '../../validations/register';
 
 import app from '../../firebase';
