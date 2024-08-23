@@ -18,7 +18,7 @@ import SlideButtons from '../../components/slideButtons/SlideButtons';
 
 import ProductInfo from '../../components/productInfo/ProductInfo';
 import { StyledBox } from '../../components/form/StyledBox';
-import RegisterImages from '../../components/registerImages/RegisterImages';
+import ProductImages from '../../components/productImages/ProductImages';
 
 import { useDarkMode } from '../../hooks/useDarkMode';
 import { validateProductForm } from '../../validations/product';
@@ -250,7 +250,7 @@ const NewProduct = () => {
 
   if (step === STEPS.IMAGES) {
     bodyContent = (
-      <RegisterImages
+      <ProductImages
         color={color}
         size={size}
         category={category}
