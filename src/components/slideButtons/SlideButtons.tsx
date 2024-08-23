@@ -3,10 +3,6 @@ import styled from 'styled-components';
 import { SlideButtonsProps } from '../../types';
 import SlideButton from '../slideButton/SlideButton';
 
-interface IBtn {
-  show: string;
-}
-
 const SlideButtons = ({
   disabled,
   isNextBtn,
