@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import {
   getStorage,
@@ -18,8 +18,9 @@ import AuthInfo from '../../components/form/AuthInfo';
 import { UploadContainer } from '../../components/form/UploadContainer';
 import FormInput from '../../components/form/FormInput';
 
-import Loader from '../../components/Loader';
 import CountrySelect from '../../components/inputs/CountrySelect';
+import Loader from '../../components/Loader';
+import SlideButtons from '../../components/slideButtons/SlideButtons';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
@@ -175,6 +176,14 @@ const Register = () => {
     ]
   );
 
+  const isNextBtn = useMemo(() => {
+    return step === STEPS.PASSWORD && true;
+  }, [step]);
+
+  const isPrevBtn = useMemo(() => {
+    return step === STEPS.INFO && true;
+  }, [step]);
+
   useEffect(() => {
     file && uploadFile(file);
   }, [file, uploadFile]);
@@ -302,6 +311,13 @@ const Register = () => {
         <Heading small title='Register your account' />
         <Form onSubmit={handleSubmit}>
           {bodyContent}
+          <SlideButtons
+            disabled
+            isNextBtn={isNextBtn}
+            isPrevBtn={isPrevBtn}
+            onNext={handleNext}
+            onPrev={handlePrev}
+          />
           <FormButton
             label='Register'
             disabled={(perc > 0 && perc < 100) || isLoading}
