@@ -12,15 +12,15 @@ export const validateProductForm = (data: ProductData, tags: string[]) => {
     errors.desc = 'Product description must not be empty';
   }
 
-  if (price === '') {
+  if (!price || price < 0) {
     errors.price = 'Price must not be empty';
   }
 
-  if (priceDiscount === '') {
+  if (!priceDiscount || priceDiscount < 0) {
     errors.priceDiscount = 'Price discount must not be empty';
   }
 
-  if (numberInStock === '') {
+  if (!numberInStock || numberInStock < 0) {
     errors.numberInStock = 'Number in stock must not be empty';
   }
 
