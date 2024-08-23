@@ -1412,18 +1412,11 @@ export interface RegisterInfoProps {
   ): void;
 }
 
-type CategoryListType =
-  | 'snickers'
-  | 'jeans'
-  | 'gadgets'
-  | 'electronics'
-  | 'shirts';
-
 export interface RegisterImagesProps {
   color: string[];
   size: string[];
   category: string;
-  categories: CategoryListType[];
+  categories: CategoryValues[];
   tags: string[];
   errors: ProductErrors;
   loading: boolean;
