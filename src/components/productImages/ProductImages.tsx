@@ -3,7 +3,7 @@ import Select from '../form/Select';
 import { UploadContainer } from '../form/UploadContainer';
 import FormInput from '../form/FormInput';
 
-import { RegisterImagesProps } from '../../types';
+import { ProductImagesProps } from '../../types';
 
 const ProductImages = ({
   color,
@@ -20,7 +20,7 @@ const ProductImages = ({
   onChangeSize,
   onChangeTags,
   onChangeFiles,
-}: RegisterImagesProps) => {
+}: ProductImagesProps) => {
   return (
     <>
       <FormInput

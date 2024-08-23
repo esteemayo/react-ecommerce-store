@@ -1412,7 +1412,7 @@ export interface RegisterInfoProps {
   ): void;
 }
 
-export interface RegisterImagesProps {
+export interface ProductImagesProps {
   color: string[];
   size: string[];
   category: string;
