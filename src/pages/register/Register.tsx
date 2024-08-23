@@ -66,6 +66,14 @@ const Register = () => {
   const [step, setStep] = useState(STEPS.INFO);
   const [data, setData] = useState(initialState);
 
+  const handleNext = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+
+    setStep((value) => {
+      return value + 1;
+    });
+  }, []);
+
   const handleChange = useCallback(
     ({ target: input }: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value } = input;
