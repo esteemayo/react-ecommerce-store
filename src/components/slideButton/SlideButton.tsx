@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
+import { SlideButtonProps } from '../../types';
+
 interface IBtn {
   show: string;
 }
 
-const SlideButton = ({ label, show, disabled, onAction }) => {
+const SlideButton = ({ label, show, disabled, onAction }: SlideButtonProps) => {
   return (
     <Button
       type='button'
