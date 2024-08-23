@@ -31,6 +31,11 @@ import { validateRegisterForm } from '../../validations/register';
 import app from '../../firebase';
 import { RegisterData, RegisterErrors } from '../../types';
 
+const enum STEPS {
+  INFO = 0,
+  PASSWORD = 1,
+}
+
 const initialState: RegisterData = {
   name: '',
   email: '',
@@ -58,6 +63,7 @@ const Register = () => {
   const [file, setFile] = useState<File | null>(null);
   const [perc, setPerc] = useState(0);
   const [errors, setErrors] = useState<RegisterErrors>({});
+  const [step, setStep] = useState(STEPS.INFO);
   const [data, setData] = useState(initialState);
 
   const handleChange = useCallback(
