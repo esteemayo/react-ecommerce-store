@@ -418,6 +418,14 @@ export type PriceOption = {
   text: string;
 }[];
 
+type RegisterInputType = {
+  id: string;
+  name: string;
+  type: string;
+  label: string;
+  placeholder: string;
+};
+
 export type RegisterInput = {
   id: string;
   name: string;
