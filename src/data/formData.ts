@@ -5,48 +5,54 @@ import {
   UserDataInput,
 } from '../types';
 
-export const registerInputs: RegisterInput = [
+export const registerInputs = [
   {
-    id: 'name',
-    name: 'name',
-    type: 'text',
-    label: 'Name',
-    placeholder: 'Enter your name',
-  },
-  {
-    id: 'email',
-    name: 'email',
-    type: 'email',
-    label: 'Email',
-    placeholder: 'Enter email address',
-  },
-  {
-    id: 'username',
-    name: 'username',
-    type: 'text',
-    label: 'Username',
-    placeholder: 'Enter username',
-  },
-  {
-    id: 'phone',
-    name: 'phone',
-    type: 'tel',
-    label: 'Phone',
-    placeholder: 'Enter your telephone number',
-  },
-  {
-    id: 'password',
-    name: 'password',
-    type: 'password',
-    label: 'Password',
-    placeholder: 'Enter your password',
-  },
-  {
-    id: 'confirmPassword',
-    name: 'confirmPassword',
-    type: 'password',
-    label: 'Confirm Password',
-    placeholder: 'Confirm your password',
+    info: [
+      {
+        id: 'name',
+        name: 'name',
+        type: 'text',
+        label: 'Name',
+        placeholder: 'Enter your name',
+      },
+      {
+        id: 'email',
+        name: 'email',
+        type: 'email',
+        label: 'Email',
+        placeholder: 'Enter email address',
+      },
+      {
+        id: 'username',
+        name: 'username',
+        type: 'text',
+        label: 'Username',
+        placeholder: 'Enter username',
+      },
+      {
+        id: 'phone',
+        name: 'phone',
+        type: 'tel',
+        label: 'Phone',
+        placeholder: 'Enter your telephone number',
+      },
+    ],
+    password: [
+      {
+        id: 'password',
+        name: 'password',
+        type: 'password',
+        label: 'Password',
+        placeholder: 'Enter your password',
+      },
+      {
+        id: 'confirmPassword',
+        name: 'confirmPassword',
+        type: 'password',
+        label: 'Confirm Password',
+        placeholder: 'Confirm your password',
+      },
+    ],
   },
 ];
 
