@@ -1447,3 +1447,12 @@ export interface SlideButtonProps {
   disabled?: boolean;
   onAction(e: React.MouseEvent<HTMLButtonElement>): void;
 }
+
+export interface RegisterInfoProps {
+  name: string;
+  email: string;
+  username: string;
+  phone: string;
+  errors: RegisterErrors;
+  onChange(e: React.ChangeEvent<HTMLInputElement>): void;
+}
