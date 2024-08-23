@@ -16,7 +16,7 @@ import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
 import SlideButtons from '../../components/slideButtons/SlideButtons';
 
-import RegisterInfo from '../../components/registerInfo/RegisterInfo';
+import ProductInfo from '../../components/productInfo/ProductInfo';
 import { StyledBox } from '../../components/form/StyledBox';
 import RegisterImages from '../../components/registerImages/RegisterImages';
 
@@ -237,7 +237,7 @@ const NewProduct = () => {
   let bodyContent: JSX.Element | undefined;
 
   bodyContent = (
-    <RegisterInfo
+    <ProductInfo
       name={name}
       desc={desc}
       price={price}
