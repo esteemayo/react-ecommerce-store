@@ -74,6 +74,14 @@ const Register = () => {
     });
   }, []);
 
+  const handlePrev = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+
+    setStep((value) => {
+      return value - 1;
+    });
+  }, []);
+
   const handleChange = useCallback(
     ({ target: input }: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value } = input;
