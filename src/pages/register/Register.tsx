@@ -202,50 +202,107 @@ const Register = () => {
     );
   }
 
+  let bodyContent: JSX.Element | undefined;
+
+  bodyContent = (
+    <>
+      <FormInput
+        id='name'
+        name='name'
+        type='text'
+        label='Name'
+        value={data.name}
+        placeholder='Enter your name'
+        onChange={handleChange}
+        error={errors.name}
+      />
+      <FormInput
+        id='email'
+        name='email'
+        type='email'
+        label='Email'
+        value={data.email}
+        placeholder='Enter email address'
+        onChange={handleChange}
+        error={errors.email}
+      />
+      <FormInput
+        id='username'
+        name='username'
+        type='text'
+        label='Username'
+        value={data.username}
+        placeholder='Enter username'
+        onChange={handleChange}
+        error={errors.username}
+      />
+      <FormInput
+        id='phone'
+        name='phone'
+        type='tel'
+        label='Phone'
+        value={data.phone}
+        placeholder='Enter your telephone number'
+        onChange={handleChange}
+        error={errors.phone}
+      />
+    </>
+  );
+
+  if (step === STEPS.PASSWORD) {
+    bodyContent = (
+      <>
+        <FormInput
+          id='password'
+          name='password'
+          type='password'
+          label='Password'
+          value={data.password}
+          placeholder='Enter your password'
+          onChange={handleChange}
+          error={errors.password}
+        />
+        <FormInput
+          id='confirmPassword'
+          name='confirmPassword'
+          type='password'
+          label='Confirm Password'
+          value={data.password}
+          placeholder='Confirm your password'
+          onChange={handleChange}
+          error={errors.confirmPassword}
+        />
+        <CountrySelect
+          name='country'
+          label='Country'
+          value={data.country}
+          data={getAll()}
+          onChange={handleChangeCountry}
+          error={errors.country}
+        />
+        {perc > 0 && perc < 100 ? (
+          <UploadProgress percentage={perc} />
+        ) : (
+          <UploadContainer>
+            <label htmlFor='file'>Attach a photo</label>
+            <input
+              id='file'
+              type='file'
+              accept='image/*'
+              onChange={handleFile}
+            />
+          </UploadContainer>
+        )}
+      </>
+    );
+  }
+
   return (
     <FormBox>
       <StyledBox>
         <Heading small title='Register your account' />
         <Form onSubmit={handleSubmit}>
-          {registerInputs.map((input) => {
-            const { id, name, type, label, placeholder } = input;
-            return (
-              <FormInput
-                key={id}
-                id={id}
-                name={name}
-                type={type}
-                label={label}
-                placeholder={placeholder}
-                value={data[name as keyof typeof data]}
-                onChange={handleChange}
-                error={errors[name as keyof typeof errors]}
-                autoFocus={name === 'name' ? true : false}
-                small={name !== 'confirmPassword' && true}
-              />
-            );
-          })}
-          <CountrySelect
-            name='country'
-            label='Country'
-            value={data.country}
-            data={getAll()}
-            onChange={handleChangeCountry}
-            error={errors.country}
-          />
-          {perc > 0 && perc < 100 ? (
-            <UploadProgress percentage={perc} />
-          ) : (
-            <UploadContainer>
-              <label htmlFor='file'>Attach a photo</label>
-              <input
-                id='file'
-                type='file'
-                accept='image/*'
-                onChange={handleFile}
-              />
-            </UploadContainer>
-          )}
+          {bodyContent}
           <FormButton
             label='Register'
             disabled={(perc > 0 && perc < 100) || isLoading}
