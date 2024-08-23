@@ -16,6 +16,7 @@ const RegisterPassword = ({
   onChangeFile,
 }) => {
   const { getAll } = useCountries();
+
   return (
     <>
       <FormInput
