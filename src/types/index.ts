@@ -1455,9 +1455,7 @@ export interface RegisterInfoProps {
 }
 
 export interface RegisterPasswordProps {
-  password: string;
-  confirmPassword: string;
-  country: string;
+  data: RegisterData;
   percentage: number;
   errors: RegisterErrors;
   onChange(e: React.ChangeEvent<HTMLInputElement>): void;
