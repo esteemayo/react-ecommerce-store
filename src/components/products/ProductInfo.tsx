@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-import { ProductInfoProps } from '../../types';
+interface ProductInfoProps {
+  title: string;
+  content: string;
+}
 
 const ProductInfo = ({ title, content }: ProductInfoProps) => {
   return (
