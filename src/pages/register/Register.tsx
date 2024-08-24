@@ -15,9 +15,10 @@ import FormBox from '../../components/form/FormBox';
 import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
 
-import Loader from '../../components/Loader';
-import SlideButtons from '../../components/slideButtons/SlideButtons';
 import RegisterInfo from '../../components/registerInfo/RegisterInfo';
+import Loader from '../../components/Loader';
+import RegisterPassword from '../../components/registerPassword/RegisterPassword';
+import SlideButtons from '../../components/slideButtons/SlideButtons';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useCountries } from '../../hooks/useCountries';
@@ -27,7 +28,6 @@ import { validateRegisterForm } from '../../validations/register';
 
 import app from '../../firebase';
 import { RegisterData, RegisterErrors } from '../../types';
-import RegisterPassword from '../../components/registerPassword/RegisterPassword';
 
 const enum STEPS {
   INFO = 0,
