@@ -87,6 +87,23 @@ export const registerInfoInputs = [
   },
 ];
 
+export const registerPasswordInputs = [
+  {
+    id: 'password',
+    name: 'password',
+    type: 'password',
+    label: 'Password',
+    placeholder: 'Enter your password',
+  },
+  {
+    id: 'confirmPassword',
+    name: 'confirmPassword',
+    type: 'password',
+    label: 'Confirm Password',
+    placeholder: 'Confirm your password',
+  },
+];
+
 export const passwordInputs: PasswordInput = [
   {
     id: 'password1',
