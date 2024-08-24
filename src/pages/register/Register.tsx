@@ -208,14 +208,7 @@ const Register = () => {
   let bodyContent: JSX.Element | undefined;
 
   bodyContent = (
-    <RegisterInfo
-      name={data.name}
-      email={data.email}
-      username={data.username}
-      phone={data.phone}
-      errors={errors}
-      onChange={handleChange}
-    />
+    <RegisterInfo data={data} errors={errors} onChange={handleChange} />
   );
 
   if (step === STEPS.PASSWORD) {
