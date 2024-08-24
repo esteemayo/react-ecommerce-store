@@ -13,12 +13,8 @@ import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
 import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
-import UploadProgress from '../../components/form/UploadProgress';
 import AuthInfo from '../../components/form/AuthInfo';
-import { UploadContainer } from '../../components/form/UploadContainer';
-import FormInput from '../../components/form/FormInput';
 
-import CountrySelect from '../../components/inputs/CountrySelect';
 import Loader from '../../components/Loader';
 import SlideButtons from '../../components/slideButtons/SlideButtons';
 import RegisterInfo from '../../components/registerInfo/RegisterInfo';
