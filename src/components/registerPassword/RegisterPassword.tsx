@@ -3,6 +3,7 @@ import FormInput from '../form/FormInput';
 import { UploadContainer } from '../form/UploadContainer';
 import CountrySelect from '../inputs/CountrySelect';
 
+import { RegisterPasswordProps } from '../../types';
 import { useCountries } from '../../hooks/useCountries';
 
 const RegisterPassword = ({
@@ -14,7 +15,7 @@ const RegisterPassword = ({
   onChange,
   onChangeCountry,
   onChangeFile,
-}) => {
+}: RegisterPasswordProps) => {
   const { getAll } = useCountries();
 
   return (
