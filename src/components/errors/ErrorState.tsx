@@ -28,6 +28,10 @@ const Container = styled.main`
   color: ${({ theme }) => theme.text};
   padding: 10rem 0;
 
+  @media only screen and (max-width: 56.25em) {
+    height: 80vh;
+  }
+
   @media only screen and (max-width: 31.25em) {
     height: 70vh;
   }
