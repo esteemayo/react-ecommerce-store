@@ -138,6 +138,7 @@ const Login = () => {
             onChange={handleChange}
             error={errors.username}
             small
+            autoFocus
           />
           <FormInput
             name='password'
