@@ -214,9 +214,7 @@ const Register = () => {
   if (step === STEPS.PASSWORD) {
     bodyContent = (
       <RegisterPassword
-        password={data.password}
-        confirmPassword={data.confirmPassword}
-        country={data.country}
+        data={data}
         percentage={perc}
         errors={errors}
         onChange={handleChange}
