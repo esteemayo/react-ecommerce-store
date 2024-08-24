@@ -56,6 +56,37 @@ export const registerInputs: RegisterInput = [
   },
 ];
 
+export const registerInfoInputs = [
+  {
+    id: 'name',
+    name: 'name',
+    type: 'text',
+    label: 'Name',
+    placeholder: 'Enter your name',
+  },
+  {
+    id: 'email',
+    name: 'email',
+    type: 'email',
+    label: 'Email',
+    placeholder: 'Enter email address',
+  },
+  {
+    id: 'username',
+    name: 'username',
+    type: 'text',
+    label: 'Username',
+    placeholder: 'Enter username',
+  },
+  {
+    id: 'phone',
+    name: 'phone',
+    type: 'tel',
+    label: 'Phone',
+    placeholder: 'Enter your telephone number',
+  },
+];
+
 export const passwordInputs: PasswordInput = [
   {
     id: 'password1',
