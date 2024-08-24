@@ -426,7 +426,7 @@ type RegisterInputType = {
   placeholder: string;
 }[];
 
-export type RegisterInput = RegisterInputType[];
+export type RegisterInput = RegisterInputType;
 
 export type PasswordInput = {
   id: string;
