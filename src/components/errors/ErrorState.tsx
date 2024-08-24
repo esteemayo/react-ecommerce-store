@@ -29,7 +29,7 @@ const Container = styled.main`
   padding: 10rem 0;
 
   @media only screen and (max-width: 31.25em) {
-    height: 80vh;
+    height: 70vh;
   }
 `;
 
