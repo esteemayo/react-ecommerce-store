@@ -7,56 +7,50 @@ import {
 
 export const registerInputs: RegisterInput = [
   {
-    info: [
-      {
-        id: 'name',
-        name: 'name',
-        type: 'text',
-        label: 'Name',
-        placeholder: 'Enter your name',
-      },
-      {
-        id: 'email',
-        name: 'email',
-        type: 'email',
-        label: 'Email',
-        placeholder: 'Enter email address',
-      },
-      {
-        id: 'username',
-        name: 'username',
-        type: 'text',
-        label: 'Username',
-        placeholder: 'Enter username',
-      },
-      {
-        id: 'phone',
-        name: 'phone',
-        type: 'tel',
-        label: 'Phone',
-        placeholder: 'Enter your telephone number',
-      },
-    ],
-    password: [
-      {
-        id: 'password',
-        name: 'password',
-        type: 'password',
-        label: 'Password',
-        placeholder: 'Enter your password',
-      },
-      {
-        id: 'confirmPassword',
-        name: 'confirmPassword',
-        type: 'password',
-        label: 'Confirm Password',
-        placeholder: 'Confirm your password',
-      },
-    ],
+    id: 'name',
+    name: 'name',
+    type: 'text',
+    label: 'Name',
+    placeholder: 'Enter your name',
+  },
+  {
+    id: 'email',
+    name: 'email',
+    type: 'email',
+    label: 'Email',
+    placeholder: 'Enter email address',
+  },
+  {
+    id: 'username',
+    name: 'username',
+    type: 'text',
+    label: 'Username',
+    placeholder: 'Enter username',
+  },
+  {
+    id: 'phone',
+    name: 'phone',
+    type: 'tel',
+    label: 'Phone',
+    placeholder: 'Enter your telephone number',
+  },
+  {
+    id: 'password',
+    name: 'password',
+    type: 'password',
+    label: 'Password',
+    placeholder: 'Enter your password',
+  },
+  {
+    id: 'confirmPassword',
+    name: 'confirmPassword',
+    type: 'password',
+    label: 'Confirm Password',
+    placeholder: 'Confirm your password',
   },
 ];
 
-export const registerInfoInputs = [
+export const registerInfoInputs: RegisterInput = [
   {
     id: 'name',
     name: 'name',
@@ -87,7 +81,7 @@ export const registerInfoInputs = [
   },
 ];
 
-export const registerPasswordInputs = [
+export const registerPasswordInputs: RegisterInput = [
   {
     id: 'password',
     name: 'password',
