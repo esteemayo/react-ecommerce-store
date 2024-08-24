@@ -19,10 +19,11 @@ const RegisterPassword = ({
 
   return (
     <>
-      {registerPasswordInputs.map(input => {
-        const { id, name, type, label, placeholder } = input
+      {registerPasswordInputs.map((input) => {
+        const { id, name, type, label, placeholder } = input;
         return (
           <FormInput
+            key={id}
             id={id}
             name={name}
             type={type}
@@ -32,7 +33,7 @@ const RegisterPassword = ({
             onChange={onChange}
             error={errors[name as keyof typeof errors]}
           />
-        )
+        );
       })}
       <CountrySelect
         name='country'
