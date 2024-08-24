@@ -3,14 +3,14 @@ import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import AuthInfo from '../../components/form/AuthInfo';
-import FormButton from '../../components/form/FormButton';
-import FormBox from '../../components/form/FormBox';
-import { StyledBox } from '../../components/form/StyledBox';
-import Heading from '../../components/form/Heading';
-import FormInput from '../../components/form/FormInput';
 import Form from '../../components/form/Form';
 import CheckBox from '../../components/form/CheckBox';
 import Loader from '../../components/Loader';
+import FormInput from '../../components/form/FormInput';
+import FormBox from '../../components/form/FormBox';
+import FormButton from '../../components/form/FormButton';
+import Heading from '../../components/form/Heading';
+import { StyledBox } from '../../components/form/StyledBox';
 
 import Forgot from './Forgot';
 import SocialLogin from './SocialLogin';
