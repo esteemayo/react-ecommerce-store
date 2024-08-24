@@ -1456,3 +1456,14 @@ export interface RegisterInfoProps {
   errors: RegisterErrors;
   onChange(e: React.ChangeEvent<HTMLInputElement>): void;
 }
+
+export interface RegisterPasswordProps {
+  password: string;
+  confirmPassword: string;
+  country: string;
+  percentage: number;
+  errors: RegisterErrors;
+  onChange(e: React.ChangeEvent<HTMLInputElement>): void;
+  onChangeCountry(event: React.ChangeEvent<HTMLSelectElement>): void;
+  onChangeFile(e: React.ChangeEvent<HTMLInputElement>): void;
+}
