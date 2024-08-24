@@ -825,11 +825,6 @@ export interface ProductValueProps {
   mode: boolean;
 }
 
-export interface ProductInfoProps {
-  title: string;
-  content: string;
-}
-
 export interface RecommendationsProps {
   data: RecommendationType;
   productId?: string;
