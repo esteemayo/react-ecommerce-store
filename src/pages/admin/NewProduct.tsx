@@ -282,11 +282,13 @@ const NewProduct = () => {
             onNext={onNext}
             onPrev={onPrev}
           />
-          <FormButton
-            label='Create'
-            disabled={disabledBtn}
-            loading={isPending}
-          />
+          {step === STEPS.IMAGES && (
+            <FormButton
+              label='Create'
+              disabled={disabledBtn}
+              loading={isPending}
+            />
+          )}
         </Form>
       </StyledBox>
     </FormBox>
