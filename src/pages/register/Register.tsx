@@ -20,10 +20,8 @@ import Loader from '../../components/Loader';
 import RegisterPassword from '../../components/registerPassword/RegisterPassword';
 import SlideButtons from '../../components/slideButtons/SlideButtons';
 
-import { useAuth } from '../../hooks/useAuth';
-import { useCountries } from '../../hooks/useCountries';
-
 import { registerUser } from '../../services/authService';
+import { useAuth } from '../../hooks/useAuth';
 import { validateRegisterForm } from '../../validations/register';
 
 import app from '../../firebase';
@@ -45,7 +43,6 @@ const initialState: RegisterData = {
 };
 
 const Register = () => {
-  const { getAll } = useCountries();
   const {
     isError,
     isLoading,
