@@ -8,12 +8,12 @@ import {
   getDownloadURL,
 } from 'firebase/storage';
 
+import AuthInfo from '../../components/form/AuthInfo';
 import Form from '../../components/form/Form';
 import FormButton from '../../components/form/FormButton';
 import FormBox from '../../components/form/FormBox';
 import { StyledBox } from '../../components/form/StyledBox';
 import Heading from '../../components/form/Heading';
-import AuthInfo from '../../components/form/AuthInfo';
 
 import Loader from '../../components/Loader';
 import SlideButtons from '../../components/slideButtons/SlideButtons';
