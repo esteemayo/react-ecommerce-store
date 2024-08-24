@@ -25,6 +25,7 @@ const RegisterInfo = ({ data, errors, onChange }: RegisterInfoProps) => {
                   value={data[name as keyof typeof data]}
                   onChange={onChange}
                   error={errors[name as keyof typeof errors]}
+                  autoFocus={name === 'name' ? true : false}
                 />
               );
             })}
