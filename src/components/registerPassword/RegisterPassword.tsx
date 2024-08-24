@@ -7,9 +7,7 @@ import { RegisterPasswordProps } from '../../types';
 import { useCountries } from '../../hooks/useCountries';
 
 const RegisterPassword = ({
-  password,
-  confirmPassword,
-  country,
+  data,
   percentage,
   errors,
   onChange,
@@ -25,7 +23,7 @@ const RegisterPassword = ({
         name='password'
         type='password'
         label='Password'
-        value={password}
+        value={data.password}
         placeholder='Enter your password'
         onChange={onChange}
         error={errors.password}
@@ -35,7 +33,7 @@ const RegisterPassword = ({
         name='confirmPassword'
         type='password'
         label='Confirm Password'
-        value={confirmPassword}
+        value={data.confirmPassword}
         placeholder='Confirm your password'
         onChange={onChange}
         error={errors.confirmPassword}
@@ -43,7 +41,7 @@ const RegisterPassword = ({
       <CountrySelect
         name='country'
         label='Country'
-        value={country}
+        value={data.country}
         data={getAll()}
         onChange={onChangeCountry}
         error={errors.country}
