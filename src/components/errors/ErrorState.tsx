@@ -11,7 +11,7 @@ const ErrorState = () => {
       <Wrapper>
         <Image
           src='/svg/qa-engineers.svg'
-          width={500}
+          width={300}
           height={400}
           alt='error icon'
         />
@@ -44,18 +44,10 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 50rem;
+  width: 30rem;
   height: 40rem;
   display: inline-block;
   object-fit: contain;
-
-  @media only screen and (max-width: 31.25em) {
-    width: 40rem;
-  }
-
-  @media only screen and (max-width: 18.75em) {
-    width: 30rem;
-  }
 `;
 
 export default ErrorState;
