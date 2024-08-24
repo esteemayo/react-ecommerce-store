@@ -21,8 +21,8 @@ const RegisterInfo = ({ data, errors, onChange }: RegisterInfoProps) => {
                   name={name}
                   type={type}
                   label={label}
-                  value={data[name as keyof typeof data]}
                   placeholder={placeholder}
+                  value={data[name as keyof typeof data]}
                   onChange={onChange}
                   error={errors[name as keyof typeof errors]}
                 />
