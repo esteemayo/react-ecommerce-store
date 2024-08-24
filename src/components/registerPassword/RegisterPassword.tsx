@@ -3,8 +3,9 @@ import FormInput from '../form/FormInput';
 import { UploadContainer } from '../form/UploadContainer';
 import CountrySelect from '../inputs/CountrySelect';
 
-import { RegisterPasswordProps } from '../../types';
 import { useCountries } from '../../hooks/useCountries';
+import { RegisterPasswordProps } from '../../types';
+import { registerPasswordInputs } from '../../data/formData';
 
 const RegisterPassword = ({
   data,
@@ -18,26 +19,21 @@ const RegisterPassword = ({
 
   return (
     <>
-      <FormInput
-        id='password'
-        name='password'
-        type='password'
-        label='Password'
-        value={data.password}
-        placeholder='Enter your password'
-        onChange={onChange}
-        error={errors.password}
-      />
-      <FormInput
-        id='confirmPassword'
-        name='confirmPassword'
-        type='password'
-        label='Confirm Password'
-        value={data.confirmPassword}
-        placeholder='Confirm your password'
-        onChange={onChange}
-        error={errors.confirmPassword}
-      />
+      {registerPasswordInputs.map(input => {
+        const { id, name, type, label, placeholder } = input
+        return (
+          <FormInput
+            id={id}
+            name={name}
+            type={type}
+            label={label}
+            value={data[name as keyof typeof data]}
+            placeholder={placeholder}
+            onChange={onChange}
+            error={errors[name as keyof typeof errors]}
+          />
+        )
+      })}
       <CountrySelect
         name='country'
         label='Country'
