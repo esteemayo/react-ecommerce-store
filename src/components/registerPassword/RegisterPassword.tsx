@@ -32,6 +32,7 @@ const RegisterPassword = ({
             placeholder={placeholder}
             onChange={onChange}
             error={errors[name as keyof typeof errors]}
+            small={name !== 'confirmPassword' && true}
           />
         );
       })}
