@@ -31,6 +31,7 @@ import { validateRegisterForm } from '../../validations/register';
 
 import app from '../../firebase';
 import { RegisterData, RegisterErrors } from '../../types';
+import RegisterPassword from '../../components/registerPassword/RegisterPassword';
 
 const enum STEPS {
   INFO = 0,
@@ -226,49 +227,16 @@ const Register = () => {
 
   if (step === STEPS.PASSWORD) {
     bodyContent = (
-      <>
-        <FormInput
-          id='password'
-          name='password'
-          type='password'
-          label='Password'
-          value={data.password}
-          placeholder='Enter your password'
-          onChange={handleChange}
-          error={errors.password}
-        />
-        <FormInput
-          id='confirmPassword'
-          name='confirmPassword'
-          type='password'
-          label='Confirm Password'
-          value={data.confirmPassword}
-          placeholder='Confirm your password'
-          onChange={handleChange}
-          error={errors.confirmPassword}
-        />
-        <CountrySelect
-          name='country'
-          label='Country'
-          value={data.country}
-          data={getAll()}
-          onChange={handleChangeCountry}
-          error={errors.country}
-        />
-        {perc > 0 && perc < 100 ? (
-          <UploadProgress percentage={perc} />
-        ) : (
-          <UploadContainer>
-            <label htmlFor='file'>Attach a photo</label>
-            <input
-              id='file'
-              type='file'
-              accept='image/*'
-              onChange={handleFile}
-            />
-          </UploadContainer>
-        )}
-      </>
+      <RegisterPassword
+        password={data.password}
+        confirmPassword={data.confirmPassword}
+        country={data.country}
+        percentage={perc}
+        errors={errors}
+        onChange={handleChange}
+        onChangeCountry={handleChangeCountry}
+        onChangeFile={handleFile}
+      />
     );
   }
 
