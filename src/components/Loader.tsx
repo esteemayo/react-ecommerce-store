@@ -41,6 +41,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 30em) {
+    width: 35rem;
+    height: 25rem;
+  }
 `;
 
 const Text = styled.span`
