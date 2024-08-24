@@ -1449,10 +1449,7 @@ export interface SlideButtonProps {
 }
 
 export interface RegisterInfoProps {
-  name: string;
-  email: string;
-  username: string;
-  phone: string;
+  data: RegisterData;
   errors: RegisterErrors;
   onChange(e: React.ChangeEvent<HTMLInputElement>): void;
 }
