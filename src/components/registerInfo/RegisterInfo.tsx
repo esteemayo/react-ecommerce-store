@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 
 import FormInput from '../form/FormInput';
+
 import { RegisterInfoProps } from '../../types';
 import { registerInputs } from '../../data/formData';
 
