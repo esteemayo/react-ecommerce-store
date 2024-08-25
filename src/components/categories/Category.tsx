@@ -20,10 +20,12 @@ const Category = ({ data, src, index }: CategoryProps) => {
         <SubHeading>{data[index]?.count}</SubHeading>
       </HeadingWrapper>
       <ButtonContainer>
-        <Button>
-          Shop now
-          <FontAwesomeIcon icon={faArrowRight} />
-        </Button>
+        <StyledLink to={url}>
+          <Button>
+            Shop now
+            <FontAwesomeIcon icon={faArrowRight} />
+          </Button>
+        </StyledLink>
       </ButtonContainer>
     </Container>
   );
@@ -51,6 +53,11 @@ const ButtonContainer = styled.div`
   &:active {
     color: currentColor;
   }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  outline-color: var(--clr-tertiary-green);
 `;
 
 const Button = styled.button`
