@@ -93,7 +93,7 @@ const Container = styled.article`
     width: 100%;
   }
 
-  &:hover ${Button} {
+  &:hover ${StyledLink} {
     visibility: visible;
     opacity: 1;
     z-index: 1000;
