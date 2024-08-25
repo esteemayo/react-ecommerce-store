@@ -34,12 +34,10 @@ const ButtonContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  text-decoration: none;
   width: 100%;
   height: 100%;
   color: inherit;
   background-color: rgba(0, 0, 0, 0.3);
-  outline-color: var(--clr-tertiary-green);
 
   position: absolute;
   top: 0;
