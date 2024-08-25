@@ -105,6 +105,10 @@ const Image = styled(CommonImage)`
     height: 30rem;
   }
 
+  @media only screen and (max-width: 28.125em) {
+    height: 25rem;
+  }
+
   @media only screen and (max-width: 26.25em) {
     height: 30rem;
   }
