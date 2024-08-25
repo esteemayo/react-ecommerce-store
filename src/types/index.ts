@@ -1049,12 +1049,6 @@ export interface OrderCardProps {
   createdAt: string;
 }
 
-export type DateOptions = {
-  day: 'numeric';
-  month: 'long';
-  year: 'numeric';
-};
-
 export interface DateTimeProps {
   date: Date;
   type?: string;
