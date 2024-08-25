@@ -917,8 +917,8 @@ export interface DeleteModalProps {
   actionId?: string;
   wishlistLabel: 'wishlists' | 'wishlist';
   isOpen: boolean;
-  onClose(): void;
   onAction(id: string): void;
+  onClose(): void;
 }
 
 export interface CartItemProps {
