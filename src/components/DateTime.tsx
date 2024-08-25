@@ -10,7 +10,7 @@ interface ITime {
 
 const DateTime = ({ date, type, options }: DateTimeProps) => {
   return (
-    <Time type={type} dateTime={date}>
+    <Time type={type} dateTime={date.toDateString()}>
       {formatDate(date)}
     </Time>
   );
