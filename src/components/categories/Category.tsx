@@ -96,6 +96,10 @@ const Container = styled.article`
 const Image = styled(CommonImage)`
   width: 100%;
 
+  @media only screen and (max-width: 64em) {
+    height: 40rem;
+  }
+
   @media only screen and (max-width: 37.5em) {
     height: 33rem;
   }
