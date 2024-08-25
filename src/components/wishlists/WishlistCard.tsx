@@ -41,13 +41,13 @@ const WishlistCard = ({
           </Wrapper>
         );
       })}
-      {/* <DeleteModal
+      <DeleteModal
         actionId={selected}
         wishlistLabel={wishlistLabel}
         isOpen={isOpen}
         onAction={onDelete}
         onClose={onClose}
-      /> */}
+      />
     </Container>
   );
 };
