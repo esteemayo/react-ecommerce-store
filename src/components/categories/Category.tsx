@@ -29,6 +29,18 @@ const Category = ({ data, src, index }: CategoryProps) => {
   );
 };
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  outline-color: var(--clr-tertiary-green);
+
+  &:active {
+    color: currentColor;
+  }
+`;
+
 const Button = styled.button`
   border: none;
   width: 100%;
@@ -158,16 +170,6 @@ const SubHeading = styled.h3`
 
   @media only screen and (max-width: 18.75em) {
     font-size: 1.7rem;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  outline-color: var(--clr-tertiary-green);
-
-  &:active {
-    color: currentColor;
   }
 `;
 
