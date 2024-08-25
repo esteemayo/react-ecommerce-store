@@ -20,7 +20,7 @@ const WishlistHeader = ({ wishlistLabel }: WishlistHeaderProps) => {
     <Container>
       <HeadingContainer>
         <Heading>My {wishlistLabel}</Heading>
-        <DateTime date={today} options={options} />
+        <DateTime date={today} />
       </HeadingContainer>
       <Button type='button'>Send wishlist</Button>
     </Container>
