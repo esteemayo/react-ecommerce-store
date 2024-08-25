@@ -19,17 +19,17 @@ const Category = ({ data, src, index }: CategoryProps) => {
         <MainHeading>{data[index]?.category}</MainHeading>
         <SubHeading>{data[index]?.count}</SubHeading>
       </HeadingWrapper>
-      <StyledLink to={url}>
+      <ButtonContainer>
         <Button>
           Shop now
           <FontAwesomeIcon icon={faArrowRight} />
         </Button>
-      </StyledLink>
+      </ButtonContainer>
     </Container>
   );
 };
 
-const StyledLink = styled(Link)`
+const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +95,7 @@ const Container = styled.article`
     width: 100%;
   }
 
-  &:hover ${StyledLink} {
+  &:hover ${ButtonContainer} {
     visibility: visible;
     opacity: 1;
     z-index: 1000;
