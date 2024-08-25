@@ -1050,7 +1050,7 @@ export interface OrderCardProps {
 }
 
 export interface DateTimeProps {
-  date: Date;
+  date: string | Date;
   type?: string;
 }
 
