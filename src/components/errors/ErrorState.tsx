@@ -12,7 +12,7 @@ const ErrorState = () => {
         <Image
           src='/svg/qa-engineers.svg'
           width={300}
-          height={400}
+          height={300}
           alt='error icon'
         />
         <Heading title='Error' subtitle='Something went wrong!' center />
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
 
 const Image = styled.img`
   width: 30rem;
-  height: 40rem;
+  height: 30rem;
   display: inline-block;
   object-fit: contain;
 `;
