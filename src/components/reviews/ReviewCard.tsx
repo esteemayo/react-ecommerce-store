@@ -48,7 +48,7 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
           </Button>
         )}
         <DateContainer>
-          <DateTime date={new Date(createdAt)} type='review' />
+          <DateTime date={createdAt} type='review' />
           <ShareButton />
         </DateContainer>
       </Wrapper>
