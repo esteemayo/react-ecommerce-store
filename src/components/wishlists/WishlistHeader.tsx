@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import DateTime from '../DateTime';
-import { DateOptions } from '../../types';
 
 interface WishlistHeaderProps {
   wishlistLabel: 'wishlists' | 'wishlist';
@@ -9,12 +8,6 @@ interface WishlistHeaderProps {
 
 const WishlistHeader = ({ wishlistLabel }: WishlistHeaderProps) => {
   const today = new Date();
-
-  const options: DateOptions = {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  };
 
   return (
     <Container>
