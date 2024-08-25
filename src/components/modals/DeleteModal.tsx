@@ -17,8 +17,8 @@ const DeleteModal = ({
   actionId,
   wishlistLabel,
   isOpen,
-  onClose,
   onAction,
+  onClose,
 }: DeleteModalProps) => {
   const mode = useDarkMode((state) => state.mode);
   const [showModal, setShowModal] = useState(false);
