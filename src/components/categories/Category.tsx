@@ -49,6 +49,7 @@ const ButtonContainer = styled.div`
   opacity: 0;
   z-index: -1;
   backface-visibility: hidden;
+  transition: all 0.3s linear;
 
   &:active {
     color: currentColor;
@@ -71,7 +72,6 @@ const Button = styled.button`
   border-radius: 0.5rem;
   outline-color: ${({ theme }) => theme.bgCatBtnOut};
   cursor: pointer;
-  transition: all 0.3s linear;
 
   display: flex;
   align-items: center;
