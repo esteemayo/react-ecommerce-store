@@ -193,6 +193,10 @@ const Button = styled.button`
   justify-content: center;
   gap: 0.5rem;
 
+  @media only screen and (max-width: 26.25em) {
+    font-size: 1.8rem;
+  }
+
   &:hover {
     opacity: 0.7;
   }
