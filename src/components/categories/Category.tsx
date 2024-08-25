@@ -69,6 +69,10 @@ const Container = styled.article`
     width: 47%;
   }
 
+  @media only screen and (max-width: 31.25em) {
+    width: 48.5%;
+  }
+
   @media only screen and (max-width: 26.25em) {
     width: 100%;
   }
