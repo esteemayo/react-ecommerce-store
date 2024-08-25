@@ -41,7 +41,7 @@ const DeleteModal = ({
         handleClose();
       }
     },
-    [handleClose()]
+    [handleClose]
   );
 
   const handleEscape = useCallback(
