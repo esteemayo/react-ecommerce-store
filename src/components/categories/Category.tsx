@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 import { CategoryProps } from '../../types';
 import { CommonImage } from '../CommonImage';
-import { CommonButton } from '../buttons/CommonButton';
 
 const Category = ({ data, src, index }: CategoryProps) => {
   const url = useMemo(() => {
@@ -61,7 +60,7 @@ const StyledLink = styled(Link)`
   outline: none;
 `;
 
-const Button = styled(CommonButton)`
+const Button = styled.button`
   border: none;
   font-weight: 500;
   font-size: 1.4rem;
