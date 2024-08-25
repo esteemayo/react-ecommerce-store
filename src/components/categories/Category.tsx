@@ -147,8 +147,8 @@ const HeadingWrapper = styled.div`
 
 const MainHeading = styled.h2`
   text-transform: capitalize;
-  font-weight: 600;
-  font-size: 1.8rem;
+  font-weight: 500;
+  font-size: 100%;
   color: inherit;
 
   @media only screen and (max-width: 59.375em) {
