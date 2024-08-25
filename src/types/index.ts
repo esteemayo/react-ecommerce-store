@@ -1058,7 +1058,6 @@ export type DateOptions = {
 export interface DateTimeProps {
   date: Date;
   type?: string;
-  options: DateOptions;
 }
 
 export interface WishlistCardProps {
