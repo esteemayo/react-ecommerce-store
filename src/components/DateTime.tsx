@@ -8,7 +8,7 @@ interface ITime {
   type?: string;
 }
 
-const DateTime = ({ date, type, options }: DateTimeProps) => {
+const DateTime = ({ date, type }: DateTimeProps) => {
   return (
     <Time type={type} dateTime={date.toDateString()}>
       {formatDate(date)}
