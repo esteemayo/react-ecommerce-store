@@ -62,8 +62,8 @@ const StyledLink = styled(Link)`
 
 const Button = styled.button`
   border: none;
-  font-weight: 600;
-  font-size: var(--default-font-size);
+  font-weight: 500;
+  font-size: 1.4rem;
   text-transform: capitalize;
   padding: 1rem 1.5rem;
   background-color: ${({ theme }) => theme.bgCatBtn};
