@@ -77,6 +77,10 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const Container = styled.article`
