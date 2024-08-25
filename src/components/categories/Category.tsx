@@ -134,10 +134,6 @@ const SubHeading = styled.h3`
   font-size: 1.4rem;
   color: inherit;
 
-  @media only screen and (max-width: 59.375em) {
-    font-size: 1.85rem;
-  }
-
   @media only screen and (max-width: 31.25em) {
     font-size: 1.65rem;
   }
