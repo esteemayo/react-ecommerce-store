@@ -136,7 +136,7 @@ const MainHeading = styled.h2`
 
 const SubHeading = styled.h3`
   font-weight: 300;
-  font-size: var(--default-font-size);
+  font-size: 1.4rem;
   color: inherit;
 
   @media only screen and (max-width: 59.375em) {
