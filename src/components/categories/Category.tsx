@@ -45,6 +45,9 @@ const StyledLink = styled(Link)`
   top: 0;
   left: 0;
   transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
   backface-visibility: hidden;
 
   &:active {
