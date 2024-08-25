@@ -124,11 +124,6 @@ const MainHeading = styled.h2`
   font-size: 100%;
   color: inherit;
 
-  @media only screen and (max-width: 59.375em) {
-    font-size: 2.5rem;
-    font-weight: 500;
-  }
-
   @media only screen and (max-width: 31.25em) {
     font-size: 2rem;
   }
