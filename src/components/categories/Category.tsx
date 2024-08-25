@@ -38,7 +38,7 @@ const Overlay = styled.div`
 
   width: 100%;
   height: 100%;
-  color: inherit;
+  color: var(--clr-white);
   background-color: rgba(0, 0, 0, 0.5);
 
   position: absolute;
@@ -50,10 +50,6 @@ const Overlay = styled.div`
   z-index: -1;
   backface-visibility: hidden;
   transition: all 0.3s linear;
-
-  &:active {
-    color: currentColor;
-  }
 `;
 
 const Container = styled.article`
