@@ -58,7 +58,7 @@ const ButtonContainer = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  outline-color: var(--clr-tertiary-green);
+  outline: none;
 `;
 
 const Button = styled(CommonButton)`
