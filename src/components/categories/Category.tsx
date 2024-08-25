@@ -159,6 +159,10 @@ const SubHeading = styled.h3`
 const StyledLink = styled(Link)`
   text-decoration: none;
   outline: none;
+
+  &:active {
+    color: currentColor;
+  }
 `;
 
 const Button = styled.button`
