@@ -9,16 +9,10 @@ import DateTime from '../DateTime';
 import ShareButton from './ShareButton';
 
 import { excerpts } from '../../utils';
-import { DateOptions, ReviewCardProps } from '../../types';
+import { ReviewCardProps } from '../../types';
 
 const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
   const [show, setShow] = useState(false);
-
-  const options: DateOptions = {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  };
 
   const handleToggle = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -54,11 +48,7 @@ const ReviewCard = ({ user, rating, review, createdAt }: ReviewCardProps) => {
           </Button>
         )}
         <DateContainer>
-          <DateTime
-            date={new Date(createdAt)}
-            type='review'
-            options={options}
-          />
+          <DateTime date={new Date(createdAt)} type='review' />
           <ShareButton />
         </DateContainer>
       </Wrapper>
