@@ -41,6 +41,12 @@ const StyledLink = styled(Link)`
   background-color: rgba(0, 0, 0, 0.3);
   outline-color: var(--clr-tertiary-green);
 
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  backface-visibility: hidden;
+
   &:active {
     color: currentColor;
   }
@@ -48,8 +54,6 @@ const StyledLink = styled(Link)`
 
 const Button = styled.button`
   border: none;
-  width: 100%;
-  height: 100%;
   font-weight: 600;
   font-size: var(--default-font-size);
   text-transform: capitalize;
@@ -61,12 +65,6 @@ const Button = styled.button`
   z-index: -1;
   cursor: pointer;
   transition: all 0.3s linear;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scale(0);
-  backface-visibility: hidden;
 
   display: flex;
   align-items: center;
