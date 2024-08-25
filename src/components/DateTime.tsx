@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import { DateTimeProps } from '../types';
@@ -8,8 +9,15 @@ interface ITime {
 }
 
 const DateTime = ({ date, type }: DateTimeProps) => {
+  const dateTime = useMemo(() => {
+    if (typeof date === 'string') {
+      return date;
+    }
+    return date.toDateString();
+  }, [date]);
+
   return (
-    <Time type={type} dateTime={date.toDateString()}>
+    <Time type={type} dateTime={dateTime}>
       {formatDate(date)}
     </Time>
   );
