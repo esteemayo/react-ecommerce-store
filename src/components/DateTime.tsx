@@ -2,19 +2,16 @@ import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import { DateTimeProps } from '../types';
+import { formatDate } from '../utils/formatDate';
 
 interface ITime {
   type?: string;
 }
 
 const DateTime = ({ date, type, options }: DateTimeProps) => {
-  const dateLabel = useMemo(() => {
-    return new Date(date).toLocaleString('en-us', options);
-  }, [date, options]);
-
   return (
-    <Time type={type} dateTime={date.toDateString()}>
-      {dateLabel}
+    <Time type={type} dateTime={date}>
+      {formatDate(date)}
     </Time>
   );
 };
