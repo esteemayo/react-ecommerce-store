@@ -60,9 +60,6 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.bgCatBtn};
   color: var(--clr-white);
   outline-color: ${({ theme }) => theme.bgCatBtnOut};
-  visibility: hidden;
-  opacity: 0;
-  z-index: -1;
   cursor: pointer;
   transition: all 0.3s linear;
 
