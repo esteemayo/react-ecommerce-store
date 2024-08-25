@@ -123,20 +123,12 @@ const MainHeading = styled.h2`
   font-weight: 500;
   font-size: 100%;
   color: inherit;
-
-  @media only screen and (max-width: 31.25em) {
-    font-size: 2rem;
-  }
 `;
 
 const SubHeading = styled.h3`
   font-weight: 300;
   font-size: 1.4rem;
   color: inherit;
-
-  @media only screen and (max-width: 31.25em) {
-    font-size: 1.65rem;
-  }
 
   @media only screen and (max-width: 26.25em) {
     font-size: 2rem;
