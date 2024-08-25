@@ -4,6 +4,6 @@ const DATE_FORMATTER = new Intl.DateTimeFormat('en-us', {
   year: 'numeric',
 });
 
-export const formatDate = (date: string) => {
+export const formatDate = (date: string | Date) => {
   return DATE_FORMATTER.format(new Date(date));
 };
