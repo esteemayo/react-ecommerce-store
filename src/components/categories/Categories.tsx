@@ -113,6 +113,7 @@ const Box = styled.div`
   }
 
   @media only screen and (max-width: 26.25em) {
+    justify-content: center;
     gap: 3rem;
   }
 
