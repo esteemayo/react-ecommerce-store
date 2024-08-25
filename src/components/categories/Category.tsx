@@ -56,33 +56,6 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  outline: none;
-`;
-
-const Button = styled.button`
-  border: none;
-  font-weight: 500;
-  font-size: 1.4rem;
-  text-transform: capitalize;
-  padding: 1rem 1.5rem;
-  background-color: ${({ theme }) => theme.bgCatBtn};
-  color: var(--clr-white);
-  border-radius: 0.5rem;
-  outline-color: ${({ theme }) => theme.bgCatBtnOut};
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  &:hover {
-    opacity: 0.7;
-  }
-`;
-
 const Container = styled.article`
   width: 20%;
   border-radius: 2px;
@@ -184,6 +157,33 @@ const SubHeading = styled.h3`
 
   @media only screen and (max-width: 18.75em) {
     font-size: 1.7rem;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  outline: none;
+`;
+
+const Button = styled.button`
+  border: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  padding: 1rem 1.5rem;
+  background-color: ${({ theme }) => theme.bgCatBtn};
+  color: var(--clr-white);
+  border-radius: 0.5rem;
+  outline-color: ${({ theme }) => theme.bgCatBtnOut};
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  &:hover {
+    opacity: 0.7;
   }
 `;
 
