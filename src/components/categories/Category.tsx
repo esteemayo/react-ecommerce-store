@@ -60,8 +60,10 @@ const Button = styled.button`
   font-weight: 600;
   font-size: var(--default-font-size);
   text-transform: capitalize;
+  padding: 1rem 1.5rem;
   background-color: ${({ theme }) => theme.bgCatBtn};
   color: var(--clr-white);
+  border-radius: 0.5rem;
   outline-color: ${({ theme }) => theme.bgCatBtnOut};
   cursor: pointer;
   transition: all 0.3s linear;
