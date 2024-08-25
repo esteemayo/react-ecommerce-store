@@ -159,7 +159,6 @@ const SubHeading = styled.h3`
 const StyledLink = styled(Link)`
   text-decoration: none;
   outline: none;
-  transform: translateX(-200%);
 
   &:active {
     color: currentColor;
