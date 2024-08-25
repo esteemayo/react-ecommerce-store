@@ -30,10 +30,15 @@ const Category = ({ data, src, index }: CategoryProps) => {
 };
 
 const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-decoration: none;
   width: 100%;
   height: 100%;
   color: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
   outline-color: var(--clr-tertiary-green);
 
   &:active {
