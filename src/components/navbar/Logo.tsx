@@ -24,6 +24,10 @@ const Image = styled(CommonImage)`
   width: 10rem;
   height: 5rem;
   background-color: transparent;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 13rem;
+  }
 `;
 
 export default Logo;
