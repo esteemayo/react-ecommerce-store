@@ -67,14 +67,14 @@ const IconWrapper = styled.div<IMode>`
   cursor: pointer;
   transition: all 0.3s ease;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   @media only screen and (max-width: 37.5em) {
     width: 3.5rem;
     height: 3.5rem;
   }
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   &:hover {
     background-color: #${({ color, mode }) => mode === 'true' && color};
