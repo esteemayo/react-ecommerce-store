@@ -13,6 +13,9 @@ const CardHeading = ({ url, name }: CardHeadingProps) => {
 
 const Heading = styled.h3`
   text-transform: capitalize;
+  text-rendering: optimizeLegibility;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-weight: 500;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.textProdCard};
