@@ -30,6 +30,10 @@ const Container = styled.div`
       font-size: 1.87rem;
       margin-right: 3px;
     }
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.2rem;
+    }
   }
 `;
 
