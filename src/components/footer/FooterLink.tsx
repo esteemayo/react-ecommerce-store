@@ -56,6 +56,10 @@ const LinkItem = styled.li`
       line-height: 1.3em;
       outline-offset: 0.5rem;
       outline-color: var(--clr-primary-green);
+
+      @media only screen and (min-width: 112.5em) {
+        font-size: 1.6rem;
+      }
     }
 
     &:active {
