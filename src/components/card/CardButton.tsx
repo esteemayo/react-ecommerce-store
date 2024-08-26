@@ -60,6 +60,10 @@ const Button = styled(CommonButton)`
     font-size: 1.4rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.55rem;
+  }
+
   &:disabled {
     opacity: 0.75;
     cursor: default;
