@@ -40,7 +40,7 @@ export const IconButton = styled.button`
     }
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 1.9rem;
+      font-size: 2rem;
     }
   }
 `;
