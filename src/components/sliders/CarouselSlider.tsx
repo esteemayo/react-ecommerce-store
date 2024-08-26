@@ -102,6 +102,10 @@ const Container = styled.header`
   @media only screen and (max-width: 48em) {
     height: 90vw;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    height: 45vw;
+  }
 `;
 
 const Wrapper = styled.div`
