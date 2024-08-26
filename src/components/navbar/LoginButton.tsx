@@ -60,6 +60,10 @@ const Button = styled.button`
     font-size: 1.25rem;
     fill: currentColor;
     transition: 150ms cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.5rem;
+    }
   }
 
   &:hover {
