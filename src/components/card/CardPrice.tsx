@@ -46,6 +46,10 @@ const Discount = styled.span`
   @media only screen and (max-width: 35em) {
     font-size: 1.58rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.9rem;
+  }
 `;
 
 const InStock = styled.div`
