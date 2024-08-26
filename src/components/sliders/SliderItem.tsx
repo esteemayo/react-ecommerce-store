@@ -223,6 +223,11 @@ const Button = styled.button`
     padding: 0.75rem;
     font-size: 1.2rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+    padding: 1.2rem;
+  }
 `;
 
 const setTransform = (position: string) => {
