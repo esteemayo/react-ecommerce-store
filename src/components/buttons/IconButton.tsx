@@ -24,6 +24,10 @@ export const IconButton = styled.button`
     font-size: 1.37rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.6rem;
+  }
+
   &:hover {
     opacity: 0.75;
   }
