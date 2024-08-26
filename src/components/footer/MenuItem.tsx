@@ -75,6 +75,10 @@ const ListItem = styled.li`
       @media only screen and (max-width: 37.5rem) {
         font-size: var(--default-font-size);
       }
+
+      @media only screen and (min-width: 112.5em) {
+        font-size: 1.6rem;
+      }
     }
 
     &:active {
