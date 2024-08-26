@@ -77,7 +77,7 @@ const ListItem = styled.li`
       }
 
       @media only screen and (min-width: 112.5em) {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
       }
     }
 
