@@ -21,6 +21,7 @@ const Heading = styled.h3`
   color: ${({ theme }) => theme.textProdCard};
   margin-bottom: 0.5rem;
   line-height: 1;
+  overflow: hidden;
 
   @media only screen and (max-width: 64em) {
     font-size: 1.7rem;
