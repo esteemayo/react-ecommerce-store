@@ -21,6 +21,10 @@ const Container = styled.button`
   outline-color: ${({ theme }) => theme.navOut};
   cursor: pointer;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.25rem;
+  }
+
   svg {
     font-size: inherit;
     color: currentColor;
