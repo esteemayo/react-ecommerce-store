@@ -30,6 +30,10 @@ const Heading = styled.h3`
   @media only screen and (max-width: 31.25em) {
     font-size: 1.63rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
