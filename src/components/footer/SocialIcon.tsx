@@ -76,6 +76,11 @@ const IconWrapper = styled.div<IMode>`
     height: 3.5rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    width: 5rem;
+    height: 5rem;
+  }
+
   &:hover {
     background-color: #${({ color, mode }) => mode === 'true' && color};
     color: ${({ mode }) => mode === 'true' && 'var(--clr-white)'};
