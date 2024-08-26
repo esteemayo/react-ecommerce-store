@@ -66,6 +66,10 @@ const Text = styled.p`
   font-size: 1.4rem;
   color: inherit;
   margin-right: 5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.6rem;
+  }
 `;
 
 export default Announcement;
