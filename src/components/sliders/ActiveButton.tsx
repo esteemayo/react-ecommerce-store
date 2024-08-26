@@ -50,6 +50,11 @@ const Button = styled.button<IBtn>`
   border-radius: 50%;
   outline-color: #f5f5f5;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    width: ${({ active }) => setProperty(active, '2.5rem', '1.5rem')};
+    height: ${({ active }) => setProperty(active, '2.5rem', '1.5rem')};
+  }
 `;
 
 const setProperty = (active: string, val1: string, val2: string) => {
