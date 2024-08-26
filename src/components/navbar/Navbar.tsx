@@ -13,11 +13,11 @@ import LogoutButton from './LogoutButton';
 import SearchIcon from './SearchIcon';
 import DarkModeToggle from './DarkModeToggle';
 
+import { useSidebar } from '../../hooks/useSidebar';
 import { useAuth } from '../../hooks/useAuth';
 import { useCartStore } from '../../hooks/useCartStore';
-import { useSidebar } from '../../hooks/useSidebar';
-import { useSearchModal } from '../../hooks/useSearchModal';
 import { useSubmenu } from '../../hooks/useSubmenu';
+import { useSearchModal } from '../../hooks/useSearchModal';
 
 import { navLinks } from '../../data';
 import { Submenu } from '../../types';
