@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { useMemo } from 'react';
 
 import FooterText from './FooterText';
-import MenuItems from './MenuItems';
+import Search from './Search';
 import SocialIcon from './SocialIcon';
 import Heading from './Heading';
 import FooterLink from './FooterLink';
-import Search from './Search';
+import MenuItems from './MenuItems';
 
 import { footerLinks, footerMenus, social } from '../../data/index';
 
