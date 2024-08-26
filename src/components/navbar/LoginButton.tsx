@@ -49,6 +49,10 @@ const Button = styled.button`
   transition: all 0.2s ease;
   position: relative;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
+
   svg {
     position: absolute;
     top: 1rem;
