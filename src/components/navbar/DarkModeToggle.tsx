@@ -63,6 +63,11 @@ const Ball = styled.div<IMode>`
   right: ${({ mode }) => mode === 'true' && '2px'};
   transition: all 0.2s ease;
 
+  @media only screen and (min-width: 112.5em) {
+    width: 2rem;
+    height: 2rem;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.bgToggleModeHov};
   }
