@@ -48,6 +48,12 @@ const Button = styled.button<IBtn>`
     display: none;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.bgCarouselBtnHov};
     color: ${({ theme }) => theme.bgCarouselBtn};
