@@ -18,6 +18,7 @@ const ReviewImage = ({ name, photo }: ReviewImageProps) => {
 const Container = styled.div`
   flex: 1;
   width: 100%;
+  max-width: 35rem;
   height: 100%;
   background-color: ${({ theme }) => theme.bgRevImg};
 

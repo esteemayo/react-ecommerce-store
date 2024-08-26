@@ -27,6 +27,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 5rem;
   width: 100%;
+  max-width: 35rem;
   height: 100%;
   padding: 8rem 0 10rem 4rem;
   background-color: ${({ theme }) => theme.bgRevs};
