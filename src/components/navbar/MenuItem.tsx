@@ -26,6 +26,10 @@ const Button = styled.button`
   outline-color: ${({ theme }) => theme.navOut};
   transition: all 0.3s ease;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
+
   &:hover {
     opacity: 0.75;
   }
