@@ -170,6 +170,11 @@ const Description = styled.p`
     width: 68% !important;
     font-size: 1.3rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 70%;
+    font-size: 2.2rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
