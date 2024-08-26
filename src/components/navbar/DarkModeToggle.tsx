@@ -50,6 +50,10 @@ const Icon = styled.div`
   svg {
     font-size: 1.5rem;
     color: ${({ theme }) => theme.bgModeToggleIcon};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.8rem;
+    }
   }
 `;
 
