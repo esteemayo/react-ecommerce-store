@@ -35,6 +35,12 @@ const Container = styled.div`
   justify-content: space-between;
   position: relative;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 5rem;
+    height: 3rem;
+    padding: 4px;
+  }
 `;
 
 const Icon = styled.div`
