@@ -127,6 +127,10 @@ const Image = styled(CommonImage)`
   @media only screen and (max-width: 18.75em) {
     height: 37rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    height: 30rem;
+  }
 `;
 
 const HeadingWrapper = styled.div`
