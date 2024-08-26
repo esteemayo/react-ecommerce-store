@@ -37,6 +37,10 @@ const Count = styled.span`
   font-size: 1.2rem;
   color: ${({ theme }) => theme.textRevCount};
   letter-spacing: 0.5px;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.4rem;
+  }
 `;
 
 export default RatingInfo;
