@@ -52,6 +52,10 @@ const Input = styled.input`
   &::placeholder {
     font-size: 1.4rem;
     color: ${({ theme }) => theme.textSearchInput};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.6rem;
+    }
   }
 `;
 
