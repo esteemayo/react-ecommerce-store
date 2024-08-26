@@ -43,6 +43,10 @@ const Wrapper = styled.div`
     @media only screen and (max-width: 35em) {
       font-size: 1.4rem;
     }
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.8rem;
+    }
   }
 `;
 
