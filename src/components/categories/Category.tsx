@@ -151,6 +151,10 @@ const HeadingWrapper = styled.div`
   @media only screen and (max-width: 37.5em) {
     padding: 3px 0.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 0.6rem;
+  }
 `;
 
 const MainHeading = styled.h2`
