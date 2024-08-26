@@ -67,6 +67,10 @@ const InStock = styled.div`
     font-size: 1.43rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
+
   &::before {
     content: '';
     display: inline-block;
@@ -78,6 +82,11 @@ const InStock = styled.div`
     @media only screen and (max-width: 35em) {
       width: 0.85rem;
       height: 0.85rem;
+    }
+
+    @media only screen and (min-width: 112.5em) {
+      width: 1.2rem;
+      height: 1.2rem;
     }
   }
 `;
