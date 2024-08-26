@@ -17,10 +17,13 @@ const Header = styled.h4<IHeader>`
   margin-bottom: ${({ small }) => small !== 'true' && '2rem'};
 
   @media only screen and (max-width: 37.5em) {
-    font-size: ${({ small }) => small === 'true' && '1.7rem'};
     text-decoration: underline;
     text-underline-offset: 0.5rem;
     margin-bottom: ${({ small }) => small !== 'true' && '1.5rem'};
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ small }) => (small === 'true' ? '1.6rem' : '2.2rem')};
   }
 `;
 
