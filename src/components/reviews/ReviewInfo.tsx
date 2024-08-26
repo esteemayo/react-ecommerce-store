@@ -28,6 +28,10 @@ const Review = styled.p`
     width: 60%;
     font-size: 1.65rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const Reviewer = styled.span`
