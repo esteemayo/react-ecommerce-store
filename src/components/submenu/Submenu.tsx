@@ -73,6 +73,10 @@ const Container = styled.aside<IContainer>`
   box-shadow: ${({ theme }) => theme.boxSub};
   z-index: 3000;
 
+  @media only screen and (min-width: 112.5em) {
+    padding: 3rem;
+  }
+
   &::before {
     content: '';
     display: block;
