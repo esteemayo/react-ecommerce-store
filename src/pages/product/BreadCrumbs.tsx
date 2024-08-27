@@ -39,6 +39,10 @@ const StyledLink = styled(Link)`
   outline-color: #ccc;
   line-height: 1.2;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
+
   &:hover,
   &:active {
     color: currentColor;
