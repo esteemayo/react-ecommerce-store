@@ -43,6 +43,11 @@ const Image = styled(CommonImage)`
   @media only screen and (max-width: 18.75em) {
     height: 15rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 37rem;
+    height: 40rem;
+  }
 `;
 
 export default ProductImage;
