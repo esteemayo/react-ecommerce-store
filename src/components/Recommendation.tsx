@@ -70,7 +70,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.span`
-  display: block;
+  display: inline-block;
   width: 100%;
   text-rendering: optimizeLegibility;
   text-overflow: ellipsis;
