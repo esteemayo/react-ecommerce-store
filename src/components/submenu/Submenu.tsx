@@ -15,10 +15,10 @@ interface IColumn {
 }
 
 const Submenu = () => {
-  const location = useSubmenu((state) => state.location);
+  const { page, links } = useSubmenu((state) => state.page);
   const isOpen = useSubmenu((state) => state.isOpen);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
-  const { page, links } = useSubmenu((state) => state.page);
+  const location = useSubmenu((state) => state.location);
 
   const containerRef = useRef<HTMLElement>(null);
   const [columns, setColumns] = useState('col-2');
