@@ -144,6 +144,12 @@ const Amount = styled.span<IProps>`
     height: ${({ modal }) => modal !== 'true' && '2.85rem'};
     font-size: ${({ modal }) => modal !== 'true' && '1.3rem'};
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: ${({ modal }) => (modal === 'true' ? '2.75rem' : '3.25rem')};
+    height: ${({ modal }) => (modal === 'true' ? '2.75rem' : '3.25rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.6rem')};
+  }
 `;
 
 export default Counter;
