@@ -1373,7 +1373,7 @@ export interface CategoryValues {
 
 export interface StarRatingProps {
   name: 'read-only' | 'hover-feedback' | 'disabled' | 'no-value';
-  value: number | null;
+  value: number | null | undefined;
   readOnly?: boolean;
   onChange?:
     | ((
