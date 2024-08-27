@@ -77,6 +77,10 @@ const Heading = styled.h3<IProps>`
   font-weight: 400;
   font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.65rem')};
   color: ${({ theme }) => theme.text};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ modal }) => (modal === 'true' ? '1.7rem' : '2rem')};
+  }
 `;
 
 const Wrapper = styled.div<IProps>`
