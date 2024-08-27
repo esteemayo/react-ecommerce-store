@@ -184,6 +184,11 @@ const ArrowButton = styled.button<IBtn>`
     height: 6.5rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    width: 6rem;
+    height: 6rem;
+  }
+
   &:hover {
     background-color: hsla(0, 0%, 100%, 0.05);
   }
