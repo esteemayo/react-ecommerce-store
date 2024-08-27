@@ -29,7 +29,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 35rem;
   height: 100%;
-  padding: 8rem 0 10rem 4rem;
+  padding: 8rem 0 0 4rem;
   background-color: ${({ theme }) => theme.bgRevs};
 
   @media only screen and (max-width: 64em) {
@@ -39,6 +39,10 @@ const Container = styled.div`
   @media only screen and (max-width: 50em) {
     padding-top: 5rem;
     gap: 3rem;
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 8rem 0 0 2rem;
   }
 `;
 
