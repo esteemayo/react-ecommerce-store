@@ -103,6 +103,10 @@ const AverageRatings = styled.span`
   @media only screen and (max-width: 18.75em) {
     font-size: 2.8rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 4rem;
+  }
 `;
 
 const TotalReviews = styled.span`
