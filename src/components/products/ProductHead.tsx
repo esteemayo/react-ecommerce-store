@@ -62,12 +62,16 @@ const ProductHead = ({
 
 const Heading = styled.h1<IProps>`
   display: inline-block;
+  text-rendering: optimizeLegibility;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-weight: 500;
   font-size: ${({ modal }) => (modal === 'true' ? '1.8rem' : '2.4rem')};
   color: ${({ theme, modal }) =>
     modal === 'true' ? theme.text : theme.textProdHeader};
   line-height: ${({ modal }) => (modal === 'true' ? '1' : '1.3')};
   margin-bottom: ${({ modal }) => (modal === 'true' ? '1rem' : '2rem')};
+  overflow: hidden;
 
   @media only screen and (max-width: 59.375em) {
     margin-bottom: ${({ modal }) => modal !== 'true' && '1.75rem'};
