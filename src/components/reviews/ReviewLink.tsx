@@ -40,6 +40,10 @@ const Button = styled.button`
     font-size: 1.7rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
+
   &:hover {
     opacity: 0.7;
   }
