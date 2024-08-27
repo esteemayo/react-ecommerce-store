@@ -223,6 +223,10 @@ const Image = styled(CommonImage)`
     width: 60rem;
     height: 80rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 60rem;
+  }
 `;
 
 const setBackDropFilter = (mode: string) => {
