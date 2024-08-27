@@ -187,6 +187,8 @@ const ArrowButton = styled.button<IBtn>`
   @media only screen and (min-width: 112.5em) {
     width: 6rem;
     height: 6rem;
+    left: ${({ direction }) => direction === 'left' && '3rem'};
+    right: ${({ direction }) => direction === 'right' && '3rem'};
   }
 
   &:hover {
