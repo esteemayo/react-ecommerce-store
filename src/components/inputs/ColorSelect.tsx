@@ -76,6 +76,10 @@ const Heading = styled.h2<IProps>`
   font-weight: 400;
   font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.7rem')};
   color: ${({ theme }) => theme.text};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ modal }) => (modal === 'true' ? '1.8rem' : '2rem')};
+  }
 `;
 
 const Wrapper = styled.div<IProps>`
@@ -113,6 +117,11 @@ const Color = styled.button<IProps>`
   @media only screen and (max-width: 37.5em) {
     width: ${({ modal }) => modal !== 'true' && '2rem'};
     height: ${({ modal }) => modal !== 'true' && '2rem'};
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 3rem;
+    height: 3rem;
   }
 `;
 
