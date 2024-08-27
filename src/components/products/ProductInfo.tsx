@@ -24,6 +24,10 @@ const Heading = styled.h4`
   font-size: 1.8rem;
   color: ${({ theme }) => theme.textProdHeader};
   margin-bottom: 3rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const Text = styled.p`
@@ -32,6 +36,10 @@ const Text = styled.p`
   color: ${({ theme }) => theme.text};
   line-height: 1.3;
   word-wrap: break-word;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 export default ProductInfo;
