@@ -69,7 +69,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Title = styled.p`
+const Title = styled.span`
   display: block;
   width: 100%;
   font-size: var(--default-font-size);
@@ -82,7 +82,7 @@ const Title = styled.p`
   }
 `;
 
-const Price = styled.p`
+const Price = styled.span`
   display: inline-block;
   font-size: 1.3rem;
   color: ${({ theme }) => theme.text};
