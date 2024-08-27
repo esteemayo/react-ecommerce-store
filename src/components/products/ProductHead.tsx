@@ -80,6 +80,10 @@ const Heading = styled.h1<IProps>`
   @media only screen and (max-width: 18.75em) {
     font-size: ${({ modal }) => modal !== 'true' && '2rem'};
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ modal }) => (modal === 'true' ? '2rem' : '2.6rem')};
+  }
 `;
 
 const PriceContainer = styled.div`
