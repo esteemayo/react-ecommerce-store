@@ -176,6 +176,10 @@ const IconButton = styled.button<IBtn>`
 
   svg {
     color: inherit;
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.7rem;
+    }
   }
 `;
 
