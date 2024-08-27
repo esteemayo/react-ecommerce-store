@@ -21,6 +21,10 @@ const Heading = styled.h1`
     margin-bottom: 5rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 3rem;
+  }
+
   &::after {
     content: '';
     display: inline-block;
