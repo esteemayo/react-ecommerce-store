@@ -176,6 +176,10 @@ const Rating = styled.div`
 
   svg {
     color: ${({ theme }) => theme.star};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.8rem;
+    }
   }
 `;
 
@@ -183,6 +187,10 @@ const ReviewQuantity = styled.span`
   font-weight: 600;
   font-size: 1.3rem;
   color: ${({ theme }) => theme.textReviewCount};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.5rem;
+  }
 
   a {
     &:link,
