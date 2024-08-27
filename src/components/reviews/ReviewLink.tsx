@@ -55,6 +55,10 @@ const Button = styled.button`
     width: 8.5rem;
     height: 1px;
     background-color: ${({ theme }) => theme.star};
+
+    @media only screen and (min-width: 112.5em) {
+      width: 9.8rem;
+    }
   }
 `;
 
