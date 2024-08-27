@@ -37,8 +37,12 @@ const Review = styled.p`
 const Reviewer = styled.span`
   display: inline-block;
   font-weight: 300;
-  font-weight: 1.6rem;
+  font-size: 1.6rem;
   color: ${({ theme }) => theme.textReviewer};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 export default ReviewInfo;
