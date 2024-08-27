@@ -15,6 +15,10 @@ const Header = styled.h4`
   font-size: var(--default-font-size);
   color: ${({ theme }) => theme.text};
   margin-bottom: 1.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 export default Heading;
