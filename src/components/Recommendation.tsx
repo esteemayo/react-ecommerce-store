@@ -72,10 +72,14 @@ const Wrapper = styled.div`
 const Title = styled.span`
   display: block;
   width: 100%;
+  text-rendering: optimizeLegibility;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: var(--default-font-size);
   color: ${({ theme }) => theme.text};
   line-height: 1.8rem;
   margin: 1rem 0;
+  overflow: hidden;
 
   @media only screen and (max-width: 18.75em) {
     font-size: 1.5rem;
