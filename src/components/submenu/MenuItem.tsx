@@ -22,6 +22,10 @@ const ListItem = styled.li`
   color: ${({ theme }) => theme.text};
   margin-bottom: 1rem;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
+
   & > * {
     display: flex;
     align-items: center;
