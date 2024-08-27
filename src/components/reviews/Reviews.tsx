@@ -126,6 +126,10 @@ const Heading = styled.h1`
   font-size: 3.2rem;
   color: ${({ theme }) => theme.textProdHeader};
   line-height: 3.2rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 4rem;
+  }
 `;
 
 export default Reviews;
