@@ -70,6 +70,12 @@ const Button = styled.button<IBtn>`
     padding-bottom: ${({ small }) => small !== 'true' && '1rem'};
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ small }) => (small === 'true' ? '1.7rem' : '2rem')};
+    padding: ${({ small }) =>
+      small === 'true' ? '1.5rem 1.2rem' : '2.2rem 1.2rem'};
+  }
+
   &:hover {
     background-position: 100%;
   }
