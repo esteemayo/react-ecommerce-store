@@ -121,6 +121,13 @@ const Size = styled.button<IProps>`
     font-size: ${({ modal }) => modal !== 'true' && '1.35rem'};
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.6rem;
+    min-width: 4.25rem;
+    height: 3.25rem;
+    padding: 1.8rem 0.6rem;
+  }
+
   &:hover {
     background-color: ${({ bcg, theme }) =>
       setProperty(bcg, theme.cartSelected, theme.sizeHover)};
