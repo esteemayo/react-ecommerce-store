@@ -67,6 +67,10 @@ const Heading = styled.h3<IProps>`
   font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.65rem')};
   color: currentColor;
   margin-bottom: ${({ modal }) => (modal === 'true' ? '0.5rem' : '1rem')};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ modal }) => (modal === 'true' ? '1.7rem' : '1.95rem')};
+  }
 `;
 
 const Wrapper = styled.div<IProps>`
@@ -101,6 +105,12 @@ const Button = styled.button<IProps>`
   @media only screen and (max-width: 37.5em) {
     min-width: 2.85rem;
     height: 2.85rem;
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.6rem')};
+    min-width: ${({ modal }) => (modal === 'true' ? '2.75rem' : '3.25rem')};
+    height: ${({ modal }) => (modal === 'true' ? '2.75rem' : '3.25rem')};
   }
 
   &:disabled {
