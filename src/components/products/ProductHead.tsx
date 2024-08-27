@@ -104,6 +104,10 @@ const Price = styled.p<IProps>`
   @media only screen and (max-width: 18.75em) {
     font-size: ${({ modal }) => modal !== 'true' && '1.5rem'};
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ modal }) => (modal === 'true' ? '1.7rem' : '1.8rem')};
+  }
 `;
 
 const Discount = styled.p<IProps>`
@@ -119,6 +123,10 @@ const Discount = styled.p<IProps>`
   @media only screen and (max-width: 18.75em) {
     font-size: ${({ modal }) => modal !== 'true' && '1.37rem'};
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.6rem')};
+  }
 `;
 
 const TotalPrice = styled.p<IProps>`
@@ -130,6 +138,10 @@ const TotalPrice = styled.p<IProps>`
 
   @media only screen and (max-width: 18.75em) {
     font-size: ${({ modal }) => modal !== 'true' && '1.5rem'};
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ modal }) => (modal === 'true' ? '1.7rem' : '1.8rem')};
   }
 `;
 
