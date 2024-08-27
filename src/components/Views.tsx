@@ -32,9 +32,19 @@ const Container = styled.div`
   svg {
     font-size: 2rem;
     color: currentColor;
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.3rem;
+    }
   }
 `;
 
-const Span = styled.span``;
+const Span = styled.span`
+  font-size: 100%;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
+`;
 
 export default Views;
