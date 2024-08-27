@@ -71,12 +71,12 @@ const Product = ({
             <ColorSelect
               title='Color'
               mode={activeMode}
-              value={product.color}
+              value={product?.color}
               selected={isSelected}
               onAction={setColor}
               secondaryAction={setIsSelected}
             />
-            {product.size.length > 0 && (
+            {product?.size.length > 0 && (
               <SizeSelect
                 value={product.size}
                 title='Select a size'
@@ -99,17 +99,17 @@ const Product = ({
               message='Item added to cart'
             />
             <ProductButtons
-              actionId={product.id}
+              actionId={product?.id}
               alert={alert}
               currentUser={currentUser}
               product={product}
-              likes={product.likes}
+              likes={product?.likes}
               onFavorite={onFavorite}
             />
             <Hr />
             <ProductValue items={productValue} mode={mode} />
             <Hr />
-            <ProductInfo title='Overview' content={product.desc} />
+            <ProductInfo title='Overview' content={product?.desc} />
           </ProductWrapper>
         </Right>
       </ProductContainer>
