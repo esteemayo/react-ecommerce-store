@@ -37,6 +37,11 @@ export const Button = styled.button`
     padding: 1rem 0;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    padding: 2.2rem 1.2rem;
+    font-size: 2rem;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.sizeHover};
     border-color: ${({ theme }) => theme.cartSelected};
@@ -45,5 +50,9 @@ export const Button = styled.button`
   svg {
     font-size: 2rem;
     fill: currentColor;
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.5rem;
+    }
   }
 `;
