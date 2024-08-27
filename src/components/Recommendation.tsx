@@ -91,6 +91,10 @@ const Price = styled.span`
   font-size: 1.3rem;
   color: ${({ theme }) => theme.text};
   line-height: 1.3em;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.5rem;
+  }
 `;
 
 export default Recommendation;
