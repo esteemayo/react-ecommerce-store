@@ -146,13 +146,19 @@ const TotalPrice = styled.p<IProps>`
 `;
 
 const Message = styled.p`
+  font-size: 100%;
   color: ${({ theme }) => theme.text};
   margin-top: 1rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.75rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: underline;
   text-transform: capitalize;
+  font-size: inherit;
   color: ${({ theme }) => theme.text};
   outline-color: #eee;
 
