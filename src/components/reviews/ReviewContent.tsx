@@ -33,7 +33,7 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.bgRevs};
 
   @media only screen and (max-width: 64em) {
-    padding-container: 3rem;
+    padding-left: 3rem;
   }
 
   @media only screen and (max-width: 50em) {
