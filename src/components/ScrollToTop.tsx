@@ -90,6 +90,10 @@ const Wrapper = styled.div`
   svg {
     font-size: 1.5rem;
     fill: ${({ theme }) => theme.textScroll};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.7rem;
+    }
   }
 `;
 
