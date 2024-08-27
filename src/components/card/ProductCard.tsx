@@ -108,6 +108,10 @@ const Container = styled.article`
   @media only screen and (max-width: 31.25em) {
     width: 100%;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 35.25rem;
+  }
 `;
 
 export default ProductCard;
