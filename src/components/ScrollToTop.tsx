@@ -75,6 +75,11 @@ const Wrapper = styled.div`
     height: 3.85rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    width: 5rem;
+    height: 5rem;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.soft};
     box-shadow: ${({ theme }) => theme.boxScrollHov};
