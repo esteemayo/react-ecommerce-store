@@ -57,15 +57,15 @@ const Product = ({
         </Left>
         <Right>
           <BreadCrumbs category={product?.category} />
-          <Views totalViews={product.views} />
+          <Views totalViews={product?.views} />
           <ProductWrapper>
             <ProductHead
-              name={product.name}
-              price={product.price}
-              discount={product.discount}
-              priceDiscount={product.priceDiscount}
-              ratingsAverage={product.ratingsAverage}
-              ratingsQuantity={product.ratingsQuantity}
+              name={product?.name}
+              price={product?.price}
+              discount={product?.discount}
+              priceDiscount={product?.priceDiscount}
+              ratingsAverage={product?.ratingsAverage}
+              ratingsQuantity={product?.ratingsQuantity}
             />
             <Hr />
             <ColorSelect
