@@ -123,6 +123,10 @@ const TotalReviews = styled.span`
   @media only screen and (max-width: 18.75em) {
     font-size: 1.4rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const Wrapper = styled.div`
