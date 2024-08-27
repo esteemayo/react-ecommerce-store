@@ -206,6 +206,10 @@ const ArrowButton = styled.button<IBtn>`
 
   svg {
     color: var(--clr-white);
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2rem;
+    }
   }
 `;
 
