@@ -37,6 +37,10 @@ const Wrapper = styled.div`
   span {
     font-size: 1.25rem;
     line-height: 1.2;
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.45rem;
+    }
   }
 `;
 
@@ -52,6 +56,10 @@ const Image = styled(CommonImage)`
   width: 2.4rem;
   height: auto;
   background-color: transparent;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 3rem;
+  }
 `;
 
 export default ProductValue;
