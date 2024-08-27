@@ -56,7 +56,7 @@ const Product = ({
           <ProductImages images={product?.images} />
         </Left>
         <Right>
-          <BreadCrumbs category={product.category} />
+          <BreadCrumbs category={product?.category} />
           <Views totalViews={product.views} />
           <ProductWrapper>
             <ProductHead
