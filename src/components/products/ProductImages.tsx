@@ -144,6 +144,10 @@ const Wrapper = styled.figure`
     width: max-content;
     transition: all 0.3s ease;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 2rem;
+  }
 `;
 
 const ArrowButton = styled.button<IBtn>`
