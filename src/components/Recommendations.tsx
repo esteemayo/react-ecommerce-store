@@ -60,6 +60,10 @@ const Heading = styled.h1`
   font-size: 3.2rem;
   color: ${({ theme }) => theme.textProdHeader};
   margin: 5rem 0;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 4rem;
+  }
 `;
 
 const Wrapper = styled.div`
