@@ -124,6 +124,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
         slideIndex={slideIndex}
         lastIndex={lastIndex}
         onMove={handleMove}
+        setSlideIndex={setSlideIndex}
       />
     </Container>
   );
