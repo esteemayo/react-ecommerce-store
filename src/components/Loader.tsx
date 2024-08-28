@@ -57,6 +57,11 @@ const Text = styled.span`
   margin-top: 1rem;
   font-size: 100%;
   color: ${({ theme }) => theme.text};
+
+  @media only screen and (min-width: 112.5em) {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+  }
 `;
 
 export default Loader;
