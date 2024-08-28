@@ -35,6 +35,12 @@ const Button = styled.button`
     padding: 0.5rem 0.8rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    width: 10rem;
+    padding: 0.9rem 1.2rem;
+    font-size: 1.6rem;
+  }
+
   svg {
     font-size: inherit;
     color: currentColor;

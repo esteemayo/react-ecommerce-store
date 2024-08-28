@@ -202,6 +202,10 @@ const Button = styled.button`
   color: ${({ theme }) => theme.text};
   margin-bottom: 2rem;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 const DateContainer = styled.div`
