@@ -251,6 +251,12 @@ const CloseButton = styled.button`
     height: 3.5rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2.2rem;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.bgRevCloseBtnHov};
     color: ${({ theme }) => theme.textRevCloseBtnHov};
