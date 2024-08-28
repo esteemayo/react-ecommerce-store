@@ -93,6 +93,10 @@ const FilterText = styled.span`
   @media only screen and (max-width: 18.75em) {
     font-size: 1.35rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
 `;
 
 const FilterIcon = styled.span`
