@@ -110,7 +110,7 @@ const Container = styled.article`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 36.667rem;
+    width: 40rem;
   }
 `;
 
