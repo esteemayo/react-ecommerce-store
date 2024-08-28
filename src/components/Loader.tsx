@@ -51,6 +51,11 @@ const Wrapper = styled.div`
     width: 50rem;
     height: 35rem;
   }
+
+  & > div {
+    width: 7rem;
+    height: 7rem;
+  }
 `;
 
 const Text = styled.span`
