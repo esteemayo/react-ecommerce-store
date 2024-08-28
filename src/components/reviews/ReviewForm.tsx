@@ -109,6 +109,10 @@ const Label = styled.label`
   font-weight: 600;
   font-size: 1.3rem;
   color: ${({ theme }) => theme.text};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.6rem;
+  }
 `;
 
 const TextArea = styled.textarea`
