@@ -20,7 +20,7 @@ const ReviewHead = ({
   const avgRatings = useMemo(() => {
     if (ratingsAverage === 0) {
       return 0;
-    } else if (ratingsAverage.toString().length > 3) {
+    } else if (ratingsAverage?.toString().length > 3) {
       return ratingsAverage.toFixed(2);
     } else {
       return ratingsAverage.toFixed(1);
