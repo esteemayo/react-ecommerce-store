@@ -60,6 +60,10 @@ const Wrapper = styled.div<IWrapper>`
     padding-right: 0;
     justify-content: flex-end;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 22rem;
+  }
 `;
 
 const Filter = styled.span`
