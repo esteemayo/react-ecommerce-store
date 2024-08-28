@@ -47,10 +47,15 @@ const Container = styled.div`
 `;
 
 const Message = styled.span`
+  font-size: 100%;
   color: ${({ theme }) => theme.text};
 
   @media only screen and (max-width: 18.75em) {
     font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
   }
 `;
 
