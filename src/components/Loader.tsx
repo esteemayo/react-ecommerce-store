@@ -46,6 +46,11 @@ const Wrapper = styled.div`
     width: 35rem;
     height: 25rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 50rem;
+    height: 35rem;
+  }
 `;
 
 const Text = styled.span`
