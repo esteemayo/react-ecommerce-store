@@ -88,6 +88,10 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 18.75em) {
     gap: 4rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 5rem;
+  }
 `;
 
 export default ProductList;
