@@ -37,6 +37,11 @@ const Image = styled(CommonImage)`
     width: 3rem;
     height: 3rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 6rem;
+    height: 6rem;
+  }
 `;
 
 export default Avatar;
