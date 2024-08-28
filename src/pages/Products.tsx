@@ -142,7 +142,7 @@ const Products = () => {
         onChangeSize={handleChangeSize}
         onChangePrice={handleChangePrice}
       />
-      {sortedProducts.length > 1 && !currentPage ? (
+      {sortedProducts.length < 1 && !currentPage ? (
         <Box>
           <EmptyProduct
             src='/img/no-result.png'
