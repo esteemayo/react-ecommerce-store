@@ -36,7 +36,7 @@ const Input = styled.input.attrs({
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 24.55rem;
+    width: 29.75rem;
   }
 `;
 
