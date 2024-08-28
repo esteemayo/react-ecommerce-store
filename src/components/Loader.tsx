@@ -55,6 +55,7 @@ const Wrapper = styled.div`
 
 const Text = styled.span`
   margin-top: 1rem;
+  font-size: 100%;
   color: ${({ theme }) => theme.text};
 `;
 
