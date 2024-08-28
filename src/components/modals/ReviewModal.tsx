@@ -216,6 +216,11 @@ const Box = styled.div`
     padding-right: 1.5rem;
     padding-bottom: 1rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 50rem;
+    padding: 4rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
