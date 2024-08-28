@@ -147,7 +147,7 @@ const Wrapper = styled.figure`
   }
 
   @media only screen and (min-width: 112.5em) {
-    gap: 2rem;
+    gap: 5rem;
   }
 `;
 
