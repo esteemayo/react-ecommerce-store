@@ -111,7 +111,7 @@ const Label = styled.label`
   color: ${({ theme }) => theme.text};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.6rem;
+    font-size: var(--default-font-size);
   }
 `;
 
@@ -142,7 +142,7 @@ const TextArea = styled.textarea`
     color: ${({ theme }) => theme.textRevPlace};
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 1.6rem;
+      font-size: var(--default-font-size);
     }
   }
 `;
@@ -184,7 +184,7 @@ const Information = styled.p`
   line-height: 1.2;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.6rem;
+    font-size: var(--default-font-size);
   }
 `;
 
