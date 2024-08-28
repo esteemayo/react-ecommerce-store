@@ -757,6 +757,7 @@ export interface ProductImageModalProps {
   isMoved: boolean;
   slideIndex: number;
   lastIndex: number;
+  setSlideIndex: React.Dispatch<React.SetStateAction<number>>;
   onMove(direction: string): void;
   onClose(): void;
 }
