@@ -121,7 +121,7 @@ const SingleProduct = () => {
     }
   }, [mutate, productId, refetch]);
 
-  if (true) {
+  if (isLoading) {
     return (
       <Container>
         <Loader size='md' title='Loading...' />
