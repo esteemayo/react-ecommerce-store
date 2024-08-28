@@ -140,6 +140,10 @@ const TextArea = styled.textarea`
   &::placeholder {
     font-size: 1.3rem;
     color: ${({ theme }) => theme.textRevPlace};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.6rem;
+    }
   }
 `;
 
