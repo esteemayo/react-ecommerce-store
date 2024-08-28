@@ -109,6 +109,12 @@ const CurrentPage = styled.span`
     align-items: center;
     justify-content: center;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.5rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
