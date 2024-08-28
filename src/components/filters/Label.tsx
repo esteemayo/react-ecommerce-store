@@ -7,4 +7,8 @@ export const Label = styled.label`
   color: ${({ theme }) => theme.textFilterLabel};
   letter-spacing: 3px;
   margin-bottom: 0.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
