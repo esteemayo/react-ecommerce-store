@@ -24,7 +24,9 @@ const Reviews = ({
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const handleToggleFilter = useCallback(() => {
-    setIsFilterOpen((value) => !value);
+    setIsFilterOpen((value) => {
+      return !value;
+    });
   }, []);
 
   const handleOpen = useCallback(() => {
