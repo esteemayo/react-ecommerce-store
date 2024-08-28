@@ -132,6 +132,11 @@ const TextArea = styled.textarea`
   resize: none;
   caret-color: ${({ theme }) => theme.inputCaret};
 
+  @media only screen and (min-width: 112.5em) {
+    height: 12rem;
+    font-size: 1.8rem;
+  }
+
   &::placeholder {
     font-size: 1.3rem;
     color: ${({ theme }) => theme.textRevPlace};
