@@ -145,6 +145,10 @@ const TotalItems = styled.p`
   padding-top: 2rem;
   font-size: 1.5rem;
   color: ${({ theme }) => theme.textCartItem};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 export default Pagination;
