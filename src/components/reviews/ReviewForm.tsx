@@ -182,6 +182,10 @@ const Information = styled.p`
   color: ${({ theme }) => theme.text};
   letter-spacing: 0.2px;
   line-height: 1.2;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.6rem;
+  }
 `;
 
 const Button = styled.button`
