@@ -147,6 +147,7 @@ const FilterList = styled.li`
 
   @media only screen and (min-width: 112.5em) {
     font-size: 1.6rem;
+    padding: 0.9rem 1rem 1rem 1.4rem;
   }
 
   &:hover {
