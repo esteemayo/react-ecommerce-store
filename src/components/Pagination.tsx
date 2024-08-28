@@ -84,6 +84,10 @@ const Wrapper = styled.div`
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 2.5rem 3.5rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
