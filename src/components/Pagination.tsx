@@ -132,6 +132,10 @@ const Button = styled.button`
   outline-color: #ccc;
   outline-offset: 3px;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 const TotalItems = styled.p`
