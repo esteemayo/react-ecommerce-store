@@ -131,6 +131,11 @@ const FilterListContainer = styled.ul<IList>`
   transform: scale(${({ type }) => (type === 'show' ? 1 : 0)});
   z-index: ${({ type }) => (type === 'show' ? 1000 : -1)};
   transition: all 0.3s linear;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 23rem;
+    padding: 0.6rem;
+  }
 `;
 
 const FilterList = styled.li`
