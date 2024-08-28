@@ -43,6 +43,10 @@ const Time = styled.time<ITime>`
   @media only screen and (max-width: 18.75em) {
     font-size: ${({ type }) => type !== 'review' && '1.2rem'};
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ type }) => (type === 'review' ? '1.6rem' : '1.7rem')};
+  }
 `;
 
 export default DateTime;
