@@ -108,6 +108,10 @@ const FilterIcon = styled.span`
   svg {
     font-size: 2rem;
     fill: ${({ theme }) => theme.star};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.7rem;
+    }
   }
 `;
 
