@@ -34,6 +34,10 @@ const Input = styled.input.attrs({
   @media only screen and (max-width: 37.5em) {
     width: 100%;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 24.8rem;
+  }
 `;
 
 export default RangeInput;
