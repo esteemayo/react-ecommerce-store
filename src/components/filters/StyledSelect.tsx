@@ -21,4 +21,10 @@ export const StyledSelect = styled.select<ISelect>`
     width: 100%;
     padding: ${({ page }) => page !== 'product' && '0.7rem'};
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 25.9rem;
+    padding: 1rem;
+    font-size: var(--default-font-size);
+  }
 `;
