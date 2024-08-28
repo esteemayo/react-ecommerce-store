@@ -183,6 +183,10 @@ const Review = styled.p`
     font-size: 1.4rem;
     line-height: 1.2;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.9rem;
+  }
 `;
 
 const Button = styled.button`
