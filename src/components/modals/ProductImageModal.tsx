@@ -29,6 +29,7 @@ const ProductImageModal = ({
   lastIndex,
   onMove,
   onClose,
+  setSlideIndex,
 }: ProductImageModalProps) => {
   const mode = useDarkMode((state) => state.mode);
 
@@ -53,6 +54,17 @@ const ProductImageModal = ({
       }
     },
     [handleClose]
+  );
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        setSlideIndex(slideIndex === 0 ? lastIndex : slideIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        setSlideIndex(slideIndex === lastIndex ? 0 : slideIndex + 1);
+      }
+    },
+    [lastIndex, slideIndex]
   );
 
   const handleEscape = useCallback(
