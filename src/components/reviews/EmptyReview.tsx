@@ -42,6 +42,7 @@ const Container = styled.div`
 
     @media only screen and (min-width: 112.5em) {
       font-size: 2.8rem;
+      margin-right: 0.8rem;
     }
   }
 `;
