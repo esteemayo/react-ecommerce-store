@@ -169,6 +169,10 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 28.75em) {
     padding: 0;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    max-width: 140rem;
+  }
 `;
 
 const LogoBox = styled.div`

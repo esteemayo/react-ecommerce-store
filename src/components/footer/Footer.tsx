@@ -74,6 +74,10 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    max-width: 140rem;
+  }
 `;
 
 const FooterLeft = styled.div`
