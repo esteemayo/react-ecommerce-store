@@ -145,6 +145,10 @@ const FilterList = styled.li`
   cursor: pointer;
   transition: all 0.3s ease;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.6rem;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.filterHov};
   }
