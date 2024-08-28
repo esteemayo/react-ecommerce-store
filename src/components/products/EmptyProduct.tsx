@@ -10,7 +10,7 @@ interface EmptyProductProps {
 const EmptyProduct = ({ src, title }: EmptyProductProps) => {
   return (
     <Container>
-      <StyledImage src={src} width={500} height={250} alt='' />
+      <StyledImage src={src} width={500} height={250} alt='empty' />
       <Message>{title}</Message>
     </Container>
   );
