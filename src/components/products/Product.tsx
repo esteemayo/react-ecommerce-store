@@ -151,6 +151,10 @@ const ProductContainer = styled.div`
     padding-left: 3rem;
     padding-right: 3rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    max-width: 140rem;
+  }
 `;
 
 const Left = styled.div`
