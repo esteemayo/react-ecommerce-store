@@ -170,6 +170,11 @@ const Input = styled.input.attrs({
   type: 'checkbox',
 })`
   outline-color: ${({ theme }) => theme.revOut};
+
+  @media only screen and (min-width: 112.5em) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 `;
 
 const Information = styled.p`
