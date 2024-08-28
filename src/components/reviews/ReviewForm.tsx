@@ -62,6 +62,10 @@ const Header = styled.h1`
   font-weight: 600;
   font-size: 1.85rem;
   color: ${({ theme }) => theme.text};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const RatingContainer = styled.div`
