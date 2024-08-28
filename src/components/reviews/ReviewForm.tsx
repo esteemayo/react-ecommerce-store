@@ -98,6 +98,10 @@ const Text = styled.span`
   font-size: 1.2rem;
   color: ${({ theme }) => theme.text};
   margin-bottom: 1.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Label = styled.label`
