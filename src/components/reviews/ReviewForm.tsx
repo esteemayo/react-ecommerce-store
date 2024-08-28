@@ -221,6 +221,11 @@ const Button = styled.button`
     font-size: 1.38rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+    padding: 2rem 1.2rem;
+  }
+
   &:hover {
     background-position: 100%;
   }
