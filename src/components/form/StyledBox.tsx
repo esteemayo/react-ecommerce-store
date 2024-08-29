@@ -19,6 +19,6 @@ export const StyledBox = styled.div`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 45rem;
+    width: 50rem;
   }
 `;
