@@ -26,6 +26,11 @@ export const SocialButton = styled.button`
     justify-content: center;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    padding: 2rem 4rem;
+    font-size: 1.8rem;
+  }
+
   &:hover {
     opacity: 0.7;
   }
