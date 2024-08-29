@@ -17,4 +17,8 @@ export const StyledBox = styled.div`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 45rem;
+  }
 `;
