@@ -18,6 +18,10 @@ const Container = styled.p`
   font-size: 1.65rem;
   color: ${({ theme }) => theme.textLabel};
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
+
   a {
     &:link,
     &:visited {
