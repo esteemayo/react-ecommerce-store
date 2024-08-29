@@ -11,7 +11,7 @@ const NotFound = () => {
     <Container onMouseOver={closeSubmenu}>
       <Wrapper>
         <StyledLink to='/'>
-          <Image src='/svg/startled.svg' width={500} height={500} alt='404' />
+          <Image src='/svg/startled.svg' width={300} height={400} alt='404' />
         </StyledLink>
       </Wrapper>
     </Container>
@@ -44,8 +44,8 @@ const StyledLink = styled(Link)`
 `;
 
 const Image = styled(CommonImage)`
-  width: 50rem;
-  height: 50rem;
+  width: 30rem;
+  height: 40rem;
   background-color: transparent;
   object-fit: contain;
 
