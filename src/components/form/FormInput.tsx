@@ -58,6 +58,7 @@ const Input = styled.input`
 
   @media only screen and (min-width: 112.5em) {
     font-size: 2rem;
+    padding: 2rem 1.5rem;
   }
 
   &:focus {
