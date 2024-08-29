@@ -66,6 +66,11 @@ export const StyledSelect = styled.select`
   border-radius: 0.5rem;
   outline-color: ${({ theme }) => theme.inputOut};
   caret-color: ${({ theme }) => theme.inputCaret};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+    padding: 2rem 1.5rem;
+  }
 `;
 
 export const Option = styled.option`
