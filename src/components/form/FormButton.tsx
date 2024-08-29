@@ -30,6 +30,11 @@ const Button = styled(CommonButton)`
     font-size: 1.398rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+    padding: 2rem;
+  }
+
   &:disabled {
     opacity: 0.85;
     cursor: not-allowed;
