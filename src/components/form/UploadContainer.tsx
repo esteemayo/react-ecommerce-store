@@ -26,6 +26,11 @@ export const UploadContainer = styled.div`
     caret-color: ${({ theme }) => theme.inputCaret};
     transition: all 0.3s ease;
 
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2rem;
+      padding: 2rem 1.5rem;
+    }
+
     &:focus {
       background-color: transparent;
     }
