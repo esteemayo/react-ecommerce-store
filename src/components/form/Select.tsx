@@ -77,6 +77,10 @@ export const Option = styled.option`
   text-transform: capitalize;
   background-color: ${({ theme }) => theme.bgSelect};
   color: inherit;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.45rem;
+  }
 `;
 
 export default Select;
