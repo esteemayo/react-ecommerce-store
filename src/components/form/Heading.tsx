@@ -23,6 +23,10 @@ const StyledHeading = styled.h1<IProps>`
     small === 'false' ? 'capitalize' : undefined};
   text-align: center;
   color: ${({ theme }) => theme.textFormHeader};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: ${({ type }) => (type !== 'login' ? ' 2.8rem' : '2.3rem')};
+  }
 `;
 
 export default Heading;
