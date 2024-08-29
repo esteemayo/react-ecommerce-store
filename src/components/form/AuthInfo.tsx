@@ -35,6 +35,7 @@ const Text = styled.p`
       display: inline-block;
       text-decoration: none;
       text-decoration-color: ${({ theme }) => theme.textInfo};
+      font-size: inherit;
       color: ${({ theme }) => theme.textInfo};
       outline-color: ${({ theme }) => theme.forgotOut};
       transition: all 0.3s ease;
