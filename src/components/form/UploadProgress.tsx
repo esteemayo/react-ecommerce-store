@@ -27,7 +27,11 @@ const Container = styled.span<ISpan>`
   text-transform: capitalize;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.text};
-  margin-top: ${({ type }) => !type && '2rem'};
+  margin: ${({ type }) => !type && '2rem 0'};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 export default UploadProgress;
