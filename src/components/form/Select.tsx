@@ -48,6 +48,10 @@ export const Label = styled.label<ILabel>`
   font-weight: 600;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.textLabel};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const StyledSelect = styled.select`
