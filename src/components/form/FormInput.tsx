@@ -68,6 +68,10 @@ const Input = styled.input`
     font-weight: 300;
     font-size: 1.5rem;
     color: ${({ theme }) => theme.textRevPlace};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2rem;
+    }
   }
 `;
 
