@@ -79,6 +79,10 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     gap: 3rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 5rem;
+  }
 `;
 
 export default Recommendations;

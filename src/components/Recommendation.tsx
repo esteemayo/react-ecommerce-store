@@ -60,6 +60,10 @@ const StyledImage = styled(CommonImage)`
     width: 30rem;
     height: auto;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 43.3rem;
+  }
 `;
 
 const Wrapper = styled.div`
