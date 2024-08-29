@@ -44,7 +44,7 @@ const RegisterPassword = ({
         onChange={onChangeCountry}
         error={errors.country}
       />
-      {true ? (
+      {percentage > 0 && percentage < 100 ? (
         <UploadProgress percentage={percentage} />
       ) : (
         <UploadContainer>
