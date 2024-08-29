@@ -48,16 +48,6 @@ const Image = styled(CommonImage)`
   height: 40rem;
   background-color: transparent;
   object-fit: contain;
-
-  @media only screen and (max-width: 25em) {
-    width: 40rem;
-    height: 40rem;
-  }
-
-  @media only screen and (max-width: 18.75em) {
-    width: 35rem;
-    height: 35rem;
-  }
 `;
 
 export default NotFound;
