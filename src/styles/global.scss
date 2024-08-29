@@ -186,6 +186,11 @@ body {
   border: solid var(--clr-white);
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+
+  @media only screen and (min-width: 112.5em) {
+    left: 1rem;
+    top: 0.55rem;
+  }
 }
 
 .formLabel {
