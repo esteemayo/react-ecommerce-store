@@ -72,6 +72,11 @@ const StyledImage = styled(CommonImage)`
     width: 2rem;
     height: 2rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;
 
 export default GoogleButton;
