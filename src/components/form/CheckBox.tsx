@@ -41,6 +41,10 @@ const Label = styled.label`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.textLabel};
   margin-left: 3.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 const CheckMark = styled.span``;
