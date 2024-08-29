@@ -179,7 +179,12 @@ const Text = styled.p`
   display: block;
   text-align: center;
   text-transform: lowercase;
+  font-size: 100%;
   color: ${({ theme }) => theme.text};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 export default Login;
