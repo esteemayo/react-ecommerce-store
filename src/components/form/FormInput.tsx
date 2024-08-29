@@ -56,6 +56,10 @@ const Input = styled.input`
   caret-color: ${({ theme }) => theme.inputCaret};
   transition: all 0.3s ease;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
+
   &:focus {
     background-color: transparent;
   }
