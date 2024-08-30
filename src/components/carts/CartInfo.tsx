@@ -155,6 +155,10 @@ const ColorContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 0.8rem;
+  }
 `;
 
 const Color = styled.span<IColor>`
