@@ -97,6 +97,10 @@ const Amount = styled.span`
   @media only screen and (max-width: 18.75em) {
     font-size: 1.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+  }
 `;
 
 export default CartCounter;
