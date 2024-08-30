@@ -26,7 +26,7 @@ const Button = styled.button`
   transition: all 0.3s ease;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 
   &:hover {
