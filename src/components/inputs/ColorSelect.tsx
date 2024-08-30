@@ -78,7 +78,7 @@ const Heading = styled.h2<IProps>`
   color: ${({ theme }) => theme.text};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ modal }) => (modal === 'true' ? '1.8rem' : '2rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '2rem' : '2.3rem')};
   }
 `;
 
