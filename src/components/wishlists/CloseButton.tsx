@@ -37,7 +37,7 @@ const Button = styled.button`
 
   svg {
     font-weight: inherit;
-    font-size: 2rem;
+    font-size: inherit;
     fill: currentColor;
   }
 `;
