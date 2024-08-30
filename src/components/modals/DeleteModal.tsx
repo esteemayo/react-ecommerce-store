@@ -147,6 +147,10 @@ const Box = styled.div<IMode>`
     width: 32rem;
     padding: 2.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 45rem;
+  }
 `;
 
 const CloseButton = styled.button`
