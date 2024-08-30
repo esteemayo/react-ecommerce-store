@@ -217,6 +217,7 @@ const ButtonContainer = styled.div`
   margin-top: 3rem;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1rem;
 `;
 
