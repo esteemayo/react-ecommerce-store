@@ -37,7 +37,7 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 112.5em) {
-    padding-top: 4rem;
+    padding-top: 3rem;
   }
 `;
 
