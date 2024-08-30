@@ -35,6 +35,11 @@ const Button = styled.button`
     right: 1rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    right: 2rem;
+    font-size: 2.5rem;
+  }
+
   svg {
     font-weight: inherit;
     font-size: inherit;
