@@ -43,6 +43,11 @@ const StyledTextArea = styled.textarea`
   caret-color: ${({ theme }) => theme.inputCaret};
   transition: all 0.3s ease;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
   &:focus {
     background-color: transparent;
   }
@@ -51,6 +56,10 @@ const StyledTextArea = styled.textarea`
     font-weight: 300;
     font-size: 1.5rem;
     color: ${({ theme }) => theme.textRevPlace};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.8rem;
+    }
   }
 `;
 
