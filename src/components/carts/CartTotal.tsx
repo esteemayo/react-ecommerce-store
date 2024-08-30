@@ -183,6 +183,10 @@ const Text = styled.h3`
   @media only screen and (max-width: 18.75em) {
     font-size: 2rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.5rem;
+  }
 `;
 
 const PriceTotal = styled.span`
