@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useCallback, useMemo } from 'react';
+import styled from 'styled-components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { useCallback, useMemo } from 'react';
 
 import { formatCurrency } from '../../utils/formatCurrency';
 import { useCartStore } from '../../hooks/useCartStore';
