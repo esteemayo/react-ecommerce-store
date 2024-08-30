@@ -77,9 +77,9 @@ const HeadingSub = styled.span`
   font-size: 1.7rem;
   background-color: ${({ theme }) => theme.bgCartHeader};
   color: inherit;
-  box-shadow: ${({ theme }) => theme.boxCartHeader};
-  -webkit-box-shadow: ${({ theme }) => theme.boxCartHeader};
-  -moz-box-shadow: ${({ theme }) => theme.boxCartHeader};
+  box-shadow: inset ${({ theme }) => theme.boxCartHeader};
+  -webkit-box-shadow: inset ${({ theme }) => theme.boxCartHeader};
+  -moz-box-shadow: inset ${({ theme }) => theme.boxCartHeader};
   border-radius: 50%;
 
   @media only screen and (max-width: 43.75em) {
