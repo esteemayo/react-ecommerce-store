@@ -115,6 +115,10 @@ const CartContainer = styled.div`
     padding-left: 1.3rem;
     padding-right: 1.3rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    max-width: 140rem;
+  }
 `;
 
 const Wrapper = styled.div<IProps>`
