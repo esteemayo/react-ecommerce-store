@@ -203,6 +203,10 @@ const Size = styled.span`
   @media only screen and (max-width: 43.75em) {
     font-size: 1.45rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 const RemoveButton = styled.button`
