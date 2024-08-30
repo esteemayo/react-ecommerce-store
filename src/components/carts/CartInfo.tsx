@@ -221,6 +221,10 @@ const RemoveButton = styled.button`
   outline-offset: 3px;
   margin-top: 1rem;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
 `;
 
 const setBackground = (mode: string, color: string | string[]) => {
