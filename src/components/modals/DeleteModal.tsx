@@ -198,7 +198,7 @@ const WarningMessage = styled.p`
   line-height: 1.2;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
@@ -216,6 +216,10 @@ const Button = styled.button`
   border: 1px solid #e3e3f3;
   border-radius: 0.5rem;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.85rem;
+  }
 `;
 
 const CancelButton = styled(Button)`
