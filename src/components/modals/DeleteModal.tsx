@@ -186,6 +186,10 @@ const Heading = styled.h1`
   color: ${({ theme }) => theme.text};
   line-height: 1;
   margin-bottom: 2rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.5rem;
+  }
 `;
 
 const WarningMessage = styled.p`
