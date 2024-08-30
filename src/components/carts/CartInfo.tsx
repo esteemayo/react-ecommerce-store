@@ -175,6 +175,7 @@ const Color = styled.span<IColor>`
 
   @media only screen and (min-width: 112.5em) {
     font-size: 1.8rem;
+    gap: 0.8rem;
   }
 
   &::before {
@@ -202,6 +203,10 @@ const SizeContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 0.8rem;
+  }
 `;
 
 const Size = styled.span`
