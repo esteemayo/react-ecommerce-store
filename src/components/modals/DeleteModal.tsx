@@ -21,6 +21,7 @@ const DeleteModal = ({
   onClose,
 }: DeleteModalProps) => {
   const mode = useDarkMode((state) => state.mode);
+
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = useCallback(() => {
