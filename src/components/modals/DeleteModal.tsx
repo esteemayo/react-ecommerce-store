@@ -196,6 +196,10 @@ const WarningMessage = styled.p`
   font-size: var(--default-font-size);
   color: ${({ theme }) => theme.textModal};
   line-height: 1.2;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
