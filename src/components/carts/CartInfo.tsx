@@ -102,11 +102,6 @@ const Title = styled.h2`
     font-size: 1.8rem;
   }
 
-  @media only screen and (max-width: 31.25em) {
-    word-wrap: break-word;
-    word-break: break-all;
-  }
-
   @media only screen and (max-width: 18.75em) {
     font-size: var(--default-font-size);
   }
