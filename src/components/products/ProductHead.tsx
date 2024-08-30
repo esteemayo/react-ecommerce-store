@@ -86,7 +86,7 @@ const Heading = styled.h1<IProps>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ modal }) => (modal === 'true' ? '2rem' : '2.6rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '2.3rem' : '2.6rem')};
   }
 `;
 
@@ -106,7 +106,7 @@ const Price = styled.p<IProps>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ modal }) => (modal === 'true' ? '1.7rem' : '1.8rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '1.8rem' : '1.8rem')};
   }
 `;
 
