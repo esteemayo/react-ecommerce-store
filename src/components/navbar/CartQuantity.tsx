@@ -32,6 +32,10 @@ const StyledLink = styled(Link)`
   svg {
     font-size: 2.3rem;
     color: currentColor;
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 3rem;
+    }
   }
 `;
 
@@ -49,6 +53,13 @@ const CartTotal = styled.span`
   top: -1rem;
   right: -1rem;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    right: -1.25rem;
+  }
 `;
 
 export default CartQuantity;
