@@ -26,6 +26,10 @@ const Container = styled.section`
   justify-content: space-between;
   background-color: ${({ theme }) => theme.bgWlHeader};
   padding: 2rem 2.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 2.5rem 3rem;
+  }
 `;
 
 const HeadingContainer = styled.div`
