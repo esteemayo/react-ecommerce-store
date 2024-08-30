@@ -58,6 +58,10 @@ const Container = styled.article`
   @media only screen and (max-width: 31.25em) {
     padding: 1rem 0;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 1.5rem 3rem;
+  }
 `;
 
 const Wrapper = styled.div`
