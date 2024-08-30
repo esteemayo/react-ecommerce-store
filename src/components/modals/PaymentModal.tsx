@@ -11,25 +11,17 @@ import { useForm } from '../../hooks/useForm';
 import Overlay from './Overlay';
 import OrderDetails from '../orders/OrderDetails';
 
-import { PaymentModalProps } from '../../types';
 import { createOrder } from '../../services/orderService';
+import { validatePayment } from '../../validations/payment';
 
-interface FormData {
-  name: string;
-  address: string;
-}
+import { PaymentData, PaymentErrors, PaymentModalProps } from '../../types';
 
-interface IErrors {
-  name?: string;
-  address?: string;
-}
-
-const initialState: FormData = {
+const initialState: PaymentData = {
   name: '',
   address: '',
 };
 
-const initialError: IErrors = {
+const initialError: PaymentErrors = {
   name: '',
   address: '',
 };
@@ -71,21 +63,6 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
     [closeHandler]
   );
 
-  const validateForm = (data: FormData) => {
-    const errors: IErrors = {};
-    const { address, name } = data;
-
-    if (name.trim() === '') {
-      errors.name = 'Please enter your name';
-    }
-
-    if (address.trim() === '') {
-      errors.address = 'Please enter your address';
-    }
-
-    return errors;
-  };
-
   const onSubmitHandler = async () => {
     setIsLoading(true);
 
@@ -125,7 +102,7 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
     onSubmitHandler,
     initialState,
     initialError,
-    validateForm,
+    validatePayment,
     onExit
   );
 
