@@ -101,6 +101,11 @@ const Button = styled(CommonButton)`
     padding: 0.8rem 1rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+    padding: 1.5rem 2rem;
+  }
+
   &:disabled {
     opacity: 0.85;
   }
