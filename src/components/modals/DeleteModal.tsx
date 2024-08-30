@@ -175,6 +175,7 @@ const CloseButton = styled.button`
   }
 
   @media only screen and (min-width: 112.5em) {
+    right: 1rem;
     width: 3.5rem;
     height: 3.5rem;
   }
