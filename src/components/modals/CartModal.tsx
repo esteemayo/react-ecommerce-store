@@ -256,6 +256,11 @@ const CloseButton = styled.button`
   outline-color: #f1e4f4;
   cursor: pointer;
 
+  @media only screen and (min-width: 112.5em) {
+    width: 4rem;
+    height: 4rem;
+  }
+
   svg {
     font-size: 1.8rem;
     fill: currentColor;
