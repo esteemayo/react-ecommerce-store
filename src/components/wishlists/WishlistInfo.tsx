@@ -91,11 +91,15 @@ const Overview = styled.div``;
 
 const ProductName = styled.h2`
   display: inline-block;
+  text-rendering: optimizeLegibility;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-weight: 500;
   font-size: 2rem;
   color: ${({ theme }) => theme.textWlCardName};
   margin-bottom: 0.5rem;
   line-height: 1;
+  overflow: hidden;
 
   @media only screen and (max-width: 18.75em) {
     font-size: var(--default-font-size);
