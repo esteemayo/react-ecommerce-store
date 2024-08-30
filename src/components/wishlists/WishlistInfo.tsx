@@ -100,10 +100,15 @@ const ProductName = styled.h2`
   @media only screen and (max-width: 18.75em) {
     font-size: var(--default-font-size);
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  font-size: 100%;
   color: currentColor;
   transition: all 0.3s ease;
   outline-color: ${({ theme }) => theme.textWlCloseBtnOut};
