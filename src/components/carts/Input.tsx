@@ -50,6 +50,11 @@ const StyledInput = styled.input`
     padding-bottom: 1.4rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
   &::placeholder {
     font-weight: 300;
     font-size: 1.5rem;
