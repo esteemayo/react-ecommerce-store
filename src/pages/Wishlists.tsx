@@ -131,6 +131,10 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 50em) {
     max-width: 70rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    max-width: 100rem;
+  }
 `;
 
 export default WishLists;
