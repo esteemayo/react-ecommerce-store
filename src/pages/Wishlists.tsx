@@ -16,10 +16,11 @@ import { WishlistValues } from '../types';
 
 const WishLists = () => {
   const cartModal = useCartModal();
-  const wishlists = useCartStore((state) => state.wishlists);
   const wishlistModal = useWishlistModal();
-  const removeWishlist = useCartStore((state) => state.removeWishlist);
+
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+  const wishlists = useCartStore((state) => state.wishlists);
+  const removeWishlist = useCartStore((state) => state.removeWishlist);
 
   const [products, setProducts] = useState<WishlistValues[]>([]);
   const [isSelectedId, setIsSelectedId] = useState<string | undefined>();
