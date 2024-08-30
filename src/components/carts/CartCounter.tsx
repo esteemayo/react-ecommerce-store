@@ -66,6 +66,11 @@ const Button = styled.button`
     font-size: 1.3rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    width: 3rem;
+    height: 3rem;
+  }
+
   &:disabled {
     background-color: ${({ theme }) => theme.bgCartQty};
     color: ${({ theme }) => theme.cartBtnDis};
