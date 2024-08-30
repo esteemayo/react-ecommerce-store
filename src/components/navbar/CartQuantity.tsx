@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 import { CartQuantityProps } from '../../types';
 
