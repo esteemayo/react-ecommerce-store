@@ -1448,3 +1448,13 @@ export interface RegisterPasswordProps {
   onChangeCountry(event: React.ChangeEvent<HTMLSelectElement>): void;
   onChangeFile(e: React.ChangeEvent<HTMLInputElement>): void;
 }
+
+export interface PaymentData {
+  name: string;
+  address: string;
+}
+
+export interface PaymentErrors {
+  name?: string;
+  address?: string;
+}
