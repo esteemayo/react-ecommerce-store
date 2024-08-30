@@ -65,6 +65,11 @@ const ImageContainer = styled.div`
     width: 6.5rem;
     height: 6.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 10rem;
+    height: 10rem;
+  }
 `;
 
 const StyledImage = styled(CommonImage)`
@@ -74,6 +79,11 @@ const StyledImage = styled(CommonImage)`
   @media only screen and (max-width: 18.75em) {
     width: 6.5rem;
     height: 6.5rem;
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 10rem;
+    height: 10rem;
   }
 `;
 
