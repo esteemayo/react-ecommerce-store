@@ -108,6 +108,7 @@ const Title = styled.h2`
 
   @media only screen and (min-width: 112.5em) {
     font-size: 2.3rem;
+    margin-bottom: 0.8rem;
   }
 `;
 
@@ -115,6 +116,10 @@ const PriceContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 0.8rem;
+  }
 `;
 
 const Label = styled.p`
