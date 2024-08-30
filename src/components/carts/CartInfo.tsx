@@ -164,6 +164,10 @@ const Color = styled.span<IColor>`
     font-size: 1.45rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
+
   &::before {
     content: '';
     display: block;
@@ -176,6 +180,11 @@ const Color = styled.span<IColor>`
     @media only screen and (max-width: 43.75em) {
       width: 1.4rem;
       height: 1.4rem;
+    }
+
+    @media only screen and (min-width: 112.5em) {
+      width: 2.25rem;
+      height: 2.25rem;
     }
   }
 `;
