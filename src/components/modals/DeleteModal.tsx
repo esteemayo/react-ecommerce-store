@@ -173,6 +173,11 @@ const CloseButton = styled.button`
     right: 1rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
   svg {
     font-size: 1.8rem;
     fill: currentColor;
