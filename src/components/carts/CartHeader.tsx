@@ -35,6 +35,10 @@ const Container = styled.div`
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    padding-top: 4rem;
+  }
 `;
 
 const Heading = styled.h1`
