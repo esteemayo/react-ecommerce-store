@@ -141,7 +141,7 @@ const TotalPrice = styled.p<IProps>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ modal }) => (modal === 'true' ? '1.7rem' : '1.8rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '1.8rem' : '2rem')};
   }
 `;
 
@@ -189,7 +189,7 @@ const ReviewQuantity = styled.span`
   color: ${({ theme }) => theme.textReviewCount};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   a {
