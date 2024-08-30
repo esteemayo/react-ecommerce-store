@@ -149,17 +149,18 @@ const Box = styled.div<IMode>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 45rem;
+    width: 50rem;
   }
 `;
 
 const CloseButton = styled.button`
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
   width: 3rem;
   height: 3rem;
   background-color: transparent;
