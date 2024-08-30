@@ -70,6 +70,11 @@ const ImageContainer = styled.div`
   height: 8rem;
   background-color: #ede9e6;
   border-radius: 3px;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 10rem;
+    height: 10rem;
+  }
 `;
 
 const StyledImage = styled(CommonImage)`
