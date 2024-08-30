@@ -198,6 +198,10 @@ const PriceTotal = styled.span`
   @media only screen and (max-width: 43.75em) {
     font-size: 1.67rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
