@@ -104,6 +104,7 @@ const Button = styled(CommonButton)`
   @media only screen and (min-width: 112.5em) {
     font-size: 1.8rem;
     padding: 1.5rem 2rem;
+    gap: 0.8rem;
   }
 
   &:disabled {
@@ -117,6 +118,10 @@ const Button = styled(CommonButton)`
   svg {
     @media only screen and (max-width: 18.75em) {
       font-size: 1.3rem;
+    }
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.5rem;
     }
   }
 `;
