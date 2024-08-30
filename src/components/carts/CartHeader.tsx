@@ -83,6 +83,12 @@ const HeadingSub = styled.span`
     height: 2.5rem;
     font-size: 1.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+  }
 `;
 
 const ClearButton = styled.button`
