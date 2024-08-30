@@ -69,6 +69,7 @@ const Button = styled.button`
   @media only screen and (min-width: 112.5em) {
     width: 3rem;
     height: 3rem;
+    font-size: 1.7rem;
   }
 
   &:disabled {
