@@ -82,6 +82,10 @@ const Wrapper = styled.div`
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 4rem;
+  }
 `;
 
 export default WishlistCard;
