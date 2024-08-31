@@ -69,7 +69,7 @@ const Heading = styled.h3<IProps>`
   margin-bottom: ${({ modal }) => (modal === 'true' ? '0.5rem' : '1rem')};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ modal }) => (modal === 'true' ? '1.7rem' : '1.95rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '2rem' : '2.25rem')};
   }
 `;
 
@@ -108,9 +108,9 @@ const Button = styled.button<IProps>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.6rem')};
-    min-width: ${({ modal }) => (modal === 'true' ? '2.75rem' : '3.25rem')};
-    height: ${({ modal }) => (modal === 'true' ? '2.75rem' : '3.25rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '1.6rem' : '1.8rem')};
+    min-width: ${({ modal }) => (modal === 'true' ? '3rem' : '4rem')};
+    height: ${({ modal }) => (modal === 'true' ? '3rem' : '4rem')};
   }
 
   &:disabled {
@@ -124,7 +124,7 @@ const Button = styled.button<IProps>`
     fill: currentColor;
 
     @media only screen and (max-width: 37.5em) {
-      font-size: ${({ modal }) => modal !== 'true' && '1.4rem'};
+      font-size: ${({ modal }) => (modal === 'true' ? '1.6rem' : '1.8rem')};
     }
   }
 `;
@@ -146,9 +146,9 @@ const Amount = styled.span<IProps>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: ${({ modal }) => (modal === 'true' ? '2.75rem' : '3.25rem')};
-    height: ${({ modal }) => (modal === 'true' ? '2.75rem' : '3.25rem')};
-    font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.6rem')};
+    width: ${({ modal }) => (modal === 'true' ? '3rem' : '3.5rem')};
+    height: ${({ modal }) => (modal === 'true' ? '3rem' : '3.5rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '1.5rem' : '1.7rem')};
   }
 `;
 
