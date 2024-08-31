@@ -12,7 +12,7 @@ export const UploadContainer = styled.div`
     color: ${({ theme }) => theme.textLabel};
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
   }
 
@@ -31,7 +31,7 @@ export const UploadContainer = styled.div`
     transition: all 0.3s ease;
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2rem;
+      font-size: 2.3rem;
       padding: 2rem 1.5rem;
     }
 
@@ -45,7 +45,7 @@ export const UploadContainer = styled.div`
       color: ${({ theme }) => theme.textRevPlace};
 
       @media only screen and (min-width: 112.5em) {
-        font-size: 2rem;
+        font-size: 2.3rem;
       }
     }
   }

@@ -27,6 +27,10 @@ const Label = styled.label`
   font-weight: 600;
   font-size: var(--default-font-size);
   color: ${({ theme }) => theme.textLabel};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const Input = styled.input.attrs({
