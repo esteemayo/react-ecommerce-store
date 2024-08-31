@@ -23,7 +23,7 @@ const Header = styled.h4<IHeader>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ small }) => (small === 'true' ? '1.6rem' : '2.2rem')};
+    font-size: ${({ small }) => (small === 'true' ? '1.8rem' : '2.3rem')};
   }
 `;
 
