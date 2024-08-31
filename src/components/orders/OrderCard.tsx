@@ -6,24 +6,14 @@ import { Link } from 'react-router-dom';
 import { excerpts } from '../../utils';
 import { formatCurrency } from '../../utils/formatCurrency';
 
-import { DateOptions, OrderCardProps } from '../../types';
+import { OrderCardProps } from '../../types';
+import { formatDate } from '../../utils/formatDate';
 
 interface IContainer {
   status: number;
 }
 
 const OrderCard = ({ _id: id, total, status, createdAt }: OrderCardProps) => {
-  const dateLabel = useMemo(() => {
-    const options: DateOptions = {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-    };
-
-    const date = new Date(createdAt).toLocaleDateString('en-us', options);
-    return date;
-  }, [createdAt]);
-
   const url = useMemo(() => {
     return `/orders/${encodeURIComponent(id)}`;
   }, [id]);
@@ -34,7 +24,9 @@ const OrderCard = ({ _id: id, total, status, createdAt }: OrderCardProps) => {
         <OrderDateIconContainer>
           <OrderDateWrapper>
             <OrderId>Order id: {excerpts(id, 15)}</OrderId>
-            <OrderDate dateTime={createdAt}>Placed on {dateLabel}</OrderDate>
+            <OrderDate dateTime={createdAt}>
+              Placed on {formatDate(createdAt)}
+            </OrderDate>
           </OrderDateWrapper>
           <OrderIconWrapper>
             <MoreVertIcon />
