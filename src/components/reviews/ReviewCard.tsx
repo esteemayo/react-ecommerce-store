@@ -133,7 +133,7 @@ const ReviewContainer = styled.div`
     }
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin-right: 0.5rem;
     }
   }
@@ -169,7 +169,7 @@ const Name = styled.h3`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 `;
 
@@ -194,7 +194,7 @@ const Review = styled.p`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 `;
 
@@ -213,7 +213,7 @@ const Button = styled.button`
   cursor: pointer;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 

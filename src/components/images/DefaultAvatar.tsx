@@ -38,9 +38,9 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 6rem;
-    height: 6rem;
-    font-size: 2.7rem;
+    width: 8rem;
+    height: 8rem;
+    font-size: 3rem;
   }
 `;
 

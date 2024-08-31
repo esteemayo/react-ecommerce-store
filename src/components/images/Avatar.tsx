@@ -39,8 +39,8 @@ const Image = styled(CommonImage)`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 8rem;
   }
 `;
 
