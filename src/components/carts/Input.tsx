@@ -32,7 +32,7 @@ export const Label = styled.label`
   color: ${({ theme }) => theme.textLabel};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
@@ -55,7 +55,7 @@ const StyledInput = styled.input`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 2rem;
+    font-size: 2.3rem;
     padding: 2rem 1.5rem;
   }
 
@@ -65,7 +65,7 @@ const StyledInput = styled.input`
     color: ${({ theme }) => theme.textRevPlace};
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2rem;
+      font-size: 2.3rem;
     }
   }
 `;
