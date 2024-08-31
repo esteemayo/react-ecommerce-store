@@ -39,7 +39,7 @@ const Label = styled.label<ILabel>`
 
   @media only screen and (min-width: 112.5em) {
     width: ${({ small }) => (small === 'true' ? '10rem' : '16rem')};
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
@@ -58,7 +58,7 @@ const Input = styled.input`
   transition: all 0.3s ease;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 2rem;
+    font-size: 2.3rem;
     padding: 2rem 1.5rem;
   }
 
@@ -72,7 +72,7 @@ const Input = styled.input`
     color: ${({ theme }) => theme.textRevPlace};
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2rem;
+      font-size: 2.3rem;
     }
   }
 `;

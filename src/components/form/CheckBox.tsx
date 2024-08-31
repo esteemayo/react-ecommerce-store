@@ -44,7 +44,7 @@ const Label = styled.label`
 
   @media only screen and (min-width: 112.5em) {
     width: 13rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
