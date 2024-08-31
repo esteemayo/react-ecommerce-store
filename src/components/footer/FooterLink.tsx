@@ -58,7 +58,7 @@ const LinkItem = styled.li`
       outline-color: var(--clr-primary-green);
 
       @media only screen and (min-width: 112.5em) {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
     }
 
