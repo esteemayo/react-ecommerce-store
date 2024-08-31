@@ -64,7 +64,7 @@ const Header = styled.h1`
   color: ${({ theme }) => theme.text};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 2rem;
+    font-size: 2.35rem;
   }
 `;
 
@@ -87,7 +87,7 @@ const RatingContainer = styled.div`
     }
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 3.8rem;
+      font-size: 4rem;
       margin-right: 0.8rem;
     }
   }
@@ -100,7 +100,7 @@ const Text = styled.span`
   margin-bottom: 1.5rem;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -111,7 +111,7 @@ const Label = styled.label`
   color: ${({ theme }) => theme.text};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: var(--default-font-size);
+    font-size: 1.8rem;
   }
 `;
 
@@ -133,8 +133,8 @@ const TextArea = styled.textarea`
   caret-color: ${({ theme }) => theme.inputCaret};
 
   @media only screen and (min-width: 112.5em) {
-    height: 12rem;
-    font-size: 1.8rem;
+    height: 14rem;
+    font-size: 2rem;
   }
 
   &::placeholder {
@@ -142,7 +142,7 @@ const TextArea = styled.textarea`
     color: ${({ theme }) => theme.textRevPlace};
 
     @media only screen and (min-width: 112.5em) {
-      font-size: var(--default-font-size);
+      font-size: 1.8rem;
     }
   }
 `;
@@ -172,8 +172,8 @@ const Input = styled.input.attrs({
   outline-color: ${({ theme }) => theme.revOut};
 
   @media only screen and (min-width: 112.5em) {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
   }
 `;
 
@@ -184,7 +184,7 @@ const Information = styled.p`
   line-height: 1.2;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: var(--default-font-size);
+    font-size: 1.8rem;
   }
 `;
 
@@ -222,8 +222,8 @@ const Button = styled.button`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
-    padding: 2rem 1.2rem;
+    font-size: 2rem;
+    padding: 2rem 1.5rem;
   }
 
   &:hover {

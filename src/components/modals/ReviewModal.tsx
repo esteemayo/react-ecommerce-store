@@ -218,7 +218,7 @@ const Box = styled.div`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 50rem;
+    width: 55rem;
     padding: 4rem;
   }
 `;
@@ -255,7 +255,7 @@ const CloseButton = styled.button`
     top: -2rem;
     width: 5rem;
     height: 5rem;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   &:hover {
