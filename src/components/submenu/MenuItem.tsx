@@ -23,7 +23,7 @@ const ListItem = styled.li`
   margin-bottom: 1rem;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.7rem;
+    font-size: 1.85rem;
   }
 
   & > * {
