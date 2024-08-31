@@ -90,7 +90,7 @@ const Title = styled.span`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
@@ -101,7 +101,7 @@ const Price = styled.span`
   line-height: 1.3em;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.5rem;
+    font-size: var(--default-font-size);
   }
 `;
 
