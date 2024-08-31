@@ -3,11 +3,11 @@ import { useMemo } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
 
+import { formatDate } from '../../utils/formatDate';
 import { excerpts } from '../../utils';
 import { formatCurrency } from '../../utils/formatCurrency';
 
 import { OrderCardProps } from '../../types';
-import { formatDate } from '../../utils/formatDate';
 
 interface IContainer {
   status: number;
