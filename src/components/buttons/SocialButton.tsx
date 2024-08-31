@@ -28,7 +28,7 @@ export const SocialButton = styled.button`
 
   @media only screen and (min-width: 112.5em) {
     padding: 2rem 4rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   &:hover {
