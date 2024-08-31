@@ -39,7 +39,7 @@ const Wrapper = styled.div`
     line-height: 1.2;
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 1.45rem;
+      font-size: 1.65rem;
     }
   }
 `;
