@@ -49,12 +49,17 @@ const Input = styled.input`
   color: ${({ theme }) => theme.textInput};
   caret-color: var(--caret-light);
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+  }
+
   &::placeholder {
     font-size: 1.4rem;
     color: ${({ theme }) => theme.textSearchInput};
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
     }
   }
 `;
