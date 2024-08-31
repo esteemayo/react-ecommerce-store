@@ -147,6 +147,10 @@ const Reviewer = styled.div`
   @media only screen and (max-width: 31.25em) {
     gap: 0.7rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 2rem;
+  }
 `;
 
 const Name = styled.h3`
