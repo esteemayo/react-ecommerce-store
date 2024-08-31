@@ -34,7 +34,7 @@ const Container = styled.div`
     color: currentColor;
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2.3rem;
+      font-size: 2.5rem;
     }
   }
 `;
@@ -43,7 +43,7 @@ const Span = styled.span`
   font-size: 100%;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 

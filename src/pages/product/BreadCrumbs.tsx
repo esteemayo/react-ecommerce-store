@@ -40,7 +40,7 @@ const StyledLink = styled(Link)`
   line-height: 1.2;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   &:hover,
