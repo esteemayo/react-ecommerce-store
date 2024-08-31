@@ -76,7 +76,7 @@ const Container = styled.div`
     }
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 3.2rem;
+      font-size: 3.5rem;
     }
   }
 `;
@@ -129,7 +129,7 @@ const TotalReviews = styled.span`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 `;
 

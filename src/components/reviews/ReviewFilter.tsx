@@ -62,7 +62,7 @@ const Wrapper = styled.div<IWrapper>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 22rem;
+    width: 25rem;
   }
 `;
 
@@ -80,7 +80,7 @@ const Filter = styled.span`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 `;
 
@@ -99,7 +99,7 @@ const FilterText = styled.span`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 `;
 
@@ -114,7 +114,7 @@ const FilterIcon = styled.span`
     fill: ${({ theme }) => theme.star};
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2.7rem;
+      font-size: 3rem;
     }
   }
 `;
@@ -155,8 +155,8 @@ const FilterList = styled.li`
   transition: all 0.3s ease;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.6rem;
-    padding: 0.9rem 1rem 1rem 1.4rem;
+    font-size: 1.8rem;
+    padding: 1rem 1.2rem 1.2rem 1.6rem;
   }
 
   &:hover {
