@@ -71,9 +71,9 @@ const Button = styled.button<IBtn>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ small }) => (small === 'true' ? '1.7rem' : '2rem')};
+    font-size: ${({ small }) => (small === 'true' ? '1.8rem' : '2.3rem')};
     padding: ${({ small }) =>
-      small === 'true' ? '1.5rem 1.2rem' : '2.2rem 1.2rem'};
+      small === 'true' ? '1.8rem 1.5rem' : '2.5rem 1.5rem'};
   }
 
   &:hover {
