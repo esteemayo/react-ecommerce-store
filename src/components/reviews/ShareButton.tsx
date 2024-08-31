@@ -15,6 +15,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
   width: 8rem;
   padding: 0.7rem 1rem;
   font-size: 1.4rem;
@@ -36,9 +37,10 @@ const Button = styled.button`
   }
 
   @media only screen and (min-width: 112.5em) {
+    gap: 1rem;
     width: 10rem;
-    padding: 0.9rem 1.2rem;
-    font-size: 1.6rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.8rem;
   }
 
   svg {
