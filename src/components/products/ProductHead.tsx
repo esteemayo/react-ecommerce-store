@@ -86,7 +86,7 @@ const Heading = styled.h1<IProps>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ modal }) => (modal === 'true' ? '2.3rem' : '2.8rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '2.3rem' : '3rem')};
   }
 `;
 
@@ -151,7 +151,7 @@ const Message = styled.p`
   margin-top: 1rem;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 `;
 
@@ -178,7 +178,7 @@ const Rating = styled.div`
     color: ${({ theme }) => theme.star};
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
   }
 `;
@@ -189,7 +189,7 @@ const ReviewQuantity = styled.span`
   color: ${({ theme }) => theme.textReviewCount};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   a {
