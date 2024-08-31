@@ -120,8 +120,8 @@ const Color = styled.button<IProps>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 `;
 
