@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
+import CardButton from './CardButton';
 import CardPrice from './CardPrice';
 import CardHeading from './CardHeading';
-import CardButton from './CardButton';
-import CardButtons from './CardButtons';
 import CardReview from './CardReview';
+import CardButtons from './CardButtons';
 
 import { CardInfoProps } from '../../types';
 
