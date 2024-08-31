@@ -37,7 +37,7 @@ const Button = styled.button`
 
   @media only screen and (min-width: 112.5em) {
     right: 2rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   svg {

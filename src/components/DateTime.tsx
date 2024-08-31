@@ -45,7 +45,7 @@ const Time = styled.time<ITime>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ type }) => (type === 'review' ? '1.8rem' : '1.7rem')};
+    font-size: ${({ type }) => (type === 'review' ? '1.8rem' : '2rem')};
   }
 `;
 

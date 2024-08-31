@@ -136,7 +136,7 @@ const Description = styled.p`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 

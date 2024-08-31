@@ -121,7 +121,7 @@ const Button = styled(CommonButton)`
     }
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
   }
 `;
