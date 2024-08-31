@@ -74,6 +74,14 @@ const Button = styled(CommonButton)`
   &:disabled:hover {
     background-position: 0%;
   }
+
+  svg {
+    font-size: inherit;
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.25rem;
+    }
+  }
 `;
 
 export default CardButton;
