@@ -25,7 +25,7 @@ export const StyledSelect = styled.select<ISelect>`
   @media only screen and (min-width: 112.5em) {
     width: 29.75rem;
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   option {
