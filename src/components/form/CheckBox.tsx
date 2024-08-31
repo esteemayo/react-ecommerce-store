@@ -43,7 +43,7 @@ const Label = styled.label`
   margin-left: 3.5rem;
 
   @media only screen and (min-width: 112.5em) {
-    width: 13rem;
+    width: 15rem;
     font-size: 2rem;
   }
 `;
