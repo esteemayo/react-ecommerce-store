@@ -38,8 +38,8 @@ export const Button = styled.button`
   }
 
   @media only screen and (min-width: 112.5em) {
-    padding: 2.2rem 1.2rem;
-    font-size: 2rem;
+    padding: 2.5rem 1.5rem;
+    font-size: 2.3rem;
   }
 
   &:hover {
@@ -52,7 +52,7 @@ export const Button = styled.button`
     fill: currentColor;
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 `;

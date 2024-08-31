@@ -31,7 +31,7 @@ const Message = styled.span<IMessage>`
   text-align: ${({ center }) => setProperty(center)};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 `;
 
