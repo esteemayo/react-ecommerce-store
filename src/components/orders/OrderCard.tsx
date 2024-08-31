@@ -124,6 +124,10 @@ const OrderDate = styled.time`
   @media only screen and (max-width: 37.5em) {
     font-size: 1.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.85rem;
+  }
 `;
 
 const OrderTotal = styled.p`
@@ -138,6 +142,10 @@ const OrderTotal = styled.p`
 
   @media only screen and (max-width: 37.5em) {
     font-size: 2.43rem;
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 3rem;
   }
 `;
 
