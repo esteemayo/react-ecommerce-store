@@ -50,7 +50,7 @@ export const Label = styled.label<ILabel>`
   color: ${({ theme }) => theme.textLabel};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
@@ -68,7 +68,7 @@ export const StyledSelect = styled.select`
   caret-color: ${({ theme }) => theme.inputCaret};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 2rem;
+    font-size: 2.3rem;
     padding: 2rem 1.5rem;
   }
 `;

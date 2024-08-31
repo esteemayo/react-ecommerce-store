@@ -38,7 +38,7 @@ const Label = styled.label<ILabel>`
   color: ${({ theme }) => theme.textLabel};
 
   @media only screen and (min-width: 112.5em) {
-    width: ${({ small }) => (small === 'true' ? '10rem' : '16rem')};
+    width: ${({ small }) => (small === 'true' ? '10rem' : '20rem')};
     font-size: 2rem;
   }
 `;
