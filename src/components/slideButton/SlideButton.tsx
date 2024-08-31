@@ -34,7 +34,7 @@ const Button = styled.button<IBtn>`
   cursor: pointer;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.5rem;
+    font-size: var(--default-font-size);
     padding: 0.5rem 1rem;
   }
 

@@ -65,7 +65,7 @@ const Text = styled.span`
 
   @media only screen and (min-width: 112.5em) {
     margin-top: 2rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
