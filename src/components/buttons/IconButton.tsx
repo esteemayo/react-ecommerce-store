@@ -25,7 +25,7 @@ export const IconButton = styled.button`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   &:hover {
@@ -40,7 +40,7 @@ export const IconButton = styled.button`
     }
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
   }
 `;

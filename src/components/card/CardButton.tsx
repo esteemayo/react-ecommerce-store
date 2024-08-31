@@ -38,14 +38,15 @@ const CardButton = ({ inCart, onClick }: CardButtonProps) => {
 };
 
 const Button = styled(CommonButton)`
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border: none;
   width: 100%;
+  text-transform: uppercase;
   padding: 1.5rem 1rem;
   font-size: 1.5rem;
-  text-transform: uppercase;
 
   @media only screen and (max-width: 64em) {
     padding: 1.3rem 1rem;
@@ -61,7 +62,8 @@ const Button = styled(CommonButton)`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.55rem;
+    padding: 2rem 1.5rem;
+    font-size: 1.8rem;
   }
 
   &:disabled {
