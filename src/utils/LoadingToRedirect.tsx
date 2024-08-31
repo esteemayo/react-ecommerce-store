@@ -33,6 +33,10 @@ const Container = styled.section`
 const Text = styled.span`
   font-size: 2rem;
   color: ${({ theme }) => theme.textNotFound};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 3rem;
+  }
 `;
 
 export default LoadingToRedirect;
