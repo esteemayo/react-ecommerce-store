@@ -179,6 +179,11 @@ const Button = styled.button`
     font-size: 1.5rem;
     padding: 1rem 2.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+    padding: 1.25rem 2.25rem;
+  }
 `;
 
 const setRadius = (status: number) => {
