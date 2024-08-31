@@ -38,7 +38,7 @@ const Price = styled.span`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 `;
 
@@ -52,7 +52,7 @@ const Discount = styled.span`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 `;
 
@@ -68,7 +68,8 @@ const InStock = styled.div`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    gap: 0.5rem;
   }
 
   &::before {
@@ -85,8 +86,8 @@ const InStock = styled.div`
     }
 
     @media only screen and (min-width: 112.5em) {
-      width: 1.2rem;
-      height: 1.2rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 `;
