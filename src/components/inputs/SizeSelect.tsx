@@ -79,7 +79,7 @@ const Heading = styled.h3<IProps>`
   color: ${({ theme }) => theme.text};
 
   @media only screen and (min-width: 112.5em) {
-    font-size: ${({ modal }) => (modal === 'true' ? '1.7rem' : '1.95rem')};
+    font-size: ${({ modal }) => (modal === 'true' ? '2rem' : '2.25rem')};
   }
 `;
 
@@ -122,10 +122,10 @@ const Size = styled.button<IProps>`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.6rem;
-    min-width: 4.25rem;
-    height: 3.25rem;
-    padding: 1.8rem 0.6rem;
+    font-size: 1.65rem;
+    min-width: 5rem;
+    height: 4rem;
+    padding: 2rem 1rem;
   }
 
   &:hover {
