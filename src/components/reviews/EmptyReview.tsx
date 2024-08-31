@@ -41,7 +41,7 @@ const Container = styled.div`
     }
 
     @media only screen and (min-width: 112.5em) {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin-right: 0.8rem;
     }
   }
@@ -56,7 +56,7 @@ const Message = styled.span`
   }
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
