@@ -51,6 +51,7 @@ const Container = styled.article<IContainer>`
   box-shadow: ${({ theme }) => theme.boxCat};
   -webkit-box-shadow: ${({ theme }) => theme.boxCat};
   -moz-box-shadow: ${({ theme }) => theme.boxCat};
+  overflow: hidden;
 
   @media only screen and (max-width: 43.75em) {
     width: 45%;
@@ -67,6 +68,12 @@ const Container = styled.article<IContainer>`
     height: 3px;
     margin: 0 auto;
     background-color: ${({ status }) => setBcg(status)};
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    @media only screen and (min-width: 112.5em) {
+      height: 0.5rem;
+    }
   }
 `;
 
