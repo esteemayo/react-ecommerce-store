@@ -58,6 +58,11 @@ const StyledImage = styled(CommonImage)`
   width: 10rem;
   height: 10rem;
   border-radius: 3.5rem;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 12rem;
+    height: 12rem;
+  }
 `;
 
 const Button = styled.button`
