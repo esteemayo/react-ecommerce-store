@@ -133,6 +133,10 @@ const OrderContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 3rem;
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 7rem;
+  }
 `;
 
 export default Orders;
