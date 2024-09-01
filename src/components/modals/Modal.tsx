@@ -145,6 +145,8 @@ const Button = styled.button`
   }
 
   @media only screen and (min-width: 112.5em) {
+    top: -1.5rem;
+    right: -1rem;
     font-size: 3rem;
   }
 
