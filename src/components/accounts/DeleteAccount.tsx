@@ -77,6 +77,10 @@ const Heading = styled.h4`
   font-weight: 600;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.text};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.4rem;
+  }
 `;
 
 const WarningText = styled.p`
