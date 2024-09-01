@@ -47,7 +47,7 @@ const Container = styled.article`
   }
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.span`
   svg {
     font-size: 1.75rem;
     color: inherit;
@@ -58,7 +58,7 @@ const IconWrapper = styled.div`
   }
 `;
 
-const History = styled.div``;
+const History = styled.span``;
 
 const StyledLink = styled(Link)`
   display: inline-block;
