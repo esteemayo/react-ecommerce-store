@@ -207,6 +207,11 @@ const SuccessWrapper = styled.div`
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 80rem;
+    padding: 5rem;
+  }
 `;
 
 const SuccessInfo = styled.div`
