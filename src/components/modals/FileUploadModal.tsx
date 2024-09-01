@@ -151,6 +151,10 @@ const FileUploadModal = () => {
     setShowModal(isOpen);
   }, [isOpen]);
 
+  if (!isOpen) {
+    return;
+  }
+
   return (
     <Overlay
       className='overlay'
