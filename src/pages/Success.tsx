@@ -218,6 +218,10 @@ const SuccessInfo = styled.div`
   max-width: 40rem;
   margin: 0 auto;
 
+  @media only screen and (min-width: 112.5em) {
+    max-width: 50rem;
+  }
+
   a {
     &:link,
     &:visited {
