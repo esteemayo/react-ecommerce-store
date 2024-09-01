@@ -28,6 +28,10 @@ const Th = styled.th`
   font-size: 1.7rem;
   color: ${({ theme }) => theme.text};
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+  }
+
   &:first-child {
     @media only screen and (max-width: 64em) {
       display: none;
