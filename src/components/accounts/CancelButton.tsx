@@ -23,6 +23,11 @@ const Button = styled.button`
   border-radius: 0.5rem;
   outline-color: #eee;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+    padding: 1.5rem;
+  }
 `;
 
 export default CancelButton;
