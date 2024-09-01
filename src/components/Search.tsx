@@ -102,6 +102,7 @@ const Input = styled.input`
 const Button = styled.button`
   flex: 1;
   border: 3px solid ${({ theme }) => theme.searchBorder};
+  border: 3px solid transparent;
   border-left: none;
   outline: none;
   font-weight: 500;
@@ -122,6 +123,11 @@ const Button = styled.button`
   border-bottom-right-radius: 3px;
   cursor: pointer;
   transition: all 0.3s;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.25rem;
+    padding: 1.3rem 0;
+  }
 
   &:hover {
     background-position: 100%;
