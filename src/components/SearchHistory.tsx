@@ -63,7 +63,12 @@ const History = styled.div``;
 const StyledLink = styled(Link)`
   display: inline-block;
   text-decoration: none;
+  font-size: 100%;
   color: currentColor;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+  }
 `;
 
 const Remove = styled.button`
