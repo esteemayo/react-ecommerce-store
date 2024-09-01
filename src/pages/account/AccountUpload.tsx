@@ -51,6 +51,10 @@ const Wrapper = styled.div`
   svg {
     font-size: 5rem;
     color: ${({ theme }) => theme.bgImgIcon};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 10rem;
+    }
   }
 `;
 
