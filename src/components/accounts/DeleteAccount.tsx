@@ -114,6 +114,10 @@ const Button = styled.button`
   padding: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
 `;
 
 const CancelButton = styled(Button)`
