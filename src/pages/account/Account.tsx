@@ -92,6 +92,10 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 80rem;
   margin: 0 auto;
+
+  @media only screen and (min-width: 112.5em) {
+    max-width: 100rem;
+  }
 `;
 
 export default Account;
