@@ -69,6 +69,10 @@ const FormGroup = styled.div`
     transform: translateY(-50%);
     color: ${({ theme }) => theme.searchBorder};
     cursor: text;
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2rem;
+    }
   }
 `;
 
