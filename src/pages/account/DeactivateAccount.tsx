@@ -73,6 +73,11 @@ const Button = styled.button`
     padding-right: 1.5rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: var(--default-font-size);
+    padding: 1rem 2.5rem;
+  }
+
   &:hover {
     background-color: rgba(222, 10, 10, 0.1);
   }
