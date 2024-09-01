@@ -33,6 +33,10 @@ const Header = styled.h2`
   @media only screen and (max-width: 43.75em) {
     font-size: 1.58rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.785rem;
+  }
 `;
 
 const Warning = styled.p`
