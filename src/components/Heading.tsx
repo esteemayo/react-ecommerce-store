@@ -37,6 +37,10 @@ const HeadingSecondary = styled.h2`
   color: ${({ theme }) => theme.textSmall};
   line-height: 1;
   margin-top: 0.8rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+  }
 `;
 
 const setProperty = (center?: string) => {
