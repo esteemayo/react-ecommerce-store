@@ -135,6 +135,10 @@ const OrderContainer = styled.div`
   @media only screen and (max-width: 37.5em) {
     flex-direction: column;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    gap: 5rem;
+  }
 `;
 
 const OrderWrapper = styled.div`
