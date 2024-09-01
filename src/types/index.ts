@@ -1460,6 +1460,6 @@ export interface PaymentErrors {
 }
 
 export interface EmptyStateProps {
-  src: string;
-  title: string;
+  src?: string;
+  title?: string;
 }
