@@ -88,6 +88,10 @@ const WarningText = styled.p`
   color: ${({ theme }) => theme.textSearchInput};
   line-height: 1.2;
   margin-top: 1rem;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
