@@ -290,7 +290,8 @@ export const lightTheme = {
   textWlCard: '#999999',
   textWlCloseBtn: '#d2d3d2',
   textWlCloseBtnOut: '#f1e4f4',
-  boxWlCard: '2px 0.4rem 1rem 1px rgba(201, 201, 201, 0.25)',
+  boxWlCard:
+    '0 0 0 1px rgba(67, 41, 163, 0.08), 0 1px 5px 0 rgba(67, 41, 163, 0.08)',
   cartSelected: 'var(--clr-tertiary-green)',
   cartBtnDis: '#999',
   textSize: 'inherit',
