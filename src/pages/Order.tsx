@@ -11,6 +11,7 @@ import Loader from '../components/Loader';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { getOrder } from '../services/orderService';
+import { CommonImage } from '../components/CommonImage';
 
 const Order = () => {
   const { pathname } = useLocation();
@@ -46,6 +47,19 @@ const Order = () => {
     );
   }
 
+  if (!order) {
+    return (
+      <Container onMouseOver={closeSubmenu}>
+        <Image
+          src='/svg/startled.svg'
+          width={300}
+          height={400}
+          alt='order not found'
+        />
+      </Container>
+    );
+  }
+
   return (
     <Container onMouseOver={closeSubmenu}>
       <Box>
@@ -67,6 +81,13 @@ const Container = styled.main`
   width: 100vw;
   min-height: 80vh;
   background-color: ${({ theme }) => theme.bg};
+`;
+
+const Image = styled(CommonImage)`
+  width: 30rem;
+  height: 40rem;
+  background-color: transparent;
+  object-fit: contain;
 `;
 
 const Box = styled.div`
