@@ -83,6 +83,9 @@ const Box = styled.div`
     padding-left: 2rem;
     padding-right: 2rem;
   }
+  @media only screen and (min-width: 112.5em) {
+    max-width: 140rem;
+  }
 `;
 
 const Wrapper = styled.div`
