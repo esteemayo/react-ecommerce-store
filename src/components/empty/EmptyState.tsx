@@ -16,10 +16,10 @@ const EmptyState = ({ src = '/img/404.png', title }: EmptyStateProps) => {
 
 const Container = styled.main`
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
 
   @media only screen and (max-width: 48em) {
-    height: 90vh;
+    height: 70vh;
   }
 `;
 
