@@ -52,6 +52,11 @@ const Image = styled.img`
   height: 30rem;
   display: inline-block;
   object-fit: contain;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 40rem;
+    height: 35rem;
+  }
 `;
 
 export default ErrorState;
