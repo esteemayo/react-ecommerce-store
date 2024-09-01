@@ -42,6 +42,10 @@ const Text = styled.p`
     font-size: 1.25rem;
     letter-spacing: 0.5px;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 export default Heading;
