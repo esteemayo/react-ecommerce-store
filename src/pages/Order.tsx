@@ -48,7 +48,7 @@ const Order = () => {
   }
 
   if (!order) {
-    return <EmptyState title='Order not found with the given ID.' />;
+    return <EmptyState title='No order found with the given ID!' />;
   }
 
   return (
