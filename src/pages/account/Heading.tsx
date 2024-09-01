@@ -26,6 +26,10 @@ const StyledHeading = styled.h1`
     font-size: 2rem;
     letter-spacing: 1px;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 3rem;
+  }
 `;
 
 const Text = styled.p`
