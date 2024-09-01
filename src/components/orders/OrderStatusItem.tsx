@@ -32,6 +32,11 @@ const Image = styled.img`
   height: 3rem;
   display: block;
   object-fit: cover;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 4rem;
+    height: 4rem;
+  }
 `;
 
 const Status = styled.span`
