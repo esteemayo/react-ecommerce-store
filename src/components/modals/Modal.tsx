@@ -97,6 +97,7 @@ const Wrapper = styled.div`
 
   @media only screen and (min-width: 112.5em) {
     width: 50rem;
+    padding: 2rem;
   }
 `;
 
@@ -143,8 +144,12 @@ const Button = styled.button`
     right: -1rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 3rem;
+  }
+
   svg {
-    font-size: 2.3rem;
+    font-size: inherit;
     fill: currentColor;
   }
 `;
