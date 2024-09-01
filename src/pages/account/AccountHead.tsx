@@ -138,6 +138,10 @@ const Button = styled.button`
   outline-offset: 3px;
   outline-color: ${({ theme }) => theme.btnRevOut};
   cursor: pointer;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: var(--default-font-size);
+  }
 `;
 
 export default AccountHead;
