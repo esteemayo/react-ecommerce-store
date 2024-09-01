@@ -1,8 +1,8 @@
+import { Link } from 'react-router-dom';
 import { useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { faClock, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 import { SearchHistoryProps } from '../types';
 
