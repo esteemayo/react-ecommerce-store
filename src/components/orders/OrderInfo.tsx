@@ -62,6 +62,8 @@ const Wrapper = styled.div`
 
   @media only screen and (min-width: 112.5em) {
     width: 100%;
+    padding: 3rem;
+    padding-top: 2rem;
   }
 `;
 
