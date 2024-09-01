@@ -88,6 +88,11 @@ const Image = styled(CommonImage)`
   height: 40rem;
   background-color: transparent;
   object-fit: contain;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 40rem;
+    height: 45rem;
+  }
 `;
 
 const Box = styled.div`
