@@ -21,6 +21,11 @@ const Label = styled.label`
   font-weight: 600;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.textLabel};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+    width: 17rem;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -41,10 +46,19 @@ const StyledInput = styled.input`
     padding-bottom: 1.2rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+    padding: 1.5rem 1.25rem;
+  }
+
   &::placeholder {
     font-weight: 300;
     font-size: 1.5rem;
     color: ${({ theme }) => theme.textRevPlace};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.3rem;
+    }
   }
 `;
 
