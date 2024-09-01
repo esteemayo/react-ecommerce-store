@@ -162,6 +162,10 @@ const DeleteButton = styled(Button)`
     padding-right: 0.5rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
+
   &:hover {
     background-position: 100%;
   }
