@@ -37,6 +37,11 @@ const StyledImage = styled(CommonImage)`
   width: 30rem;
   height: 30rem;
   background-color: transparent;
+
+  @media only screen and (min-width: 112.5em) {
+    width: 40rem;
+    height: 40rem;
+  }
 `;
 
 const Message = styled.span`
