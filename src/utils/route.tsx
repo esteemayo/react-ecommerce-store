@@ -2,13 +2,13 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import Forgot from '../pages/Forgot';
 import Home from '../pages/Home';
-import Products from '../pages/Products';
-import Cart from '../pages/Cart';
-import WishLists from '../pages/Wishlists';
-import Orders from '../pages/Orders';
 import Success from '../pages/Success';
+import Cart from '../pages/Cart';
+import Products from '../pages/Products';
 import Order from '../pages/Order';
 import NotFound from '../pages/NotFound';
+import Orders from '../pages/Orders';
+import WishLists from '../pages/Wishlists';
 import Search from '../pages/Search';
 
 import Register from '../pages/register/Register';
