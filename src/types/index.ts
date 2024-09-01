@@ -1458,3 +1458,8 @@ export interface PaymentErrors {
   name?: string;
   address?: string;
 }
+
+export interface EmptyStateProps {
+  src: string;
+  title: string;
+}
