@@ -43,6 +43,11 @@ const Wrapper = styled.div`
   justify-content: center;
   margin-bottom: 1rem;
 
+  @media only screen and (min-width: 112.5em) {
+    width: 12rem;
+    height: 12rem;
+  }
+
   svg {
     font-size: 5rem;
     color: ${({ theme }) => theme.bgImgIcon};
