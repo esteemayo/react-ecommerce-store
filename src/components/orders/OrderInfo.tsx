@@ -59,6 +59,10 @@ const Wrapper = styled.div`
     padding-left: 3rem;
     padding-container: 3rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    width: 100%;
+  }
 `;
 
 const Heading = styled.h2`
