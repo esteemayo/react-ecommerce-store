@@ -20,7 +20,7 @@ const Account = () => {
   const currentUser = useAuth((state) => state.user);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
-  const [avatar, setAvatar] = useState(currentUser.details?.image);
+  const [avatar, setAvatar] = useState(currentUser?.details?.image);
 
   useEffect(() => {
     setAvatar(currentUser.details?.image);
