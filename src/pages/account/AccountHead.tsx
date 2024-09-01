@@ -88,6 +88,7 @@ const Label = styled.label`
   color: ${({ theme }) => theme.textLabel};
 
   @media only screen and (min-width: 112.5em) {
+    width: 15rem;
     font-size: 2rem;
   }
 `;
@@ -105,10 +106,19 @@ const Input = styled.input`
   outline-color: ${({ theme }) => theme.inputOut};
   caret-color: ${({ theme }) => theme.inputCaret};
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+    padding: 1.3rem 1.5rem;
+  }
+
   &::-webkit-input-placeholder {
     font-weight: 300;
     font-size: 1.5rem;
     color: ${({ theme }) => theme.textRevPlace};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.3rem;
+    }
   }
 `;
 
