@@ -23,7 +23,7 @@ const Account = () => {
   const [avatar, setAvatar] = useState(currentUser?.details?.image);
 
   useEffect(() => {
-    setAvatar(currentUser.details?.image);
+    setAvatar(currentUser?.details?.image);
   }, [currentUser]);
 
   return (
