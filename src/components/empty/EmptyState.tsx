@@ -47,6 +47,7 @@ const StyledImage = styled(CommonImage)`
 const Message = styled.span`
   font-size: 2rem;
   color: ${({ theme }) => theme.textNotFound};
+  margin-top: -5rem;
 
   @media only screen and (min-width: 112.5em) {
     font-size: 2.5rem;
