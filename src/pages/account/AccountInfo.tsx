@@ -69,6 +69,10 @@ const Container = styled.div<IProps>`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 3rem;
+  }
 `;
 
 const Wrapper = styled.div`
