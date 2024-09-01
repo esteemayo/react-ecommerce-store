@@ -11,7 +11,7 @@ import Loader from '../components/Loader';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { getOrder } from '../services/orderService';
-import { CommonImage } from '../components/CommonImage';
+import EmptyState from '../components/empty/EmptyState';
 
 const Order = () => {
   const { pathname } = useLocation();
@@ -48,16 +48,7 @@ const Order = () => {
   }
 
   if (!order) {
-    return (
-      <Container onMouseOver={closeSubmenu}>
-        <Image
-          src='/svg/startled.svg'
-          width={300}
-          height={400}
-          alt='order not found'
-        />
-      </Container>
-    );
+    return <EmptyState title='Order not found with the given ID.' />;
   }
 
   return (
@@ -81,18 +72,6 @@ const Container = styled.main`
   width: 100vw;
   min-height: 80vh;
   background-color: ${({ theme }) => theme.bg};
-`;
-
-const Image = styled(CommonImage)`
-  width: 30rem;
-  height: 40rem;
-  background-color: transparent;
-  object-fit: contain;
-
-  @media only screen and (min-width: 112.5em) {
-    width: 40rem;
-    height: 45rem;
-  }
 `;
 
 const Box = styled.div`
