@@ -44,6 +44,10 @@ const Td = styled.td`
       display: none;
     }
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const OrderId = styled.span`
