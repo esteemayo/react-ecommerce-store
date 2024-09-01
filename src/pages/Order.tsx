@@ -8,10 +8,10 @@ import OrderInfo from '../components/orders/OrderInfo';
 import OrderStatus from '../components/orders/OrderStatus';
 
 import Loader from '../components/Loader';
+import EmptyState from '../components/empty/EmptyState';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { getOrder } from '../services/orderService';
-import EmptyState from '../components/empty/EmptyState';
 
 const Order = () => {
   const { pathname } = useLocation();
