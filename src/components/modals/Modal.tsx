@@ -116,6 +116,10 @@ const Heading = styled.h1`
   @media only screen and (max-width: 25em) {
     font-size: 1.85rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.5rem;
+  }
 `;
 
 const Button = styled.button`
