@@ -40,10 +40,15 @@ const Image = styled.img`
 `;
 
 const Status = styled.span`
+  font-size: 100%;
   color: ${({ theme }) => theme.text};
 
   @media only screen and (max-width: 37.5em) {
     font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.1rem;
   }
 `;
 
