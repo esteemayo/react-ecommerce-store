@@ -15,6 +15,7 @@ const CheckedIcon = () => {
 const Image = styled.img`
   width: 2rem;
   height: 2rem;
+  display: inline-block;
   object-fit: cover;
 
   @media only screen and (min-width: 112.5em) {
