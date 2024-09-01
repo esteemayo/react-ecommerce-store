@@ -46,6 +46,7 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 112.5em) {
     width: 15rem;
     height: 15rem;
+    margin-bottom: 2rem;
   }
 
   svg {
@@ -104,6 +105,11 @@ const Button = styled.button`
     font-size: 1.3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+    padding: 1.5rem 4rem;
   }
 
   &:hover {
