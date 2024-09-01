@@ -48,6 +48,10 @@ const Warning = styled.p`
   @media only screen and (max-width: 43.75em) {
     font-size: 1.5rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.7rem;
+  }
 `;
 
 const Button = styled.button`
