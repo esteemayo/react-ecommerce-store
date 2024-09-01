@@ -28,7 +28,7 @@ const Button = styled.button`
   cursor: pointer;
 
   @media only screen and (min-width: 112.5em) {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 
   svg {
