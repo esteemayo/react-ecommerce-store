@@ -65,6 +65,10 @@ const Heading = styled.h2`
   display: inline-block;
   text-transform: capitalize;
   font-weight: 500;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 3rem;
+  }
 `;
 
 const TotalContainer = styled.div`
