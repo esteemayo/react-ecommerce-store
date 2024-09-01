@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 import { CommonImage } from '../CommonImage';
+import { EmptyStateProps } from '../../types';
 
-const EmptyState = ({ src, title }) => {
+const EmptyState = ({ src, title }: EmptyStateProps) => {
   return (
     <Container>
       <StyledImage src={src} width={500} height={250} alt='empty' />
