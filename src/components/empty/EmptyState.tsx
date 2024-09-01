@@ -7,7 +7,7 @@ const EmptyState = ({ src = '/img/404.png', title }: EmptyStateProps) => {
   return (
     <Container>
       <Wrapper>
-        <StyledImage src={src} width={500} height={500} alt='404' />
+        <StyledImage src={src} width={300} height={300} alt='404' />
         {title && <Message>{title}</Message>}
       </Wrapper>
     </Container>
@@ -26,25 +26,17 @@ const Container = styled.main`
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
 const StyledImage = styled(CommonImage)`
-  width: 50rem;
-  height: 50rem;
+  width: 30rem;
+  height: 30rem;
   background-color: transparent;
-
-  @media only screen and (max-width: 25em) {
-    width: 40rem;
-    height: 40rem;
-  }
-
-  @media only screen and (max-width: 18.75em) {
-    width: 35rem;
-    height: 35rem;
-  }
 `;
 
 const Message = styled.span`
