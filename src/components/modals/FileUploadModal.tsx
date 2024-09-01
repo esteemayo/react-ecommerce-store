@@ -259,8 +259,14 @@ const CloseButton = styled.button`
   outline-color: ${({ theme }) => theme.payModalOut};
   cursor: pointer;
 
+  @media only screen and (min-width: 112.5em) {
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+  }
+
   svg {
-    font-size: 2.3rem;
+    font-size: inherit;
     fill: currentColor;
   }
 `;
