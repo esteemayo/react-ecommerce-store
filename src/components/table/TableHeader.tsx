@@ -24,7 +24,7 @@ const Thead = styled.thead``;
 const Tr = styled.tr``;
 
 const Th = styled.th`
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.7rem;
   color: ${({ theme }) => theme.text};
 
