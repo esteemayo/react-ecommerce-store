@@ -83,6 +83,10 @@ const Remove = styled.button`
   position: absolute;
   right: 0;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+  }
+
   svg {
     font-size: inherit;
     color: inherit;
