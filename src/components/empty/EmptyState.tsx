@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 import { CommonImage } from '../CommonImage';
+import { EmptyStateProps } from '../../types';
 
-const EmptyState = () => {
+const EmptyState = ({ src = '/img/404.png', title }: EmptyStateProps) => {
   return (
     <Container>
       <Wrapper>
-        <StyledImage src={'/img/404.png'} width={500} height={500} alt='404' />
+        <StyledImage src={src} width={500} height={500} alt='404' />
+        {title && <Message>{title}</Message>}
       </Wrapper>
     </Container>
   );
@@ -42,6 +44,15 @@ const StyledImage = styled(CommonImage)`
   @media only screen and (max-width: 18.75em) {
     width: 35rem;
     height: 35rem;
+  }
+`;
+
+const Message = styled.span`
+  font-size: 2rem;
+  color: ${({ theme }) => theme.textNotFound};
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.5rem;
   }
 `;
 
