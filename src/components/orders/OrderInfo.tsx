@@ -98,6 +98,10 @@ const TotalText = styled.b`
     font-size: 1.7rem;
     letter-spacing: 3px;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.1rem;
+  }
 `;
 
 const Price = styled.span``;
