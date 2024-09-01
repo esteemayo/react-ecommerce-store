@@ -14,8 +14,13 @@ const AccountEmail = ({ email }: AccountEmailProps) => {
 
 const Container = styled.p`
   text-align: center;
+  font-size: 100%;
   color: ${({ theme }) => theme.text};
   line-height: 1;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
 `;
 
 const EmailAddress = styled.span`
