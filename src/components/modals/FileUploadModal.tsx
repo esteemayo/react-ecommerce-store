@@ -332,6 +332,10 @@ const Input = styled.input`
       width: 100%;
     }
 
+    @media only screen and (min-width: 112.5em) {
+      border-bottom: 2px solid ${({ theme }) => theme.uploadFileInput};
+    }
+
     &:hover {
       background-color: ${({ theme }) => theme.uploadFileInput};
       color: ${({ theme }) => theme.textCat};
