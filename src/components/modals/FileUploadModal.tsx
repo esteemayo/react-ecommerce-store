@@ -68,6 +68,15 @@ const FileUploadModal = () => {
     [handleClose]
   );
 
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    },
+    [handleClose]
+  );
+
   const uploadFile = useCallback((file: File) => {
     const fileName = `${new Date().getTime()}-${file.name}`;
 
