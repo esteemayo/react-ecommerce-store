@@ -84,10 +84,18 @@ const Input = styled.input`
   color: ${({ theme }) => theme.textInput};
   caret-color: ${({ theme }) => theme.inputCaret};
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+  }
+
   &::-webkit-input-placeholder {
     font-size: 1.4rem;
     color: ${({ theme }) => theme.textRevPlace};
     letter-spacing: 1px;
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.2rem;
+    }
   }
 `;
 
