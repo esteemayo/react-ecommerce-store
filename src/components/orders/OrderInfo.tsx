@@ -104,7 +104,13 @@ const TotalText = styled.b`
   }
 `;
 
-const Price = styled.span``;
+const Price = styled.span`
+  font-size: 100%;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+  }
+`;
 
 const Button = styled.button`
   display: inline-block;
