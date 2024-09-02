@@ -308,6 +308,10 @@ const InfoText = styled.p`
   @media only screen and (max-width: 43.75em) {
     margin-bottom: 1rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.87rem;
+  }
 `;
 
 const IconContainer = styled.div`
