@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Pagination = () => {
+interface PaginationProps {
+  category: string;
+}
+
+const Pagination = ({ category }: PaginationProps) => {
   const pagesCount = 7;
   const pages = Array.from(new Array(pagesCount), (_, index) => index + 1);
 
@@ -12,7 +16,7 @@ const Pagination = () => {
           return (
             <StyledLink
               key={page}
-              to={`/products/category/shirts?page=${page}`}
+              to={`/products/category/${category}?page=${page}`}
             >
               <Button type='button'>{page}</Button>
             </StyledLink>
