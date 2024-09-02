@@ -27,7 +27,7 @@ const Container = styled.section`
 const Wrapper = styled.div`
   width: 100%;
   max-width: 120rem;
-  padding: 3rem 0;
+  padding-bottom: 7rem;
 
   display: flex;
   align-items: center;
