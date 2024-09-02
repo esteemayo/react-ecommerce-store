@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { PaginationProps } from '../types';
@@ -73,8 +73,7 @@ const Button = styled.button<IBtn>`
   width: 3.5rem;
   height: 3.5rem;
   padding: 0.5rem;
-  background-color: ${({ isActive, theme }) =>
-    isActive === 'true' ? theme.bgNav : 'transparent'};
+  background-color: ${({ isActive, theme }) => setBcg(isActive, theme)};
   color: ${({ theme }) => theme.textScroll};
   box-shadow: inset ${({ theme }) => theme.boxPage};
   -webkit-box-shadow: inset ${({ theme }) => theme.boxPage};
@@ -94,5 +93,9 @@ const Button = styled.button<IBtn>`
     cursor: default;
   }
 `;
+
+const setBcg = (isActive: string, theme: DefaultTheme) => {
+  return isActive === 'true' ? theme.bgNav : 'transparent';
+};
 
 export default Pagination;
