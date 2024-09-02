@@ -25,7 +25,11 @@ const Pagination = ({
               to={`/products/category/${category}?page=${page}`}
               onClick={() => onAction(page)}
             >
-              <Button type='button' isActive={String(currentPage === page)}>
+              <Button
+                type='button'
+                disabled={currentPage === page}
+                isActive={String(currentPage === page)}
+              >
                 {page}
               </Button>
             </StyledLink>
