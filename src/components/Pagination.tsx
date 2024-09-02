@@ -74,7 +74,8 @@ const Button = styled.button<IBtn>`
   height: 3.5rem;
   padding: 0.5rem;
   background-color: ${({ isActive, theme }) => setBcg(isActive, theme)};
-  color: ${({ theme }) => theme.textScroll};
+  color: ${({ isActive, theme }) =>
+    isActive === 'true' ? 'var(--clr-white)' : theme.textScroll};
   box-shadow: inset ${({ theme }) => theme.boxPage};
   -webkit-box-shadow: inset ${({ theme }) => theme.boxPage};
   -moz-box-shadow: inset ${({ theme }) => theme.boxPage};
