@@ -28,6 +28,10 @@ const ProductCategory = () => {
   const [filters, setFilters] = useState({});
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [limit, setLimit] = useState(6);
+  const [counts, setCounts] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
 
   const handleSort = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setSort(e.target.value);
@@ -48,8 +52,11 @@ const ProductCategory = () => {
       setIsLoading(true);
 
       try {
-        const { data } = await getProductCategory(category);
+        const { data } = await getProductCategory(category, currentPage, limit);
+
         setProducts(data.products);
+        setCurrentPage(data.page);
+        setTotalPages(data.numberOfPages);
       } catch (err: unknown) {
         console.log(err);
       } finally {
@@ -155,7 +162,7 @@ const ProductCategory = () => {
       ) : (
         <ProductList products={products} onUpdate={setProducts} />
       )}
-      <Pagination category={category} />
+      <Pagination category={category} totalPages={totalPages} />
     </ProductBox>
   );
 };
