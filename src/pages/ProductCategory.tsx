@@ -32,6 +32,7 @@ const ProductCategory = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [limit] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
+  const [counts, setCounts] = useState(6);
 
   const handleSort = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setSort(e.target.value);
@@ -53,9 +54,10 @@ const ProductCategory = () => {
 
       try {
         const { data } = await getProductCategory(category, currentPage, limit);
-
+        console.log(data);
         setProducts(data.products);
         setCurrentPage(data.page);
+        setCounts(data.counts);
         setTotalPages(data.numberOfPages);
       } catch (err: unknown) {
         console.log(err);
@@ -162,12 +164,14 @@ const ProductCategory = () => {
       ) : (
         <ProductList products={products} onUpdate={setProducts} />
       )}
-      <Pagination
-        category={category}
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onAction={setCurrentPage}
-      />
+      {counts > 6 && (
+        <Pagination
+          category={category}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onAction={setCurrentPage}
+        />
+      )}
     </ProductBox>
   );
 };
