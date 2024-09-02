@@ -251,6 +251,11 @@ const SuccessAlert = styled.p`
     font-size: 1.2rem;
     margin-bottom: 1.45rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
 `;
 
 const Text = styled.p`
