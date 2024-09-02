@@ -219,7 +219,7 @@ const SuccessInfo = styled.div`
   margin: 0 auto;
 
   @media only screen and (min-width: 112.5em) {
-    max-width: 50rem;
+    max-width: 53rem;
   }
 
   a {
