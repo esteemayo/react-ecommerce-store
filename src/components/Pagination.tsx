@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-interface PaginationProps {
-  category: string | undefined;
-  totalPages: number;
-  onAction: React.Dispatch<React.SetStateAction<number>>;
-}
+import { PaginationProps } from '../types';
 
 const Pagination = ({ category, totalPages, onAction }: PaginationProps) => {
   const pages = Array.from(new Array(totalPages), (_, index) => index + 1);
