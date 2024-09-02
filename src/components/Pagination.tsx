@@ -101,6 +101,10 @@ const Button = styled.button<IBtn>`
     font-weight: 600;
     font-size: var(--default-font-size);
     transform: scale(1.03);
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 2.1rem;
+    }
   }
 
   &:disabled {
