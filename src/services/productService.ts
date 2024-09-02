@@ -19,7 +19,7 @@ export const getFeaturedProducts = () =>
 export const getProductCategory = (
   category: string | undefined,
   page: number | undefined,
-  limit?: number
+  limit: number | undefined
 ) =>
   http.get(`${apiEndpoint}?category=${category}&page=${page}&limit=${limit}`);
 
