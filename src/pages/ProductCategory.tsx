@@ -162,7 +162,11 @@ const ProductCategory = () => {
       ) : (
         <ProductList products={products} onUpdate={setProducts} />
       )}
-      <Pagination category={category} totalPages={totalPages} />
+      <Pagination
+        category={category}
+        totalPages={totalPages}
+        onAction={setCurrentPage}
+      />
     </ProductBox>
   );
 };
