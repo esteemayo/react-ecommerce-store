@@ -3,7 +3,16 @@ import { Link } from 'react-router-dom';
 
 import { PaginationProps } from '../types';
 
-const Pagination = ({ category, totalPages, onAction }: PaginationProps) => {
+interface IBtn {
+  isActive: string;
+}
+
+const Pagination = ({
+  category,
+  currentPage,
+  totalPages,
+  onAction,
+}: PaginationProps) => {
   const pages = Array.from(new Array(totalPages), (_, index) => index + 1);
 
   return (
@@ -16,7 +25,9 @@ const Pagination = ({ category, totalPages, onAction }: PaginationProps) => {
               to={`/products/category/${category}?page=${page}`}
               onClick={() => onAction(page)}
             >
-              <Button type='button'>{page}</Button>
+              <Button type='button' isActive={String(currentPage === page)}>
+                {page}
+              </Button>
             </StyledLink>
           );
         })}
@@ -47,7 +58,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.button<IBtn>`
   display: flex;
   align-items: center;
   justify-content: center;
