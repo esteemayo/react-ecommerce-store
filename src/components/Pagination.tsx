@@ -10,7 +10,10 @@ const Pagination = () => {
       <Wrapper>
         {pages.map((page) => {
           return (
-            <StyledLink key={page} to='#'>
+            <StyledLink
+              key={page}
+              to={`/products/category/shirts?page=${page}`}
+            >
               <Button type='button'>{page}</Button>
             </StyledLink>
           );
