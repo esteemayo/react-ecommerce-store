@@ -1023,7 +1023,7 @@ export interface RangeInputProps
   onChange(e: React.ChangeEvent<HTMLInputElement>): void;
 }
 
-export interface PaginationProps {
+export interface PagerProps {
   page: number;
   counts: number;
   numberOfPages: number;
