@@ -34,7 +34,13 @@ const Wrapper = styled.div`
   justify-content: flex-end;
 `;
 
-const StyledLink = styled(Link)``;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+`;
 
 const Button = styled.button``;
 
