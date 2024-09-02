@@ -41,7 +41,7 @@ const Pagination = ({
 };
 
 const Container = styled.section`
-  width: 100vw;
+  width: 100%;
 `;
 
 const Wrapper = styled.div`
