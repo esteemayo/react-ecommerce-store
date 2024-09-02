@@ -113,7 +113,7 @@ const ProductCategory = () => {
     return <Option key={index} value={color} />;
   });
 
-  const allSizes = getUnique(products, 'size');
+  const allSizes: string[] = getUnique(products, 'size');
   const sizes = allSizes?.map((size, index) => {
     return <Option key={index} value={size} />;
   });
