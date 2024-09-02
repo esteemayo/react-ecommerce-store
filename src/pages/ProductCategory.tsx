@@ -30,7 +30,6 @@ const ProductCategory = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(6);
-  const [counts, setCounts] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
 
   const handleSort = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
