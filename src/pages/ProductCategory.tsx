@@ -14,7 +14,7 @@ import EmptyProduct from '../components/products/EmptyProduct';
 import Pagination from '../components/Pagination';
 
 import { priceOptions } from '../data';
-import { getUnique } from '../utils';
+import { getUnique, useQuery } from '../utils';
 import { ProductValues } from '../types';
 
 import { getProductCategory } from '../services/productService';
@@ -22,6 +22,11 @@ import { getProductCategory } from '../services/productService';
 const ProductCategory = () => {
   const { pathname } = useLocation();
   const category = pathname.split('/').pop();
+
+  const query = useQuery();
+  const page = query.get('page');
+
+  const pageNumber = Number(page) || 1;
 
   const [isLoading, setIsLoading] = useState(false);
   const [sort, setSort] = useState('latest');
@@ -31,7 +36,7 @@ const ProductCategory = () => {
 
   const [totalPages, setTotalPages] = useState(1);
   const [limit] = useState(6);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(pageNumber);
   const [counts, setCounts] = useState(6);
 
   const handleSort = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -97,6 +102,10 @@ const ProductCategory = () => {
       });
     }
   }, [sort]);
+
+  useEffect(() => {
+    pageNumber && setCurrentPage(pageNumber);
+  }, [pageNumber]);
 
   const allColors: string[] = getUnique(products, 'color');
   const colors = allColors?.map((color, index) => {
