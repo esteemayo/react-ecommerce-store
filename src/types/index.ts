@@ -1029,6 +1029,12 @@ export interface PagerProps {
   numberOfPages: number;
 }
 
+export interface PaginationProps {
+  category: string | undefined;
+  totalPages: number;
+  onAction: React.Dispatch<React.SetStateAction<number>>;
+}
+
 export interface OrderType {
   _id: string;
   address: string;
