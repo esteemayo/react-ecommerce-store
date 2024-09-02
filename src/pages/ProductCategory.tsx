@@ -155,7 +155,7 @@ const ProductCategory = () => {
       ) : (
         <ProductList products={products} onUpdate={setProducts} />
       )}
-      <Pagination />
+      <Pagination category={category} />
     </ProductBox>
   );
 };
