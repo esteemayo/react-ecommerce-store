@@ -21,12 +21,12 @@ const Success = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
-  const email = state.email;
-  const phone = state.phone;
-  const total = state.total;
-  const address = state.address;
+  const email = state?.email;
+  const phone = state?.phone;
+  const total = state?.total;
+  const address = state?.address;
 
-  const data = state.data;
+  const data = state?.data;
   const cart: CartValues[] = state.cart;
 
   const reset = useCartStore((state) => state.reset);
