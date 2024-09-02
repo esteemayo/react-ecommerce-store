@@ -74,8 +74,7 @@ const Button = styled.button<IBtn>`
   height: 3.5rem;
   padding: 0.5rem;
   background-color: ${({ isActive, theme }) => setBcg(isActive, theme)};
-  color: ${({ isActive, theme }) =>
-    isActive === 'true' ? 'var(--clr-white)' : theme.textScroll};
+  color: ${({ isActive, theme }) => setColor(isActive, theme)};
   box-shadow: inset ${({ theme }) => theme.boxPage};
   -webkit-box-shadow: inset ${({ theme }) => theme.boxPage};
   -moz-box-shadow: inset ${({ theme }) => theme.boxPage};
@@ -97,6 +96,10 @@ const Button = styled.button<IBtn>`
 
 const setBcg = (isActive: string, theme: DefaultTheme) => {
   return isActive === 'true' ? theme.bgNav : 'transparent';
+};
+
+const setColor = (isActive: string, theme: DefaultTheme) => {
+  return isActive === 'true' ? 'var(--clr-white)' : theme.textScroll;
 };
 
 export default Pagination;
