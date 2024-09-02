@@ -50,8 +50,8 @@ const Button = styled.button`
   border: none;
   font-weight: 500;
   font-size: 1.4rem;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   padding: 0.5rem;
   background-color: transparent;
   color: ${({ theme }) => theme.textPagination};
