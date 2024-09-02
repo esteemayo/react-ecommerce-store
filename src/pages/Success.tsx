@@ -294,6 +294,10 @@ const InfoContainer = styled.div`
   @media only screen and (max-width: 43.75em) {
     padding: 2.5rem 2rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 3.2rem 2.8rem;
+  }
 `;
 
 const InfoText = styled.p`
