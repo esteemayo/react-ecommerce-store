@@ -14,11 +14,11 @@ import EmptyProduct from '../components/products/EmptyProduct';
 import Loader from '../components/Loader';
 import Pagination from '../components/Pagination';
 
-import { priceOptions } from '../data';
 import { getUnique, useQuery } from '../utils';
-import { ProductValues } from '../types';
-
 import { getProductCategory } from '../services/productService';
+
+import { priceOptions } from '../data';
+import { ProductValues } from '../types';
 
 const ProductCategory = () => {
   const { pathname } = useLocation();
