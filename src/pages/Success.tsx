@@ -321,6 +321,10 @@ const IconContainer = styled.div`
 
   svg {
     color: ${({ theme }) => theme.successIcon};
+
+    @media only screen and (min-width: 112.5em) {
+      font-size: 1.8rem;
+    }
   }
 `;
 
