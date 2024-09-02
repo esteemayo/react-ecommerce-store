@@ -67,6 +67,11 @@ const Button = styled.button`
     font-size: var(--default-font-size);
     transform: scale(1.03);
   }
+
+  &:disabled {
+    opacity: 0.85;
+    cursor: default;
+  }
 `;
 
 export default Pagination;
