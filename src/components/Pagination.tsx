@@ -52,6 +52,10 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media only screen and (min-width: 112.5em) {
+    max-width: 140rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
