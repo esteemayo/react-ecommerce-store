@@ -6,8 +6,8 @@ import ProductBox from '../components/products/ProductBox';
 import ProductFilter from '../components/products/ProductFilter';
 import ProductList from '../components/products/ProductList';
 
+import Pager from '../components/Pager';
 import Loader from '../components/Loader';
-import Pagination from '../components/Pagination';
 
 import { useQuery } from '../utils';
 import { ProductValues } from '../types';
@@ -153,7 +153,7 @@ const Products = () => {
         <ProductList products={sortedProducts} onUpdate={setProducts} />
       )}
       {products.length > 0 && sortedProducts.length > 0 && (
-        <Pagination counts={counts} page={page} numberOfPages={numberOfPages} />
+        <Pager counts={counts} page={page} numberOfPages={numberOfPages} />
       )}
     </ProductBox>
   );
