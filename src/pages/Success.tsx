@@ -433,6 +433,10 @@ const OrderButton = styled.button`
     margin-top: 2rem;
   }
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.75rem;
+  }
+
   &::after {
     content: '';
     display: block;
