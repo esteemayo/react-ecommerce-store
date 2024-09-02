@@ -27,7 +27,7 @@ const Success = () => {
   const address = state?.address;
 
   const data = state?.data;
-  const cart: CartValues[] = state.cart;
+  const cart: CartValues[] = state?.cart;
 
   const reset = useCartStore((state) => state.reset);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
