@@ -401,6 +401,7 @@ const MushroomText = styled.span`
 const TotalPayment = styled.p`
   display: inline-block;
   width: 90%;
+  text-align: justify;
   font-size: 1.5rem;
   color: ${({ theme }) => theme.text};
   line-height: 1.3;
