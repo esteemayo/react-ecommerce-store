@@ -14,7 +14,7 @@ const Pagination = ({
   onAction,
 }: PaginationProps) => {
   const pages = Array.from(new Array(totalPages), (_, index) => index + 1);
-
+  console.log(currentPage);
   return (
     <Container>
       <Wrapper>
@@ -69,11 +69,12 @@ const Button = styled.button<IBtn>`
   width: 3.5rem;
   height: 3.5rem;
   padding: 0.5rem;
-  background-color: transparent;
-  color: ${({ theme }) => theme.textPagination};
-  box-shadow: inset ${({ theme }) => theme.boxPagination};
-  -webkit-box-shadow: inset ${({ theme }) => theme.boxPagination};
-  -moz-box-shadow: inset ${({ theme }) => theme.boxPagination};
+  background-color: ${({ isActive, theme }) =>
+    isActive === 'true' ? theme.bgNav : 'transparent'};
+  color: ${({ theme }) => theme.textScroll};
+  box-shadow: inset ${({ theme }) => theme.boxPage};
+  -webkit-box-shadow: inset ${({ theme }) => theme.boxPage};
+  -moz-box-shadow: inset ${({ theme }) => theme.boxPage};
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s;
