@@ -14,7 +14,7 @@ const Pagination = ({
   onAction,
 }: PaginationProps) => {
   const pages = Array.from(new Array(totalPages), (_, index) => index + 1);
-  console.log(currentPage);
+
   return (
     <Container>
       <Wrapper>
