@@ -9,8 +9,9 @@ import Option from '../components/filters/Option';
 import ProductBox from '../components/products/ProductBox';
 
 import ProductList from '../components/products/ProductList';
-import Loader from '../components/Loader';
 import EmptyProduct from '../components/products/EmptyProduct';
+
+import Loader from '../components/Loader';
 import Pagination from '../components/Pagination';
 
 import { priceOptions } from '../data';
