@@ -283,6 +283,10 @@ const Minutes = styled.span`
   background-color: ${({ theme }) => theme.bgInfo};
   color: currentColor;
   border-radius: 3px;
+
+  @media only screen and (min-width: 112.5em) {
+    padding: 0.5rem 1.8rem;
+  }
 `;
 
 const InfoContainer = styled.div`
