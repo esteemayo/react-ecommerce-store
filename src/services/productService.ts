@@ -16,8 +16,12 @@ export const getCategoryCount = () =>
 export const getFeaturedProducts = () =>
   http.get(`${apiEndpoint}?featured=true&limit=3`);
 
-export const getProductCategory = (category: string | undefined) =>
-  http.get(`${apiEndpoint}?category=${category}`);
+export const getProductCategory = (
+  category: string | undefined,
+  page: number | undefined,
+  limit: number | undefined
+) =>
+  http.get(`${apiEndpoint}?category=${category}&page=${page}&limit=${limit}`);
 
 export const getProduct = (productId?: string) =>
   http.get(productUrl(productId));
