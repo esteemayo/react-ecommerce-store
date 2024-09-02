@@ -44,34 +44,34 @@ const Success = () => {
     return total;
   }, [total]);
 
-  // useEffect(() => {
-  //   if (data) {
-  //     (async () => {
-  //       try {
-  //         const newOrder = {
-  //           customer: data.billing_details.name,
-  //           address: data.billing_details.address.line1,
-  //           products: cart.map((item) => ({
-  //             productId: item.id,
-  //             quantity: item.quantity,
-  //           })),
-  //           total: data.amount,
-  //           paymentMethod: 1,
-  //         };
+  useEffect(() => {
+    if (data) {
+      (async () => {
+        try {
+          const newOrder = {
+            customer: data.billing_details.name,
+            address: data.billing_details.address.line1,
+            products: cart.map((item) => ({
+              productId: item.id,
+              quantity: item.quantity,
+            })),
+            total: data.amount,
+            paymentMethod: 1,
+          };
 
-  //         const res = await createOrder(newOrder);
+          const res = await createOrder(newOrder);
 
-  //         setTimeout(() => {
-  //           navigate(`/orders/${res.data._id}`);
-  //         }, 5000);
-  //       } catch (err: unknown) {
-  //         console.log(err);
-  //       }
-  //     })();
-  //   }
+          setTimeout(() => {
+            navigate(`/orders/${res.data._id}`);
+          }, 5000);
+        } catch (err: unknown) {
+          console.log(err);
+        }
+      })();
+    }
 
-  //   return () => reset();
-  // }, [cart, data, navigate, reset]);
+    return () => reset();
+  }, [cart, data, navigate, reset]);
 
   return (
     <Container onMouseOver={closeSubmenu}>
