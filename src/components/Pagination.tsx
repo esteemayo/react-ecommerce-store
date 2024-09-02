@@ -8,8 +8,14 @@ const Pagination = () => {
   );
 };
 
-const Container = styled.section``;
+const Container = styled.section`
+  width: 100vw;
+`;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  width: 100%;
+  max-width: 120rem;
+  padding: 3rem 0;
+`;
 
 export default Pagination;
