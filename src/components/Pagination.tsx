@@ -1,5 +1,15 @@
+import styled from 'styled-components';
+
 const Pagination = () => {
-  return <div>Pagination</div>;
+  return (
+    <Container>
+      <Wrapper>Pagination</Wrapper>
+    </Container>
+  );
 };
+
+const Container = styled.section``;
+
+const Wrapper = styled.div``;
 
 export default Pagination;
