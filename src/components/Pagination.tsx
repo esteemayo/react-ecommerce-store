@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 interface PaginationProps {
   category: string | undefined;
+  totalPages: number;
 }
 
-const Pagination = ({ category }: PaginationProps) => {
-  const pagesCount = 7;
-  const pages = Array.from(new Array(pagesCount), (_, index) => index + 1);
+const Pagination = ({ category, totalPages }: PaginationProps) => {
+  const pages = Array.from(new Array(totalPages), (_, index) => index + 1);
 
   return (
     <Container>
