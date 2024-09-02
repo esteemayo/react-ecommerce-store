@@ -49,6 +49,11 @@ const Button = styled.button`
   width: 4rem;
   height: 4rem;
   padding: 0.5rem;
+  background-color: transparent;
+  color: ${({ theme }) => theme.bgNav};
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  cursor: pointer;
 `;
 
 export default Pagination;
