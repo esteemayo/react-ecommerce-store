@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 interface PaginationProps {
-  category: string;
+  category: string | undefined;
 }
 
 const Pagination = ({ category }: PaginationProps) => {
