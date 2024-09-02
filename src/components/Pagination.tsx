@@ -90,6 +90,11 @@ const Button = styled.button<IBtn>`
   cursor: pointer;
   transition: all 0.3s;
 
+  @media only screen and (max-width: 68.75em) {
+    width: 4rem;
+    height: 4rem;
+  }
+
   @media only screen and (min-width: 112.5em) {
     font-size: 2rem;
     width: 5rem;
