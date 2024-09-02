@@ -47,14 +47,17 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
 
+  border: none;
   font-weight: 500;
   font-size: 1.4rem;
   width: 3rem;
   height: 3rem;
   padding: 0.5rem;
   background-color: transparent;
-  color: ${({ theme }) => theme.bgNav};
-  border: 1px solid currentColor;
+  color: ${({ theme }) => theme.textPagination};
+  box-shadow: inset ${({ theme }) => theme.boxPagination};
+  -webkit-box-shadow: inset ${({ theme }) => theme.boxPagination};
+  -moz-box-shadow: inset ${({ theme }) => theme.boxPagination};
   border-radius: 50%;
   cursor: pointer;
 `;
