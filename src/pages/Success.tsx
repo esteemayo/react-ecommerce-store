@@ -409,6 +409,10 @@ const TotalPayment = styled.p`
   @media only screen and (max-width: 21.875em) {
     font-size: 1.4rem;
   }
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 1.8rem;
+  }
 `;
 
 const Price = styled.span``;
