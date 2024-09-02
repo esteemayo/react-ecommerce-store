@@ -60,6 +60,13 @@ const Button = styled.button`
   -moz-box-shadow: inset ${({ theme }) => theme.boxPagination};
   border-radius: 50%;
   cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    font-weight: 600;
+    font-size: 1.5rem;
+    transform: scale(1.03);
+  }
 `;
 
 export default Pagination;
