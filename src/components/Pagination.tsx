@@ -16,6 +16,10 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 120rem;
   padding: 3rem 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 export default Pagination;
