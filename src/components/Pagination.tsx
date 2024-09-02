@@ -49,7 +49,7 @@ const Button = styled.button`
 
   border: none;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   width: 3.5rem;
   height: 3.5rem;
   padding: 0.5rem;
@@ -64,7 +64,7 @@ const Button = styled.button`
 
   &:hover {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: var(--default-font-size);
     transform: scale(1.03);
   }
 `;
