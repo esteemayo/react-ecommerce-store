@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 interface PaginationProps {
   category: string | undefined;
   totalPages: number;
+  onAction: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Pagination = ({ category, totalPages }: PaginationProps) => {
+const Pagination = ({ category, totalPages, onAction }: PaginationProps) => {
   const pages = Array.from(new Array(totalPages), (_, index) => index + 1);
 
   return (
@@ -17,6 +18,7 @@ const Pagination = ({ category, totalPages }: PaginationProps) => {
             <StyledLink
               key={page}
               to={`/products/category/${category}?page=${page}`}
+              onClick={() => onAction(page)}
             >
               <Button type='button'>{page}</Button>
             </StyledLink>
