@@ -28,9 +28,10 @@ const ProductCategory = () => {
   const [filters, setFilters] = useState({});
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [limit, setLimit] = useState(6);
+
   const [totalPages, setTotalPages] = useState(1);
+  const [limit] = useState(6);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleSort = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setSort(e.target.value);
