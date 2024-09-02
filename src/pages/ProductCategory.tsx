@@ -54,7 +54,7 @@ const ProductCategory = () => {
 
       try {
         const { data } = await getProductCategory(category, currentPage, limit);
-        console.log(data);
+
         setProducts(data.products);
         setCurrentPage(data.page);
         setCounts(data.counts);
