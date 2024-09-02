@@ -86,6 +86,13 @@ const Button = styled.button<IBtn>`
   cursor: pointer;
   transition: all 0.3s;
 
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2rem;
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+  }
+
   &:hover {
     font-weight: 600;
     font-size: var(--default-font-size);
