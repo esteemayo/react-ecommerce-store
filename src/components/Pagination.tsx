@@ -42,6 +42,10 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  display: inline-block;
+  font-weight: 500;
+  font-size: 100%;
+`;
 
 export default Pagination;
