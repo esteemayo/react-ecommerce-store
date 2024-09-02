@@ -108,12 +108,12 @@ const ProductCategory = () => {
     pageNumber && setCurrentPage(pageNumber);
   }, [pageNumber]);
 
-  const allColors: string[] = ['all', ...getUnique(products, 'color')];
+  const allColors: string[] = getUnique(products, 'color');
   const colors = allColors?.map((color, index) => {
     return <Option key={index} value={color} />;
   });
 
-  const allSizes: string[] = ['all', ...getUnique(products, 'size')];
+  const allSizes: string[] = getUnique(products, 'size');
   const sizes = allSizes?.map((size, index) => {
     return <Option key={index} value={size} />;
   });
