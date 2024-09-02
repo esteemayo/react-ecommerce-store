@@ -63,7 +63,7 @@ const ProductCategory = () => {
         setIsLoading(false);
       }
     })();
-  }, [category]);
+  }, [category, currentPage, limit]);
 
   useEffect(() => {
     category &&
