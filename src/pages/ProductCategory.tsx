@@ -23,11 +23,11 @@ const ProductCategory = () => {
   const { pathname } = useLocation();
   const category = pathname.split('/').pop();
 
+  const [isLoading, setIsLoading] = useState(false);
   const [sort, setSort] = useState('latest');
   const [products, setProducts] = useState<ProductValues[]>([]);
   const [filters, setFilters] = useState({});
   const [sortedProducts, setSortedProducts] = useState<ProductValues[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const [totalPages, setTotalPages] = useState(1);
   const [limit] = useState(6);
