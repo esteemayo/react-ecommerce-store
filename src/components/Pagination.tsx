@@ -46,6 +46,9 @@ const Button = styled.button`
   display: inline-block;
   font-weight: 500;
   font-size: 100%;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
 `;
 
 export default Pagination;
