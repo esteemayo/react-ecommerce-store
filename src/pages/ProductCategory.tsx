@@ -164,6 +164,7 @@ const ProductCategory = () => {
       )}
       <Pagination
         category={category}
+        currentPage={currentPage}
         totalPages={totalPages}
         onAction={setCurrentPage}
       />
