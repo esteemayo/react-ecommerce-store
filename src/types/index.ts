@@ -1031,6 +1031,7 @@ export interface PagerProps {
 
 export interface PaginationProps {
   category: string | undefined;
+  currentPage: number;
   totalPages: number;
   onAction: React.Dispatch<React.SetStateAction<number>>;
 }
