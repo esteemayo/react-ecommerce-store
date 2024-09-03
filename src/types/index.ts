@@ -800,7 +800,7 @@ export interface CounterProps {
 export interface ProductButtonProps {
   small?: boolean;
   actionLabel: string;
-  inCart: boolean;
+  inCart: boolean | undefined;
   onAction(): void;
 }
 
