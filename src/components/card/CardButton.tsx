@@ -1,34 +1,17 @@
-import { useNavigate } from 'react-router-dom';
-import { useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import { useAuth } from '../../hooks/useAuth';
-import { CardButtonProps } from '../../types';
-
 import { CommonButton } from '../buttons/CommonButton';
 import { useCartControls } from '../../hooks/useCartControls';
 
+import { CardButtonProps } from '../../types';
+
 const CardButton = ({ productId, onClick }: CardButtonProps) => {
-  const navigate = useNavigate();
-  const currentUser = useAuth((state) => state.user);
   const { actionLabel } = useCartControls(productId);
 
-  const handleClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.stopPropagation();
-
-      if (!currentUser) {
-        return navigate('/login');
-      }
-      onClick();
-    },
-    [currentUser, navigate, onClick]
-  );
-
   return (
-    <Button type='button' onClick={handleClick}>
+    <Button type='button' onClick={onClick}>
       <FontAwesomeIcon icon={faShoppingCart} />
       &nbsp; {actionLabel}
     </Button>
