@@ -17,6 +17,10 @@ export const StyledSelect = styled.select<ISelect>`
   border-radius: 3px;
   outline-color: ${({ theme }) => theme.filterOut};
 
+  @media only screen and (max-width: 64em) {
+    width: 20rem;
+  }
+
   @media only screen and (max-width: 37.5em) {
     width: 100%;
     padding: ${({ page }) => page !== 'product' && '0.7rem'};
