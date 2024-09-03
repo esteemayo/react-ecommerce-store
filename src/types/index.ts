@@ -738,7 +738,7 @@ export interface FooterLinkProps {
 
 export interface ProductProps {
   product: ProductValues | CartValues;
-  inCart: boolean;
+  inCart: boolean | undefined;
   actionLabel: string;
   currentUser: CurrentUserType;
   onFavorite(): void;
