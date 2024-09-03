@@ -77,7 +77,7 @@ const FeaturedProducts = () => {
 };
 
 const Container = styled.section`
-  width: 100vw;
+  width: 100%;
   padding: 15rem 0;
   background-color: ${({ theme }) => theme.soft};
 
@@ -91,7 +91,7 @@ const ProductsContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: 7rem;
+  gap: 7.5rem;
 
   @media only screen and (max-width: 64em) {
     justify-content: space-between;
