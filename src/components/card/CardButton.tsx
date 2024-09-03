@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import { useAuth } from '../../hooks/useAuth';
