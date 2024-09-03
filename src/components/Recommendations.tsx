@@ -77,7 +77,6 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 64em) {
     flex-wrap: wrap;
-    /* gap: 3rem; */
   }
 
   @media only screen and (max-width: 59.375em) {
