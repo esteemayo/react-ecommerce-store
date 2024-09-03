@@ -21,6 +21,7 @@ const Reviews = ({
   onRefetch,
 }: ReviewsProps) => {
   const { isOpen, onOpen, onClose } = useReviewModal();
+
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const handleToggleFilter = useCallback(() => {
