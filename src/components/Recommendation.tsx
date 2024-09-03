@@ -34,7 +34,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledImage = styled(CommonImage)`
-  width: 40rem;
+  width: 39.35rem;
   height: 50rem;
   border-radius: 2px;
 

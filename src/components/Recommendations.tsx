@@ -25,7 +25,7 @@ const Recommendations = ({ data, productId }: RecommendationsProps) => {
 };
 
 const Container = styled.section`
-  width: 100vw;
+  width: 100%;
   max-width: 120rem;
   margin: 0 auto;
   margin-bottom: 10rem;
