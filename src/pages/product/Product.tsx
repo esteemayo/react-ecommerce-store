@@ -15,6 +15,7 @@ import { useCartStore } from '../../hooks/useCartStore';
 
 import * as productAPI from '../../services/productService';
 import { CartValues, ProductValues, ReviewItem } from '../../types';
+import { useCartControls } from '../../hooks/useCartControls';
 
 const SingleProduct = () => {
   const queryClient = useQueryClient();
@@ -23,6 +24,7 @@ const SingleProduct = () => {
   const currentUser = useAuth((state) => state.user);
   const cart = useCartStore((state) => state.cart);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+  const { inCart, actionLabel } = useCartControls(productId!);
 
   const {
     isLoading,
@@ -71,15 +73,6 @@ const SingleProduct = () => {
   const [product, setProduct] = useState<ProductValues | CartValues>(
     singleProduct
   );
-
-  const inCart = useMemo(() => {
-    const cartItem = cart.find((item) => item.id === productId);
-    return !!cartItem;
-  }, [cart, productId]);
-
-  const actionLabel = useMemo(() => {
-    return `${inCart ? 'Added' : 'Add'} to cart`;
-  }, [inCart]);
 
   const getSort = useMemo(() => {
     if (sort === 'latest') return 'latest';
