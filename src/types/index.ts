@@ -622,7 +622,6 @@ export interface CardInfoProps {
   initialPrice: number;
   priceLabel: number;
   reviewLabel: string;
-  inCart: boolean;
   wished: string[];
   onOpen(): void;
   onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>;

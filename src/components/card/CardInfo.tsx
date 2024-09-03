@@ -15,7 +15,6 @@ const CardInfo = ({
   initialPrice,
   priceLabel,
   reviewLabel,
-  inCart,
   wished,
   onOpen,
   onUpdate,
