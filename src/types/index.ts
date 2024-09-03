@@ -177,6 +177,13 @@ export interface CartActionType {
   calcTotals(): void;
 }
 
+export interface ICartControls {
+  (productId: string): {
+    inCart: boolean | undefined;
+    actionLabel: string;
+  };
+}
+
 export interface SearchStore {
   products: ProductValues[];
   isError: boolean;
