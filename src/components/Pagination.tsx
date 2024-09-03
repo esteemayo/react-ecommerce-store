@@ -87,6 +87,7 @@ const Button = styled.button<IBtn>`
   -webkit-box-shadow: inset ${({ theme }) => theme.boxPage};
   -moz-box-shadow: inset ${({ theme }) => theme.boxPage};
   border-radius: 50%;
+  outline-color: #ccc;
   cursor: pointer;
   transition: all 0.3s;
 
