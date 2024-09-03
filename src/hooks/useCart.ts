@@ -41,7 +41,7 @@ export const useCart = (product: ProductValues) => {
     if (currentUser.role === 'admin') {
       isOpen && onClose();
       handleReset();
-      toast.error('You are not authorized!');
+      toast.warn('You are not authorized!');
       return;
     }
 
