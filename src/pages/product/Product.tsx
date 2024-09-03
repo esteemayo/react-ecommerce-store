@@ -11,20 +11,18 @@ import Recommendations from '../../components/Recommendations';
 
 import { useSubmenu } from '../../hooks/useSubmenu';
 import { useAuth } from '../../hooks/useAuth';
-import { useCartStore } from '../../hooks/useCartStore';
+import { useCartControls } from '../../hooks/useCartControls';
 
 import * as productAPI from '../../services/productService';
 import { CartValues, ProductValues, ReviewItem } from '../../types';
-import { useCartControls } from '../../hooks/useCartControls';
 
 const SingleProduct = () => {
   const queryClient = useQueryClient();
   const { id: productId } = useParams();
 
-  const currentUser = useAuth((state) => state.user);
-  const cart = useCartStore((state) => state.cart);
-  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
   const { inCart, actionLabel } = useCartControls(productId!);
+  const currentUser = useAuth((state) => state.user);
+  const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   const {
     isLoading,
