@@ -108,7 +108,9 @@ const ReviewModal = ({
           },
         };
 
-        onReviews((prev) => [reviewData, ...prev]);
+        onReviews((prev) => {
+          return [reviewData, ...prev];
+        });
         onRefetch();
       } catch (err: unknown) {
         console.log(err);
