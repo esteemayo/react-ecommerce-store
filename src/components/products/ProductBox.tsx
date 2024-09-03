@@ -14,7 +14,7 @@ const ProductBox = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Container = styled.main`
-  width: 100vw;
+  width: 100%;
   background-color: ${({ theme }) => theme.bg};
 `;
 
