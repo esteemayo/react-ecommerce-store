@@ -15,7 +15,7 @@ const Recommendation = ({ id, name, price, images }: RecommendationProps) => {
   return (
     <Container>
       <StyledLink to={url}>
-        <StyledImage src={images?.[0]} width={400} height={500} alt={name} />
+        <StyledImage src={images?.[0]} width={400} height='100%' alt={name} />
         <Wrapper>
           <Title>{name}</Title>
           <Price>{formatCurrency(price)}</Price>
