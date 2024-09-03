@@ -7,7 +7,7 @@ interface ISelect {
 export const StyledSelect = styled.select<ISelect>`
   display: inline-block;
   text-transform: capitalize;
-  width: 24.5rem;
+  width: 25rem;
   padding: 3px;
   font-family: inherit;
   font-size: 1.4rem;
