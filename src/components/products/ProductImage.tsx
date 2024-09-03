@@ -17,7 +17,7 @@ const ProductImage = ({ image, index, onOpen }: ProductImageProps) => {
 
 const Image = styled(CommonImage)`
   width: 35rem;
-  height: 35rem;
+  height: 100%;
   border-radius: 2px;
   cursor: pointer;
 
