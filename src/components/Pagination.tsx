@@ -1,5 +1,5 @@
-import styled, { DefaultTheme } from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled, { DefaultTheme } from 'styled-components';
 
 import { PaginationProps } from '../types';
 
