@@ -16,7 +16,6 @@ const ProductCard = ({
   onUpdate,
 }: ProductCardProps) => {
   const currentUser = useAuth((state) => state.user);
-  const cart = useCartStore((state) => state.cart);
   const wished = useCartStore((state) => state.wished);
 
   const handleOpen = useCallback(() => {
@@ -44,11 +43,6 @@ const ProductCard = ({
     return product.price;
   }, [product]);
 
-  const inCart = useMemo(() => {
-    const cartItem = cart.find((item) => item.id === product.id);
-    return !!cartItem;
-  }, [cart, product]);
-
   return (
     <Container>
       <CardImage src={product.images?.[0]} name={product.name} />
@@ -59,7 +53,6 @@ const ProductCard = ({
         initialPrice={initialPrice}
         priceLabel={priceLabel}
         reviewLabel={reviewLabel}
-        inCart={inCart}
         wished={wished}
         onOpen={handleOpen}
         onUpdate={onUpdate}
