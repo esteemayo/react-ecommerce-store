@@ -5,11 +5,11 @@ import SizeSelect from '../inputs/SizeSelect';
 import Counter from '../inputs/Counter';
 import ColorSelect from '../inputs/ColorSelect';
 
+import ProductValue from './ProductValue';
 import ProductHead from './ProductHead';
 import ProductButton from './ProductButton';
 import ProductInfo from './ProductInfo';
 import ProductImages from './ProductImages';
-import ProductValue from './ProductValue';
 
 import Alert from '../Alert';
 import ProductButtons from './ProductButtons';
