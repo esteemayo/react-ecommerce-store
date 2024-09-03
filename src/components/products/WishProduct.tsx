@@ -28,7 +28,7 @@ const WishProduct = ({ actionId, product, currentUser }: WishProductProps) => {
   return (
     <Button type='button' onClick={handleToggle}>
       {btnLabel}
-      <HeartIcon isWished={isWished} />
+      <HeartIcon isWished={isWished} currentUser={currentUser} />
     </Button>
   );
 };
