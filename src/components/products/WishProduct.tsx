@@ -19,8 +19,11 @@ const WishProduct = ({ actionId, product, currentUser }: WishProductProps) => {
   );
 
   const btnLabel = useMemo(() => {
-    return isWished ? 'Wished' : 'Wishlist';
-  }, [isWished]);
+    if (!!currentUser && !!isWished) {
+      return 'Wished';
+    }
+    return 'Wishlist';
+  }, [currentUser, isWished]);
 
   return (
     <Button type='button' onClick={handleToggle}>
