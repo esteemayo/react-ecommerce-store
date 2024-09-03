@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import ReviewHead from './ReviewHead';
 import ReviewCards from './ReviewCards';
@@ -49,6 +49,20 @@ const Reviews = ({
       filterEl?.removeEventListener('click', handleOpen);
     };
   }, [handleClose, handleOpen]);
+
+  const handleEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    },
+    [handleClose]
+  );
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [handleEscape]);
 
   return (
     <Container id='reviews' className='reviews' onClick={handleCloseFilter}>
