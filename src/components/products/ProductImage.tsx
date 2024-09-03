@@ -22,7 +22,7 @@ const Image = styled(CommonImage)`
   cursor: pointer;
 
   @media only screen and (max-width: 64em) {
-    width: 30rem;
+    width: 31.5rem;
   }
 
   @media only screen and (max-width: 59.375em) {
