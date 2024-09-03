@@ -1,9 +1,6 @@
 import styled, { css } from 'styled-components';
 
-interface ReviewButtonProps {
-  actionLabel: string;
-  onAction(): void;
-}
+import { ReviewButtonProps } from '../../types';
 
 const ReviewButton = ({ actionLabel, onAction }: ReviewButtonProps) => {
   return (

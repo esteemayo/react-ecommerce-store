@@ -872,6 +872,11 @@ export interface ReviewHeadProps {
   onToggle(): void;
 }
 
+export interface ReviewButtonProps {
+  actionLabel: string;
+  onAction(): void;
+}
+
 export interface ReviewCardsProps {
   ratingsAverage: number;
   ratingsQuantity: number;
