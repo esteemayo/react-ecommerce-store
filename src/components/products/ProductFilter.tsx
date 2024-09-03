@@ -88,27 +88,31 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 7rem;
+  /* gap: 7rem; */
 
-  @media only screen and (max-width: 59.375em) {
+  @media only screen and (max-width: 64em) {
+    gap: 5rem;
+  }
+
+  /* @media only screen and (max-width: 59.375em) {
     gap: 4rem;
-  }
+  } */
 
-  @media only screen and (max-width: 37.5em) {
+  /* @media only screen and (max-width: 37.5em) {
     gap: 2rem;
-  }
+  } */
 
-  @media only screen and (max-width: 31.25em) {
+  /* @media only screen and (max-width: 31.25em) {
     gap: 1.5rem;
-  }
+  } */
 
-  @media only screen and (max-width: 26.25em) {
+  /* @media only screen and (max-width: 26.25em) {
     gap: 3rem;
-  }
+  } */
 
-  @media only screen and (max-width: 18.75em) {
+  /* @media only screen and (max-width: 18.75em) {
     gap: 1rem;
-  }
+  } */
 `;
 
 export default ProductFilter;
