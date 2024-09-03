@@ -187,7 +187,7 @@ const ProductCategory = () => {
 };
 
 const Box = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.bg};
 
@@ -197,8 +197,8 @@ const Box = styled.section`
 `;
 
 const Container = styled.section`
-  padding: 7rem 0;
   width: 100%;
+  padding: 7rem 0;
 `;
 
 const Wrapper = styled.div`
