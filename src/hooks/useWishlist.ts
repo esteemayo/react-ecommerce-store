@@ -30,7 +30,7 @@ export const useWishlist: WishlistProps = (
       }
 
       if (currentUser.role === 'admin') {
-        toast.error('You are not authorized!');
+        toast.warn('You are not authorized!');
         return;
       }
 
