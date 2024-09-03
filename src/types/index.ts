@@ -580,7 +580,7 @@ export interface SubmenuMenuItemProps {
 
 export interface ProductListProps {
   products: ProductValues[];
-  onUpdate?: React.Dispatch<SetStateAction<ProductValues[] | ProductType[]>>;
+  onUpdate: React.Dispatch<SetStateAction<ProductValues[] | ProductType[]>>;
 }
 
 export interface ProductCardProps {
@@ -588,7 +588,7 @@ export interface ProductCardProps {
   product: CardProduct;
   onOpen(): void;
   onSelect(value: WishlistValues): void;
-  onUpdate: React.Dispatch<SetStateAction<ProductValues[]>>;
+  onUpdate: React.Dispatch<SetStateAction<ProductValues[] | ProductType[]>>;
 }
 
 interface CardProduct {
