@@ -33,7 +33,7 @@ const CardInfo = ({
         initialPrice={initialPrice}
         priceLabel={priceLabel}
       />
-      <CardButton productId={product.id} inCart={inCart} onClick={onOpen} />
+      <CardButton productId={product.id} onClick={onOpen} />
       <CardButtons
         currentUser={currentUser}
         product={product}
