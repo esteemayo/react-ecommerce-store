@@ -670,6 +670,11 @@ export interface WishProductProps {
   currentUser: CurrentUserType;
 }
 
+export interface HeartIconProps {
+  isWished: boolean;
+  currentUser: CurrentUserType;
+}
+
 export interface FavoriteButtonProps {
   actionId: string;
   likes: string[];
