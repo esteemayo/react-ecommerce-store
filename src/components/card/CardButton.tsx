@@ -7,11 +7,11 @@ import { useCartControls } from '../../hooks/useCartControls';
 
 import { CardButtonProps } from '../../types';
 
-const CardButton = ({ productId, onClick }: CardButtonProps) => {
-  const { actionLabel } = useCartControls(productId);
+const CardButton = ({ actionId, onAction }: CardButtonProps) => {
+  const { actionLabel } = useCartControls(actionId);
 
   return (
-    <Button type='button' onClick={onClick}>
+    <Button type='button' onClick={onAction}>
       <FontAwesomeIcon icon={faShoppingCart} />
       &nbsp; {actionLabel}
     </Button>
