@@ -21,7 +21,7 @@ const Input = styled.input.attrs({
   type: 'range',
 })`
   display: inline-block;
-  width: 20rem;
+  width: 24.5rem;
   padding: 3px;
   font-family: inherit;
   font-size: 1.4rem;

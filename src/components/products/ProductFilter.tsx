@@ -88,7 +88,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: 7rem;
+  gap: 7.33rem;
 
   @media only screen and (max-width: 59.375em) {
     gap: 4rem;
