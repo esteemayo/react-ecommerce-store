@@ -95,6 +95,7 @@ const ReviewModal = ({
       e.preventDefault();
 
       if (!currentUser) {
+        closeModalHandler();
         navigate('/login');
         return;
       }
@@ -131,6 +132,7 @@ const ReviewModal = ({
     [
       closeModalHandler,
       currentUser,
+      navigate,
       onRefetch,
       onReviews,
       productId,
