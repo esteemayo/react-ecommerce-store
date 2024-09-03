@@ -3,7 +3,9 @@ import { useMemo } from 'react';
 import { useAuth } from './useAuth';
 import { useCartStore } from './useCartStore';
 
-export const useCartControls = (productId: string) => {
+import { ICartControls } from '../types';
+
+export const useCartControls: ICartControls = (productId: string) => {
   const cart = useCartStore((state) => state.cart);
   const currentUser = useAuth((state) => state.user);
 
