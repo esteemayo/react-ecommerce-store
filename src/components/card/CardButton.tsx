@@ -1,17 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import { useAuth } from '../../hooks/useAuth';
 import { CardButtonProps } from '../../types';
 
 import { CommonButton } from '../buttons/CommonButton';
+import { useCartControls } from '../../hooks/useCartControls';
 
-const CardButton = ({ inCart, onClick }: CardButtonProps) => {
+const CardButton = ({ productId, onClick }: CardButtonProps) => {
   const navigate = useNavigate();
   const currentUser = useAuth((state) => state.user);
+  const { actionLabel } = useCartControls(productId);
 
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -25,14 +27,10 @@ const CardButton = ({ inCart, onClick }: CardButtonProps) => {
     [currentUser, navigate, onClick]
   );
 
-  const btnLabel = useMemo(() => {
-    return `${inCart ? 'added' : 'add'} to cart`;
-  }, [inCart]);
-
   return (
     <Button type='button' onClick={handleClick}>
       <FontAwesomeIcon icon={faShoppingCart} />
-      &nbsp; {btnLabel}
+      &nbsp; {actionLabel}
     </Button>
   );
 };
