@@ -91,6 +91,7 @@ const Button = styled.button<IBtn>`
   transition: all 0.3s;
 
   @media only screen and (max-width: 68.75em) {
+    font-size: 1.7rem;
     width: 4rem;
     height: 4rem;
   }
@@ -106,6 +107,10 @@ const Button = styled.button<IBtn>`
     font-weight: 600;
     font-size: var(--default-font-size);
     transform: scale(1.03);
+
+    @media only screen and (max-width: 68.75em) {
+      font-size: 1.8rem;
+    }
 
     @media only screen and (min-width: 112.5em) {
       font-size: 2.1rem;
