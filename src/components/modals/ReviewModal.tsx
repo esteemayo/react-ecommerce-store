@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useDarkMode } from '../../hooks/useDarkMode';
@@ -11,7 +12,6 @@ import { ReviewModalProps } from '../../types';
 import { createReviewOnProduct } from '../../services/productService';
 
 import ReviewForm from '../reviews/ReviewForm';
-import { useNavigate } from 'react-router-dom';
 
 interface IOverlay {
   mode: string;
