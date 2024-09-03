@@ -11,6 +11,7 @@ import { ReviewModalProps } from '../../types';
 import { createReviewOnProduct } from '../../services/productService';
 
 import ReviewForm from '../reviews/ReviewForm';
+import { useNavigate } from 'react-router-dom';
 
 interface IOverlay {
   mode: string;
@@ -27,6 +28,8 @@ const ReviewModal = ({
   onReviews,
   onRefetch,
 }: ReviewModalProps) => {
+  const navigate = useNavigate();
+
   const mode = useDarkMode((state) => state.mode);
   const currentUser = useAuth((state) => state.user);
 
@@ -90,6 +93,11 @@ const ReviewModal = ({
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+
+      if (!currentUser) {
+        navigate('/login');
+        return;
+      }
 
       setIsLoading(true);
 
