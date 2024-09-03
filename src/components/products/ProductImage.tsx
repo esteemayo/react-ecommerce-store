@@ -16,7 +16,7 @@ const ProductImage = ({ image, index, onOpen }: ProductImageProps) => {
 };
 
 const Image = styled(CommonImage)`
-  width: 35rem;
+  width: 37.5rem;
   height: 100%;
   border-radius: 2px;
   cursor: pointer;
@@ -26,7 +26,7 @@ const Image = styled(CommonImage)`
   }
 
   @media only screen and (max-width: 59.375em) {
-    width: 23rem;
+    width: 24.835rem;
   }
 
   @media only screen and (max-width: 50em) {
