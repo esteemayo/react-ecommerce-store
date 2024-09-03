@@ -646,6 +646,7 @@ export interface CardPriceProps {
 }
 
 export interface CardButtonProps {
+  productId: string;
   inCart: boolean;
   onClick(): void;
 }
