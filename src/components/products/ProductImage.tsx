@@ -27,11 +27,11 @@ const Image = styled(CommonImage)`
 
   @media only screen and (max-width: 59.375em) {
     width: 23rem;
-    height: 30rem;
   }
 
   @media only screen and (max-width: 50em) {
     width: 225px;
+    height: 30rem;
     border-radius: revert;
     cursor: default;
   }
