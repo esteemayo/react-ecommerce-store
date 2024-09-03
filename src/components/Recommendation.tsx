@@ -39,7 +39,7 @@ const StyledImage = styled(CommonImage)`
   border-radius: 2px;
 
   @media only screen and (max-width: 64em) {
-    width: 35rem;
+    width: 32.65rem;
   }
 
   @media only screen and (max-width: 50em) {
