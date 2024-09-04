@@ -74,7 +74,7 @@ const Cart = () => {
 };
 
 const Container = styled.main`
-  width: 100%;
+  width: 100vw;
   background-color: ${({ theme }) => theme.bg};
 `;
 

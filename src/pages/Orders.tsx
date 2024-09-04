@@ -56,7 +56,7 @@ const Orders = () => {
 };
 
 const Box = styled.main`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: ${({ theme }) => theme.bg};
 `;

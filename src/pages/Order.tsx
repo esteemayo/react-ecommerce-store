@@ -69,7 +69,7 @@ const Order = () => {
 };
 
 const Container = styled.main`
-  width: 100%;
+  width: 100vw;
   min-height: 80vh;
   background-color: ${({ theme }) => theme.bg};
 `;
