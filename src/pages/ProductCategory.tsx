@@ -137,6 +137,29 @@ const ProductCategory = () => {
     );
   }
 
+  let bodyContent: JSX.Element | undefined;
+
+  if (sortedProducts?.length < 1) {
+    bodyContent = (
+      <Container>
+        <EmptyProduct
+          src='/img/no-result.png'
+          title={`Category "${category}" is currently empty.`}
+        />
+      </Container>
+    );
+  } else {
+    bodyContent = (
+      <>
+        {category ? (
+          <ProductList products={sortedProducts} onUpdate={setProducts} />
+        ) : (
+          <ProductList products={products} onUpdate={setProducts} />
+        )}
+      </>
+    );
+  }
+
   return (
     <ProductBox>
       <Container>
@@ -169,11 +192,7 @@ const ProductCategory = () => {
           </Right>
         </Wrapper>
       </Container>
-      {category ? (
-        <ProductList products={sortedProducts} onUpdate={setProducts} />
-      ) : (
-        <ProductList products={products} onUpdate={setProducts} />
-      )}
+      {bodyContent}
       {counts > 6 && (
         <Pagination
           category={category}
