@@ -144,7 +144,7 @@ const ProductCategory = () => {
       <Container>
         <EmptyProduct
           src='/img/no-result.png'
-          title={`Category "${category}" is currently empty.`}
+          title='No product matches your filter criteria.'
         />
       </Container>
     );
