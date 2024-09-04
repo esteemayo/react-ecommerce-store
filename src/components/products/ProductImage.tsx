@@ -8,7 +8,7 @@ const ProductImage = ({ image, index, onOpen }: ProductImageProps) => {
     <Image
       src={image}
       width={350}
-      height='100%'
+      height={435}
       alt={`image ${index + 1}`}
       onClick={() => onOpen(index)}
     />
