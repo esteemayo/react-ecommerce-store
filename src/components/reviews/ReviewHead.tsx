@@ -16,8 +16,6 @@ const ReviewHead = ({
   onOpen,
   onSort,
   onToggle,
-  onOpenFilter,
-  onCloseFilter,
 }: ReviewHeadProps) => {
   const avgRatings = useMemo(() => {
     if (ratingsAverage === 0) {
@@ -54,8 +52,6 @@ const ReviewHead = ({
           isOpen={isOpen}
           onClick={onToggle}
           onSort={onSort}
-          onOPen={onOpenFilter}
-          onClose={onCloseFilter}
         />
       </Wrapper>
     </Container>
