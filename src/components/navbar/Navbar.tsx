@@ -21,6 +21,7 @@ import { useSearchModal } from '../../hooks/useSearchModal';
 
 import { navLinks } from '../../data';
 import { Submenu } from '../../types';
+import { logout } from '../../services/authService';
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -85,8 +86,10 @@ const Navbar = () => {
   );
 
   const handleLogout = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
+    async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
+
+      await logout();
       logoutUser();
     },
     [logoutUser]
