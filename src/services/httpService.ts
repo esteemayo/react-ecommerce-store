@@ -2,12 +2,9 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import logger from './logService';
-import { getFromStorage, tokenKey } from '../utils';
 
 const devEnv = import.meta.env.MODE !== 'production';
 const { VITE_APP_DEV_API_URL, VITE_APP_PROD_API_URL } = import.meta.env;
-
-const token = getFromStorage(tokenKey)?.details?.token;
 
 const API = axios.create({
   baseURL: devEnv ? VITE_APP_DEV_API_URL : VITE_APP_PROD_API_URL,
@@ -15,6 +12,7 @@ const API = axios.create({
     Accept: 'application/json',
     'Content-Type': 'application/json',
   },
+  withCredentials: true,
 });
 
 API.interceptors.response.use(null!, (error) => {
@@ -31,8 +29,6 @@ API.interceptors.response.use(null!, (error) => {
 
   return Promise.reject(error);
 });
-
-API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
 const http = {
   get: API.get,
