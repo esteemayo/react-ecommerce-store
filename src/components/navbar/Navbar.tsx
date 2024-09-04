@@ -122,7 +122,9 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
             />
           )}
-          {!!currentUser && cart.length > 0 && <CartQuantity amount={qty} />}
+          {!!currentUser && currentUser.role !== 'admin' && cart.length > 0 && (
+            <CartQuantity amount={qty} />
+          )}
         </ButtonContainer>
       </Wrapper>
     </Container>
