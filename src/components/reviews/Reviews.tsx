@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import ReviewHead from './ReviewHead';
 import ReviewCards from './ReviewCards';
@@ -22,6 +22,7 @@ const Reviews = ({
 }: ReviewsProps) => {
   const { isOpen, onOpen, onClose } = useReviewModal();
 
+  const containerRef = useRef<HTMLElement>(null);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const handleToggleFilter = useCallback(() => {
@@ -30,20 +31,16 @@ const Reviews = ({
     });
   }, []);
 
-  const handleOpen = useCallback(() => {
-    setIsFilterOpen(true);
-  }, []);
-
   const handleClose = useCallback(() => {
     setIsFilterOpen(false);
   }, []);
 
   const handleCloseFilter = useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
-      const target = e.target as HTMLElement;
-      target.addEventListener('click', handleClose);
+    (_e: React.MouseEvent<HTMLElement>) => {
+      const container = containerRef?.current as HTMLElement;
+      container.onclick = handleClose;
     },
-    [handleClose, handleOpen]
+    [handleClose]
   );
 
   const handleEscape = useCallback(
@@ -61,7 +58,7 @@ const Reviews = ({
   }, [handleEscape]);
 
   return (
-    <Container id='reviews' className='reviews' onClick={handleCloseFilter}>
+    <Container id='reviews' ref={containerRef} onClick={handleCloseFilter}>
       <Wrapper>
         <Heading>Reviews</Heading>
         <ReviewHead
