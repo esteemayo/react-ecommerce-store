@@ -21,7 +21,7 @@ export const darkTheme = {
   textBtn: '#d3e3fd',
   textPrice: '#95a5bd',
   textDiscount: '#b8c5da',
-  bgRev: '#',
+  bgRev: '#15314e',
   bgRevs: '#0d2136',
   revCardBg: '#0f243a',
   textRev: '#95a5bd',
