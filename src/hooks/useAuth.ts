@@ -1,7 +1,7 @@
-import { create } from 'zustand';
 import { jwtDecode } from 'jwt-decode';
 import { produce } from 'immer';
 import { devtools } from 'zustand/middleware';
+import { create } from 'zustand';
 
 import { AuthActionType, AuthStore } from '../types';
 import {
