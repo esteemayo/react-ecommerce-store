@@ -17,7 +17,7 @@ const API = axios.create({
   },
 });
 
-API.interceptors.response.use(null, (error) => {
+API.interceptors.response.use(null!, (error) => {
   const expectedError =
     error.response &&
     error.response.status >= 400 &&
