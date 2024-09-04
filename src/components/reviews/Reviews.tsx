@@ -31,10 +31,6 @@ const Reviews = ({
     });
   }, []);
 
-  const handleOpen = useCallback(() => {
-    setIsFilterOpen(true);
-  }, []);
-
   const handleClose = useCallback(() => {
     setIsFilterOpen(false);
   }, []);
@@ -74,8 +70,6 @@ const Reviews = ({
           onOpen={onOpen}
           onSort={onSort}
           onToggle={handleToggleFilter}
-          onOpenFilter={handleOpen}
-          onCloseFilter={handleClose}
         />
         <ReviewCards
           ratingsAverage={ratingsAverage}
