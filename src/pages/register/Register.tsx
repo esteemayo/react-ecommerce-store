@@ -180,6 +180,12 @@ const Register = () => {
   }, [step]);
 
   useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setTimeout(() => setErrors({}), 5000);
+    }
+  }, [errors]);
+
+  useEffect(() => {
     file && uploadFile(file);
   }, [file, uploadFile]);
 
