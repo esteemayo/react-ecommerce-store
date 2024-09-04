@@ -21,6 +21,7 @@ import { useSearchModal } from '../../hooks/useSearchModal';
 
 import { navLinks } from '../../data';
 import { Submenu } from '../../types';
+
 import { logout } from '../../services/authService';
 
 const Navbar = () => {
