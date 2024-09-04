@@ -38,11 +38,13 @@ const Reviews = ({
     setIsFilterOpen(false);
   }, []);
 
-  const handleCloseFilter = useCallback(() => {
-    const reviewsEl = document.querySelector('.reviews');
-
-    reviewsEl?.addEventListener('click', handleClose);
-  }, [handleClose, handleOpen]);
+  const handleCloseFilter = useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
+      const target = e.target as HTMLElement;
+      target.addEventListener('click', handleClose);
+    },
+    [handleClose, handleOpen]
+  );
 
   const handleEscape = useCallback(
     (e: KeyboardEvent) => {
