@@ -100,7 +100,9 @@ const Navbar = () => {
         </LogoBox>
         <ToggleBox>
           <ToggleButton icon={faBars} onClick={onOpen} />
-          {!!currentUser && cart.length > 0 && <CartQuantity amount={qty} />}
+          {!!currentUser && currentUser.role !== 'admin' && cart.length > 0 && (
+            <CartQuantity amount={qty} />
+          )}
         </ToggleBox>
         <ListContainer>
           {navLinks.map((item) => {
