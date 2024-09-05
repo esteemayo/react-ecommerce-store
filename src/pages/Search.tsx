@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import ProductBox from '../components/products/ProductBox';
@@ -24,6 +24,8 @@ const Search = () => {
   const query = useQuery();
   const searchQuery = query.get('q');
 
+  const [data, setData] = useState(products);
+
   useEffect(() => {
     searchQuery &&
       (async () => {
@@ -44,6 +46,10 @@ const Search = () => {
     searchQuery,
   ]);
 
+  useEffect(() => {
+    setData(products);
+  }, [products]);
+
   if (isLoading) {
     return (
       <Container>
@@ -58,7 +64,7 @@ const Search = () => {
 
   return (
     <ProductBox>
-      <ProductList products={products} />
+      <ProductList products={data} onUpdate={setData} />
     </ProductBox>
   );
 };
