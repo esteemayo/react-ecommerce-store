@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import ProductBox from '../components/products/ProductBox';
 import ProductList from '../components/products/ProductList';
 
+import Pagination from '../components/Pagination';
 import Loader from '../components/Loader';
 import EmptySearch from '../components/empty/EmptySearch';
 
@@ -11,7 +12,6 @@ import { useSearchStore } from '../hooks/useSearchStore';
 import { searchProducts } from '../services/productService';
 
 import { useQuery } from '../utils';
-import Pagination from '../components/Pagination';
 
 const Search = () => {
   const {
@@ -23,8 +23,9 @@ const Search = () => {
   } = useSearchStore();
 
   const query = useQuery();
-  const searchQuery = query.get('q');
+
   const page = query.get('page');
+  const searchQuery = query.get('q');
 
   const pageNumber = Number(page) || 1;
 
