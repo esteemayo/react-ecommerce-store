@@ -29,8 +29,14 @@ export const getProduct = (productId?: string) =>
 export const getProductByTags = (tags: string[]) =>
   http.get(`${apiEndpoint}/tags?tags=${tags}`);
 
-export const searchProducts = (searchQuery: string) =>
-  http.get(`${apiEndpoint}/search?query=${searchQuery}`);
+export const searchProducts = (
+  searchQuery: string,
+  page?: string,
+  limit?: string
+) =>
+  http.get(
+    `${apiEndpoint}/search?query=${searchQuery}&page=${page}&limit=${limit}`
+  );
 
 export const getReviewsOnProduct = (productId: string) =>
   http.get(productReviewUrl(productId));
