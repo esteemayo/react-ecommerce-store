@@ -25,7 +25,7 @@ const Search = () => {
   const query = useQuery();
 
   const page = query.get('page');
-  const searchQuery = query.get('q');
+  const searchQuery = query.get('q') ?? '';
 
   const pageNumber = Number(page) || 1;
 
@@ -46,7 +46,7 @@ const Search = () => {
       (async () => {
         searchProductPending();
         try {
-          const { data } = await searchProducts(searchQuery!, currentPage);
+          const { data } = await searchProducts(searchQuery, currentPage);
           setData(data.products);
           setTotalPages(data.numberOfPages);
           setTotal(data.total);
