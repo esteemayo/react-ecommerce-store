@@ -8,10 +8,10 @@ interface IBtn {
 }
 
 const Pagination = ({
-  url,
   currentPage,
   totalPages,
   onAction,
+  paginationUrl,
 }: PaginationProps) => {
   const pages = Array.from(new Array(totalPages), (_, index) => index + 1);
 
@@ -20,7 +20,11 @@ const Pagination = ({
       <Wrapper>
         {pages.map((page) => {
           return (
-            <StyledLink key={page} to={url} onClick={() => onAction(page)}>
+            <StyledLink
+              key={page}
+              to={paginationUrl(page)}
+              onClick={() => onAction(page)}
+            >
               <Button
                 type='button'
                 disabled={currentPage === page}
