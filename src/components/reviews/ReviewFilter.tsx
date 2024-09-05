@@ -20,7 +20,7 @@ const ReviewFilter = ({
 }: ReviewFilterProps) => {
   return (
     <Container>
-      <Wrapper sort={sort} className='filter-wrapper' onClick={onClick}>
+      <Wrapper sort={sort} onClick={onClick}>
         <Filter>Sort:</Filter>
         <FilterText>{value ?? 'Select'}</FilterText>
         <FilterIcon>
