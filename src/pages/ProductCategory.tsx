@@ -54,9 +54,11 @@ const ProductCategory = () => {
     []
   );
 
-  const url = useMemo(() => {
-    return encodeURIComponent(`/products/category/${category}`);
-  }, [category]);
+  const productUrl = useMemo(() => {
+    return encodeURIComponent(
+      `/products/category/${category}?page=${currentPage}`
+    );
+  }, [category, currentPage]);
 
   useEffect(() => {
     (async () => {
@@ -199,7 +201,7 @@ const ProductCategory = () => {
       {bodyContent}
       {counts > 6 && (
         <Pagination
-          url={url}
+          url={productUrl}
           currentPage={currentPage}
           totalPages={totalPages}
           onAction={setCurrentPage}
