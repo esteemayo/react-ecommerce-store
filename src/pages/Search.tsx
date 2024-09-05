@@ -68,9 +68,6 @@ const Search = () => {
     setData(products);
   }, [products]);
 
-  console.log(products);
-  console.log(data);
-
   if (isLoading) {
     return (
       <Container>
