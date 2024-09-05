@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import ProductBox from '../components/products/ProductBox';
 import ProductList from '../components/products/ProductList';
@@ -34,9 +34,12 @@ const Search = () => {
   const [currentPage, setCurrentPage] = useState(pageNumber);
   const [data, setData] = useState(products);
 
-  const searchUrl = useMemo(() => {
-    return `/search?q=${searchQuery}&page=${currentPage}`;
-  }, [currentPage, searchQuery]);
+  const searchUrl = useCallback(
+    (page: number) => {
+      return `/search?q=${searchQuery}&page=${page}`;
+    },
+    [searchQuery]
+  );
 
   useEffect(() => {
     searchQuery &&
@@ -65,7 +68,8 @@ const Search = () => {
 
   useEffect(() => {
     setData(products);
-  }, [products]);
+    pageNumber && setCurrentPage(pageNumber);
+  }, [pageNumber, products]);
 
   if (isLoading) {
     return (
@@ -83,10 +87,10 @@ const Search = () => {
     <ProductBox>
       <ProductList products={data} onUpdate={setData} />
       <Pagination
-        url={searchUrl}
         currentPage={currentPage}
         totalPages={totalPages}
         onAction={setCurrentPage}
+        paginationUrl={searchUrl}
       />
     </ProductBox>
   );
