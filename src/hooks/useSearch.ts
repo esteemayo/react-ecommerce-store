@@ -63,7 +63,7 @@ export const useSearch = () => {
 
     try {
       const { data } = await searchProducts(encodedSearchQuery);
-      searchProductFulfilled(data);
+      searchProductFulfilled(data.products);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: unknown | any) {
       console.log(err);
