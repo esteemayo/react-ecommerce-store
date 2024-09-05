@@ -36,7 +36,9 @@ export const useSearch = () => {
   }, []);
 
   const handleDelete = useCallback((id: number) => {
-    setHistories((prev) => [...prev].filter((item) => item.id !== id));
+    setHistories((prev) => {
+      return [...prev].filter((item) => item.id !== id);
+    });
   }, []);
 
   const handleHistory = useCallback(() => {
