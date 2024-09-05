@@ -30,7 +30,7 @@ const Search = () => {
   const pageNumber = Number(page) || 1;
 
   const [totalPages, setTotalPages] = useState(1);
-  const [total, setTotal] = useState(6);
+  const [total, setTotal] = useState(0);
   const [currentPage, setCurrentPage] = useState(pageNumber);
   const [data, setData] = useState(products);
 
