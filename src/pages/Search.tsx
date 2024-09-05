@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import ProductBox from '../components/products/ProductBox';
 import ProductList from '../components/products/ProductList';
@@ -11,6 +11,7 @@ import { useSearchStore } from '../hooks/useSearchStore';
 import { searchProducts } from '../services/productService';
 
 import { useQuery } from '../utils';
+import Pagination from '../components/Pagination';
 
 const Search = () => {
   const {
@@ -23,15 +24,29 @@ const Search = () => {
 
   const query = useQuery();
   const searchQuery = query.get('q');
+  const page = query.get('page');
+
+  const pageNumber = Number(page) || 1;
 
   const [data, setData] = useState(products);
+  const [totalPages, setTotalPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(pageNumber);
+  const [total, setTotal] = useState(6);
+
+  const searchUrl = useMemo(() => {
+    return `/search?q=${searchQuery}`;
+  }, [searchQuery]);
 
   useEffect(() => {
     searchQuery &&
       (async () => {
         searchProductPending();
         try {
-          const { data } = await searchProducts(searchQuery!);
+          const { data } = await searchProducts(searchQuery!, currentPage);
+          setData(data.products);
+          setTotalPages(data.numberOfPages);
+          setTotal(data.total);
+          setCurrentPage(data.page);
           console.log(data);
           searchProductFulfilled(data.products);
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -69,6 +84,12 @@ const Search = () => {
   return (
     <ProductBox>
       <ProductList products={data} onUpdate={setData} />
+      <Pagination
+        url={searchUrl}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onAction={setCurrentPage}
+      />
     </ProductBox>
   );
 };
