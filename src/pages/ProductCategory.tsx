@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import Heading from '../components/filters/Heading';
 import Select from '../components/filters/Select';
@@ -53,6 +53,10 @@ const ProductCategory = () => {
     },
     []
   );
+
+  const url = useMemo(() => {
+    return encodeURIComponent(`/products/category/${category}`);
+  }, [category]);
 
   useEffect(() => {
     (async () => {
