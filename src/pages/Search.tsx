@@ -32,7 +32,8 @@ const Search = () => {
         searchProductPending();
         try {
           const { data } = await searchProducts(searchQuery!);
-          searchProductFulfilled(data);
+          console.log(data);
+          searchProductFulfilled(data.products);
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: unknown | any) {
           console.log(err);
@@ -49,6 +50,9 @@ const Search = () => {
   useEffect(() => {
     setData(products);
   }, [products]);
+
+  console.log(products);
+  console.log(data);
 
   if (isLoading) {
     return (
