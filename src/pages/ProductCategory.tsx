@@ -199,7 +199,7 @@ const ProductCategory = () => {
       {bodyContent}
       {counts > 6 && (
         <Pagination
-          category={category}
+          url={url}
           currentPage={currentPage}
           totalPages={totalPages}
           onAction={setCurrentPage}
