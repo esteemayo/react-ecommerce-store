@@ -28,8 +28,8 @@ export const useSearch = () => {
     searchProductPending,
   } = useSearchStore();
 
-  const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
   const [searchQuery, setSearchQuery] = useState('');
+  const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
