@@ -8,7 +8,7 @@ interface IBtn {
 }
 
 const Pagination = ({
-  category,
+  url,
   currentPage,
   totalPages,
   onAction,
@@ -22,7 +22,7 @@ const Pagination = ({
           return (
             <StyledLink
               key={page}
-              to={`/products/category/${category}?page=${page}`}
+              to={`${url}?page=${page}`}
               onClick={() => onAction(page)}
             >
               <Button
