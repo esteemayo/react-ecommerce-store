@@ -86,12 +86,14 @@ const Search = () => {
   return (
     <ProductBox>
       <ProductList products={data} onUpdate={setData} />
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onAction={setCurrentPage}
-        paginationUrl={searchUrl}
-      />
+      {total > 6 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onAction={setCurrentPage}
+          paginationUrl={searchUrl}
+        />
+      )}
     </ProductBox>
   );
 };
