@@ -55,9 +55,8 @@ const ProductCategory = () => {
   );
 
   const productUrl = useMemo(() => {
-    return encodeURIComponent(
-      `/products/category/${category}?page=${currentPage}`
-    );
+    return;
+    `/products/category/${category}?page=${currentPage}`;
   }, [category, currentPage]);
 
   useEffect(() => {
