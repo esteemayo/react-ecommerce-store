@@ -10,7 +10,7 @@ import SearchHistory from './SearchHistory';
 const Search = () => {
   const onClose = useSearchModal((state) => state.onClose);
   const { histories, searchQuery, handleChange, handleDelete, handleSearch } =
-    useSearch();
+    useSearch?.();
 
   return (
     <Container>
