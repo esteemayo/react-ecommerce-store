@@ -59,8 +59,10 @@ export const useSearch = () => {
   const onSearchHandler = useCallback(async () => {
     searchProductPending();
 
+    const encodedSearchQuery = encodeURI(searchQuery);
+
     try {
-      const { data } = await searchProducts(searchQuery);
+      const { data } = await searchProducts(encodedSearchQuery);
       searchProductFulfilled(data);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: unknown | any) {
