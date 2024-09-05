@@ -20,11 +20,7 @@ const Pagination = ({
       <Wrapper>
         {pages.map((page) => {
           return (
-            <StyledLink
-              key={page}
-              to={`${url}?page=${page}`}
-              onClick={() => onAction(page)}
-            >
+            <StyledLink key={page} to={url} onClick={() => onAction(page)}>
               <Button
                 type='button'
                 disabled={currentPage === page}
