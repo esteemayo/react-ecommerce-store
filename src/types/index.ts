@@ -1046,9 +1046,9 @@ export interface PagerProps {
 }
 
 export interface PaginationProps {
-  url: string;
   currentPage: number;
   totalPages: number;
+  paginationUrl(page: number): string;
   onAction: React.Dispatch<React.SetStateAction<number>>;
 }
 
