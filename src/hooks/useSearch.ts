@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 
-import { useSearchStore } from './useSearchStore';
-import { useSidebar } from './useSidebar';
 import { useSearchModal } from './useSearchModal';
+import { useSidebar } from './useSidebar';
+import { useSearchStore } from './useSearchStore';
 
 import { IHistories } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
