@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import Heading from '../components/filters/Heading';
 import Select from '../components/filters/Select';
@@ -54,10 +54,12 @@ const ProductCategory = () => {
     []
   );
 
-  const productUrl = useMemo(() => {
-    return;
-    `/products/category/${category}?page=${currentPage}`;
-  }, [category, currentPage]);
+  const productUrl = useCallback(
+    (page: number) => {
+      return `/products/category/${category}?page=${page}`;
+    },
+    [category]
+  );
 
   useEffect(() => {
     (async () => {
@@ -200,10 +202,10 @@ const ProductCategory = () => {
       {bodyContent}
       {counts > 6 && (
         <Pagination
-          url={productUrl}
           currentPage={currentPage}
           totalPages={totalPages}
           onAction={setCurrentPage}
+          paginationUrl={productUrl}
         />
       )}
     </ProductBox>
