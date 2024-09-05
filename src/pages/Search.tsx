@@ -35,8 +35,8 @@ const Search = () => {
   const [data, setData] = useState(products);
 
   const searchUrl = useMemo(() => {
-    return `/search?q=${searchQuery}`;
-  }, [searchQuery]);
+    return `/search?q=${searchQuery}&page=${currentPage}`;
+  }, [currentPage, searchQuery]);
 
   useEffect(() => {
     searchQuery &&
@@ -48,7 +48,6 @@ const Search = () => {
           setTotalPages(data.numberOfPages);
           setTotal(data.total);
           setCurrentPage(data.page);
-          console.log(data);
           searchProductFulfilled(data.products);
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (err: unknown | any) {
