@@ -29,10 +29,10 @@ const Search = () => {
 
   const pageNumber = Number(page) || 1;
 
-  const [data, setData] = useState(products);
   const [totalPages, setTotalPages] = useState(1);
-  const [currentPage, setCurrentPage] = useState(pageNumber);
   const [total, setTotal] = useState(6);
+  const [currentPage, setCurrentPage] = useState(pageNumber);
+  const [data, setData] = useState(products);
 
   const searchUrl = useMemo(() => {
     return `/search?q=${searchQuery}`;
