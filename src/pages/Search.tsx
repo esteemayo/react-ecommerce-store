@@ -57,6 +57,7 @@ const Search = () => {
         }
       })();
   }, [
+    currentPage,
     searchProductFailure,
     searchProductFulfilled,
     searchProductPending,
