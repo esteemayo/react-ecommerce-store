@@ -31,8 +31,8 @@ export const getProductByTags = (tags: string[]) =>
 
 export const searchProducts = (
   searchQuery: string,
-  page?: string,
-  limit?: string
+  page?: number,
+  limit?: number
 ) =>
   http.get(
     `${apiEndpoint}/search?query=${searchQuery}&page=${page}&limit=${limit}`
