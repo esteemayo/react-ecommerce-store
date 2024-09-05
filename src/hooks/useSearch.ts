@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 
-import { useSearchModal } from './useSearchModal';
 import { useSidebar } from './useSidebar';
+import { useSearchModal } from './useSearchModal';
 
 import { IHistories } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
@@ -16,8 +16,8 @@ export const useSearch = () => {
   const navigate = useNavigate();
   const sidebarModal = useSidebar();
 
-  const onClose = useSearchModal((state) => state.onClose);
   const isOpen = useSearchModal((state) => state.isOpen);
+  const onClose = useSearchModal((state) => state.onClose);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
