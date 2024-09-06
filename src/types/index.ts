@@ -1486,3 +1486,8 @@ export interface EmptyStateProps {
   src?: string;
   title?: string;
 }
+
+export interface LoaderProps {
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  title?: string;
+}

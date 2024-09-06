@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
 import Spinner from './Spinner';
-
-interface LoaderProps {
-  size?: 'xs' | 'sm' | 'md' | 'lg';
-  title?: string;
-}
+import { LoaderProps } from '../types';
 
 const Loader = ({ size, title }: LoaderProps) => {
   return (
