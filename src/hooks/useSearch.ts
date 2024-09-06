@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSidebar } from './useSidebar';
 import { useSearchModal } from './useSearchModal';
 
-import { IHistories } from '../types';
+import { IHistories, IHistory } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
 
 const getAllHistories = () => {
@@ -33,7 +33,7 @@ export const useSearch = () => {
   }, []);
 
   const handleHistory = useCallback(() => {
-    const data: IHistories = {
+    const data: IHistory = {
       id: new Date().getTime(),
       query: searchQuery,
     };

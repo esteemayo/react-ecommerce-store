@@ -200,7 +200,7 @@ export interface SearchActionType {
   addHistory(history: IHistory): void;
 }
 
-type IHistory = {
+export type IHistory = {
   id: number;
   query: string;
 };
