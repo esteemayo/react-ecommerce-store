@@ -36,7 +36,8 @@ const Button = styled.button<IBtn>`
   transition: all 0.5s ease;
 
   @media only screen and (max-width: 64em) {
-    left: ${({ direction }) => direction === 'left' && '2.15rem'};
+    left: ${({ direction }) => direction === 'left' && '4rem'};
+    right: ${({ direction }) => direction === 'right' && '4rem'};
   }
 
   @media only screen and (max-width: 37.5em) {
