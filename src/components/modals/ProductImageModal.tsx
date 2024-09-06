@@ -198,8 +198,8 @@ const ArrowButton = styled.button<IBtn>`
   outline-color: #777;
   position: absolute;
   top: 50%;
-  left: ${({ direction }) => direction === 'left' && '3rem'};
-  right: ${({ direction }) => direction === 'right' && '3rem'};
+  left: ${({ direction }) => direction === 'left' && '4rem'};
+  right: ${({ direction }) => direction === 'right' && '4rem'};
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 5000;
