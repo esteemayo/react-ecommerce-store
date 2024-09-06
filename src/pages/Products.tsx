@@ -111,7 +111,7 @@ const Products = () => {
     setSortedProducts(tempProducts);
   }, [category, color, price, products, size]);
 
-  if (isLoading) {
+  if (true) {
     return (
       <Container>
         <Loader size='md' title='Loading...' />
