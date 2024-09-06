@@ -197,7 +197,6 @@ export interface SearchActionType {
   searchProductPending(): void;
   searchProductFulfilled(products: ProductValues[]): void;
   searchProductFailure(payload: string): void;
-  addHistory(history: IHistory): void;
 }
 
 export type IHistory = {
