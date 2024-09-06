@@ -37,7 +37,7 @@ export const useSearch = () => {
       id: new Date().getTime(),
       query: searchQuery,
     };
-    console.log(data);
+
     setHistories((prev) => {
       if (prev.find((item) => item.query === searchQuery)) {
         return [...new Set(prev)];
@@ -52,10 +52,10 @@ export const useSearch = () => {
       e.preventDefault();
 
       if (searchQuery) {
-        navigate(`/search?q=${searchQuery}`);
-
         handleHistory();
         setSearchQuery('');
+
+        navigate(`/search?q=${searchQuery}`);
 
         isOpen && onClose();
         sidebarModal.isOpen && sidebarModal.onClose();
