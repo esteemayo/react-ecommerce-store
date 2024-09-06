@@ -70,6 +70,10 @@ const Text = styled.span`
   font-size: 100%;
   color: ${({ theme }) => theme.text};
 
+  @media only screen and (max-width: 30em) {
+    display: none;
+  }
+
   @media only screen and (min-width: 112.5em) {
     margin-top: 2rem;
     font-size: 2rem;
