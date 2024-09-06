@@ -20,7 +20,7 @@ export const useSearch = () => {
   const onClose = useSearchModal((state) => state.onClose);
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [histories, setHistories] = useState<IHistories>(getAllHistories());
+  const [histories, setHistories] = useState<IHistories[]>(getAllHistories());
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
