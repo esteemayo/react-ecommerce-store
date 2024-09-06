@@ -9,7 +9,7 @@ import { getFromStorage, searchKey, setToStorage } from '../utils';
 
 const getAllHistories = () => {
   const histories = getFromStorage(searchKey);
-  return histories ?? [];
+  return histories || [];
 };
 
 export const useSearch = () => {
@@ -37,7 +37,7 @@ export const useSearch = () => {
       id: new Date().getTime(),
       query: searchQuery,
     };
-
+    console.log(data);
     setHistories((prev) => {
       if (prev.find((item) => item.query === searchQuery)) {
         return [...new Set(prev)];
@@ -52,8 +52,7 @@ export const useSearch = () => {
       e.preventDefault();
 
       if (searchQuery) {
-        const encodedSearchQuery = encodeURI(searchQuery);
-        navigate(`/search?q=${encodedSearchQuery}`);
+        navigate(`/search?q=${searchQuery}`);
 
         handleHistory();
         setSearchQuery('');
