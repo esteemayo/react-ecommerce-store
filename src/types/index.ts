@@ -198,10 +198,10 @@ export interface SearchActionType {
   searchProductFailure(payload: string): void;
 }
 
-export interface IHistories {
+export type IHistories = {
   id: number;
   query: string;
-}
+}[];
 
 export type NavLink = {
   id: number;
