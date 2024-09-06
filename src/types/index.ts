@@ -197,12 +197,15 @@ export interface SearchActionType {
   searchProductPending(): void;
   searchProductFulfilled(products: ProductValues[]): void;
   searchProductFailure(payload: string): void;
+  addHistory(history: IHistory): void;
 }
 
-export interface IHistories {
+type IHistory = {
   id: number;
   query: string;
-}
+};
+
+export type IHistories = IHistory[];
 
 export type NavLink = {
   id: number;
