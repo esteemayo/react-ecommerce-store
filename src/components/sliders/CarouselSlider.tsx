@@ -95,7 +95,7 @@ const CarouselSlider = () => {
 };
 
 const Container = styled.header`
-  width: 100vw;
+  width: 100%;
   height: 40vw;
   background-color: #f1ede7;
 
