@@ -107,6 +107,9 @@ const Navbar = () => {
           {!!currentUser && currentUser.role !== 'admin' && cart.length > 0 && (
             <CartQuantity amount={qty} />
           )}
+          {currentUser?.role === 'admin' && !pathname.includes('/admin') && (
+            <AddButton />
+          )}
         </ToggleBox>
         <ListContainer>
           {navLinks.map((item) => {
