@@ -1,7 +1,7 @@
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
+import { useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useCallback, useMemo } from 'react';
+import styled from 'styled-components';
 
 import Heading from './Heading';
 import Search from './Search';
@@ -10,9 +10,9 @@ import SidebarMenu from './SidebarMenu';
 import { useSearch } from '../../hooks/useSearch';
 import { useAuth } from '../../hooks/useAuth';
 import { useSidebar } from '../../hooks/useSidebar';
+import { useLogout } from '../../hooks/useLogout';
 
 import { sublinks } from '../../data';
-import { logout } from '../../services/authService';
 
 interface IContainer {
   type: string;
@@ -24,19 +24,8 @@ const Sidebar = () => {
   const logoutUser = useAuth((state) => state.logoutUser);
   const currentUser = useAuth((state) => state.user);
 
+  const { handleLogout } = useLogout();
   const { searchQuery, handleChange, handleSearch } = useSearch?.();
-
-  const handleLogout = useCallback(
-    async (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.stopPropagation();
-
-      await logout();
-
-      logoutUser();
-      onClose();
-    },
-    [logoutUser, onClose]
-  );
 
   const activeSidebar = useMemo(() => {
     return isOpen ? 'show' : '';
