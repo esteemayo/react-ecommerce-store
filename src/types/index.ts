@@ -200,7 +200,7 @@ export interface SearchActionType {
 }
 
 export type IHistory = {
-  id: number;
+  id: string;
   query: string;
 };
 
