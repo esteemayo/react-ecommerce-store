@@ -8,7 +8,7 @@ export const StyledSelect = styled.select<ISelect>`
   display: inline-block;
   text-transform: capitalize;
   width: 25rem;
-  padding: 3px;
+  padding: 1rem 0.5rem;
   font-family: inherit;
   font-size: 1.4rem;
   background-color: transparent;
