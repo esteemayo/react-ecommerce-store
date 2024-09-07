@@ -73,6 +73,8 @@ const Button = styled.button`
   border: none;
   outline: none;
   text-align: center;
+  padding: 2rem 3rem;
+  border-radius: 10rem;
 `;
 
 export default ErrorState;
