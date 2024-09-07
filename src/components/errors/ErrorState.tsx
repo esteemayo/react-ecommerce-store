@@ -80,6 +80,11 @@ const Button = styled.button`
   color: var(--clr-white);
   border-radius: 10rem;
   cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--clr-secondary-red);
+  }
 `;
 
 export default ErrorState;
