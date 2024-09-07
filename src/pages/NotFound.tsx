@@ -25,6 +25,10 @@ const Container = styled.main`
   padding-top: 8rem;
   padding-bottom: 4rem;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   @media only screen and (max-width: 37.5em) {
     padding-top: 4rem;
   }
