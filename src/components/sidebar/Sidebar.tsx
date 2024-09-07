@@ -23,7 +23,7 @@ const Sidebar = () => {
   const logoutUser = useAuth((state) => state.logoutUser);
   const currentUser = useAuth((state) => state.user);
 
-  const { searchQuery, handleChange, handleSearch } = useSearch();
+  const { searchQuery, handleChange, handleSearch } = useSearch?.();
 
   const handleLogout = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
