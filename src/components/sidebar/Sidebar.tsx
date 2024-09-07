@@ -12,6 +12,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useSidebar } from '../../hooks/useSidebar';
 
 import { sublinks } from '../../data';
+import { logout } from '../../services/authService';
 
 interface IContainer {
   type: string;
@@ -26,8 +27,10 @@ const Sidebar = () => {
   const { searchQuery, handleChange, handleSearch } = useSearch?.();
 
   const handleLogout = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
+    async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
+
+      await logout();
 
       logoutUser();
       onClose();
