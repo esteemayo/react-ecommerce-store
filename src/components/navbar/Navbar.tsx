@@ -107,9 +107,9 @@ const Navbar = () => {
           {!!currentUser && currentUser.role !== 'admin' && cart.length > 0 && (
             <CartQuantity amount={qty} />
           )}
-          {currentUser?.role === 'admin' && !pathname.includes('/admin') && (
-            <AddButton />
-          )}
+          {!!currentUser &&
+            currentUser.role === 'admin' &&
+            !pathname.includes('/admin') && <AddButton />}
         </ToggleBox>
         <ListContainer>
           {navLinks.map((item) => {
@@ -119,9 +119,9 @@ const Navbar = () => {
           {!!currentUser && <LogoutButton onClick={handleLogout} />}
         </ListContainer>
         <ButtonContainer>
-          {currentUser?.role === 'admin' && !pathname.includes('/admin') && (
-            <AddButton />
-          )}
+          {!!currentUser &&
+            currentUser.role === 'admin' &&
+            !pathname.includes('/admin') && <AddButton />}
           <DarkModeToggle />
           <SearchIcon onOpen={searchModal.onOpen} />
           {!currentUser && (
