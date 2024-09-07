@@ -23,23 +23,20 @@ import { useSubmenu } from '../../hooks/useSubmenu';
 import { navLinks } from '../../data';
 import { Submenu } from '../../types';
 
-import { logout } from '../../services/authService';
-
 const Navbar = () => {
   const { pathname } = useLocation();
 
-  const cart = useCartStore((state) => state.cart);
   const searchModal = useSearchModal();
-  const qty = useCartStore((state) => state.qty);
+  const { handleLogout } = useLogout();
 
-  const currentUser = useAuth((state) => state.user);
-  const logoutUser = useAuth((state) => state.logoutUser);
+  const qty = useCartStore((state) => state.qty);
+  const cart = useCartStore((state) => state.cart);
 
   const openSubmenu = useSubmenu((state) => state.openSubmenu);
   const onOpen = useSidebar((state) => state.onOpen);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
-  const { handleLogout } = useLogout();
+  const currentUser = useAuth((state) => state.user);
 
   const [isHover, setIsHover] = useState(false);
 
