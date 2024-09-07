@@ -10,7 +10,7 @@ interface ReviewImageProps {
 const ReviewImage = ({ name, photo }: ReviewImageProps) => {
   return (
     <Container>
-      <StyledImage src={photo} width={700} height={900} alt={name} />
+      <StyledImage src={photo} alt={name} />
     </Container>
   );
 };
