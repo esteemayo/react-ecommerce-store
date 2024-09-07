@@ -7,7 +7,7 @@ import { useSearchModal } from './useSearchModal';
 import { IHistories, IHistory } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
 
-const getAllHistories = () => {
+const getLocalStorage = () => {
   const histories = getFromStorage(searchKey);
   return histories || [];
 };
@@ -20,7 +20,7 @@ export const useSearch = () => {
   const onClose = useSearchModal((state) => state.onClose);
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [histories, setHistories] = useState<IHistories>(getAllHistories());
+  const [histories, setHistories] = useState<IHistories>(getLocalStorage());
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
