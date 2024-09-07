@@ -9,7 +9,7 @@ import { getFromStorage, searchKey, setToStorage } from '../utils';
 
 const getLocalStorage = () => {
   const histories = getFromStorage(searchKey);
-  return histories || [];
+  return histories ?? [];
 };
 
 export const useSearch = () => {
