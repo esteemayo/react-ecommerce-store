@@ -45,6 +45,7 @@ const Wrapper = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  outline: none;
 `;
 
 const Image = styled(CommonImage)`
