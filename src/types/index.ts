@@ -1256,7 +1256,7 @@ export interface SearchHistoryProps {
   id: string;
   query: string;
   onClose(): void;
-  onDelete(id: number): void;
+  onDelete(id: string): void;
 }
 
 export type OrderStatusType = {
