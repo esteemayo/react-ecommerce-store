@@ -15,6 +15,7 @@ const AddButton = () => {
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  outline: none;
 `;
 
 const Button = styled.button`
