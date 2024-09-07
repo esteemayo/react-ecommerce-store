@@ -16,8 +16,9 @@ import DarkModeToggle from './DarkModeToggle';
 import { useSidebar } from '../../hooks/useSidebar';
 import { useAuth } from '../../hooks/useAuth';
 import { useCartStore } from '../../hooks/useCartStore';
-import { useSubmenu } from '../../hooks/useSubmenu';
+import { useLogout } from '../../hooks/useLogout';
 import { useSearchModal } from '../../hooks/useSearchModal';
+import { useSubmenu } from '../../hooks/useSubmenu';
 
 import { navLinks } from '../../data';
 import { Submenu } from '../../types';
@@ -37,6 +38,8 @@ const Navbar = () => {
   const openSubmenu = useSubmenu((state) => state.openSubmenu);
   const onOpen = useSidebar((state) => state.onOpen);
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+
+  const { handleLogout } = useLogout();
 
   const [isHover, setIsHover] = useState(false);
 
@@ -84,16 +87,6 @@ const Navbar = () => {
       }
     },
     [closeSubmenu]
-  );
-
-  const handleLogout = useCallback(
-    async (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.stopPropagation();
-
-      await logout();
-      logoutUser();
-    },
-    [logoutUser]
   );
 
   return (
