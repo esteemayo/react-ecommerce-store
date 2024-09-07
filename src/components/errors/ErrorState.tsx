@@ -68,6 +68,11 @@ const Image = styled.img`
 
 const ButtonWrap = styled.div``;
 
-const Button = styled.button``;
+const Button = styled.button`
+  display: inline-block;
+  border: none;
+  outline: none;
+  text-align: center;
+`;
 
 export default ErrorState;
