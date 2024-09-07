@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { useSubmenu } from '../hooks/useSubmenu';
 import { CommonImage } from '../components/CommonImage';
+import Heading from '../components/Heading';
 
 const NotFound = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
@@ -13,6 +14,7 @@ const NotFound = () => {
         <StyledLink to='/'>
           <Image src='/svg/startled.svg' width={300} height={400} alt='404' />
         </StyledLink>
+        <Heading title='Uh oh!' subtitle='Page not found' center />
       </Wrapper>
     </Container>
   );
