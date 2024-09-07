@@ -15,7 +15,11 @@ const ErrorState = () => {
           height={300}
           alt='error icon'
         />
-        <Heading title='Error' subtitle='Something went wrong!' center />
+        <Heading
+          title='Uh oh!'
+          subtitle='It looks like something went wrong on our end. Please try again.'
+          center
+        />
       </Wrapper>
     </Container>
   );

@@ -15,7 +15,7 @@ const NotFound = () => {
         <StyledLink to='/'>
           <Image src='/svg/startled.svg' width={300} height={400} alt='404' />
         </StyledLink>
-        <Heading title='Uh oh!' subtitle='Page not found...' center />
+        <Heading title='Uh oh!' subtitle='Page not found.' center />
       </Wrapper>
     </Container>
   );
