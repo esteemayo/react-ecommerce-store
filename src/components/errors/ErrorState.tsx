@@ -73,6 +73,8 @@ const Button = styled.button`
   border: none;
   outline: none;
   text-align: center;
+  font-weight: 500;
+  font-size: 1.7rem;
   padding: 2.5rem 3rem;
   background-color: var(--clr-primary-red);
   color: var(--clr-white);
