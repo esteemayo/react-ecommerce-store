@@ -32,6 +32,10 @@ const Container = styled.main`
   @media only screen and (max-width: 37.5em) {
     padding-top: 4rem;
   }
+
+  @media only screen and (max-width: 30em) {
+    min-height: 70vh;
+  }
 `;
 
 const Wrapper = styled.div`
