@@ -26,7 +26,7 @@ export const useSearch = () => {
     setSearchQuery(e.target.value);
   }, []);
 
-  const handleDelete = useCallback((id: number) => {
+  const handleDelete = useCallback((id: string) => {
     setHistories((prev) => {
       return [...prev].filter((item) => item.id !== id);
     });
@@ -34,7 +34,7 @@ export const useSearch = () => {
 
   const handleHistory = useCallback(() => {
     const data: IHistory = {
-      id: new Date().getTime(),
+      id: new Date().getTime().toString(),
       query: searchQuery,
     };
 
