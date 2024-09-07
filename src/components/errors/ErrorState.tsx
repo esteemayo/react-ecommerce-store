@@ -20,6 +20,9 @@ const ErrorState = () => {
           subtitle='It looks like something went wrong on our end. Please try again.'
           center
         />
+        <ButtonWrap>
+          <Button type='button'>Reload page</Button>
+        </ButtonWrap>
       </Wrapper>
     </Container>
   );
@@ -62,5 +65,9 @@ const Image = styled.img`
     height: 35rem;
   }
 `;
+
+const ButtonWrap = styled.div``;
+
+const Button = styled.button``;
 
 export default ErrorState;

@@ -8,6 +8,7 @@ import Categories from '../components/categories/Categories';
 import { useSubmenu } from '../hooks/useSubmenu';
 
 const Home = () => {
+  throw new Error('error');
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
   return (
