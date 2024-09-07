@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { useSubmenu } from '../hooks/useSubmenu';
-import { CommonImage } from '../components/CommonImage';
 import Heading from '../components/Heading';
+import { CommonImage } from '../components/CommonImage';
+
+import { useSubmenu } from '../hooks/useSubmenu';
 
 const NotFound = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
