@@ -5,7 +5,7 @@ import { devtools } from 'zustand/middleware';
 import { SearchActionType, SearchStore } from '../types';
 
 const INITIAL_STATE = {
-  searchQuery: '',
+  query: '',
   products: [],
   histories: [],
   isError: false,
@@ -16,6 +16,7 @@ const INITIAL_STATE = {
 
 export const useSearchStore = create<SearchStore & SearchActionType>()(
   devtools((set) => ({
+    query: INITIAL_STATE.query,
     products: INITIAL_STATE.products,
     histories: INITIAL_STATE.histories,
     isError: INITIAL_STATE.isError,
