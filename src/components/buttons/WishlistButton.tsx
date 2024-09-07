@@ -25,7 +25,7 @@ const WishlistButton = ({
 
   return (
     <IconButton onClick={handleToggle}>
-      <HeartIcon isWished={isWished} />
+      <HeartIcon isWished={isWished} currentUser={currentUser} />
       {wishlistLabel}
     </IconButton>
   );
