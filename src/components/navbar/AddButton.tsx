@@ -27,6 +27,10 @@ const Button = styled.button`
   outline-color: ${({ theme }) => theme.navOut};
   cursor: pointer;
 
+  @media only screen and (max-width: 30em) {
+    font-size: 1.7rem;
+  }
+
   @media only screen and (min-width: 112.5em) {
     font-size: 1.8rem;
   }
