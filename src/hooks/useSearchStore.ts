@@ -48,7 +48,9 @@ export const useSearchStore = create<SearchStore & SearchActionType>()(
           state.isLoading = false;
           state.isSuccess = false;
           state.message = payload;
-        })
+        }),
+        false,
+        'rejected'
       ),
   }))
 );
