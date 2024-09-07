@@ -19,10 +19,9 @@ interface IContainer {
 }
 
 const Sidebar = () => {
-  const onClose = useSidebar((state) => state.onClose);
   const isOpen = useSidebar((state) => state.isOpen);
-  const logoutUser = useAuth((state) => state.logoutUser);
   const currentUser = useAuth((state) => state.user);
+  const onClose = useSidebar((state) => state.onClose);
 
   const { handleLogout } = useLogout();
   const { searchQuery, handleChange, handleSearch } = useSearch?.();
