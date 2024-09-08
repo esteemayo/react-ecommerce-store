@@ -916,8 +916,8 @@ export interface ReviewFormProps {
   rating: number | null;
   review: string;
   terms: boolean;
-  isLoading: boolean;
   errors: ReviewErrors;
+  isLoading: boolean;
   onChangeRating: React.Dispatch<React.SetStateAction<number | null>>;
   onChangeReview(e: React.ChangeEvent<HTMLTextAreaElement>): void;
   onChangeTerms(e: React.ChangeEvent<HTMLInputElement>): void;
