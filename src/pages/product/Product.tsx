@@ -35,6 +35,7 @@ const SingleProduct = () => {
       setProduct(data);
       return data;
     },
+    enabled: !!productId,
   });
 
   const tags = singleProduct?.tags;
