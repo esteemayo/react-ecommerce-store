@@ -21,7 +21,7 @@ const Container = styled.div<IProps>`
   align-items: ${({ center }) => center === 'true' && 'center'};
   justify-content: ${({ center }) => center === 'true' && 'center'};
 
-  text-align: ${({ center }) => setProperty(center)};
+  text-align: ${({ center }) => setProperty(center, 'center', 'left')};
   margin-bottom: 2rem;
 `;
 
@@ -48,8 +48,8 @@ const HeadingSecondary = styled.h2`
   }
 `;
 
-const setProperty = (center?: string) => {
-  return center === 'true' ? 'center' : 'left';
+const setProperty = (center?: string, val1: string, val2: string) => {
+  return center === 'true' ? val1 : val2;
 };
 
 export default Heading;
