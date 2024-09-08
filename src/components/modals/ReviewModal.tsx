@@ -92,6 +92,44 @@ const ReviewModal = ({
     [closeModalHandler]
   );
 
+  const handleCreate = useCallback(async () => {
+    const newReview = {
+      rating,
+      review,
+      terms,
+    };
+
+    try {
+      const { data } = await createReviewOnProduct(newReview, productId!);
+
+      const reviewData = {
+        ...data,
+        user: {
+          ...currentUser.details,
+        },
+      };
+
+      onReviews((prev) => {
+        return [reviewData, ...prev];
+      });
+      onRefetch();
+    } catch (err: unknown) {
+      console.log(err);
+      toast.error('Something went wrong!!!');
+    } finally {
+      setIsLoading(false);
+      closeModalHandler();
+    }
+  }, [
+    closeModalHandler,
+    currentUser,
+    onRefetch,
+    productId,
+    rating,
+    review,
+    terms,
+  ]);
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -114,44 +152,9 @@ const ReviewModal = ({
 
       setIsLoading(true);
 
-      const newReview = {
-        rating,
-        review,
-        terms,
-      };
-
-      try {
-        const { data } = await createReviewOnProduct(newReview, productId!);
-        const reviewData = {
-          ...data,
-          user: {
-            ...currentUser.details,
-          },
-        };
-
-        onReviews((prev) => {
-          return [reviewData, ...prev];
-        });
-        onRefetch();
-      } catch (err: unknown) {
-        console.log(err);
-        toast.error('Something went wrong!!!');
-      } finally {
-        setIsLoading(false);
-        closeModalHandler();
-      }
+      await handleCreate();
     },
-    [
-      closeModalHandler,
-      currentUser,
-      navigate,
-      onRefetch,
-      onReviews,
-      productId,
-      rating,
-      review,
-      terms,
-    ]
+    [navigate]
   );
 
   const activeModal = useMemo(() => {
