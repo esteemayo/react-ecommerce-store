@@ -61,9 +61,9 @@ const Wrapper = styled.div`
   gap: 5rem;
 `;
 
-const Text = styled.p`
+const Text = styled.span`
   font-weight: 500;
-  font-size: 1.4rem !important;
+  font-size: 1.4rem;
   color: inherit;
   margin-right: 5rem;
 
