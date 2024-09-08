@@ -899,6 +899,11 @@ export interface ReviewCardProps {
   updatedAt: string;
 }
 
+export interface ReviewErrors {
+  review?: string;
+  rating?: string;
+}
+
 export interface ReviewModalProps {
   productId?: string;
   isOpen: boolean;
