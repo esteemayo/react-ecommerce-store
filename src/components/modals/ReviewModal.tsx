@@ -188,6 +188,12 @@ const ReviewModal = ({
     return () => window.removeEventListener('keydown', handleEscape);
   }, [handleEscape]);
 
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setTimeout(() => setErrors({}), 5000);
+    }
+  }, [errors]);
+
   if (!isOpen) {
     return null;
   }
