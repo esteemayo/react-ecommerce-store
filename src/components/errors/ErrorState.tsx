@@ -67,6 +67,10 @@ const Image = styled.img`
   display: inline-block;
   object-fit: contain;
 
+  @media only screen and (max-width: 31.25em) {
+    margin-bottom: 2rem;
+  }
+
   @media only screen and (min-width: 112.5em) {
     width: 40rem;
     height: 35rem;
