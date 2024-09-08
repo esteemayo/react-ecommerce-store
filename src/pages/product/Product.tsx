@@ -46,6 +46,7 @@ const SingleProduct = () => {
       const { data } = await productAPI.getReviewsOnProduct(productId!);
       return data;
     },
+    enabled: !!productId,
   });
 
   const { mutate } = useMutation({
