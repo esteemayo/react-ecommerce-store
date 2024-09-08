@@ -77,7 +77,6 @@ const Button = styled.button`
   display: inline-block;
   border: none;
   text-align: center;
-  text-transform: capitalize;
   font-weight: 500;
   font-size: 1.7rem;
   padding: 2rem 2.5rem;
@@ -87,6 +86,10 @@ const Button = styled.button`
   outline-color: #e92222;
   cursor: pointer;
   transition: all 0.3s;
+
+  @media only screen and (min-width: 112.5em) {
+    font-size: 2.3rem;
+  }
 
   &:hover {
     background-color: var(--clr-secondary-red);
