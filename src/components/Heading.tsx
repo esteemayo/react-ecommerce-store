@@ -16,6 +16,11 @@ const Heading = ({ title, subtitle, center }: HeadingProps) => {
 };
 
 const Container = styled.div<IProps>`
+  display: ${({ center }) => center === 'true' && 'flex'};
+  flex-direction: ${({ center }) => center === 'true' && 'column'};
+  align-items: ${({ center }) => center === 'true' && 'center'};
+  justify-content: ${({ center }) => center === 'true' && 'center'};
+
   text-align: ${({ center }) => setProperty(center)};
   margin-bottom: 2rem;
 `;
@@ -40,6 +45,10 @@ const HeadingSecondary = styled.h2`
 
   @media only screen and (max-width: 21.875em) {
     width: 90%;
+  }
+
+  @media only screen and (max-width: 21.875em) {
+    width: 85%;
   }
 
   @media only screen and (min-width: 112.5em) {
