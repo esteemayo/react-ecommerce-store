@@ -2,9 +2,16 @@ import styled from 'styled-components';
 
 import Heading from '../Heading';
 import { useSubmenu } from '../../hooks/useSubmenu';
+import { useCallback } from 'react';
 
 const ErrorState = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
+
+  const handleReload = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+
+    window.location.assign(window.location.pathname);
+  }, []);
 
   return (
     <Container onMouseOver={closeSubmenu}>
@@ -21,7 +28,9 @@ const ErrorState = () => {
           center
         />
         <ButtonWrap>
-          <Button type='button'>Reload page</Button>
+          <Button type='button' onClick={handleReload}>
+            Reload page
+          </Button>
         </ButtonWrap>
       </Wrapper>
     </Container>
