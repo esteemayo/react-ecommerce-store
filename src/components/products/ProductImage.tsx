@@ -17,7 +17,7 @@ const ProductImage = ({ image, index, onOpen }: ProductImageProps) => {
 
 const Image = styled(CommonImage)`
   width: 37.5rem;
-  max-height: 55rem;
+  height: 55rem;
   border-radius: 2px;
   cursor: pointer;
 
@@ -26,16 +26,13 @@ const Image = styled(CommonImage)`
   }
 
   @media only screen and (max-width: 59.375em) {
-    width: 24.835rem;
-  }
-
-  @media only screen and (max-width: 56.25em) {
-    width: 24.83rem;
+    width: 23rem;
+    height: 100%;
   }
 
   @media only screen and (max-width: 50em) {
     width: 225px;
-    height: 30rem;
+    height: 35rem;
     border-radius: revert;
     cursor: default;
   }
