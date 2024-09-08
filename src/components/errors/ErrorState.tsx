@@ -86,6 +86,11 @@ const Button = styled.button`
   &:hover {
     background-color: var(--clr-secondary-red);
   }
+
+  &:disabled {
+    opacity: 0.85;
+    cursor: default;
+  }
 `;
 
 export default ErrorState;
