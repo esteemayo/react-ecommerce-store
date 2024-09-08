@@ -71,7 +71,6 @@ const ButtonWrap = styled.div``;
 const Button = styled.button`
   display: inline-block;
   border: none;
-  outline: none;
   text-align: center;
   text-transform: capitalize;
   font-weight: 500;
@@ -80,6 +79,7 @@ const Button = styled.button`
   background-color: var(--clr-primary-red);
   color: var(--clr-white);
   border-radius: 10rem;
+  outline-color: #e92222;
   cursor: pointer;
   transition: all 0.3s;
 
@@ -89,7 +89,7 @@ const Button = styled.button`
 
   &:disabled {
     opacity: 0.85;
-    cursor: default;
+    cursor: not-allowed;
   }
 `;
 
