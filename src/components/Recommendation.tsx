@@ -35,6 +35,7 @@ const StyledLink = styled(Link)`
 
 const StyledImage = styled(CommonImage)`
   width: 39.35rem;
+  max-height: 49.188rem;
   height: 100%;
   border-radius: 2px;
 
@@ -47,7 +48,7 @@ const StyledImage = styled(CommonImage)`
   }
 
   @media only screen and (max-width: 50em) {
-    width: 100%;
+    width: 40.85rem;
   }
 
   @media only screen and (min-width: 112.5em) {
