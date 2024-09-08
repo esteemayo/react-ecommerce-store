@@ -63,7 +63,7 @@ const Wrapper = styled.div`
 
 const Text = styled.p`
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
   color: inherit;
   margin-right: 5rem;
 
