@@ -27,11 +27,9 @@ const ErrorState = () => {
           subtitle='It looks like something went wrong on our end. Please try again.'
           center
         />
-        <ButtonWrap>
-          <Button type='button' onClick={handleReload}>
-            Reload page
-          </Button>
-        </ButtonWrap>
+        <Button type='button' onClick={handleReload}>
+          Reload page
+        </Button>
       </Wrapper>
     </Container>
   );
@@ -74,8 +72,6 @@ const Image = styled.img`
     height: 35rem;
   }
 `;
-
-const ButtonWrap = styled.div``;
 
 const Button = styled.button`
   display: inline-block;
