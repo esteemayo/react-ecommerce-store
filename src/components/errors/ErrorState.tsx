@@ -47,7 +47,7 @@ const Container = styled.main`
   }
 
   @media only screen and (max-width: 31.25em) {
-    height: 70vh;
+    height: 75vh;
   }
 `;
 
