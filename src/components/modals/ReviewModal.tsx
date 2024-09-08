@@ -5,13 +5,14 @@ import { toast } from 'react-toastify';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import ReviewForm from '../reviews/ReviewForm';
+
 import { useAuth } from '../../hooks/useAuth';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
+import { validateReviewInputs } from '../../validations/review';
 import { ReviewErrors, ReviewModalProps } from '../../types';
 import { createReviewOnProduct } from '../../services/productService';
-
-import ReviewForm from '../reviews/ReviewForm';
 
 interface IOverlay {
   mode: string;
@@ -91,24 +92,6 @@ const ReviewModal = ({
     [closeModalHandler]
   );
 
-  const validateInputs = useCallback(() => {
-    let errors: ReviewErrors = {};
-
-    if (!rating) {
-      errors.rating = 'Rating must not be empty';
-    } else if (rating <= 0) {
-      errors.rating = 'Rating must not be below 1.0';
-    } else if (rating > 5) {
-      errors.rating = 'Rating must not be above 5.0';
-    }
-
-    if (review.trim() === '') {
-      errors.review = 'Review must not be empty';
-    }
-
-    return errors;
-  }, []);
-
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -119,7 +102,7 @@ const ReviewModal = ({
         return;
       }
 
-      const errors = validateInputs();
+      const errors = validateReviewInputs(rating, review);
       if (Object.keys(errors).length > 0) return setErrors(errors);
 
       setErrors({});
