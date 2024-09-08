@@ -21,6 +21,11 @@ interface IWrapper {
   active: string;
 }
 
+interface ReviewErrors {
+  review?: string;
+  rating?: string;
+}
+
 const ReviewModal = ({
   productId,
   isOpen,
@@ -38,6 +43,7 @@ const ReviewModal = ({
   const [showModal, setShowModal] = useState(false);
   const [terms, setTerms] = useState(false);
   const [rating, setRating] = useState<number | null>(null);
+  const [errors, setErrors] = useState<ReviewErrors>({});
 
   const handleChangeReview = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -90,6 +96,24 @@ const ReviewModal = ({
     [closeModalHandler]
   );
 
+  const validateInputs = useCallback(() => {
+    let errors: ReviewErrors = {};
+
+    if (!rating) {
+      errors.rating = 'Rating must not be empty';
+    } else if (rating <= 0) {
+      errors.rating = 'Rating must not be below 1.0';
+    } else if (rating > 5) {
+      errors.rating = 'Rating must not be above 5.0';
+    }
+
+    if (review.trim() === '') {
+      errors.review = 'Review must not be empty';
+    }
+
+    return errors;
+  }, []);
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -99,6 +123,11 @@ const ReviewModal = ({
         navigate('/login');
         return;
       }
+
+      const errors = validateInputs();
+      if (Object.keys(errors).length > 0) return setErrors(errors);
+
+      setErrors({});
 
       setIsLoading(true);
 
