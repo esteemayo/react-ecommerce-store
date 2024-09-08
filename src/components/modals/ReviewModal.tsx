@@ -102,6 +102,11 @@ const ReviewModal = ({
         return;
       }
 
+      if (currentUser.role === 'admin') {
+        closeModalHandler();
+        return;
+      }
+
       const errors = validateReviewInputs(rating, review);
       if (Object.keys(errors).length > 0) return setErrors(errors);
 
