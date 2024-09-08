@@ -6,6 +6,7 @@ import Form from '../form/Form';
 import StarRating from '../StarRating';
 
 import { ReviewFormProps } from '../../types';
+import FormError from '../form/FormError';
 
 const ReviewForm = ({
   rating,
@@ -29,7 +30,11 @@ const ReviewForm = ({
             onChangeRating(newValue);
           }}
         />
-        <Text>Click to rate</Text>
+        {errors.rating ? (
+          <FormError message={errors.rating} />
+        ) : (
+          <Text>Click to rate</Text>
+        )}
       </RatingContainer>
       <Label htmlFor='review'>Product review</Label>
       <TextArea
@@ -39,6 +44,7 @@ const ReviewForm = ({
         onChange={onChangeReview}
         placeholder='Example: Since i bought this a month ago, it has been used a lot. What i like best/what is worst about this product is ...'
       />
+      {errors.review && <FormError message={errors.review} />}
       <Agreement>
         <Input id='terms' checked={terms} onChange={onChangeTerms} />
         <Label htmlFor='terms'>
