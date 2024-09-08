@@ -93,6 +93,8 @@ const ReviewModal = ({
   );
 
   const handleCreate = useCallback(async () => {
+    setIsLoading(true);
+
     const newReview = {
       rating,
       review,
@@ -149,8 +151,6 @@ const ReviewModal = ({
       if (Object.keys(errors).length > 0) return setErrors(errors);
 
       setErrors({});
-
-      setIsLoading(true);
 
       await handleCreate();
     },
