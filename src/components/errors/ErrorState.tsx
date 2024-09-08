@@ -1,8 +1,8 @@
+import { useCallback } from 'react';
 import styled from 'styled-components';
 
 import Heading from '../Heading';
 import { useSubmenu } from '../../hooks/useSubmenu';
-import { useCallback } from 'react';
 
 const ErrorState = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
