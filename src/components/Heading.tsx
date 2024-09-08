@@ -38,6 +38,10 @@ const HeadingSecondary = styled.h2`
   line-height: 1;
   margin-top: 0.8rem;
 
+  @media only screen and (max-width: 21.875em) {
+    width: 90%;
+  }
+
   @media only screen and (min-width: 112.5em) {
     font-size: 2.3rem;
   }
