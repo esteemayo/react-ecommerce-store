@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { useDarkMode } from '../../hooks/useDarkMode';
 
-import { ReviewModalProps } from '../../types';
+import { ReviewErrors, ReviewModalProps } from '../../types';
 import { createReviewOnProduct } from '../../services/productService';
 
 import ReviewForm from '../reviews/ReviewForm';
@@ -19,11 +19,6 @@ interface IOverlay {
 
 interface IWrapper {
   active: string;
-}
-
-interface ReviewErrors {
-  review?: string;
-  rating?: string;
 }
 
 const ReviewModal = ({
