@@ -39,15 +39,6 @@ const SingleProduct = () => {
 
   const tags = singleProduct?.tags;
 
-  const { data: recommendations } = useQuery({
-    queryKey: ['recommendations'],
-    queryFn: async () => {
-      const { data } = await productAPI.getProductByTags(tags);
-      return data;
-    },
-    enabled: !!tags,
-  });
-
   const { data: productReviews } = useQuery({
     queryKey: ['reviews'],
     queryFn: async () => {
@@ -71,6 +62,7 @@ const SingleProduct = () => {
   const [product, setProduct] = useState<ProductValues | CartValues>(
     singleProduct
   );
+  const [recommendations, setRecommendations] = useState([]);
 
   const getSort = useMemo(() => {
     if (sort === 'latest') return 'latest';
@@ -100,6 +92,18 @@ const SingleProduct = () => {
       });
     }
   }, [sort]);
+
+  useEffect(() => {
+    tags &&
+      (async () => {
+        try {
+          const { data } = await productAPI.getProductByTags(tags);
+          setRecommendations(data);
+        } catch (err: unknown) {
+          console.log(err);
+        }
+      })();
+  }, [tags]);
 
   useEffect(() => {
     setReviews(productReviews);
