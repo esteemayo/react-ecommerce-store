@@ -35,10 +35,10 @@ const ReviewModal = ({
 
   const [isLoading, setIsLoading] = useState(false);
   const [review, setReview] = useState('');
-  const [showModal, setShowModal] = useState(false);
+  const [errors, setErrors] = useState<ReviewErrors>({});
   const [terms, setTerms] = useState(false);
   const [rating, setRating] = useState<number | null>(null);
-  const [errors, setErrors] = useState<ReviewErrors>({});
+  const [showModal, setShowModal] = useState(false);
 
   const handleChangeReview = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
