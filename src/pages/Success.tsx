@@ -66,11 +66,11 @@ const Success = () => {
           }, 5000);
         } catch (err: unknown) {
           console.log(err);
+        } finally {
+          reset();
         }
       })();
     }
-
-    return () => reset();
   }, [cart, data, navigate, reset]);
 
   return (

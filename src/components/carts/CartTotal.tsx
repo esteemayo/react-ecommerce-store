@@ -24,7 +24,6 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
   const total = useCartStore((state) => state.total);
   const cart = useCartStore((state) => state.cart);
   const subtotal = useCartStore((state) => state.subtotal);
-  const reset = useCartStore((state) => state.reset);
 
   const [show, setShow] = useState(false);
   const [stripeToken, setStripeToken] = useState<Token>();
@@ -78,13 +77,12 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
           };
 
           navigate('/success', { state });
-          reset();
         } catch (err: unknown) {
           console.log(err);
         }
       })();
     }
-  }, [cart, currentUser, navigate, stripeToken, reset, total]);
+  }, [cart, currentUser, navigate, stripeToken, total]);
 
   useEffect(() => {
     setShow(isOpen);
