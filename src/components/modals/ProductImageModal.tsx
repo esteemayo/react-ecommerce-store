@@ -59,9 +59,9 @@ const ProductImageModal = ({
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
-        setSlideIndex(slideIndex === 0 ? lastIndex : slideIndex - 1);
+        setSlideIndex(slideIndex === 0 ? 0 : slideIndex - 1);
       } else if (e.key === 'ArrowRight') {
-        setSlideIndex(slideIndex === lastIndex ? 0 : slideIndex + 1);
+        setSlideIndex(slideIndex === lastIndex ? lastIndex : slideIndex + 1);
       }
     },
     [lastIndex, slideIndex]
