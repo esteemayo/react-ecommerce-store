@@ -50,6 +50,8 @@ export const useCart = (product: ProductValues) => {
       removeWishlist(product.id);
       setAlert(true);
       handleReset();
+
+      isOpen && setTimeout(() => onClose(), 5000);
     }
   }, [
     addProduct,
