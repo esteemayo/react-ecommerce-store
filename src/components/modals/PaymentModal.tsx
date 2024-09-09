@@ -33,6 +33,7 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
   const total = useCartStore((state) => state.total);
   const cart = useCartStore((state) => state.cart);
   const currentUser = useAuth((state) => state.user);
+  const reset = useCartStore((state) => state.reset);
 
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -87,11 +88,13 @@ const PaymentModal = ({ isOpen, onClose, onExit }: PaymentModalProps) => {
         phone: currentUser.details.phone,
       };
 
+      onExit();
       onClose();
       navigate('/success', { state });
     } catch (err: unknown) {
       console.log(err);
     } finally {
+      reset();
       setIsLoading(false);
     }
   };
