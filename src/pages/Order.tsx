@@ -28,6 +28,7 @@ const Order = () => {
       setStatus(data.status);
       return data;
     },
+    enabled: !!orderId,
   });
 
   const statusClass = useCallback(
