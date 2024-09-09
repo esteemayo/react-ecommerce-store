@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-import Spinner from '../Spinner';
 import Form from '../form/Form';
+import FormError from '../form/FormError';
+
+import Spinner from '../Spinner';
 import StarRating from '../StarRating';
 
 import { ReviewFormProps } from '../../types';
-import FormError from '../form/FormError';
 
 const ReviewForm = ({
   rating,
