@@ -42,6 +42,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
       let newSlideIndex: number;
 
       setIsMoved(true);
+
       if (direction === 'left') {
         newSlideIndex = slideIndex - 1;
       }
