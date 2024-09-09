@@ -25,7 +25,7 @@ const CartTotal = ({ isOpen, onOpen, onClose, onAction }: CartTotalProps) => {
   const cart = useCartStore((state) => state.cart);
   const subtotal = useCartStore((state) => state.subtotal);
 
-  const [show, setShow] = useState(isOpen);
+  const [show, setShow] = useState(false);
   const [stripeToken, setStripeToken] = useState<Token>();
 
   const onToken = useCallback((token: Token) => {
