@@ -14,7 +14,12 @@ import { useAuth } from '../../hooks/useAuth';
 import { useCartControls } from '../../hooks/useCartControls';
 
 import * as productAPI from '../../services/productService';
-import { CartValues, ProductValues, ReviewItem } from '../../types';
+import {
+  CartValues,
+  ProductValues,
+  RecommendationType,
+  ReviewItem,
+} from '../../types';
 
 const SingleProduct = () => {
   const queryClient = useQueryClient();
@@ -59,12 +64,15 @@ const SingleProduct = () => {
     },
   });
 
-  const [reviews, setReviews] = useState<ReviewItem>([]);
   const [sort, setSort] = useState('');
+  const [reviews, setReviews] = useState<ReviewItem>([]);
+
   const [product, setProduct] = useState<ProductValues | CartValues>(
     singleProduct
   );
-  const [recommendations, setRecommendations] = useState([]);
+  const [recommendations, setRecommendations] = useState<RecommendationType>(
+    []
+  );
 
   const getSort = useMemo(() => {
     if (sort === 'latest') return 'latest';
