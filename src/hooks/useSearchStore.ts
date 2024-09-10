@@ -19,6 +19,17 @@ export const useSearchStore = create<SearchStore & SearchActionType>()(
     isLoading: INITIAL_STATE.isLoading,
     isSuccess: INITIAL_STATE.isSuccess,
     message: INITIAL_STATE.message,
+    reset: () =>
+      set(
+        produce((state) => {
+          state.isError = INITIAL_STATE.isError;
+          state.isLoading = INITIAL_STATE.isLoading;
+          state.isSuccess = INITIAL_STATE.isSuccess;
+          state.message = INITIAL_STATE.message;
+        }),
+        false,
+        'reset'
+      ),
     searchProductPending: () =>
       set(
         produce((state) => {
