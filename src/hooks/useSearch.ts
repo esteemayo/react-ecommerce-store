@@ -6,6 +6,7 @@ import { useSearchModal } from './useSearchModal';
 
 import { IHistories, IHistory } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
+import { useSearchStore } from './useSearchStore';
 
 const getLocalStorage = () => {
   const histories = getFromStorage(searchKey);
@@ -16,8 +17,11 @@ export const useSearch = () => {
   const navigate = useNavigate();
   const sidebarModal = useSidebar();
 
-  const isOpen = useSearchModal((state) => state.isOpen);
   const onClose = useSearchModal((state) => state.onClose);
+  const isOpen = useSearchModal((state) => state.isOpen);
+  const searchProductPending = useSearchStore(
+    (state) => state.searchProductPending
+  );
 
   const [searchQuery, setSearchQuery] = useState('');
   const [histories, setHistories] = useState<IHistories>(getLocalStorage());
@@ -52,6 +56,8 @@ export const useSearch = () => {
       e.preventDefault();
 
       if (searchQuery) {
+        searchProductPending();
+
         handleHistory();
         setSearchQuery('');
 
@@ -61,7 +67,15 @@ export const useSearch = () => {
         sidebarModal.isOpen && sidebarModal.onClose();
       }
     },
-    [handleHistory, isOpen, navigate, onClose, searchQuery, sidebarModal]
+    [
+      handleHistory,
+      isOpen,
+      navigate,
+      onClose,
+      searchProductPending,
+      searchQuery,
+      sidebarModal,
+    ]
   );
 
   useEffect(() => {
