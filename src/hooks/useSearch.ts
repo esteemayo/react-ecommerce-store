@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 
-import { useSidebar } from './useSidebar';
 import { useSearchModal } from './useSearchModal';
+import { useSidebar } from './useSidebar';
+import { useSearchStore } from './useSearchStore';
 
 import { IHistories, IHistory } from '../types';
 import { getFromStorage, searchKey, setToStorage } from '../utils';
-import { useSearchStore } from './useSearchStore';
 
 const getLocalStorage = () => {
   const histories = getFromStorage(searchKey);
