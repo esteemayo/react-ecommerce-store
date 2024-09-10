@@ -57,7 +57,10 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border: none;
   font-weight: 500;
   font-size: 1.45rem;
