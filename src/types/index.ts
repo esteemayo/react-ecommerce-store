@@ -193,6 +193,7 @@ export interface SearchStore {
 }
 
 export interface SearchActionType {
+  reset(): void;
   searchProductPending(): void;
   searchProductFulfilled(products: ProductValues[]): void;
   searchProductFailure(payload: string): void;
