@@ -11,9 +11,9 @@ import { useSearch } from '../../hooks/useSearch';
 import { useAuth } from '../../hooks/useAuth';
 import { useSidebar } from '../../hooks/useSidebar';
 import { useLogout } from '../../hooks/useLogout';
+import { useSearchStore } from '../../hooks/useSearchStore';
 
 import { sublinks } from '../../data';
-import { useSearchStore } from '../../hooks/useSearchStore';
 
 interface IContainer {
   type: string;
