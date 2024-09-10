@@ -13,15 +13,17 @@ import { useSidebar } from '../../hooks/useSidebar';
 import { useLogout } from '../../hooks/useLogout';
 
 import { sublinks } from '../../data';
+import { useSearchStore } from '../../hooks/useSearchStore';
 
 interface IContainer {
   type: string;
 }
 
 const Sidebar = () => {
-  const isOpen = useSidebar((state) => state.isOpen);
-  const currentUser = useAuth((state) => state.user);
   const onClose = useSidebar((state) => state.onClose);
+  const isOpen = useSidebar((state) => state.isOpen);
+  const isLoading = useSearchStore((state) => state.isLoading);
+  const currentUser = useAuth((state) => state.user);
 
   const { handleLogout } = useLogout();
   const { searchQuery, handleChange, handleSearch } = useSearch();
@@ -46,6 +48,7 @@ const Sidebar = () => {
           <Heading title='Search products' />
           <Search
             query={searchQuery}
+            loading={isLoading}
             onChange={handleChange}
             onSubmit={handleSearch}
           />
