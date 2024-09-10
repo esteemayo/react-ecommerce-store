@@ -15,10 +15,11 @@ import { useQuery } from '../utils';
 
 const Search = () => {
   const {
+    isLoading,
+    reset,
     searchProductFailure,
     searchProductFulfilled,
     searchProductPending,
-    isLoading,
     products,
   } = useSearchStore();
 
@@ -58,8 +59,11 @@ const Search = () => {
           searchProductFailure(err.response.data.message);
         }
       })();
+
+    return () => reset();
   }, [
     currentPage,
+    reset,
     searchProductFailure,
     searchProductFulfilled,
     searchProductPending,
