@@ -24,7 +24,7 @@ const Sidebar = () => {
   const onClose = useSidebar((state) => state.onClose);
 
   const { handleLogout } = useLogout();
-  const { searchQuery, handleChange, handleSearch } = useSearch?.();
+  const { searchQuery, handleChange, handleSearch } = useSearch();
 
   const activeSidebar = useMemo(() => {
     return isOpen ? 'show' : '';
