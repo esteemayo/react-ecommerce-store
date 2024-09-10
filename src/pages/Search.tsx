@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -74,6 +75,10 @@ const Search = () => {
     setData(products);
     pageNumber && setCurrentPage(pageNumber);
   }, [pageNumber, products]);
+
+  useEffect(() => {
+    isError && toast.error(message);
+  }, [isError, message]);
 
   if (isLoading) {
     return (
