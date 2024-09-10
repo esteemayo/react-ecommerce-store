@@ -2,12 +2,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { css } from 'styled-components';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-import { useSearch } from '../hooks/useSearch';
-import { useSearchModal } from '../hooks/useSearchModal';
-
+import Spinner from './Spinner';
 import SearchHistory from './SearchHistory';
 
+import { useSearchModal } from '../hooks/useSearchModal';
+import { useSearch } from '../hooks/useSearch';
+import { useSearchStore } from '../hooks/useSearchStore';
+
 const Search = () => {
+  const isLoading = useSearchStore((state) => state.isLoading);
   const onClose = useSearchModal((state) => state.onClose);
   const { histories, searchQuery, handleChange, handleDelete, handleSearch } =
     useSearch();
@@ -24,7 +27,9 @@ const Search = () => {
           />
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </FormGroup>
-        <Button type='submit'>Search</Button>
+        <Button type='submit' disabled={isLoading}>
+          {isLoading ? <Spinner size='md' /> : 'Search'}
+        </Button>
       </Form>
       {histories.length > 0 &&
         histories.slice(0, 5).map((item) => {
