@@ -14,14 +14,14 @@ import { searchProducts } from '../services/productService';
 import { useQuery } from '../utils';
 
 const Search = () => {
-  const {
-    isLoading,
-    reset,
-    searchProductFailure,
-    searchProductFulfilled,
-    searchProductPending,
-    products,
-  } = useSearchStore();
+  const isError = useSearchStore((store) => store.isError);
+  const reset = useSearchStore((store) => store.reset);
+  const products = useSearchStore((store) => store.products);
+  const message = useSearchStore((store) => store.message);
+  const isLoading = useSearchStore((store) => store.isLoading);
+
+  const { searchProductFailure, searchProductFulfilled, searchProductPending } =
+    useSearchStore();
 
   const query = useQuery();
 
