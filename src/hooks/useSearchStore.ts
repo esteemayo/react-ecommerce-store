@@ -6,7 +6,6 @@ import { SearchActionType, SearchStore } from '../types';
 
 const INITIAL_STATE = {
   products: [],
-  histories: [],
   isError: false,
   isLoading: false,
   isSuccess: false,
@@ -16,7 +15,6 @@ const INITIAL_STATE = {
 export const useSearchStore = create<SearchStore & SearchActionType>()(
   devtools((set) => ({
     products: INITIAL_STATE.products,
-    histories: INITIAL_STATE.histories,
     isError: INITIAL_STATE.isError,
     isLoading: INITIAL_STATE.isLoading,
     isSuccess: INITIAL_STATE.isSuccess,

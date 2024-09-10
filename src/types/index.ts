@@ -186,7 +186,6 @@ export interface ICartControls {
 
 export interface SearchStore {
   products: ProductValues[];
-  histories: IHistories[];
   isError: boolean;
   isLoading: boolean;
   isSuccess: boolean;
