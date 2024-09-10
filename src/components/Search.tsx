@@ -110,6 +110,10 @@ const Input = styled.input`
 
 const Button = styled.button`
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border: 3px solid ${({ theme }) => theme.searchBorder};
   border: 3px solid transparent;
   border-left: none;
