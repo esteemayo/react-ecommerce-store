@@ -577,6 +577,7 @@ export interface SidebarMenuItemProps {
 
 export interface SidebarSearch {
   query: string;
+  loading: boolean;
   onChange(e: React.ChangeEvent<HTMLInputElement>): void;
   onSubmit(e: React.FormEvent<HTMLFormElement>): void;
 }
