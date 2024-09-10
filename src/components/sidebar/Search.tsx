@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
+import Spinner from '../Spinner';
 import { SidebarSearch } from '../../types';
 
-const Search = ({ query, onChange, onSubmit }: SidebarSearch) => {
+const Search = ({ query, loading, onChange, onSubmit }: SidebarSearch) => {
   return (
     <Form onSubmit={onSubmit}>
       <Input
@@ -11,7 +12,9 @@ const Search = ({ query, onChange, onSubmit }: SidebarSearch) => {
         placeholder='Search store...'
         onChange={onChange}
       />
-      <Button type='submit'>Search</Button>
+      <Button type='submit' disabled={loading}>
+        {loading ? <Spinner /> : 'Search'}
+      </Button>
     </Form>
   );
 };
