@@ -64,7 +64,7 @@ const ProductImageModal = ({
         setSlideIndex(slideIndex === lastIndex ? lastIndex : slideIndex + 1);
       }
     },
-    [lastIndex, slideIndex]
+    [lastIndex, slideIndex, setSlideIndex]
   );
 
   const handleEscape = useCallback(
