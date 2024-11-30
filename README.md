@@ -156,3 +156,7 @@ The following API endpoints are available:
 ### Checkout Endpoints
 
 - <mark>POST /api/v1/checkout:</mark> Creates a charge on a customer's payment method.
+
+## Contributing
+
+Contributions are welcome! Please submit a pull request with your changes.
