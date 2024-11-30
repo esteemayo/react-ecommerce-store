@@ -14,3 +14,7 @@ A fast and scalable e-commerce store application built using Vite, Axios, React 
 8. #api-endpoints
 9. #contributing
 10. #license
+
+## Overview
+
+This e-commerce store application allows users to browse and purchase products, manage their accounts, and track their orders. The application uses Vite for fast and efficient development, Axios for making HTTP requests, React Query for managing data fetching and caching, Styled Components for styling, React Router Dom for client-side routing, React Stripe checkout for payment processing, and Firebase for image upload.
