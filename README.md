@@ -42,3 +42,17 @@ This e-commerce store application allows users to browse and purchase products, 
 - React Router Dom (6.x)
 - React Stripe Checkout (2.x
 - Firebase (10.x))
+
+## Setup and Installation
+
+1. Clone the repository: <mark>[git clone](https://github.com/esteemayo/react-ecommerce-store.git)</mark>
+2. Change into the project directory: <mark>cd your-repo-name</mark>
+3. Install dependencies: <mark>npm install</mark> or <mark>yarn install</mark>
+4. Create a <mark>.env</mark> file and add the following environment variables:
+
+- VITE_APP_STRIPE_PUBLISHABLE_KEY: Stripe publishable key
+- VITE_APP_FIREBASE_API_KEY: Firebase API key
+- VITE_APP_DEV_API_URL: Application development server URL
+- VITE_APP_PROD_API_URL: Application production server URL
+
+5. Start the application: <mark>npm run dev</mark> or <mark>yarn dev</mark>
