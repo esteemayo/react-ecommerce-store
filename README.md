@@ -65,3 +65,7 @@ This e-commerce store application allows users to browse and purchase products, 
 4. Click on the "Checkout" button to place an order
 5. Enter your payment information and complete the order
 6. Click on the "Leave a review" button to add a review on a product
+
+## Payment Gateway
+
+This application uses Stripe for Payment Processing. The VITE_APP_STRIPE_PUBLISHABLE_KEY and STRIPE_SECRET_KEY from the backend environment variables are used to secure the payment process.
