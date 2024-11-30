@@ -69,3 +69,7 @@ This e-commerce store application allows users to browse and purchase products, 
 ## Payment Gateway
 
 This application uses Stripe for Payment Processing. The <mark>VITE_APP_STRIPE_PUBLISHABLE_KEY</mark> and <mark>STRIPE_SECRET_KEY</mark> from the backend environment variables are used to secure the payment process.
+
+## Image Upload
+
+This application uses Firebase for image upload. The VITE_APP_FIREBASE_API_KEY, VITE_APP_FIREBASE_AUTH_DOMAIN, VITE_APP_FIREBASE_STORAGE_BUCKET, and VITE_APP_FIREBASE_MESSAGE_SENDER_ID environment variables are used to secure the image upload process.
