@@ -40,8 +40,8 @@ This e-commerce store application allows users to browse and purchase products, 
 - React Query (5.x)
 - Styled Components (6.x)
 - React Router Dom (6.x)
-- React Stripe Checkout (2.x
-- Firebase (10.x))
+- React Stripe Checkout (2.x)
+- Firebase (10.x)
 
 ## Setup and Installation
 
