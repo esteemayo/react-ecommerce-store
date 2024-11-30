@@ -73,3 +73,86 @@ This application uses Stripe for Payment Processing. The <mark>VITE_APP_STRIPE_P
 ## Image Upload
 
 This application uses Firebase for image upload. The <mark>VITE_APP_FIREBASE_API_KEY</mark>, <mark>VITE_APP_FIREBASE_AUTH_DOMAIN</mark>, <mark>VITE_APP_FIREBASE_STORAGE_BUCKET</mark>, and <mark>VITE_APP_FIREBASE_MESSAGE_SENDER_ID</mark> environment variables are used to secure the image upload process.
+
+## API Endpoints
+
+The following API endpoints are available:
+
+### Authentication Endpoints
+
+- <mark>POST /api/v1/auth/login:</mark> Authenticates a user and returns a JSON Web Token (JWT).
+- <mark>POST /api/v1/auth/facebook-login:</mark> Authenticates a user and returns a JSON Web Token (JWT).
+- <mark>POST /api/v1/auth/google-login:</mark> Authenticates a user and returns a JSON Web Token (JWT).
+- <mark>POST /api/v1/auth/register:</mark> Creates a new user and returns user data and JWT.
+- <mark>POST /api/v1/auth/logout:</mark> Clears authenticated user's token from the cookie.
+- <mark>POST /api/v1/auth/forgot-password:</mark> Sends a request to reset a user's password through email.
+- <mark>POST /api/v1/auth/reset-password/:token:</mark> Reset a user password.
+- <mark>PATCH /api/v1/auth/update-my-password:</mark> Updates authenticated user's password.
+
+### User Endpoints
+
+- <mark>GET /api/v1/users:</mark> Returns the users data, for the authenticated admin.
+- <mark>GET /api/v1/users/:id:</mark> Returns a single user by ID.
+- <mark>GET /api/v1/users/me:</mark> Returns authenticated user data.
+- <mark>GET /api/v1/users/stats:</mark> Returns number of registered users in each month of the year.
+- <mark>POST /api/v1/users:</mark> Cannot be used to create a new user.
+- <mark>PATCH /api/v1/users/:id:</mark> Updates a single user data, for the authenticated admin.
+- <mark>PATCH /api/v1/users/update-me:</mark> Updates the authenticated user's data such as name, email, username, image, etc. But cannot update authenticated user's password.
+- <mark>PATCH /api/v1/users/update-email:</mark> Updates authenticated user's email address.
+- <mark>DELETE /api/v1/users/:id:</mark> Deletes a single user by ID, for the authenticated admin.
+- <mark>DELETE /api/v1/users/delete-me:</mark> Deletes authenticated user's data, authorized by both authenticated user and admin.
+
+### Product Endpoints
+
+- <mark>GET /api/v1/products:</mark> Returns a list of products.
+- <mark>GET /api/v1/products/stats:</mark> Returns the products statistics by the ratings average.
+- <mark>GET /api/v1/products/tags:</mark> Returns a list of products with one or more related or common tags.
+- <mark>GET /api/v1/products/:id:</mark> Returns a single product by ID.
+- <mark>GET /api/v1/products/count-by-category:</mark> Returns total number of products in a category.
+- <mark>GET /api/v1/products/search:</mark> Returns a list of products by the product's name search query.
+- <mark>GET /api/v1/products/details/:slug:</mark> Returns a single product by SLUG.
+- <mark>POST /api/v1/products:</mark> Create a new product.
+- <mark>PATCH /api/v1/products/:id:</mark> Updates a product by ID.
+- <mark>PATCH /api/v1/products/like/:id:</mark> Handles the likes functionality of a product.
+- <mark>PATCH /api/v1/products/views/:id:</mark> Increment the number of views on a product.
+- <mark>DELETE /api/v1/products/:id:</mark> Deletes a product by ID.
+
+### Order Endpoints
+
+- <mark>GET /api/v1/orders:</mark> Returns a list of orders for the authenticated admin.
+- <mark>GET /api/v1/orders/my-orders:</mark> Returns a list of orders for the authenticated user.
+- <mark>GET /api/v1/orders/income:</mark> Returns the monthly income generated from a list of orders.
+- <mark>GET /api/v1/orders/:id:</mark> Returns a single order by ID.
+- <mark>POST /api/v1/orders:</mark> Creates a new order for the authenticated user.
+- <mark>PATCH /api/v1/orders/:id:</mark> Updates an order by ID for the authenticated admin.
+- <mark>DELETE /api/v1/orders/:id:</mark> Deletes an order by ID for the authenticated admin
+
+### Cart Endpoints
+
+- <mark>GET /api/v1/carts:</mark> Returns a list of cart items.
+- <mark>GET /api/v1/carts/:id:</mark> Returns a single cart item by ID.
+- <mark>POST /api/v1/carts:</mark> Create a new cart item.
+- <mark>PATCH /api/v1/carts/:id:</mark> Updates a cart item by ID.
+- <mark>DELETE /api/v1/carts/:id:</mark> Deletes a cart item by ID.
+
+### Category Endpoints
+
+- <mark>GET /api/v1/categories:</mark> Returns a list of categories for the authenticated admin.
+- <mark>GET /api/v1/categories/:id:</mark> Returns a single category by ID for the authenticated admin.
+- <mark>POST /api/v1/categories:</mark> Create a new category for the authenticated admin.
+- <mark>PATCH /api/v1/categories/:id:</mark> Updates a category by ID for the authenticated admin.
+- <mark>DELETE /api/v1/categories/:id:</mark> Deletes a category by ID for the authenticated admin.
+
+### Review Endpoints
+
+- <mark>GET /api/v1/reviews:</mark> Returns a list of reviews.
+- <mark>GET /api/v1/reviews/top:</mark> Returns a list of reviews where rating is greater or equals to <mark>4.5</mark>.
+- <mark>GET /api/v1/reviews/total-reviews/:id:</mark> Returns the total number of ratings on a product.
+- <mark>GET /api/v1/reviews/:id:</mark> Returns a single review by ID for the authenticated user.
+- <mark>POST /api/v1/reviews:</mark> Creates a new review for the authenticated user.
+- <mark>PATCH /api/v1/reviews/:id:</mark> Updates a review by ID for the authenticated user or admin.
+- <mark>DELETE /api/v1/reviews/:id:</mark> Deletes a review by ID for the authenticated user or admin.
+
+### Checkout Endpoints
+
+- <mark>POST /api/v1/checkout:</mark> Creates a charge on a customer's payment method.
