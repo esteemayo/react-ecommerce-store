@@ -68,4 +68,4 @@ This e-commerce store application allows users to browse and purchase products, 
 
 ## Payment Gateway
 
-This application uses Stripe for Payment Processing. The VITE_APP_STRIPE_PUBLISHABLE_KEY and STRIPE_SECRET_KEY from the backend environment variables are used to secure the payment process.
+This application uses Stripe for Payment Processing. The <mark>VITE_APP_STRIPE_PUBLISHABLE_KEY</mark> and <mark>STRIPE_SECRET_KEY</mark> from the backend environment variables are used to secure the payment process.
