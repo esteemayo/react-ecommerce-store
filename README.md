@@ -56,3 +56,12 @@ This e-commerce store application allows users to browse and purchase products, 
 - VITE_APP_PROD_API_URL: Application production server URL
 
 5. Start the application: <mark>npm run dev</mark> or <mark>yarn dev</mark>
+
+## Usage
+
+1. Open a web browser and navigate to [http://localhost:5173](http://localhost:5173)
+2. Click on the "Login" button to authenticate
+3. Browse the products and add items to your cart
+4. Click on the "Checkout" button to place an order
+5. Enter your payment information and complete the order
+6. Click on the "Leave a review" button to add a review on a product
