@@ -50,10 +50,10 @@ This e-commerce store application allows users to browse and purchase products, 
 3. Install dependencies: <mark>npm install</mark> or <mark>yarn install</mark>
 4. Create a <mark>.env</mark> file and add the following environment variables:
 
-- VITE_APP_STRIPE_PUBLISHABLE_KEY: Stripe publishable key
-- VITE_APP_FIREBASE_API_KEY: Firebase API key
-- VITE_APP_DEV_API_URL: Application development server URL
-- VITE_APP_PROD_API_URL: Application production server URL
+- <mark>VITE_APP_STRIPE_PUBLISHABLE_KEY:</mark> Stripe publishable key
+- <mark>VITE_APP_FIREBASE_API_KEY:</mark> Firebase API key
+- <mark>VITE_APP_DEV_API_URL:</mark> Application development server URL
+- <mark>VITE_APP_PROD_API_URL:</mark> Application production server URL
 
 5. Start the application: <mark>npm run dev</mark> or <mark>yarn dev</mark>
 
