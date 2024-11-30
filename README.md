@@ -31,3 +31,14 @@ This e-commerce store application allows users to browse and purchase products, 
 - Data fetching and caching using React Query
 - Styling using Styled Components
 - Client-side routing using React Router Dom
+
+## Techical Requirements
+
+- Node.js (20.x)
+- Vite (5.x)
+- Axios (0.26.x)
+- React Query (5.x)
+- Styled Components (6.x)
+- React Router Dom (6.x)
+- React Stripe Checkout (2.x
+- Firebase (10.x))
