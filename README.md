@@ -52,6 +52,11 @@ This e-commerce store application allows users to browse and purchase products, 
 
 - <mark>VITE_APP_STRIPE_PUBLISHABLE_KEY:</mark> Stripe publishable key
 - <mark>VITE_APP_FIREBASE_API_KEY:</mark> Firebase API key
+- <mark>VITE_APP_FIREBASE_AUTH_DOMAIN:</mark> Firebase authentication domain
+- <mark>VITE_APP_FIREBASE_PROJECT_ID:</mark> Firebase project ID
+- <mark>VITE_APP_FIREBASE_STORAGE_BUCKET:</mark> Firebase storage bucket
+- <mark>VITE_APP_FIREBASE_MESSAGE_SENDER_ID:</mark> Firebase messaging sender ID
+- <mark>VITE_APP_FIREBASE_APP_ID</mark> Firebase application ID
 - <mark>VITE_APP_DEV_API_URL:</mark> Application development server URL
 - <mark>VITE_APP_PROD_API_URL:</mark> Application production server URL
 
