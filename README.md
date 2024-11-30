@@ -72,7 +72,7 @@ This application uses Stripe for Payment Processing. The <mark>VITE_APP_STRIPE_P
 
 ## Image Upload
 
-This application uses Firebase for image upload. The <mark>VITE_APP_FIREBASE_API_KEY</mark>, <mark>VITE_APP_FIREBASE_AUTH_DOMAIN</mark>, <mark>VITE_APP_FIREBASE_STORAGE_BUCKET</mark>, and <mark>VITE_APP_FIREBASE_MESSAGE_SENDER_ID</mark> environment variables are used to secure the image upload process.
+This application uses Firebase for image upload. The <mark>VITE_APP_FIREBASE_API_KEY</mark>, <mark>VITE_APP_FIREBASE_AUTH_DOMAIN</mark>, <mark>VITE_APP_FIREBASE_PROJECT_ID</mark>, <mark>VITE_APP_FIREBASE_STORAGE_BUCKET</mark>, <mark>VITE_APP_FIREBASE_MESSAGE_SENDER_ID</mark>, and <mark>VITE_APP_FIREBASE_APP_ID</mark> environment variables are used to secure the image upload process.
 
 ## API Endpoints
 
