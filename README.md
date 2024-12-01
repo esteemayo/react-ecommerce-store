@@ -84,22 +84,22 @@ This application uses Firebase for image upload. The <mark>VITE_APP_FIREBASE_API
 
 The following page routes are available:
 
-- /: Home page
-- /products: Product listing page
-- /products/category/:slug: Product by category page
-- /products/:id: Product details page
-- /admin/products/new: Create new product page
-- /search: Product search page
-- /cart: Shopping cart page
-- /wishlists: Product wishlist listing page
-- /success: Payment success page
-- /orders: Order listing page
-- /orders/:id: Order details page
-- /login: Login page
-- /register: Register page
-- /forgot: Forgot password page
-- /reset-password/:token: Reset password page
-- /account: User account page
+- <mark>/:</mark> Home page
+- <mark>/products:</mark> Product listing page
+- <mark>/products/category/:slug:</mark> Product by category page
+- <mark>/products/:id:</mark> Product details page
+- <mark>/admin/products/new:</mark> Create new product page
+- <mark>/search:</mark> Product search page
+- <mark>/cart:</mark> Shopping cart page
+- <mark>/wishlists:</mark> Product wishlist listing page
+- <mark>/success:</mark> Payment success page
+- <mark>/orders:</mark> Order listing page
+- <mark>/orders/:id:</mark> Order details page
+- <mark>/login:</mark> Login page
+- <mark>/register:</mark> Register page
+- <mark>/forgot:</mark> Forgot password page
+- <mark>/reset-password/:token:</mark> Reset password page
+- <mark>/account:</mark> User account page
 
 ## API Endpoints
 
