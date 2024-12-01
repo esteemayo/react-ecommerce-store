@@ -80,6 +80,27 @@ This application uses Stripe for Payment Processing. The <mark>VITE_APP_STRIPE_P
 
 This application uses Firebase for image upload. The <mark>VITE_APP_FIREBASE_API_KEY</mark>, <mark>VITE_APP_FIREBASE_AUTH_DOMAIN</mark>, <mark>VITE_APP_FIREBASE_PROJECT_ID</mark>, <mark>VITE_APP_FIREBASE_STORAGE_BUCKET</mark>, <mark>VITE_APP_FIREBASE_MESSAGE_SENDER_ID</mark>, and <mark>VITE_APP_FIREBASE_APP_ID</mark> environment variables are used to secure the image upload process.
 
+## Page Routes
+
+The following page routes are available:
+
+- /: Home page
+- /products: Product listing page
+- /products/category/:slug: Product by category page
+- /products/:id: Product details page
+- /admin/products/new: Create new product page
+- /search: Product search page
+- /cart: Shopping cart page
+- /wishlists: Product wishlist listing page
+- /success: Payment success page
+- /orders: Order listing page
+- /orders/:id: Order details page
+- /login: Login page
+- /register: Register page
+- /forgot: Forgot password page
+- /reset-password/:token: Reset password page
+- /account: User account page
+
 ## API Endpoints
 
 The following API endpoints are available:
