@@ -1,6 +1,6 @@
 # E-commerce Store Application
 
-A fast and scalable e-commerce store application built using Vite, Axios, React Query, Styled Components, React Router Dom, React Stripe Checkout, Firebase for image upload and more.
+A fast and scalable e-commerce store application built using Vite, Axios, React Query, Styled Components, React Router Dom, React Stripe Checkout, Firebase for image upload, and all the page routes and more.
 
 ## Table of Contents
 
