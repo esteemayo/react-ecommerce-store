@@ -79,12 +79,12 @@ This e-commerce store application allows users to browse and purchase products, 
 
 ## Components
 
-- Navbar: The navbar component that displays the navigation menu and the cart icon.
-- Footer: The footer component that displays the copyright information and the social media links.
-- ProductList: The product list component that displays the list of products.
-- ProductDetails: The product details component that displays the details of a single product.
-- Cart: The cart component that displays the list of items in the cart.
-- Checkout: The checkout component that handles the payment processing.
+- <mark>Navbar:</mark> The navbar component that displays the navigation menu and the cart icon.
+- <mark>Footer:</mark> The footer component that displays the copyright information and the social media links.
+- <mark>ProductList:</mark> The product list component that displays the list of products.
+- <mark>ProductDetails:</mark> The product details component that displays the details of a single product.
+- <mark>Cart:</mark> The cart component that displays the list of items in the cart.
+- <mark>Checkout:</mark> The checkout component that handles the payment processing.
 
 ## Payment Gateway
 
