@@ -190,6 +190,10 @@ The following API endpoints are available:
 
 This application uses Zustand for state management. Zustand provides a simple and scalable way to manage global state in React applications.
 
+## Styling
+
+The application uses Styled Components for styling. The styles are defined within the components they are needed.
+
 ## Contributing
 
 Contributions are welcome! Please submit a pull request with your changes.
