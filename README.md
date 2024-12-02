@@ -77,6 +77,15 @@ This e-commerce store application allows users to browse and purchase products, 
 5. Enter your payment information and complete the order
 6. Click on the "Leave a review" button to add a review on a product
 
+## Components
+
+- Navbar: The navbar component that displays the navigation menu and the cart icon.
+- Footer: The footer component that displays the copyright information and the social media links.
+- ProductList: The product list component that displays the list of products.
+- ProductDetails: The product details component that displays the details of a single product.
+- Cart: The cart component that displays the list of items in the cart.
+- Checkout: The checkout component that handles the payment processing.
+
 ## Payment Gateway
 
 This application uses Stripe for Payment Processing. The <mark>VITE_APP_STRIPE_PUBLISHABLE_KEY</mark> and <mark>STRIPE_SECRET_KEY</mark> from the backend environment variables are used to secure the payment process.
