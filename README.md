@@ -46,6 +46,7 @@ This e-commerce store application allows users to browse and purchase products, 
 - React Router Dom (6.x)
 - React Stripe Checkout (2.x)
 - Firebase (10.x)
+- Zustand (4.x)
 
 ## Setup and Installation
 
