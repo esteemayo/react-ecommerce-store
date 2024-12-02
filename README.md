@@ -29,6 +29,7 @@ This e-commerce store application allows users to browse and purchase products, 
 - Order management and tracking
 - User account management
 - Payment processing using Stripe
+- Data fetching using Axios
 - Image upload using Firebase
 - Fast and efficient development using Vite
 - Data fetching and caching using React Query
