@@ -185,6 +185,10 @@ The following API endpoints are available:
 
 - <mark>POST /api/v1/checkout:</mark> Creates a charge on a customer's payment method.
 
+## State Management
+
+This application uses Zustand for state management. Zustand provides a simple and scalable way to manage global state in React applications.
+
 ## Contributing
 
 Contributions are welcome! Please submit a pull request with your changes.
