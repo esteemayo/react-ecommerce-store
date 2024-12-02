@@ -13,8 +13,9 @@ A fast and scalable e-commerce store application built using Vite, Axios, React 
 7. #image-upload
 8. #page-routes
 9. #api-endpoints
-10. #contributing
-11. #license
+10. #state-management
+11. #contributing
+12. #license
 
 ## Overview
 
