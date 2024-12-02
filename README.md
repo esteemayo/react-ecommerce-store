@@ -36,7 +36,7 @@ This e-commerce store application allows users to browse and purchase products, 
 - Styling using Styled Components
 - Client-side routing using React Router Dom
 
-## Techical Requirements
+## Technical Requirements
 
 - Node.js (20.x)
 - Vite (5.x)
