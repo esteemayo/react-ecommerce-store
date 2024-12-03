@@ -13,6 +13,11 @@ import { getTopReviews } from '../../services/reviewService';
 
 import { StyledWrapper } from '../StyledWrapper';
 
+const fetchTopReviews = async () => {
+  const { data } = await getTopReviews();
+  return data;
+};
+
 interface IBtn {
   direction: string;
 }
@@ -24,10 +29,7 @@ const TopReviews = () => {
     data: reviews,
   } = useQuery({
     queryKey: ['reviews'],
-    queryFn: async () => {
-      const { data } = await getTopReviews();
-      return data;
-    },
+    queryFn: () => fetchTopReviews(),
   });
 
   const reviewRef = useRef<HTMLDivElement>(null);
