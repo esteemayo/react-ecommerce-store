@@ -63,10 +63,7 @@ const SingleProduct = () => {
   });
 
   const { mutate } = useMutation({
-    mutationFn: async (productId: string) => {
-      const { data } = await productAPI.updateViews(productId);
-      return data;
-    },
+    mutationFn: async (productId: string) => updateViews(productId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['product'] });
     },
