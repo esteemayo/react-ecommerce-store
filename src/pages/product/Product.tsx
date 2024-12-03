@@ -27,7 +27,7 @@ const fetchProduct = async (productId?: string) => {
 };
 
 const fetchReviews = async (productId: string) => {
-  const { data } = await productAPI.getReviewsOnProduct(productId!);
+  const { data } = await productAPI.getReviewsOnProduct(productId);
   return data;
 };
 
@@ -53,10 +53,7 @@ const SingleProduct = () => {
 
   const { data: productReviews } = useQuery({
     queryKey: ['reviews'],
-    queryFn: async () => {
-      const { data } = await productAPI.getReviewsOnProduct(productId!);
-      return data;
-    },
+    queryFn: () => fetchReviews(productId!),
     enabled: !!productId,
   });
 
