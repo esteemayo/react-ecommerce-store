@@ -8,13 +8,15 @@ import Category from './Category';
 import { categoryImages } from '../../data';
 import { getCategoryCount } from '../../services/productService';
 
+const fetchCategories = async () => {
+  const { data } = await getCategoryCount();
+  return data;
+};
+
 const Categories = () => {
   const { isLoading, data } = useQuery({
     queryKey: ['categories'],
-    queryFn: async () => {
-      const { data } = await getCategoryCount();
-      return data;
-    },
+    queryFn: () => fetchCategories(),
   });
 
   return (
