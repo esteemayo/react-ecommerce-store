@@ -13,6 +13,11 @@ import EmptyState from '../components/empty/EmptyState';
 import { useSubmenu } from '../hooks/useSubmenu';
 import { getOrder } from '../services/orderService';
 
+const fetchOrder = async (orderId: string) => {
+  const { data } = await getOrder(orderId);
+  return data;
+};
+
 const Order = () => {
   const { pathname } = useLocation();
   const orderId = pathname.split('/').pop();
