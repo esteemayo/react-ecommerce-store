@@ -28,11 +28,7 @@ const Order = () => {
 
   const { isLoading, data: order } = useQuery({
     queryKey: ['orders'],
-    queryFn: async () => {
-      const { data } = await getOrder(orderId!);
-      setStatus(data.status);
-      return data;
-    },
+    queryFn: () => fetchOrder(orderId!),
     enabled: !!orderId,
   });
 
