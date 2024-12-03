@@ -82,6 +82,10 @@ const SingleProduct = () => {
   }, [sort]);
 
   useEffect(() => {
+    singleProduct && setProduct(singleProduct);
+  }, [singleProduct]);
+
+  useEffect(() => {
     if (sort === 'latest') {
       setReviews((prev) => {
         return [...prev].sort(
