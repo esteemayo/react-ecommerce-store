@@ -20,10 +20,7 @@ const Orders = () => {
 
   const { isLoading, data: orders } = useQuery({
     queryKey: ['orders'],
-    queryFn: async () => {
-      const { data } = await getUserOrders();
-      return data;
-    },
+    queryFn: () => fetchOrders(),
   });
 
   let bodyContent: JSX.Element | undefined;
