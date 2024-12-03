@@ -10,6 +10,11 @@ import { getUserOrders } from '../services/orderService';
 
 import { OrderType } from '../types';
 
+const fetchOrders = async () => {
+  const { data } = await getUserOrders();
+  return data;
+};
+
 const Orders = () => {
   const closeSubmenu = useSubmenu((state) => state.closeSubmenu);
 
