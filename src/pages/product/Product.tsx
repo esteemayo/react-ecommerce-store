@@ -31,6 +31,11 @@ const fetchReviews = async (productId: string) => {
   return data;
 };
 
+const updateViews = async (productId: string) => {
+  const { data } = await productAPI.updateViews(productId);
+  return data;
+};
+
 const SingleProduct = () => {
   const queryClient = useQueryClient();
   const { id: productId } = useParams();
