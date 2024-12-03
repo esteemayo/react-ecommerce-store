@@ -21,6 +21,11 @@ import {
   ReviewItem,
 } from '../../types';
 
+const fetchProduct = async (productId?: string) => {
+  const { data } = await productAPI.getProduct(productId);
+  return data;
+};
+
 const SingleProduct = () => {
   const queryClient = useQueryClient();
   const { id: productId } = useParams();
