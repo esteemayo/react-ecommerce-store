@@ -40,11 +40,7 @@ const SingleProduct = () => {
     refetch,
   } = useQuery({
     queryKey: ['product'],
-    queryFn: async () => {
-      const { data } = await productAPI.getProduct(productId);
-      setProduct(data);
-      return data;
-    },
+    queryFn: () => fetchProduct(productId),
     enabled: !!productId,
   });
 
