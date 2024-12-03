@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import OrderTable from '../components/orders/OrderTable';
 import OrderInfo from '../components/orders/OrderInfo';
@@ -40,6 +40,10 @@ const Order = () => {
     },
     [status]
   );
+
+  useEffect(() => {
+    order && setStatus(order.status);
+  }, [order]);
 
   if (isLoading) {
     return (
