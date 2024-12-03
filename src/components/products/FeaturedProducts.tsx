@@ -16,6 +16,11 @@ import { getFeaturedProducts } from '../../services/productService';
 
 import { StyledWrapper } from '../StyledWrapper';
 
+const fetchFeaturedProducts = async () => {
+  const { data } = await getFeaturedProducts();
+  return data;
+};
+
 const FeaturedProducts = () => {
   const isOpen = useCartModal((state) => state.isOpen);
   const currentUser = useAuth((state) => state.user);
@@ -27,10 +32,7 @@ const FeaturedProducts = () => {
 
   const { isLoading, error, data } = useQuery({
     queryKey: ['products'],
-    queryFn: async () => {
-      const { data } = await getFeaturedProducts();
-      return data;
-    },
+    queryFn: () => fetchFeaturedProducts(),
   });
 
   useEffect(() => {
