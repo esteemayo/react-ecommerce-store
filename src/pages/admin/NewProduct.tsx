@@ -74,12 +74,13 @@ const NewProduct = () => {
     queryFn: () => fetchCategories(),
   });
 
-  const { isPending, isSuccess, mutate } = useMutation({
+  const { isPending, mutate } = useMutation({
     mutationFn: async ({ product }: { product: object }) =>
       createNewProduct({ product }),
     onSuccess() {
       queryClient.invalidateQueries({ queryKey: ['products'] });
       toast.success('Product added!!!');
+      navigate('/products');
     },
   });
 
@@ -226,10 +227,6 @@ const NewProduct = () => {
   useEffect(() => {
     files && uploadFile();
   }, [files, uploadFile]);
-
-  useEffect(() => {
-    isSuccess && navigate('/products');
-  }, [isSuccess, navigate]);
 
   useEffect(() => {
     if (Object.keys(errors).length > 0) {
