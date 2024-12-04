@@ -75,10 +75,8 @@ const NewProduct = () => {
   });
 
   const { isPending, isSuccess, mutate } = useMutation({
-    mutationFn: async ({ product }: { product: object }) => {
-      const { data } = await createProduct(product);
-      return data;
-    },
+    mutationFn: async ({ product }: { product: object }) =>
+      createNewProduct({ product }),
     onSuccess() {
       queryClient.invalidateQueries({ queryKey: ['products'] });
     },
