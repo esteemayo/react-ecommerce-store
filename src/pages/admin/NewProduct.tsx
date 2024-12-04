@@ -82,6 +82,9 @@ const NewProduct = () => {
       toast.success('Product added!!!');
       navigate('/products');
     },
+    onError: (error) => {
+      toast.error(error.message);
+    },
   });
 
   const [progress, setProgress] = useState(0);
