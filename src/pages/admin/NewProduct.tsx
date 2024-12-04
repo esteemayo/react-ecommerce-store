@@ -58,6 +58,11 @@ const fetchCategories = async () => {
   return data;
 };
 
+const createNewProduct = async ({ product }: { product: object }) => {
+  const { data } = await createProduct(product);
+  return data;
+};
+
 const NewProduct = () => {
   const queryClient = useQueryClient();
 
