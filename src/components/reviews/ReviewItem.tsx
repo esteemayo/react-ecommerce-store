@@ -16,10 +16,7 @@ const fetchTotalReviewsOnProduct = async (id: string) => {
 const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
   const { data } = useQuery({
     queryKey: ['totalReviews'],
-    queryFn: async () => {
-      const { data } = await getTotalReviewsOnProduct(id);
-      return data;
-    },
+    queryFn: () => fetchTotalReviewsOnProduct(id),
   });
 
   const reviewer = useMemo(() => {
