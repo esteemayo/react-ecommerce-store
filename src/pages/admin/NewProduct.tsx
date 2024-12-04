@@ -66,10 +66,7 @@ const NewProduct = () => {
 
   const { isLoading, data: categories } = useQuery({
     queryKey: ['categories'],
-    queryFn: async () => {
-      const { data } = await getCategories();
-      return data;
-    },
+    queryFn: () => fetchCategories(),
   });
 
   const { isPending, isSuccess, mutate } = useMutation({
