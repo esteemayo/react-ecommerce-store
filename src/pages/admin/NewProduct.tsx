@@ -53,6 +53,11 @@ const initialState: ProductData = {
   category: '',
 };
 
+const fetchCategories = async () => {
+  const { data } = await getCategories();
+  return data;
+};
+
 const NewProduct = () => {
   const queryClient = useQueryClient();
 
