@@ -8,10 +8,11 @@ import CartTotal from '../components/carts/CartTotal';
 import CartHeader from '../components/carts/CartHeader';
 import PaymentModal from '../components/modals/PaymentModal';
 
-import { useCartStore } from '../hooks/useCartStore';
 import { useSubmenu } from '../hooks/useSubmenu';
-import { usePaymentModal } from '../hooks/usePaymentModal';
 import { useDarkMode } from '../hooks/useDarkMode';
+
+import { useCartStore } from '../hooks/useCartStore';
+import { usePaymentModal } from '../hooks/usePaymentModal';
 
 interface IProps {
   mode: string;
