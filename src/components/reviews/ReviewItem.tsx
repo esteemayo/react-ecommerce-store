@@ -8,6 +8,11 @@ import ReviewContent from './ReviewContent';
 import { ReviewItemProps } from '../../types';
 import { getTotalReviewsOnProduct } from '../../services/reviewService';
 
+const fetchTotalReviewsOnProduct = async (id: string) => {
+  const { data } = await getTotalReviewsOnProduct(id);
+  return data;
+};
+
 const ReviewItem = ({ _id: id, user, rating, review }: ReviewItemProps) => {
   const { data } = useQuery({
     queryKey: ['totalReviews'],
