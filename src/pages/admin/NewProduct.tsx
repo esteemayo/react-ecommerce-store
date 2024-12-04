@@ -79,6 +79,7 @@ const NewProduct = () => {
       createNewProduct({ product }),
     onSuccess() {
       queryClient.invalidateQueries({ queryKey: ['products'] });
+      toast.success('Product added!!!');
     },
   });
 
@@ -201,7 +202,6 @@ const NewProduct = () => {
       };
 
       mutate({ product });
-      toast.success('Product added!!!');
     },
     [color, data, mutate, size, tags, urls]
   );
