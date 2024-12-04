@@ -77,7 +77,7 @@ const NewProduct = () => {
   const { isPending, mutate } = useMutation({
     mutationFn: async ({ product }: { product: object }) =>
       createNewProduct({ product }),
-    onSuccess() {
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['products'] });
       toast.success('Product added!!!');
       navigate('/products');
