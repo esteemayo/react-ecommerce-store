@@ -13,7 +13,7 @@ import Search from '../pages/Search';
 
 import Register from '../pages/register/Register';
 import Login from '../pages/login/Login';
-import SingleProduct from '../pages/product/Product';
+import ProductDetails from '../pages/product/ProductDetails';
 import ResetPassword from '../pages/ResetPassword';
 import ProductCategory from '../pages/ProductCategory';
 import Account from '../pages/account/Account';
@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'products/:id',
-        element: <SingleProduct />,
+        element: <ProductDetails />,
       },
       {
         path: 'admin/products/new',
