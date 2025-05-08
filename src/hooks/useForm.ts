@@ -36,6 +36,7 @@ export const useForm = <T extends object, U extends object>(
         setErrors(validate(data));
         return;
       }
+
       setErrors(initialError);
 
       callback();
@@ -48,7 +49,7 @@ export const useForm = <T extends object, U extends object>(
     if (Object.keys(errors).length > 0) {
       setTimeout(() => setErrors(initialError), 5000);
     }
-  }, [errors]);
+  }, [errors, initialError]);
 
   return {
     data,

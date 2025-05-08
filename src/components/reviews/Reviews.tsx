@@ -36,7 +36,9 @@ const Reviews = ({
   }, []);
 
   const handleCloseFilter = useCallback(
-    (_e: React.MouseEvent<HTMLElement>) => {
+    (e: React.MouseEvent<HTMLElement>) => {
+      e.stopPropagation();
+
       const container = containerRef?.current as HTMLElement;
       container.onclick = handleClose;
     },
